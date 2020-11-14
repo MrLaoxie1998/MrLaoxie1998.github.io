@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="先电云计算IAAS系统配置controller&amp;amp;computevi /etc/sysconfig/network-scripts/ifcfg-eng
+
+网卡1（内网）:
+BOOTPROTO=static
+IPADDR=192.168.100.10 //B：192.168.100.20
+PRE" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>IaaS | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="先电云计算IAAS系统配置controller&amp;computevi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-eng  网卡1（内网）: BOOTPROTO&#x3D;static IPADDR&#x3D;192.168.100.10 &#x2F;&#x2F;B：192.168.100.20 PREFIX&#x3D;24 &#x2F;&#x2F;NETMASK&#x3D;255.255.255.0 GATEWAY&#x3D;192.168.100">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IaaS">
+<meta property="og:url" content="http://example.com/2020/09/21/%E4%BA%91%E8%AE%A1%E7%AE%97/IaaS/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="先电云计算IAAS系统配置controller&amp;computevi &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-eng  网卡1（内网）: BOOTPROTO&#x3D;static IPADDR&#x3D;192.168.100.10 &#x2F;&#x2F;B：192.168.100.20 PREFIX&#x3D;24 &#x2F;&#x2F;NETMASK&#x3D;255.255.255.0 GATEWAY&#x3D;192.168.100">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-21T12:46:49.000Z">
+<meta property="article:modified_time" content="2020-10-07T16:59:05.738Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="云计算">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Hexo" rel="home">Hexo</a>
+      </h1>
+      
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-云计算/IaaS" class="post-云计算/IaaS post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      IaaS
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://example.com/2020/09/21/%E4%BA%91%E8%AE%A1%E7%AE%97/IaaS/" data-id="ckhhf4ie00009xstf8q7750nd" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="先电云计算IAAS"><a href="#先电云计算IAAS" class="headerlink" title="先电云计算IAAS"></a>先电云计算IAAS</h1><h2 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h2><h3 id="controller-amp-compute"><a href="#controller-amp-compute" class="headerlink" title="controller&amp;compute"></a>controller&amp;compute</h3><p><strong><code>vi /etc/sysconfig/network-scripts/ifcfg-eng</code></strong></p>
+<blockquote>
+<p>网卡1（内网）:</p>
+<p>BOOTPROTO=static</p>
+<p>IPADDR=192.168.100.10 //B：192.168.100.20</p>
+<p>PREFIX=24 //NETMASK=255.255.255.0</p>
+<p>GATEWAY=192.168.100.1</p>
+</blockquote>
+<blockquote>
+<p>网卡2（外网）:</p>
+<p>BOOTPROTO=static</p>
+<p>IPADDR=192.168.200.20 //B：192.168.200.20</p>
+<p>PREFIX=24 //NETMASK=255.255.255.0</p>
+</blockquote>
+<p><strong><code>service network restart</code></strong></p>
+<hr>
+<h3 id="controller"><a href="#controller" class="headerlink" title="controller"></a>controller</h3><p><strong><code>hostnamectl set-hostname controller</code></strong></p>
+<hr>
+<h3 id="compute"><a href="#compute" class="headerlink" title="compute"></a>compute</h3><p><strong><code>hostnamectl set-hostname compute</code></strong></p>
+<hr>
+<h3 id="controller-amp-compute-1"><a href="#controller-amp-compute-1" class="headerlink" title="controller&amp;compute"></a>controller&amp;compute</h3><p><strong><code>logout</code></strong> //Ctr+d 重新登录</p>
+<hr>
+<h3 id="controller-1"><a href="#controller-1" class="headerlink" title="controller"></a>controller</h3><p><strong><code>mv /etc/yum.repo.d/\* /home</code></strong></p>
+<p><strong><code>vi /etc/yum.repos.d/iaas.repo</code></strong></p>
+<blockquote>
+<p>[centos]</p>
+<p>name=centos</p>
+<p>baseurl=file:///opt/centos</p>
+<p>enabled=1</p>
+<p>gpgcheck=0</p>
+<p>[iaas]</p>
+<p>name=iaas</p>
+<p>baseurl=file:///opt/iaas/iaas-repo</p>
+<p>enabled=1</p>
+<p>gpgcheck=0</p>
+</blockquote>
+<p><strong><code>mkdir /opt/&#123;centos,iaas&#125;</code></strong></p>
+<p><strong><code>mount CentOS-7-x86_64-DVD-1511.iso /mnt</code></strong></p>
+<p><strong><code>cp -rfv /mnt/\* /opt/centos</code></strong></p>
+<p><strong><code>umout XianDian-IaaS-v2.2.iso /mnt</code></strong></p>
+<p><strong><code>cp -rfv /mnt/\* /opt/iaas</code></strong></p>
+<p><strong><code>yum clean all</code></strong></p>
+<p><strong><code>yum list</code></strong></p>
+<p><strong><code>yum -y install vsftpd</code></strong></p>
+<p><strong><code>systemctl stop firewalld</code></strong></p>
+<p><strong><code>systemctl disable firewalld</code></strong></p>
+<p><strong><code>vi /etc/selinux/config</code></strong></p>
+<blockquote>
+<p><em>SELINUX=enforcing =&gt;</em> SELINUX=permissive</p>
+</blockquote>
+<p><strong><code>setenforce 0</code></strong></p>
+<p><strong><code>vi /vsftpd/vsftpd.conf</code></strong></p>
+<blockquote>
+<p>anon_root=/opt</p>
+</blockquote>
+<p><strong><code>systemctl enable vsftpd</code></strong></p>
+<p><strong><code>systemctl start vsftpd</code></strong></p>
+<hr>
+<h3 id="compute-1"><a href="#compute-1" class="headerlink" title="compute"></a>compute</h3><p><strong><code>mv /etc/yum.repos.d/\* /home</code></strong></p>
+<p><strong><code>vi /etc/yum.repos.d/iaas.repo</code></strong></p>
+<blockquote>
+<p>[centos]</p>
+<p>name=centos</p>
+<p>baseurl=<a href="ftp://192.168.100.10/opt/centos">ftp://192.168.100.10/opt/centos</a></p>
+<p>enabled=1</p>
+<p>gpgcheck=0</p>
+<p>[iaas]</p>
+<p>name=iaas</p>
+<p>baseurl=<a href="ftp://192.168.100.10/opt/iaas/iaas-repo">ftp://192.168.100.10/opt/iaas/iaas-repo</a></p>
+<p>enabled=1</p>
+<p>gpgcheck=0</p>
+</blockquote>
+<p><strong><code>yum clean all</code></strong></p>
+<p><strong><code>yum list</code></strong></p>
+<p>//创建两个分区做准备，记下分区号</p>
+<p><strong><code>parted /dev/md126</code></strong> //进入磁盘管理，IDE硬盘为hdx（x为从a—d）因为IDE硬盘最多四个，SCSI，SATA，USB硬盘为sdx（x为a—z），做了磁盘阵列的是md</p>
+<p><strong>(parted)<code>p</code></strong></p>
+<p><strong>(parted)<code>mkpart 名字 分区起点 分区终点</code></strong> //上一个的分区的终点为下一个分区的终点，由起终点决定大小*</p>
+<p><strong>(parted)<code>p</code></strong></p>
+<p><strong>(parted)<code>quit</code></strong></p>
+<p><strong><code>mkfs.xfs /dev/md126p4</code></strong> //格式化分区，注意区号</p>
+<p><strong><code>mkfs.xfs /dev/md126p5</code></strong></p>
+<hr>
+<h2 id="通过脚本安装相关服务"><a href="#通过脚本安装相关服务" class="headerlink" title="通过脚本安装相关服务"></a>通过脚本安装相关服务</h2><h3 id="controller-amp-compute-2"><a href="#controller-amp-compute-2" class="headerlink" title="controller&amp;compute"></a>controller&amp;compute</h3><p><strong><code>yum -y install iaas-xiandian</code></strong> //安装xiandian包并配置环境变量</p>
+<p><strong><code>vi /etc/xiandain/openrc.sh</code></strong></p>
+<blockquote>
+<p>HOST_IP=192.168.100.10 //控制节点内网</p>
+<p>HOST_NAME=controller</p>
+<p>HOST_IP_NODE=192.168.100.20 //计算节点内网</p>
+<p>HOST_NAME_NODE=compute</p>
+<p>RABBIT_USER=openstack</p>
+<p>RABBIT_PASS=000000</p>
+<p>DB_PASS=000000</p>
+<p>DOMAIN_NAME=demo //（自定义）</p>
+<p>ADMIN_PASS=000000</p>
+<p>DEMO_PASS=000000</p>
+<p>KEYSTONE_DBPASS=000000</p>
+<p>GLANCE_DBPASS=000000</p>
+<p>GLANCE_PASS=000000</p>
+<p>NOVA_DBPASS=000000</p>
+<p>NOVA_PASS=000000</p>
+<p>NEUTRON_DBPASS=000000</p>
+<p>NEUTRON_PASS=000000</p>
+<p>METADATA_SECRET=000000</p>
+<p>INTERFACE_NAME=enp9s0 //（外网网卡名）</p>
+<p>CINDER_DBPASS=000000</p>
+<p>CINDER_PASS=000000</p>
+<p>TROVE_DBPASS=000000</p>
+<p>TROVE_PASS=000000</p>
+<p>BLOCK_DISK=md126p4 //（空白分区名）在计算节点上创建</p>
+<p>SWIFT_PASS=000000</p>
+<p>OBJECT_DISK=md126p5 //（空白分区名）在计算节点上创建</p>
+<p>STORAGE_LOCAL_NET_IP=192.168.100.20 //计算节点内网</p>
+<p>HEAT_DBPASS=000000</p>
+<p>HEAT_PASS=000000</p>
+<p>CEILOMETER_DBPASS=000000</p>
+<p>CEILOMETER_PASS=000000</p>
+<p>AODH_DBPASS=000000</p>
+<p>AODH_PASS=000000</p>
+</blockquote>
+<p>//过滤语句：<strong>cat /etc/xiandian/openrc.sh |grep -v ^# |grep -v ^$</strong> //history 查看历史命令</p>
+<p><strong><code>iaas-pre-host.sh</code></strong> //基础配置</p>
+<blockquote>
+<p>yum -y install <em>openstack-utils</em> openstack-selinux python-openstackclient</p>
+<p>yum upgrade</p>
+<p>yum -y remove NetworkManager firewalld</p>
+<p>yum -y install iptables</p>
+<p>yum -y install ntp</p>
+</blockquote>
+<p><strong><code>yum -y install openstack-utils</code></strong> //脚本内可能未安装，自己补上</p>
+<hr>
+<h3 id="controller-2"><a href="#controller-2" class="headerlink" title="controller"></a>controller</h3><p><strong><code>iaas-install-mysql.sh</code></strong> //安装数据库相关服务</p>
+<blockquote>
+<p>yum -y install mysql mysql-server MySQL-python</p>
+<p>yum -y install mongodb-server mongodb</p>
+<p>yum -y install rabbitmq-server</p>
+<p>yum -y install memcached python-memcached</p>
+</blockquote>
+<hr>
+<h3 id="compute-2"><a href="#compute-2" class="headerlink" title="compute"></a>compute</h3><p><strong><code>yum -y install MySQL-python</code></strong></p>
+<hr>
+<h3 id="controller-3"><a href="#controller-3" class="headerlink" title="controller"></a>controller</h3><p><strong><code>iaas-install-keystone.sh</code></strong> //安装Keystone认证服务</p>
+<blockquote>
+<p>yum -y install openstack-keystone httpd mod_wsgi</p>
+</blockquote>
+<p><strong><code>iaas-install-glance.sh</code></strong> //安装Glance镜像服务</p>
+<blockquote>
+<p>yum -y install openstack-glance</p>
+</blockquote>
+<p>上传镜像：<br>**<code>source /etc/keystone/admin-opemrc.sh</code>** //加载上传镜像需要用到的变量</p>
+<p><strong><code>glance image-create --name &quot;CentOS7.0&quot; --disk-format qcow2 --container-format bare --progress &lt; /opt/iaas/images/Centos_7-x86_64_XD.qcow2</code></strong></p>
+<p><strong><code>iaas-install-nova-controller.sh</code></strong> //安装nova计算服务</p>
+<blockquote>
+<p>yum install -y openstack-nova-api openstack-nova-conductor openstack-nova-console openstack-nova-novncproxy openstack-nova-scheduler</p>
+</blockquote>
+<hr>
+<h3 id="compute-3"><a href="#compute-3" class="headerlink" title="compute"></a>compute</h3><p><strong><code>iaas-install-nova-compute.sh</code></strong></p>
+<blockquote>
+<p>yum -y install lvm2</p>
+<p>yum -y install openstack-nova-compute</p>
+</blockquote>
+<hr>
+<h3 id="controller-4"><a href="#controller-4" class="headerlink" title="controller"></a>controller</h3><p><strong><code>iaas-install-neutron-controller.sh</code></strong> //安装Neutron网络服务</p>
+<blockquote>
+<p>yum install -y openstack-neutron openstack-neutron-ml2 openstack-neutron-linuxbridge ebtables openstack-neutron-openvswitch openstack-neutron-lbaas python-neutron-lbaas haproxy openstack-neutron-fwaas</p>
+</blockquote>
+<hr>
+<h3 id="compute-4"><a href="#compute-4" class="headerlink" title="compute"></a>compute</h3><p><strong><code>iaas-install-neutron-compute.sh</code></strong></p>
+<blockquote>
+<p>yum install -y openstack-neutron-linuxbridge ebtables ipset openstack-neutron openstack-neutron-ml2 openstack-neutron-openvswitch</p>
+</blockquote>
+<hr>
+<h3 id="controller-5"><a href="#controller-5" class="headerlink" title="controller"></a>controller</h3><p><strong><code>iaas-install-neutron-controller-gre.sh</code></strong> //创建gre网络</p>
+<hr>
+<h3 id="compute-5"><a href="#compute-5" class="headerlink" title="compute"></a>compute</h3><p><strong><code>iaas-install-neutron-compute-gre.sh</code></strong></p>
+<hr>
+<h3 id="controller-6"><a href="#controller-6" class="headerlink" title="controller"></a>controller</h3><p><strong><code>iaas-install-dashboard.sh</code></strong> //安装Dadhboard仪表盘服务</p>
+<blockquote>
+<p>yum -y install openstack-dashboard</p>
+</blockquote>
+<p><strong><a target="_blank" rel="noopener" href="http://192.168.100.10/dashboard">http://192.168.100.10/dashboard</a></strong></p>
+<hr>
+<h3 id="controller-7"><a href="#controller-7" class="headerlink" title="controller"></a>controller</h3><p><strong><code>iaas-install-cinder-controller.sh</code></strong> //安装Cinder块存储服务</p>
+<blockquote>
+<p>yum install -y openstack-cinder</p>
+<p>cinder create —display-name myVolume 1 //使用cinder create 创建一个新的卷</p>
+<p>cinder list //通过cinder list 命令查看是否正确创建</p>
+</blockquote>
+<hr>
+<h3 id="compute-6"><a href="#compute-6" class="headerlink" title="compute"></a>compute</h3><p><strong><code>iaas-install-cinder-compute.sh</code></strong></p>
+<blockquote>
+<p>yum -y install lvm2 targetcli python-keystone openstack-cinder</p>
+</blockquote>
+<hr>
+<h3 id="controller-8"><a href="#controller-8" class="headerlink" title="controller"></a>controller</h3><p><strong><code>iaas-install-swift-controller.sh</code></strong> //安装Swift对象存储服务</p>
+<blockquote>
+<p>yum install -y openstack-swift-proxy python-swiftclient python-keystoneclient python-keystonemiddleware memcached</p>
+</blockquote>
+<hr>
+<h3 id="compute-7"><a href="#compute-7" class="headerlink" title="compute"></a>compute</h3><p><strong><code>iaas-install-swift-compute.sh</code></strong> //面向对象数据存贮</p>
+<blockquote>
+<p>yum install -y xfsprogs rsync openstack-swift-account openstack-swift-container openstack-swift-object</p>
+</blockquote>
+<p><strong>执行过程中需要确认登录controller节点和输入controller节点root用户密码</strong></p>
+<hr>
+<h3 id="controller-9"><a href="#controller-9" class="headerlink" title="controller"></a>controller</h3><p><strong><code>iaas-install-trove.sh</code></strong> //安装Trove数据库服务</p>
+<p><strong><em>//需注意安装Trove服务之前需要配置好网络（flat或gre）,创建好子网，并确认系统已经安装swift和cinder两个服务，否则安装会失败\</em></strong></p>
+<blockquote>
+<p>yum install –y openstack-trove-guestagent openstack-trove python-troveclient openstack-trove-ui</p>
+</blockquote>
+<p><strong><code>iaas-install-heat.sh</code></strong> //安装heat集群服务</p>
+<blockquote>
+<p>yum install -y openstack-heat-api openstack-heat-api-cfn openstack-heat-engine</p>
+</blockquote>
+<p><strong><code>iaas-install-ceilometer-controller.sh</code></strong> //安装Ceilometer架空服务</p>
+<blockquote>
+<p>yum install -y openstack-ceilometer-api openstack-ceilometer-collector openstack-ceilometer-notification openstack-ceilometer-central python-ceilometerclient python-ceilometermiddleware</p>
+</blockquote>
+<hr>
+<h3 id="compute-8"><a href="#compute-8" class="headerlink" title="compute"></a>compute</h3><p><strong><code>iaas-install-ceilometer-compute.sh</code></strong></p>
+<blockquote>
+<p>yum install -y openstack-ceilometer-compute python-ceilometerclient python-pecan</p>
+</blockquote>
+<hr>
+<h3 id="controller-10"><a href="#controller-10" class="headerlink" title="controller"></a>controller</h3><p><strong><code>iaas-install-alarm.sh</code></strong> //安装alarm监控服务</p>
+<blockquote>
+<p>yum install -y openstack-aodh-api openstack-aodh-evaluator openstack-aodh-notifier openstack-aodh-listener openstack-aodh-expirer python-ceilometerclient</p>
+</blockquote>
+<hr>
+<h2 id="资源聚合"><a href="#资源聚合" class="headerlink" title="资源聚合"></a>资源聚合</h2><p><strong><em>在<code>/etc/xiandian/openrc.sh</code>里把<code>compute</code>节点的<code>IP</code>和主机名改为<code>controller</code>节点的IP和主机名\</em></strong></p>
+<p><strong><em>在控制节点运行 <code>iaas-install-nova-compute.sh</code>\</em></strong></p>
+<h3 id="controller-11"><a href="#controller-11" class="headerlink" title="controller"></a>controller</h3><p><strong><code>iaas-install-nova-compute.sh</code></strong></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/09/21/%E4%BA%91%E8%AE%A1%E7%AE%97/IaaS/">
+    <time datetime="2020-09-21T12:46:49.000Z" class="entry-date">
+        2020-09-21
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag">云计算</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2020/09/21/%E4%BA%91%E8%AE%A1%E7%AE%97/PaaS/" rel="prev"><span class="meta-nav">←</span> PaaS</a></span>
+    
+    
+        <span class="nav-next"><a href="/2020/08/26/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/" rel="next">华为交换机基础配置 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2020/11/10/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/08/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%AD%94%E9%A2%98SaaS%E9%83%A8%E5%88%86%E7%AC%94%E8%AE%B0/">答题SaaS部分笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/21/%E4%BA%91%E8%AE%A1%E7%AE%97/BigData/">BigData</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/21/%E4%BA%91%E8%AE%A1%E7%AE%97/PaaS/">PaaS</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/21/%E4%BA%91%E8%AE%A1%E7%AE%97/IaaS/">IaaS</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag">云计算</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/" rel="tag">数据通信</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AF%AD/" rel="tag">日语</a><span class="tag-list-count">35</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" style="font-size: 14px;">云计算</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 12px;">心理学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/" style="font-size: 16px;">数据通信</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 18px;">日记</a> <a href="/tags/%E6%97%A5%E8%AF%AD/" style="font-size: 20px;">日语</a>
+    </div>
+  </aside>
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2020 John Doe
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>

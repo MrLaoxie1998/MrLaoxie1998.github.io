@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="先电云计算BigData基础平台搭建masterhostnamectl set-hostname master //修改主机名
+hostname
+logout
+vi /etc/hosts //添加本地域名解析
+
+192.168.200.131 master.hadoop master
+192.168" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>BigData | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="先电云计算BigData基础平台搭建masterhostnamectl set-hostname master &#x2F;&#x2F;修改主机名 hostname logout vi &#x2F;etc&#x2F;hosts &#x2F;&#x2F;添加本地域名解析  192.168.200.131 master.hadoop master 192.168.200.133 slave1.hadoop  ping slave1.hadoop &#x2F;&#x2F;检测 sl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BigData">
+<meta property="og:url" content="http://example.com/2020/09/21/%E4%BA%91%E8%AE%A1%E7%AE%97/BigData/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="先电云计算BigData基础平台搭建masterhostnamectl set-hostname master &#x2F;&#x2F;修改主机名 hostname logout vi &#x2F;etc&#x2F;hosts &#x2F;&#x2F;添加本地域名解析  192.168.200.131 master.hadoop master 192.168.200.133 slave1.hadoop  ping slave1.hadoop &#x2F;&#x2F;检测 sl">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-21T12:47:13.000Z">
+<meta property="article:modified_time" content="2020-10-07T16:59:19.561Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="云计算">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Hexo" rel="home">Hexo</a>
+      </h1>
+      
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-云计算/BigData" class="post-云计算/BigData post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      BigData
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://example.com/2020/09/21/%E4%BA%91%E8%AE%A1%E7%AE%97/BigData/" data-id="ckhhf4idz0006xstfdhf7a5c5" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="先电云计算BigData"><a href="#先电云计算BigData" class="headerlink" title="先电云计算BigData"></a>先电云计算BigData</h1><h2 id="基础平台搭建"><a href="#基础平台搭建" class="headerlink" title="基础平台搭建"></a>基础平台搭建</h2><h3 id="master"><a href="#master" class="headerlink" title="master"></a>master</h3><p><strong><code>hostnamectl set-hostname master</code></strong> //修改主机名</p>
+<p><strong><code>hostname</code></strong></p>
+<p><strong><code>logout</code></strong></p>
+<p><strong><code>vi /etc/hosts</code></strong> //添加本地域名解析</p>
+<blockquote>
+<p>192.168.200.131 master.hadoop master</p>
+<p>192.168.200.133 slave1.hadoop</p>
+</blockquote>
+<p><strong><code>ping slave1.hadoop</code></strong> //检测</p>
+<h3 id="slave1"><a href="#slave1" class="headerlink" title="slave1"></a>slave1</h3><p><strong><code>hostnamectl set-hostname slave1</code></strong></p>
+<p><strong><code>hostname</code></strong></p>
+<p><strong><code>logout</code></strong></p>
+<p><strong><code>vi /etc/hosts</code></strong></p>
+<blockquote>
+<p>192.168.200.131 master.hadoop</p>
+<p>192.168.200.133 slave1.hadoop slave1</p>
+</blockquote>
+<p><strong><code>ping master.hadoop</code></strong></p>
+<hr>
+<h3 id="master-1"><a href="#master-1" class="headerlink" title="master"></a>master</h3><p><strong><code>mv /etc/yum.repos.d/\* /home</code></strong></p>
+<p><strong><code>vi /etc/yum.repos.d/ambari.repo</code></strong> //新建yum源配置文件</p>
+<blockquote>
+<p>[centos]</p>
+<p>name=centos</p>
+<p>baseurl=<a href="ftp://192.168.100.10/centos/">ftp://192.168.100.10/centos/</a></p>
+<p>enabled=1</p>
+<p>gpgcheck=0</p>
+<p>[ambari]</p>
+<p>name=ambari</p>
+<p>baseurl=file:///opt/ambari/ambari-2.6.0.0</p>
+<p>enabled=1</p>
+<p>gpgcheck=0</p>
+</blockquote>
+<p><strong><code>mkdir /opt/ambari</code></strong></p>
+<p><strong><code>mount XianDian-BigData-v2.2.iso /opt/ambari/</code></strong></p>
+<p><strong><code>yum clean all</code></strong></p>
+<p><strong><code>yum list</code></strong></p>
+<p><strong><code>yum install -y vsftpd</code></strong> //搭建ftp服务器</p>
+<p><strong><code>vi /etc/vsftpd/vsftpd.conf</code></strong> //修改ftp根目录</p>
+<blockquote>
+<p>anon_root=/opt</p>
+</blockquote>
+<p><strong><code>vi /etc/selinux/config</code></strong></p>
+<blockquote>
+<p><em>SELINUX=enforcing=&gt;SELINUX=disabled</em> //disabled需要修改文件后重启生效，permissive也可</p>
+</blockquote>
+<p><strong><code>setenforce 0</code></strong> //设为Permissive,1为enforcing</p>
+<p><strong><code>getenforce</code></strong> //获得Selinux的状态</p>
+<blockquote>
+<p>Permissive</p>
+</blockquote>
+<p><strong><code>systemctl disable firewalld</code></strong> //关闭防火墙和Selinux，先电镜像是关闭的无需操作</p>
+<p><strong><code>systemctl stop firewalld</code></strong></p>
+<p><strong><code>systemctl enable vsftpd</code></strong></p>
+<p><strong><code>systemctl start vsftpd</code></strong></p>
+<h3 id="slave1-1"><a href="#slave1-1" class="headerlink" title="slave1"></a>slave1</h3><p><strong><code>mv /etc/yum.repos.d/\* /home</code></strong></p>
+<p><strong><code>vi /etc/yum.repos.d/ambari.repo</code></strong></p>
+<blockquote>
+<p>[centos]</p>
+<p>name=centos</p>
+<p>baseurl=<a href="ftp://192.168.100.10/centos/">ftp://192.168.100.10/centos/</a></p>
+<p>enabled=1</p>
+<p>gpgcheck=0</p>
+<p>[ambari]</p>
+<p>name=ambari</p>
+<p>baseurl=<a href="ftp://192.168.200.131/ambari/ambari-2.6.0.0">ftp://192.168.200.131/ambari/ambari-2.6.0.0</a></p>
+<p>enabled=1</p>
+<p>gpgcheck=0</p>
+</blockquote>
+<p><strong><code>yum clean all</code></strong></p>
+<p><strong><code>yum list</code></strong></p>
+<p><strong><code>vi /etc/selinux/config</code></strong></p>
+<blockquote>
+<p><em>SELINUX=enforcing =&gt; SELINUX=disabled</em> //disabled需要修改文件后重启生效，permissive也可</p>
+</blockquote>
+<p><strong><code>setenforce 0</code></strong> //设为Permissive,1为enforcing</p>
+<p><strong><code>getenforce</code></strong> //获得Selinux的状态</p>
+<blockquote>
+<p><em>Permissive</em></p>
+</blockquote>
+<p><strong><code>systemctl disable firewalld</code></strong> //关闭防火墙和Selinux，先电镜像是关闭的无需操作</p>
+<p><strong><code>systemctl stop firewalld</code></strong></p>
+<hr>
+<h3 id="master-2"><a href="#master-2" class="headerlink" title="master"></a>master</h3><p><strong><code>yum -y install httpd</code></strong></p>
+<p><strong><code>cp -r /opt/ambari/HDP-\* /var/www/html/</code></strong></p>
+<p><strong><code>systemctl enable httpd</code></strong></p>
+<p><strong><code>systemctl start httpd</code></strong></p>
+<p><strong><code>yum -y install ntp</code></strong></p>
+<p><strong><code>vi /etc/ntp.conf</code></strong></p>
+<blockquote>
+<h1 id="server-0-centos-pool-ntp-org-iburst-将原有的四条注释掉"><a href="#server-0-centos-pool-ntp-org-iburst-将原有的四条注释掉" class="headerlink" title="server 0.centos.pool.ntp.org iburst //将原有的四条注释掉"></a>server 0.centos.pool.ntp.org iburst //将原有的四条注释掉</h1><h1 id="server-1-centos-pool-ntp-org-iburst"><a href="#server-1-centos-pool-ntp-org-iburst" class="headerlink" title="server 1.centos.pool.ntp.org iburst"></a>server 1.centos.pool.ntp.org iburst</h1><h1 id="server-2-centos-pool-ntp-org-iburst"><a href="#server-2-centos-pool-ntp-org-iburst" class="headerlink" title="server 2.centos.pool.ntp.org iburst"></a>server 2.centos.pool.ntp.org iburst</h1><h1 id="server-3-centos-pool-ntp-org-iburst"><a href="#server-3-centos-pool-ntp-org-iburst" class="headerlink" title="server 3.centos.pool.ntp.org iburst"></a>server 3.centos.pool.ntp.org iburst</h1><p>server 127.127.1.0 //添加两行</p>
+<p>fudge 127.127.1.0 startum 10</p>
+</blockquote>
+<p><strong><code>systemctl enable ntpd</code></strong></p>
+<p><strong><code>systemctl start ntpd</code></strong></p>
+<h3 id="slave1-2"><a href="#slave1-2" class="headerlink" title="slave1"></a>slave1</h3><p><strong><code>yum install -y ntpdate</code></strong></p>
+<p><strong><code>ntpdate master.hadoop</code></strong></p>
+<p><strong><code>systemctl enable ntpdate</code></strong></p>
+<hr>
+<h3 id="master-3"><a href="#master-3" class="headerlink" title="master"></a>master</h3><p><strong><code>ssh slave1.hadoop</code></strong> //检测能否用无密码公钥认证访问（第一次需要用确认使用公钥访问），若不能则需要配置无密码公钥访问 使用<strong>exit</strong>退出连接</p>
+<p><strong><code>ssh-keygen</code></strong> //生成公钥</p>
+<p><strong><code>ssh-copy-id slave1.hadoop</code></strong> //将公钥复制到目标主机</p>
+<h3 id="slave1-3"><a href="#slave1-3" class="headerlink" title="slave1"></a>slave1</h3><p><strong><code>ssh master1.hadoop#</code></strong></p>
+<p><strong><code>ssh-keygen</code></strong></p>
+<p><strong><code>ssh-copy-id slave1.hadoop</code></strong></p>
+<hr>
+<h3 id="master-amp-slave1"><a href="#master-amp-slave1" class="headerlink" title="master&amp;slave1"></a>master&amp;slave1</h3><p><strong><code>cat /sys/kernel/mm/transparent_hugepage/enabled</code></strong></p>
+<blockquote>
+<blockquote>
+<p>[always] madvise never //Transparent Huge Pages状态为开启的，需要关闭，该文件不可编辑，不能永久修改所有修改==<strong>重启后失效</strong>==</p>
+</blockquote>
+</blockquote>
+<p><strong><code>echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled</code></strong></p>
+<p><strong><code>echo never &gt; /sys/kernel/mm/transparent_hugepage/defrag</code></strong></p>
+<p><strong><code>cat /sys/kernel/mm/transparent_hugepage/enabled</code></strong></p>
+<blockquote>
+<blockquote>
+<p>always madvise [never] //关闭状态</p>
+</blockquote>
+</blockquote>
+<hr>
+<h3 id="master-4"><a href="#master-4" class="headerlink" title="master"></a>master</h3><p><strong><code>mkdir /usr/jdk64/</code></strong></p>
+<p><strong><code>tar -zxvf /opt/ambari/jdk-8u77-linux-x64.tar.gz -C /usr/jdk64/</code></strong></p>
+<p><strong><code>vi /etc/profile</code></strong></p>
+<blockquote>
+<p>export JAVA_HOME=/usr/jdk64/jdk1.8.0_77</p>
+<p>export PATH=$JAVA_HOME/bin:$PATH</p>
+</blockquote>
+<p><strong><code>source /etc/profile</code></strong></p>
+<p><strong><code>java -version</code></strong></p>
+<blockquote>
+<blockquote>
+<p>java version “1.8.0_77”</p>
+<p>Java(TM) SE Runtime Environment (build 1.8.0_77-b03)</p>
+<p>Java HotSpot(TM) 64-Bit Server VM (build 25.77-b03, mixed mode)</p>
+</blockquote>
+</blockquote>
+<p><strong><code>scp /opt/ambari/jdk-8u77-linux-x64.tar.gz 192.168.200.133:/opt</code></strong> //通过ssh的scp将文件发到目标机</p>
+<h3 id="slave1-4"><a href="#slave1-4" class="headerlink" title="slave1"></a>slave1</h3><p><strong><code>mkdir /usr/jdk64jdk1.8.0_77/</code></strong></p>
+<p><strong><code>tar -zxvf /opt/jdk-8u77-linux-x64.tar.gz -C /usr/jdk64/</code></strong></p>
+<p><strong><code>vi /etc/profile</code></strong></p>
+<blockquote>
+<p>export JAVA_HOME=/usr/jdk64/jdk1.8.0_77</p>
+<p>export PATH=$JAVA_HOME/bin:$PATH</p>
+</blockquote>
+<p><strong><code>source /etc/profile</code></strong></p>
+<p><strong><code>java -version</code></strong></p>
+<blockquote>
+<blockquote>
+<p>java version “1.8.0_77”</p>
+<p>Java(TM) SE Runtime Environment (build 1.8.0_77-b03)</p>
+<p>Java HotSpot(TM) 64-Bit Server VM (build 25.77-b03, mixed mode)</p>
+</blockquote>
+</blockquote>
+<hr>
+<h2 id="配置ambari"><a href="#配置ambari" class="headerlink" title="配置ambari"></a>配置ambari</h2><h3 id="master-5"><a href="#master-5" class="headerlink" title="master"></a>master</h3><p><strong><code>yum -y install ambari-server</code></strong></p>
+<p><strong><code>yum -y install mariadb mariadb-server mysql-connector-java</code></strong></p>
+<p><strong><code>systemctl enable mariadb</code></strong></p>
+<p><strong><code>systemctl start mariadb</code></strong></p>
+<p><strong><code>mysql_secure_installation</code></strong></p>
+<blockquote>
+<blockquote>
+<p>Enter current password for root (enter for none): //初始时无密码自接回车</p>
+<p>Set root password? [Y/n]<strong><code>y</code></strong> //设置root密码为“<code>bigdata</code>”</p>
+<p>New password: //填入密码是不显示的</p>
+<p>Re-enter new password:</p>
+<p>Remove anonymous users? [Y/n]<strong><code>y</code></strong> //删除匿名用户</p>
+<p>Disallow root login remotely? [Y/n] <strong><code>n</code></strong> //是否禁用root远程登录</p>
+<p>Remove test database and access to it? [Y/n] <strong><code>y</code></strong> //删除测试数据库</p>
+<p>Reload privilege tables now? [Y/n]<strong><code>y</code></strong> //从新加载权限表</p>
+</blockquote>
+</blockquote>
+<p><strong><code>mysql -uroot -pbigdata</code></strong></p>
+<blockquote>
+<blockquote>
+<p>MariaDB [(none)]&gt;<strong><code>create database ambari;</code></strong></p>
+<p>MariaDB [(none)]&gt; <strong><code>grant all privileges on ambari.\* to &#39;ambari&#39;@&#39;localhost&#39; identified by &#39;bigdata&#39;;</code></strong></p>
+<p>MariaDB [(none)]&gt; <strong><code>grant all privileges on ambari.\* to &#39;ambari&#39;@&#39;%&#39; identified by &#39;bigdata&#39;;</code></strong></p>
+<p>MariaDB [(none)]&gt;<strong><code>use ambari;</code></strong></p>
+<p>MariaDB [ambari]&gt; <strong><code>source /var/lib/ambari-server/resources/Ambari-DDL-MySQL-CREATE.sql</code></strong><br>MariaDB [ambari]&gt;<code>quit</code></p>
+</blockquote>
+</blockquote>
+<p><strong><code>vi /etc/profile</code></strong></p>
+<blockquote>
+<p>export buildNumber=2.6.0.0</p>
+</blockquote>
+<p><strong><code>ambari-server setup</code></strong></p>
+<blockquote>
+<blockquote>
+<p>Customize user account for ambari-server daemon [y/n] (n)? <strong><code>n</code></strong></p>
+<p>Checking JDK…</p>
+<p>[1] Oracle JDK 1.8 + Java Cryptography Extension (JCE) Policy Files 8</p>
+<p>[2] Oracle JDK 1.7 + Java Cryptography Extension (JCE) Policy Files 7</p>
+<p>[3] Custom JDk</p>
+<p>================================</p>
+<p>Enter choice (1):<strong><code>3</code></strong></p>
+<p>Path to JAVA_HOME: <strong><code>/usr/jdk64/jdk1.8.0_77</code></strong></p>
+<p>Enter advanced database configuration [y/n] (n)? <strong><code>y</code></strong></p>
+<p>Configuring database…</p>
+<p>================================</p>
+<p>Choose one of the following options:</p>
+<p>[1] - PostgreSQL (Embedded)</p>
+<p>[2] - Oracle</p>
+<p>[3] - MySQL / MariaDB</p>
+<p>[4] - PostgreSQL</p>
+<p>[5] - Microsoft SQL Server (Tech Preview)</p>
+<p>[6] - SQL Anywhere</p>
+<p>[7] - BDB</p>
+<p>================================</p>
+<p>Enter choice (1): <strong><code>3</code></strong></p>
+<p>Hostname (localhost):</p>
+<p>Port (3306):</p>
+<p>Database name (ambari):</p>
+<p>Username (ambari):</p>
+<p>Enter Database Password (bigdata):</p>
+<p>Proceed with configuring remote database connection properties [y/n] (y)?</p>
+</blockquote>
+</blockquote>
+<p><strong><code>ambari-server start</code></strong></p>
+<p><a target="_blank" rel="noopener" href="http://192.168.100.131:8080/">http://192.168.100.131:8080</a></p>
+<blockquote>
+<p>admin/admin //用户名和密码</p>
+</blockquote>
+<h3 id="master-amp-slave1-1"><a href="#master-amp-slave1-1" class="headerlink" title="master&amp;slave1"></a>master&amp;slave1</h3><p><strong><code>yum install -y ambari-agent</code></strong></p>
+<p><strong><code>vi /etc/ambari-agent/conf/ambari-agent.ini</code></strong></p>
+<blockquote>
+<p>[servier]</p>
+<p><em>hostname=localhost =&gt; hostname=master.hadoop</em></p>
+</blockquote>
+<p><strong><code>systemctl start ambari-agent</code></strong></p>
+<p><strong><code>ambari-agent restart</code></strong></p>
+<p><strong><code>tail -f /var/log/ambari-agent/ambari-agent.log</code></strong></p>
+<p>在python 2.7.5及以上版本时，增加了certificate verification，正是因为这个特性导致ambari-agent无法连接server</p>
+<p>//解决方法：修改/etc/python/cert-verification.cfg配置文件：verify=platform_default ###(这是默认配置)</p>
+<p>修改为verify=disable，然后重启ambari agent，就可以正常注册</p>
+<p>HDFS</p>
+<p>YARN+MapReduce2</p>
+<p>ZooKeeper</p>
+<p>Amvari Metrics</p>
+<blockquote>
+<p><strong>添加Hive服务前需要先对数据库进行操作</strong></p>
+<h1 id="mysql-uroot-pbigdata"><a href="#mysql-uroot-pbigdata" class="headerlink" title="mysql -uroot -pbigdata"></a>mysql -uroot -pbigdata</h1><p>MariaDB [(none)]&gt; create database hive;</p>
+<p>MariaDB [(none)]&gt; grant all privileges on hive.* to ‘hive’@’localhost’ identified by ‘bigdata’;</p>
+<p>MariaDB [(none)]&gt; grant all privileges on hive.* to ‘hive’@’%’ identified by ‘bigdata’;</p>
+</blockquote>
+<p>Hive</p>
+<p>HBase</p>
+<p>Mahout</p>
+<p>Pig</p>
+<p>Flume</p>
+<p>Spark2</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/09/21/%E4%BA%91%E8%AE%A1%E7%AE%97/BigData/">
+    <time datetime="2020-09-21T12:47:13.000Z" class="entry-date">
+        2020-09-21
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag">云计算</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2020/10/08/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%AD%94%E9%A2%98SaaS%E9%83%A8%E5%88%86%E7%AC%94%E8%AE%B0/" rel="prev"><span class="meta-nav">←</span> 答题SaaS部分笔记</a></span>
+    
+    
+        <span class="nav-next"><a href="/2020/09/21/%E4%BA%91%E8%AE%A1%E7%AE%97/PaaS/" rel="next">PaaS <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2020/11/10/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/08/%E4%BA%91%E8%AE%A1%E7%AE%97/%E7%AD%94%E9%A2%98SaaS%E9%83%A8%E5%88%86%E7%AC%94%E8%AE%B0/">答题SaaS部分笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/21/%E4%BA%91%E8%AE%A1%E7%AE%97/BigData/">BigData</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/21/%E4%BA%91%E8%AE%A1%E7%AE%97/PaaS/">PaaS</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/21/%E4%BA%91%E8%AE%A1%E7%AE%97/IaaS/">IaaS</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" rel="tag">云计算</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" rel="tag">心理学</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/" rel="tag">数据通信</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AE%B0/" rel="tag">日记</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E8%AF%AD/" rel="tag">日语</a><span class="tag-list-count">35</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/" style="font-size: 14px;">云计算</a> <a href="/tags/%E5%BF%83%E7%90%86%E5%AD%A6/" style="font-size: 12px;">心理学</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/" style="font-size: 16px;">数据通信</a> <a href="/tags/%E6%97%A5%E8%AE%B0/" style="font-size: 18px;">日记</a> <a href="/tags/%E6%97%A5%E8%AF%AD/" style="font-size: 20px;">日语</a>
+    </div>
+  </aside>
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2020 John Doe
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
