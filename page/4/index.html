@@ -204,8 +204,21 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-14 22:00:27" itemprop="dateModified" datetime="2020-11-14T22:00:27+08:00">2020-11-14</time>
+                <time title="Modified: 2020-11-14 23:58:02" itemprop="dateModified" datetime="2020-11-14T23:58:02+08:00">2020-11-14</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语单词</span></a>
+                </span>
+            </span>
 
           
 
@@ -219,6 +232,63 @@
 
       
           <h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><p>这里是关于我所学习的单词记录</p>
+<div id="echarts641" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts641'));
+        // 指定图表的配置项和数据
+        var option = option = {
+    title: {
+        text: '第11课单词',
+        subtext: '各词性统计-共计144个单词。统计了高频词汇和低频词汇,人工统计，不一定是144个',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['名词', '固有名词', '解释性词性', '副词', '感叹词', '他动词1类', '他动词2类', '他动词3类', '自动词1类', '自动词2类', '自动词3类', '引助',  '形容词2类', '取立て助']
+    },
+    series: [
+        {
+            name: '此词性数量',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: [
+                {value: 77, name: '名词'},
+                {value: 1, name: '解释性词性'},
+                {value: 1, name: '固有名词'},
+                {value: 7, name: '副词'},
+                {value: 2, name: '感叹词'},
+                {value: 13, name: '他动词1类'},
+                {value: 8, name: '他动词2类'},
+                {value: 12, name: '他动词3类'},
+                {value: 11, name: '自动词1类'},
+                {value: 7, name: '自动词2类'},
+                {value: 5, name: '自动词3类'},
+                {value: 1, name: '引助'},
+                {value: 1, name: '形容词2类'},
+                {value: 1, name: '取立て助'}
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/06/20/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E5%8D%95%E8%AF%8D%E8%AE%B0%E5%BD%95/#more" rel="contents">
@@ -276,8 +346,17 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-25 20:50:06" itemprop="dateModified" datetime="2020-07-25T20:50:06+08:00">2020-07-25</time>
+                <time title="Modified: 2020-11-14 22:36:10" itemprop="dateModified" datetime="2020-11-14T22:36:10+08:00">2020-11-14</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
 
           
 
@@ -340,9 +419,24 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-06-09 23:22:06 / Modified: 23:27:44" itemprop="dateCreated datePublished" datetime="2020-06-09T23:22:06+08:00">2020-06-09</time>
+              <time title="Created: 2020-06-09 23:22:06" itemprop="dateCreated datePublished" datetime="2020-06-09T23:22:06+08:00">2020-06-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-14 22:35:51" itemprop="dateModified" datetime="2020-11-14T22:35:51+08:00">2020-11-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
             </span>
 
           
@@ -406,8 +500,17 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-26 00:19:44" itemprop="dateModified" datetime="2020-07-26T00:19:44+08:00">2020-07-26</time>
+                <time title="Modified: 2020-11-14 22:35:49" itemprop="dateModified" datetime="2020-11-14T22:35:49+08:00">2020-11-14</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+            </span>
 
           
 
@@ -734,9 +837,28 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-06-07 14:55:35 / Modified: 22:32:54" itemprop="dateCreated datePublished" datetime="2020-06-07T14:55:35+08:00">2020-06-07</time>
+              <time title="Created: 2020-06-07 14:55:35" itemprop="dateCreated datePublished" datetime="2020-06-07T14:55:35+08:00">2020-06-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-14 22:41:03" itemprop="dateModified" datetime="2020-11-14T22:41:03+08:00">2020-11-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语单词</span></a>
+                </span>
             </span>
 
           
@@ -918,6 +1040,10 @@
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
       <div class="site-state-item site-state-tags">
         <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">tags</span>
@@ -952,8 +1078,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">John Doe</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
-  </div>
 
         
 

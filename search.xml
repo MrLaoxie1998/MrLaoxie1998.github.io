@@ -7,8 +7,38 @@
 
 <p>1.1 Kickstart 概述<br>通过传统的方式安装和部署计算机时，都需要通过人工干预的方<br>式完成安装。如果需要部署大量的类似功能的工作站或服务器，则需<br>要耗费大量的时间。同时传统的安装方式，每台计算机都需要光驱设<br>备及安装光盘等介质，会额外增加部署成本。因此，许多系统管理员<br>都希望能够通过一种网络化的无人值守的自动安装方式将操作系统<br>部署到目标计算机中。<br>（1）PXE<br>PXE(Pre-boot Execution Environment)是由 Intel 设计的协议，<br>计算机可以通过 PXE 协议从网络引导启动。PXE 协议在启动过程分为<br>client 和 server 两端，PXE 协议在运行过程中主要解决两个问题：<br>首先解决 IP 地址的问题，然后解决如何传输操作系统启动文件和安<br>装文件的问题。对于第一个问题，可以通过配置 DHCP Server 解决，<br>通常情况下 DHCP 服务器主要用于分配 IP 地址给客户端。但是在 PXE<br>环境下，DHCP 服务器需要额外加载 PXE 的相关配置。针对第二个问<br>题，在启动初期因为 PXE client 中有相应的 TFTP 客户端，可以通过<br>TFTP 协议到 TFTP 服务器中下载相关文件启动计算机。后期在安装过<br>程中，则通过 FTP 或 NFS 协议提供大量的操作系统安装文件的下载。<br>图 1 是基于 PXE 与 Kickstart 安装 Linux 操作系统的流程图，可以清<br>楚的了解 PXE 协议的工作过程。<br>（2）kickstart<br>通过传统的方式安装和部署计算机时，都会要求通过交互的方式，<br>回答各类问题，以完成安装和部署任务，过程繁琐，且无法实现自动<br>化。于是，很多系统管理员都希望通过自动化的安装方法将操作系统<br>安装到自己的个人的或者企业的计算机中。针对这些安装过程中需要<br>进行交互式回答的问题，Red Hat 公司创造了 Kickstart 的安装方法。<br>通过这种方法，系统管理员可以创建一个文件。通过这个文件，可以<br>解决所有在普通安装方式中，需要回答的问题。<br>Kickstart 的配置文件可以保存在网络中的文件服务器系统中，<br>也可以存放在个人计算机中，只要在安装过程中，安装程序能够读取<br>该文件，都可以顺利将操作系统安装。这种安装方法可以支持使用同<br>一个 kickstart 配置文件，在多台计算机中安装或部署 Fedora 与红<br>帽企业版 Linux。基于 Red Hat 的 CentOS 同样具备这种能力。所以<br>Kickstart 安装方式（无人值守）成为许多网络和系统管理员的理想<br>选择。<br>在 CentOS 中，通过安装相应的 Kickstart 配置工具，可以生成定<br>制的 ks 文件，熟悉相关语法的管理员也可以通过手工编写安装脚本<br>的方式生成 ks 文件，用于部署相应的计算机。</p>
 ]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>openLDAP+openLDAPadmin基本配置</title>
+    <url>/2020/06/09/Linux/openLDAP+openLDAPadmin%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python爬取网页代码</title>
+    <url>/2020/07/25/python/python%E7%88%AC%E5%8F%96%E7%BD%91%E9%A1%B5%E4%BB%A3%E7%A0%81/</url>
+    <content><![CDATA[<p>下面是我整理的python能用代码爬取的内容</p>
+<a id="more"></a>
+
+<h2 id="爬取淘宝的首页"><a href="#爬取淘宝的首页" class="headerlink" title="爬取淘宝的首页"></a><strong>爬取淘宝的首页</strong></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"> <span class="number">1</span> <span class="comment"># 请求库</span></span><br><span class="line"> <span class="number">2</span> <span class="keyword">import</span> requests</span><br><span class="line"> <span class="number">3</span> <span class="comment"># 用于解决爬取的数据格式化</span></span><br><span class="line"> <span class="number">4</span> <span class="keyword">import</span> io</span><br><span class="line"> <span class="number">5</span> <span class="keyword">import</span> sys</span><br><span class="line"> <span class="number">6</span> sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"> <span class="number">7</span> <span class="comment"># 爬取的网页链接</span></span><br><span class="line"> <span class="number">8</span> r= requests.get(<span class="string">&quot;https://www.taobao.com/&quot;</span>)</span><br><span class="line"> <span class="number">9</span> <span class="comment"># 类型</span></span><br><span class="line"><span class="number">10</span> <span class="comment"># print(type(r))</span></span><br><span class="line"><span class="number">11</span> print(r.status_code)</span><br><span class="line"><span class="number">12</span> <span class="comment"># 中文显示</span></span><br><span class="line"><span class="number">13</span> <span class="comment"># r.encoding=&#x27;utf-8&#x27;</span></span><br><span class="line"><span class="number">14</span> r.encoding=<span class="literal">None</span></span><br><span class="line"><span class="number">15</span> print(r.encoding)</span><br><span class="line"><span class="number">16</span> print(r.text)</span><br><span class="line"><span class="number">17</span> result = r.text</span><br></pre></td></tr></table></figure>
+
+<h2 id="爬取和解析淘宝网首页"><a href="#爬取和解析淘宝网首页" class="headerlink" title="爬取和解析淘宝网首页"></a><strong>爬取和解析淘宝网首页</strong></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"> <span class="number">1</span> <span class="comment"># 请求库</span></span><br><span class="line"> <span class="number">2</span> <span class="keyword">import</span> requests</span><br><span class="line"> <span class="number">3</span> <span class="comment"># 解析库</span></span><br><span class="line"> <span class="number">4</span> <span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"> <span class="number">5</span> <span class="comment"># 用于解决爬取的数据格式化</span></span><br><span class="line"> <span class="number">6</span> <span class="keyword">import</span> io</span><br><span class="line"> <span class="number">7</span> <span class="keyword">import</span> sys</span><br><span class="line"> <span class="number">8</span> sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"> <span class="number">9</span> <span class="comment"># 爬取的网页链接</span></span><br><span class="line"><span class="number">10</span> r= requests.get(<span class="string">&quot;https://www.taobao.com/&quot;</span>)</span><br><span class="line"><span class="number">11</span> <span class="comment"># 类型</span></span><br><span class="line"><span class="number">12</span> <span class="comment"># print(type(r))</span></span><br><span class="line"><span class="number">13</span> print(r.status_code)</span><br><span class="line"><span class="number">14</span> <span class="comment"># 中文显示</span></span><br><span class="line"><span class="number">15</span> <span class="comment"># r.encoding=&#x27;utf-8&#x27;</span></span><br><span class="line"><span class="number">16</span> r.encoding=<span class="literal">None</span></span><br><span class="line"><span class="number">17</span> print(r.encoding)</span><br><span class="line"><span class="number">18</span> print(r.text)</span><br><span class="line"><span class="number">19</span> result = r.text</span><br><span class="line"><span class="number">20</span> <span class="comment"># 再次封装，获取具体标签内的内容</span></span><br><span class="line"><span class="number">21</span> bs = BeautifulSoup(result,<span class="string">&#x27;html.parser&#x27;</span>)</span><br><span class="line"><span class="number">22</span> <span class="comment"># 具体标签</span></span><br><span class="line"><span class="number">23</span> print(<span class="string">&quot;解析后的数据&quot;</span>)</span><br><span class="line"><span class="number">24</span> print(bs.span)</span><br><span class="line"><span class="number">25</span> a=&#123;&#125;</span><br><span class="line"><span class="number">26</span> <span class="comment"># 获取已爬取内容中的script标签内容</span></span><br><span class="line"><span class="number">27</span> data=bs.find_all(<span class="string">&#x27;script&#x27;</span>)</span><br><span class="line"><span class="number">28</span> <span class="comment"># 获取已爬取内容中的td标签内容</span></span><br><span class="line"><span class="number">29</span> data1=bs.find_all(<span class="string">&#x27;td&#x27;</span>)</span><br><span class="line"><span class="number">30</span> <span class="comment"># 循环打印输出</span></span><br><span class="line"><span class="number">31</span> <span class="keyword">for</span> i <span class="keyword">in</span> data:</span><br><span class="line"><span class="number">32</span>     a=i.text</span><br><span class="line"><span class="number">33</span>     print(i.text,end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="number">34</span>     <span class="keyword">for</span> j <span class="keyword">in</span> data1:</span><br><span class="line"><span class="number">35</span>         print(j.text)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -64,16 +94,11 @@
 <li>构架选择太多（没有像 C# 这样的官方 .net 构架，也没有像 ruby 由于历史较短，构架开发的相对集中。Ruby on Rails 构架开发中小型web程序天下无敌）。不过这也从另一个侧面说明，python比较优秀，吸引的人才多，项目也多。</li>
 </ul>
 ]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
       <tags>
         <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>openLDAP+openLDAPadmin基本配置</title>
-    <url>/2020/06/09/Linux/openLDAP+openLDAPadmin%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -332,31 +357,6 @@
 <p>Pig</p>
 <p>Flume</p>
 <p>Spark2</p>
-]]></content>
-      <tags>
-        <tag>云计算</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python爬取网页代码</title>
-    <url>/2020/07/25/python/python%E7%88%AC%E5%8F%96%E7%BD%91%E9%A1%B5%E4%BB%A3%E7%A0%81/</url>
-    <content><![CDATA[<p>下面是我整理的python能用代码爬取的内容</p>
-<a id="more"></a>
-
-<h2 id="爬取淘宝的首页"><a href="#爬取淘宝的首页" class="headerlink" title="爬取淘宝的首页"></a><strong>爬取淘宝的首页</strong></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"> <span class="number">1</span> <span class="comment"># 请求库</span></span><br><span class="line"> <span class="number">2</span> <span class="keyword">import</span> requests</span><br><span class="line"> <span class="number">3</span> <span class="comment"># 用于解决爬取的数据格式化</span></span><br><span class="line"> <span class="number">4</span> <span class="keyword">import</span> io</span><br><span class="line"> <span class="number">5</span> <span class="keyword">import</span> sys</span><br><span class="line"> <span class="number">6</span> sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"> <span class="number">7</span> <span class="comment"># 爬取的网页链接</span></span><br><span class="line"> <span class="number">8</span> r= requests.get(<span class="string">&quot;https://www.taobao.com/&quot;</span>)</span><br><span class="line"> <span class="number">9</span> <span class="comment"># 类型</span></span><br><span class="line"><span class="number">10</span> <span class="comment"># print(type(r))</span></span><br><span class="line"><span class="number">11</span> print(r.status_code)</span><br><span class="line"><span class="number">12</span> <span class="comment"># 中文显示</span></span><br><span class="line"><span class="number">13</span> <span class="comment"># r.encoding=&#x27;utf-8&#x27;</span></span><br><span class="line"><span class="number">14</span> r.encoding=<span class="literal">None</span></span><br><span class="line"><span class="number">15</span> print(r.encoding)</span><br><span class="line"><span class="number">16</span> print(r.text)</span><br><span class="line"><span class="number">17</span> result = r.text</span><br></pre></td></tr></table></figure>
-
-<h2 id="爬取和解析淘宝网首页"><a href="#爬取和解析淘宝网首页" class="headerlink" title="爬取和解析淘宝网首页"></a><strong>爬取和解析淘宝网首页</strong></h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"> <span class="number">1</span> <span class="comment"># 请求库</span></span><br><span class="line"> <span class="number">2</span> <span class="keyword">import</span> requests</span><br><span class="line"> <span class="number">3</span> <span class="comment"># 解析库</span></span><br><span class="line"> <span class="number">4</span> <span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"> <span class="number">5</span> <span class="comment"># 用于解决爬取的数据格式化</span></span><br><span class="line"> <span class="number">6</span> <span class="keyword">import</span> io</span><br><span class="line"> <span class="number">7</span> <span class="keyword">import</span> sys</span><br><span class="line"> <span class="number">8</span> sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"> <span class="number">9</span> <span class="comment"># 爬取的网页链接</span></span><br><span class="line"><span class="number">10</span> r= requests.get(<span class="string">&quot;https://www.taobao.com/&quot;</span>)</span><br><span class="line"><span class="number">11</span> <span class="comment"># 类型</span></span><br><span class="line"><span class="number">12</span> <span class="comment"># print(type(r))</span></span><br><span class="line"><span class="number">13</span> print(r.status_code)</span><br><span class="line"><span class="number">14</span> <span class="comment"># 中文显示</span></span><br><span class="line"><span class="number">15</span> <span class="comment"># r.encoding=&#x27;utf-8&#x27;</span></span><br><span class="line"><span class="number">16</span> r.encoding=<span class="literal">None</span></span><br><span class="line"><span class="number">17</span> print(r.encoding)</span><br><span class="line"><span class="number">18</span> print(r.text)</span><br><span class="line"><span class="number">19</span> result = r.text</span><br><span class="line"><span class="number">20</span> <span class="comment"># 再次封装，获取具体标签内的内容</span></span><br><span class="line"><span class="number">21</span> bs = BeautifulSoup(result,<span class="string">&#x27;html.parser&#x27;</span>)</span><br><span class="line"><span class="number">22</span> <span class="comment"># 具体标签</span></span><br><span class="line"><span class="number">23</span> print(<span class="string">&quot;解析后的数据&quot;</span>)</span><br><span class="line"><span class="number">24</span> print(bs.span)</span><br><span class="line"><span class="number">25</span> a=&#123;&#125;</span><br><span class="line"><span class="number">26</span> <span class="comment"># 获取已爬取内容中的script标签内容</span></span><br><span class="line"><span class="number">27</span> data=bs.find_all(<span class="string">&#x27;script&#x27;</span>)</span><br><span class="line"><span class="number">28</span> <span class="comment"># 获取已爬取内容中的td标签内容</span></span><br><span class="line"><span class="number">29</span> data1=bs.find_all(<span class="string">&#x27;td&#x27;</span>)</span><br><span class="line"><span class="number">30</span> <span class="comment"># 循环打印输出</span></span><br><span class="line"><span class="number">31</span> <span class="keyword">for</span> i <span class="keyword">in</span> data:</span><br><span class="line"><span class="number">32</span>     a=i.text</span><br><span class="line"><span class="number">33</span>     print(i.text,end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="number">34</span>     <span class="keyword">for</span> j <span class="keyword">in</span> data1:</span><br><span class="line"><span class="number">35</span>         print(j.text)</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IaaS记事本</title>
-    <url>/2020/06/04/%E4%BA%91%E8%AE%A1%E7%AE%97/IaaS%E8%AE%B0%E4%BA%8B%E6%9C%AC/</url>
-    <content><![CDATA[<p>IaaS步骤（命令）<br>controller</p>
-<a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hostnamectl set-hostname controller</span><br><span class="line">rm -rf &#x2F;etc&#x2F;yum.repos.d&#x2F;*</span><br><span class="line">vi &#x2F;etc&#x2F;yum.repos.d&#x2F;local.repo</span><br></pre></td></tr></table></figure>
-<p>[centos]<br>baseurl=file:///opt/centos<br>gpgcheck=0<br>enabled=1<br>name=centos<br>[iaas]<br>baseurl=file:///opt/iaas-repo<br>gpgcheck=0<br>enabled=1<br>name=iaas<br>wq<br>上传xiandian-1511、CentOS-7<br>ls<br>mkdir /opt/centos<br>mkdir /opt/iaas<br>mount -o loop CentOS-7-x86_64-DVD-1511.iso /opt/centos/<br>mount -o loop XianDian-IaaS-V2.2.iso /opt/iaas<br>yum clean all<br>yum list<br>yum listall vsftpd<br>vi /etc/vsftpd/vsftpd.conf<br>anon_root=/opt/<br>service vsftpd  start<br>systemctl stop firewalld<br>compute<br>hostnamectl set-hostname compute<br>rm -rf /etc/yum.repos.d/*<br>vi /etc/yum.repos.d/ftp.repo<br>[centos]<br>baseurl=ftp:///172.16.30.10/centos<br>gpgcheck=0<br>enabled=1<br>name=centos<br>[iaas]<br>baseurl=ftp:///172.16.30.10/iaas/iaas-repo<br>gpgcheck=0<br>enabled=1<br>name=iaas<br>wq<br>yum clean all<br>yum list<br>controller&amp;compute<br>yum install iaas-xiandian<br>vi /etc/xiandian/openrc.sh<br>HOST_IP=Controller外部IP地址<br>HOST_NAME=controller<br>HOST_IP_NODE=compute外部IP地址<br>HOST_NAME_NODE=compute<br>RABBIT_USER=openstack<br>RABBIT_PASS=000000<br>DB_PASS=000000<br>DOMAIN_NAME=demo<br>ADMIN_PASS=000000<br>DEMO_PASS=000000<br>KEYSTONE_DBPASS=000000<br>GLANCE_DBPASS=000000<br>GLANCE_PASS=000000<br>NOVA_DBPASS=000000<br>NOVA_PASS=000000<br>NEUTRON_DBPASS=000000<br>NEUTRON_PASS=000000<br>INTERFACE_NAME=外部网卡名称<br>minvlan=<br>maxvlan=<br>CINDER_DBPASS=000000<br>CINDER_PASS=000000<br>BLOCK_DISK=md126p6<br>TROVE_DBPASS=000000<br>TROVE_PASS=000000<br>SWIFT_PASS=000000<br>OBJECT_DISK=md126p7<br>STORAGE_LOCAL_NET_IP=compute内部链接外部网卡地址<br>HEAT_DBPASS=000000<br>HEAT_PASS=000000<br>CEILOMETER_DBPASS=000000<br>CEILOMETER_PASS=000000<br>AODH_DBPASS=000000<br>AODH_PASS=000000<br>compute<br>parted /dev/md126<br>mkpart cinder 选择结束区盘 扩展区盘<br>p<br>mkpart swift1 3269GB 3279g<br>p<br>quit<br>mkfs.xfs /dev/md126p6<br>yum install iaas-xiandian<br>在controller点查询cat /etc/xiandian/openrc.sh |grep -v ^$ |grep -v ^$<br>然后将设置好的数值复制粘贴进compute里面。<br>controller&amp;compute<br>iaas-pre-host.sh<br>conteoller<br>iaas-install-mysql.sh<br>iaas-install-glance.sh<br>iaas-install-neutron-controller.sh<br>compute<br>iaas-install-nova-compute.sh<br>iaas-install-neutron-compute.sh<br>controller<br>iaas-install-nova-controller.sh<br>iaas-install-neutron-controller-gre.sh<br>compute<br>iaas-install-neutron-compute-gre.sh<br>controller<br>iaas-install-dashboard.sh<br>然后在浏览器打开controller的IP地址链接IP地址/dashboard<br>输入用户名和密码，进入后台<br>点击管理员在点击网络，然后添加网络，创建网络名称。选择项目类型admin<br>供应商网络类型为GRE，段ID为1，管理状态为UP，既不是共享也不是外部网络都取消勾选<br>然后点进去网络，点击创建子网，子网名称为int-sub-net，网络地址为:10.0.0.0/24,网关IP<br>为10.0.0.1,点击下一步,无需规划直接创建。<br>然后在创建一个网络，名称为ext-net,项目是admin供应商网络类型为GRE,段ID为2，勾选上外部网络<br>创建后在点进去创建子网，子网名称为:ext-sub-net,网络地址为172.16.31.0/24,网关IP为<br>172.16.31.1,下一步，无需规划直接创建。<br>回到项目-网络，点击路由,然后新建路由ext-router,管理状态为UP，外部网络选择刚刚创立的ext-net，点击创建路由<br>然后选中路由选择接口，选择子网接口，然后确定。<br>然后选择进网络拓扑,查看一遍拓扑后在选择访问&amp;安全，然后选择管理规则。<br>进入后，勾选所有规则全部删除，然后自创规则。点击添加规则，点击所有ICMP协议出和入都添加一遍。在创建一遍规则<br>添加定制TCP规则所有出和入，在创建一边规则，添加定制UDP规则所有出和入<br>完成后回到controller命令行界面,输入命令iaas-install-cinder-controller.sh开始安装cinder块服务。<br>完成后回到compute命令行界面,输入命令iaas-install-cinder-compute.sh开始安装cinder块服务。<br>接着回到controller命令行界面，输入命令/source /etc/keystone/admin-openrc.sh<br>输入完毕后在输入指令:iaas-install-swift-controller.sh<br>完成后回到compute命令行界面，输入命令iaas-install-swift-compute.sh,部署途中需要输入yes确认执行,然后在输入一遍密码。<br>回到controller命令行页面，输入命令：iaas-install-trove.sh执行。将switch和cinder进行整合。<br>接着在输入命令:iaas-install-heat.sh进行部署。<br>接着在输入命令:iaas-install-ceilometer-controller.sh进行最后一个服务部署。<br>controller部署完成，回到compute<br>在compute命令行下输入:iaas-install-ceilometer-compute.sh<br>至此，所有iaas云平台搭建部分结束。</p>
 ]]></content>
       <tags>
         <tag>云计算</tag>
@@ -772,16 +772,15 @@
       </tags>
   </entry>
   <entry>
-    <title>今日日记0w0~</title>
-    <url>/2020/06/03/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-1/</url>
-    <content><![CDATA[<p>###今日份笔记 2020年6月3号</p>
+    <title>IaaS记事本</title>
+    <url>/2020/06/04/%E4%BA%91%E8%AE%A1%E7%AE%97/IaaS%E8%AE%B0%E4%BA%8B%E6%9C%AC/</url>
+    <content><![CDATA[<p>IaaS步骤（命令）<br>controller</p>
 <a id="more"></a>
-<p>&ensp;&ensp;这一天的工作内容不多，早上起来在办公室内坐了一会。去忙搬凳子、搬桌子。可能领导觉得“奠基”那个石头板子放在那里觉得不是很显眼还是什么别的理由，就叫我们把这个石板搬到了艺术楼的展览区里面先放着。说实话，以我这个体格来讲完全不能扛得住，太重了！都是帮忙手托着和其他同事一块搬得。然后就是搬凳子让领导和六年级毕业生合影留念，对了。今天的小学六年级已经迎来毕业了，确实是对于小学生来说小学阶段解脱，初中的生涯即将开始进行。历练的阶段上升了一个台阶。讲真在伊顿工作还是挺不错的，很多小学生都会和老师打招呼，初中的也很有礼貌。虽然我不是教师，但是身为网络管理员。别人看到我就叫我老师我还是觉得挺有意思的哈哈哈。<br>今天忙的内容不多，给一个老师修复了笔记本电脑，把老师的文件进行转存回她的电脑上，因为已经格过盘了。资料都在我移动硬盘里面。<br>&ensp;&ensp;因为门禁系统损坏。于是和主管沟通之下，主管同意我申购一块新的主板，因为之前和厂商那边沟通说是无法维修所以要我们重新换一个主板，我们要求在保修期内直接换一个新的主板不可以吗？那边的态度很明确，就是要我们买一块新的主板。其他条件不谈。这让我感觉现在的商家真的态度很不端正，只要装好了东西，修不好按道理在保修期内是可以更换的，没有道理说让买家重新买一块板子的。<br>&ensp;&ensp;中午的时候，吃了一顿饭。匆匆忙忙打个卡去把报告厅的空调全部关闭，应该告诉那些老师，在走之前要把空调关闭的。到了下午一点半的时候，又返回报告厅去把空调开开给下一波拍毕业照的学生使用。然后前往了食堂，目前食堂的二楼监控无法显示，那么我就找来梯子去一楼的壁挂机柜那里巡线，寻对应后，因为电视是通过转线器来接受和发送信号的。所以一楼和二楼我跑了大概有12回，就为了测试到底是哪个分线器出问题了(线路是通的，就是转线器的问题)。终于给我找到一个出问题的转线器，询问那边的承包商，说是在保修期内，可以免费更换一个新的，很好。<br>&ensp;&ensp;下班的时候，我的同事找到我。问我是否有空，帮忙调试音乐，这样的原因是明天的小学生四五六年级需要进行期中考试啦！于是我先过去开始做调试音乐工作，我还傻乎乎的一个个点击进行添加，后来我同事赶到，告诉我这样是错误的，直接就是另存为就可以做到复制的效果了。不用那么麻烦的。于是我和他忙了将近1个小时45分钟左右。终于做好了明天考试的音乐调试工作。走的时候发现另一个同事说保安亭电话打不通，我测试了一下网线和电话是否正常拨通，发现是可以的，于是去到了同事办公室想了解一下是不是她那边无法拨通，发现原来是保安亭有几次没接电话就告诉我以为保安室电话出问题了要我过去查看，哎这种情况真的是…..<br>&ensp;&ensp;今天的状态不错，我现在觉得。只要中午不要睡太久，我就可以很有精神的做很多事情。从表情上也不会让别人看出来我有很严重的熬夜！！加油，谢华翰。</p>
-<p>&ensp;&ensp;日语每日一句,映像upup↑ :sparkles:<br>&ensp;&ensp;<blockquote><p>あなたの人生はあなたのものだよ。<br>你的人生属于你自己</p>
-<footer><strong>《unnatural》</strong><cite>非自然死亡</cite></footer></blockquote></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hostnamectl set-hostname controller</span><br><span class="line">rm -rf &#x2F;etc&#x2F;yum.repos.d&#x2F;*</span><br><span class="line">vi &#x2F;etc&#x2F;yum.repos.d&#x2F;local.repo</span><br></pre></td></tr></table></figure>
+<p>[centos]<br>baseurl=file:///opt/centos<br>gpgcheck=0<br>enabled=1<br>name=centos<br>[iaas]<br>baseurl=file:///opt/iaas-repo<br>gpgcheck=0<br>enabled=1<br>name=iaas<br>wq<br>上传xiandian-1511、CentOS-7<br>ls<br>mkdir /opt/centos<br>mkdir /opt/iaas<br>mount -o loop CentOS-7-x86_64-DVD-1511.iso /opt/centos/<br>mount -o loop XianDian-IaaS-V2.2.iso /opt/iaas<br>yum clean all<br>yum list<br>yum listall vsftpd<br>vi /etc/vsftpd/vsftpd.conf<br>anon_root=/opt/<br>service vsftpd  start<br>systemctl stop firewalld<br>compute<br>hostnamectl set-hostname compute<br>rm -rf /etc/yum.repos.d/*<br>vi /etc/yum.repos.d/ftp.repo<br>[centos]<br>baseurl=ftp:///172.16.30.10/centos<br>gpgcheck=0<br>enabled=1<br>name=centos<br>[iaas]<br>baseurl=ftp:///172.16.30.10/iaas/iaas-repo<br>gpgcheck=0<br>enabled=1<br>name=iaas<br>wq<br>yum clean all<br>yum list<br>controller&amp;compute<br>yum install iaas-xiandian<br>vi /etc/xiandian/openrc.sh<br>HOST_IP=Controller外部IP地址<br>HOST_NAME=controller<br>HOST_IP_NODE=compute外部IP地址<br>HOST_NAME_NODE=compute<br>RABBIT_USER=openstack<br>RABBIT_PASS=000000<br>DB_PASS=000000<br>DOMAIN_NAME=demo<br>ADMIN_PASS=000000<br>DEMO_PASS=000000<br>KEYSTONE_DBPASS=000000<br>GLANCE_DBPASS=000000<br>GLANCE_PASS=000000<br>NOVA_DBPASS=000000<br>NOVA_PASS=000000<br>NEUTRON_DBPASS=000000<br>NEUTRON_PASS=000000<br>INTERFACE_NAME=外部网卡名称<br>minvlan=<br>maxvlan=<br>CINDER_DBPASS=000000<br>CINDER_PASS=000000<br>BLOCK_DISK=md126p6<br>TROVE_DBPASS=000000<br>TROVE_PASS=000000<br>SWIFT_PASS=000000<br>OBJECT_DISK=md126p7<br>STORAGE_LOCAL_NET_IP=compute内部链接外部网卡地址<br>HEAT_DBPASS=000000<br>HEAT_PASS=000000<br>CEILOMETER_DBPASS=000000<br>CEILOMETER_PASS=000000<br>AODH_DBPASS=000000<br>AODH_PASS=000000<br>compute<br>parted /dev/md126<br>mkpart cinder 选择结束区盘 扩展区盘<br>p<br>mkpart swift1 3269GB 3279g<br>p<br>quit<br>mkfs.xfs /dev/md126p6<br>yum install iaas-xiandian<br>在controller点查询cat /etc/xiandian/openrc.sh |grep -v ^$ |grep -v ^$<br>然后将设置好的数值复制粘贴进compute里面。<br>controller&amp;compute<br>iaas-pre-host.sh<br>conteoller<br>iaas-install-mysql.sh<br>iaas-install-glance.sh<br>iaas-install-neutron-controller.sh<br>compute<br>iaas-install-nova-compute.sh<br>iaas-install-neutron-compute.sh<br>controller<br>iaas-install-nova-controller.sh<br>iaas-install-neutron-controller-gre.sh<br>compute<br>iaas-install-neutron-compute-gre.sh<br>controller<br>iaas-install-dashboard.sh<br>然后在浏览器打开controller的IP地址链接IP地址/dashboard<br>输入用户名和密码，进入后台<br>点击管理员在点击网络，然后添加网络，创建网络名称。选择项目类型admin<br>供应商网络类型为GRE，段ID为1，管理状态为UP，既不是共享也不是外部网络都取消勾选<br>然后点进去网络，点击创建子网，子网名称为int-sub-net，网络地址为:10.0.0.0/24,网关IP<br>为10.0.0.1,点击下一步,无需规划直接创建。<br>然后在创建一个网络，名称为ext-net,项目是admin供应商网络类型为GRE,段ID为2，勾选上外部网络<br>创建后在点进去创建子网，子网名称为:ext-sub-net,网络地址为172.16.31.0/24,网关IP为<br>172.16.31.1,下一步，无需规划直接创建。<br>回到项目-网络，点击路由,然后新建路由ext-router,管理状态为UP，外部网络选择刚刚创立的ext-net，点击创建路由<br>然后选中路由选择接口，选择子网接口，然后确定。<br>然后选择进网络拓扑,查看一遍拓扑后在选择访问&amp;安全，然后选择管理规则。<br>进入后，勾选所有规则全部删除，然后自创规则。点击添加规则，点击所有ICMP协议出和入都添加一遍。在创建一遍规则<br>添加定制TCP规则所有出和入，在创建一边规则，添加定制UDP规则所有出和入<br>完成后回到controller命令行界面,输入命令iaas-install-cinder-controller.sh开始安装cinder块服务。<br>完成后回到compute命令行界面,输入命令iaas-install-cinder-compute.sh开始安装cinder块服务。<br>接着回到controller命令行界面，输入命令/source /etc/keystone/admin-openrc.sh<br>输入完毕后在输入指令:iaas-install-swift-controller.sh<br>完成后回到compute命令行界面，输入命令iaas-install-swift-compute.sh,部署途中需要输入yes确认执行,然后在输入一遍密码。<br>回到controller命令行页面，输入命令：iaas-install-trove.sh执行。将switch和cinder进行整合。<br>接着在输入命令:iaas-install-heat.sh进行部署。<br>接着在输入命令:iaas-install-ceilometer-controller.sh进行最后一个服务部署。<br>controller部署完成，回到compute<br>在compute命令行下输入:iaas-install-ceilometer-compute.sh<br>至此，所有iaas云平台搭建部分结束。</p>
 ]]></content>
       <tags>
-        <tag>日记</tag>
+        <tag>云计算</tag>
       </tags>
   </entry>
   <entry>
@@ -963,26 +962,12 @@
   </entry>
   <entry>
     <title>今日日记0w0~</title>
-    <url>/2020/06/06/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-4/</url>
-    <content><![CDATA[<h3 id="今日份笔记-2020年6月6号"><a href="#今日份笔记-2020年6月6号" class="headerlink" title="今日份笔记 2020年6月6号"></a>今日份笔记 2020年6月6号</h3><a id="more"></a>
-<p>&ensp;&ensp;今天是星期六周末，因为我没有写星期六的日记，所以拖到了星期天再写起来，也就是说遇到了一些事情就懒得写星期六的日记了哈哈哈，懒惰感还真的是想出来了就开始执行了呢。<br>&ensp;&ensp;周末的话，还真的没什么事情要忙的。今天上午就睡觉都睡到了上午10点10分左右。想一想还真的挺爽，毕竟从晚上12点开始睡到现在。精力充沛的感觉真好！<br>&ensp;&ensp;本来是想打算写一下最近学习了哪些内容和实习周记的，但是又想去把行政楼的那些展示面板更新一下服务器IP，最后就干了一个写实习周记的事情去了。其他两点我都没做呀。<br>&ensp;&ensp;说实话周末也在下雨，这个让我感觉很烦躁，因为只要一下雨我就啥事也做不了。但是下午呢，我还是答应了王恒帮他去拿快递在寄送给他，简直了一份快递硬是拆成两个快递来送。我都不懂那些快递公司和快递小哥怎么想的，反正是左手抱着快递右手控制着电单车的油门，到了菜鸟快递，里面的那位小姐姐挺好看的，而且穿着汉服。这个小姐姐我估计是来赚零钱才在菜鸟快递里面做事情，菜鸟快递整个店就她一位在掌管。估计是为了转零花钱买cos服吧，我也不知道自己猜的对不对了哈哈哈哈。人家呢，说不定也是自己的喜好呢，穿汉服。<br>&ensp;&ensp;送完了货，把钥匙还给辉哥。然后回到房间里面，就开始给电脑杀毒。这一点上面我我很开心，开心的是重装完电脑可以安装日语输入法了。担心的是杀完了蠕虫病毒之后发现，每次下载还是有蠕虫病毒的迹象。说是什么。。。。。。emmmm我又忘记了那个蠕虫病毒名字了，反正是S开头的,后缀为.exe，这种病毒很骚，只会感染你的exe软件，让你的软件无法正常使用。总之你下载什么它都会进行破坏让windows无法识别该软件是否有商家来源。<br>&ensp;&ensp;不过昨天晚上我又试了一下发现，病毒给火绒杀干净了。就不会担心还会有蠕虫病毒存在在电脑内的风险存在了。哎，真的是刺激的一天呀哈哈哈。</p>
-<p>&ensp;&ensp;日语每日一句,映像upup↑ :sparkles:<br>&ensp;&ensp;<blockquote><p> 誰かのことを大切にしたいと思ってる人はきつと誰かの大切な人なんだ。<br>想要珍惜某个人的人一定是某个人最重要的人</p>
-<footer><strong>《潭州教育》</strong><cite>QiuD老师</cite></footer></blockquote></p>
-]]></content>
-      <tags>
-        <tag>日记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>今日日记0w0~</title>
-    <url>/2020/06/07/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-5/</url>
-    <content><![CDATA[<p>###今日份笔记 2020年6月7号</p>
+    <url>/2020/06/03/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-1/</url>
+    <content><![CDATA[<p>###今日份笔记 2020年6月3号</p>
 <a id="more"></a>
-<p>&ensp;&ensp;今天定了一个闹钟，可惜我还是没有按时起床。哎星期天呀<del>~</del>太懒啦，于是关掉闹钟又睡了一小时的回笼觉直到10点多才起来，回了一下田棋信息。田棋咧当然是同意的，你问我同意什么？！我和他昨天商讨了关于公主连接玩工会战的事情，他想解散这个工会，我是同意的，于是他组织了一下文字发给我这么一段话:<br>&ensp;&ensp;一起蛤啤原副会长, 湊阿库娅：今天在这里告诉大家一个遗憾的消息经过我和憨批原会长老谢的商量我们决定解散工会，因为人少活跃度也低工会战也没法拿到高的奖励所以我们只能选择另寻他路，在这里我祝大家柳暗花明又一村我们将在团队战结束后的数日内解散工会，敬请谅解。<br>&ensp;&ensp;嘛这种事情我也觉得该解散就解散吧,反正公会战我又不会打。又要想好久队伍配置。感觉时间上就费了不少了哈哈<br>&ensp;&ensp;今天中午的饭菜还不错呀，从各种意义上来说。有烤鱼和白菜，配上一碗汤和一碗饭，美滋滋。<br>&ensp;&ensp;下午的时候，碰到左亮主任维修的要求，我就赶了过去。因为左亮主任说是office 2007里面的owrd无法转换成pdf，所以问我怎么解决，我就回到了自己办公室，下载好了office plus 2010给他先安装好，然后就可以使用了，但是没有做注册这一步，还有九四重新给他的打印机(HP LaserJet 1020)装了驱动，就可以运行成功了。<br>&ensp;&ensp;嘛晚上的时候，和老哥聊了很多的话题呀，比如最近看的动漫呀，玩的游戏呀，让他在美国要保证自己的人身安全呀，自我保护啊这些的内容，因为最近不是美国在因为黑人被警察慢慢折磨死的事情，现在全美都在整大爆发的活动，我还推荐老哥让他玩一下美末、全境封锁、和看门狗哈哈哈哈。老哥和我一样也喜欢玩怀旧的RA3，但是我是没想到他居然玩过了日冕MOD，这个我都没玩过呀，可以的老哥。<br>&ensp;&ensp;现在开了一个新档，正在学习心理学，打算把学到的内容都记录下来。之后就得要回顾一下Linux和BigData这一块了。<br>&ensp;&ensp;还有就是之后的日语笔记，每天一有空的话就写，绝对不能断掉学习的内容，要是断掉了的话。那我可就要废了，那一次星期五的晚上妈妈说的那句话特别有她的道理，人如果只限于自己的工作范围觉得ok觉得好的话，那么之后的发展是没机会了，要想往更好的道路上发展，就必须要能学到的都去学，趁早趁年轻，这些话在我脑海里到现在还挥之不去，这就证明了。我发现我脑海里就印刻了这句话了，说明我已经开始重视起来这些事情了，也对。相对于老妈说的那些话，我发现自己还有很多不足很多需要学习的地方。教师证、Linux、网络运维、网络安全、大数据、红帽技术、华为、思科、PC、交换机、核心交换机、路由器、服务器、AC、AP这些。我发现都是需要反复去学习的，还有那些维护的技巧。我知道现在的PC维护行业也挺难做的，什么都得要接触到，硬软件都需要进行学习。出现的问题如何维护，出现的故障如何修理，出现的软件问题如何修复。出现的硬件问题就需要做出排查并作出是否需要更换还是修复好的判断能力。</p>
-<p>&ensp;&ensp;往后，还有很长的路需要走。这些我都要视为我的奋斗目标。并且不断地去追赶直至获得。</p>
-<p>&ensp;&ensp;日语每日一句,映像upup↑ :sparkles:</p>
-<p>&ensp;&ensp;<blockquote><p> 他人と比較して、他人が自分より優れていたとしても、それは恥ではない。しかし、去年の自分より今年の自分が優れていないのは立派な恥だ。<br>和别人相比自己不够优秀不算丢人。但是，如果今年的自己不比去年的自己优秀就是奇耻大辱。</p>
-<footer><strong>《潭州教育》</strong><cite>大婷子老师</cite></footer></blockquote></p>
+<p>&ensp;&ensp;这一天的工作内容不多，早上起来在办公室内坐了一会。去忙搬凳子、搬桌子。可能领导觉得“奠基”那个石头板子放在那里觉得不是很显眼还是什么别的理由，就叫我们把这个石板搬到了艺术楼的展览区里面先放着。说实话，以我这个体格来讲完全不能扛得住，太重了！都是帮忙手托着和其他同事一块搬得。然后就是搬凳子让领导和六年级毕业生合影留念，对了。今天的小学六年级已经迎来毕业了，确实是对于小学生来说小学阶段解脱，初中的生涯即将开始进行。历练的阶段上升了一个台阶。讲真在伊顿工作还是挺不错的，很多小学生都会和老师打招呼，初中的也很有礼貌。虽然我不是教师，但是身为网络管理员。别人看到我就叫我老师我还是觉得挺有意思的哈哈哈。<br>今天忙的内容不多，给一个老师修复了笔记本电脑，把老师的文件进行转存回她的电脑上，因为已经格过盘了。资料都在我移动硬盘里面。<br>&ensp;&ensp;因为门禁系统损坏。于是和主管沟通之下，主管同意我申购一块新的主板，因为之前和厂商那边沟通说是无法维修所以要我们重新换一个主板，我们要求在保修期内直接换一个新的主板不可以吗？那边的态度很明确，就是要我们买一块新的主板。其他条件不谈。这让我感觉现在的商家真的态度很不端正，只要装好了东西，修不好按道理在保修期内是可以更换的，没有道理说让买家重新买一块板子的。<br>&ensp;&ensp;中午的时候，吃了一顿饭。匆匆忙忙打个卡去把报告厅的空调全部关闭，应该告诉那些老师，在走之前要把空调关闭的。到了下午一点半的时候，又返回报告厅去把空调开开给下一波拍毕业照的学生使用。然后前往了食堂，目前食堂的二楼监控无法显示，那么我就找来梯子去一楼的壁挂机柜那里巡线，寻对应后，因为电视是通过转线器来接受和发送信号的。所以一楼和二楼我跑了大概有12回，就为了测试到底是哪个分线器出问题了(线路是通的，就是转线器的问题)。终于给我找到一个出问题的转线器，询问那边的承包商，说是在保修期内，可以免费更换一个新的，很好。<br>&ensp;&ensp;下班的时候，我的同事找到我。问我是否有空，帮忙调试音乐，这样的原因是明天的小学生四五六年级需要进行期中考试啦！于是我先过去开始做调试音乐工作，我还傻乎乎的一个个点击进行添加，后来我同事赶到，告诉我这样是错误的，直接就是另存为就可以做到复制的效果了。不用那么麻烦的。于是我和他忙了将近1个小时45分钟左右。终于做好了明天考试的音乐调试工作。走的时候发现另一个同事说保安亭电话打不通，我测试了一下网线和电话是否正常拨通，发现是可以的，于是去到了同事办公室想了解一下是不是她那边无法拨通，发现原来是保安亭有几次没接电话就告诉我以为保安室电话出问题了要我过去查看，哎这种情况真的是…..<br>&ensp;&ensp;今天的状态不错，我现在觉得。只要中午不要睡太久，我就可以很有精神的做很多事情。从表情上也不会让别人看出来我有很严重的熬夜！！加油，谢华翰。</p>
+<p>&ensp;&ensp;日语每日一句,映像upup↑ :sparkles:<br>&ensp;&ensp;<blockquote><p>あなたの人生はあなたのものだよ。<br>你的人生属于你自己</p>
+<footer><strong>《unnatural》</strong><cite>非自然死亡</cite></footer></blockquote></p>
 ]]></content>
       <tags>
         <tag>日记</tag>
@@ -1015,11 +1000,27 @@
       </tags>
   </entry>
   <entry>
-    <title>今日笔记0w0~</title>
-    <url>/2020/06/09/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-7/</url>
-    <content><![CDATA[<p>###今日份笔记 2020年6月9号</p>
+    <title>今日日记0w0~</title>
+    <url>/2020/06/06/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-4/</url>
+    <content><![CDATA[<h3 id="今日份笔记-2020年6月6号"><a href="#今日份笔记-2020年6月6号" class="headerlink" title="今日份笔记 2020年6月6号"></a>今日份笔记 2020年6月6号</h3><a id="more"></a>
+<p>&ensp;&ensp;今天是星期六周末，因为我没有写星期六的日记，所以拖到了星期天再写起来，也就是说遇到了一些事情就懒得写星期六的日记了哈哈哈，懒惰感还真的是想出来了就开始执行了呢。<br>&ensp;&ensp;周末的话，还真的没什么事情要忙的。今天上午就睡觉都睡到了上午10点10分左右。想一想还真的挺爽，毕竟从晚上12点开始睡到现在。精力充沛的感觉真好！<br>&ensp;&ensp;本来是想打算写一下最近学习了哪些内容和实习周记的，但是又想去把行政楼的那些展示面板更新一下服务器IP，最后就干了一个写实习周记的事情去了。其他两点我都没做呀。<br>&ensp;&ensp;说实话周末也在下雨，这个让我感觉很烦躁，因为只要一下雨我就啥事也做不了。但是下午呢，我还是答应了王恒帮他去拿快递在寄送给他，简直了一份快递硬是拆成两个快递来送。我都不懂那些快递公司和快递小哥怎么想的，反正是左手抱着快递右手控制着电单车的油门，到了菜鸟快递，里面的那位小姐姐挺好看的，而且穿着汉服。这个小姐姐我估计是来赚零钱才在菜鸟快递里面做事情，菜鸟快递整个店就她一位在掌管。估计是为了转零花钱买cos服吧，我也不知道自己猜的对不对了哈哈哈哈。人家呢，说不定也是自己的喜好呢，穿汉服。<br>&ensp;&ensp;送完了货，把钥匙还给辉哥。然后回到房间里面，就开始给电脑杀毒。这一点上面我我很开心，开心的是重装完电脑可以安装日语输入法了。担心的是杀完了蠕虫病毒之后发现，每次下载还是有蠕虫病毒的迹象。说是什么。。。。。。emmmm我又忘记了那个蠕虫病毒名字了，反正是S开头的,后缀为.exe，这种病毒很骚，只会感染你的exe软件，让你的软件无法正常使用。总之你下载什么它都会进行破坏让windows无法识别该软件是否有商家来源。<br>&ensp;&ensp;不过昨天晚上我又试了一下发现，病毒给火绒杀干净了。就不会担心还会有蠕虫病毒存在在电脑内的风险存在了。哎，真的是刺激的一天呀哈哈哈。</p>
+<p>&ensp;&ensp;日语每日一句,映像upup↑ :sparkles:<br>&ensp;&ensp;<blockquote><p> 誰かのことを大切にしたいと思ってる人はきつと誰かの大切な人なんだ。<br>想要珍惜某个人的人一定是某个人最重要的人</p>
+<footer><strong>《潭州教育》</strong><cite>QiuD老师</cite></footer></blockquote></p>
+]]></content>
+      <tags>
+        <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>今日日记0w0~</title>
+    <url>/2020/06/07/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-5/</url>
+    <content><![CDATA[<p>###今日份笔记 2020年6月7号</p>
 <a id="more"></a>
-<p>&ensp;&ensp;我想解释一下，今天不写笔记存粹是时间不够，我还要学习云计算、社会心理学这些玩意哈哈哈哈。</p>
+<p>&ensp;&ensp;今天定了一个闹钟，可惜我还是没有按时起床。哎星期天呀<del>~</del>太懒啦，于是关掉闹钟又睡了一小时的回笼觉直到10点多才起来，回了一下田棋信息。田棋咧当然是同意的，你问我同意什么？！我和他昨天商讨了关于公主连接玩工会战的事情，他想解散这个工会，我是同意的，于是他组织了一下文字发给我这么一段话:<br>&ensp;&ensp;一起蛤啤原副会长, 湊阿库娅：今天在这里告诉大家一个遗憾的消息经过我和憨批原会长老谢的商量我们决定解散工会，因为人少活跃度也低工会战也没法拿到高的奖励所以我们只能选择另寻他路，在这里我祝大家柳暗花明又一村我们将在团队战结束后的数日内解散工会，敬请谅解。<br>&ensp;&ensp;嘛这种事情我也觉得该解散就解散吧,反正公会战我又不会打。又要想好久队伍配置。感觉时间上就费了不少了哈哈<br>&ensp;&ensp;今天中午的饭菜还不错呀，从各种意义上来说。有烤鱼和白菜，配上一碗汤和一碗饭，美滋滋。<br>&ensp;&ensp;下午的时候，碰到左亮主任维修的要求，我就赶了过去。因为左亮主任说是office 2007里面的owrd无法转换成pdf，所以问我怎么解决，我就回到了自己办公室，下载好了office plus 2010给他先安装好，然后就可以使用了，但是没有做注册这一步，还有九四重新给他的打印机(HP LaserJet 1020)装了驱动，就可以运行成功了。<br>&ensp;&ensp;嘛晚上的时候，和老哥聊了很多的话题呀，比如最近看的动漫呀，玩的游戏呀，让他在美国要保证自己的人身安全呀，自我保护啊这些的内容，因为最近不是美国在因为黑人被警察慢慢折磨死的事情，现在全美都在整大爆发的活动，我还推荐老哥让他玩一下美末、全境封锁、和看门狗哈哈哈哈。老哥和我一样也喜欢玩怀旧的RA3，但是我是没想到他居然玩过了日冕MOD，这个我都没玩过呀，可以的老哥。<br>&ensp;&ensp;现在开了一个新档，正在学习心理学，打算把学到的内容都记录下来。之后就得要回顾一下Linux和BigData这一块了。<br>&ensp;&ensp;还有就是之后的日语笔记，每天一有空的话就写，绝对不能断掉学习的内容，要是断掉了的话。那我可就要废了，那一次星期五的晚上妈妈说的那句话特别有她的道理，人如果只限于自己的工作范围觉得ok觉得好的话，那么之后的发展是没机会了，要想往更好的道路上发展，就必须要能学到的都去学，趁早趁年轻，这些话在我脑海里到现在还挥之不去，这就证明了。我发现我脑海里就印刻了这句话了，说明我已经开始重视起来这些事情了，也对。相对于老妈说的那些话，我发现自己还有很多不足很多需要学习的地方。教师证、Linux、网络运维、网络安全、大数据、红帽技术、华为、思科、PC、交换机、核心交换机、路由器、服务器、AC、AP这些。我发现都是需要反复去学习的，还有那些维护的技巧。我知道现在的PC维护行业也挺难做的，什么都得要接触到，硬软件都需要进行学习。出现的问题如何维护，出现的故障如何修理，出现的软件问题如何修复。出现的硬件问题就需要做出排查并作出是否需要更换还是修复好的判断能力。</p>
+<p>&ensp;&ensp;往后，还有很长的路需要走。这些我都要视为我的奋斗目标。并且不断地去追赶直至获得。</p>
+<p>&ensp;&ensp;日语每日一句,映像upup↑ :sparkles:</p>
+<p>&ensp;&ensp;<blockquote><p> 他人と比較して、他人が自分より優れていたとしても、それは恥ではない。しかし、去年の自分より今年の自分が優れていないのは立派な恥だ。<br>和别人相比自己不够优秀不算丢人。但是，如果今年的自己不比去年的自己优秀就是奇耻大辱。</p>
+<footer><strong>《潭州教育》</strong><cite>大婷子老师</cite></footer></blockquote></p>
 ]]></content>
       <tags>
         <tag>日记</tag>
@@ -1034,6 +1035,17 @@
 <p>&ensp;&ensp;日语每日一句,映像upup↑ :sparkles:</p>
 <p>&ensp;&ensp;<blockquote><p> とにかく人間は徹底しなければだめです。もし徹底することができなければ、普通の人間です。<br>不管怎么说做人必须有始有终。如果不能有始有终的话，就是个普通人。</p>
 <footer><strong>《潭州教育》</strong><cite>大婷子老师</cite></footer></blockquote></p>
+]]></content>
+      <tags>
+        <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>今日笔记0w0~</title>
+    <url>/2020/06/09/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-7/</url>
+    <content><![CDATA[<p>###今日份笔记 2020年6月9号</p>
+<a id="more"></a>
+<p>&ensp;&ensp;我想解释一下，今天不写笔记存粹是时间不够，我还要学习云计算、社会心理学这些玩意哈哈哈哈。</p>
 ]]></content>
       <tags>
         <tag>日记</tag>
@@ -1180,6 +1192,19 @@
       </tags>
   </entry>
   <entry>
+    <title>心理学-独立性与联系性</title>
+    <url>/2020/08/01/%E7%A4%BE%E4%BC%9A%E5%BF%83%E7%90%86%E5%AD%A6/%E5%BF%83%E7%90%86%E5%AD%A6-%E7%8B%AC%E7%AB%8B%E6%80%A7%E4%B8%8E%E8%81%94%E7%B3%BB%E6%80%A7/</url>
+    <content><![CDATA[<h2 id="独立性与联系性"><a href="#独立性与联系性" class="headerlink" title="独立性与联系性"></a>独立性与联系性</h2><a id="more"></a>
+<p>​        男性在残酷竞争和养育关爱等见解和行为上存在个体差异，女性也一样。心理学家南希.霍多罗夫等人并未否认上述观点(Chodorow, 1978, 1989; Miller, 1986; Gilligan&amp;others, 1982, 1990),但是他们指出,女性比男性更重视亲密关系。证据如下:</p>
+<h3 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h3><p>​        埃莉诺.麦科比(Maccoby,2002)经过数十年对性别的发展研究发现,与男孩相比，女孩之间的谈话更加亲密,而且游戏也更少攻击性。女孩更偏向于再小群体中开展游戏，往往与一个朋友交谈，而男孩则更常进行大群体的活动(Rose &amp; Rudolph,2006)。由于他们各自和同性别的人交往，所以男女之间的差异就会逐渐显现出来。</p>
+<h3 id="友谊"><a href="#友谊" class="headerlink" title="友谊"></a>友谊</h3><p>​        对成年人而言，个人主义文化的女性更经常用人际关系的词汇来描述自己，更乐于接受别人的帮助，体验到更多与人际关系有关的情感，并努力使自己与他人的关系更加协调(Addis &amp; Mahalik, 2003; Gabriel &amp; Gardner, 1999; Tamres &amp; others)。男性谈话往往关注任务以及与大群体的关系，而女性则更多关注个人关系。班纳森等人报告称，”可能由于女性更渴望亲近”，因此在大一期间女生调换室友是男性的两倍。</p>
+<p>​        在电话方面，女性通话的时间更长，女孩发短信的数量是男孩的两倍多。在电脑方面，女性也会花更多时间发电子邮件来表达情感。她们花在社交网站的时间也多于男性。在群体中，女孩之间会相互分享他们各自的生活，为他人提供更多便利的支持。面临压力时，男性更倾向于以”战斗或逃跑”回应，通常以反抗来应对威胁。几乎在所有研究中，遭遇压力的女人更需要他人的照顾和帮助，她们向家人和朋友寻求支持。在大学生中，10个男生中有5个认为”帮只有困难的人非常重要”，而女生每10个里面有7个人具有同样的想法。</p>
+]]></content>
+      <tags>
+        <tag>心理学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>心理学-控制点</title>
     <url>/2020/06/08/%E7%A4%BE%E4%BC%9A%E5%BF%83%E7%90%86%E5%AD%A6/%E5%BF%83%E7%90%86%E5%AD%A6-%E6%8E%A7%E5%88%B6%E7%82%B9/</url>
     <content><![CDATA[<h2 id="心里学-控制点"><a href="#心里学-控制点" class="headerlink" title="心里学-控制点"></a>心里学-控制点</h2><p>“我没有社交生活,”一个40岁的单身男人对学临床医学的学生杰里.法里斯抱怨。</p>
@@ -1202,28 +1227,14 @@
       </tags>
   </entry>
   <entry>
-    <title>心理学-独立性与联系性</title>
-    <url>/2020/08/01/%E7%A4%BE%E4%BC%9A%E5%BF%83%E7%90%86%E5%AD%A6/%E5%BF%83%E7%90%86%E5%AD%A6-%E7%8B%AC%E7%AB%8B%E6%80%A7%E4%B8%8E%E8%81%94%E7%B3%BB%E6%80%A7/</url>
-    <content><![CDATA[<h2 id="独立性与联系性"><a href="#独立性与联系性" class="headerlink" title="独立性与联系性"></a>独立性与联系性</h2><a id="more"></a>
-<p>​        男性在残酷竞争和养育关爱等见解和行为上存在个体差异，女性也一样。心理学家南希.霍多罗夫等人并未否认上述观点(Chodorow, 1978, 1989; Miller, 1986; Gilligan&amp;others, 1982, 1990),但是他们指出,女性比男性更重视亲密关系。证据如下:</p>
-<h3 id="游戏"><a href="#游戏" class="headerlink" title="游戏"></a>游戏</h3><p>​        埃莉诺.麦科比(Maccoby,2002)经过数十年对性别的发展研究发现,与男孩相比，女孩之间的谈话更加亲密,而且游戏也更少攻击性。女孩更偏向于再小群体中开展游戏，往往与一个朋友交谈，而男孩则更常进行大群体的活动(Rose &amp; Rudolph,2006)。由于他们各自和同性别的人交往，所以男女之间的差异就会逐渐显现出来。</p>
-<h3 id="友谊"><a href="#友谊" class="headerlink" title="友谊"></a>友谊</h3><p>​        对成年人而言，个人主义文化的女性更经常用人际关系的词汇来描述自己，更乐于接受别人的帮助，体验到更多与人际关系有关的情感，并努力使自己与他人的关系更加协调(Addis &amp; Mahalik, 2003; Gabriel &amp; Gardner, 1999; Tamres &amp; others)。男性谈话往往关注任务以及与大群体的关系，而女性则更多关注个人关系。班纳森等人报告称，”可能由于女性更渴望亲近”，因此在大一期间女生调换室友是男性的两倍。</p>
-<p>​        在电话方面，女性通话的时间更长，女孩发短信的数量是男孩的两倍多。在电脑方面，女性也会花更多时间发电子邮件来表达情感。她们花在社交网站的时间也多于男性。在群体中，女孩之间会相互分享他们各自的生活，为他人提供更多便利的支持。面临压力时，男性更倾向于以”战斗或逃跑”回应，通常以反抗来应对威胁。几乎在所有研究中，遭遇压力的女人更需要他人的照顾和帮助，她们向家人和朋友寻求支持。在大学生中，10个男生中有5个认为”帮只有困难的人非常重要”，而女生每10个里面有7个人具有同样的想法。</p>
-]]></content>
-      <tags>
-        <tag>心理学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>日语单词记录</title>
     <url>/2020/06/20/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E5%8D%95%E8%AF%8D%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><p>这里是关于我所学习的单词记录</p>
-<a id="more"></a>
-<div id="echarts3972" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts641" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts3972'));
+        var myChart = echarts.init(document.getElementById('echarts641'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -1276,6 +1287,8 @@
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
 </script>
+<a id="more"></a>
+
 <table>
 <thead>
 <tr>
@@ -2121,6 +2134,10 @@
 </tr>
 </tbody></table>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语单词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -2819,6 +2836,22 @@
 </tr>
 </tbody></table>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语单词</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日语第九课单词</title>
+    <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC%E4%B9%9D%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语单词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -2828,6 +2861,7 @@
     <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC%E5%85%AB%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><p>这里是关于《综合日语》的第八课的所有单词记录。</p>
 <a id="more"></a>
+
 <table>
 <thead>
 <tr>
@@ -3559,14 +3593,10 @@
 </tr>
 </tbody></table>
 ]]></content>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>日语第九课单词</title>
-    <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC%E4%B9%9D%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
-    <content><![CDATA[]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语单词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -3575,6 +3605,10 @@
     <title>日语第十一课单词</title>
     <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语单词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -3583,11 +3617,11 @@
     <title>日语第十三课单词</title>
     <url>/2020/07/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC%E5%8D%81%E4%B8%89%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第13课日语单词笔记"><a href="#第13课日语单词笔记" class="headerlink" title="第13课日语单词笔记"></a>第13课日语单词笔记</h3><p>这里是《综合日语》的第十三课的所有单词记录。</p>
-<div id="echarts1843" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts1414" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts1843'));
+        var myChart = echarts.init(document.getElementById('echarts1414'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -3641,7 +3675,6 @@
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
 </script>
-
 <a id="more"></a>
 
 <table>
@@ -4561,6 +4594,10 @@
 </tr>
 </tbody></table>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语单词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -4569,12 +4606,11 @@
     <title>日语第十五课单词</title>
     <url>/2020/08/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC%E5%8D%81%E4%BA%94%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第15课日语单词笔记"><a href="#第15课日语单词笔记" class="headerlink" title="第15课日语单词笔记"></a>第15课日语单词笔记</h3><p>这里是《综合日语》的第十五课的所有单词记录。</p>
-<a id="more"></a>
-<div id="echarts9377" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts8799" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts9377'));
+        var myChart = echarts.init(document.getElementById('echarts8799'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -4630,6 +4666,7 @@
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
 </script>
+<a id="more"></a>
 
 <table>
 <thead>
@@ -5236,6 +5273,10 @@
 </tr>
 </tbody></table>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语单词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -5244,13 +5285,11 @@
     <title>日语第十四课单词</title>
     <url>/2020/08/01/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC%E5%8D%81%E5%9B%9B%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第14课日语单词笔记"><a href="#第14课日语单词笔记" class="headerlink" title="第14课日语单词笔记"></a>第14课日语单词笔记</h3><p>这里是《综合日语》的第十四课的所有单词记录。</p>
-<a id="more"></a>
-
-<div id="echarts6143" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts252" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts6143'));
+        var myChart = echarts.init(document.getElementById('echarts252'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -5304,6 +5343,7 @@
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
 </script>
+<a id="more"></a>
 
 <table>
 <thead>
@@ -5988,6 +6028,10 @@
 </tr>
 </tbody></table>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语单词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -5996,6 +6040,10 @@
     <title>日语第十课单词</title>
     <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC%E5%8D%81%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语单词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6009,6 +6057,10 @@
 <p>束缚して<br>束缚你<br>もっと<br>让我对你而言<br>必要として<br>更加必要<br>爱しいなら<br>若是爱就<br>执着を见せつけて<br>让你看到我的执着<br>「おかしい」のが<br>变得“好奇怪”<br>たまらなく<br>是因为无法克制地<br>好きになる<br>喜欢上你<br>行けるトコまで行けばいいよ<br>能到哪里就一起去吧<br>迷い込んだ心なら<br>若是迷惑的心能够<br>简単に融けてゆく<br>简单地消融<br>优しさなんて<br>甚至连感受到<br>感じる暇など 无い位に<br>温柔之类的余裕都没有<br>缲り返したのは<br>反复不断的<br>あの梦じゃなくて<br>并非那个梦<br>纷れも无<br>毫无疑问的<br>い现実の私达<br>是真实的我们<br>触れてから<br>从触碰开始<br>戻れないと知る<br>就知道回不去了<br>それでいいの<br>那样就好<br>谁よりも<br>比任何人<br>大切なあなた<br>都还要重要的你</p>
 <p>夜明けが来ると不安で<br>对于即将天亮感到不安<br>泣いてしまう私に<br>而哭泣的我<br>「大丈夫」と嗫いたあなたも<br>轻声说着“没关系”的你<br>泣いていたの？<br>也哭泣了吗<br>抱き寄せて欲しい<br>想要被拥入怀中<br>确かめて欲しい<br>想要确认心意<br>间违いなど无いんだと<br>让我知道<br>思わせて<br>没有误会了什么<br>キスをして<br>亲吻你<br>涂り替<br>想将我的颜色<br>えて欲しい<br>覆盖上你的唇<br>魅惑の时に<br>想要沉醉在<br>酔いしれ溺れたい<br>魅惑的时刻中<br>引き寄せて<br>相互吸引靠近<br>マグネットのように<br>宛如磁石一般<br>例えいつか离れて<br>即使有朝一日分离了<br>も巡り会う<br>也会再度相会<br>触れていて<br>相互碰触<br>戻れなくていい<br>回不去了也无妨<br>それでいいの<br>那样就好<br>谁よりも<br>比任何人<br>大切なあなた<br>都还要重要的你</p>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语歌词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6020,6 +6072,10 @@
 
 <p>闇に閉ざされていた　黒き翼の天使<br>在黑暗中封闭着 黑色翅膀的天使<br>失われた時の回廊　彷徨う星の旅人<br>失去时间的回廊 徘徊星空的旅者<br>闇に包みこまれた　哀しい記憶の欠片<br>包裹在黑暗中 哀伤记忆的碎片<br>失われた心の器　探し求め続けている<br>失去了心的容器 仍在继续寻求着<br>赤き瞳に映る　儚い思い出の空<br>赤红眼瞳中映出 虚幻回忆中的天空<br>今はもう見えてこない　あの子の優しい笑顔<br>现在已经看不到了 那孩子温柔的笑颜<br>時を超え彷徨う　記憶の亡霊達<br>在时间之外徘徊的 记忆的亡灵们<br>耳元で囁いて　闇へと誘う<br>耳边的轻语 邀请至黑暗<br>黒き影に染められた　翼を羽ばたかせて<br>染上漆黑的暗影 张开翅膀<br>飛び立つの　虚空の遥か彼方<br>振翅飞翔 飞越遥远虚空的彼方<br>あの子の元へと<br>到那孩子的身旁<br>あれは私の記憶　寂しい心の欠片<br>那是我的记忆 孤独的心的碎片<br>ねえ返して　あの子の記憶　あの優しき詩を<br>请那孩子的回忆 那温柔的诗歌 回到这里来<br>あれは私の翼　黒き悲しみの羽根<br>那是我的翅膀 漆黑悲伤的羽毛<br>刻み込まれた罪を背負い　運命に身を委ねる<br>背负着铭刻下的罪行 屈服于命运之中<br>暗い夜空の向こう　響く優雅な音色<br>黑暗夜空的那边 回响着优雅的音色<br>今はもう聞こえてこない　あの子の優しい歌が<br>现在已经听不到了 那孩子温柔的歌声<br>時を超え彷徨う　記憶の亡霊達<br>在时间之外徘徊的 记忆的亡灵们<br>耳元で囁いて　闇へと誘う<br>耳边的轻语 邀请至黑暗<br>黒き影に染められた　翼を羽ばたかせて<br>染上漆黑的暗影 展开翅膀<br>飛び立つの　虚空の遥か彼方<br>振翅飞翔 飞越遥远虚空的彼方<br>あの子の元へと<br>到那孩子的身旁<br>時を超え彷徨う　記憶の亡霊達<br>在时间之外徘徊的 记忆的亡灵们<br>傍に寄って手を伸ばして　囁きかける<br>向一旁伸出手 轻声细语<br>黒き影に染められた　翼を羽ばたかせて<br>染上漆黑的暗影 张开翅膀<br>飛び立つの　虚空の遥か彼方<br>振翅飞翔 飞越遥远虚空的彼方<br>あの子の元へと<br>到那孩子的身旁</p>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语歌词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6031,6 +6087,10 @@
 
 <p>呼んでいる胸のどこか奥で<br>呼唤着的心灵的某个深处<br>いつも心踊（おど）る 夢を見たい<br>总是想做个激动人心的梦<br>かなしみは 数え（おしえ）きれないけれど<br>纵有数不尽的悲伤<br>その向こうできっと あなたに会える<br>去往之处一定与你相会<br>繰り返すあやまちの そのたび<br>那些反复出现过错的旅客<br>ひとはただ青い空の 青さを知る<br>最少也知道青空的蔚蓝<br>果（は）てしなく 道は続いて見えるけれど<br>即使前路茫茫无尽<br>この両手は 光を抱ける（いだける）<br>这双手一定可以拥抱光明<br>さよならのときの 静かな胸<br>告别时平静的胸怀<br>ゼロになるからだが 耳をすませる<br>归于无有的身体叫耳朵细听<br>生きている不思議 死んでいく不思議<br>生存以及死亡的不可思议<br>花も風も街も みんなおなじ<br>花与风与城市全都是一样<br>ラ ラ ラン ラン ラ ラン<br>啦啦啦♪(^∇^*)<br>ラン ラン ラ ラン<br>啦啦啦♪(^∇^*)<br>ラン ラン ラ ラ ラン<br>啦啦啦♪(^∇^*)<br>ホ ホ ホ<br>啊啊啊♪(^∇^*)<br>ル ル ル<br>噜噜噜♪(^∇^*)<br>ル ル ル ル<br>噜噜噜♪(^∇^*)<br>呼んでいる 胸のどこか奥で<br>呼唤着的心灵的某个深处<br>いつも何度でも 夢を描（えが）こう<br>时常不断在绘画梦想<br>かなしみの数を 言い尽（つ）くすより<br>与其将悲伤种种倾诉而尽<br>同じくちびるで そっとうたおう<br>不如用相同的双唇轻轻歌唱<br>閉じていく思い出の そのなかに<br>常常在渐渐封闭的回忆中<br>いつも忘れたくない ささやきを聞く<br>听到不能忘怀的微声细语<br>こなごなに砕（くだ）かれた 鏡（かがみ）の上にも<br>即使在支离破碎的镜子上<br>新しい景色が 映される<br>也会映出崭新的美景<br>はじまりのあさの 静かな窓<br>像初始的清晨下宁静的窗<br>ゼロになるからだ 充た（みた）されてゆけ<br>因为将从零开始 渐渐被充实<br>海の彼方（かなた）には もう探さない<br>不再追寻 大海的彼端<br>輝くものは いつもここに<br>因为光辉之物一直在这里<br>わたしのなかに 見つけられたから<br>在我的内心中已然被发现<br>ラ ラ ラン ラン ラ ラン<br>啦啦啦♪(^∇^*)<br>ラン ラン ラ ラン<br>啦啦啦♪(^∇^*)<br>ラン ラン ラ ラ ラン<br>啦啦啦♪(^∇^*)<br>ホ ホ ホ<br>啊啊啊♪(^∇^*)<br>ル ル ル<br>噜噜噜♪(^∇^*)<br>ル ル ル ル<br>噜噜噜♪(^∇^*)</p>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语歌词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6045,6 +6105,10 @@
 <p>響け星空に<br>响彻星空<br>Rinn Ding Dong…</p>
 <p>願いを乗せて歌え<br>载着祈愿歌唱<br>Rinn Ding Dong</p>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语歌词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6065,6 +6129,10 @@
 <p>助けをよぶ声 パパの「しつけ」の音<br>听到你的求救声，和他“教训”的声音<br>何もできなかった こわくてふるえてた<br>我什么都做不到，只是恐惧与战栗<br>朝 目が覚めたら ゴミぶくろの中の<br>早晨醒来的时候，看到了垃圾桶中<br>動かないあなたに ごめんねも言えなくて<br>已一动不动的你，竟说不出对不起</p>
 <p>あなたの好きだった カエルのボールも<br>小小的青蛙球，你最爱的东西<br>おやつを分けあった 銀のえさ皿も<br>将分享的点心，放在小银盘里<br>はぐれないように つないだリードも<br>不要与我走散，永远要在一起<br>全部持っていくわ いい子で待ってて<br>全部都带过去，请再等我一会</p>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语歌词</category>
+      </categories>
   </entry>
   <entry>
     <title>オオエドランヴ</title>
@@ -6079,15 +6147,10 @@
 <p>今夜の寝屋は誰が持つ大奥</p>
 <p>老若男女修罗场の途中</p>
 ]]></content>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ココロオドル</title>
-    <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E3%82%B3%E3%82%B3%E3%83%AD%E3%82%AA%E3%83%89%E3%83%AB/</url>
-    <content><![CDATA[<p>ENJOY 音楽は鳴り続ける<br>ENJOY 音乐继续响<br>IT’S JOIN 届けたい 胸の鼓動<br>it’s join 想传达胸前的鼓动<br>ココロオドル アンコール わかす Dance Dance<br>心脏再次跳动 沸腾 Dance Dance<br>Dance（READY GO!）<br>Dance (ready GO)<br>今 ゴーイング ゴールインより<br>现在在going goal in（跑过去射门ヽ(´▽｀)/）<br>飛び越し 音に乗り 泳ぎ続ける<br>乘着音乐飞过去继续畅游<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>呼応する心 響き続ける<br>彼此呼应的心继续响<br>のってきな的な言葉が出てきた<br>出现出乎意料的词语<br>ここは心踊るところだから<br>这里是心舞动的地方<br>置いてかないよ 追い付きたいなら<br>不能放着不管 想去追的话<br>Get Up Stand Up 行くしかねぇ<br>Get Up Stand Up 除了出发没有别的办法<br>つかねぇ やっぱ 気付いたんだ<br>追不上 果然 发觉了啊<br>100% 幸せの意思表示 鳴らせ CLAP CLAP<br>100%幸福的意思就是 让我出名吧！clap clap<br>仲間同士 夜通し 詰め込んだ<br>和朋友伙伴们 通宵 肚子好饱<br>アッパーなテンションのシチュエーション<br>极度紧张形势<br>Have a dreamin’ グリーディング<br>Have a dreamin’greeting<br>この場の空気 中心 サークル 繋がるブギー<br>这里的空气 中心 圆圈 连续的布基（一个和音乐相关的词）<br>フリーキー きばらず<br>Free key 扰乱心情<br>ここのみんなと その価値あるから<br>因为和大家一起是有价值的<br>Swing swing sing a song<br>Swing swing sing a song<br>生真面目 恥ずかしがりでもできる<br>一本正经 容易害羞也可以做到<br>イマジネーション 望むところだ<br>想象 正如所愿<br>茶の間 床の間 ところ構わず<br>餐厅 壁龛 无论何地<br>ボタンひとつで踊る心が<br>只要一个按钮就能让心舞动起来<br>ENJOY 音楽は鳴り続ける<br>ENJOY 音乐继续响<br>IT’S JOIN 届けたい 胸の鼓動<br>it’s join 想传达胸前的鼓动<br>ココロオドル アンコール わかす Dance Dance<br>心脏再次跳动 沸腾 Dance Dance<br>Dance（READY GO!）<br>Dance（READY GO!）<br>今 ゴーイング ゴールインより<br>现在在going goal in（跑过去射门ヽ(´▽｀)/）<br>飛び越し 音に乗り 泳ぎ続ける<br>乘着音乐飞过去继续畅游<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>呼応する心 響き続ける<br>彼此呼应的心继续响<br>やっぱりな Hurry up 俺は急いで歯を磨く<br>果然 快一点 我赶紧刷牙<br>手間は取らせん さぁ見な<br>不耽误时间 看吧<br>あみ出す つうか 勝手 心騒ぎ出す<br>编织出 通过 擅自 忐忑不安<br>時間 場所など限らず<br>不限定时间 地点<br>グータラ てきぱき 日常 メリハリ<br>吊儿郎当 爽快地 日常 抑扬顿挫<br>毎日変わる音 フレッシュ デリバリー<br>每天改变的声音 Flash 配送<br>揺らす Body Rock 増々<br>摇动 Body Rock 越来越多<br>ベクトル向かう矛先はプラスへ<br>向量的矛尖朝向正的方向<br>その長と短 そこがどうかなる<br>它的长短 那里变得怎么样<br>所々 ココロゴト 転がしあう<br>每个地方 心在舞动 翻滚<br>だから今日は今日 振り切る昨日<br>所以现在是现在 抛开昨天<br>心から踊らす この一時<br>从心里开始舞动 那一瞬间<br>一度 Go ドア開けたらフロア<br>一次 Go 打开门的话是地板<br>浮き足立つ 抜け出す 揺れるCore<br>失去镇静 摆脱出来 摇动 Core<br>Up and down こっち タンタ<br>Up and down 这里 嗒嗒<br>Tap Let’s Dance Come on<br>Tap Let’s Dance Come on<br>加速 構うもんか もう<br>已经不需要介意<br>いてもたってもいらんない<br>坐立不安<br>心だけじゃ収まんないぜ<br>只有心无法满足<br>Day and Night Shake a body<br>Day and Night Shake a body<br>ぎこちないならないで可愛い 心感じるままに<br>就算做作也非常可爱 就像心里感觉到的那样<br>LA LA LA LIVE LIFE GOOD TO BE ALIVE<br>LA LA LA LIVE LIFE GOOD TO BE ALIVE<br>笑い 愛し合いされ 喜怒哀楽 刻む<br>欢笑 相爱 喜怒哀乐 牢记 用声音和语言连接的这个地方<br>音と言葉 つなぐこの場<br>用声音和语言连接的这个地方<br>届いてるなら MAKE SOME NOISE<br>如果能够传达的话 MAKE SOME NOISE<br>ENJOY 音楽は鳴り続ける<br>ENJOY 音乐继续响下去<br>IT’S JOIN 届けたい 胸の鼓動<br>IT’S JOIN 想传达给你 胸口的鼓动<br>ココロオドル アンコール わかす Dance Dance<br>心脏再次跳动 沸腾 Dance Dance<br>Dance（READY GO!）<br>Dance（READY GO!）<br>今 ゴーイング ゴールインより<br>现在在going goal in（跑过去射门ヽ(´▽｀)/）<br>飛び越し 音に乗り 泳ぎ続ける<br>乘着音乐飞过去继续畅游<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>呼応する心 響き続ける<br>彼此呼应的心继续响<br>グレートフル 絵描く スケールはでかく<br>Great full 画画 用巨大的标尺<br>楽しいもんだ エラくデラックス<br>很愉快 非常豪华<br>狙う暇なんか 単純に簡単<br>没有空闲寻找 单纯且简单<br>預けてカウントダウン 3·2·1<br>交给我倒数吧 3 2 1<br>なりふり構わず 夢中で駆け抜けろ<br>不要在意外表 在梦中追赶<br>息まいて it’s like this<br>气势汹汹It’s like this<br>さらに深い感動へ モーレツ<br>向着更加深的感动 猛烈<br>Oh yes ココロオドル 今日へ<br>oh YES 今天心在跳舞<br>ENJOY 音楽は鳴り続ける<br>enjoy 音乐继续响<br>IT’S JOIN 届けたい 胸の鼓動<br>IT’S JOIN 想传达胸前的鼓动<br>ココロオドル アンコール わかす Dance Dance<br>心脏再次跳动 沸腾 Dance Dance<br>Dance（READY GO!）<br>Dance（READY GO!）<br>今 ゴーイング ゴールインより<br>现在在going goal in（跑过去射门ヽ(´▽｀)/）<br>飛び越し 音に乗り 泳ぎ続ける<br>乘着音乐飞过去继续畅游<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>呼応する心 響き続ける<br>彼此呼应的心继续响<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>ココロオドル アンコール わかす Dance Dance<br>心脏再次跳动 沸腾 Dance Dance<br>Dance（READY GO!）<br>Dance（READY GO!）<br>今 ゴーイング ゴールインより<br>现在在going goal in（跑过去射门ヽ(´▽｀)/）<br>飛び越し 音に乗り 泳ぎ続ける<br>乘着音乐飞过去继续畅游<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>呼応する心 響き続ける<br>彼此呼应的心继续响</p>
-]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语歌词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6099,6 +6162,23 @@
 
 <p>「貴方って人はどんな人？」<br>「你是一个怎样的人?」<br>そんなふうに聞けたらな<br>想要这样问问你<br>背中押される夏の日には<br>在这鼓动人心的夏日<br>鮮やかに揺れる花になろう<br>成为那朵灿烂又美丽的花儿吧<br>白熊のように涼しげでいたいの<br>我只想像一只白熊那样 凉爽就好了<br>でも僕の熱意は募る<br>可这份热意却变得越来越滚烫<br>今ドキドキドキが高ぶって<br>怦咚怦咚怦咚 心情越来越亢奋<br>勇気を持って声掛ける<br>鼓起全部勇气我终于向你开口搭话<br>さすがにそろそろ貴方に恋する<br>我就快对你陷入爱河了<br>私に気づいて欲しいのです<br>真希望你会注意到我呀<br>愛を愛し 恋に恋する<br>爱着爱恋 恋着恋爱<br>僕らはそうさ 人間さ<br>这就是我们 身为人类的我们<br>愛裏返し 故意に恋する<br>与爱相对 故意的相恋<br>奴らもそうさ 人間さ<br>这就是他们 身为人类的他们<br>「僕って人はこんな人」<br>「我是一个这样的人。」<br>そんな風に言えたらな<br>想要这样回答你<br>頭抱える独りの夜は<br>独自埋头的每个夜晚<br>濃やかに揺れる花であろう<br>正是那些馥郁而娇艳的花儿吧<br>狼の様に強気で居たいの<br>我只想像一匹狼那样 强硬就行了<br>でもその自信は見当たんないの<br>可那份自信我却怎么都找不到<br>ドクドク独特な苦もあって<br>咯噔咯噔咯噔 这份独特的苦楚<br>勇気を出し触れてみる<br>鼓起全部勇气我试着靠自己触碰它<br>心動いたならあなたに恋する<br>我的心由于你而动摇了<br>僕を見てみて欲しいのです<br>真希望你能一直关注我<br>僕に気づいて欲しいのです<br>真希望你能注意到我啊<br>出会いを介し　ちゃんと愛を知る<br>与你相遇 才知晓爱<br>私はそうさ人間さ<br>这就是我 身为人类的我<br>悪戯にも哀も知り　君と居たい意味を<br>经历过恶作剧也经历过哀伤<br>教える僕の人生さ<br>领悟到想与你一直相守的意义 这就是我的人生<br>偶然？必然？ロマンスは突然<br>偶然还是必然 Romance如此突然<br>POPSは新鮮 Hey LA LA LA…<br>POPS是这样新鲜 LA LA LA…<br>「運命」と思える君に巡り会えたの<br>我相信遇见你是因为命运<br>若気の至りなんかじゃ決してないから<br>决不是我的幼稚莽撞<br>日々ヒビが入りハートが砕けて<br>每一天我的心都会受伤<br>勇気も自信も亡くすけど<br>已经丧失了勇气与自信<br>挫けながらも強く生きて行ける<br>但我依然会从跌倒中爬起 坚强下去<br>大人になるための毎日です<br>这就是我向着成熟更加接近的每一天<br>愛を愛し　恋に恋する<br>爱着爱恋 恋着恋爱<br>僕らはそうさ人間さ<br>这就是我们 身为人类的我们<br>愛を愛し　偉大に恋する<br>爱着爱情 伟大的相恋<br>僕らもそうさ人間さ<br>这便是我们 身为人类的我们<br>短い春が終わっていく<br>短暂的阳春结束了<br>短い夏が終わっていく<br>短暂的炎夏结束了<br>新しい時代と生きている　あなたに恋をする<br>迎来新的时代 我喜欢上了你<br>そんな、私に気づいて欲しいのです<br>这样的我 真希望你能注意到呀<br>あなたに気づいて欲しいのです<br>真希望能被你注意到啊</p>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语歌词</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ココロオドル</title>
+    <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E3%82%B3%E3%82%B3%E3%83%AD%E3%82%AA%E3%83%89%E3%83%AB/</url>
+    <content><![CDATA[<p>ENJOY 音楽は鳴り続ける<br>ENJOY 音乐继续响<br>IT’S JOIN 届けたい 胸の鼓動<br>it’s join 想传达胸前的鼓动<br>ココロオドル アンコール わかす Dance Dance<br>心脏再次跳动 沸腾 Dance Dance<br>Dance（READY GO!）<br>Dance (ready GO)<br>今 ゴーイング ゴールインより<br>现在在going goal in（跑过去射门ヽ(´▽｀)/）<br>飛び越し 音に乗り 泳ぎ続ける<br>乘着音乐飞过去继续畅游<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>呼応する心 響き続ける<br>彼此呼应的心继续响<br>のってきな的な言葉が出てきた<br>出现出乎意料的词语<br>ここは心踊るところだから<br>这里是心舞动的地方<br>置いてかないよ 追い付きたいなら<br>不能放着不管 想去追的话<br>Get Up Stand Up 行くしかねぇ<br>Get Up Stand Up 除了出发没有别的办法<br>つかねぇ やっぱ 気付いたんだ<br>追不上 果然 发觉了啊<br>100% 幸せの意思表示 鳴らせ CLAP CLAP<br>100%幸福的意思就是 让我出名吧！clap clap<br>仲間同士 夜通し 詰め込んだ<br>和朋友伙伴们 通宵 肚子好饱<br>アッパーなテンションのシチュエーション<br>极度紧张形势<br>Have a dreamin’ グリーディング<br>Have a dreamin’greeting<br>この場の空気 中心 サークル 繋がるブギー<br>这里的空气 中心 圆圈 连续的布基（一个和音乐相关的词）<br>フリーキー きばらず<br>Free key 扰乱心情<br>ここのみんなと その価値あるから<br>因为和大家一起是有价值的<br>Swing swing sing a song<br>Swing swing sing a song<br>生真面目 恥ずかしがりでもできる<br>一本正经 容易害羞也可以做到<br>イマジネーション 望むところだ<br>想象 正如所愿<br>茶の間 床の間 ところ構わず<br>餐厅 壁龛 无论何地<br>ボタンひとつで踊る心が<br>只要一个按钮就能让心舞动起来<br>ENJOY 音楽は鳴り続ける<br>ENJOY 音乐继续响<br>IT’S JOIN 届けたい 胸の鼓動<br>it’s join 想传达胸前的鼓动<br>ココロオドル アンコール わかす Dance Dance<br>心脏再次跳动 沸腾 Dance Dance<br>Dance（READY GO!）<br>Dance（READY GO!）<br>今 ゴーイング ゴールインより<br>现在在going goal in（跑过去射门ヽ(´▽｀)/）<br>飛び越し 音に乗り 泳ぎ続ける<br>乘着音乐飞过去继续畅游<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>呼応する心 響き続ける<br>彼此呼应的心继续响<br>やっぱりな Hurry up 俺は急いで歯を磨く<br>果然 快一点 我赶紧刷牙<br>手間は取らせん さぁ見な<br>不耽误时间 看吧<br>あみ出す つうか 勝手 心騒ぎ出す<br>编织出 通过 擅自 忐忑不安<br>時間 場所など限らず<br>不限定时间 地点<br>グータラ てきぱき 日常 メリハリ<br>吊儿郎当 爽快地 日常 抑扬顿挫<br>毎日変わる音 フレッシュ デリバリー<br>每天改变的声音 Flash 配送<br>揺らす Body Rock 増々<br>摇动 Body Rock 越来越多<br>ベクトル向かう矛先はプラスへ<br>向量的矛尖朝向正的方向<br>その長と短 そこがどうかなる<br>它的长短 那里变得怎么样<br>所々 ココロゴト 転がしあう<br>每个地方 心在舞动 翻滚<br>だから今日は今日 振り切る昨日<br>所以现在是现在 抛开昨天<br>心から踊らす この一時<br>从心里开始舞动 那一瞬间<br>一度 Go ドア開けたらフロア<br>一次 Go 打开门的话是地板<br>浮き足立つ 抜け出す 揺れるCore<br>失去镇静 摆脱出来 摇动 Core<br>Up and down こっち タンタ<br>Up and down 这里 嗒嗒<br>Tap Let’s Dance Come on<br>Tap Let’s Dance Come on<br>加速 構うもんか もう<br>已经不需要介意<br>いてもたってもいらんない<br>坐立不安<br>心だけじゃ収まんないぜ<br>只有心无法满足<br>Day and Night Shake a body<br>Day and Night Shake a body<br>ぎこちないならないで可愛い 心感じるままに<br>就算做作也非常可爱 就像心里感觉到的那样<br>LA LA LA LIVE LIFE GOOD TO BE ALIVE<br>LA LA LA LIVE LIFE GOOD TO BE ALIVE<br>笑い 愛し合いされ 喜怒哀楽 刻む<br>欢笑 相爱 喜怒哀乐 牢记 用声音和语言连接的这个地方<br>音と言葉 つなぐこの場<br>用声音和语言连接的这个地方<br>届いてるなら MAKE SOME NOISE<br>如果能够传达的话 MAKE SOME NOISE<br>ENJOY 音楽は鳴り続ける<br>ENJOY 音乐继续响下去<br>IT’S JOIN 届けたい 胸の鼓動<br>IT’S JOIN 想传达给你 胸口的鼓动<br>ココロオドル アンコール わかす Dance Dance<br>心脏再次跳动 沸腾 Dance Dance<br>Dance（READY GO!）<br>Dance（READY GO!）<br>今 ゴーイング ゴールインより<br>现在在going goal in（跑过去射门ヽ(´▽｀)/）<br>飛び越し 音に乗り 泳ぎ続ける<br>乘着音乐飞过去继续畅游<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>呼応する心 響き続ける<br>彼此呼应的心继续响<br>グレートフル 絵描く スケールはでかく<br>Great full 画画 用巨大的标尺<br>楽しいもんだ エラくデラックス<br>很愉快 非常豪华<br>狙う暇なんか 単純に簡単<br>没有空闲寻找 单纯且简单<br>預けてカウントダウン 3·2·1<br>交给我倒数吧 3 2 1<br>なりふり構わず 夢中で駆け抜けろ<br>不要在意外表 在梦中追赶<br>息まいて it’s like this<br>气势汹汹It’s like this<br>さらに深い感動へ モーレツ<br>向着更加深的感动 猛烈<br>Oh yes ココロオドル 今日へ<br>oh YES 今天心在跳舞<br>ENJOY 音楽は鳴り続ける<br>enjoy 音乐继续响<br>IT’S JOIN 届けたい 胸の鼓動<br>IT’S JOIN 想传达胸前的鼓动<br>ココロオドル アンコール わかす Dance Dance<br>心脏再次跳动 沸腾 Dance Dance<br>Dance（READY GO!）<br>Dance（READY GO!）<br>今 ゴーイング ゴールインより<br>现在在going goal in（跑过去射门ヽ(´▽｀)/）<br>飛び越し 音に乗り 泳ぎ続ける<br>乘着音乐飞过去继续畅游<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>呼応する心 響き続ける<br>彼此呼应的心继续响<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>ココロオドル アンコール わかす Dance Dance<br>心脏再次跳动 沸腾 Dance Dance<br>Dance（READY GO!）<br>Dance（READY GO!）<br>今 ゴーイング ゴールインより<br>现在在going goal in（跑过去射门ヽ(´▽｀)/）<br>飛び越し 音に乗り 泳ぎ続ける<br>乘着音乐飞过去继续畅游<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>ENJOY（ENJOY） IT’S JOIN（IT’S JOIN）<br>呼応する心 響き続ける<br>彼此呼应的心继续响</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语歌词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6111,6 +6191,10 @@
 <p>僕が死のうと思ったのは ウミネコが桟橋で鳴いたから<br>曾经我也想过一了百了 因为有海猫在码头悲鸣<br>波の随意に浮かんで消える 過去も啄ばんで飛んでいけ<br>随着浪花起伏消没 叼啄着往昔飞离不见<br>僕が死のうと思ったのは 誕生日に杏の花が咲いたから<br>曾经我也想过一了百了 因为生日那天杏花开放<br>その木漏れ日でうたた寝したら 虫の死骸と土になれるかな<br>若是在那洒下的阳光里打盹 能否与虫之死骸一同化为尘土呢</p>
 <p>薄荷飴 漁港の灯台 錆びたアーチ橋 捨てた自転車<br>薄荷糖 渔港的灯塔 生锈的拱桥 丢弃的自行车<br>木造の駅のストーブの前で どこにも旅立てない心<br>木造车站的暖炉前 无处可去的心灵<br>今日はまるで昨日みたいだ 明日を変えるなら今日を変えなきゃ<br>今天与昨天如此相像 想改变明天 必须改变今天<br>分かってる 分かってる けれど<br>我知道 我知道 但是…<br>僕が死のうと思ったのは 心が空っぽになったから<br>曾经我也想过一了百了 因为心中已空无一物<br>満たされないと泣いているのは きっと満たされたいと願うから<br>感到空虚而哭泣 一定是渴望得到充实<br>僕が死のうと思ったのは 靴紐が解けたから<br>曾经我也想过一了百了 因为鞋带松开了<br>結びなおすのは苦手なんだよ 人との繋がりもまた然り<br>不擅长重新系起 与人的牵绊亦是如此<br>僕が死のうと思ったのは 少年が僕を見つめていたから<br>曾经我也想过一了百了 因为少年深情凝视着我<br>ベッドの上で土下座してるよ あの日の僕にごめんなさいと<br>抱膝跪在床上 向那天的我说抱歉<br>パソコンの薄明かり 上階の部屋の生活音<br>屏幕的微光 楼上的噪音<br>インターフォンのチャイムの音 耳を塞ぐ鳥かごの少年<br>电话的铃声 紧塞住双耳 那笼中的少年<br>見えない敵と戦ってる 六畳一間のドンキホーテ<br>与看不见的敌人战斗着 六畳一间的堂吉诃德<br>ゴールはどうせ醜いものさ<br>反正目的也是一样丑陋<br>僕が死のうと思ったのは 冷たい人と言われたから<br>曾经我也想过一了百了 因为被人说是冷血<br>愛されたいと泣いているのは 人の温もりを知ってしまったから<br>想要被爱而哭泣 是因为尝到了人的温暖<br>僕が死のうと思ったのは あなたが綺麗に笑うから<br>曾经我也想过一了百了 因为你灿烂的笑容<br>死ぬことばかり考えてしまうのは きっと生きる事に真面目すぎるから<br>尽考虑着死的事 一定是因为太过认真地活<br>僕が死のうと思ったのは まだあなたに出会ってなかったから<br>曾经我也想过一了百了 因为还未与你相遇<br>あなたのような人が生まれた 世界を少し好きになったよ<br>因为有像你这样的人出生 我对世界稍微有了好感<br>あなたのような人が生きてる 世界に少し期待するよ<br>因为有像你这样的人活在这个世上 我对世界稍微有了期待</p>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语歌词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6167,6 +6251,10 @@
 <p>僕は君に生かされてる</p>
 <p>让我因你而得到新生</p>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语歌词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6186,25 +6274,10 @@
 <p>永き有限の花の 陰に見ゆおぼろ月<br>ながきゆうげんのはなの　かげにみゆおぼろづき<br>永恒时空中仅于此刻绽放 花影的间隙洒下朦胧月光<br>廻る時の褥に 幽し夢を見る<br>めぐるときのしとねに　かそけしゆめをみる<br>在流转的四季中入梦 梦中恍现昔日景象</p>
 <p>死してなお楚々と芽吹く<br>ししてなおそそとめぶく<br>虽知终将迎来凋零 花苞仍在楚楚成长<br>散ればこそ美しき春の来ない桜よ<br>ちればこそうつくしきはるのこないさくらよ<br>散去之时最为凄美 未曾沐浴春风的夜樱啊<br>今、幽雅に咲かせ<br>いま、ゆうがにさかせ<br>现在、请幽雅地绽放吧</p>
 ]]></content>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>泡沫うたかた</title>
-    <url>/2020/07/19/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E6%B3%A1%E6%B2%AB%E3%81%86%E3%81%9F%E3%81%8B%E3%81%9F/</url>
-    <content><![CDATA[<p>###泡沫うたかた-<br>Utakata；月まで届け、不死の煙</p>
-<a id="more"></a>
-
-<p>飛ぶ鳥は群れを成し<br>とぶどりはむれをなし<br>飞鸟成群<br>浮かべる孤独ついばむ<br>うかべるこどくついばむ<br>啄着飘出的孤独<br>暖かい穴の中<br>あたたかいあなのあなのなか<br>温暖的洞穴里<br>一人きり膝を抱えた<br>ひとりきりひざをかかえた<br>独自抱膝</p>
-<p>生まれ生まれて生まれ<br>うまれうまれてうまれ<br>生生生<br>死に死に死に死に死んで<br>しにしにしにしにしんで<br>死死死死死<br>生の始めに暗く<br>せいのはじめにくらく<br>暗生始<br>死の終わりにもいと冥く<br>しのおわりにもいと<br>冥死终</p>
-<p>誰の目にも留まることのない<br>谁也不会注意到的<br>救われない罪人よ<br>无可救赎的罪人啊</p>
-<p>せめて覚めない夢よ終われ<br>至少让这无法醒来的梦终结<br>死出の旅路を共に参ろう<br>一起踏上死亡的旅途<br>あの日貴方の後姿<br>那一天烙上了你的背影的<br>焼き付けた瞳潰して欲しい<br>这双眼睛啊，好想戳瞎掉<br>そして消えない夢の終わり<br>之后结束掉无法消失的梦<br>置いて逝かれた哀れな凡夫<br>被抛弃掉的可悲的凡夫<br>何時か何時も何時までも今<br>不知何时不论何时不管到何时<br>燃え上がるこの身を抱いて眠る<br>如今依旧以这燃烧的身子睡着</p>
-<p>花弁を散らかして<br>抛洒花瓣<br>死に化粧施しながら<br>为死亡化上新妆<br>とりかぶとを喰らって<br>吃下乌头<br>甘美な死に夢を見てる<br>梦见甘美的死亡</p>
-<p>死ねない死ねない<br>死不掉死不掉<br>死にたくなるよ<br>好想死掉啊<br>生きて生きていつまでも<br>还活着还活着一直活着</p>
-<p>殺されるのも殺すことも<br>不管是被杀还是杀人<br>神様が罰した暇つぶし<br>都是神罚的浪费时间<br>本当の意味の自由なんて<br>真正意义上的自由<br>知りたくなかったのに愛おしい<br>明明不想知道，真是可怜<br>曼珠沙華咲き乱れる坂<br>曼珠沙华盛开的坂道<br>黄泉の国へいざや参ろうか<br>能去往黄泉之国吗<br>けれど全ては淡き夢と<br>可这全都是浅白的梦<br>燃え墜ちて土に還ることなし<br>燃烧着坠落也不会回归大地</p>
-<p>せめて覚めない夢よ終われ<br>至少让这无法醒来的梦终结<br>死出の旅路を共に参ろう<br>一起踏上死亡的旅途<br>あの日貴方の後姿<br>那一天烙上了你的背影的<br>焼き付けた瞳潰して欲しい<br>这双眼睛啊，好想戳瞎掉<br>そして消えない夢の終わり<br>之后结束掉无法消失的梦<br>置いて逝かれた哀れな凡夫<br>被抛弃掉的可悲的凡夫<br>何時か何時も何時までも今<br>不知何时不论何时不管到何时<br>燃え上がるこの身を抱いて眠る<br>如今依旧以这燃烧的身子睡着</p>
-]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语歌词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6216,6 +6289,10 @@
 
 <p>• 少女たちの終わらない夜 大人たちの言いう “くだらないモノ” に<br>少女们漫长无尽的夜晚 朝大人们所说的「无聊的东西」<br>• 少女たちの終おわらない夜 心を奪われることもある<br>少女们漫长无尽的夜晚 就连心灵也曾经被夺走过<br>• 卒業したら何かが 変わると思っていたけど<br>倘若是毕业的话似乎就会有什么改变<br>• 大人たちの言う “大人” には なれそうもない気がした<br>但是也沒有想要成为大人们口中所说的「大人」的意愿<br>• 不安や孤独 隠して みんなではしゃいでた夜は<br>将不安与孤独隐藏起來 大家一起欢闹的夜晚<br>• ほら これからの未来のこと おおげさに話したよね<br>你看 在这之后关于未来的事情就像是被过于夸大其词的话题呢<br>• 不安いっぱい押しつけられて来たけど<br>拼命压抑住內心的不安了 但是<br>• 未来に怯えてちゃ 何も出来ないよ<br>畏惧未来的话 就会什么也做不到哟<br>• 少女たちの終わらない夜 大人たちの言いう “くだらないモノ” に<br>少女们漫长无尽的夜晚 朝大人们所说的「无聊的东西」<br>• 少女たちの終わらない夜 心を奪われることもある<br>少女们漫长无尽的夜晚 就连心灵也曾经被夺走过<br>• 無限に続くと思ってた 何もなかったあの日々が<br>没有什么的那些日子 本来以为会无限持续下去<br>• 卒業した途端 キラキラと 胸に何かを残した<br>一旦到了要毕业时 有什么闪耀的东西残留在心中<br>• 授業ではきっと教えてくれない<br>这肯定是学校里绝对不会教授的东西<br>• 大切なこと あるような気がしてた<br>像是发觉了重要的东西那样<br>• 少女たちの終わらない夜 大人は見えない “大事なモノ” を<br>少女们漫长无尽的夜晚 让大人们所看不见的「重要的東西」<br>• 少女たちの終わらない夜 ひとつだけ抱きしめて 朝を待つよ<br>少女们漫长无尽的夜晚 用力抱紧仅有的那个东西 等待着天明<br>• 少女たちの終わらない夜<br>少女们漫长无尽的夜晚<br>• 少女の頃 夢見てたこと 今でも同じ夢を見てる<br>少女的时候 在梦中所见到的事情 现在也看见了同样的梦<br>• 少女の頃 探してたもの 今でも同じように探してる<br>少女的时候 所寻找的东西 现在也如同当时一般的在寻找着</p>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语歌词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6227,17 +6304,10 @@
 
 <p>二番目の記憶…<br>にばんめのきおく<br>第二的记忆<br>弓がしなり彈けた焰 夜空を凍らせて<br>ゆみがしなりはじけたほおの　よぞらをこおらせて<br>柔韧的弓弦所迸发的火焰 将夜空冻结<br>凜と蒼く別離の詩を 戀人を射ち墮とす<br>りんとあおくわかれのうたを　あなたをうちよとす<br>凛然以青苍的别离之诗 将爱人（你）击下坠落…<br>遠い日の忘れ物 引き裂かれた傷痕<br>とおいひのわすれもの　ひきさかれたきずあと<br>很久以前已遗忘的事物 被撕裂的伤痕<br>呪われし約束をその胸に宿して<br>のろわれしやくそくをそのむねにやとして<br>将被诅咒的约定埋藏心中<br>「避けられぬ終焉は せめて愛しいその手で」<br>さけられぬしゅうえんは　せめていとしいそのてで<br>「既是无法避免的终焉，至少以所爱的那双手…」<br>抗えぬ沖動の暗が彼を包んだ<br>あらがえぬちゅうどうのくらがかれをつつんだ<br>不能抵抗的黑暗冲动将他包围住…<br>歪む世界 螺旋の焰輪回を貫いて<br>ゆがむせかい　らせんのほのおりんみをつらぬいて<br>扭曲的世界 漩涡的火焰贯穿轮回<br>凜と緋く血涂れくちづけ 戀人を射ち墮とす<br>りんとあたくちぬれくちづけ　あなたをうちよとす<br>凛然吻上染着绯红鲜血的双唇 将爱人（你）击下坠落…<br>忘レモノハ在リマセンカ<br>わすれものはありまやんか<br>有遗忘了甚么东西吗…？<br>古の傳說 その魔物に傷を負わされた者は<br>いにしえのでんせつ　そのまものにきずをまわされたものは<br>古老的传说 被那魔物所伤的人<br>咒いが全身を驅け回り<br>のろいがぜんしんをかけめり<br>诅咒会运行全身<br>やがては同じ魔物に成り果てるだ<br>やがてはおなじまものになりはてるだ<br>最终将会化身成同样的魔物吧…<br>その傷を負ったのはいつ<br>そのきずをおったのはいつ<br>那是何时受的伤呢…<br>それは二人が出會ったあの日まで溯る<br>それはふたりがであったあのひまでさかのぼる<br>那要追溯至二人相遇的那天<br>彼が彼女を助けた時に負った<br>かれがかのじょをだすけたじにおった<br>伤他为了拯救她而受的伤<br>全ては出會った時から始まっていた<br>すべてはであったじからはじまっていた<br>一切自相遇之时已开始了…<br>出會いは喪失への約束…<br>であいはそうしつへのやくそく…<br>相遇乃走向失去的约定…<br>枯れ果てた淚は 哀しみの蒼い焰を宿し<br>かれはてたなみだは　かなしみのあおいほのおをやどし<br>枯干的泪水 有着凄怆的苍蓝火焰<br>銀色に輝く矢を放つ<br>ぎんいろにかがやくやをはなつ<br>射出闪耀银色光芒的镝矢<br>何度でも 唯 彼が息絕えるまで<br>なんどでも　ただ　かれがいきたえるまで<br>不断地 直到…他断绝气息为止…<br>愛する人を失った世界には<br>あいするひとをうしなったせかいには<br>在失去了爱人的世界里<br>どんな色の花がさくだろう<br>どんないろのはながさくだろう<br>到底会开出甚么颜色的花朵呢？<br>月を抱いた十字の焰 いばらを卷きつけて<br>づきをいだいたじゅうじのほのおばらをまきつけて<br>抱拥月亮的十字火焰席卷荆棘<br>凜と白く最期の弓矢 私を射ち墮とす<br>りんとしろくさいごのあろお　わたしをうちよとす<br>凛然以最后的苍白弓矢 将我自己击下坠落…<br>愛する人を失った世界には<br>在失去了爱人的世界里<br>どんな色の花が咲く<br>到底会开出甚么颜色的花朵呢…<br>愛する人を失った世界には<br>在失去了爱人的世界里<br>どんな色の花が咲く<br>到底会开出甚么颜色的花朵呢…<br>愛する人を失った世界には<br>在失去了爱人的世界里<br>どんな色の花が咲く<br>到底会开出甚么颜色的花朵呢…<br>愛する人を失った世界には<br>在失去了爱人的世界里<br>どんな色の花が咲く<br>到底会开出甚么颜色的花朵呢…<br>愛する人を失った世界には<br>在失去了爱人的世界里<br>どんな色の花が咲く<br>到底会开出甚么颜色的花朵呢…<br>愛する人を失った世界には<br>在失去了爱人的世界里<br>どんな色の花が咲く<br>到底会开出甚么颜色的花朵呢…<br>愛する人を失った世界には<br>在失去了爱人的世界里<br>どんな色の花が咲く<br>到底会开出甚么颜色的花朵呢…<br>愛する人を失った世界には<br>在失去了爱人的世界里<br>どんな色の花が咲く<br>到底会开出甚么颜色的花朵呢…</p>
 ]]></content>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>迷宫大図鑑</title>
-    <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E8%BF%B7%E5%AE%AB%E5%A4%A7%E5%9B%B3%E9%91%91/</url>
-    <content><![CDATA[<a id="more"></a>
-
-<p>その大図鑑を開いた時から<br>从翻阅那份图鉴开始<br>貴方はこの迷宮の探索者<br>你就是这个迷宫的探索者<br>眠れる野薔薇を揺り起こすべく<br>将沉睡的野玫瑰摇醒<br>乾く靴音が向かうベージは<br>单调的脚步声 打开了这一页<br>色とりどり文字化けの<br>各类文字妖魔<br>虫の羽音が響く太古の森林<br>回响着昆虫翅膀声响的太古森林<br>少女が一人歌を紡いで座っている<br>少女 独坐着 唱着歌<br>蒼い蒼い甘い甘い<br>悠远而甜美<br>その歌声がら逃げることができない<br>谁也无法从她的歌声中逃离<br>その大図鑑を開いた時から<br>从翻阅那份图鉴开始<br>貴方はこの謎かけの回答者<br>你就是这个谜题的解答者<br>蕾の姫百合綻ばすべく<br>隐匿在百合绽放处 花蕾里的公主<br>掠る指先の捲るベージは<br>匆匆掠过指尖 翻过这一页<br>深く深くもっと深く<br>更遥远更深处的<br>欠落を照らす深海よ魚の群その中<br>照耀着深海鱼群中所缺失的那一页<br>少女が一人歌を紡いで浮かんでいる<br>少女 漂浮着 唱着歌<br>蒼い蒼い甘い甘い<br>悠远而甜美<br>その歌声から逃げることはできない<br>谁也无法从她的歌声中逃离<br>その抱擁から逃げることができない<br>谁也无法从这个怀抱中逃离<br>その迷宮からまだ出られはしない<br>谁也走不出这个迷宫的</p>
-]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语歌词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6257,6 +6327,48 @@
 <p>ne- furete itaiyo<br>呐 好想触碰你<br>baby boy your hands and habit and love and love</p>
 <p>ne- aishiteru<br>呐 好爱你<br>もう一度恋させて<br>让彼此再次相恋<br>あの頃の“好き”を<br>怀着那时的“喜欢”</p>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语歌词</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>泡沫うたかた</title>
+    <url>/2020/07/19/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E6%B3%A1%E6%B2%AB%E3%81%86%E3%81%9F%E3%81%8B%E3%81%9F/</url>
+    <content><![CDATA[<p>###泡沫うたかた-<br>Utakata；月まで届け、不死の煙</p>
+<a id="more"></a>
+
+<p>飛ぶ鳥は群れを成し<br>とぶどりはむれをなし<br>飞鸟成群<br>浮かべる孤独ついばむ<br>うかべるこどくついばむ<br>啄着飘出的孤独<br>暖かい穴の中<br>あたたかいあなのあなのなか<br>温暖的洞穴里<br>一人きり膝を抱えた<br>ひとりきりひざをかかえた<br>独自抱膝</p>
+<p>生まれ生まれて生まれ<br>うまれうまれてうまれ<br>生生生<br>死に死に死に死に死んで<br>しにしにしにしにしんで<br>死死死死死<br>生の始めに暗く<br>せいのはじめにくらく<br>暗生始<br>死の終わりにもいと冥く<br>しのおわりにもいと<br>冥死终</p>
+<p>誰の目にも留まることのない<br>谁也不会注意到的<br>救われない罪人よ<br>无可救赎的罪人啊</p>
+<p>せめて覚めない夢よ終われ<br>至少让这无法醒来的梦终结<br>死出の旅路を共に参ろう<br>一起踏上死亡的旅途<br>あの日貴方の後姿<br>那一天烙上了你的背影的<br>焼き付けた瞳潰して欲しい<br>这双眼睛啊，好想戳瞎掉<br>そして消えない夢の終わり<br>之后结束掉无法消失的梦<br>置いて逝かれた哀れな凡夫<br>被抛弃掉的可悲的凡夫<br>何時か何時も何時までも今<br>不知何时不论何时不管到何时<br>燃え上がるこの身を抱いて眠る<br>如今依旧以这燃烧的身子睡着</p>
+<p>花弁を散らかして<br>抛洒花瓣<br>死に化粧施しながら<br>为死亡化上新妆<br>とりかぶとを喰らって<br>吃下乌头<br>甘美な死に夢を見てる<br>梦见甘美的死亡</p>
+<p>死ねない死ねない<br>死不掉死不掉<br>死にたくなるよ<br>好想死掉啊<br>生きて生きていつまでも<br>还活着还活着一直活着</p>
+<p>殺されるのも殺すことも<br>不管是被杀还是杀人<br>神様が罰した暇つぶし<br>都是神罚的浪费时间<br>本当の意味の自由なんて<br>真正意义上的自由<br>知りたくなかったのに愛おしい<br>明明不想知道，真是可怜<br>曼珠沙華咲き乱れる坂<br>曼珠沙华盛开的坂道<br>黄泉の国へいざや参ろうか<br>能去往黄泉之国吗<br>けれど全ては淡き夢と<br>可这全都是浅白的梦<br>燃え墜ちて土に還ることなし<br>燃烧着坠落也不会回归大地</p>
+<p>せめて覚めない夢よ終われ<br>至少让这无法醒来的梦终结<br>死出の旅路を共に参ろう<br>一起踏上死亡的旅途<br>あの日貴方の後姿<br>那一天烙上了你的背影的<br>焼き付けた瞳潰して欲しい<br>这双眼睛啊，好想戳瞎掉<br>そして消えない夢の終わり<br>之后结束掉无法消失的梦<br>置いて逝かれた哀れな凡夫<br>被抛弃掉的可悲的凡夫<br>何時か何時も何時までも今<br>不知何时不论何时不管到何时<br>燃え上がるこの身を抱いて眠る<br>如今依旧以这燃烧的身子睡着</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语歌词</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>迷宫大図鑑</title>
+    <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E8%BF%B7%E5%AE%AB%E5%A4%A7%E5%9B%B3%E9%91%91/</url>
+    <content><![CDATA[<a id="more"></a>
+
+<p>その大図鑑を開いた時から<br>从翻阅那份图鉴开始<br>貴方はこの迷宮の探索者<br>你就是这个迷宫的探索者<br>眠れる野薔薇を揺り起こすべく<br>将沉睡的野玫瑰摇醒<br>乾く靴音が向かうベージは<br>单调的脚步声 打开了这一页<br>色とりどり文字化けの<br>各类文字妖魔<br>虫の羽音が響く太古の森林<br>回响着昆虫翅膀声响的太古森林<br>少女が一人歌を紡いで座っている<br>少女 独坐着 唱着歌<br>蒼い蒼い甘い甘い<br>悠远而甜美<br>その歌声がら逃げることができない<br>谁也无法从她的歌声中逃离<br>その大図鑑を開いた時から<br>从翻阅那份图鉴开始<br>貴方はこの謎かけの回答者<br>你就是这个谜题的解答者<br>蕾の姫百合綻ばすべく<br>隐匿在百合绽放处 花蕾里的公主<br>掠る指先の捲るベージは<br>匆匆掠过指尖 翻过这一页<br>深く深くもっと深く<br>更遥远更深处的<br>欠落を照らす深海よ魚の群その中<br>照耀着深海鱼群中所缺失的那一页<br>少女が一人歌を紡いで浮かんでいる<br>少女 漂浮着 唱着歌<br>蒼い蒼い甘い甘い<br>悠远而甜美<br>その歌声から逃げることはできない<br>谁也无法从她的歌声中逃离<br>その抱擁から逃げることができない<br>谁也无法从这个怀抱中逃离<br>その迷宮からまだ出られはしない<br>谁也走不出这个迷宫的</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语歌词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6265,6 +6377,10 @@
     <title>关于综合日语学习记录:第12课1单元笔记</title>
     <url>/2020/07/12/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E5%85%B3%E4%BA%8E%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95-%E7%AC%AC12%E8%AF%BE1%E5%8D%95%E5%85%83%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语语法</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6272,9 +6388,371 @@
   <entry>
     <title>日语句子积累</title>
     <url>/2020/08/12/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E6%97%A5%E8%AF%AD%E5%8F%A5%E5%AD%90%E7%A7%AF%E7%B4%AF/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">勇気は汝を正しい道に導く。</span><br><span class="line">勇气引导你走向正确的道路。</span><br><span class="line">人生とは今日ー日のことである。</span><br><span class="line">所谓人生，正是当下的每一天。</span><br><span class="line">何より大事なのは、人生を楽しむこと。</span><br><span class="line">最重要的是，享受生活。</span><br><span class="line">そこに近道はない。</span><br><span class="line">通往成功的路没有捷径。</span><br><span class="line">月の光も雨の音も、恋してこそ始めて新しい色と響を正ずる。</span><br><span class="line">恋爱之后才愈觉月色撩人、雨声绕梁。</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<p>日语鸡汤(雾)</p>
+<a id="more"></a>
+
+<center>勇気は汝を正しい道に導く。</center>
+<center>勇气引导你走向正确的道路。</center>
+
+<br>
+
+<center>人生とは今日ー日のことである。</center>
+<center>所谓人生，正是当下的每一天。</center>
+
+<br>
+
+<center>何より大事なのは、人生を楽しむこと。</center>
+<center>最重要的是，享受生活。</center>
+
+<br>
+
+<center>そこに近道はない。</center>
+<center>通往成功的路没有捷径。</center>
+
+<br>
+
+<center>月の光も雨の音も、恋してこそ始めて新しい色と響を正ずる。</center>
+<center>恋爱之后才愈觉月色撩人、雨声绕梁。</center>
+
+<br>
+
+<center>人を信じよ、しかし、その百倍も自らを信じよ。</center>
+<center>相信他人，更要加百倍相信自己。</center>
+
+<br>
+
+<center>一人前になるには50年はかかるんだ。</center>
+<center>成为一个能独当一面的人需要50年。</center>
+
+<br>
+
+<center>大切なことは、何も疑問を持たない状態に陥らないことである。</center>
+<center>最重要的是，永不放弃保持怀疑的状态。</center>
+
+<br>
+
+<center>「負けたことがある」というのが、いつか大きな財産になる。</center>
+<center>总有一天，今天的失败会成为你们巨大的财富。</center>
+
+<br>
+
+<center>笑顔は敵にも自分にも勝てる武器だ。</center>
+<center>笑，可以让你战胜敌人与自己。</center>
+
+<br>
+
+<center>過去を捨てなくては、未来の場所がない。</center>
+<center>不扔掉过去，就没有未来的地盘。</center>
+
+<br>
+
+<center>人が好きになって、そしてその人に好くになってもらって、それは奇跡だ。
+</center>
+<center>喜欢上一个人，而且能让那个人喜欢你，那就是奇迹。</center>
+
+
+
+<p>这一部分是我最近看的半泽直树找的一些名句</p>
+<center>正義は、たまには勝つ!</center>
+<center>正义，偶尔也会胜利的!</center>
+
+<br>
+
+<center>あなたのおっしゃっていることは机上の......いやタブレット上の空論だ！</center>
+<center>你那说的都是纸上...不!是平板上的谈兵！</center>
+
+<br>
+
+<center>近藤くん、今、ここで、返事がほしい。もう一度なってみないかね、銀行員に</center>
+<center>近藤，现在在这里答复我，你不想重新成为银行职员么？</center>
+
+<br>
+
+<center>「こっちを見ろ！そう言ってんだよ、福山」</center>
+
+<center>看着我！我这是命令你呢，福山！</center>
+
+<br>
+
+<center>甘えること言ってんじゃねぞ。家族がいるのは前だけだとでも思ってんのか......俺はお前を許さない。自分のしたことを一生悔やんで生きろ</center>
+<center>别说这种自私的话，你以为只有你有家庭么？...我是不会原谅你的，为你自己的所作所为，后悔一辈子吧！</center>
+
+<br>
+
+<center>「そういう非常識な役人が、この国をダメにすんのよ！」</center>
+<center>就因为你们这些没常识的公务员，这个国家才不行的！</center>
+
+<br>
+
+<center>「これ以上足を引っ張るようなら徹底的に戦います。やられたらやり返す。倍返しだ！」</center>
+<center>如果你们再拖我们的后腿，我们一定会奋战到底，以牙还牙，加倍奉还！</center>
+
+
+
+
 
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语语法</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第7次课</title>
+    <url>/2020/07/04/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E7%AC%AC7%E6%AC%A1%E8%AF%BE/</url>
+    <content><![CDATA[<p>关于Vてもいい&lt;允许&gt;<br>[Vてもいい]这个句式表示允许、同意、批准(别人)做某事。当他用于问句时，则表示在回答这样的问句时，如果表示肯定，一般不用[はい、～てもいいです]的形式，而多回答[はい、どうぞ。][ええ、いいですよ。]等。例如:</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语语法</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>综合日语第13课笔记</title>
+    <url>/2020/07/17/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC13%E8%AF%BE%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="综合日语第13课笔记"><a href="#综合日语第13课笔记" class="headerlink" title="综合日语第13课笔记"></a>综合日语第13课笔记</h1><h3 id="第十三课单词记录"><a href="#第十三课单词记录" class="headerlink" title="第十三课单词记录"></a>第十三课单词记录</h3><a id="more"></a>
+
+<table>
+<thead>
+<tr>
+<th align="center">单词</th>
+<th align="center">词性</th>
+<th align="center">翻译</th>
+<th align="center">声调</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ルール(rule)</td>
+<td align="center">名词</td>
+<td align="center">规则/规定</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">マナー(manner)</td>
+<td align="center">名词</td>
+<td align="center">礼节/礼仪</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">届ける</td>
+<td align="center">自动词1类</td>
+<td align="center">把什么什么东西寄到什么地方</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">テレビドラマ(TV drama)</td>
+<td align="center">名词</td>
+<td align="center">电视剧</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">ドラマ(drama)</td>
+<td align="center">名词</td>
+<td align="center">(电视)剧</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">ビデオ(video)</td>
+<td align="center">名词</td>
+<td align="center">录像/录像带</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">届く(とどく)</td>
+<td align="center">自动词1类</td>
+<td align="center">到/寄到/送到</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">渡辺美咲(わたなべ－みさき)</td>
+<td align="center">固有名词</td>
+<td align="center">(人名)渡边美咲</td>
+<td align="center">0-0</td>
+</tr>
+<tr>
+<td align="center">~てはいけない</td>
+<td align="center">/</td>
+<td align="center">(表示禁止)不许~</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">知る(しる)</td>
+<td align="center">他动词1类</td>
+<td align="center">知道/认识</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">から</td>
+<td align="center">接助词</td>
+<td align="center">(连接两个分句，表示原因、理由)因为</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">仕方がない(しかたがない)</td>
+<td align="center">/</td>
+<td align="center">没有办法/无可奈何</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">仕方(しかた)</td>
+<td align="center">名词</td>
+<td align="center">办法/方法</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">～ないでください</td>
+<td align="center">/</td>
+<td align="center">请不要~</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">気にする(きにする)</td>
+<td align="center">/</td>
+<td align="center">介意/在乎</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">気(き)</td>
+<td align="center">名词</td>
+<td align="center">气/意识/心情</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">ポスター(poster)</td>
+<td align="center">名词</td>
+<td align="center">广告宣传画/招贴</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">貼る(はる)</td>
+<td align="center">他动词1类</td>
+<td align="center">贴/张贴</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">声(こえ)</td>
+<td align="center">名词</td>
+<td align="center">声音</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">歌う(うたう)</td>
+<td align="center">他动词1类</td>
+<td align="center">唱/歌唱</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">麻雀(まーじゃん/マージャン)</td>
+<td align="center">名词</td>
+<td align="center">麻将</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">ごみ</td>
+<td align="center">名词</td>
+<td align="center">垃圾</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">ゴミ箱</td>
+<td align="center">名词</td>
+<td align="center">垃圾箱</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">捨てる</td>
+<td align="center">他动词2类</td>
+<td align="center">扔</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">当たり前(あたりまえ)</td>
+<td align="center">名词</td>
+<td align="center">当然/理所当然</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">もう</td>
+<td align="center">感叹词</td>
+<td align="center">说话人因愤慨、失望等哑口无言的状态</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">違う(ちがう)</td>
+<td align="center">自动词1类</td>
+<td align="center">不同/不一致/不对</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">はいーはい</td>
+<td align="center">/</td>
+<td align="center">我知道了</td>
+<td align="center">1-1</td>
+</tr>
+<tr>
+<td align="center">芝生(しばふ)</td>
+<td align="center">名词</td>
+<td align="center">草坪</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">カンニング(cunning)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">作弊</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="第十三课音声及语法解析"><a href="#第十三课音声及语法解析" class="headerlink" title="第十三课音声及语法解析"></a>第十三课音声及语法解析</h3><h4 id="Vては"><a href="#Vては" class="headerlink" title="Vては"></a>Vては</h4><p>动词为平板型的时候，请把[Vては]读成-②型。</p>
+<p>買う⓪ーかっては‐②</p>
+<p>行く⓪ー行っては‐②</p>
+<p>当动词为起伏型的时候，请把[Vては]的声调与[Vて]相同。</p>
+<p>読む1ー読んでは</p>
+<p>書く1ー書いては</p>
+<p>作るー作っては</p>
+<h4 id="Vてはいけない-lt-禁止-gt"><a href="#Vてはいけない-lt-禁止-gt" class="headerlink" title="Vてはいけない&lt;禁止&gt;"></a>Vてはいけない&lt;禁止&gt;</h4><p>动词的第二连用形([て]形)后接[はいけない]用来表示禁止的意思，相当于汉语里面的”不许,不准,不要,不得”等。多用于表示规则、纪律，由于语气强烈，最好就不要去用来当面禁止对方做某事。例如:</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">わたしたちの寮は、男性は入ってはいけないんです。</span><br><span class="line">わたしたちの寮は、女性は入ってはいけないんです。</span><br><span class="line">教室ではタバコを吸ってはいけません。</span><br><span class="line">酒店ではタバコを吸ってはいけません。</span><br><span class="line">書店では煙草を吸ってはいけません。</span><br><span class="line">子供はお酒を飲んではいけません。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="から-lt-原因-理由-gt"><a href="#から-lt-原因-理由-gt" class="headerlink" title="から&lt;原因/理由&gt;"></a>から&lt;原因/理由&gt;</h4><p>助词[から]连接两个分句，表示理由‘原因，相当于汉语里的”因为、所以”等。例如:</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">ルールですから、しかたがありませんよ。</span><br><span class="line">暑いから、窓を開けてください。</span><br><span class="line">日本人の友達が来るから、あした北京空港へ行きます。</span><br></pre></td></tr></table></figure>
+
+<h4 id="Ⅴないでください-lt-禁止-否定性请求-gt"><a href="#Ⅴないでください-lt-禁止-否定性请求-gt" class="headerlink" title="Ⅴないでください&lt;禁止(否定性请求)&gt;"></a>Ⅴないでください&lt;禁止(否定性请求)&gt;</h4><p>[Vないでください]是用来表示请求的句式[Vてください]的否定形式,表示禁止。相当于汉语里面的”请不要<del>, 请勿</del>“。 例如:</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">気にしないでください。</span><br><span class="line">请不要在意</span><br><span class="line">大きい声を出さないでください。</span><br><span class="line">请不要大声喧哗</span><br><span class="line">速く走らないでください。</span><br><span class="line">请不要快速奔跑</span><br><span class="line">試験のとき、作文(さくぶん)鉛筆(えんぴつ)で書かないでください。</span><br><span class="line">考试时，请不要用铅笔写作文。</span><br><span class="line">変なものを入れないでください。</span><br><span class="line">请不要把奇怪的东西放进来。</span><br><span class="line">危険な動作をしないでください。</span><br><span class="line">请不要做危险动作。</span><br><span class="line">相手(あいて)を攻撃(こうげき)しないでください。</span><br><span class="line">请不要攻击对方。</span><br><span class="line">物を壊さないでください</span><br><span class="line">请不要破坏物品。</span><br><span class="line">喫煙はご遠慮(えんりょ)ください。</span><br><span class="line">请勿吸烟。</span><br><span class="line">お酒はご遠慮ください。</span><br><span class="line">请勿喝酒。</span><br><span class="line">賭け事(かけごと)ご遠慮ください</span><br><span class="line">请勿赌博。</span><br></pre></td></tr></table></figure>
+
+<h4 id="Vている-Vないとき-に"><a href="#Vている-Vないとき-に" class="headerlink" title="Vている/Vないとき(に)"></a>Vている/Vないとき(に)</h4><p>[とき(に)]是接在动词连体形或”名词+の”的后面,构成时间状语(时间从句),表示主句的动作是在该时点成立的，相当于汉语的”<del>时,</del>的时候”等。</p>
+<p>特殊时间或者一次性时间时とき后面需要加に,前后主语不一致时时前句主语需要用が来提示。</p>
+<p>例句如下:</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">人が下を歩いているときに、窓(まど)からごみを捨(す)ててはいけない…。</span><br><span class="line">人在下面走的时候，不能从窗户扔垃圾…。</span><br><span class="line">きのう、部屋で小説(しょうせつ)を読んでいるときに、停電(ていでん)しました。</span><br><span class="line">昨天在房间里看小说的时候停电了。</span><br><span class="line">わたしは家に誰もいないとき、自分で料理を作ります。</span><br><span class="line">我在家里没有人的时候，自己做饭。</span><br><span class="line">先週友達が病気のときに、私は看病しました。</span><br><span class="line">上周朋友生病的时候我去照料了。</span><br><span class="line">暇(ひま)なとき、遊(あそ)びにきてください。</span><br><span class="line">有空的时候来找我玩。</span><br><span class="line">人が下を歩(ある)いている時に、窓からゴミを捨ててはいけない。</span><br><span class="line">解释:这里的いている，就是在表示正在进行时。那么歩いて、由歩く改变，歩く是走。歩いて就是正在走。走过哪里，这个を就是表示经过的地方。&quot;窓から&quot;就是表示从窗户上。てはいけない。就是表示不准。ゴミを捨てる。表示扔垃圾。</span><br><span class="line">所以全句就是:人在下面走的时候，是不能扔垃圾的。</span><br><span class="line">家に誰もいない時、自分で料理を作ります。</span><br><span class="line">这里有一个全部否定，疑问词+も+加上否定。&quot;誰もいない&quot;就是表示谁都不在的意思。いない就是由いる变过来的。家に誰もいない時就是家里没人在的时候。后接句子，全句就是:家里没人的时候，我就自己煮饭。</span><br><span class="line">料理を作っているとき、火のそばを離れないでください。</span><br><span class="line">做饭的时候，请不要离开炉火。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>关于とき，有一点需要注意。</p>
+<h5 id="Vるとき-に-和-Vたとき-に-所表示的时间关系是相反的，-Vたとき-に-表示做了V的时候，在做后项的动作。"><a href="#Vるとき-に-和-Vたとき-に-所表示的时间关系是相反的，-Vたとき-に-表示做了V的时候，在做后项的动作。" class="headerlink" title="[Vるとき(に)]和[Vたとき(に)]所表示的时间关系是相反的，[Vたとき(に)]表示做了V的时候，在做后项的动作。"></a>[Vるとき(に)]和[Vたとき(に)]所表示的时间关系是相反的，[Vたとき(に)]表示做了V的时候，在做后项的动作。</h5><p>这两个前者一个是动词的辞书形。动词的る加上とき和动词的た加上とき差别是很大的。区别是，看到例句行く、行く表示的是动词原形非过去时，也可以表示将来时。但是在表示とき这个句子的时候，就是一般将来时。下面的例句1就是去日本之前买了电脑代表的就是已经在去日本前就买了。例句2则是相反的，去了日本之后买了电脑。</p>
+<p>例句1:日本へ行くとき(后)、パソコンを買いました(先)</p>
+<p>去日本之前买了电脑。(在到达日本之前买的礼物)</p>
+<p>例句2:日本へ行ったとき(先)、パソコンを買いました(后)</p>
+<p>去日本之后买了电脑。(在到达日本之后买的礼物)</p>
+<p>国へ帰るとき、いろいろな手続きをしました。</p>
+<p>回国的时候办了很多手续。(先办手续，再去日本)</p>
+<p>作业解析：</p>
+<p>因为高桥很漂亮，所以我很喜欢她。</p>
+<p>高橋さんはとてもきれいだから、彼女のことが大好きだよ。</p>
+<p>明天爬不了山。因为要下雨。</p>
+<p>明日は山(やま)に登(のぼ)れません。雨が降りますから。</p>
+<h3 id="第十三课第二单元语法笔记"><a href="#第十三课第二单元语法笔记" class="headerlink" title="第十三课第二单元语法笔记"></a>第十三课第二单元语法笔记</h3><h4 id="Vなくてもいい-lt-不必要-gt"><a href="#Vなくてもいい-lt-不必要-gt" class="headerlink" title="Vなくてもいい&lt;不必要&gt;"></a>Vなくてもいい&lt;不必要&gt;</h4><p>[Vなくてもいい]是[V てもいい]的否定形式，用意就是表示同意、许可不做某事或者没有必要去做某事。相当于汉语的”可以不<del>，不</del>也行”之意。例句如下:</p>
+<p>靴、脱がなくてもいいですよ。</p>
+<h4 id="Vる-Ⅴたとき-に"><a href="#Vる-Ⅴたとき-に" class="headerlink" title="Vる/Ⅴたとき(に)"></a>Vる/Ⅴたとき(に)</h4><p>动词的后续[とき(に)]时，非过去时(Vる)和过去时(Vた)所表示的时间关系相反,具体来讲就是非过去时表示先进行主句中的动作，然后再进行时间从句中的动作。而过去时则是表示先进行时间从句中的动作，然后再进行主句中的动作。例句如下:</p>
+<p>日本では家に入るとき、靴を脱がなくてはいけないんでしょう？</p>
+<h4 id="Vなくては-なければ-いけない"><a href="#Vなくては-なければ-いけない" class="headerlink" title="Ｖなくては(なければ)いけない/"></a>Ｖなくては(なければ)いけない/</h4><h4 id="Vなくては-なければ-ならない-lt-必要、义务-gt"><a href="#Vなくては-なければ-ならない-lt-必要、义务-gt" class="headerlink" title="Ｖなくては(なければ)ならない&lt;必要、义务&gt;"></a>Ｖなくては(なければ)ならない&lt;必要、义务&gt;</h4><p>[Vない→Vなくては/Vなければ+いけない]是表示说话人认为有必要、有义务进行该动作，或者某种特殊情况要求必须进行该动作；[Vない→Ｖなくては/Vなければ+ならない]多用来表示从社会常识来看很有必要，有义务进行该动作，是人们都认可的一般性的判断。非针对个人。这两个句式表示有必要、有义务进行该动作，相当于汉语里面的”必须<del>、应该</del>、得~”等。</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语语法</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6554,252 +7032,66 @@
 <p>动词能动态的声调与该动词词典形的声调相同。</p>
 <p>平板型动词:<br>$$<br>買う⁰→買える⁰　行く⁰→行ける⁰<br>$$<br>起伏型动词:<br>$$<br>読む⁻²→読める(よめる)⁻²　書く⁻²→書ける(かける)⁻²<br>　作る⁻²→作れる(つくれる)⁻²　集める⁻²→集められる(あつめられる)⁻²<br>$$</p>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语语法</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
   </entry>
   <entry>
-    <title>第7次课</title>
-    <url>/2020/07/04/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E7%AC%AC7%E6%AC%A1%E8%AF%BE/</url>
-    <content><![CDATA[<p>关于Vてもいい&lt;允许&gt;<br>[Vてもいい]这个句式表示允许、同意、批准(别人)做某事。当他用于问句时，则表示在回答这样的问句时，如果表示肯定，一般不用[はい、～てもいいです]的形式，而多回答[はい、どうぞ。][ええ、いいですよ。]等。例如:</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>综合日语第13课笔记</title>
-    <url>/2020/07/17/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC13%E8%AF%BE%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="综合日语第13课笔记"><a href="#综合日语第13课笔记" class="headerlink" title="综合日语第13课笔记"></a>综合日语第13课笔记</h1><h3 id="第十三课单词记录"><a href="#第十三课单词记录" class="headerlink" title="第十三课单词记录"></a>第十三课单词记录</h3><a id="more"></a>
+    <title>综合日语第15课笔记</title>
+    <url>/2020/08/17/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC15%E8%AF%BE%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<a id="more"></a>
 
-<table>
-<thead>
-<tr>
-<th align="center">单词</th>
-<th align="center">词性</th>
-<th align="center">翻译</th>
-<th align="center">声调</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">ルール(rule)</td>
-<td align="center">名词</td>
-<td align="center">规则/规定</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">マナー(manner)</td>
-<td align="center">名词</td>
-<td align="center">礼节/礼仪</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">届ける</td>
-<td align="center">自动词1类</td>
-<td align="center">把什么什么东西寄到什么地方</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">テレビドラマ(TV drama)</td>
-<td align="center">名词</td>
-<td align="center">电视剧</td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td align="center">ドラマ(drama)</td>
-<td align="center">名词</td>
-<td align="center">(电视)剧</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">ビデオ(video)</td>
-<td align="center">名词</td>
-<td align="center">录像/录像带</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">届く(とどく)</td>
-<td align="center">自动词1类</td>
-<td align="center">到/寄到/送到</td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="center">渡辺美咲(わたなべ－みさき)</td>
-<td align="center">固有名词</td>
-<td align="center">(人名)渡边美咲</td>
-<td align="center">0-0</td>
-</tr>
-<tr>
-<td align="center">~てはいけない</td>
-<td align="center">/</td>
-<td align="center">(表示禁止)不许~</td>
-<td align="center">/</td>
-</tr>
-<tr>
-<td align="center">知る(しる)</td>
-<td align="center">他动词1类</td>
-<td align="center">知道/认识</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">から</td>
-<td align="center">接助词</td>
-<td align="center">(连接两个分句，表示原因、理由)因为</td>
-<td align="center">/</td>
-</tr>
-<tr>
-<td align="center">仕方がない(しかたがない)</td>
-<td align="center">/</td>
-<td align="center">没有办法/无可奈何</td>
-<td align="center">5</td>
-</tr>
-<tr>
-<td align="center">仕方(しかた)</td>
-<td align="center">名词</td>
-<td align="center">办法/方法</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">～ないでください</td>
-<td align="center">/</td>
-<td align="center">请不要~</td>
-<td align="center">/</td>
-</tr>
-<tr>
-<td align="center">気にする(きにする)</td>
-<td align="center">/</td>
-<td align="center">介意/在乎</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">気(き)</td>
-<td align="center">名词</td>
-<td align="center">气/意识/心情</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">ポスター(poster)</td>
-<td align="center">名词</td>
-<td align="center">广告宣传画/招贴</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">貼る(はる)</td>
-<td align="center">他动词1类</td>
-<td align="center">贴/张贴</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">声(こえ)</td>
-<td align="center">名词</td>
-<td align="center">声音</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">歌う(うたう)</td>
-<td align="center">他动词1类</td>
-<td align="center">唱/歌唱</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">麻雀(まーじゃん/マージャン)</td>
-<td align="center">名词</td>
-<td align="center">麻将</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">ごみ</td>
-<td align="center">名词</td>
-<td align="center">垃圾</td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="center">ゴミ箱</td>
-<td align="center">名词</td>
-<td align="center">垃圾箱</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">捨てる</td>
-<td align="center">他动词2类</td>
-<td align="center">扔</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">当たり前(あたりまえ)</td>
-<td align="center">名词</td>
-<td align="center">当然/理所当然</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">もう</td>
-<td align="center">感叹词</td>
-<td align="center">说话人因愤慨、失望等哑口无言的状态</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">違う(ちがう)</td>
-<td align="center">自动词1类</td>
-<td align="center">不同/不一致/不对</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">はいーはい</td>
-<td align="center">/</td>
-<td align="center">我知道了</td>
-<td align="center">1-1</td>
-</tr>
-<tr>
-<td align="center">芝生(しばふ)</td>
-<td align="center">名词</td>
-<td align="center">草坪</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">カンニング(cunning)</td>
-<td align="center">名词/自动词3类</td>
-<td align="center">作弊</td>
-<td align="center">0</td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="第十三课音声及语法解析"><a href="#第十三课音声及语法解析" class="headerlink" title="第十三课音声及语法解析"></a>第十三课音声及语法解析</h3><h4 id="Vては"><a href="#Vては" class="headerlink" title="Vては"></a>Vては</h4><p>动词为平板型的时候，请把[Vては]读成-②型。</p>
-<p>買う⓪ーかっては‐②</p>
-<p>行く⓪ー行っては‐②</p>
-<p>当动词为起伏型的时候，请把[Vては]的声调与[Vて]相同。</p>
-<p>読む1ー読んでは</p>
-<p>書く1ー書いては</p>
-<p>作るー作っては</p>
-<h4 id="Vてはいけない-lt-禁止-gt"><a href="#Vてはいけない-lt-禁止-gt" class="headerlink" title="Vてはいけない&lt;禁止&gt;"></a>Vてはいけない&lt;禁止&gt;</h4><p>动词的第二连用形([て]形)后接[はいけない]用来表示禁止的意思，相当于汉语里面的”不许,不准,不要,不得”等。多用于表示规则、纪律，由于语气强烈，最好就不要去用来当面禁止对方做某事。例如:</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">わたしたちの寮は、男性は入ってはいけないんです。</span><br><span class="line">わたしたちの寮は、女性は入ってはいけないんです。</span><br><span class="line">教室ではタバコを吸ってはいけません。</span><br><span class="line">酒店ではタバコを吸ってはいけません。</span><br><span class="line">書店では煙草を吸ってはいけません。</span><br><span class="line">子供はお酒を飲んではいけません。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="から-lt-原因-理由-gt"><a href="#から-lt-原因-理由-gt" class="headerlink" title="から&lt;原因/理由&gt;"></a>から&lt;原因/理由&gt;</h4><p>助词[から]连接两个分句，表示理由‘原因，相当于汉语里的”因为、所以”等。例如:</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">ルールですから、しかたがありませんよ。</span><br><span class="line">暑いから、窓を開けてください。</span><br><span class="line">日本人の友達が来るから、あした北京空港へ行きます。</span><br></pre></td></tr></table></figure>
-
-<h4 id="Ⅴないでください-lt-禁止-否定性请求-gt"><a href="#Ⅴないでください-lt-禁止-否定性请求-gt" class="headerlink" title="Ⅴないでください&lt;禁止(否定性请求)&gt;"></a>Ⅴないでください&lt;禁止(否定性请求)&gt;</h4><p>[Vないでください]是用来表示请求的句式[Vてください]的否定形式,表示禁止。相当于汉语里面的”请不要<del>, 请勿</del>“。 例如:</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">気にしないでください。</span><br><span class="line">请不要在意</span><br><span class="line">大きい声を出さないでください。</span><br><span class="line">请不要大声喧哗</span><br><span class="line">速く走らないでください。</span><br><span class="line">请不要快速奔跑</span><br><span class="line">試験のとき、作文(さくぶん)鉛筆(えんぴつ)で書かないでください。</span><br><span class="line">考试时，请不要用铅笔写作文。</span><br><span class="line">変なものを入れないでください。</span><br><span class="line">请不要把奇怪的东西放进来。</span><br><span class="line">危険な動作をしないでください。</span><br><span class="line">请不要做危险动作。</span><br><span class="line">相手(あいて)を攻撃(こうげき)しないでください。</span><br><span class="line">请不要攻击对方。</span><br><span class="line">物を壊さないでください</span><br><span class="line">请不要破坏物品。</span><br><span class="line">喫煙はご遠慮(えんりょ)ください。</span><br><span class="line">请勿吸烟。</span><br><span class="line">お酒はご遠慮ください。</span><br><span class="line">请勿喝酒。</span><br><span class="line">賭け事(かけごと)ご遠慮ください</span><br><span class="line">请勿赌博。</span><br></pre></td></tr></table></figure>
-
-<h4 id="Vている-Vないとき-に"><a href="#Vている-Vないとき-に" class="headerlink" title="Vている/Vないとき(に)"></a>Vている/Vないとき(に)</h4><p>[とき(に)]是接在动词连体形或”名词+の”的后面,构成时间状语(时间从句),表示主句的动作是在该时点成立的，相当于汉语的”<del>时,</del>的时候”等。</p>
-<p>特殊时间或者一次性时间时とき后面需要加に,前后主语不一致时时前句主语需要用が来提示。</p>
+<h1 id="第十五课音声及语法解析"><a href="#第十五课音声及语法解析" class="headerlink" title="第十五课音声及语法解析"></a>第十五课音声及语法解析</h1><h3 id="意志的表达-动词的意志形变形"><a href="#意志的表达-动词的意志形变形" class="headerlink" title="意志的表达:动词的意志形变形"></a>意志的表达:动词的意志形变形</h3><p>一类动词：将动词结尾う段假名换成对应お段假名,再加上”う”。</p>
+<p>三个愿望</p>
+<p>飲む→飲もう　会う→</p>
+<p>遊ぶ　遊ぼう</p>
+<p>入る　入ろう</p>
+<p>死ぬ　死のう</p>
+<p>行く　行こう</p>
+<p>来る　来よう</p>
+<p>立つ　立とう</p>
+<p>読む　読もう</p>
+<p>発表する　発表しよう</p>
+<p>開ける　開けよう</p>
+<p>する　しよう</p>
+<p>急ぐ　急ごう</p>
+<p>含义:1.表明说话人的意志,用于第一人称句时;简单来说就是用黄晓明的话，我不管你怎么想，要我想的。这样</p>
+<p>2.表示建议对方做某事。简而言之，即[Vましょう]的简体表达。</p>
 <p>例句如下:</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">人が下を歩いているときに、窓(まど)からごみを捨(す)ててはいけない…。</span><br><span class="line">人在下面走的时候，不能从窗户扔垃圾…。</span><br><span class="line">きのう、部屋で小説(しょうせつ)を読んでいるときに、停電(ていでん)しました。</span><br><span class="line">昨天在房间里看小说的时候停电了。</span><br><span class="line">わたしは家に誰もいないとき、自分で料理を作ります。</span><br><span class="line">我在家里没有人的时候，自己做饭。</span><br><span class="line">先週友達が病気のときに、私は看病しました。</span><br><span class="line">上周朋友生病的时候我去照料了。</span><br><span class="line">暇(ひま)なとき、遊(あそ)びにきてください。</span><br><span class="line">有空的时候来找我玩。</span><br><span class="line">人が下を歩(ある)いている時に、窓からゴミを捨ててはいけない。</span><br><span class="line">解释:这里的いている，就是在表示正在进行时。那么歩いて、由歩く改变，歩く是走。歩いて就是正在走。走过哪里，这个を就是表示经过的地方。&quot;窓から&quot;就是表示从窗户上。てはいけない。就是表示不准。ゴミを捨てる。表示扔垃圾。</span><br><span class="line">所以全句就是:人在下面走的时候，是不能扔垃圾的。</span><br><span class="line">家に誰もいない時、自分で料理を作ります。</span><br><span class="line">这里有一个全部否定，疑问词+も+加上否定。&quot;誰もいない&quot;就是表示谁都不在的意思。いない就是由いる变过来的。家に誰もいない時就是家里没人在的时候。后接句子，全句就是:家里没人的时候，我就自己煮饭。</span><br><span class="line">料理を作っているとき、火のそばを離れないでください。</span><br><span class="line">做饭的时候，请不要离开炉火。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">明日の朝早いから、今晩早く寝よう。</span><br><span class="line">因为明天要早起，所以今晚要早点睡。</span><br><span class="line">みんなて頑張ろう。</span><br><span class="line">大家一起加油吧。</span><br><span class="line">人数が足りないから、王さんも一緒に行きましょう。</span><br><span class="line">人数が足りないから、王さんも一緒に行こう。</span><br><span class="line">因为人数不够，所以小王也一起去吧。</span><br><span class="line">ちょっと休まない？</span><br></pre></td></tr></table></figure>
 
-<p>关于とき，有一点需要注意。</p>
-<h5 id="Vるとき-に-和-Vたとき-に-所表示的时间关系是相反的，-Vたとき-に-表示做了V的时候，在做后项的动作。"><a href="#Vるとき-に-和-Vたとき-に-所表示的时间关系是相反的，-Vたとき-に-表示做了V的时候，在做后项的动作。" class="headerlink" title="[Vるとき(に)]和[Vたとき(に)]所表示的时间关系是相反的，[Vたとき(に)]表示做了V的时候，在做后项的动作。"></a>[Vるとき(に)]和[Vたとき(に)]所表示的时间关系是相反的，[Vたとき(に)]表示做了V的时候，在做后项的动作。</h5><p>这两个前者一个是动词的辞书形。动词的る加上とき和动词的た加上とき差别是很大的。区别是，看到例句行く、行く表示的是动词原形非过去时，也可以表示将来时。但是在表示とき这个句子的时候，就是一般将来时。下面的例句1就是去日本之前买了电脑代表的就是已经在去日本前就买了。例句2则是相反的，去了日本之后买了电脑。</p>
-<p>例句1:日本へ行くとき(后)、パソコンを買いました(先)</p>
-<p>去日本之前买了电脑。(在到达日本之前买的礼物)</p>
-<p>例句2:日本へ行ったとき(先)、パソコンを買いました(后)</p>
-<p>去日本之后买了电脑。(在到达日本之后买的礼物)</p>
-<p>国へ帰るとき、いろいろな手続きをしました。</p>
-<p>回国的时候办了很多手续。(先办手续，再去日本)</p>
-<p>作业解析：</p>
-<p>因为高桥很漂亮，所以我很喜欢她。</p>
-<p>高橋さんはとてもきれいだから、彼女のことが大好きだよ。</p>
-<p>明天爬不了山。因为要下雨。</p>
-<p>明日は山(やま)に登(のぼ)れません。雨が降りますから。</p>
-<h3 id="第十三课第二单元语法笔记"><a href="#第十三课第二单元语法笔记" class="headerlink" title="第十三课第二单元语法笔记"></a>第十三课第二单元语法笔记</h3><h4 id="Vなくてもいい-lt-不必要-gt"><a href="#Vなくてもいい-lt-不必要-gt" class="headerlink" title="Vなくてもいい&lt;不必要&gt;"></a>Vなくてもいい&lt;不必要&gt;</h4><p>[Vなくてもいい]是[V てもいい]的否定形式，用意就是表示同意、许可不做某事或者没有必要去做某事。相当于汉语的”可以不<del>，不</del>也行”之意。例句如下:</p>
-<p>靴、脱がなくてもいいですよ。</p>
-<h4 id="Vる-Ⅴたとき-に"><a href="#Vる-Ⅴたとき-に" class="headerlink" title="Vる/Ⅴたとき(に)"></a>Vる/Ⅴたとき(に)</h4><p>动词的后续[とき(に)]时，非过去时(Vる)和过去时(Vた)所表示的时间关系相反,具体来讲就是非过去时表示先进行主句中的动作，然后再进行时间从句中的动作。而过去时则是表示先进行时间从句中的动作，然后再进行主句中的动作。例句如下:</p>
-<p>日本では家に入るとき、靴を脱がなくてはいけないんでしょう？</p>
-<h4 id="Vなくては-なければ-いけない"><a href="#Vなくては-なければ-いけない" class="headerlink" title="Ｖなくては(なければ)いけない/"></a>Ｖなくては(なければ)いけない/</h4><h4 id="Vなくては-なければ-ならない-lt-必要、义务-gt"><a href="#Vなくては-なければ-ならない-lt-必要、义务-gt" class="headerlink" title="Ｖなくては(なければ)ならない&lt;必要、义务&gt;"></a>Ｖなくては(なければ)ならない&lt;必要、义务&gt;</h4><p>[Vない→Vなくては/Vなければ+いけない]是表示说话人认为有必要、有义务进行该动作，或者某种特殊情况要求必须进行该动作；[Vない→Ｖなくては/Vなければ+ならない]多用来表示从社会常识来看很有必要，有义务进行该动作，是人们都认可的一般性的判断。非针对个人。这两个句式表示有必要、有义务进行该动作，相当于汉语里面的”必须<del>、应该</del>、得~”等。</p>
+<h3 id="意志形-と思う"><a href="#意志形-と思う" class="headerlink" title="意志形+と思う"></a><center>意志形+と思う</center></h3><p>表示委婉阐述自己的意志或决心，用于第一人称。决心<del>，要</del>。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">今度は絶対成功しようと思います。</span><br><span class="line">这次一定要成功。</span><br><span class="line">12月の日本語能力試験では180点を取ろうと思い</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="意志形-と思っている"><a href="#意志形-と思っている" class="headerlink" title="意志形+と思っている"></a><center>意志形+と思っている</center></h3><p>1表明第三人称的意志或决心。</p>
+<p>2表明意志持续了一段时间，一直尚未形成的遗憾的语感。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">彼は学校を作ろうと思っています。</span><br><span class="line">他要建一所学校。</span><br><span class="line">お子さんの名前はもう決めましたか。</span><br><span class="line">いいえ、まだ決めていません。颜を見て決めようと思っています。</span><br><span class="line">孩子的名字已经决定了吗。</span><br><span class="line">不，还没决定。要等看了孩子的样子之后再决定。</span><br><span class="line">週末は海へ行こうと思っている。</span><br><span class="line">周末我要去海边。</span><br></pre></td></tr></table></figure>
+
+<p>三者的区别:</p>
+<p>1.[意志形]表示当场形成的意志。</p>
+<p>2.[~と思う]表示第一人称委婉向对方阐述自己的意志。</p>
+<p>3.[~と思っている]阐述第三人称的意志。</p>
+<p>表明意志持续尚未形成的遗憾。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">私は満点を取ろう。</span><br><span class="line">私は満点を取ろうと思う</span><br><span class="line">私は満点を取ろうと思っている。</span><br><span class="line"></span><br><span class="line">今晩は俺と一緒に歩いて帰ろう</span><br><span class="line"></span><br><span class="line">晚上和我一起回去吧。</span><br><span class="line">今晩一緒に步いて帰ろう。</span><br><span class="line"></span><br><span class="line">他决心要成为一个好爸爸。</span><br><span class="line">彼は良い父になろうとおもっています。</span><br><span class="line">彼はいいお父さん</span><br></pre></td></tr></table></figure>
+
+<h3 id="S简体-と思う-と思っている"><a href="#S简体-と思う-と思っている" class="headerlink" title="Ｓ简体+と思う/と思っている"></a><center>Ｓ简体+と思う/と思っている</center></h3><p>1.表示某人的看法、观点，翻译成”我认为<del>,我觉得</del>“怎么样怎么样。</p>
+<p>2.[と思う用于第一人称]，[~と思っている]不受人称限制，强调在一定时间内一直持有该想法。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">家を買うのは大変だと思う。</span><br><span class="line">我觉得买房太艰难了。</span><br><span class="line">句子主干其实是:私は何々と思う。所以就是:我认为买房太难了。</span><br><span class="line"></span><br><span class="line">英語より日本語のほうが難しいと思っている人が多い。</span><br><span class="line">比起英语，日语更难的这样想的人很多。</span><br><span class="line"></span><br><span class="line">明日雨が降らないと思う。</span><br><span class="line">我觉得明天不会下雨。</span><br><span class="line">出现と思う不用想这就是第一人称。所以私は何々と思う。全句意思:我觉得明天不会下雨。</span><br></pre></td></tr></table></figure>
+
+<h3 id="あげる-くれる-もらう-lt-授受-gt"><a href="#あげる-くれる-もらう-lt-授受-gt" class="headerlink" title="あげる/くれる/もらう&lt;授受&gt;"></a><center>あげる/くれる/もらう&lt;授受&gt;</center></h3><p>N₁は　N₂に　N₃をあげる<br>我(他人)给他人某物(向外)</p>
+<p>原句:<left style="color:#00CCFF;">いろいろな男の人は輝夜姫にプレゼントをあげました。</left><br>翻译:形形色色的男人都给了辉夜姬礼物。</p>
+<p>原句:<left style="color:#00CCFF;">バレンタインデーに　ガールフレンドに　チョコレートと花をあげました。</left><br>翻译:情人节的时候，送了女票巧克力和花。</p>
+<p>原句:<left style="color:#00CCFF;">母の日に何かプレゼントをあげましたか。</left><br>翻译:母亲节的时候，你有送妈妈什么礼物吗？</p>
+<p>另一种是，如果对方给我的话该如何使用？</p>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语语法</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6829,55 +7121,10 @@
 
 <h3 id="N₁はN₂より～-lt-比较-gt"><a href="#N₁はN₂より～-lt-比较-gt" class="headerlink" title="Ｎ₁はＮ₂より～&lt;比较&gt;"></a>Ｎ₁はＮ₂より～&lt;比较&gt;</h3><p>[]</p>
 ]]></content>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>综合日语第15课笔记</title>
-    <url>/2020/08/17/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC15%E8%AF%BE%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<a id="more"></a>
-
-<h1 id="综合日语第15课笔记"><a href="#综合日语第15课笔记" class="headerlink" title="综合日语第15课笔记"></a>综合日语第15课笔记</h1><h2 id="第十五课音声及语法解析"><a href="#第十五课音声及语法解析" class="headerlink" title="第十五课音声及语法解析"></a>第十五课音声及语法解析</h2><h3 id="意志的表达"><a href="#意志的表达" class="headerlink" title="意志的表达"></a>意志的表达</h3><h3 id="动词的意志形变形"><a href="#动词的意志形变形" class="headerlink" title="动词的意志形变形"></a>动词的意志形变形</h3><p>一类动词：将动词结尾う段假名换成对应お段假名,再加上”う”。</p>
-<p>三个愿望</p>
-<p>飲む→飲もう　会う→</p>
-<p>遊ぶ　遊ぼう</p>
-<p>入る　入ろう</p>
-<p>死ぬ　死のう</p>
-<p>行く　行こう</p>
-<p>来る　来よう</p>
-<p>立つ　立とう</p>
-<p>読む　読もう</p>
-<p>発表する　発表しよう</p>
-<p>開ける　開けよう</p>
-<p>する　しよう</p>
-<p>急ぐ　急ごう</p>
-<p>含义:1.表明说话人的意志,用于第一人称句时;简单来说就是用黄晓明的话，我不管你怎么想，要我想的。这样</p>
-<p>2.表示建议对方做某事。简而言之，即[Vましょう]的简体表达。</p>
-<p>例句如下:</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">明日の朝早いから、今晩早く寝よう。</span><br><span class="line">因为明天要早起，所以今晚要早点睡。</span><br><span class="line">みんなて頑張ろう。</span><br><span class="line">大家一起加油吧。</span><br><span class="line">人数が足りないから、王さんも一緒に行きましょう。</span><br><span class="line">人数が足りないから、王さんも一緒に行こう。</span><br><span class="line">因为人数不够，所以小王也一起去吧。</span><br><span class="line">ちょっと休まない？</span><br></pre></td></tr></table></figure>
-
-<h3 id="意志形-と思う"><a href="#意志形-と思う" class="headerlink" title="意志形+と思う"></a>意志形+と思う</h3><p>表示委婉阐述自己的意志或决心，用于第一人称。决心<del>，要</del>。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">今度は絶対成功しようと思います。</span><br><span class="line">这次一定要成功。</span><br><span class="line">12月の日本語能力試験では180点を取ろうと思い</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>意志形+と思っている</p>
-<p>1表明第三人称的意志或决心。</p>
-<p>2表明意志持续了一段时间，一直尚未形成的遗憾的语感。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">彼は学校を作ろうと思っています。</span><br><span class="line">他要建一所学校。</span><br><span class="line">お子さんの名前はもう決めましたか。</span><br><span class="line">いいえ、まだ決めていません。颜を見て決めようと思っています。</span><br><span class="line">孩子的名字已经决定了吗。</span><br><span class="line">不，还没决定。要等看了孩子的样子之后再决定。</span><br><span class="line">週末は海へ行こうと思っている。</span><br><span class="line">周末我要去海边。</span><br></pre></td></tr></table></figure>
-
-<h3 id="三者的区别"><a href="#三者的区别" class="headerlink" title="三者的区别:"></a>三者的区别:</h3><p>1.[意志形]表示当场形成的意志。</p>
-<p>2.[~と思う]表示第一人称委婉向对方阐述自己的意志。</p>
-<p>3.[~と思っている]阐述第三人称的意志。</p>
-<p>表明意志持续尚未形成的遗憾。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">私は満点を取ろう。</span><br><span class="line">私は満点を取ろうと思う</span><br><span class="line">私は満点を取ろうと思っている。</span><br><span class="line"></span><br><span class="line">今晩は俺と一緒に歩いて帰ろう</span><br><span class="line"></span><br><span class="line">晚上和我一起回去吧。</span><br><span class="line">今晩一緒に步いて帰ろう。</span><br><span class="line"></span><br><span class="line">他决心要成为一个好爸爸。</span><br><span class="line">彼は良い父になろうとおもっています。</span><br><span class="line">彼はいいお父さん</span><br></pre></td></tr></table></figure>
-
-<p>Ｓ简体+と思う/と思っている</p>
-<p>1.表示某人的看法、观点，翻译成”我认为<del>,我觉得</del>“怎么样怎么样。</p>
-<p>2.[と思う用于第一人称]，[~と思っている]不受人称限制，强调在一定时间内一直持有该想法。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">家を買うのは大変だと思う。</span><br><span class="line">我觉得买房太艰难了。</span><br><span class="line">句子主干其实是:私は何々と思う。所以就是:我认为买房太难了。</span><br><span class="line"></span><br><span class="line">英語より日本語のほうが難しいと思っている人が多い。</span><br><span class="line">比起英语，日语更难的这样想的人很多。</span><br><span class="line"></span><br><span class="line">明日雨が降らないと思う。</span><br><span class="line">我觉得明天不会下雨。</span><br><span class="line">出现と思う不用想这就是第一人称。所以私は何々と思う。全句意思:我觉得明天不会下雨。</span><br></pre></td></tr></table></figure>
-
-<p>  あげる/くれる/もらう&lt;授受&gt;</p>
-]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语语法</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6897,6 +7144,10 @@
 <p>  ごちそうになったとき、中国では料理を少し残(のこ)す。それが、「おなかがいっぱいになった」の意味になるからである。しかし日本では、これは「この料理はまずい」　「この料理は好きではない」のいみになる。</p>
 <p>  このように、中国と日本とでは、食事のマナーや習慣にいろいろな違いがあるから、食事をするときはお互いに気をつけなければならない。</p>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语课文</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6908,6 +7159,10 @@
 <a id="more"></a>
 <p>王:高橋さん、宿題ですか。<br>鈴木:もうタ食の時間は始まっていますよ。少し休んで、一緒に食べに行きませんか。<br>高橋:ええ、でも、あとちょっと。今、ホームページを作っているんです。<br>王:へえ。どんなページですか。<br>高橋:わたしの趣味とか留学生活のページです。<br>王:いいですね。もうタイトルは決めましたか。<br>高橋:いいえ、まだ決めていません。今、考えています。<br>鈴木:私も前にホームページを作ったんですよ。ほら。<br>高橋:すごーい。鈴木さん、このページは画面が二つに分かれていますね。<br>鈴木:ええ、フレームを作ったんです。<br>高橋:どうするんですか。<br>鈴木:まず、ツールバーの「フレーム」を左クリックして、「新規作成」を選びます。それから、好きなフレームを選ぶで、ポインターを合わせて、左クリックします。<br>高橋:えーっと…。<br>鈴木:こうして、こうして、それからこうです。<br>高橋:あ、できました。鈴木ささん、すごいですね。<br>王:(爷说不出话)</p>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语课文</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6919,6 +7174,10 @@
 <a id="more"></a>
 <p>王:高橋さん、来ませんね。<br>鈴木:さっき、留学生会館の自習室で宿題をしていましたよ。電話しましょうか。<br>王:そうですね。じゃあ、わたしがしましょう。もしもし。高橋さん、王です。今どこですか。<br>高橋:すみません。まだ自習室です。<br>王:みんな、待っていますよ。どうしたんですか。<br>高橋:すみません。翻訳の宿題をしているんです。<br>王:宿題ですか。<br>高橋:はい。朝からずっと辞書を引いているんです。あのう、すみなせん。「点击」って何ですか。<br>王:ああ、[クリック]です。<br>高橋:あ、クリックですか。あ、それから「ファイル」は中国語で何と言うんですか。<br>王:[文件]です。<br>高橋:[文件]ですね。助かりました。どうもありがとうございました。<br>王:いいえ、どういたしまして。高橋さん、何時ごろ終わりますか。<br>高橋:そうですねえ。あと30分ぐらいかかります。すみません。<br>王:わかりました。待っています。</p>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语课文</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6930,6 +7189,10 @@
 <a id="more"></a>
 <p>加藤直子様<br>ご無沙汰しています。お元気ですか。<br>私は8月の末に北京に来て、今、京華大学の語学研修コースで中国語を勉強しています。<br>この大学には、中国各地から、また、世界のいろいろな国から学生が来ています。学生の大多数は大学の寮に住んでいます。私も大学の寮に住んでいます。私の寮の部屋は二人部屋で、ルームメートも日本人の語学研修生です。<br>ここの学生は、よく勉強します。朝、７時に起きて、予習をして、大学に行きます。授業はだいたい8時から5時50分までで、月曜日から金曜日までです。授業と授業の関に、学生たちはよくキャンパスのベンチに座って、外国語の教科書を音読しています。<br>語学研修コースの授業は8時から12時までです。午後は自習の時間です。<br>私は、日本の大学で、あまり勉強しませんでした。いつも、アルバイトをたくさんしていました。今は、一生懸命勉強しています。明日の3時間目は試験です。でも、まだ教科書の会話を覚えていません。これから覚えます。<br>この大学ではおおぜいの学生が日本語を勉強しています。私もときどき日本語学科の学生に日本語を教えています。そして日本語学科の学生から中国語を習っています。親切な中国人学生と友達になりました。名前は王宇翔さんと趙媛媛さんです。いつか紹介します。<br>それでは、また手紙を書きます。どうぞお元気で。</p>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语课文</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
@@ -6938,12 +7201,11 @@
     <title>日语单词记录12课</title>
     <url>/2020/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第12课日语单词笔记"><a href="#第12课日语单词笔记" class="headerlink" title="第12课日语单词笔记"></a>第12课日语单词笔记</h3><p>这里是《综合日语》的第十二课的所有单词记录。</p>
-<a id="more"></a>
-<div id="echarts8030" style="width: 100%;height: 100px;margin: 0 auto"></div>
+<div id="echarts8256" style="width: 100%;height: 100px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts8030'));
+        var myChart = echarts.init(document.getElementById('echarts8256'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -6999,6 +7261,8 @@
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
 </script>
+<a id="more"></a>
+
 <table>
 <thead>
 <tr>
@@ -7850,6 +8114,10 @@
 </tr>
 </tbody></table>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语单词</category>
+      </categories>
       <tags>
         <tag>日语</tag>
       </tags>
