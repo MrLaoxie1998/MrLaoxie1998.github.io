@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -17,18 +17,21 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"mrlaoxie1998.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/page/5/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+  <meta name="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+<meta property="og:type" content="website">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="http://mrlaoxie1998.github.io/page/5/index.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/page/5/">
+<link rel="canonical" href="http://mrlaoxie1998.github.io/page/5/">
 
 
 <script id="page-configurations">
@@ -37,11 +40,11 @@
     sidebar: "",
     isHome : true,
     isPost : false,
-    lang   : 'en'
+    lang   : 'zh-CN'
   };
 </script>
 
-  <title>Hexo</title>
+  <title>9之数据库</title>
   
 
 
@@ -81,7 +84,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -92,9 +95,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
+      <h1 class="site-title">9之数据库</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
   </div>
 
   <div class="site-nav-right">
@@ -111,16 +115,26 @@
   <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
       </li>
   </ul>
@@ -136,7 +150,7 @@
   </span>
   <div class="search-input-container">
     <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
+           placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
@@ -172,17 +186,17 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/06/06/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-4/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/06/06/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="9之数据库">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -195,16 +209,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2020-06-06 23:44:43" itemprop="dateCreated datePublished" datetime="2020-06-06T23:44:43+08:00">2020-06-06</time>
+              <time title="创建时间：2020-06-06 23:44:43" itemprop="dateCreated datePublished" datetime="2020-06-06T23:44:43+08:00">2020-06-06</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-07 22:32:47" itemprop="dateModified" datetime="2020-06-07T22:32:47+08:00">2020-06-07</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-07 22:32:47" itemprop="dateModified" datetime="2020-06-07T22:32:47+08:00">2020-06-07</time>
               </span>
 
           
@@ -222,7 +236,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/06/06/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-4/#more" rel="contents">
-                Read more &raquo;
+                阅读全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -244,17 +258,17 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/06/05/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-3/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/06/05/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="9之数据库">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -267,16 +281,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2020-06-05 23:01:57" itemprop="dateCreated datePublished" datetime="2020-06-05T23:01:57+08:00">2020-06-05</time>
+              <time title="创建时间：2020-06-05 23:01:57" itemprop="dateCreated datePublished" datetime="2020-06-05T23:01:57+08:00">2020-06-05</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-07 22:32:50" itemprop="dateModified" datetime="2020-06-07T22:32:50+08:00">2020-06-07</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-07 22:32:50" itemprop="dateModified" datetime="2020-06-07T22:32:50+08:00">2020-06-07</time>
               </span>
 
           
@@ -294,7 +308,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/06/05/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-3/#more" rel="contents">
-                Read more &raquo;
+                阅读全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -316,17 +330,17 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/06/04/%E4%BA%91%E8%AE%A1%E7%AE%97/IaaS%E8%AE%B0%E4%BA%8B%E6%9C%AC/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/06/04/%E4%BA%91%E8%AE%A1%E7%AE%97/IaaS%E8%AE%B0%E4%BA%8B%E6%9C%AC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="9之数据库">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -339,16 +353,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2020-06-04 23:10:16" itemprop="dateCreated datePublished" datetime="2020-06-04T23:10:16+08:00">2020-06-04</time>
+              <time title="创建时间：2020-06-04 23:10:16" itemprop="dateCreated datePublished" datetime="2020-06-04T23:10:16+08:00">2020-06-04</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-14 17:09:19" itemprop="dateModified" datetime="2020-11-14T17:09:19+08:00">2020-11-14</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-14 17:09:19" itemprop="dateModified" datetime="2020-11-14T17:09:19+08:00">2020-11-14</time>
               </span>
 
           
@@ -366,7 +380,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/06/04/%E4%BA%91%E8%AE%A1%E7%AE%97/IaaS%E8%AE%B0%E4%BA%8B%E6%9C%AC/#more" rel="contents">
-                Read more &raquo;
+                阅读全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -388,17 +402,17 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/06/04/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-2/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/06/04/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="9之数据库">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -411,16 +425,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2020-06-04 22:42:37" itemprop="dateCreated datePublished" datetime="2020-06-04T22:42:37+08:00">2020-06-04</time>
+              <time title="创建时间：2020-06-04 22:42:37" itemprop="dateCreated datePublished" datetime="2020-06-04T22:42:37+08:00">2020-06-04</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-07 13:36:50" itemprop="dateModified" datetime="2020-06-07T13:36:50+08:00">2020-06-07</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-07 13:36:50" itemprop="dateModified" datetime="2020-06-07T13:36:50+08:00">2020-06-07</time>
               </span>
 
           
@@ -438,7 +452,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/06/04/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-2/#more" rel="contents">
-                Read more &raquo;
+                阅读全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -460,17 +474,17 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/06/03/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-1/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/06/03/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="9之数据库">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -483,16 +497,16 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2020-06-03 23:30:58" itemprop="dateCreated datePublished" datetime="2020-06-03T23:30:58+08:00">2020-06-03</time>
+              <time title="创建时间：2020-06-03 23:30:58" itemprop="dateCreated datePublished" datetime="2020-06-03T23:30:58+08:00">2020-06-03</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-07 13:36:53" itemprop="dateModified" datetime="2020-06-07T13:36:53+08:00">2020-06-07</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-07 13:36:53" itemprop="dateModified" datetime="2020-06-07T13:36:53+08:00">2020-06-07</time>
               </span>
 
           
@@ -510,7 +524,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/06/03/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-1/#more" rel="contents">
-                Read more &raquo;
+                阅读全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -532,17 +546,17 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE%E5%8D%95%E8%AF%8D/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC%E5%8D%81%E4%B8%80%E8%AF%BE%E5%8D%95%E8%AF%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="9之数据库">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -555,26 +569,26 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2020-05-31 10:10:39" itemprop="dateCreated datePublished" datetime="2020-05-31T10:10:39+08:00">2020-05-31</time>
+              <time title="创建时间：2020-05-31 10:10:39" itemprop="dateCreated datePublished" datetime="2020-05-31T10:10:39+08:00">2020-05-31</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-14 23:58:34" itemprop="dateModified" datetime="2020-11-14T23:58:34+08:00">2020-11-14</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-14 23:58:34" itemprop="dateModified" datetime="2020-11-14T23:58:34+08:00">2020-11-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语单词</span></a>
                 </span>
@@ -609,17 +623,17 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC%E5%8D%81%E8%AF%BE%E5%8D%95%E8%AF%8D/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC%E5%8D%81%E8%AF%BE%E5%8D%95%E8%AF%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="9之数据库">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -632,26 +646,26 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2020-05-31 10:10:33" itemprop="dateCreated datePublished" datetime="2020-05-31T10:10:33+08:00">2020-05-31</time>
+              <time title="创建时间：2020-05-31 10:10:33" itemprop="dateCreated datePublished" datetime="2020-05-31T10:10:33+08:00">2020-05-31</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-14 22:41:10" itemprop="dateModified" datetime="2020-11-14T22:41:10+08:00">2020-11-14</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-14 22:41:10" itemprop="dateModified" datetime="2020-11-14T22:41:10+08:00">2020-11-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语单词</span></a>
                 </span>
@@ -686,17 +700,17 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC%E4%B9%9D%E8%AF%BE%E5%8D%95%E8%AF%8D/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC%E4%B9%9D%E8%AF%BE%E5%8D%95%E8%AF%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="9之数据库">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -709,26 +723,26 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2020-05-31 10:10:28" itemprop="dateCreated datePublished" datetime="2020-05-31T10:10:28+08:00">2020-05-31</time>
+              <time title="创建时间：2020-05-31 10:10:28" itemprop="dateCreated datePublished" datetime="2020-05-31T10:10:28+08:00">2020-05-31</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-14 22:40:59" itemprop="dateModified" datetime="2020-11-14T22:40:59+08:00">2020-11-14</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-14 22:40:59" itemprop="dateModified" datetime="2020-11-14T22:40:59+08:00">2020-11-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语单词</span></a>
                 </span>
@@ -763,17 +777,17 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC%E5%85%AB%E8%AF%BE%E5%8D%95%E8%AF%8D/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC%E5%85%AB%E8%AF%BE%E5%8D%95%E8%AF%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="9之数据库">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -786,26 +800,26 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2020-05-31 10:08:47" itemprop="dateCreated datePublished" datetime="2020-05-31T10:08:47+08:00">2020-05-31</time>
+              <time title="创建时间：2020-05-31 10:08:47" itemprop="dateCreated datePublished" datetime="2020-05-31T10:08:47+08:00">2020-05-31</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-14 22:40:51" itemprop="dateModified" datetime="2020-11-14T22:40:51+08:00">2020-11-14</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-14 22:40:51" itemprop="dateModified" datetime="2020-11-14T22:40:51+08:00">2020-11-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语单词</span></a>
                 </span>
@@ -826,7 +840,7 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC%E5%85%AB%E8%AF%BE%E5%8D%95%E8%AF%8D/#more" rel="contents">
-                Read more &raquo;
+                阅读全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
@@ -848,22 +862,22 @@
       
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/Magnet/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/Riness%20-Ghosts%20of%20Memories-%20(Covered%20by%20Miwele)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="9之数据库">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/Magnet/" class="post-title-link" itemprop="url">Magnet</a>
+            <a href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/Riness%20-Ghosts%20of%20Memories-%20(Covered%20by%20Miwele)/" class="post-title-link" itemprop="url">Riness -Ghosts of Memories- (Covered by Miwele)</a>
         </h2>
 
         <div class="post-meta">
@@ -871,26 +885,26 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2020-05-31 10:08:47" itemprop="dateCreated datePublished" datetime="2020-05-31T10:08:47+08:00">2020-05-31</time>
+              <time title="创建时间：2020-05-31 10:08:47" itemprop="dateCreated datePublished" datetime="2020-05-31T10:08:47+08:00">2020-05-31</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-14 22:39:33" itemprop="dateModified" datetime="2020-11-14T22:39:33+08:00">2020-11-14</time>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-14 22:39:36" itemprop="dateModified" datetime="2020-11-14T22:39:36+08:00">2020-11-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">In</span>
+              <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
                 </span>
-                  , 
+                  ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E6%AD%8C%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语歌词</span></a>
                 </span>
@@ -909,9 +923,7 @@
       
           <a id="more"></a>
 
-<p>か细い火が<br>纤细的火焰<br>心の端に灯る<br>在心的边缘点燃<br>いつの间にか<br>不知何时燃烧<br>燃え広がる热情<br>蔓延开来的热情<br>私の蝶<br>我的蝴蝶<br>不规则に<br>不规则地<br>飞び回り<br>来回飞舞<br>あなたの手に<br>将鳞粉洒于<br>鳞粉を付けた<br>你的手上<br>(ルカ)络み合う指ほどいて<br>松开相互交缠的手指<br>唇から舌へと<br>从嘴唇来到舌尖<br>许されない事ならば<br>若是不被允许的事<br>尚更燃え<br>反而会燃烧得<br>上がるの<br>更加猛烈<br>抱き寄せて欲しい<br>想要被拥入怀中<br>确かめて欲しい<br>想要确认心意<br>间违いなど无いんだと<br>让我知道<br>思わせて<br>没有误会了什么<br>キスをして<br>亲吻你<br>涂り替<br>想将我的颜色<br>えて欲しい<br>覆盖上你的唇<br>魅惑の时に酔<br>想要沉醉在<br>いしれ溺れていたいの<br>魅惑的时刻中</p>
-<p>束缚して<br>束缚你<br>もっと<br>让我对你而言<br>必要として<br>更加必要<br>爱しいなら<br>若是爱就<br>执着を见せつけて<br>让你看到我的执着<br>「おかしい」のが<br>变得“好奇怪”<br>たまらなく<br>是因为无法克制地<br>好きになる<br>喜欢上你<br>行けるトコまで行けばいいよ<br>能到哪里就一起去吧<br>迷い込んだ心なら<br>若是迷惑的心能够<br>简単に融けてゆく<br>简单地消融<br>优しさなんて<br>甚至连感受到<br>感じる暇など 无い位に<br>温柔之类的余裕都没有<br>缲り返したのは<br>反复不断的<br>あの梦じゃなくて<br>并非那个梦<br>纷れも无<br>毫无疑问的<br>い现実の私达<br>是真实的我们<br>触れてから<br>从触碰开始<br>戻れないと知る<br>就知道回不去了<br>それでいいの<br>那样就好<br>谁よりも<br>比任何人<br>大切なあなた<br>都还要重要的你</p>
-<p>夜明けが来ると不安で<br>对于即将天亮感到不安<br>泣いてしまう私に<br>而哭泣的我<br>「大丈夫」と嗫いたあなたも<br>轻声说着“没关系”的你<br>泣いていたの？<br>也哭泣了吗<br>抱き寄せて欲しい<br>想要被拥入怀中<br>确かめて欲しい<br>想要确认心意<br>间违いなど无いんだと<br>让我知道<br>思わせて<br>没有误会了什么<br>キスをして<br>亲吻你<br>涂り替<br>想将我的颜色<br>えて欲しい<br>覆盖上你的唇<br>魅惑の时に<br>想要沉醉在<br>酔いしれ溺れたい<br>魅惑的时刻中<br>引き寄せて<br>相互吸引靠近<br>マグネットのように<br>宛如磁石一般<br>例えいつか离れて<br>即使有朝一日分离了<br>も巡り会う<br>也会再度相会<br>触れていて<br>相互碰触<br>戻れなくていい<br>回不去了也无妨<br>それでいいの<br>那样就好<br>谁よりも<br>比任何人<br>大切なあなた<br>都还要重要的你</p>
+<p>闇に閉ざされていた　黒き翼の天使<br>在黑暗中封闭着 黑色翅膀的天使<br>失われた時の回廊　彷徨う星の旅人<br>失去时间的回廊 徘徊星空的旅者<br>闇に包みこまれた　哀しい記憶の欠片<br>包裹在黑暗中 哀伤记忆的碎片<br>失われた心の器　探し求め続けている<br>失去了心的容器 仍在继续寻求着<br>赤き瞳に映る　儚い思い出の空<br>赤红眼瞳中映出 虚幻回忆中的天空<br>今はもう見えてこない　あの子の優しい笑顔<br>现在已经看不到了 那孩子温柔的笑颜<br>時を超え彷徨う　記憶の亡霊達<br>在时间之外徘徊的 记忆的亡灵们<br>耳元で囁いて　闇へと誘う<br>耳边的轻语 邀请至黑暗<br>黒き影に染められた　翼を羽ばたかせて<br>染上漆黑的暗影 张开翅膀<br>飛び立つの　虚空の遥か彼方<br>振翅飞翔 飞越遥远虚空的彼方<br>あの子の元へと<br>到那孩子的身旁<br>あれは私の記憶　寂しい心の欠片<br>那是我的记忆 孤独的心的碎片<br>ねえ返して　あの子の記憶　あの優しき詩を<br>请那孩子的回忆 那温柔的诗歌 回到这里来<br>あれは私の翼　黒き悲しみの羽根<br>那是我的翅膀 漆黑悲伤的羽毛<br>刻み込まれた罪を背負い　運命に身を委ねる<br>背负着铭刻下的罪行 屈服于命运之中<br>暗い夜空の向こう　響く優雅な音色<br>黑暗夜空的那边 回响着优雅的音色<br>今はもう聞こえてこない　あの子の優しい歌が<br>现在已经听不到了 那孩子温柔的歌声<br>時を超え彷徨う　記憶の亡霊達<br>在时间之外徘徊的 记忆的亡灵们<br>耳元で囁いて　闇へと誘う<br>耳边的轻语 邀请至黑暗<br>黒き影に染められた　翼を羽ばたかせて<br>染上漆黑的暗影 展开翅膀<br>飛び立つの　虚空の遥か彼方<br>振翅飞翔 飞越遥远虚空的彼方<br>あの子の元へと<br>到那孩子的身旁<br>時を超え彷徨う　記憶の亡霊達<br>在时间之外徘徊的 记忆的亡灵们<br>傍に寄って手を伸ばして　囁きかける<br>向一旁伸出手 轻声细语<br>黒き影に染められた　翼を羽ばたかせて<br>染上漆黑的暗影 张开翅膀<br>飛び立つの　虚空の遥か彼方<br>振翅飞翔 飞越遥远虚空的彼方<br>あの子の元へと<br>到那孩子的身旁</p>
 
       
     </div>
@@ -930,7 +942,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -974,10 +986,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
@@ -988,8 +1000,10 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
-  <div class="site-description" itemprop="description"></div>
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -997,19 +1011,38 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">62</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
         <span class="site-state-item-count">7</span>
-        <span class="site-state-item-name">categories</span>
+        <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
         <span class="site-state-item-count">7</span>
-        <span class="site-state-item-name">tags</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/yourname" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-youtube"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="skype:yourname?call|chat" title="Skype → skype:yourname?call|chat" rel="noopener" target="_blank"><i class="fa fa-fw fa-skype"></i>Skype</a>
+      </span>
+  </div>
 
 
 
@@ -1036,7 +1069,7 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
 </div>
 
         

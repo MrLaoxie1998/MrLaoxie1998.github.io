@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mrlaoxie1998.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="我的日语笔记(ぶんぽう) 	                       $(document).ready(function(){   $(&quot;#flip&quot;).click(function(){     $(&quot;#xiala&quot;).slideToggle(&quot;slow&quot;);   }); });    #xiala,#flip {   padding:30px;   text-ali">
+<meta property="og:type" content="website">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="http://mrlaoxie1998.github.io/about/%E3%81%B6%E3%82%93%E3%81%BD%E3%81%86.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="我的日语笔记(ぶんぽう) 	                       $(document).ready(function(){   $(&quot;#flip&quot;).click(function(){     $(&quot;#xiala&quot;).slideToggle(&quot;slow&quot;);   }); });    #xiala,#flip {   padding:30px;   text-ali">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-07T03:02:51.882Z">
+<meta property="article:modified_time" content="2020-05-07T03:02:51.844Z">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://mrlaoxie1998.github.io/about/%E3%81%B6%E3%82%93%E3%81%BD%E3%81%86">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 9之数据库
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta">
+  
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>我的日语笔记(ぶんぽう)</title>
+	<link rel="stylesheet" href="css/Foundation-6.6.1/assets/css/app.css">
+   <link rel="stylesheet" href="https://cdn.staticfile.org/foundation/5.5.3/css/foundation.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/foundation/5.5.3/js/foundation.min.js"></script>
+  <script src="https://cdn.staticfile.org/foundation/5.5.3/js/vendor/modernizr.js"></script>
+  <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+  <script> 
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#xiala").slideToggle("slow");
+  });
+});
+</script>
+<style type="text/css"> 
+#xiala,#flip
+{
+  padding:30px;
+  text-align:center;
+  border:solid 0px;
+}
+#xiala
+{
+  padding:50px;
+  display:none;
+}
+</style>
+</head>
+<body>
+<!-- 最外层div：页面布局 -->
+
+<div class="off-canvas-wrap" data-offcanvas>
+  <!-- 内部元素: "工具栏" 内容 (图标, 链接, 描述内容等)-->
+
+  <div class="inner-wrap">
+    <nav class="tab-bar">
+      <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+      </section>
+
+      <section class="middle tab-bar-section">
+        <h1 class="title">僕の日本語の筆記です</h1>
+      </section>
+    </nav>
+
+    <!-- 滑动菜单 -->
+    <aside class="left-off-canvas-menu">
+      <!-- Add links or other stuff here -->
+      <ul class="off-canvas-list test">
+      <li><label><object data="image/baka9.svg" type="image/svg+xml" ></object>
+</label></li>
+      <li><label><a href="index.html">欢迎~♪(^∇^*)</a></label></li>
+        <li><label>日语功能性词汇变形笔记</label></li>
+        <li><a href="Verb distortion.html">日语-动词变换汇总</a></li>
+        <li><a href="ます表.html">日语-动词ます形变换表</a></li>
+        <li><a href="ない表.html">日语-动词ない形变换表</a></li>
+        <li><a href="ぶんぽう.html">日语-文法变形汇总</a></li>
+        <li><a href="#">日语-形容词变换汇总</a></li>
+        <li><a href="#">日语-形容词い类变换表</a></li>
+        <li><a href="#">日语-形容词な类变换表</a></li>
+        ...
+      </ul>
+       <ul class="off-canvas-list test">
+        <li><label>《综合日语》第一册笔记</label></li>
+        <li><a href="5ko.html">日语-第五课笔记汇总</a></li>
+        <li><a href="6ko.html">日语-第六课笔记汇总</a></li>
+        <li><a href="7ko.html">日语-第七课笔记汇总</a></li>
+        <li><a href="8ko.html">日语-第八课笔记汇总</a></li>
+        <li><a href="9ko.html">日语-第九课笔记汇总</a></li>
+        <li><a href="10ko.html">日语-第十课笔记汇总</a></li>
+        ...
+      </ul>
+      <ul class="off-canvas-list test">
+        <li><label>日语文章记录</label></li>
+        <li><a href="zhry.html">《综合日语》文章汇总</a></li>
+        <li><a href="xbry.html">《新版标准日本语》文章汇总</a></li>
+        <li><a href="djxry.html">《大家学》文章汇总</a></li>
+        ...
+      </ul>
+      <ul class="off-canvas-list test">
+        <li><label>其他</label></li>
+        <li><a href="日本語の歌曲集.html">我学唱的日语歌</a></li>
+      </ul>
+    </aside>
+
+    <!-- 主要内容 -->
+    <section class="main-section">
+    <body>
+ 
+     <div style="text-indent:40%;">
+ <h1>文形语法汇总</h1>
+ </div>
+<div style="padding:40px;">
+<div class="panel radius"><br>
+<div class="row example"><br><div class="small-5 columns"><br><br><div style="text-indent:10%;">
+  这是我学来的所有语法知识点汇总,会进行分类，每一个助词都会进行详细解释加上例句以供理解，如果可以我可以加入图表来提高理解程度。这种情况对于我复习而言也很有帮助。</div>
+  <div style="text-indent:8%;">目前我的学习进度比较缓慢，我还处于一个一边记录一边写在web笔记上面，这样容易打开。目前能知道的助词假名有<code>かがもでとにのはを</code><font color="#FF0000">9</font>个助词，每一个助词又有不同的词性。一共有44种意思，下面通过列表展示所有助词和每个助词的所有简略解释。<br>
+  <div style="text-indent:8%;">当然，这一篇里面还要记载其他的文形语法内容，虽然不会全部记录，我会将这些记录在我学习的每一个大单元里面。</div>
+  </div></div><br><div class="small-6 columns">
+ <center><div id="main" style="width: 600px;height:400px;"></div>
+     <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+ 
+        myChart.setOption({
+                tooltip: {},
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['か:3种', 'が:3种', 'も:4种', 'で:6种', 'と:6种','に:11种','の:5种','は:3种','を:3种']
+    },
+            series : [
+                {
+                    name: '日语功能性词汇变形笔记',
+                    type: 'pie',    
+                    radius: '50%',
+                    data:[
+                        {value:3, name:'か:3种'},
+                        {value:3, name:'が:3种'},
+                        {value:4, name:'も:4种'},
+                        {value:6, name:'で:6种'},
+                        {value:6, name:'と:6种'},
+                        {value:11, name:'に:11种'},
+                        {value:5, name:'の:5种'},
+                        {value:3, name:'は:3种'},
+                        {value:3, name:'を:3种'}
+                        
+                    ]
+                }
+            ]
+        })
+    </script></center></div></div><br><table>
+  <thead>
+    <tr>
+    <th>序列</th>
+      <th>助词</th>
+      <th><center>解释</center></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>1</td>
+      <td>か</td>
+      <td><code>か＜疑问＞ </code><br><code>お元気ですか</code></td>
+    </tr>
+    <tr>
+    <td>2</td>
+      <td>か</td>
+      <td><code>疑问词 か＜虚指＞</code><br><code>どこかへ行きますか</code></td>
+    </tr>
+    <tr>
+    <td>3</td>
+      <td>か</td>
+      <td><code>NかN＜选择＞</code><br><code>朝はミルクかジュースを飲みます</code></td>
+    </tr>
+    <tr>
+    <td>4</td>
+      <td>が</td>
+      <td><code>＜主题（主语、疑问）＞</code><br><code>接名词后表示句子主语，疑问词做主语。何が難しいですか。　　　発音が難しいです。</code></td>
+    </tr>
+    <tr>
+    <td>5</td>
+      <td>が</td>
+      <td><code>＜转折＞ ＜铺垫＞</code><br><code>连接两个分句，表示转折或铺垫</code><br><code>すみませんが、それを取ってください。（铺垫）</code><code>日本史は難しくなかったですが、翻訳は大変でした。（转折）</code></td>
+    </tr>
+    <tr>
+    <td>6</td>
+      <td>が</td>
+      <td><code>＜主体＞</code><br><code>接名词后构成句子主语</code><br><code>友達が来ます。　　山がある　　　水が綺麗だ</code></td>
+    </tr>
+    <tr>
+    <td>7</td>
+      <td>も</td>
+      <td><code>＜类同＞</code><br><code>高橋さんは日本人です　　鈴木さんも日本人です</code></td>
+    </tr>
+    <tr>
+    <td>8</td>
+      <td>も</td>
+      <td><code>＜并列＞</code><br><code>聞き取りも発音も難しいです</code></td>
+    </tr>
+    <tr>
+    <td>9</td>
+      <td>も</td>
+      <td><code>＜全面否定＞</code><br><code>どこも行きません　　　　　　　　　何もしません</code></td>
+    </tr>
+    <tr>
+    <td>10</td>
+      <td>で</td>
+      <td><code>＜处所＞（动作发生的场所）</code><br><code>接场所后，表示在该场所发生动作。喫茶店でコーヒーを飲みます</code></td>
+    </tr>
+    <tr>
+    <td>11</td>
+      <td>で</td>
+      <td><code>＜工具，手段＞</code><br><code>バスで行きます　　　日本語で話します</code></td>
+    </tr>
+    <tr>
+    <td>12</td>
+      <td>で</td>
+      <td><code>で＜範囲＞</code><br><code>クラスで一番背が高い</code></td>
+    </tr>
+    <tr>
+    <td>13</td>
+      <td>で</td>
+      <td><code>＜限定数量＞</code><br><code>300元ぐらいでシルクのチャイナドレスが買えます。</code></td>
+    </tr>
+    <tr>
+    <td>14</td>
+      <td>に</td>
+      <td><code>＜移动的目的地＞</code><br><code>日本に行きます</code></td>
+    </tr>
+    <tr>
+    <td>15</td>
+      <td>に</td>
+      <td><code>＜动作发生的时间点＞</code><br><code>六時に起きます</code></td>
+    </tr>
+    <tr>
+    <td>16</td>
+      <td>に</td>
+      <td><code>＜附着点＞</code><br><code>ノートに名前を書く</code></td>
+    </tr>
+    <tr>
+    <td>17</td>
+      <td>に</td>
+      <td><code>に＜对象＞</code><br><code>先生に会います</code></td>
+    </tr>
+    <tr>
+    <td>18</td>
+      <td>に</td>
+      <td><code>＜存在、所在＞</code><br><code>ドアの後ろに階段があります。階段はドアの後ろにあります</code></td>
+    </tr>
+    <tr>
+    <td>19</td>
+      <td>に</td>
+      <td><code>＜移動の目的＞</code><br><code>飲みに行きます</code></td>
+    </tr>
+    <tr>
+    <td>20</td>
+      <td>に</td>
+      <td><code>＜選択、決定＞</code><br><code>コーヒーにします</code></td>
+    </tr>
+    <tr>
+    <td>21</td>
+      <td>に</td>
+      <td><code>＜客体的处所＞ </code><br><code>国の周りに高い城壁を作った</code></td>
+    </tr>
+    <tr>
+    <td>22</td>
+      <td>に</td>
+      <td><code>＜変化の結果＞</code><br><code>春になった　　医者になった</code></td>
+    </tr>
+  </tbody>
+</table></div></div>
+  <div style="padding:40px;">
+    <div class="panel">
+    <h5>あの:</h5><p><font color="#00FF7F">连体词</font><br>[あの]是一种连体词。不能单独使用是指说话双方都知道的人、事物等。相当于汉语的[那个~、那件~]等。例句如下:<br> <table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+      <th>词汇</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A:昨日は映画館で銀魂を見ました。<br>B:ああ。私も<font color="#2E8B57">あの</font>映画を見ましたよ。</td>
+      <td>A:昨天在电影院看了银魂<br>B:啊。我也看了那个电影。</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>A:去年、富士山の樹海に行きました。<br>B:ええ。<font color="#2E8B57">あの</font>場所は危ないよ。</td>
+      <td>A:去年去了富士山的树海。<br>B:是的，那个地方很危险哦。</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>A:来週、一緒に福建に行きます。<br>B:はい、<font color="#2E8B57">あの</font>場所に一緒に行きましょう。</td>
+      <td>下周一起去福建。<br>好的，一起去那个地方吧。</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table></p>
+    <h5>か:</h5><p><font color="#00FF7F">表示疑问</font><br>か本身即可表示疑问，因此句尾标点符号一般用[。]而不使用[?]か意思为:"....吗"一般疑问句。<br>か也是终助词，意思就是接在陈述句的句尾,用来构成一般疑问句。<br>注意:<br>升调表示疑问<br>降调表示确认,在这里用↗表示升调↘表示降调。<br>
+    <table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+      <th>↗调/↘调</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>あなたは馬鹿ですか。</td>
+      <td>你是笨蛋吗？</td>
+      <td>↗</td>
+    </tr>
+    <tr>
+      <td>この本は日本語の本ですか。</td>
+      <td>这本书是日语书吗？</td>
+      <td>↗</td>
+    </tr>
+    <tr>
+      <td>ああ、カナ先生ですか。</td>
+      <td>是kana老师吧。</td>
+      <td>↘</td>
+    </tr>
+  </tbody>
+</table><br><font color="#00FF7F">表示疑问词+か(虚指)</font><br>[か]接在一个句子的末尾是代表着疑问，声调往下表示确认<br>接在疑问词后面的话就是表示不确定的意思，简单的讲就是半信半处于判断中的状态。<br>它不是特指问句，而是属于是非问句，回答时可以用[はい]、[いいえ]来回答。<br>注意：当疑问词+か作主体的时候，其后的[が][を]一般省略掉了。下面是例句:<br><table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+      <th>区别</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>どこに行きましたか。</td>
+      <td>去哪里了？</td>
+      <td>在认为对方一定去了某地的前提下，对去的地点进行询问</td>
+    </tr>
+    <tr>
+      <td>どこかに行きましたか。</td>
+      <td>去什么地方了？</td>
+      <td>在不确定对方是否有去某地的前提下，进行询问</td>
+    </tr>
+    <tr>
+      <td>何を飲みますか。</td>
+      <td>喝什么？</td>
+      <td>这个句子也可以，但是显得比较直白</td>
+    </tr>
+    <tr>
+      <td>何か飲みますか。</td>
+      <td>要喝点什么吗？</td>
+      <td>显得比较礼貌委婉。</td>
+    </tr>
+    <tr>
+      <td>誰が来ましたか。</td>
+      <td>谁来了？</td>
+      <td>这个可以理解为正在发生的事情，不知道有谁"进来了","来了"</td>
+    </tr>
+    <tr>
+      <td>誰か来ましたか。</td>
+      <td>有谁来了吗？</td>
+      <td>这个可以理解为回家后发现所处的环境有变化，于是问有谁来了吗？属于事情发生过后。</td>
+    </tr>
+    <tr>
+      <td>何を食べますか。</td>
+      <td>吃什么？</td>
+      <td>与第二个例子同理，直白式说法，有失礼仪。</td>
+    </tr>
+    <tr>
+      <td>何か食べますか。</td>
+      <td>要吃点什么吗?</td>
+      <td>比较礼貌委婉的说法。</td>
+    </tr>
+  </tbody>
+</table></p><br><font color="#00FF7F">表示并列、选择</font><p>助词[か]用在两个名词中间,表示选择性的并列，即2选1.相当于中文的[或]字,(A或B,C或D,他或你)格式为:N1かN2<br> <table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>今日か明日行きます。</td>
+      <td>今天或明天去。</td>
+    </tr>
+    <tr>
+      <td>鍋かバーベキューを食べます。</td>
+      <td>吃火锅或烧烤。</td>
+    </tr>
+    <tr>
+      <td>週末は、アキバか奈良に行きます。</td>
+      <td>周末去秋叶原或者奈良。</td>
+    </tr>
+    <tr>
+      <td>食べるか、食べないか、どっち？</td>
+      <td>吃或不吃，选哪个？</td>
+    </tr>
+    <tr>
+      <td>勝つか死ぬか。</td>
+      <td>胜利或死亡。</td>
+    </tr>
+    <tr>
+      <td>这周或下周去超市买西瓜。</td>
+      <td>今週か来週スーパーに西瓜を買いに行きます。<br>
+今週か来週スーパーに行ってスイカを買います。<br>
+今週か来週、スーパーにスイカを買いに行きます</td>
+    </tr>
+  </tbody>
+</table></p></rp><hr><h5>ね:</h5><p><font color="#00FF7F">表示确认</font><br>「ね」：语气助词，相当于中文的“吧”。作用：表示同意/希望得到别人同意。感情色彩：再次确认，寻求共鸣<br>以下例句能体现出ね的作用。<br><table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>假名</th>
+      <th>翻译</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>これは猫ですね。</td>
+      <td>これはねこですね。</td>
+      <td>这是猫对吧？</td>
+    </tr>
+    <tr>
+      <td>あなたは王さんですね。</td>
+      <td>あなたはおうさんですね。</td>
+      <td>你就是老王吧？</td>
+    </tr>
+    <tr>
+      <td>パンダは可愛いですね。</td>
+      <td>パンタはかわいいですね。</td>
+      <td>熊猫很可爱对吧？</td>
+    </tr>
+    <tr>
+      <td>猫は可愛いですね。</td>
+      <td>ねこはかわいいですね。</td>
+      <td>猫很可爱对吧？</td>
+    </tr>
+    <tr>
+      <td>犬は酷いですね。</td>
+      <td>いぬはひどいですね。</td>
+      <td>狗很凶对吧？</td>
+    </tr>
+    <tr>
+      <td>コンピューターは修理しますね。</td>
+      <td>コンピューターはしゅうりしますよね。</td>
+      <td>电脑要修理吧？</td>
+    </tr>
+    <tr>
+      <td>あなたは毎日早起きしていますよね？</td>
+      <td>あなたはまいにち早起きしていますよね。</td>
+      <td>你每天都很早起吧？</td>
+    </tr>
+  </tbody>
+</table></p><hr><h5>と:</h5><p><font color="#00FF7F">表示并列</font><br>と的作用就是表示两个名词的接续<也称并列>,用来连接两个或两个以上的[名词]<br>注意:在列举时，是完全列举，这里和や有差别。区别如下:<br><table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+      <th>区别</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>家族は三人です。父と母と私です。</td>
+      <td>家族有三人。父亲和母亲和我。</td>
+      <td>と是将句子里的内容完全举例出来。</td>
+    </tr>
+    <tr>
+      <td>殺生丸(せっしょうまる)と犬夜叉(いぬやしゃ)は銀髪（ぎんぱつ０）です。</td>
+      <td>杀生丸和犬夜叉都是银发。</td>
+      <td>と并不会跟や一样省略，而是全部例举出来。</td>
+    </tr>
+    <tr>
+      <td>食べたいものはケーキや焼肉などです。</td>
+      <td>想吃的东西有蛋糕、烤肉等。</td>
+      <td>や是不会例举全部，而是例举部分。</td>
+</table></p><font color="#00FF7F">表示双人共同进行</font><br>表示人物的名词+[と]，可以用来表示相互动作的对象。相当于汉语中的[和~与~同~],例句如下<br><table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+      <th>解析</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>昨日、彼女と一緒に映画を見ました。</td>
+      <td>昨天，和女朋友一起看电影了/昨天和她一起看了电影</td>
+      <td>"昨日"昨天<br>"彼女と"和她<br>"一緒に"一起<br>"映画を見ました"看了电影<br>"映画"名词+を客体+动作。<br>"昨天和他一起看了电影。"</td>
+    </tr>
+    <tr>
+      <td>桔梗は殺生丸と喧嘩しました。</td>
+      <td>桔梗和杀生丸吵架了。</td>
+      <td>桔梗:一个角色名字<br>杀生丸:一个角色名字<br>と：和<br>喧嘩しました。:动词敬体过去时肯定,这是说明吵架已经结束了，过去了。<br>所以整句就是:桔梗は殺生丸と喧嘩しました。</td>
+    </tr>
+    <tr>
+      <td>来週、部長と渋谷に行きます。</td>
+      <td>下周和部长去涩谷。</td>
+      <td>来週:下周<br>部長:部长<br>这里没标明谁和部长就直接说"和部长"<br>"渋谷に行きます。"去涩谷<br>因为是还没进行的，属于未来规划，按照动词划分就是行き直接加ます。</td>
+    </tr>
+  </tbody>
+</table><br>注意这里需要在意的一个要点:[本页里面记载了に也是有动作的，但是和と是有区别的。[と]是双向共同动作<br>[に]是单方向的动作。<br><br><div style="padding:20px;"><button type="button" class="button" data-reveal-id="myModal">例句体现区别</button><div id="myModal" class="reveal-modal medium" data-reveal>
+在这个对比中，我会用<font color="FF0000">红色表示と</font>/<font color="#008000">绿色表示に</font>来辨别。<br>
+    友達<font color="FF0000">と</font>会いました<br>
+    <p>与朋友相见了</p>
+    友達<font color="#008000">に</font>会いました<br>
+    <p>去见了朋友</p>
+    先生<font color="FF0000">と</font>話します<br>
+    <p>和老师说话</p>
+    先生<font color="#008000">に</font>言います<br>
+    <p>对老师说</p>
+    <a class="close-reveal-modal">&times;</a>
+  </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    $(document).foundation();
+})
+</script><br>用中文解释就是:<br>と属于双方都知情的情况下两者都做的是冲着对方去做的事情。而に就是一方冲着另一方做某事，而另一方则不知道对方是要冲着自己来的。
+</p><br><hr><h5>の:</h5><p><font color="#00FF7F">表示同位</font><br>格助词[の]用于两个名词之间时还可以表示同位关系。即[の]前后的名词都是指同一个事物，一般[の]前面的名词是表示关系、性质的名词，[の]后面的名词为专有名词，如人名等。<br><table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>私は学長の謝華翰と申します。</td>
+      <td>我是校长谢华翰。</td>
+    </tr>
+    <tr>
+      <td>彼は私の友達の李さんです。</td>
+      <td>他是我的朋友小李</td>
+    </tr>
+    <tr>
+      <td>こちら僕の先生のカナです。</td>
+      <td>这位是我的老师-kana。</td>
+    </tr>
+  </tbody>
+</table><font color="#00FF7F">表示领属</font><br>意思为：“什么的什么”作用：接在名词的后面构成定语，修饰后面的名词。<br>结构:[名词+の+名词]<br><table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+      <th>性质</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+      <td>高橋さんは日本の方ですか。</td>
+      <td>高桥是日本人吗？</td>
+      <td>/</td>
+  </tr>
+    <tr>
+      <td>これは私の本です。</td>
+      <td>这是我的书。</td>
+      <td>所属</td>
+    </tr>
+    <tr>
+      <td>英語の本です。</td>
+      <td>这是英语书</td>
+      <td>内容</td>
+    </tr>
+    <tr>
+      <td>会社の社員です。</td>
+      <td>公司的职员</td>
+      <td>所属</td>
+    </tr>
+    <tr>
+      <td>あの傘は私の傘です。</td>
+      <td>那个雨伞是我的雨伞。</td>
+      <td>所属</td>
+    </tr>
+    <tr>
+      <td>高校の学生です。</td>
+      <td>高中的学生。</td>
+      <td>所属</td>
+    </tr>
+  </tbody>
+</table><br>有些时候看情况，の并不一定会翻译出来，要灵活翻译</p><hr><h5>も:</h5><p><font color="#00FF7F">表示类同</font><br>提示助词「も」接在名词后，提示句子的话题（和「は」的作用一样）。<br>同时也表示同类事物。翻译成“也”。<br><table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>中国の夏(なつ)は暑(あつ)いです。日本の夏も暑いです。</td>
+      <td>中国的夏天很热。日本的夏天也很热。</td>
+    </tr>
+    <tr>
+      <td>桜の花は綺麗(きれい)です。菊(きく)の花も綺麗です。</td>
+      <td>樱花很漂亮。菊花也很漂亮。</td>
+    </tr>
+  </tbody>
+</table><br><font color="#00FF7F">疑问词+(格助词)+も表示(全面否定)</font><br>提示助词「も」通常与否定意义的谓语搭配，表示全面否定
+当「も」前面的格助词是「が」或「を」时，一般将其省略<br><table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>朝は何も食べません。</td>
+      <td>早上什么也不吃。</td>
+    </tr>
+    <tr>
+      <td>夏休みはどこにも行きませんでした。</td>
+      <td>暑假哪里也没去。</td>
+    </tr>
+    <tr>
+      <td>もう、誰もいない。</td>
+      <td>已经没有人了。</td>
+    </tr>
+    <tr>
+      <td>このことは誰にも言わない。</td>
+      <td>这件事不告诉任何人。</td>
+    </tr>
+    <tr>
+      <td>ジュースだけ飲みます</td>
+      <td>只喝果汁</td>
+    </tr>
+    <tr>
+      <td>お酒はほとんど飲まないです</td>
+      <td>基本不喝酒</td>
+    </tr>
+    <tr>
+      <td>何も飲みません</td>
+      <td>什么都不喝</td>
+    </tr>
+  </tbody></table><br><font color="#00FF7F">表示并列</font><br>助词[も]接在两个名词后面连用时，表示并列，相当于汉语的"~和~都"。例如:<br><cite>中国語は聞き取りも発音もとても難しいです。</cite><cite>陳先生も王先生も京華大学の先生です。</cite><cite>高橋さんも鈴木さんも留学生です。</cite></p><font color="#00FF7F">表示主观多量</font><br>数量词+も,助词も接在数量词的后面，用于强调数量之多,这是一种主观的表达方式，带有说话人的主观评论色彩，相当于汉语的<code>"竟"，"足足"，"整整"，"达"</code>这些词汇。数量词后面不带<code><strong style="color:#FF0000">[も]</strong></code>时，则是一种客观的描写。例如:<code>ええ？<font color="#FF0000">45,000円も</font>するんですか。啊？要45,000元吗？</code><code>ビールを<font color="#FF0000">5本も</font>飲みました。我喝了5瓶啤酒。</code><hr><h5>でも:</h5><p><font color="#00FF7F">表示转折</font><br>实词中的连词（接续词），用于连接两个句子，表示转折关系，一般多用于口语中。相当于中文的“但是，可是”。<br>还有就是常常为了语气委婉，转折之后，省略后面的话。<br><table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>あの先生は変態です。でも、優しいです。</td>
+      <td>那位老师是变态。但是，很温柔。</td>
+    </tr>
+    <tr>
+      <td>中国の大学の授業は一コマ50分です。でも、日本の大学の授業は90分です。</td>
+      <td>中国大学的课程是一节50分钟。但是，日本大学的课程是90分钟。</td>
+    </tr>
+  </tbody>
+</table></p><hr><h5>が:</h5><p><font color="#00FF7F">表示主体(主语/疑问)</font><br>解释:表示主体这个时候，先区分[は]和[が]的区别。<br>[は]强调的重点在后面,那么が就反着来<br>[が]强调的重点在前面,所以有这么一句:＜が前は后＞的诀窍。<br>用于例句中有不同的说法:<table><thead>
+    <tr>
+      <th>例句</th>
+      <th>全假名</th>
+      <th>解释</th>
+      <th>区别</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>私 <font color="#FF0000">は</font> 謝華翰です</td>
+      <td>わたしはしゃはなかんです</td>
+      <td>我叫谢华翰</td>
+      <td>自我介绍时于人前，是哪个人已经很清楚。重点在于这个是是谁。</td>
+    </tr>
+    <tr>
+      <td>私 <font color="#FF0000">が</font> 謝華翰です</td>
+      <td>わたしがしゃはなかんです</td>
+      <td>我叫谢华翰</td>
+      <td>若名字是已知条件，想知道的是谁是这个人。</td>
+    </tr>
+    <tr>
+    <td>謝さん<font color="#FF0000">は</font>どなたですか</td>
+    <td>しゃさんはどなたですか</td>
+    <td>小谢是谁？</td>
+    <td>表达当中要凸显疑问信息。
+所以会根据句式使用「は・が」</td>
+    </tr><tr>
+    <td>どなた<font color="#FF0000">が</font>謝さんですか</td>
+    <td>どなたがしゃさんですか</td>
+    <td>谁是小谢？</td>
+    <td>表达当中要凸显疑问信息。
+所以会根据句式使用「は/が」</td>
+    </tr>
+  </tbody></table><br>前者是我知道了有这么一个人，这个人也在我面前，只不过还不知道你叫啥？<br>后者就是指，比方说面试一个人，叫做謝華翰，但是此时面试者已位于门外，但是没推门进去，面试官和应聘者都没见面，此时面试者先说了句：我叫XXX，因为两方都不知道对方长啥样，所以要用が。
+<br><font color="#00FF7F">表示转折</font><br><p>助词「が」用于连接两个分句，表示两个分句之间的转折或铺垫关系。<br>注意:当前后存在对比关系，皆用「は」提示主题。相当于汉语的[但是、不过]</p><table>
+  <thead>
+    <tr>
+      <th>句子</th>
+      <th>翻译</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>このゲームは難しいです<font color="#FF0000">が</font>、面白いです。</td>
+      <td>这个游戏很难，但是很好玩。</td>
+    </tr>
+    <tr>
+      <td>あのう、すみません<font color="#FF0000">が</font>。お手洗いはどちらですか。</td>
+      <td>那个，不好意思。请问厕所在哪？</td>
+    </tr>
+    <tr>
+      <td>この店の蕎麦はおいしいです<font color="#FF0000">が</font>、お茶はまずいです。</td>
+      <td>这家店的荞麦面很好吃，但是茶很难喝。</td>
+    </tr>
+    <tr>
+    <td>宿題は多いです<font color="#FF0000">が</font>、簡単です。</td>
+    <td>作业虽然多，但是简单</td>
+    </tr>
+  </tbody>
+</table><font color="#00FF7F">表示主体</font></p><p>助词「が」接在名词后面构成句子的主语。对客观事实进行描写时，句子的主语、
+主体一般用「が」表示,示例句子如下:</p><table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>假名</th>
+      <th>翻译</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>雨<font color="#FF0000">が</font>降ります</td>
+      <td>あめがふります</td>
+      <td>雨下了</td>
+    </tr>
+    <tr>
+      <td>花<font color="#FF0000">が</font>咲きます</td>
+      <td>はながさきます</td>
+      <td>花开了</td>
+    </tr>
+    <tr>
+      <td>ベル<font color="#FF0000">が</font>鳴ります</td>
+      <td>ベルがなります</td>
+      <td>铃响了</td>
+    </tr>
+    <tr>
+      <td>授業<font color="#FF0000">が</font>始まる</td>
+      <td>じゅぎょがはじまる</td>
+      <td>开始上课</td>
+    </tr>
+    <tr>
+      <td>花<font color="#FF0000">が</font>散ります</td>
+      <td>はながちります</td>
+      <td>花谢了</td>
+    </tr>
+    <tr>
+      <td>電話<font color="#FF0000">が</font>鳴ります</td>
+      <td>でんわがなります</td>
+      <td>电话响了</td>
+    </tr>
+    <tr>
+      <td>ドア<font color="#FF0000">が</font>開きます</td>
+      <td>ドアがひらきます</td>
+      <td>门开了</td>
+    </tr>
+  </tbody>
+</table><hr><h5>よ:</h5><p><font color="#00FF7F">表示主张\提示</font><br>语气终助词，用于句尾，表达说话人的主张、提示、叮嘱等，一般传达的信息都是听话人未掌握的。有时不需要翻译出来。<<br>注意:使用过多会使听话人觉得说话人自大，尽量不要多用。 　<br><table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>カレーはとてもおいしいですよ。</td>
+      <td>咖喱很好吃哦。</td>
+    </tr>
+    <tr>
+      <td>新ちゃんは男の子ですよ。</td>
+      <td>小新是男孩子哦。</td>
+    </tr>
+  </tbody>
+</table></p><hr><h5>を:</h5><p><font color="#00FF7F">表示客体</font><br>解释:助词[を]接在名词后面构成宾语成分，一般表示动作的客体，提示宾语。举个例子:<table><thead>
+    <tr>
+      <th>例词</th>
+      <th>假名</th>
+      <th>翻译</th>
+    </tr>
+  </thead><tbody>
+    <tr>
+      <td>敵を倒す</td>
+      <td>てきをたおす</td>
+      <td>把敌人打倒</td>
+    </tr>
+    <tr>
+    　<td>君を守る</td>
+      <td>きみをまもる</td>
+      <td>保护你</td>
+    </tr>
+    <tr>
+      <td>巨人を殺す</td>
+      <td>きょじんをころす</td>
+      <td>将巨人杀死</td>
+    </tr><tr>
+      <td>空気が(を)読めない</td>
+      <td>くうきが（を）よめない</td>
+      <td>ＫＹ</td>
+    </tr><tr>
+      <td>先生を信じる</td>
+      <td>せんせいをしんじる</td>
+      <td>相信老师</td>
+    </tr><tr>
+      <td>何をする</td>
+      <td>なにをする</td>
+      <td>做什么</td>
+    </tr>
+  </tbody></table><br>
+  像这种词汇，当前面时名词在后面接上を的时候，就会变成一个宾语[敵＋を＋倒す]、换成公式的话就是:[名词+を+动词]<br>
+<font color="#00FF7F">表示出发点</font><br>[を]还有表示移动动作的出发点或者是经过的场所(要接场所名词)<br><ul class="accordion" data-accordion>
+  <li class="accordion-navigation">
+    <a href="#demo">场景名词</a>
+    <div id="demo" class="content">
+     饭馆:飯店（はんてん）<br>客厅:応接間（おうせつま）<br>房间:部屋（へや）<br>屋顶:屋（おく）<br>厕所/洗手间:トイレ/手洗い（てあらい）<br>卧室:寝室（しんしつ）<br>图书馆:図書館（としょかん）<br>邮局:郵便局（ゆうびんきょく）<br>医院:医院（いいん）<br>网吧(网咖):インターネットバー<br>茶店:茶店（ちゃてん）<br>西餐厅:レストラン<br>珍珠奶茶店:タピオカ店<br>药铺/药房/药店:薬屋（くすりや
+     ）<br>宠物商店:ペットショップ（ぺっとしょっぷ）</div></li></ul><script>$(document).ready(function(){$(document).foundation();})</script><br><font color="#00FF7F">表示移动的地点</font><br>又称为,[表示移动的自动词]<br>
+     自动词都是用を:飛ぶ、渡る、走る、歩く、回る、散歩、旅行<br> <center><table>
+  <thead>
+    <tr>
+      <th>例子</th>
+      <th>翻译</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>公園を散歩する</td>
+      <td>在公园散步</td>
+    </tr>
+    <tr>
+      <td>道を歩く</td>
+      <td>走路</td>
+    </tr>
+    <tr>
+      <td>橋を渡る</td>
+      <td>过桥</td>
+    </tr>
+    <tr>
+      <td>廊下を走らないで</td>
+      <td>不要在走廊下跑</td>
+    </tr>
+  </tbody>
+</table></center><br>表示移动的自动词还有这些:<br><ul class="accordion" data-accordion>
+  <li class="accordion-navigation">
+    <a href="#demo">常用的表示移动的自动词：</a>
+    <div id="demo" class="content">
+     飛ぶ（とぶ）⓪ 空を飛ぶ。在空中飞翔<br>渡る（わたる）⓪ 川を渡る。过河<br>走る（はしる）② 運動場を走る。在运动场跑步<br>歩く（あるく）② 道を歩く。在路上走。<br>回る（まわる）⓪ 店の中を回る。 在店里转悠<br>通る（とおる）① 食堂の前を通る。 路过食堂门口<br>散歩する（さんぽ） 公園を散歩する。 在公园散步<br>旅行する（りょこう） 世界を旅行する。环游世界</div></li></ul><script>$(document).ready(function(){$(document).foundation();})</script></p><hr><h5>で:</h5><p><font color="#00FF7F">表示处所</font><br>提示动作使用的工具、手段，翻译为“用、以、通过”。<br><table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ペン<font color="#FF0000">で</font>名前を書きます。</td>
+      <td>用钢笔写字。</td>
+    </tr>
+  </tbody>
+</table><font color="#00FF7F">工具、手段</font><br>和上面解释一样，这里可以这么举例<br><table><thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>喫茶店<font color="#FF0000">で</font>コーヒーを飲みます。</td>
+      <td>在咖啡馆喝咖啡。</td>
+    </tr>
+</tbody>
+</table></p><hr><h5>に:</h5><p><font color="#00FF7F">表示目的地/时间(对点)</font><br>「に」表示移动的目的地（接场所名词）场所に+移动性的动作,如:家に帰ります<br>明日の午後、図書館に行きます。这样举例<br>「に」表示动作发生的时间（接时间名词）例句如下:毎朝、８時半に起きます。<br>９時に朝ごはんを食べます。<br>在进行一个例句举例<br><table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+      <th>翻译2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>我明年暑假要去日本。</td>
+      <td>来年の夏休みに私は日本に行きます。</td>
+      <td>来年の夏休み、日本に行きます。</td>
+    </tr>
+  </tbody>
+</table><font color="#00FF7F">表示附着点</font><br>「に」搭配表示附着含义的动词，表示事物的附着点。例句如下<br><table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>假名</th>
+      <th>翻译</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>教科書を机の上に置く。</td>
+      <td>きょうかしょをつくえのうえにおく。</td>
+      <td>把教科书放在桌子上。</td>
+    </tr>
+    <tr>
+      <td>バスに乗る。自転車に乗る。</td>
+      <td>バスにのる。じてんしゃにのる。</td>
+      <td>坐公共汽车。骑自行车。</td>
+    </tr>
+    <tr>
+      <td>バスで会社に行く。</td>
+      <td>バスでかいしゃにいく</td>
+      <td>坐公共汽车去公司。</td>
+    </tr>
+  </tbody>
+</table></p><font color="#00FF7F">表示对象</font><br><p>表示人物的名词+「に」表示动作的对象
+ 相当于汉语【向～ 与～ 跟～】<br>如果是过去时，那么直接在する那里改成しました。<br><table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+      <th>形态</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>彼女<font color="#FF0000">に</font> 一目惚れしました。</td>
+      <td>我对她一见钟情了。</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>友達<font color="#FF0000">に</font>お金を借りました</td>
+      <td>向朋友借钱了</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>先週先生<font color="#FF0000">に</font>話しました。</td>
+      <td>上周跟老师说了</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table></p><p><font color="#00FF7F">表示有目的→的移动</font><br>～に行く /来る＜有目的　的移动＞<br>这个接在[ます形]去[ます]或者是动作性名词的后面，表示移动的目的相当于汉语的[去/来(做)~],如果不好理解的话我会拆分下面的句子做解析<br><table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+      <th>拆分</th>
+      <th>解析</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>飲み物を買いに行きました</td>
+      <td>去买饮料了</td>
+      <td>飲み/物を/買いに/行きました</td>
+      <td>飲み:喝/物を:物品/買いに:买东西/行きました:去、前往<br>买东西为动词，买飲み＋物を:买喝的物品，简称买喝的。去:行く/属于一类动词<br>接上ます形、去く改き+ます、在变形成动词敬体过去时就是去ます改成ました。</td>
+    </tr>
+    <tr>
+      <td>残業しに来ました</td>
+      <td>我来加班的</td>
+      <td>残業/しに/来ました</td>
+      <td>残業:加班/属于三类动词，ます形得非过去敬体肯定就是残業します。<br>に接在ます形后面去ます，加班是这句的目的。后面的移动由于是非过去敬体肯定所以就是来ます变为来ました。</td>
+    </tr>
+    <tr>
+      <td>何をしに来ましたか。</td>
+      <td>来干什么？</td>
+      <td>何をしに/来ましたか。</td>
+      <td>何をしに原来是何をする:做什么<br>来ました：去,后面的移动由于是非过去敬体肯定所以就是来ます变为来ました。加か代表着疑问。</td>
+    </tr>
+    <tr>
+    <td>映画館に映画を見に行きました。</td>
+    <td>去电影院看电影了。</td>
+    <td>映画館に/映画を/見に行きました。</td>
+    <td>前面的に所用的是表示目的地/后面是表达电影+を客体后面就是接动作+有目的地移动。</td>
+    </tr>
+  </tbody>
+</table></p><p><font color="#00FF7F">表示存在、所在</font><br><center>格式:<code>N₁に(は)N₂があります/います<存在></code></center><br>这个句式表示<strong>存在</strong>，一般称为"存在句"。[に]格名词N₁表示存在的处所，[が]格助词N₂表示存在的人或物。动词[あります]用于表示物的存在，[います]用于表示人或动物的存在。这个句式相当于汉语的"(在)N₁有N₂之意。例如:<br><code>あそこに毛沢東の肖像画があります。"</code><code>天安門の北に景山公園があります。</code><code>下に観光客がおおぜいいますね。</code><code>正門の前に王さんがいます。</code></p><p><font color="#00FF7F">表示选择、决定</font><br><center>格式:<code>Nにする<选择、决定></code></center><br>[にする]接在名词后面，表示所选择或者是决定的事物。相当于汉语里面的<code>"要~" "定~"</code>这些意思,有时候可不用翻译出来。例句如下:<br><div class="row example"><div class="small-5 columns"><table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>何にしますか。</td>
+      <td>需要什么吗？</td>
+    </tr>
+    <tr>
+      <td>お酒は何にしますか。</td>
+      <td>需要什么酒吗？</td>
+    </tr>
+    <tr>
+      <td>わたしはコーヒーにします。</td>
+      <td>我要咖啡。</td>
+    </tr>
+    <tr>
+      <td>私は玉子にします。</td>
+      <td>我要鸡蛋。</td>
+    </tr>
+    <tr>
+      <td>私はチャーハンにします。</td>
+      <td>我要炒饭。</td>
+    </tr>
+    <tr>
+      <td>彼はスープにします。</td>
+      <td>他要汤。</td>
+    </tr>
+  </tbody>
+</table></div><div class="small-6 columns">
+<table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>今日は私は一本紅茶にします。</td>
+      <td>今天我要一杯红茶。</td>
+    </tr>
+    <tr>
+      <td>明日、僕は七本飲み物にします。</td>
+      <td>明天，我要七瓶饮料。</td>
+    </tr>
+    <tr>
+      <td>私と友達は二本ワインと二本紹興酒と五本日本酒にします。</td>
+      <td>我和朋友要两瓶葡萄酒、两瓶绍兴酒和五瓶日本酒。</td>
+    </tr>
+  </tbody>
+</table><div id="flip"><button type="button" class="button secondary tiny radius"><h4>当然你也可以不选择这些例句</h4></button></div>
+<div id="xiala">像是有些更加难的例句，但是我目前先举例出这些。后面需要结合更多的助词来造句。</div></div></div></p><p><font color="#00FF7F">表示客体的处所</font><br>格式:<code>に<客体的处所></code><br>格助词[に]可以表示客体存在的处所。什么是<code>客体存在的处所?</code>,打个比方,有接触过で、这个也是有处所的意思，但是我们把它当成是活得意味，那这个に就是死物无生命意味,把“で”理解为在某处“做”某事，那就把“に”理解为无生命的客体在某处“存在”。注意:在有些地方“で”，“に”是通用的。<br><table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>国の周りに高い城壁を作った。</td>
+      <td>国家的周围建起了高高的城墙。</td>
+    </tr>
+    <tr>
+      <td>あの方はこの町(ちょう)に家(うち)を買った。</td>
+      <td>那位在这个城里买了一个房子。</td>
+    </tr>
+    <tr>
+      <td>李先生は2階に研究室を持っている。</td>
+      <td>李老师在2楼有研究室。</td>
+    </tr>
+  </tbody>
+</table></p>
+<hr><h5>そして:</h5><p><font color="#00FF7F">表示顺序、累加</font><br>连词「そして」是由「そうして」变化而来
+用于连接两个句子，也可以连接词或词组。可表示两个动作之间的先后顺序
+或表示一种并列、累加、递进的关系。用汉语来翻译那就是翻译成[又，而且，接着又]<br> <table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+      <th>属性</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>スーパーへ行きました。そして、食べ物や飲み物を買いました。</td>
+      <td>我去超市。然后，买了食物和饮料。</td>
+      <td>顺序、递进</td>
+    </tr>
+    <tr>
+      <td>悟空さんは強いです。そして、優しい人です。</td>
+      <td>悟空很强。而且，是个温柔的人。</td>
+      <td>并列</td>
+    </tr>
+    <tr>
+      <td>一生懸命日本語を勉強した。そして、試験に合格した。　</td>
+      <td>努力学习日语。然后考试合格了。</td>
+      <td>/</td>
+    </tr>
+    <tr>
+      <td>毎日、ミルクティー売って。そして、たくさんのお金を儲けました。</td>
+      <td>每天都卖奶茶。而且，赚了很多钱。</td>
+      <td>顺序、递进</td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+  </tbody>
+</table></p><hr><h5>へ:</h5><p><font color="#00FF7F">表示方向</font><br>助词的[へ]接在表示处所的名词后面,用来表示移动的方向。这个就相当于汉语的["往"哪里哪里去~]<br> <table>
+  <thead>
+    <tr>
+      <th>例句</th>
+      <th>翻译</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>本屋へ本を買いに行きます。</td>
+      <td>去书店买书</td>
+    </tr>
+    <tr>
+      <td>もう遅いから、家へ帰ります。</td>
+      <td>已经很晚了，回家去吧。</td>
+    </tr>
+    <tr>
+      <td>公園へダンスに行きます。</td>
+      <td>去公园跳舞</td>
+    </tr>
+    <tr>
+    <td>花屋へ花を買いに行きます。</td>
+    <td>去花店买花</td>
+    </tr>
+  </tbody>
+</table><br>同时，处所名词配合に和へ是有不一样的区别的。<br><blockquote>
+    <cite><font color="#DC143C" size="3">处所名词+に：强调目的地</font></cite>
+    <cite><font color="#DC143C" size="3">处所名词+へ：强调方向性</font></cite>
+  </blockquote><br>第一点:大多数情况下两者可以互换使用。<br><blockquote><cite><font size="3">日本<font color="#DC143C" size="3">に/へ</font><font size="3">行きます。</font></cite><cite><font size="3">家</font><font color="#DC143C" size="3">に/へ</font><font size="3">帰ります</font></cite></blockquote><br>第二点:后项动作省略时，此时只能用「へ」、不能用「に」<blockquote><cite><font size="3">どうぞこちら</font><font color="#DC143C" size="3">へ</font>。（请走这边。）</cite><cite><font size="3">山田さん</font><font color="#DC143C" size="3">へ</font>。（致山田。）</cite></blockquote></p>
+</div></div>
+</section>
+    <!-- 关闭菜单 -->
+    <a class="exit-off-canvas"></a>
+  </div> 
+</div> 
+<script>
+$(document).ready(function() {
+    $(document).foundation();
+})
+</script>
+
+
+    
+
+    
+ 
+</body>
+</html>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    
+    
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">僕の日本語の筆記です</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">文形语法汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">あの:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.0.0.0.2.</span> <span class="nav-text">か:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.0.0.0.3.</span> <span class="nav-text">ね:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.0.0.0.4.</span> <span class="nav-text">と:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.0.0.0.5.</span> <span class="nav-text">の:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.0.0.0.6.</span> <span class="nav-text">も:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.0.0.0.7.</span> <span class="nav-text">でも:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.0.0.0.8.</span> <span class="nav-text">が:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.0.0.0.9.</span> <span class="nav-text">よ:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.0.0.0.10.</span> <span class="nav-text">を:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.0.0.0.11.</span> <span class="nav-text">で:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.0.0.0.12.</span> <span class="nav-text">に:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#flip"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">当然你也可以不选择这些例句</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.0.0.1.1.</span> <span class="nav-text">そして:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">2.0.0.1.2.</span> <span class="nav-text">へ:</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/yourname" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-youtube"></i>YouTube</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="skype:yourname?call|chat" title="Skype → skype:yourname?call|chat" rel="noopener" target="_blank"><i class="fa fa-fw fa-skype"></i>Skype</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
