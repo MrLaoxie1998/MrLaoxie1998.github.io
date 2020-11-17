@@ -1,0 +1,24 @@
+   /* 首先用到了keyframes,想要深究可以自行进入w3school官网搜索学习,另外一个transform平移,而translate3d呢是一个比translate多两个参数的东西,可以实现更丰富的效果 */
+         @keyframes bounceInLeft {
+                0% {
+                    transform: translate3d(-3000px, 0, 0);
+                }
+                60% {
+                    /* opacity: 1;不透明 */
+                    transform: translate3d(25px, 0, 0);
+                }
+                75% {
+                    transform: translate3d(0px, 0, 0);
+                }
+                90% {
+                    transform: translate3d(0px, 0, 0);
+                }
+                100% {
+                    transform: none;
+                }
+            }
+
+             /* 这里使用上面定义的动画效果,后面用到了贝塞尔曲线实现快慢效果 */
+            .floatImg{
+                animation: bounceInLeft 3s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }

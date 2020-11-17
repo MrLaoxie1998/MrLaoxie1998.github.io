@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2019.6.27笔记 - My Web</title>
+</head>
+<meta charset="UTF-8">
+<meta name="author" content="helang.love@qq.com">
+<meta name="renderer" content="webkit">
+<meta name="renderer" content="ie-comp">
+<meta name="renderer" content="ie-stand">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<link rel="stylesheet" href="cssjsimg/laoxie.css">
+	    <link rel="shortcut icon" type="bakaweb2/Webicon" href="cssjsimg/9.ico">
+	    <link rel="stylesheet" href="cssjsimg/reset.css">
+        <link rel="stylesheet" href="cssjsimg/supersized.css">
+        <link rel="stylesheet" href="cssjsimg/style.css">
+        <link rel="stylesheet" href="cssjsimg/indexwidth.css">
+        <link rel="stylesheet" href="cssjsimg/ziti.css">
+        <link rel="stylesheet" href="cssjsimg/img.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<body>
+
+<nav class="hl_nav">
+    <ul class="nav_list">
+        <li class="highlight active">
+            <a class="nav_head" href="The-user-center.html">
+                <span>用户面板</span>
+            </a>
+            <a href="file:///D:/xxampp/htdocs/网站/bakaweb2(笔记本跟进)/Other/User.html" class="item">账户信息</a>
+            <a href="file:///D:/xxampp/htdocs/网站/bakaweb2(笔记本跟进)/Other/data-edition.html" class="item">资料编辑</a>
+            <a href="file:///D:/xxampp/htdocs/网站/bakaweb2(笔记本跟进)/Other/Announcement.html" class="item">查看公告</a>
+            <a href="file:///D:/xxampp/htdocs/网站/bakaweb2(笔记本跟进)/Other/login.html" class="item">点我登录</a>
+        </li>
+        <li class="highlight">
+            <a class="nav_head" href="file:///D:/xxampp/htdocs/网站/bakaweb2(笔记本跟进)/Other/Use.html">
+                <span>使用</span>
+            </a>
+            <a href="file:///D:/xxampp/htdocs/网站/bakaweb2(笔记本跟进)/Other/Node-list.html" class="item">节点列表</a>
+            <a href="file:///D:/xxampp/htdocs/网站/bakaweb2(笔记本跟进)/Other/Node-status.html" class="item">节点状态</a>
+        </li>
+        <li class="highlight">
+            <a class="nav_head" href="deal.html">
+                <span>交易</span>
+            </a>
+            <a href="file:///D:/xxampp/htdocs/网站/bakaweb2(笔记本跟进)/Other/Thestore.html" class="item">商店</a>
+            <a href="file:///D:/xxampp/htdocs/网站/bakaweb2(笔记本跟进)/Other/Purchase-records.html" class="item">购买记录</a>
+            <a href="file:///D:/xxampp/htdocs/网站/bakaweb2(笔记本跟进)/Other/recharge.html" class="item">充值</a>
+        </li>
+        <li class="highlight">
+            <a class="nav_head" href="file:///D:/xxampp/htdocs/网站/bakaweb2(笔记本跟进)/Other/Help.html">
+                <span>帮助</span>
+            </a>
+        </li>
+        <li class="highlight">
+            <a class="nav_head" href="file:///D:/xxampp/htdocs/网站/bakaweb2(笔记本跟进)/Other/index.html">
+                <span>回到首页</span>
+            </a>
+        </li>
+        <li class="right highlight">
+            <a class="nav_head">
+                <span>其他链接</span>
+            </a>
+            <a href=""class="item"></a>
+            <a href="https://touhou.to" class="item">东方网络</a>
+            <a href="https://myip.cx/" class="item">IP地址查询</a>
+            <a href="https://www.speedtest.net" class="item">当前网络测速</a>
+            <a href="javascipt:;" class="item"></a>
+        </li>
+    </ul>
+    <div class="shade"></div>
+</nav>
+<br><br><br><br><br><br>
+<div class="index_div">
+    <br>
+		<div class="ziti3">我的每日笔记，存储技术与应用</div>
+        <p><div class="ziti3-1">{动态磁盘配置}</p></div>
+    	<div class="ziti4">2019年8月26日</div><br><br><br><br><br><br>
+        
+        <div class="ziti3">动态磁盘的配置与管理</div>
+    	<div class="ziti2">动态磁盘</div>
+        <br>
+        <div class="ziti2">动态磁盘没有分区的磁盘概念，它以“卷”命名。<p>可以将最多32个物理磁盘创建为一个卷</p><p>一个物理磁盘上没有卷的数量限制，同时可以提供多种卷集</p></div>
+    	<div class="ziti1-small">
+    	简单卷、跨区卷、带区卷、镜像卷、RAID-5卷、RAID-6卷、RAID-10卷、RAID-50卷</div>
+        <div class="ziti2">动态磁盘管理类型<p>
+        1.简单卷</p>
+    简单卷必须建立在同一块硬盘上的连续空间，创建好后也可以扩展至硬盘的非连续空间
+<br>
+<p>2.跨区卷</p>
+    跨区卷由两块或两块以上的硬盘存储空间组成，每块硬盘所提供的磁盘空间可以不相同。例如，硬盘A提供20G的空间，硬盘B提供30G的空间，两者所组合起来的跨区卷就有50G的空间，
+<p>3.带区卷</p>
+    是每块硬盘所贡献的空大小必须相同，是一种动态卷，必须创建在动态磁盘上。当文件存到带区卷时，系统会将数据分散存于先进一磁盘位于各块硬盘的空间，若使用专业的硬件设备和磁盘（如阵列卡、SCSI硬盘），将可提高文件的访问效率，并降低CPU的负荷。带区卷。带区卷使用 RAID-0，从而可以在多个磁盘上分布数据。带区卷不能被扩展或镜像，并且不提供容错。如果包含带区卷的其中一个磁盘出现故障，则整个卷无法工作。当创建带区卷时，最好使用相同大小、型号和制造商的磁盘。
+    <p>4.镜像卷</p>
+    镜像卷的构成同带区卷相似，只是带区卷未提供容错功能。若带区卷中的任一块硬盘发生故障，就不能读出磁盘中的数据。镜像卷利用两块硬盘中大小相同的磁盘空间所组成，存放数据则在两块硬盘上各存一份。
+    <p>5.RAID-5卷</p>
+    RAID-5卷具有容错功能的磁盘阵列，至少需要3块硬盘才能建立，并且每块硬盘必须提供相同的磁盘空间。使用RAID-5卷时，数据会分散写入各块硬盘中，同时建立一份奇偶校验数据信息，保存在不同的硬盘上</div>
+
+
+        <br><br>
+        <hr style=" width:20%; color:#00CCFF; display:inline-block" /> 各个RAID分析 <hr style=" width:20%; color:#00CCFF; display:inline-block" />
+        <br><br><br>
+
+        <br>
+       <hr style=" width:20%; color:#00CCFF; display:inline-block" /> 图为RAID <hr style=" width:20%; color:#00CCFF; display:inline-block" /><br><br><br>
+
+ <div class="ziti1-1">
+            大标题1</div>
+            <br>
+            <p><div class="ziti2"></p>
+                <br><p></p>
+                <p></p><br>
+                <p></p>
+                <p></p>
+            </div><br>
+            <div class="ziti1-1">
+            大标题2</div><br><br>
+              <div class="ziti1-1">
+           大标题3</div><br>
+            <div class="ziti2">
+                <br>
+                RAID-5技术的优缺点<br></div><br>
+               
+            <div class="ziti_end">2019-9-1完稿</div>
+            
+        </div>
+
+        </div>
+       
+
+
+<div></div>
+</div>
+<script src="cssjsimg/jquery-1.8.2.min.js"></script>
+<script src="cssjsimg/supersized.3.2.7.min.js"></script>
+<script src="cssjsimg/supersized-init.js"></script>
+<script src="cssjsimg/scripts.js"></script>
+<script src="cssjsimg/bakaweb2/assets/js/time.js"></script>
+
+</body>
+</html>
