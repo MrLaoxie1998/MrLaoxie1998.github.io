@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mrlaoxie1998.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="单词表这里是关于我所学习的第19课单词记录            &#x2F;&#x2F; 基于准备好的dom，初始化echarts实例         var myChart &#x3D; echarts.init(document.getElementById(&#39;echarts2700&#39;));         &#x2F;&#x2F; 指定图表的配置项和数据         var option &#x3D; option &#x3D; {">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="http://mrlaoxie1998.github.io/2020/12/15/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC19%E8%AF%BE%E5%8D%95%E8%AF%8D/index.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="单词表这里是关于我所学习的第19课单词记录            &#x2F;&#x2F; 基于准备好的dom，初始化echarts实例         var myChart &#x3D; echarts.init(document.getElementById(&#39;echarts2700&#39;));         &#x2F;&#x2F; 指定图表的配置项和数据         var option &#x3D; option &#x3D; {">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-12-14T23:24:54.761Z">
+<meta property="article:modified_time" content="2020-12-16T18:52:08.811Z">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://mrlaoxie1998.github.io/2020/12/15/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC19%E8%AF%BE%E5%8D%95%E8%AF%8D/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 9之数据库</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-我的旧站">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-tasks"></i>我的旧站</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/12/15/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC19%E8%AF%BE%E5%8D%95%E8%AF%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-12-15 07:24:54" itemprop="dateCreated datePublished" datetime="2020-12-15T07:24:54+08:00">2020-12-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-17 02:52:08" itemprop="dateModified" datetime="2020-12-17T02:52:08+08:00">2020-12-17</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><p>这里是关于我所学习的第19课单词记录</p>
+<div id="echarts2700" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts2700'));
+        // 指定图表的配置项和数据
+        var option = option = {
+    title: {
+        text: '第19课单词',
+        subtext: '各词性统计-共计142个单词。统计了高频词汇和低频词汇,人工统计，不一定是142个',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['名词',  '解释性词性', '固有名词',  '副词', '感叹词', '终助词', '接助词', '连体词', '他动词1类', '他动词2类', '他动词3类', '自动词1类', '自动词2类', '自动词3类', '形容词1类',  '形容词2类', '取立て助']
+    },
+    series: [
+        {
+            name: '此词性数量',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: [
+                {value: 69, name: '名词'},
+                {value: 14, name: '解释性词性'},
+                {value: 1, name: '固有名词'},
+                {value: 4, name: '副词'},
+                {value: 1, name: '感叹词'},
+                {value: 6, name: '终助词'},
+                {value: 2, name: '接助词'},
+                {value: 1, name: '连体词'},
+                {value: 11, name: '他动词1类'},
+                {value: 4, name: '他动词2类'},
+                {value: 5, name: '他动词3类'},
+                {value: 8, name: '自动词1类'},
+                {value: 3, name: '自动词2类'},
+                {value: 5, name: '自动词3类'},
+                {value: 4, name: '形容词1类'},
+                {value: 3, name: '形容词2类'},
+                {value: 1, name: '取立て助'}
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+<a id="more"></a>
+
+<table>
+<thead>
+<tr>
+<th align="center">单词</th>
+<th align="center">词性</th>
+<th align="center">翻译</th>
+<th align="center">声调</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">黄砂(こうさ)</td>
+<td align="center">名词</td>
+<td align="center">黄沙/风沙/沙尘暴</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">キャスター(caster)</td>
+<td align="center">名词</td>
+<td align="center">(电视节目)主持人</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">クローズアップ(close-up)</td>
+<td align="center">名词/他动词3类</td>
+<td align="center">特写</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">ワールド(world)</td>
+<td align="center">名词</td>
+<td align="center">世界</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">ご存知(ごぞんじ)</td>
+<td align="center">名词</td>
+<td align="center">知道(尊他用法)</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">空(そら)</td>
+<td align="center">名词</td>
+<td align="center">天/天空</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">黄色い(きいろい)</td>
+<td align="center">形容词1类</td>
+<td align="center">黄色/黄</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">太陽(たいよう)</td>
+<td align="center">名词</td>
+<td align="center">太阳</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">中国大陸(ちゅうごくたいりく)</td>
+<td align="center">名词</td>
+<td align="center">中国大陆</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">大陸(たいりく)</td>
+<td align="center">名词</td>
+<td align="center">大陆</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">砂(すな)</td>
+<td align="center">名词</td>
+<td align="center">沙子/沙</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">文字どおり(もじどおり)</td>
+<td align="center">名词/副词</td>
+<td align="center">正如字面意义那样/确实</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">どおり</td>
+<td align="center">/</td>
+<td align="center">如….那样/照…..那样</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">春先(はるさき)</td>
+<td align="center">名词</td>
+<td align="center">早春</td>
+<td align="center">0/4</td>
+</tr>
+<tr>
+<td align="center">面(めん)</td>
+<td align="center">/</td>
+<td align="center">面/方面</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">環境(かんきょう)</td>
+<td align="center">名词</td>
+<td align="center">环境</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">起こす(おこす)</td>
+<td align="center">他动词1类</td>
+<td align="center">引起/导致</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">原因(げんいん)</td>
+<td align="center">名词</td>
+<td align="center">原因</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">今夜(こんや)</td>
+<td align="center">名词</td>
+<td align="center">今晚/今天晚上</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">対策(たいさく)</td>
+<td align="center">名词</td>
+<td align="center">对策/解决办法</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">手がかり(てがかり)</td>
+<td align="center">名词</td>
+<td align="center">线索</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">探る(さぐる)</td>
+<td align="center">他动词1类</td>
+<td align="center">寻求/探索</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">真っ(まっ）</td>
+<td align="center">/</td>
+<td align="center">真/真正/特别</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">黄色(きいろ)</td>
+<td align="center">名词/形容词2类</td>
+<td align="center">黄/黄色</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">スモッグ(smog)</td>
+<td align="center">名词</td>
+<td align="center">烟雾</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">の</td>
+<td align="center">终助词</td>
+<td align="center">表示疑问</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">光化学スモッグ(こうかがくsmog)</td>
+<td align="center">名词</td>
+<td align="center">光化学烟雾</td>
+<td align="center">7</td>
+</tr>
+<tr>
+<td align="center">光化学(こうかがく)</td>
+<td align="center">名词</td>
+<td align="center">光化学</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">砂漠(さばく)</td>
+<td align="center">名词</td>
+<td align="center">沙漠</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">高原(こうげん)</td>
+<td align="center">名词</td>
+<td align="center">高原</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">北西部(ほくせいぶ)</td>
+<td align="center">名词</td>
+<td align="center">西北部</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">部(ぶ)</td>
+<td align="center">/</td>
+<td align="center"><del>部/</del>地区</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">かしら</td>
+<td align="center">终助词</td>
+<td align="center">表示自问自答式的疑问或询问</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">偏西風(へんせいふう)</td>
+<td align="center">名词</td>
+<td align="center">西风</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">強い(つよい)</td>
+<td align="center">形容词1类</td>
+<td align="center">强大/强</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">だろ</td>
+<td align="center">/</td>
+<td align="center">(だろう的口语省略形式)~吧</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">へえ</td>
+<td align="center">感叹词</td>
+<td align="center">是—吗？真—的？表示惊讶</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">地球(ちきゅう)</td>
+<td align="center">名词</td>
+<td align="center">地球</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">温暖化(おんだんか)</td>
+<td align="center">名词</td>
+<td align="center">变暖</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">温暖(おんだん)</td>
+<td align="center">名词/形容词2类</td>
+<td align="center">温暖</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">化(か)</td>
+<td align="center">/</td>
+<td align="center">~化</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">交通機関(こうつうきかん)</td>
+<td align="center">名词</td>
+<td align="center">交通工具</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">交通(こうつう)</td>
+<td align="center">名词</td>
+<td align="center">交通</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">洗濯物(せんたくもの)</td>
+<td align="center">名词</td>
+<td align="center">洗的衣服等</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">汚れる(よごれる)</td>
+<td align="center">自动词2类</td>
+<td align="center">脏</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">被害(ひがい)</td>
+<td align="center">名词</td>
+<td align="center">受害</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">農作物(のうさくぶつ)</td>
+<td align="center">名词</td>
+<td align="center">农作物</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">家畜(かちく)</td>
+<td align="center">名词</td>
+<td align="center">家畜</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">うち</td>
+<td align="center">/</td>
+<td align="center">在<del>的时候，趁着</del>的时候</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">~なくてはなりません</td>
+<td align="center">终助词</td>
+<td align="center">必须/应该</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">かな</td>
+<td align="center">/</td>
+<td align="center">表示自问自答式的疑问或询问</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">～てる</td>
+<td align="center">/</td>
+<td align="center">～ている的口语省略形式</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">～ても</td>
+<td align="center">/</td>
+<td align="center">即使</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">なるべく</td>
+<td align="center">副词</td>
+<td align="center">尽量/尽可能</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">外出(がいしゅつ)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">外出/出门</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">若い(わかい)</td>
+<td align="center">形容词1类</td>
+<td align="center">年轻/年青</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">年(とし)</td>
+<td align="center">名词</td>
+<td align="center">年龄/年岁</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">取る(とる)</td>
+<td align="center">他动词1类</td>
+<td align="center">(年龄)增加/上(岁数)</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">アドバイス(advice)</td>
+<td align="center">名词/自动词&amp;他动词3类</td>
+<td align="center">忠告/指点/意见</td>
+<td align="center">3/1</td>
+</tr>
+<tr>
+<td align="center">こっち</td>
+<td align="center">名词</td>
+<td align="center">(こちら)的口语形式：这边</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">ひどい</td>
+<td align="center">形容词1类</td>
+<td align="center">严重/过分/差劲</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">干す(ほす)</td>
+<td align="center">他动词1类</td>
+<td align="center">晾/晒</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">のよ</td>
+<td align="center">终助词</td>
+<td align="center">表示强调说明</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">でも</td>
+<td align="center">取立て助</td>
+<td align="center">即使</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">そんな</td>
+<td align="center">连体</td>
+<td align="center">那样的</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">し</td>
+<td align="center">接助词</td>
+<td align="center">而且/并且</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">閉める(しめる)</td>
+<td align="center">他动词2类</td>
+<td align="center">关</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">の</td>
+<td align="center">终助词</td>
+<td align="center">表示轻微断定</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">サングラス(sunglasses)</td>
+<td align="center">名词</td>
+<td align="center">墨镜/太阳镜</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">スカーフ(scarf)</td>
+<td align="center">名词</td>
+<td align="center">围巾/头巾/丝巾</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">巻く(まく)</td>
+<td align="center">他动词1类</td>
+<td align="center">围/卷</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">マスク(mask)</td>
+<td align="center">名词</td>
+<td align="center">口罩</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">~ば</td>
+<td align="center">/</td>
+<td align="center">如果</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">~のに</td>
+<td align="center">接助词</td>
+<td align="center">表示出乎意料时的遗憾、责备等语气</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">ばいい</td>
+<td align="center">/</td>
+<td align="center">表示建议/可以~/就行</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">わね</td>
+<td align="center">终助词</td>
+<td align="center">表示语气柔和的主张或叮问</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">取る(とる)</td>
+<td align="center">他动词1类</td>
+<td align="center">摘/脱/取下</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">外す(はずす)</td>
+<td align="center">他动词1类</td>
+<td align="center">摘/取下/去掉</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">シャツ(shirt)</td>
+<td align="center">名词</td>
+<td align="center">衬衣/衬衫</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">セーター(sweater)</td>
+<td align="center">名词</td>
+<td align="center">（套头）毛衣</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">着る(きる)</td>
+<td align="center">他动词2类</td>
+<td align="center">穿</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">ズボン(法语jupon)</td>
+<td align="center">名词</td>
+<td align="center">裤子</td>
+<td align="center">2/1</td>
+</tr>
+<tr>
+<td align="center">靴下(くつした)</td>
+<td align="center">名词</td>
+<td align="center">袜子</td>
+<td align="center">2/4</td>
+</tr>
+<tr>
+<td align="center">履く・穿く(はく)</td>
+<td align="center">他动词1类</td>
+<td align="center">穿</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">帽子(ぼうし)</td>
+<td align="center">名词</td>
+<td align="center">帽子</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">被る(かぶる)</td>
+<td align="center">他动词1类</td>
+<td align="center">戴</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">ネックレス(necklace)</td>
+<td align="center">名词</td>
+<td align="center">项链</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">イヤリング(earring)</td>
+<td align="center">名词</td>
+<td align="center">耳环</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">ベルト(belt)</td>
+<td align="center">名词</td>
+<td align="center">腰带/皮带</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">締める(しめる)</td>
+<td align="center">他动词2类</td>
+<td align="center">系</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">昆明(こんめい)</td>
+<td align="center">固有名词</td>
+<td align="center">昆明</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">あげる</td>
+<td align="center">他动词2类</td>
+<td align="center">放(烟火)。花火をあげる</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">品物(しなもの)</td>
+<td align="center">名词</td>
+<td align="center">商品</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">入る(いる)</td>
+<td align="center">自动词1类</td>
+<td align="center">中(意)/喜欢。気に入る(きにいる)</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">鳴らす(ならす)</td>
+<td align="center">他动词1类</td>
+<td align="center">使响/放(鞭炮)</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">砂糖(さとう)</td>
+<td align="center">名词</td>
+<td align="center">砂糖</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">コミュニティー(community)</td>
+<td align="center">名词</td>
+<td align="center">共同体/社会/社区</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">投書(とうしょ)</td>
+<td align="center">名词/他动词3类</td>
+<td align="center">投稿/读者来信</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">体験(たいけん)</td>
+<td align="center">名词/他动词3类</td>
+<td align="center">体验/亲身经历</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">語学留学(ごがくりゅうがく)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">为学语言而留学</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">だいぶ</td>
+<td align="center">副词</td>
+<td align="center">很/非常</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">報告(ほうこく)</td>
+<td align="center">名词/他动词3类</td>
+<td align="center">报告</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">ある</td>
+<td align="center">连体词</td>
+<td align="center">某</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">晴れる(はれる)</td>
+<td align="center">自动词2类</td>
+<td align="center">晴朗/晴</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">内陸部(ないりくぶ)</td>
+<td align="center">名词</td>
+<td align="center">内陆地区</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">内陸(ないりく)</td>
+<td align="center">名词</td>
+<td align="center">内陆</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">押す(おす)</td>
+<td align="center">他动词1类</td>
+<td align="center">推/按</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">はっきり</td>
+<td align="center">副词</td>
+<td align="center">清楚</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">によって</td>
+<td align="center">/</td>
+<td align="center">因为~/由于</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">深刻(しんこく)</td>
+<td align="center">形容词2类</td>
+<td align="center">严重/严峻</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">市民(しみん)</td>
+<td align="center">名词</td>
+<td align="center">市民</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">ボランティア(volunteer)</td>
+<td align="center">名词</td>
+<td align="center">志愿者/志愿服务者</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">植樹(しょくじゅ)</td>
+<td align="center">名词/自动词&amp;他动词3</td>
+<td align="center">植树</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">ブーム(boom)</td>
+<td align="center">名词</td>
+<td align="center">流行/盛行/蔚然成风</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">及ぶ(およぶ)</td>
+<td align="center">自动词1类</td>
+<td align="center">波及/影响</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">として</td>
+<td align="center">/</td>
+<td align="center">作为~</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">落ち着く(おちつく)</td>
+<td align="center">自动词1类</td>
+<td align="center">稳定/镇定</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">決まる(きまる)</td>
+<td align="center">自动词1类</td>
+<td align="center">定/决定</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">出会い(であい)</td>
+<td align="center">名词</td>
+<td align="center">相遇/相逢</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">実現(じつげん)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">实现</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">古里・故郷(ふるさと)</td>
+<td align="center">名词</td>
+<td align="center">故乡</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">雨(あめ)</td>
+<td align="center">名词</td>
+<td align="center">雨/下雨/雨天</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">晴れ(はれ)</td>
+<td align="center">名词</td>
+<td align="center">晴天/晴</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">曇り(くもり)</td>
+<td align="center">名词</td>
+<td align="center">阴天/阴</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">風(かぜ)</td>
+<td align="center">名词</td>
+<td align="center">风</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">雪(ゆき)</td>
+<td align="center">名词</td>
+<td align="center">雪</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">台風(たいふう)</td>
+<td align="center">名词</td>
+<td align="center">台风</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">嵐(あらし)</td>
+<td align="center">名称</td>
+<td align="center">暴风雨/风暴</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">降る(ふる)</td>
+<td align="center">自动词1类</td>
+<td align="center">下(雨、雪等)/降(雨、雪等)</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">晴れる(はれる)</td>
+<td align="center">自动词2类</td>
+<td align="center">晴/放晴</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">曇る(くもる)</td>
+<td align="center">自动词1类</td>
+<td align="center">(天)阴</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">吹く(ふく)</td>
+<td align="center">自动词1类</td>
+<td align="center">刮(风)</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">止む(やむ)</td>
+<td align="center">自动词1类</td>
+<td align="center">停止/停</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/12/15/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC31%E8%AF%BE%E5%8D%95%E8%AF%8D/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E8%AF%8D%E8%A1%A8"><span class="nav-number">1.</span> <span class="nav-text">单词表</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">70</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
