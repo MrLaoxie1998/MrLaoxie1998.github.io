@@ -1311,11 +1311,11 @@
     <title>日语第十三课单词</title>
     <url>/2020/07/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC13%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第13课日语单词笔记"><a href="#第13课日语单词笔记" class="headerlink" title="第13课日语单词笔记"></a>第13课日语单词笔记</h3><p>这里是《综合日语》的第十三课的所有单词记录。</p>
-<div id="echarts6626" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts5133" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts6626'));
+        var myChart = echarts.init(document.getElementById('echarts5133'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -2300,11 +2300,11 @@
     <title>日语第十四课单词</title>
     <url>/2020/08/01/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC14%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第14课日语单词笔记"><a href="#第14课日语单词笔记" class="headerlink" title="第14课日语单词笔记"></a>第14课日语单词笔记</h3><p>这里是《综合日语》的第十四课的所有单词记录。</p>
-<div id="echarts7587" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts1872" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts7587'));
+        var myChart = echarts.init(document.getElementById('echarts1872'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -3055,11 +3055,11 @@
     <title>日语第十五课单词</title>
     <url>/2020/08/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC15%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第15课日语单词笔记"><a href="#第15课日语单词笔记" class="headerlink" title="第15课日语单词笔记"></a>第15课日语单词笔记</h3><p>这里是《综合日语》的第十五课的所有单词记录。</p>
-<div id="echarts4474" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts1797" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts4474'));
+        var myChart = echarts.init(document.getElementById('echarts1797'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -6873,14 +6873,65 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2020/12/13/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC19%E8%AF%BE%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>~ても&lt;让步&gt;</p>
-<p>表示让步的条件，就算前项从句成立，后向主句的结果也不会改变。相当于汉语:即使(哪怕、就是、纵然)<del>也</del>就算<del>都</del></p>
+    <title>综合日语第19课笔记</title>
+    <url>/2020/12/19/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC19%E8%AF%BE%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="第十九课音声及语法解析"><a href="#第十九课音声及语法解析" class="headerlink" title="第十九课音声及语法解析"></a>第十九课音声及语法解析</h1><h2 id="1-とは～という意味だ-lt-说明、解释-gt"><a href="#1-とは～という意味だ-lt-说明、解释-gt" class="headerlink" title="1.~とは～という意味だ&lt;说明、解释&gt;"></a>1.~とは～という意味だ&lt;说明、解释&gt;</h2><p>​        这个句式用于对事物的名称、概念的说明或解释。相当于汉语的”是~意思”。<br>例句:</p>
+<p>​    [黄砂]とは文字どおり黄色い砂という意味です。([黄沙]字面上就是黄色沙子的意思。)<br>​    [紅土]とは文字どおり紅色い土という意味です。([红土]正如字面意思是红色的土。)<br>​    [ねこ]とは文字どおり猫という意味です。([猫]字面上就是猫的意思。)<br>​    [洋为中用]とは外国のものを中国に役立てるという意味です。(洋为中用”是指外国的东西对中国有帮助的意思。)<br>​    [カラオケ]とは歌のないオーケストラという意味です。(“卡拉OK”是指没有歌的管弦乐团。)</p>
+<p>仔细一想，这样可以写的句子有好多。关于计算机方面的都可以随便例举几个。</p>
+<a id="more"></a>
+<pre><code>[IPSec VPN]とは文字どおり安全プロトコルという意味です。([IPSec VPN]正如字面所示是安全协议的意思。)
+[Disk]とは文字どおり磁気ディスクという意味です。([Disk]字面上就是磁盘的意思。)
+[PC]とは文字どおりコンピューターという意味です。([PC]正如字面意思是计算机。)
+[计算机文件]とは文字どおりコンピューターのファイルという意味です。([计算机文件]正如字面意思是计算机的文件。)</code></pre>
+<h2 id="2-～うちに-lt-时段-gt"><a href="#2-～うちに-lt-时段-gt" class="headerlink" title="2.～うちに&lt;时段&gt;"></a>2.～うちに&lt;时段&gt;</h2><p>​        [うちに]接在动词的词典形、”ている形”、”ない形”以及形容词的连体形、”名词+の”的后面，表示在该状态持续的时间范围内，尽快进行后面的动作。相当于汉语的”<del>时候、趁着</del>“等。</p>
+<p>例句:</p>
+<p>​    人間の健康への影響が出ないうちに対策を考えなくてはなりません。(在对人的健康没有影响之前必须考虑对策。)<br>​    友達がアメリカに留学しているうちに、遊びに行きたい。(我想趁朋友去美国留学的时候去玩。)<br>​    若いうちにやりたいことをやったほうがいい。(趁着年轻做自己想做的事情比较好。)<br>​    学生のうちにたくさん本を読んでください。(请在学生时代多读书。)<br>​    忘れないうちにメモしてください。(请在没忘记之前记下来。)</p>
+<h2 id="3-V-よ-うか-lt-犹豫-gt"><a href="#3-V-よ-うか-lt-犹豫-gt" class="headerlink" title="3.Ｖ(よ)うか&lt;犹豫&gt;"></a>3.Ｖ(よ)うか&lt;犹豫&gt;</h2><h2 id="4-ても-lt-让步-gt"><a href="#4-ても-lt-让步-gt" class="headerlink" title="4.~ても&lt;让步&gt;"></a>4.~ても&lt;让步&gt;</h2><p>​        表示让步的条件，就算前项从句成立，后向主句的结果也不会改变。相当于汉语:即使(哪怕、就是、纵然)<del>也</del>就算<del>都</del></p>
 <p>接续:Ⅴて+も　読むー読んでも</p>
 <p>俺たちはどんな困難にあっても、</p>
-<p>练习:<br>即使明天是周日也必须工作。<br>明日は日曜日でも、仕事しなければならない。<br>即使明天下雨，也要和彭彭去购物。<br>明日、雨が降っても、彼氏と買い物に行く。</p>
+<p>练习:<br>    即使明天是周日也必须工作。<br>    明日は日曜日でも、仕事しなければならない。<br>    即使明天下雨，也要和彭彭去购物。<br>    明日、雨が降っても、彼氏と買い物に行く。</p>
+<h2 id="5-形容词、名词的条件形"><a href="#5-形容词、名词的条件形" class="headerlink" title="5.形容词、名词的条件形"></a>5.形容词、名词的条件形</h2><h5 id="1类形容词-词尾-い-变-けれ-ば"><a href="#1类形容词-词尾-い-变-けれ-ば" class="headerlink" title="1类形容词:词尾[い]变[けれ]+[ば]"></a>1类形容词:词尾[い]变[けれ]+[ば]</h5><p>​                    高いー高ければ(たかいーたかければ)<br>​                    [ない]及其构成的否定形:ないーなければ<br>​                    高くないー高くなければ</p>
+<h5 id="2类形容词-词干-なら-ば-・であれば"><a href="#2类形容词-词干-なら-ば-・であれば" class="headerlink" title="2类形容词:词干+なら(ば)・であれば"></a>2类形容词:词干+なら(ば)・であれば</h5><p>​                    簡単ー簡単なら(ば)・簡単であれば<br>​                    簡単ではないー簡単ではなければ</p>
+<h5 id="3名词-名词-なら-ば-・であれば"><a href="#3名词-名词-なら-ば-・であれば" class="headerlink" title="3名词;名词+なら(ば)・であれば"></a>3名词;名词+なら(ば)・であれば</h5><p>​                    学生ー学生なら(ば)・学生であれば<br>​                    学生ではないー学生でなければ</p>
+<p>样例:<br>        値段が高ければ、買わない。(如果价格贵，就不买了。)<br>        値段が低いなら、買います。(如果价格低，就买。)<br>        天気がよければ、公園に行きます。(如果天气好，就去公园。)<br>        作り方が簡単なら・簡単ならば・簡単であれば、私も作ろう。(制作方法简单的话，我也做。)<br>        作り方が難しいなら、私の作りません。(制作方法难的话，我就不做了。)<br>        夢ならば・夢なら・夢であれば、どれほど良かったでしょう。(如果是梦的话，该有多好呀。)<br>        欲しければ、あげますよ。(如果想要，我就给你。)<br>        交通が便利なら、行く。(如果交通方便，就去。)    </p>
+<p>​    </p>
+<h2 id="6-动词条件形"><a href="#6-动词条件形" class="headerlink" title="6.动词条件形"></a>6.动词条件形</h2><p>1类动词:把词尾[う]段假名变同行[え]段假名，后接[ば]<br>書くー書けば(かけば)<br>飲む(のむ)ー飲めば(のめば)<br>送る(おくる)ー送れば(おくれば)</p>
+<p>2类动词:把词尾[る]去掉，加れば<br>見る(みる)ー見れば(みれば)<br>食べる(たべる)ー食べれば(たべれば)</p>
+<p>3类动词:<br>カ变动词:来る(くる)ー来れば(くれば)<br>サ变动词:するーすれば<br>                勉強する(べんきょうする)ー勉強すれば(べんきょうすれば)</p>
+<p>​        那么我们也要列举出否定形式的样子</p>
+<p>否定形式:<br>[Vない]变[Vなければ]<br>飲まないー飲まなければ</p>
+<p>雨が降れば出かけません。(降る)<br>(如果下雨，就不出去)</p>
+<p>ロリちゃんが行けば、私も行く。(行く)<br>(如果萝莉去，我也去。)</p>
+<p>毎日よく練習すれば、きっと上手になる。(練習する)<br>(如果每天好好练习的话，一定会变厉害的。)</p>
+<p>薬を飲まなければ、病気に治らない。<br>(飲むー飲まないーば)</p>
+<h4 id="練習（练习）"><a href="#練習（练习）" class="headerlink" title="練習（练习）:"></a>練習（练习）:</h4><p>如果田中来，派对会变得开心吧。たなか　パーティー<br>田中さんが来れば、パーティーは楽しくなるだろう。</p>
+<p>如果现在不马上出门的话就赶不上。<br>今すぐ出かけなければ、間に合わない。</p>
+<h2 id="7-仮定形"><a href="#7-仮定形" class="headerlink" title="7.(仮定形)"></a>7.(仮定形)</h2><p>[仮定形]条件形<br>        1.表示如果该条件(动作、变化、状态、性质等)成立，就会出现后面的情况。<br>        2.汉语:如果<del>就</del>/假如<del>/要是</del></p>
+<h2 id="8-Vばいい・よい-lt-建议-gt"><a href="#8-Vばいい・よい-lt-建议-gt" class="headerlink" title="8.Vばいい・よい&lt;建议&gt;"></a>8.Vばいい・よい&lt;建议&gt;</h2><p>​        1.常用在表示提议、建议时用。向对方说明是可以采取的方法和手段。<br>​        2.汉语:只要<del>就可/</del>就好<br>​        3.接续:动词条件形+いい</p>
+<h4 id="練習（练习）-1"><a href="#練習（练习）-1" class="headerlink" title="練習（练习）:"></a>練習（练习）:</h4><p>A:どうすればいいですか。(怎么办才好呢？)<br>B:ちゃんと謝ればいいですよ。(好好道歉就好啦。)</p>
+<p>疲れた時はお茶を飲めばいいです。(累的时候，喝点茶就好。)<br>何時ごろそちらに行けばいいでしょうか。(大概几点去那边比较好呢？)<br>好きなら、告白(こくはく)すればいい。(喜欢的话，告白就好了。)</p>
+<p>讨厌草莓的话，不吃就好。<br>苺が嫌いなら、食べなければいい。<br>如果想要知道她的电话号码，问我就好。<br>彼女の電話番号が知りたければ、私に聞けばいい。</p>
+<h2 id="9-のに-lt-转折-gt"><a href="#9-のに-lt-转折-gt" class="headerlink" title="9.のに&lt;转折&gt;"></a>9.のに&lt;转折&gt;</h2><p>接续:用言连体形+のに<br>名词+な+のに</p>
+<p>1.位于句子之间， 起到逆接作用时是接续助词。连接起来的句子往往都有意外、不满、埋怨、遗憾等语感。相当于汉语:可是<del>却</del></p>
+<p>例句:この部屋がもう少し広げればいいのに。()<br>这个房间要再大点就好了。<br>知っているのに知らないと言った。この嘘つき！<br>明明知道却说不知道，这个骗子！</p>
+<p>2.置于句末时是终助词，表示事与愿违时的遗憾、惋惜、后悔等心情，一般多用于口语，可以跟在[はいい]后面，构成[~ばいいのに]句型。</p>
+<p>例句：君がいればいいのに。(你在就好了)<br>好きなのに、泣いたのは何故…。(明明喜欢，为什么会哭了？)</p>
+<h2 id="10-たら-lt-条件-gt"><a href="#10-たら-lt-条件-gt" class="headerlink" title="10.たら&lt;条件&gt;"></a>10.たら&lt;条件&gt;</h2><p>​        表示假设，属于动词的另一种条件形。与[と]不同，表一次性的，特定的依存关系。表示后句的实现，建立在前句动作或变化完成的基础上。相当于中文的:一<del>就/如果</del>了的话,就~</p>
+<p>接续:把动词的简体过去式的[た]换成+[たら]。</p>
+<p>例句:<br>仕事が終わったら、お酒でも飲みに行きましょう。(工作结束的话，就去喝酒什么的吧。)<br>彼女が来たら、教えてください。(她来了的话，请告诉我。)<br>この薬(くすり)を飲んだら、病気が治る。(喝了这个药的话，病就会好。)</p>
+<p>大学毕业了的话，要做什么样的工作呢？<br>大学を卒業したら、どんな仕事をしますか。</p>
+<p>と:客观事实、自然现象、必然结果。<br>(规律性的每次都这样)</p>
+<p>例:春になると、花が咲く。<br>习惯动作(对特定的人活着物，某个习惯的动作)<br>她一喝酒，脸就会红(彼女はお酒を飲むと、顔が赤くなる)</p>
+<h2 id="11-Vて-Vないで-lt-伴随状态-gt"><a href="#11-Vて-Vないで-lt-伴随状态-gt" class="headerlink" title="11.Ｖて|Ｖないで&lt;伴随状态&gt;"></a>11.Ｖて|Ｖないで&lt;伴随状态&gt;</h2><p>表示(没有)在前项的伴随状态下进行后项主体动作。</p>
+<p>​    例句:<br>​        マスクをして出かけました。(戴口罩出门了。)<br>​        マスクをしないで出かけました。(没带口罩就出门了。)<br>​        眼鏡をかけて本を読みます。(戴眼镜看书。)<br>​        ネクタイを締めないで会社に行きます。(没系领带就去公司。)<br>​        帽子を被らないで游びに行った。(没戴帽子就去玩了。)<br>​        今朝は化粧しないで、出かけました。(今天早上没化妆就出门了。)<br>​        歯を磨かないで寝ました。(不刷牙就睡觉了。)</p>
 ]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语语法</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
   </entry>
   <entry>
     <title>第7次课</title>
@@ -6969,11 +7020,11 @@
     <title>日语第十一课单词</title>
     <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC11%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第11课日语单词笔记"><a href="#第11课日语单词笔记" class="headerlink" title="第11课日语单词笔记"></a>第11课日语单词笔记</h3><p>这里是《综合日语》的第十一课的所有单词记录。</p>
-<div id="echarts668" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts9277" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts668'));
+        var myChart = echarts.init(document.getElementById('echarts9277'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -7885,11 +7936,11 @@
     <title>日语单词记录12课</title>
     <url>/2020/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC12%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第12课日语单词笔记"><a href="#第12课日语单词笔记" class="headerlink" title="第12课日语单词笔记"></a>第12课日语单词笔记</h3><p>这里是《综合日语》的第十二课的所有单词记录。</p>
-<div id="echarts4145" style="width: 100%;height: 100px;margin: 0 auto"></div>
+<div id="echarts7074" style="width: 100%;height: 100px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts4145'));
+        var myChart = echarts.init(document.getElementById('echarts7074'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -8810,11 +8861,11 @@
     <title>综合日语第16课单词</title>
     <url>/2020/12/19/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC16%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第16课日语单词笔记"><a href="#第16课日语单词笔记" class="headerlink" title="第16课日语单词笔记"></a>第16课日语单词笔记</h3><p>这里是《综合日语》的第十六课的所有单词记录。</p>
-<div id="echarts7850" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts7290" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts7850'));
+        var myChart = echarts.init(document.getElementById('echarts7290'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -9715,11 +9766,11 @@
     <title>综合日语第19课单词</title>
     <url>/2020/12/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC19%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第19课日语单词笔记"><a href="#第19课日语单词笔记" class="headerlink" title="第19课日语单词笔记"></a>第19课日语单词笔记</h3><p>这里是关于我所学习的第19课单词记录</p>
-<div id="echarts7935" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts7130" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts7935'));
+        var myChart = echarts.init(document.getElementById('echarts7130'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
