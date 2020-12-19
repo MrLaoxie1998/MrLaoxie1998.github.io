@@ -1296,936 +1296,8 @@
       </tags>
   </entry>
   <entry>
-    <title>日语单词记录</title>
-    <url>/2020/06/20/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E5%8D%95%E8%AF%8D%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><p>这里是关于我所学习的单词记录</p>
-<div id="echarts8251" style="width: 100%;height: 400px;margin: 0 auto"></div>
-<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
-<script type="text/javascript">
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts8251'));
-        // 指定图表的配置项和数据
-        var option = option = {
-    title: {
-        text: '第11课单词',
-        subtext: '各词性统计-共计144个单词。统计了高频词汇和低频词汇,人工统计，不一定是144个',
-        left: 'center'
-    },
-    tooltip: {
-        trigger: 'item',
-        formatter: '{a} <br/>{b} : {c} ({d}%)'
-    },
-    legend: {
-        orient: 'vertical',
-        left: 'left',
-        data: ['名词', '固有名词', '解释性词性', '副词', '感叹词', '他动词1类', '他动词2类', '他动词3类', '自动词1类', '自动词2类', '自动词3类', '引助',  '形容词2类', '取立て助']
-    },
-    series: [
-        {
-            name: '此词性数量',
-            type: 'pie',
-            radius: '55%',
-            center: ['50%', '60%'],
-            data: [
-                {value: 77, name: '名词'},
-                {value: 1, name: '解释性词性'},
-                {value: 1, name: '固有名词'},
-                {value: 7, name: '副词'},
-                {value: 2, name: '感叹词'},
-                {value: 13, name: '他动词1类'},
-                {value: 8, name: '他动词2类'},
-                {value: 12, name: '他动词3类'},
-                {value: 11, name: '自动词1类'},
-                {value: 7, name: '自动词2类'},
-                {value: 5, name: '自动词3类'},
-                {value: 1, name: '引助'},
-                {value: 1, name: '形容词2类'},
-                {value: 1, name: '取立て助'}
-            ],
-            emphasis: {
-                itemStyle: {
-                    shadowBlur: 10,
-                    shadowOffsetX: 0,
-                    shadowColor: 'rgba(0, 0, 0, 0.5)'
-                }
-            }
-        }
-    ]
-};
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-</script>
-<a id="more"></a>
-
-<table>
-<thead>
-<tr>
-<th>单词</th>
-<th align="center">词性</th>
-<th align="center">翻译</th>
-<th align="right">声调</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>学生生活(がくせいせいかつ)</td>
-<td align="center">名词</td>
-<td align="center">学生生活</td>
-<td align="right">5</td>
-</tr>
-<tr>
-<td>さっき</td>
-<td align="center">副词</td>
-<td align="center">刚才</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>自習室(じしゅうしつ)</td>
-<td align="center">名词</td>
-<td align="center">自习室</td>
-<td align="right">2</td>
-</tr>
-<tr>
-<td>ている</td>
-<td align="center">/</td>
-<td align="center">表示正在进行的动作或变化的结果等</td>
-<td align="right">/</td>
-</tr>
-<tr>
-<td>もしもし</td>
-<td align="center">感叹词</td>
-<td align="center">(用于打电话时)喂</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>待つ(まつ)</td>
-<td align="center">他动词1</td>
-<td align="center">等待/等</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>ずっと</td>
-<td align="center">副词</td>
-<td align="center">(表示动作或状态持续时间之长)一直</td>
-<td align="right">3</td>
-</tr>
-<tr>
-<td>引く(ひく)</td>
-<td align="center">他动词1</td>
-<td align="center">查(字典)</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>って</td>
-<td align="center">取立て助</td>
-<td align="center">表示话题</td>
-<td align="right">/</td>
-</tr>
-<tr>
-<td>クリック(click)</td>
-<td align="center">名词/他动词3</td>
-<td align="center">点击</td>
-<td align="right">2/1</td>
-</tr>
-<tr>
-<td>ファイル(file)</td>
-<td align="center">名词</td>
-<td align="center">文件/档案</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>と</td>
-<td align="center">引用助词</td>
-<td align="center">(后接表示言语、思考等意义的动词)表示言语、思考的内容</td>
-<td align="right">/</td>
-</tr>
-<tr>
-<td>言う(いう)</td>
-<td align="center">他动词1</td>
-<td align="center">说/叫/讲</td>
-<td align="right">0/2</td>
-</tr>
-<tr>
-<td>助かる(たすかる)</td>
-<td align="center">自动词1</td>
-<td align="center">得救/获救/救助</td>
-<td align="right">3</td>
-</tr>
-<tr>
-<td>どうーいたしまして</td>
-<td align="center">|不谢/不客气</td>
-<td align="center">1/4</td>
-<td align="right"></td>
-</tr>
-<tr>
-<td>終わる(おわる)</td>
-<td align="center">自动词1</td>
-<td align="center">结束</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>かかる</td>
-<td align="center">自动词1</td>
-<td align="center">花费/花</td>
-<td align="right">2</td>
-</tr>
-<tr>
-<td>意味(いみ)</td>
-<td align="center">名词</td>
-<td align="center">意思/意义/意味</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>ギター(guitar)</td>
-<td align="center">名词</td>
-<td align="center">吉他</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>弾く(ひく)</td>
-<td align="center">他动词1</td>
-<td align="center">弾/拉</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>お皿(おさら)</td>
-<td align="center">名词</td>
-<td align="center">碟子/盘子(礼貌说法)</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>皿(さら)</td>
-<td align="center">名词</td>
-<td align="center">碟子/盘子</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>タバコ(葡萄牙语tabaco)</td>
-<td align="center">名词</td>
-<td align="center">香烟</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>吸う(すう)</td>
-<td align="center">名词</td>
-<td align="center">吸</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>黒板(こくばん)</td>
-<td align="center">名词</td>
-<td align="center">黑板</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>消す(けす)</td>
-<td align="center">他动词1类</td>
-<td align="center">擦/消除/删除</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>お金(おかね)</td>
-<td align="center">名词</td>
-<td align="center">钱(礼貌说法)</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>金(かね)</td>
-<td align="center">名词</td>
-<td align="center">钱</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>払う(はらう)</td>
-<td align="center">他动词1类</td>
-<td align="center">付/支付</td>
-<td align="right">2</td>
-</tr>
-<tr>
-<td>並べる(ならべる)</td>
-<td align="center">他动词2类</td>
-<td align="center">摆/排列</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>運ぶ(はこぶ)</td>
-<td align="center">他动词1类</td>
-<td align="center">搬/抬/搬运</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>結構(けっこう)</td>
-<td align="center">形容词2类</td>
-<td align="center">不要/不用</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>サボる</td>
-<td align="center">他动词1类</td>
-<td align="center">旷课/逃学</td>
-<td align="right">2</td>
-</tr>
-<tr>
-<td>八百屋(やおや)</td>
-<td align="center">名词</td>
-<td align="center">蔬菜店(也会卖水果)</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>デパート(department store)</td>
-<td align="center">名词</td>
-<td align="center">百货商店</td>
-<td align="right">2</td>
-</tr>
-<tr>
-<td>刺身(さしみ)</td>
-<td align="center">名词</td>
-<td align="center">生鱼片/刺身</td>
-<td align="right">3</td>
-</tr>
-<tr>
-<td>パンダ(panda)</td>
-<td align="center">名词</td>
-<td align="center">熊猫</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>愛してる(あいしてる)</td>
-<td align="center">|[あいしてる]的口语缩略形</td>
-<td align="center">1</td>
-<td align="right"></td>
-</tr>
-<tr>
-<td>愛する(あいする)</td>
-<td align="center">他动词3类</td>
-<td align="center">爱</td>
-<td align="right">3</td>
-</tr>
-<tr>
-<td>かける</td>
-<td align="center">他动词2类</td>
-<td align="center">打(电话)</td>
-<td align="right">2</td>
-</tr>
-<tr>
-<td>呼ぶ(よぶ)</td>
-<td align="center">他动词1类</td>
-<td align="center">叫/招呼</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>カラオケ</td>
-<td align="center">名词</td>
-<td align="center">卡拉OK</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>DVD(デイー・ブイ・デイー digital versatile disc)</td>
-<td align="center">名词</td>
-<td align="center">DVD/光盘/光碟</td>
-<td align="right">5</td>
-</tr>
-<tr>
-<td>パソコン</td>
-<td align="center">名词</td>
-<td align="center">personal computer的简称,个人电脑</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>もう</td>
-<td align="center">副词</td>
-<td align="center">已经</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>夕食(ゆうしょく)</td>
-<td align="center">名词</td>
-<td align="center">晚饭/晚餐</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>ページ(page)</td>
-<td align="center">名词</td>
-<td align="center">页</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>趣味(しゅみ)</td>
-<td align="center">名词</td>
-<td align="center">爱好/兴趣</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>決める(きめる)</td>
-<td align="center">他动词2</td>
-<td align="center">决定/定</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>考える(かんがえる)</td>
-<td align="center">他动词2</td>
-<td align="center">想/考虑</td>
-<td align="right">3</td>
-</tr>
-<tr>
-<td>画面(がめん)</td>
-<td align="center">名词</td>
-<td align="center">画面</td>
-<td align="right">1/0</td>
-</tr>
-<tr>
-<td>分かれる(わかれる)</td>
-<td align="center">自动词2</td>
-<td align="center">分/分开</td>
-<td align="right">3</td>
-</tr>
-<tr>
-<td>フレーム(frame)</td>
-<td align="center">名词</td>
-<td align="center">框子/框架</td>
-<td align="right">0/2</td>
-</tr>
-<tr>
-<td>ツールバー(tool bar)</td>
-<td align="center">名词</td>
-<td align="center">工具栏</td>
-<td align="right">4</td>
-</tr>
-<tr>
-<td>ツール(tool)</td>
-<td align="center">名词</td>
-<td align="center">工具</td>
-<td align="right">1/0</td>
-</tr>
-<tr>
-<td>パー(bar)</td>
-<td align="center">名词</td>
-<td align="center">栏/横杆/酒吧/吧台</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>左クリック(ひだりclick)</td>
-<td align="center">名词/他动词3</td>
-<td align="center">单击左键</td>
-<td align="right">5/4</td>
-</tr>
-<tr>
-<td>左(ひだり)</td>
-<td align="center">名词</td>
-<td align="center">左/左边</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>新規作成(しんきーさくせい)</td>
-<td align="center">名词</td>
-<td align="center">新建</td>
-<td align="right">1-0</td>
-</tr>
-<tr>
-<td>新規(しんき)</td>
-<td align="center">名词</td>
-<td align="center">新/全新</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>作成(さくせい)</td>
-<td align="center">名词/他动词3</td>
-<td align="center">做/制作/建</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>選ぶ(えらぶ)</td>
-<td align="center">他动词1</td>
-<td align="center">选择</td>
-<td align="right">2</td>
-</tr>
-<tr>
-<td>好き(すき)</td>
-<td align="center">形容词2类</td>
-<td align="center">喜欢</td>
-<td align="right">2</td>
-</tr>
-<tr>
-<td>ポインター(pointer)</td>
-<td align="center">名词</td>
-<td align="center">光标</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>合わせる(あわせる)</td>
-<td align="center">他动词2</td>
-<td align="center">合在一起/使对齐</td>
-<td align="right">3</td>
-</tr>
-<tr>
-<td>えーっと</td>
-<td align="center">感叹词</td>
-<td align="center">(表示不知道如何作答等时发出的声音)嗯</td>
-<td align="right">/</td>
-</tr>
-<tr>
-<td>こう</td>
-<td align="center">副词</td>
-<td align="center">这么/这样</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>できる</td>
-<td align="center">自动词2</td>
-<td align="center">产生/出现/完成/能够</td>
-<td align="right">2</td>
-</tr>
-<tr>
-<td>電気(でんき)</td>
-<td align="center">名词</td>
-<td align="center">电灯/电/电气</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>つく</td>
-<td align="center">自动词1</td>
-<td align="center">(灯)亮/电视空调等,开</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>冷蔵庫(れいぞうこ)</td>
-<td align="center">名词</td>
-<td align="center">冰箱</td>
-<td align="right">3</td>
-</tr>
-<tr>
-<td>開く(あく)</td>
-<td align="center">自动词1类</td>
-<td align="center">(此处也可以读作[ひらく])开</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>牛乳(ぎゅうにゅう)</td>
-<td align="center">名词</td>
-<td align="center">牛奶</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>お湯(おゆ)</td>
-<td align="center">名词</td>
-<td align="center">开水(礼貌说法)</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>湯(ゆ)</td>
-<td align="center">名词</td>
-<td align="center">开水</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>沸く(わく)</td>
-<td align="center">自动词1类</td>
-<td align="center">开/沸腾</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>壁(かべ)</td>
-<td align="center">名词</td>
-<td align="center">墙</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>時計(とけい)</td>
-<td align="center">名词</td>
-<td align="center">钟/钟表</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>掛かる(かかる)</td>
-<td align="center">自动词1类</td>
-<td align="center">挂/悬挂</td>
-<td align="right">2</td>
-</tr>
-<tr>
-<td>床(ゆか)</td>
-<td align="center">名词</td>
-<td align="center">地板</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>コップ(荷兰语kop)</td>
-<td align="center">名词</td>
-<td align="center">杯子/玻璃杯</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>割れる(われる)</td>
-<td align="center">自动词2类</td>
-<td align="center">碎/破碎</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>スプーン(spoon)</td>
-<td align="center">名词</td>
-<td align="center">勺子</td>
-<td align="right">2</td>
-</tr>
-<tr>
-<td>フォーク(fork)</td>
-<td align="center">名词</td>
-<td align="center">叉子</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>落ちる(おちる)</td>
-<td align="center">自动词2类</td>
-<td align="center">洛/掉落/不及格</td>
-<td align="right">2</td>
-</tr>
-<tr>
-<td>計画(けいかく)</td>
-<td align="center">名词/他动词3类</td>
-<td align="center">计划</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>インスタントラーメンinstant拉面</td>
-<td align="center">名词</td>
-<td align="center">方便面/即食面</td>
-<td align="right">7</td>
-</tr>
-<tr>
-<td>インスタント(instant)</td>
-<td align="center">名词</td>
-<td align="center">速成/即食</td>
-<td align="right">4</td>
-</tr>
-<tr>
-<td>蓋(ふた)</td>
-<td align="center">名词</td>
-<td align="center">盖子</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>開ける(あける)</td>
-<td align="center">他动词2类</td>
-<td align="center">开/打开</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>入れる(いれる)</td>
-<td align="center">他动词2类</td>
-<td align="center">放入</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>受話器(じゅわき)</td>
-<td align="center">名词</td>
-<td align="center">话筒/听筒</td>
-<td align="right">2</td>
-</tr>
-<tr>
-<td>取る(とる)</td>
-<td align="center">他动词1类</td>
-<td align="center">拿/取</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>電話番号(でんわばんごう)</td>
-<td align="center">名词</td>
-<td align="center">电话号码</td>
-<td align="right">4</td>
-</tr>
-<tr>
-<td>番号(ばんごう)</td>
-<td align="center">名词</td>
-<td align="center">号码3</td>
-<td align="right"></td>
-</tr>
-<tr>
-<td>押す(おす)</td>
-<td align="center">他动词1类</td>
-<td align="center">按/押</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>テープ(tape)</td>
-<td align="center">名词</td>
-<td align="center">录音带/长布(纸)条</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>電源(でんげん)</td>
-<td align="center">名词</td>
-<td align="center">电源</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>再生(さいせい)</td>
-<td align="center">名词/自动词3类/他动词3类</td>
-<td align="center">再生/恢复/放</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>ボタン(葡萄牙语botao)</td>
-<td align="center">名词</td>
-<td align="center">按钮/扣子</td>
-<td align="right">0/1</td>
-</tr>
-<tr>
-<td>コピー(copy)</td>
-<td align="center">名词/他动词3类</td>
-<td align="center">复印/复制</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>コピー機(copeき)</td>
-<td align="center">名词</td>
-<td align="center">复印机</td>
-<td align="right">2</td>
-</tr>
-<tr>
-<td>‐機</td>
-<td align="center">名词</td>
-<td align="center"><del>机</del>机器</td>
-<td align="right">/</td>
-</tr>
-<tr>
-<td>置く(おく)</td>
-<td align="center">他动词1类</td>
-<td align="center">放置/放</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>枚数(まいすう)</td>
-<td align="center">名词</td>
-<td align="center">张数/页数</td>
-<td align="right">3</td>
-</tr>
-<tr>
-<td>食事(しょくじ)</td>
-<td align="center">名词/自动词3类</td>
-<td align="center">吃饭/饮食</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>準備(じゅんび)</td>
-<td align="center">名词/他动词3类</td>
-<td align="center">准备</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>出発(しゅっぱつ)</td>
-<td align="center">名词/自动词3类</td>
-<td align="center">出发/动身</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>通話(つうわ)</td>
-<td align="center">名词/自动词3类/他动词3类</td>
-<td align="center">通话</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>受ける(うける)</td>
-<td align="center">他动词2类</td>
-<td align="center">接(电话)/接受</td>
-<td align="right">2</td>
-</tr>
-<tr>
-<td>ワンタッチ(one touch)</td>
-<td align="center">名词</td>
-<td align="center">一键/按一下</td>
-<td align="right">3</td>
-</tr>
-<tr>
-<td>切る(きる)</td>
-<td align="center">他动词1类</td>
-<td align="center">切断/切/关闭</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>設定(せってい)</td>
-<td align="center">名词/他动词3类</td>
-<td align="center">设定/设置</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>加藤直子(かとう‐なおこ)</td>
-<td align="center">固有名词</td>
-<td align="center">加藤直子</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>様(さま)</td>
-<td align="center">/</td>
-<td align="center">接在人或团体名称之后，表示尊敬</td>
-<td align="right">/</td>
-</tr>
-<tr>
-<td>ご無沙汰(ごぶさた)</td>
-<td align="center">名词/自动词3类</td>
-<td align="center">久疏问候/久违</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>末(すえ)</td>
-<td align="center">名词</td>
-<td align="center">末/底</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>各地(かくち)</td>
-<td align="center">名词</td>
-<td align="center">各地</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>大多数(だいたすう)</td>
-<td align="center">名词</td>
-<td align="center">大多数</td>
-<td align="right">3/4</td>
-</tr>
-<tr>
-<td>住む(すむ)</td>
-<td align="center">自动词1类</td>
-<td align="center">住/居住</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>二人部屋(ふたりべや)</td>
-<td align="center">名词</td>
-<td align="center">两个人住的房间/双人间</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>ルームメート(roomrnate)</td>
-<td align="center">名词</td>
-<td align="center">室友/同一寝室的人</td>
-<td align="right">4</td>
-</tr>
-<tr>
-<td>予習(よしゅう)</td>
-<td align="center">名词/他动词3</td>
-<td align="center">预习</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>間(あいだ)</td>
-<td align="center">名词</td>
-<td align="center">之间</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>ベンチ(bench)</td>
-<td align="center">名词</td>
-<td align="center">长椅</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>座る(すわる)</td>
-<td align="center">自动词1类</td>
-<td align="center">坐</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>覚える(おぼえる)</td>
-<td align="center">他动词2类</td>
-<td align="center">记/记住</td>
-<td align="right">3</td>
-</tr>
-<tr>
-<td>これから</td>
-<td align="center">副词/名词</td>
-<td align="center">从现在开始/今后/下面</td>
-<td align="right">4</td>
-</tr>
-<tr>
-<td>教える(おしえる)</td>
-<td align="center">他动词2类</td>
-<td align="center">教</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>習う(ならう)</td>
-<td align="center">他动词1类</td>
-<td align="center">学习/请教</td>
-<td align="right">2</td>
-</tr>
-<tr>
-<td>いつか</td>
-<td align="center">副词</td>
-<td align="center">何时/什么时候</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>それでは</td>
-<td align="center">接续词</td>
-<td align="center">那么</td>
-<td align="right">1</td>
-</tr>
-<tr>
-<td>また</td>
-<td align="center">副词</td>
-<td align="center">再/又</td>
-<td align="right">2</td>
-</tr>
-<tr>
-<td>法律(ほうりつ)</td>
-<td align="center">名词</td>
-<td align="center">法律</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>働く(はたらく)</td>
-<td align="center">自动词1类</td>
-<td align="center">劳动;工作</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>歌(うた)</td>
-<td align="center">名词</td>
-<td align="center">歌曲/和歌</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>売る(うる)</td>
-<td align="center">他动词1类</td>
-<td align="center">卖</td>
-<td align="right">0</td>
-</tr>
-<tr>
-<td>勤める(つとめる)</td>
-<td align="center">自动词2类</td>
-<td align="center">工作</td>
-<td align="right">3</td>
-</tr>
-<tr>
-<td>通う(かよう)</td>
-<td align="center">自动词1类</td>
-<td align="center">在两个地点之间往返/上学/上班</td>
-<td align="right">0</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>日语</category>
-        <category>日语单词</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>日语第十课单词</title>
-    <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC10%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>日语</category>
-        <category>日语单词</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>日语第十一课单词</title>
-    <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC11%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC10%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>日语</category>
@@ -2237,13 +1309,13 @@
   </entry>
   <entry>
     <title>日语第十三课单词</title>
-    <url>/2020/07/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC13%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <url>/2020/07/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC13%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第13课日语单词笔记"><a href="#第13课日语单词笔记" class="headerlink" title="第13课日语单词笔记"></a>第13课日语单词笔记</h3><p>这里是《综合日语》的第十三课的所有单词记录。</p>
-<div id="echarts5050" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts6626" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts5050'));
+        var myChart = echarts.init(document.getElementById('echarts6626'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -3226,13 +2298,13 @@
   </entry>
   <entry>
     <title>日语第十四课单词</title>
-    <url>/2020/08/01/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC14%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <url>/2020/08/01/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC14%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第14课日语单词笔记"><a href="#第14课日语单词笔记" class="headerlink" title="第14课日语单词笔记"></a>第14课日语单词笔记</h3><p>这里是《综合日语》的第十四课的所有单词记录。</p>
-<div id="echarts5056" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts7587" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts5056'));
+        var myChart = echarts.init(document.getElementById('echarts7587'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -3981,13 +3053,13 @@
   </entry>
   <entry>
     <title>日语第十五课单词</title>
-    <url>/2020/08/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC15%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <url>/2020/08/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC15%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第15课日语单词笔记"><a href="#第15课日语单词笔记" class="headerlink" title="第15课日语单词笔记"></a>第15课日语单词笔记</h3><p>这里是《综合日语》的第十五课的所有单词记录。</p>
-<div id="echarts1391" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts4474" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts1391'));
+        var myChart = echarts.init(document.getElementById('echarts4474'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -4659,8 +3731,611 @@
       </tags>
   </entry>
   <entry>
+    <title></title>
+    <url>/2020/12/15/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC31%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>词性</th>
+<th>翻译</th>
+<th>声调</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>社交的(しゃこうてき)</td>
+<td>形容词2类</td>
+<td>喜欢交际的，善于社交的</td>
+<td>0</td>
+</tr>
+<tr>
+<td>マンション(mansion)</td>
+<td>名词</td>
+<td>(高级)公寓</td>
+<td>1</td>
+</tr>
+<tr>
+<td>グッズ(goods)</td>
+<td>名词</td>
+<td>概念商品</td>
+<td>1</td>
+</tr>
+<tr>
+<td>癒し(いやし)</td>
+<td>名词</td>
+<td>治疗/恢复/缓解</td>
+<td>0</td>
+</tr>
+<tr>
+<td>注目(ちゅうもく)</td>
+<td>名词/自动词3类</td>
+<td>注目/注视/关注</td>
+<td>0</td>
+</tr>
+<tr>
+<td>職業(しょくぎょう)</td>
+<td>名词</td>
+<td>职业</td>
+<td>2</td>
+</tr>
+<tr>
+<td>資格(しかく)</td>
+<td>名词</td>
+<td>资格/身份</td>
+<td>0</td>
+</tr>
+<tr>
+<td>安定(あんてい)</td>
+<td>名词/自动词3类</td>
+<td>稳定/安定</td>
+<td>0</td>
+</tr>
+<tr>
+<td>母国語(ぼこくご)</td>
+<td>名词</td>
+<td>母语</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ポイント(point)</td>
+<td>名词</td>
+<td>点数/得分/要点</td>
+<td>0</td>
+</tr>
+<tr>
+<td>聞き手(ききて)</td>
+<td>名词</td>
+<td>听话人/听者</td>
+<td>0</td>
+</tr>
+<tr>
+<td>応じる(おうじる)</td>
+<td>自动词2类</td>
+<td>根据/按照/接受/相应</td>
+<td>0/3</td>
+</tr>
+<tr>
+<td>アップシフト(up shift)</td>
+<td>名词/他动词3类</td>
+<td>上升转换</td>
+<td>4</td>
+</tr>
+<tr>
+<td>モヂル(model)</td>
+<td>名词</td>
+<td>示范/模范/模型/模特</td>
+<td>1/0</td>
+</tr>
+<tr>
+<td>大山(おおやま)</td>
+<td>固有名词</td>
+<td>(人名)大山</td>
+<td>0</td>
+</tr>
+<tr>
+<td>部員(ぶいん)</td>
+<td>名词</td>
+<td>(学生团体、俱乐部的)成员/部员</td>
+<td>0</td>
+</tr>
+<tr>
+<td>部室(ぶしつ)</td>
+<td>名词</td>
+<td>(学生团体、俱乐部的)活动室</td>
+<td>0</td>
+</tr>
+<tr>
+<td>入部(にゅうぶ)</td>
+<td>名词/自动词3类</td>
+<td>加入(学生团体、俱乐部)，成为~一员</td>
+<td>0</td>
+</tr>
+<tr>
+<td>おさえる(押さえる)</td>
+<td>他动词2类</td>
+<td>压/按/捂/按住/抓住</td>
+<td>3</td>
+</tr>
+<tr>
+<td>初対面(しょたいめん)</td>
+<td>名词</td>
+<td>初次见面</td>
+<td>2</td>
+</tr>
+<tr>
+<td>右側(みぎがわ)</td>
+<td>名词</td>
+<td>右边/右侧</td>
+<td>0</td>
+</tr>
+<tr>
+<td>唐辛子(とうがらし)</td>
+<td>名词</td>
+<td>辣椒</td>
+<td>3</td>
+</tr>
+<tr>
+<td>部分(ぶぶん)</td>
+<td>名词</td>
+<td>部分</td>
+<td>1</td>
+</tr>
+<tr>
+<td>イントネーション(intonation)</td>
+<td>名词</td>
+<td>声调/语调</td>
+<td>4</td>
+</tr>
+<tr>
+<td>涼しい(すずしい)</td>
+<td>形容词1类</td>
+<td>凉快/凉爽</td>
+<td>3</td>
+</tr>
+<tr>
+<td>エアコン(「エアコンディショナー」air conditionerの略語)</td>
+<td>名词</td>
+<td>空调</td>
+<td>0</td>
+</tr>
+<tr>
+<td>轟(とどろき)</td>
+<td>固有名词</td>
+<td>(人名)轰</td>
+<td>0</td>
+</tr>
+<tr>
+<td>顧問(こもん)</td>
+<td>名词</td>
+<td>顾问</td>
+<td>1</td>
+</tr>
+<tr>
+<td>活躍(かつやく)</td>
+<td>名词/自动词3类</td>
+<td>活跃/大显身手</td>
+<td>0</td>
+</tr>
+<tr>
+<td>期待(きたい)</td>
+<td>名词/自动词&amp;他动词3类</td>
+<td>期待/希望</td>
+<td>0</td>
+</tr>
+<tr>
+<td>デジカメ(「デジタルカメラ」digital cameraの略語)</td>
+<td>名词</td>
+<td>数码相机</td>
+<td>0</td>
+</tr>
+<tr>
+<td>持ち物(もちもの)</td>
+<td>名词</td>
+<td>携带物品/随身带的东西</td>
+<td>3/2</td>
+</tr>
+<tr>
+<td>特技(とくぎ)</td>
+<td>名词</td>
+<td>特技/拿手的技术</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ヘディング(heading)</td>
+<td>名词</td>
+<td>(足球)顶球/头球</td>
+<td>0</td>
+</tr>
+<tr>
+<td>おしゃれ(お洒落)</td>
+<td>形容词2类</td>
+<td>爱打扮/时髦/臭美</td>
+<td>2</td>
+</tr>
+<tr>
+<td>味付け(あじつけ)</td>
+<td>名词</td>
+<td>把食物放在盘中/装盘</td>
+<td>0</td>
+</tr>
+<tr>
+<td>リズム(rhythm)</td>
+<td>名词</td>
+<td>韵律/节奏/格律</td>
+<td>1</td>
+</tr>
+<tr>
+<td>抜群(ばつぐん)</td>
+<td>名词/形容词2类</td>
+<td>超群/出众/出类拔萃</td>
+<td>0</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
+  <entry>
     <title>日语第七课单词</title>
-    <url>/2020/06/07/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC7%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <url>/2020/06/07/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC7%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><p>这里是关于《综合日语》的第七课的所有单词记录。</p>
 <a id="more"></a>
 <table>
@@ -5362,7 +5037,7 @@
   </entry>
   <entry>
     <title>日语第八课单词</title>
-    <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC8%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC8%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><p>这里是关于《综合日语》的第八课的所有单词记录。</p>
 <a id="more"></a>
 
@@ -6107,7 +5782,7 @@
   </entry>
   <entry>
     <title>日语第九课单词</title>
-    <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC9%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC9%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>日语</category>
@@ -6116,609 +5791,6 @@
       <tags>
         <tag>日语</tag>
       </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2020/12/15/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC31%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
-    <content><![CDATA[<table>
-<thead>
-<tr>
-<th>单词</th>
-<th>词性</th>
-<th>翻译</th>
-<th>声调</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>社交的(しゃこうてき)</td>
-<td>形容词2类</td>
-<td>喜欢交际的，善于社交的</td>
-<td>0</td>
-</tr>
-<tr>
-<td>マンション(mansion)</td>
-<td>名词</td>
-<td>(高级)公寓</td>
-<td>1</td>
-</tr>
-<tr>
-<td>グッズ(goods)</td>
-<td>名词</td>
-<td>概念商品</td>
-<td>1</td>
-</tr>
-<tr>
-<td>癒し(いやし)</td>
-<td>名词</td>
-<td>治疗/恢复/缓解</td>
-<td>0</td>
-</tr>
-<tr>
-<td>注目(ちゅうもく)</td>
-<td>名词/自动词3类</td>
-<td>注目/注视/关注</td>
-<td>0</td>
-</tr>
-<tr>
-<td>職業(しょくぎょう)</td>
-<td>名词</td>
-<td>职业</td>
-<td>2</td>
-</tr>
-<tr>
-<td>資格(しかく)</td>
-<td>名词</td>
-<td>资格/身份</td>
-<td>0</td>
-</tr>
-<tr>
-<td>安定(あんてい)</td>
-<td>名词/自动词3类</td>
-<td>稳定/安定</td>
-<td>0</td>
-</tr>
-<tr>
-<td>母国語(ぼこくご)</td>
-<td>名词</td>
-<td>母语</td>
-<td>0</td>
-</tr>
-<tr>
-<td>ポイント(point)</td>
-<td>名词</td>
-<td>点数/得分/要点</td>
-<td>0</td>
-</tr>
-<tr>
-<td>聞き手(ききて)</td>
-<td>名词</td>
-<td>听话人/听者</td>
-<td>0</td>
-</tr>
-<tr>
-<td>応じる(おうじる)</td>
-<td>自动词2类</td>
-<td>根据/按照/接受/相应</td>
-<td>0/3</td>
-</tr>
-<tr>
-<td>アップシフト(up shift)</td>
-<td>名词/他动词3类</td>
-<td>上升转换</td>
-<td>4</td>
-</tr>
-<tr>
-<td>モヂル(model)</td>
-<td>名词</td>
-<td>示范/模范/模型/模特</td>
-<td>1/0</td>
-</tr>
-<tr>
-<td>大山(おおやま)</td>
-<td>固有名词</td>
-<td>(人名)大山</td>
-<td>0</td>
-</tr>
-<tr>
-<td>部員(ぶいん)</td>
-<td>名词</td>
-<td>(学生团体、俱乐部的)成员/部员</td>
-<td>0</td>
-</tr>
-<tr>
-<td>部室(ぶしつ)</td>
-<td>名词</td>
-<td>(学生团体、俱乐部的)活动室</td>
-<td>0</td>
-</tr>
-<tr>
-<td>入部(にゅうぶ)</td>
-<td>名词/自动词3类</td>
-<td>加入(学生团体、俱乐部)，成为~一员</td>
-<td>0</td>
-</tr>
-<tr>
-<td>おさえる(押さえる)</td>
-<td>他动词2类</td>
-<td>压/按/捂/按住/抓住</td>
-<td>3</td>
-</tr>
-<tr>
-<td>初対面(しょたいめん)</td>
-<td>名词</td>
-<td>初次见面</td>
-<td>2</td>
-</tr>
-<tr>
-<td>右側(みぎがわ)</td>
-<td>名词</td>
-<td>右边/右侧</td>
-<td>0</td>
-</tr>
-<tr>
-<td>唐辛子(とうがらし)</td>
-<td>名词</td>
-<td>辣椒</td>
-<td>3</td>
-</tr>
-<tr>
-<td>部分(ぶぶん)</td>
-<td>名词</td>
-<td>部分</td>
-<td>1</td>
-</tr>
-<tr>
-<td>イントネーション(intonation)</td>
-<td>名词</td>
-<td>声调/语调</td>
-<td>4</td>
-</tr>
-<tr>
-<td>涼しい(すずしい)</td>
-<td>形容词1类</td>
-<td>凉快/凉爽</td>
-<td>3</td>
-</tr>
-<tr>
-<td>エアコン(「エアコンディショナー」air conditionerの略語)</td>
-<td>名词</td>
-<td>空调</td>
-<td>0</td>
-</tr>
-<tr>
-<td>轟(とどろき)</td>
-<td>固有名词</td>
-<td>(人名)轰</td>
-<td>0</td>
-</tr>
-<tr>
-<td>顧問(こもん)</td>
-<td>名词</td>
-<td>顾问</td>
-<td>1</td>
-</tr>
-<tr>
-<td>活躍(かつやく)</td>
-<td>名词/自动词3类</td>
-<td>活跃/大显身手</td>
-<td>0</td>
-</tr>
-<tr>
-<td>期待(きたい)</td>
-<td>名词/自动词&amp;他动词3类</td>
-<td>期待/希望</td>
-<td>0</td>
-</tr>
-<tr>
-<td>デジカメ(「デジタルカメラ」digital cameraの略語)</td>
-<td>名词</td>
-<td>数码相机</td>
-<td>0</td>
-</tr>
-<tr>
-<td>持ち物(もちもの)</td>
-<td>名词</td>
-<td>携带物品/随身带的东西</td>
-<td>3/2</td>
-</tr>
-<tr>
-<td>特技(とくぎ)</td>
-<td>名词</td>
-<td>特技/拿手的技术</td>
-<td>1</td>
-</tr>
-<tr>
-<td>ヘディング(heading)</td>
-<td>名词</td>
-<td>(足球)顶球/头球</td>
-<td>0</td>
-</tr>
-<tr>
-<td>おしゃれ(お洒落)</td>
-<td>形容词2类</td>
-<td>爱打扮/时髦/臭美</td>
-<td>2</td>
-</tr>
-<tr>
-<td>味付け(あじつけ)</td>
-<td>名词</td>
-<td>把食物放在盘中/装盘</td>
-<td>0</td>
-</tr>
-<tr>
-<td>リズム(rhythm)</td>
-<td>名词</td>
-<td>韵律/节奏/格律</td>
-<td>1</td>
-</tr>
-<tr>
-<td>抜群(ばつぐん)</td>
-<td>名词/形容词2类</td>
-<td>超群/出众/出类拔萃</td>
-<td>0</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-]]></content>
   </entry>
   <entry>
     <title>Magnet</title>
@@ -7894,14 +6966,930 @@
       </tags>
   </entry>
   <entry>
-    <title>日语单词记录12课</title>
-    <url>/2020/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E6%97%A5%E8%AF%AD%E7%AC%AC12%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
-    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第12课日语单词笔记"><a href="#第12课日语单词笔记" class="headerlink" title="第12课日语单词笔记"></a>第12课日语单词笔记</h3><p>这里是《综合日语》的第十二课的所有单词记录。</p>
-<div id="echarts5391" style="width: 100%;height: 100px;margin: 0 auto"></div>
+    <title>日语第十一课单词</title>
+    <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC11%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第11课日语单词笔记"><a href="#第11课日语单词笔记" class="headerlink" title="第11课日语单词笔记"></a>第11课日语单词笔记</h3><p>这里是《综合日语》的第十一课的所有单词记录。</p>
+<div id="echarts668" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts5391'));
+        var myChart = echarts.init(document.getElementById('echarts668'));
+        // 指定图表的配置项和数据
+        var option = option = {
+    title: {
+        text: '第11课单词',
+        subtext: '各词性统计-共计144个单词。统计了高频词汇和低频词汇,人工统计，不一定是144个',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['名词', '固有名词', '解释性词性', '副词', '感叹词', '他动词1类', '他动词2类', '他动词3类', '自动词1类', '自动词2类', '自动词3类', '引助',  '形容词2类', '取立て助']
+    },
+    series: [
+        {
+            name: '此词性数量',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: [
+                {value: 77, name: '名词'},
+                {value: 1, name: '解释性词性'},
+                {value: 1, name: '固有名词'},
+                {value: 7, name: '副词'},
+                {value: 2, name: '感叹词'},
+                {value: 13, name: '他动词1类'},
+                {value: 8, name: '他动词2类'},
+                {value: 12, name: '他动词3类'},
+                {value: 11, name: '自动词1类'},
+                {value: 7, name: '自动词2类'},
+                {value: 5, name: '自动词3类'},
+                {value: 1, name: '引助'},
+                {value: 1, name: '形容词2类'},
+                {value: 1, name: '取立て助'}
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+<a id="more"></a>
+
+<table>
+<thead>
+<tr>
+<th>单词</th>
+<th align="center">词性</th>
+<th align="center">翻译</th>
+<th align="right">声调</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>学生生活(がくせいせいかつ)</td>
+<td align="center">名词</td>
+<td align="center">学生生活</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>さっき</td>
+<td align="center">副词</td>
+<td align="center">刚才</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>自習室(じしゅうしつ)</td>
+<td align="center">名词</td>
+<td align="center">自习室</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>ている</td>
+<td align="center">/</td>
+<td align="center">表示正在进行的动作或变化的结果等</td>
+<td align="right">/</td>
+</tr>
+<tr>
+<td>もしもし</td>
+<td align="center">感叹词</td>
+<td align="center">(用于打电话时)喂</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>待つ(まつ)</td>
+<td align="center">他动词1</td>
+<td align="center">等待/等</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>ずっと</td>
+<td align="center">副词</td>
+<td align="center">(表示动作或状态持续时间之长)一直</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>引く(ひく)</td>
+<td align="center">他动词1</td>
+<td align="center">查(字典)</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>って</td>
+<td align="center">取立て助</td>
+<td align="center">表示话题</td>
+<td align="right">/</td>
+</tr>
+<tr>
+<td>クリック(click)</td>
+<td align="center">名词/他动词3</td>
+<td align="center">点击</td>
+<td align="right">2/1</td>
+</tr>
+<tr>
+<td>ファイル(file)</td>
+<td align="center">名词</td>
+<td align="center">文件/档案</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>と</td>
+<td align="center">引用助词</td>
+<td align="center">(后接表示言语、思考等意义的动词)表示言语、思考的内容</td>
+<td align="right">/</td>
+</tr>
+<tr>
+<td>言う(いう)</td>
+<td align="center">他动词1</td>
+<td align="center">说/叫/讲</td>
+<td align="right">0/2</td>
+</tr>
+<tr>
+<td>助かる(たすかる)</td>
+<td align="center">自动词1</td>
+<td align="center">得救/获救/救助</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>どうーいたしまして</td>
+<td align="center">|不谢/不客气</td>
+<td align="center">1/4</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>終わる(おわる)</td>
+<td align="center">自动词1</td>
+<td align="center">结束</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>かかる</td>
+<td align="center">自动词1</td>
+<td align="center">花费/花</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>意味(いみ)</td>
+<td align="center">名词</td>
+<td align="center">意思/意义/意味</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>ギター(guitar)</td>
+<td align="center">名词</td>
+<td align="center">吉他</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>弾く(ひく)</td>
+<td align="center">他动词1</td>
+<td align="center">弾/拉</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>お皿(おさら)</td>
+<td align="center">名词</td>
+<td align="center">碟子/盘子(礼貌说法)</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>皿(さら)</td>
+<td align="center">名词</td>
+<td align="center">碟子/盘子</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>タバコ(葡萄牙语tabaco)</td>
+<td align="center">名词</td>
+<td align="center">香烟</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>吸う(すう)</td>
+<td align="center">名词</td>
+<td align="center">吸</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>黒板(こくばん)</td>
+<td align="center">名词</td>
+<td align="center">黑板</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>消す(けす)</td>
+<td align="center">他动词1类</td>
+<td align="center">擦/消除/删除</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>お金(おかね)</td>
+<td align="center">名词</td>
+<td align="center">钱(礼貌说法)</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>金(かね)</td>
+<td align="center">名词</td>
+<td align="center">钱</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>払う(はらう)</td>
+<td align="center">他动词1类</td>
+<td align="center">付/支付</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>並べる(ならべる)</td>
+<td align="center">他动词2类</td>
+<td align="center">摆/排列</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>運ぶ(はこぶ)</td>
+<td align="center">他动词1类</td>
+<td align="center">搬/抬/搬运</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>結構(けっこう)</td>
+<td align="center">形容词2类</td>
+<td align="center">不要/不用</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>サボる</td>
+<td align="center">他动词1类</td>
+<td align="center">旷课/逃学</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>八百屋(やおや)</td>
+<td align="center">名词</td>
+<td align="center">蔬菜店(也会卖水果)</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>デパート(department store)</td>
+<td align="center">名词</td>
+<td align="center">百货商店</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>刺身(さしみ)</td>
+<td align="center">名词</td>
+<td align="center">生鱼片/刺身</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>パンダ(panda)</td>
+<td align="center">名词</td>
+<td align="center">熊猫</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>愛してる(あいしてる)</td>
+<td align="center">|[あいしてる]的口语缩略形</td>
+<td align="center">1</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>愛する(あいする)</td>
+<td align="center">他动词3类</td>
+<td align="center">爱</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>かける</td>
+<td align="center">他动词2类</td>
+<td align="center">打(电话)</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>呼ぶ(よぶ)</td>
+<td align="center">他动词1类</td>
+<td align="center">叫/招呼</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>カラオケ</td>
+<td align="center">名词</td>
+<td align="center">卡拉OK</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>DVD(デイー・ブイ・デイー digital versatile disc)</td>
+<td align="center">名词</td>
+<td align="center">DVD/光盘/光碟</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td>パソコン</td>
+<td align="center">名词</td>
+<td align="center">personal computer的简称,个人电脑</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>もう</td>
+<td align="center">副词</td>
+<td align="center">已经</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>夕食(ゆうしょく)</td>
+<td align="center">名词</td>
+<td align="center">晚饭/晚餐</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>ページ(page)</td>
+<td align="center">名词</td>
+<td align="center">页</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>趣味(しゅみ)</td>
+<td align="center">名词</td>
+<td align="center">爱好/兴趣</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>決める(きめる)</td>
+<td align="center">他动词2</td>
+<td align="center">决定/定</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>考える(かんがえる)</td>
+<td align="center">他动词2</td>
+<td align="center">想/考虑</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>画面(がめん)</td>
+<td align="center">名词</td>
+<td align="center">画面</td>
+<td align="right">1/0</td>
+</tr>
+<tr>
+<td>分かれる(わかれる)</td>
+<td align="center">自动词2</td>
+<td align="center">分/分开</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>フレーム(frame)</td>
+<td align="center">名词</td>
+<td align="center">框子/框架</td>
+<td align="right">0/2</td>
+</tr>
+<tr>
+<td>ツールバー(tool bar)</td>
+<td align="center">名词</td>
+<td align="center">工具栏</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td>ツール(tool)</td>
+<td align="center">名词</td>
+<td align="center">工具</td>
+<td align="right">1/0</td>
+</tr>
+<tr>
+<td>パー(bar)</td>
+<td align="center">名词</td>
+<td align="center">栏/横杆/酒吧/吧台</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>左クリック(ひだりclick)</td>
+<td align="center">名词/他动词3</td>
+<td align="center">单击左键</td>
+<td align="right">5/4</td>
+</tr>
+<tr>
+<td>左(ひだり)</td>
+<td align="center">名词</td>
+<td align="center">左/左边</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>新規作成(しんきーさくせい)</td>
+<td align="center">名词</td>
+<td align="center">新建</td>
+<td align="right">1-0</td>
+</tr>
+<tr>
+<td>新規(しんき)</td>
+<td align="center">名词</td>
+<td align="center">新/全新</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>作成(さくせい)</td>
+<td align="center">名词/他动词3</td>
+<td align="center">做/制作/建</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>選ぶ(えらぶ)</td>
+<td align="center">他动词1</td>
+<td align="center">选择</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>好き(すき)</td>
+<td align="center">形容词2类</td>
+<td align="center">喜欢</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>ポインター(pointer)</td>
+<td align="center">名词</td>
+<td align="center">光标</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>合わせる(あわせる)</td>
+<td align="center">他动词2</td>
+<td align="center">合在一起/使对齐</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>えーっと</td>
+<td align="center">感叹词</td>
+<td align="center">(表示不知道如何作答等时发出的声音)嗯</td>
+<td align="right">/</td>
+</tr>
+<tr>
+<td>こう</td>
+<td align="center">副词</td>
+<td align="center">这么/这样</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>できる</td>
+<td align="center">自动词2</td>
+<td align="center">产生/出现/完成/能够</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>電気(でんき)</td>
+<td align="center">名词</td>
+<td align="center">电灯/电/电气</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>つく</td>
+<td align="center">自动词1</td>
+<td align="center">(灯)亮/电视空调等,开</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>冷蔵庫(れいぞうこ)</td>
+<td align="center">名词</td>
+<td align="center">冰箱</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>開く(あく)</td>
+<td align="center">自动词1类</td>
+<td align="center">(此处也可以读作[ひらく])开</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>牛乳(ぎゅうにゅう)</td>
+<td align="center">名词</td>
+<td align="center">牛奶</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>お湯(おゆ)</td>
+<td align="center">名词</td>
+<td align="center">开水(礼貌说法)</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>湯(ゆ)</td>
+<td align="center">名词</td>
+<td align="center">开水</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>沸く(わく)</td>
+<td align="center">自动词1类</td>
+<td align="center">开/沸腾</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>壁(かべ)</td>
+<td align="center">名词</td>
+<td align="center">墙</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>時計(とけい)</td>
+<td align="center">名词</td>
+<td align="center">钟/钟表</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>掛かる(かかる)</td>
+<td align="center">自动词1类</td>
+<td align="center">挂/悬挂</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>床(ゆか)</td>
+<td align="center">名词</td>
+<td align="center">地板</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>コップ(荷兰语kop)</td>
+<td align="center">名词</td>
+<td align="center">杯子/玻璃杯</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>割れる(われる)</td>
+<td align="center">自动词2类</td>
+<td align="center">碎/破碎</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>スプーン(spoon)</td>
+<td align="center">名词</td>
+<td align="center">勺子</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>フォーク(fork)</td>
+<td align="center">名词</td>
+<td align="center">叉子</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>落ちる(おちる)</td>
+<td align="center">自动词2类</td>
+<td align="center">洛/掉落/不及格</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>計画(けいかく)</td>
+<td align="center">名词/他动词3类</td>
+<td align="center">计划</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>インスタントラーメンinstant拉面</td>
+<td align="center">名词</td>
+<td align="center">方便面/即食面</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td>インスタント(instant)</td>
+<td align="center">名词</td>
+<td align="center">速成/即食</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td>蓋(ふた)</td>
+<td align="center">名词</td>
+<td align="center">盖子</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>開ける(あける)</td>
+<td align="center">他动词2类</td>
+<td align="center">开/打开</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>入れる(いれる)</td>
+<td align="center">他动词2类</td>
+<td align="center">放入</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>受話器(じゅわき)</td>
+<td align="center">名词</td>
+<td align="center">话筒/听筒</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>取る(とる)</td>
+<td align="center">他动词1类</td>
+<td align="center">拿/取</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>電話番号(でんわばんごう)</td>
+<td align="center">名词</td>
+<td align="center">电话号码</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td>番号(ばんごう)</td>
+<td align="center">名词</td>
+<td align="center">号码3</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>押す(おす)</td>
+<td align="center">他动词1类</td>
+<td align="center">按/押</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>テープ(tape)</td>
+<td align="center">名词</td>
+<td align="center">录音带/长布(纸)条</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>電源(でんげん)</td>
+<td align="center">名词</td>
+<td align="center">电源</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>再生(さいせい)</td>
+<td align="center">名词/自动词3类/他动词3类</td>
+<td align="center">再生/恢复/放</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>ボタン(葡萄牙语botao)</td>
+<td align="center">名词</td>
+<td align="center">按钮/扣子</td>
+<td align="right">0/1</td>
+</tr>
+<tr>
+<td>コピー(copy)</td>
+<td align="center">名词/他动词3类</td>
+<td align="center">复印/复制</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>コピー機(copeき)</td>
+<td align="center">名词</td>
+<td align="center">复印机</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>‐機</td>
+<td align="center">名词</td>
+<td align="center"><del>机</del>机器</td>
+<td align="right">/</td>
+</tr>
+<tr>
+<td>置く(おく)</td>
+<td align="center">他动词1类</td>
+<td align="center">放置/放</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>枚数(まいすう)</td>
+<td align="center">名词</td>
+<td align="center">张数/页数</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>食事(しょくじ)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">吃饭/饮食</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>準備(じゅんび)</td>
+<td align="center">名词/他动词3类</td>
+<td align="center">准备</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>出発(しゅっぱつ)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">出发/动身</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>通話(つうわ)</td>
+<td align="center">名词/自动词3类/他动词3类</td>
+<td align="center">通话</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>受ける(うける)</td>
+<td align="center">他动词2类</td>
+<td align="center">接(电话)/接受</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>ワンタッチ(one touch)</td>
+<td align="center">名词</td>
+<td align="center">一键/按一下</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>切る(きる)</td>
+<td align="center">他动词1类</td>
+<td align="center">切断/切/关闭</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>設定(せってい)</td>
+<td align="center">名词/他动词3类</td>
+<td align="center">设定/设置</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>加藤直子(かとう‐なおこ)</td>
+<td align="center">固有名词</td>
+<td align="center">加藤直子</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>様(さま)</td>
+<td align="center">/</td>
+<td align="center">接在人或团体名称之后，表示尊敬</td>
+<td align="right">/</td>
+</tr>
+<tr>
+<td>ご無沙汰(ごぶさた)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">久疏问候/久违</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>末(すえ)</td>
+<td align="center">名词</td>
+<td align="center">末/底</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>各地(かくち)</td>
+<td align="center">名词</td>
+<td align="center">各地</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>大多数(だいたすう)</td>
+<td align="center">名词</td>
+<td align="center">大多数</td>
+<td align="right">3/4</td>
+</tr>
+<tr>
+<td>住む(すむ)</td>
+<td align="center">自动词1类</td>
+<td align="center">住/居住</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>二人部屋(ふたりべや)</td>
+<td align="center">名词</td>
+<td align="center">两个人住的房间/双人间</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>ルームメート(roomrnate)</td>
+<td align="center">名词</td>
+<td align="center">室友/同一寝室的人</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td>予習(よしゅう)</td>
+<td align="center">名词/他动词3</td>
+<td align="center">预习</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>間(あいだ)</td>
+<td align="center">名词</td>
+<td align="center">之间</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>ベンチ(bench)</td>
+<td align="center">名词</td>
+<td align="center">长椅</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>座る(すわる)</td>
+<td align="center">自动词1类</td>
+<td align="center">坐</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>覚える(おぼえる)</td>
+<td align="center">他动词2类</td>
+<td align="center">记/记住</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>これから</td>
+<td align="center">副词/名词</td>
+<td align="center">从现在开始/今后/下面</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td>教える(おしえる)</td>
+<td align="center">他动词2类</td>
+<td align="center">教</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>習う(ならう)</td>
+<td align="center">他动词1类</td>
+<td align="center">学习/请教</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>いつか</td>
+<td align="center">副词</td>
+<td align="center">何时/什么时候</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>それでは</td>
+<td align="center">接续词</td>
+<td align="center">那么</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td>また</td>
+<td align="center">副词</td>
+<td align="center">再/又</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td>法律(ほうりつ)</td>
+<td align="center">名词</td>
+<td align="center">法律</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>働く(はたらく)</td>
+<td align="center">自动词1类</td>
+<td align="center">劳动;工作</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>歌(うた)</td>
+<td align="center">名词</td>
+<td align="center">歌曲/和歌</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>売る(うる)</td>
+<td align="center">他动词1类</td>
+<td align="center">卖</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td>勤める(つとめる)</td>
+<td align="center">自动词2类</td>
+<td align="center">工作</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td>通う(かよう)</td>
+<td align="center">自动词1类</td>
+<td align="center">在两个地点之间往返/上学/上班</td>
+<td align="right">0</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语单词</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日语单词记录12课</title>
+    <url>/2020/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC12%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第12课日语单词笔记"><a href="#第12课日语单词笔记" class="headerlink" title="第12课日语单词笔记"></a>第12课日语单词笔记</h3><p>这里是《综合日语》的第十二课的所有单词记录。</p>
+<div id="echarts4145" style="width: 100%;height: 100px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts4145'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -8819,14 +8807,919 @@
       </tags>
   </entry>
   <entry>
-    <title>综合日语第19课单词</title>
-    <url>/2020/12/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC19%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
-    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第19课日语单词笔记"><a href="#第19课日语单词笔记" class="headerlink" title="第19课日语单词笔记"></a>第19课日语单词笔记</h3><p>这里是关于我所学习的第19课单词记录</p>
-<div id="echarts4114" style="width: 100%;height: 400px;margin: 0 auto"></div>
+    <title>综合日语第16课单词</title>
+    <url>/2020/12/19/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC16%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第16课日语单词笔记"><a href="#第16课日语单词笔记" class="headerlink" title="第16课日语单词笔记"></a>第16课日语单词笔记</h3><p>这里是《综合日语》的第十六课的所有单词记录。</p>
+<div id="echarts7850" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts4114'));
+        var myChart = echarts.init(document.getElementById('echarts7850'));
+        // 指定图表的配置项和数据
+        var option = option = {
+    title: {
+        text: '第16课单词',
+        subtext: '各词性统计-共计150个单词。统计了高频词汇和低频词汇,人工统计，不一定是150个',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['名词', '固有名词', '解释性词性', '副词', '他动词1类', '他动词2类', '他动词3类', '自动词1类', '自动词2类', '自动词3类', '形容词1类', '形容词2类', '取立て助', '擬音词', '接续词']
+    },
+    series: [
+        {
+            name: '此词性数量',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: [
+                {value: 93, name: '名词'},
+                {value: 1, name: '固有名词'},
+                {value: 10, name: '解释性词性'},
+                {value: 3, name: '副词'},
+                {value: 4, name: '他动词1类'},
+                {value: 8, name: '他动词2类'},
+                {value: 2, name: '他动词3类'},
+                {value: 7, name: '自动词1类'},
+                {value: 3, name: '自动词2类'},
+                {value: 8, name: '自动词3类'},
+                {value: 3, name: '形容词1类'},
+                {value: 5, name: '形容词2类'},
+                {value: 1, name: '取立て助'},
+                {value: 1, name: '擬音词'},
+                {value: 1, name: '接续词'}
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+<a id="more"></a>
+
+<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>词性</th>
+<th>翻译</th>
+<th>声调</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内容(ないよう)</td>
+<td>名词</td>
+<td>内容</td>
+<td>0</td>
+</tr>
+<tr>
+<td>確認(かくにん)</td>
+<td>名词/他动词3类</td>
+<td>确认</td>
+<td>0</td>
+</tr>
+<tr>
+<td>文系(ぶんけい)</td>
+<td>名词</td>
+<td>句型/句式</td>
+<td>0</td>
+</tr>
+<tr>
+<td>例(れい)</td>
+<td>名词</td>
+<td>例子/例</td>
+<td>1</td>
+</tr>
+<tr>
+<td>疲れる(つかれる)</td>
+<td>自动词2类</td>
+<td>疲劳/雷</td>
+<td>3</td>
+</tr>
+<tr>
+<td>昼寝(ひるね)</td>
+<td>名词/自动词3类</td>
+<td>午睡</td>
+<td>0</td>
+</tr>
+<tr>
+<td>醬油(しょうゆ)</td>
+<td>名词</td>
+<td>酱油</td>
+<td>0</td>
+</tr>
+<tr>
+<td>お酢(お酢)</td>
+<td>名词</td>
+<td>醋(美化语用法)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>酢(す)</td>
+<td>名词</td>
+<td>醋</td>
+<td>1</td>
+</tr>
+<tr>
+<td>つける</td>
+<td>他动词2类</td>
+<td>蘸</td>
+<td>2</td>
+</tr>
+<tr>
+<td>山葵(わさび)</td>
+<td>名词</td>
+<td>绿芥末</td>
+<td>1</td>
+</tr>
+<tr>
+<td>炒める(いためる)</td>
+<td>他动词2类</td>
+<td>炒</td>
+<td>3</td>
+</tr>
+<tr>
+<td>新幹線(しんかんせん)</td>
+<td>名词</td>
+<td>新干线</td>
+<td>3</td>
+</tr>
+<tr>
+<td>丁寧(れいねい)</td>
+<td>形容词2类</td>
+<td>礼貌/客气/郑重</td>
+<td>1</td>
+</tr>
+<tr>
+<td>地図(ちず)</td>
+<td>名词</td>
+<td>地图</td>
+<td>1</td>
+</tr>
+<tr>
+<td>手(て)</td>
+<td>名词</td>
+<td>手</td>
+<td>1</td>
+</tr>
+<tr>
+<td>歯(は)</td>
+<td>名词</td>
+<td>牙齿</td>
+<td>1</td>
+</tr>
+<tr>
+<td>磨く(みがく)</td>
+<td>他动词1类</td>
+<td>刷(牙)/擦(皮鞋、玻璃)/磨练</td>
+<td>0</td>
+</tr>
+<tr>
+<td>昼ご飯(ひるごはん)</td>
+<td>名词</td>
+<td>午饭</td>
+<td>3</td>
+</tr>
+<tr>
+<td>昼(ひる)</td>
+<td>名词</td>
+<td>白天/中午/午饭</td>
+<td>2</td>
+</tr>
+<tr>
+<td>発展(はってん)</td>
+<td>名词/自动词3类</td>
+<td>发展</td>
+<td>0</td>
+</tr>
+<tr>
+<td>タスク(task)</td>
+<td>名词</td>
+<td>任务/工作</td>
+<td>1</td>
+</tr>
+<tr>
+<td>互いに(たがいに)</td>
+<td>副词</td>
+<td>互相</td>
+<td>0</td>
+</tr>
+<tr>
+<td>伝える(つたえる)</td>
+<td>他动词2类</td>
+<td>告诉/传达/转达</td>
+<td>0/3</td>
+</tr>
+<tr>
+<td>形式(けいしき)</td>
+<td>名词</td>
+<td>形式</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ペア(pair)</td>
+<td>名词</td>
+<td>一对/(两个人或两个)/一组</td>
+<td>1</td>
+</tr>
+<tr>
+<td>手順(てじゅん)</td>
+<td>名词</td>
+<td>顺序/次序</td>
+<td>1/0</td>
+</tr>
+<tr>
+<td>比べる(くらべる)</td>
+<td>他动词2类</td>
+<td>比较</td>
+<td>0</td>
+</tr>
+<tr>
+<td>違い(ちがい)</td>
+<td>名词</td>
+<td>不同/区别</td>
+<td>0</td>
+</tr>
+<tr>
+<td>季節(きせつ)</td>
+<td>名词</td>
+<td>季节</td>
+<td>1/2</td>
+</tr>
+<tr>
+<td>異なる(ことなる)</td>
+<td>自动词1类</td>
+<td>不同</td>
+<td>3</td>
+</tr>
+<tr>
+<td>場合(ばあい)</td>
+<td>名词</td>
+<td>场合/情况下/如果</td>
+<td>0</td>
+</tr>
+<tr>
+<td>豚肉(ぶたにく)</td>
+<td>名词</td>
+<td>猪肉</td>
+<td>0</td>
+</tr>
+<tr>
+<td>塩(しお)</td>
+<td>名词</td>
+<td>盐</td>
+<td>2</td>
+</tr>
+<tr>
+<td>焼く(やく)</td>
+<td>他动词1类</td>
+<td>烤/煎/烧</td>
+<td>0</td>
+</tr>
+<tr>
+<td>間に(あいだに)</td>
+<td>/</td>
+<td>在~的时候</td>
+<td>0</td>
+</tr>
+<tr>
+<td>似る(にる)</td>
+<td>自动词2类</td>
+<td>像/相似</td>
+<td>0</td>
+</tr>
+<tr>
+<td>をしている</td>
+<td>／</td>
+<td>长着<del>/具有</del>/呈~</td>
+<td>/</td>
+</tr>
+<tr>
+<td>特別(とくべつ)</td>
+<td>名词/形容词2类/副词</td>
+<td>特别/特殊</td>
+<td>0</td>
+</tr>
+<tr>
+<td>間(あいだ)</td>
+<td>名词</td>
+<td>~的时候</td>
+<td>0</td>
+</tr>
+<tr>
+<td>変わる(かわる)</td>
+<td>自动词1类</td>
+<td>变化/变换</td>
+<td>0</td>
+</tr>
+<tr>
+<td>一家(いっか)</td>
+<td>名词</td>
+<td>家/全家</td>
+<td>1</td>
+</tr>
+<tr>
+<td>団欒(だんらん)</td>
+<td>名词/自动词3类</td>
+<td>团聚</td>
+<td>0</td>
+</tr>
+<tr>
+<td>～たら</td>
+<td>／</td>
+<td>如果</td>
+<td>/</td>
+</tr>
+<tr>
+<td>街(まち)</td>
+<td>名词</td>
+<td>城镇/街</td>
+<td>2</td>
+</tr>
+<tr>
+<td>あちこち</td>
+<td>名词</td>
+<td>各处/到处</td>
+<td>3/2</td>
+</tr>
+<tr>
+<td>爆竹(ばくちく)</td>
+<td>名词</td>
+<td>爆竹</td>
+<td>0</td>
+</tr>
+<tr>
+<td>バンバン</td>
+<td>擬音词</td>
+<td>梆梆</td>
+<td>1</td>
+</tr>
+<tr>
+<td>花火(はなび)</td>
+<td>名词</td>
+<td>焰火/烟花</td>
+<td>1</td>
+</tr>
+<tr>
+<td>上がる(あがる)</td>
+<td>自动词1类</td>
+<td>升起/升</td>
+<td>0</td>
+</tr>
+<tr>
+<td>親類(しんるい)</td>
+<td>名词</td>
+<td>亲戚</td>
+<td>0</td>
+</tr>
+<tr>
+<td>新年(しんねん)</td>
+<td>名词</td>
+<td>新年</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ある</td>
+<td>自动词1类</td>
+<td>举办/举行/发生</td>
+<td>1</td>
+</tr>
+<tr>
+<td>～たりする</td>
+<td>/</td>
+<td><del>啦</del>/<del>什么的/</del>之类</td>
+<td>/</td>
+</tr>
+<tr>
+<td>お弁当(おべんとう)</td>
+<td>名词</td>
+<td>盒饭(美化语用法)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>弁当(べんとう)</td>
+<td>名词</td>
+<td>盒饭/便当</td>
+<td>3</td>
+</tr>
+<tr>
+<td>昼休み(ひるやすみ)</td>
+<td>名词</td>
+<td>午休</td>
+<td>3</td>
+</tr>
+<tr>
+<td>訪ねる(たずねる)</td>
+<td>他动词2类</td>
+<td>拜访/访问</td>
+<td>3</td>
+</tr>
+<tr>
+<td>博物館(はくぶつかん)</td>
+<td>名词</td>
+<td>博物馆</td>
+<td>4/3</td>
+</tr>
+<tr>
+<td>終える(おえる)</td>
+<td>他动词2类</td>
+<td>结束/终了</td>
+<td>0</td>
+</tr>
+<tr>
+<td>曲がる(まがる)</td>
+<td>自动词1类</td>
+<td>拐弯/拐/弯曲</td>
+<td>0</td>
+</tr>
+<tr>
+<td>繋がる(つながる)</td>
+<td>自动词1类</td>
+<td>连/相连/连接</td>
+<td>0</td>
+</tr>
+<tr>
+<td>大きな(おおきな)</td>
+<td>连体</td>
+<td>大的/大</td>
+<td>1</td>
+</tr>
+<tr>
+<td>目(め)</td>
+<td>名词</td>
+<td>眼睛</td>
+<td>1</td>
+</tr>
+<tr>
+<td>冬(ふゆ)</td>
+<td>名词</td>
+<td>冬天/冬/冬季</td>
+<td>2</td>
+</tr>
+<tr>
+<td>スキー(ski)</td>
+<td>名词</td>
+<td>滑雪</td>
+<td>2</td>
+</tr>
+<tr>
+<td>田中(たなか)</td>
+<td>固有名词</td>
+<td>(姓)田中</td>
+<td>0</td>
+</tr>
+<tr>
+<td>郵便受け(ゆうびんうけ)</td>
+<td>名词</td>
+<td>信箱</td>
+<td>3</td>
+</tr>
+<tr>
+<td>郵便(ゆうびん)</td>
+<td>名词</td>
+<td>邮政/邮件</td>
+<td>0</td>
+</tr>
+<tr>
+<td>オリンピック(Olympic)</td>
+<td>名词</td>
+<td>奥林匹克</td>
+<td>4</td>
+</tr>
+<tr>
+<td>LL教室(language laboratory　きょうしつ・エルエルきょうしつ)</td>
+<td>名词</td>
+<td>电化教室</td>
+<td>5</td>
+</tr>
+<tr>
+<td>挨拶(あいさつ)</td>
+<td>名词/自动词3类</td>
+<td>寒暄/打招呼</td>
+<td>1</td>
+</tr>
+<tr>
+<td>大使館(たいしかん)</td>
+<td>名词</td>
+<td>大使馆</td>
+<td>3</td>
+</tr>
+<tr>
+<td>大使(たいし)</td>
+<td>名词</td>
+<td>天使</td>
+<td>1</td>
+</tr>
+<tr>
+<td>について</td>
+<td>/</td>
+<td>关于~</td>
+<td>/</td>
+</tr>
+<tr>
+<td>タスクシート(task　sheet)</td>
+<td>名词</td>
+<td>工作单子/任务纸条</td>
+<td>4</td>
+</tr>
+<tr>
+<td>シート(sheet)</td>
+<td>名词</td>
+<td>纸张/薄板/单子/塑料布</td>
+<td>1</td>
+</tr>
+<tr>
+<td>にとって</td>
+<td>／</td>
+<td>对于</td>
+<td>/</td>
+</tr>
+<tr>
+<td>年中行事(ねんちゅうぎょうじ)</td>
+<td>名词</td>
+<td>节日/年内的各种活动(也叫做[ねんじゅうぎょうじ])</td>
+<td>5</td>
+</tr>
+<tr>
+<td>行事(ぎょうじ)</td>
+<td>名词</td>
+<td>活动/节日活动</td>
+<td>1/0</td>
+</tr>
+<tr>
+<td>一般に(いっぱんに)</td>
+<td>副词</td>
+<td>一般/通常</td>
+<td>0</td>
+</tr>
+<tr>
+<td>西暦(せいれき)</td>
+<td>名词</td>
+<td>公历/阳历</td>
+<td>0</td>
+</tr>
+<tr>
+<td>職場(しょくば)</td>
+<td>名词</td>
+<td>工作单位/职场</td>
+<td>0</td>
+</tr>
+<tr>
+<td>仕事納め(しごとおさめ)</td>
+<td>名词</td>
+<td>年终工作总结</td>
+<td>4</td>
+</tr>
+<tr>
+<td>風景(ふうけい)</td>
+<td>名词</td>
+<td>风景/情景</td>
+<td>1</td>
+</tr>
+<tr>
+<td>年末(ねんまつ)</td>
+<td>名词</td>
+<td>年末/年底</td>
+<td>0</td>
+</tr>
+<tr>
+<td>風物詩(ふうぶつし)</td>
+<td>名词</td>
+<td>风景诗/景物/风景线</td>
+<td>4/3</td>
+</tr>
+<tr>
+<td>ほど</td>
+<td>取立て助</td>
+<td>大约/左右</td>
+<td>/</td>
+</tr>
+<tr>
+<td>冬休み(ふゆやすみ)</td>
+<td>名词</td>
+<td>寒假</td>
+<td>3</td>
+</tr>
+<tr>
+<td>大都市(だいとし)</td>
+<td>名词</td>
+<td>大都市/大城市</td>
+<td>3</td>
+</tr>
+<tr>
+<td>都市(とし)</td>
+<td>名词</td>
+<td>都市/城市</td>
+<td>1</td>
+</tr>
+<tr>
+<td>帰省(きせい)</td>
+<td>名词/自动词3类</td>
+<td>回故乡/探亲/回老家</td>
+<td>0</td>
+</tr>
+<tr>
+<td>暮れ(くれ)</td>
+<td>名词</td>
+<td>傍晚/末/年末</td>
+<td>0</td>
+</tr>
+<tr>
+<td>年始(ねんし)</td>
+<td>名词</td>
+<td>年初</td>
+<td>1</td>
+</tr>
+<tr>
+<td>門松(かどまつ)</td>
+<td>名词</td>
+<td>门松(新年的时候在家门前装饰的松树枝)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>大掃除(おおそうじ)</td>
+<td>名词</td>
+<td>大扫除</td>
+<td>3</td>
+</tr>
+<tr>
+<td>大ー(おお)</td>
+<td>/</td>
+<td>大~</td>
+<td>/</td>
+</tr>
+<tr>
+<td>おせち料理(おせちりょうり)</td>
+<td>名词</td>
+<td>年(夜)饭</td>
+<td>4</td>
+</tr>
+<tr>
+<td>永い(ながい)</td>
+<td>形容词1类</td>
+<td>永久</td>
+<td>2</td>
+</tr>
+<tr>
+<td>続く(つづく)</td>
+<td>自动词1类</td>
+<td>持续/延续</td>
+<td>0</td>
+</tr>
+<tr>
+<td>長寿(ちょうじゅ)</td>
+<td>名词</td>
+<td>长寿</td>
+<td>1</td>
+</tr>
+<tr>
+<td>願う(ねがう)</td>
+<td>他动词1类</td>
+<td>祝愿/希望</td>
+<td>2</td>
+</tr>
+<tr>
+<td>細い(ほそい)</td>
+<td>形容词1类</td>
+<td>细</td>
+<td>2</td>
+</tr>
+<tr>
+<td>蕎麦(そば)</td>
+<td>名词</td>
+<td>荞麦/荞麦面条</td>
+<td>1</td>
+</tr>
+<tr>
+<td>年越し(としこし)</td>
+<td>名词/自动词3类</td>
+<td>过年/除夕</td>
+<td>0</td>
+</tr>
+<tr>
+<td>寺(てら)</td>
+<td>名词</td>
+<td>寺院/寺</td>
+<td>2</td>
+</tr>
+<tr>
+<td>鐘(かね)</td>
+<td>名词</td>
+<td>钟</td>
+<td>0</td>
+</tr>
+<tr>
+<td>除夜の鐘(じょやのかね)</td>
+<td>名词</td>
+<td>除夕夜的钟声</td>
+<td>1</td>
+</tr>
+<tr>
+<td>行く年(ゆくとし)</td>
+<td>/</td>
+<td>即将过去的一年</td>
+<td>4</td>
+</tr>
+<tr>
+<td>惜しむ(おしむ)</td>
+<td>他动词1类</td>
+<td>惋惜/可惜</td>
+<td>2</td>
+</tr>
+<tr>
+<td>気持ち(きもち)</td>
+<td>名词</td>
+<td>心情</td>
+<td>0</td>
+</tr>
+<tr>
+<td>来る年(くるとし)</td>
+<td>/</td>
+<td>即将到来的一年</td>
+<td>/</td>
+</tr>
+<tr>
+<td>迎える(むかえる)</td>
+<td>他动词2类</td>
+<td>迎接/欢迎</td>
+<td>0</td>
+</tr>
+<tr>
+<td>神社(じんじゃ)</td>
+<td>名词</td>
+<td>神社</td>
+<td>1</td>
+</tr>
+<tr>
+<td>初もうで(はつもうで)[初詣]</td>
+<td>名词</td>
+<td>新年的首次参拜</td>
+<td>3</td>
+</tr>
+<tr>
+<td>初(はつ)</td>
+<td>/</td>
+<td>首次/最初</td>
+<td>0</td>
+</tr>
+<tr>
+<td>雑煮(ぞうに)</td>
+<td>名词</td>
+<td>煮年糕</td>
+<td>0/3</td>
+</tr>
+<tr>
+<td>子孫(しそん)</td>
+<td>名词</td>
+<td>子孙</td>
+<td>1</td>
+</tr>
+<tr>
+<td>繫栄(はんえい)</td>
+<td>名词/自动词3类</td>
+<td>繁荣</td>
+<td>0</td>
+</tr>
+<tr>
+<td>数の子(かずのこ)</td>
+<td>名词</td>
+<td>鲱鱼子</td>
+<td>0</td>
+</tr>
+<tr>
+<td>黒豆(くろまめ)</td>
+<td>名词</td>
+<td>黑豆</td>
+<td>0</td>
+</tr>
+<tr>
+<td>まめ</td>
+<td>名词/形容词2类</td>
+<td>健康/结实</td>
+<td>0</td>
+</tr>
+<tr>
+<td>健康(けんこう)</td>
+<td>名词/形容词2类</td>
+<td>健康</td>
+<td>0</td>
+</tr>
+<tr>
+<td>昆布(こんぶ)</td>
+<td>名词</td>
+<td>海带</td>
+<td>1</td>
+</tr>
+<tr>
+<td>鯛(たい)</td>
+<td>名词</td>
+<td>鲷/加吉鱼</td>
+<td>1</td>
+</tr>
+<tr>
+<td>めでたい</td>
+<td>形容词1类</td>
+<td>可喜可贺/值得庆贺</td>
+<td>3</td>
+</tr>
+<tr>
+<td>意味(いみ)</td>
+<td>名词/他动词3类</td>
+<td>意思/意味/表示~的意思</td>
+<td>1</td>
+</tr>
+<tr>
+<td>これら</td>
+<td>名词</td>
+<td>这些</td>
+<td>2</td>
+</tr>
+<tr>
+<td>言葉遊び(ことばあそび)</td>
+<td>名词</td>
+<td>文字游戏/语言游戏</td>
+<td>4</td>
+</tr>
+<tr>
+<td>三が日(さんがにち)</td>
+<td>名词</td>
+<td>新年头三天</td>
+<td>0/3</td>
+</tr>
+<tr>
+<td>仕事始め(しごとはじめ)</td>
+<td>名词</td>
+<td>新的一年开始工作(的仪式)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>こうして</td>
+<td>接续词</td>
+<td>这样/如此/于是</td>
+<td>0</td>
+</tr>
+<tr>
+<td>答える(こたえる)</td>
+<td>自动词2类</td>
+<td>回答</td>
+<td>3/2</td>
+</tr>
+<tr>
+<td>大事(だいじ)</td>
+<td>形容词2类</td>
+<td>珍惜/重要</td>
+<td>3/0</td>
+</tr>
+<tr>
+<td>チャレンジ(challenge)</td>
+<td>名词/自动词3类</td>
+<td>挑战</td>
+<td>1/2</td>
+</tr>
+<tr>
+<td>イー・エム・エス(EMS)</td>
+<td>名词</td>
+<td>特快专递</td>
+<td>5</td>
+</tr>
+<tr>
+<td>まとめる</td>
+<td>他动词2类</td>
+<td>总结/归纳</td>
+<td>0</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语单词</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>综合日语第19课单词</title>
+    <url>/2020/12/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC19%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第19课日语单词笔记"><a href="#第19课日语单词笔记" class="headerlink" title="第19课日语单词笔记"></a>第19课日语单词笔记</h3><p>这里是关于我所学习的第19课单词记录</p>
+<div id="echarts7935" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts7935'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
