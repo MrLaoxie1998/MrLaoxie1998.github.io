@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mrlaoxie1998.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+<meta property="og:type" content="website">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="http://mrlaoxie1998.github.io/page/8/index.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://mrlaoxie1998.github.io/page/8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>9之数据库</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-我的旧站">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-tasks"></i>我的旧站</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E5%A4%9C%E6%A1%9C%E8%A1%97%E9%81%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E5%A4%9C%E6%A1%9C%E8%A1%97%E9%81%93/" class="post-title-link" itemprop="url">夜桜街道</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-31 10:08:47" itemprop="dateCreated datePublished" datetime="2020-05-31T10:08:47+08:00">2020-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-14 22:39:30" itemprop="dateModified" datetime="2020-11-14T22:39:30+08:00">2020-11-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E6%AD%8C%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语歌词</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+
+<p>永き有限の時の 陰に見ゆおぼろ月<br>ながきゆうげんのときの　かげにみゆおぼろづき<br>无尽时间长河流过此刻 花影其上露出朦胧月色<br>春の来ない桜よ 今、幽雅に咲かせ<br>はるのこないさくらよ　いま、ゆうがにさかせ<br>未随春风而至的夜樱 现在、正在凛然绽放</p>
+<p>欲深き霊魂の 色めき騒ぐ夜に<br>よくふかきれいこんの　いろめきさわぐよるに<br>欲望深重的幽幽魂灵 于今夜躁动不宁<br>瞬き蒼し月の光が 誘う黒鳳蝶<br>またたきあおしつきのひかりが　いざなうくろあげは<br>苍蓝色月光闪过花间 诱来黑蝶起舞翩跹</p>
+<p>めくるめく心宿りし 命つなぐ篝火に<br>めくるめくこころやどりし　いのちつなぐかがりびに<br>夜空中心宿光耀夺目 余命随火燃至天明<br>今は唯夢在りし 空の杯 掲げて<br>いまはただゆめありし　からのさかずき　かかげて　<br>此刻仅存旧梦相伴 空杯高举亦有何妨</p>
+<p>深き幽玄の時よ 咲き乱れ花見酒<br>ふかきゆうげんのときよ　さきみだれはなみさけ<br>万籁俱寂的深宵时分 有盛放夜樱与我共醉<br>ひらり彩舞う 忘れし日の記憶<br>ひらりいろどりまう　わすれしにちのきおく<br>满目唯有缤纷落花 仿若远去那日的景象</p>
+<p>一人戸外降り立ち 仰ぎ見る佐保姫<br>ひとりこがいのりだち　あおぎみるさおひめ<br>忽见一人户外降临 仰望间方知春色已近<br>社に咲く木々のさざめく 美しき春息吹<br>やしろにさくきぎのさざめく　うつくしきはるいぶき<br>社林草木郁郁青青 和煦春风中起舞婆娑</p>
+<p>慈しみ憐れ生き行く 虚ろなる虚言の世と<br>いつくしみあわれいきゆく　うつろなるきょげんのよと<br>且怀悲悯之心走过世间 世间怜我以虚妄谎言<br>終焉の知らぬ夢を 空の身体に 重ねて<br>おわりのしらぬゆめを　からのからだに　かさねて<br>无终之梦映入躯壳 化而重生新的魂灵</p>
+<p>うら深し幽玄の時よ 淡き黒に染め上げ<br>うらしゆうげんのときよ　あわきくろにそめあげ<br>幽邃寥廓的深宵时刻 四下尽染水色淡墨<br>死して尚散り敷く 儚し花吹雪<br>ししてなおちりしく　はかなしはなふぶき<br>繁樱盛放终其散落 夜风扬起一幕花色</p>
+<p>永き有限の花の 陰に見ゆおぼろ月<br>ながきゆうげんのはなの　かげにみゆおぼろづき<br>永恒时空中仅于此刻绽放 花影的间隙洒下朦胧月光<br>廻る時の褥に 幽し夢を見る<br>めぐるときのしとねに　かそけしゆめをみる<br>在流转的四季中入梦 梦中恍现昔日景象</p>
+<p>死してなお楚々と芽吹く<br>ししてなおそそとめぶく<br>虽知终将迎来凋零 花苞仍在楚楚成长<br>散ればこそ美しき春の来ない桜よ<br>ちればこそうつくしきはるのこないさくらよ<br>散去之时最为凄美 未曾沐浴春风的夜樱啊<br>今、幽雅に咲かせ<br>いま、ゆうがにさかせ<br>现在、请幽雅地绽放吧</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E5%B0%91%E5%A5%B3%E3%81%9F%E3%81%A1%E3%81%AE%E7%B5%82%E3%82%8F%E3%82%89%E3%81%AA%E3%81%84%E5%A4%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E5%B0%91%E5%A5%B3%E3%81%9F%E3%81%A1%E3%81%AE%E7%B5%82%E3%82%8F%E3%82%89%E3%81%AA%E3%81%84%E5%A4%9C/" class="post-title-link" itemprop="url">少女たちの終わらない夜</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-31 10:08:47" itemprop="dateCreated datePublished" datetime="2020-05-31T10:08:47+08:00">2020-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-14 22:39:26" itemprop="dateModified" datetime="2020-11-14T22:39:26+08:00">2020-11-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E6%AD%8C%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语歌词</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+
+<p>• 少女たちの終わらない夜 大人たちの言いう “くだらないモノ” に<br>少女们漫长无尽的夜晚 朝大人们所说的「无聊的东西」<br>• 少女たちの終おわらない夜 心を奪われることもある<br>少女们漫长无尽的夜晚 就连心灵也曾经被夺走过<br>• 卒業したら何かが 変わると思っていたけど<br>倘若是毕业的话似乎就会有什么改变<br>• 大人たちの言う “大人” には なれそうもない気がした<br>但是也沒有想要成为大人们口中所说的「大人」的意愿<br>• 不安や孤独 隠して みんなではしゃいでた夜は<br>将不安与孤独隐藏起來 大家一起欢闹的夜晚<br>• ほら これからの未来のこと おおげさに話したよね<br>你看 在这之后关于未来的事情就像是被过于夸大其词的话题呢<br>• 不安いっぱい押しつけられて来たけど<br>拼命压抑住內心的不安了 但是<br>• 未来に怯えてちゃ 何も出来ないよ<br>畏惧未来的话 就会什么也做不到哟<br>• 少女たちの終わらない夜 大人たちの言いう “くだらないモノ” に<br>少女们漫长无尽的夜晚 朝大人们所说的「无聊的东西」<br>• 少女たちの終わらない夜 心を奪われることもある<br>少女们漫长无尽的夜晚 就连心灵也曾经被夺走过<br>• 無限に続くと思ってた 何もなかったあの日々が<br>没有什么的那些日子 本来以为会无限持续下去<br>• 卒業した途端 キラキラと 胸に何かを残した<br>一旦到了要毕业时 有什么闪耀的东西残留在心中<br>• 授業ではきっと教えてくれない<br>这肯定是学校里绝对不会教授的东西<br>• 大切なこと あるような気がしてた<br>像是发觉了重要的东西那样<br>• 少女たちの終わらない夜 大人は見えない “大事なモノ” を<br>少女们漫长无尽的夜晚 让大人们所看不见的「重要的東西」<br>• 少女たちの終わらない夜 ひとつだけ抱きしめて 朝を待つよ<br>少女们漫长无尽的夜晚 用力抱紧仅有的那个东西 等待着天明<br>• 少女たちの終わらない夜<br>少女们漫长无尽的夜晚<br>• 少女の頃 夢見てたこと 今でも同じ夢を見てる<br>少女的时候 在梦中所见到的事情 现在也看见了同样的梦<br>• 少女の頃 探してたもの 今でも同じように探してる<br>少女的时候 所寻找的东西 现在也如同当时一般的在寻找着</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E6%81%8B%E4%BA%BA%E3%82%92%E5%B0%84%E3%81%A1%E5%A0%95%E3%81%A8%E3%81%97%E3%81%9F%E6%97%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E6%81%8B%E4%BA%BA%E3%82%92%E5%B0%84%E3%81%A1%E5%A0%95%E3%81%A8%E3%81%97%E3%81%9F%E6%97%A5/" class="post-title-link" itemprop="url">恋人を射ち堕とした日</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-31 10:08:47" itemprop="dateCreated datePublished" datetime="2020-05-31T10:08:47+08:00">2020-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-14 22:39:16" itemprop="dateModified" datetime="2020-11-14T22:39:16+08:00">2020-11-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E6%AD%8C%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语歌词</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+
+<p>二番目の記憶…<br>にばんめのきおく<br>第二的记忆<br>弓がしなり彈けた焰 夜空を凍らせて<br>ゆみがしなりはじけたほおの　よぞらをこおらせて<br>柔韧的弓弦所迸发的火焰 将夜空冻结<br>凜と蒼く別離の詩を 戀人を射ち墮とす<br>りんとあおくわかれのうたを　あなたをうちよとす<br>凛然以青苍的别离之诗 将爱人（你）击下坠落…<br>遠い日の忘れ物 引き裂かれた傷痕<br>とおいひのわすれもの　ひきさかれたきずあと<br>很久以前已遗忘的事物 被撕裂的伤痕<br>呪われし約束をその胸に宿して<br>のろわれしやくそくをそのむねにやとして<br>将被诅咒的约定埋藏心中<br>「避けられぬ終焉は せめて愛しいその手で」<br>さけられぬしゅうえんは　せめていとしいそのてで<br>「既是无法避免的终焉，至少以所爱的那双手…」<br>抗えぬ沖動の暗が彼を包んだ<br>あらがえぬちゅうどうのくらがかれをつつんだ<br>不能抵抗的黑暗冲动将他包围住…<br>歪む世界 螺旋の焰輪回を貫いて<br>ゆがむせかい　らせんのほのおりんみをつらぬいて<br>扭曲的世界 漩涡的火焰贯穿轮回<br>凜と緋く血涂れくちづけ 戀人を射ち墮とす<br>りんとあたくちぬれくちづけ　あなたをうちよとす<br>凛然吻上染着绯红鲜血的双唇 将爱人（你）击下坠落…<br>忘レモノハ在リマセンカ<br>わすれものはありまやんか<br>有遗忘了甚么东西吗…？<br>古の傳說 その魔物に傷を負わされた者は<br>いにしえのでんせつ　そのまものにきずをまわされたものは<br>古老的传说 被那魔物所伤的人<br>咒いが全身を驅け回り<br>のろいがぜんしんをかけめり<br>诅咒会运行全身<br>やがては同じ魔物に成り果てるだ<br>やがてはおなじまものになりはてるだ<br>最终将会化身成同样的魔物吧…<br>その傷を負ったのはいつ<br>そのきずをおったのはいつ<br>那是何时受的伤呢…<br>それは二人が出會ったあの日まで溯る<br>それはふたりがであったあのひまでさかのぼる<br>那要追溯至二人相遇的那天<br>彼が彼女を助けた時に負った<br>かれがかのじょをだすけたじにおった<br>伤他为了拯救她而受的伤<br>全ては出會った時から始まっていた<br>すべてはであったじからはじまっていた<br>一切自相遇之时已开始了…<br>出會いは喪失への約束…<br>であいはそうしつへのやくそく…<br>相遇乃走向失去的约定…<br>枯れ果てた淚は 哀しみの蒼い焰を宿し<br>かれはてたなみだは　かなしみのあおいほのおをやどし<br>枯干的泪水 有着凄怆的苍蓝火焰<br>銀色に輝く矢を放つ<br>ぎんいろにかがやくやをはなつ<br>射出闪耀银色光芒的镝矢<br>何度でも 唯 彼が息絕えるまで<br>なんどでも　ただ　かれがいきたえるまで<br>不断地 直到…他断绝气息为止…<br>愛する人を失った世界には<br>あいするひとをうしなったせかいには<br>在失去了爱人的世界里<br>どんな色の花がさくだろう<br>どんないろのはながさくだろう<br>到底会开出甚么颜色的花朵呢？<br>月を抱いた十字の焰 いばらを卷きつけて<br>づきをいだいたじゅうじのほのおばらをまきつけて<br>抱拥月亮的十字火焰席卷荆棘<br>凜と白く最期の弓矢 私を射ち墮とす<br>りんとしろくさいごのあろお　わたしをうちよとす<br>凛然以最后的苍白弓矢 将我自己击下坠落…<br>愛する人を失った世界には<br>在失去了爱人的世界里<br>どんな色の花が咲く<br>到底会开出甚么颜色的花朵呢…<br>愛する人を失った世界には<br>在失去了爱人的世界里<br>どんな色の花が咲く<br>到底会开出甚么颜色的花朵呢…<br>愛する人を失った世界には<br>在失去了爱人的世界里<br>どんな色の花が咲く<br>到底会开出甚么颜色的花朵呢…<br>愛する人を失った世界には<br>在失去了爱人的世界里<br>どんな色の花が咲く<br>到底会开出甚么颜色的花朵呢…<br>愛する人を失った世界には<br>在失去了爱人的世界里<br>どんな色の花が咲く<br>到底会开出甚么颜色的花朵呢…<br>愛する人を失った世界には<br>在失去了爱人的世界里<br>どんな色の花が咲く<br>到底会开出甚么颜色的花朵呢…<br>愛する人を失った世界には<br>在失去了爱人的世界里<br>どんな色の花が咲く<br>到底会开出甚么颜色的花朵呢…<br>愛する人を失った世界には<br>在失去了爱人的世界里<br>どんな色の花が咲く<br>到底会开出甚么颜色的花朵呢…</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E6%9D%B1%E4%BA%AC%E3%82%AA%E3%83%BC%E3%82%BF%E3%83%A0%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E6%9D%B1%E4%BA%AC%E3%82%AA%E3%83%BC%E3%82%BF%E3%83%A0%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3/" class="post-title-link" itemprop="url">東京オータムセッション</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-31 10:08:47" itemprop="dateCreated datePublished" datetime="2020-05-31T10:08:47+08:00">2020-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-14 22:38:12" itemprop="dateModified" datetime="2020-11-14T22:38:12+08:00">2020-11-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E6%AD%8C%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语歌词</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+
+<p>17　毎日会ってたね<br>17岁 每天都能见到呢<br>あぁ　付き合う前からずっと隣にいたね<br>嗯 毕竟交往前就一直在一起<br>18　卒業したらあんまり会えなくて<br>18岁 毕业了就不怎么能见面了<br>初めてのヒビが痛かった<br>初次产生的间隙有些刺痛<br>ねぇねぇLINE、遅くないですか？<br>呐呐line回得好慢啊？<br>仕事なんだから仕方ないのわかってよ<br>毕竟在工作就体谅一下吧<br>そっか　それだけだったら別にいいけれど<br>哦 要只是这样也无所谓啦<br>想うほど距離ができたりね<br>距离感比想象中的更大啊<br>大人になることって我慢すること？<br>长大就意味着忍耐吗？<br>比べられないもの天秤にかけて<br>天平的两边无法相提并论<br>好きがあるから<br>因为心里依旧喜欢<br>自分らしいのに<br>明明要做自己才行<br>不安にとまどう僕たちは<br>开始忐忑不安的我们<br>baby girl your eyes and nose and lips</p>
+<p>ne- furete itaiyo<br>呐 好想触碰你<br>baby boy your hands and habit and love and love</p>
+<p>ne- aitaiyo<br>呐 好想见到你<br>もう一度恋させて<br>让我再次爱上你<br>あの頃の“好き”を<br>怀着那时的“喜欢”<br>19　初めての旅行<br>19岁 第一次的旅行<br>まあ近場だったけど一番の思い出<br>嘛没出远门却是非常珍贵的回忆<br>それにドライブもして海でズブ濡れになって<br>一起兜风在海边一起玩成落汤鸡<br>二人して風邪をひいたりね<br>两个人一起感冒了呢<br>20　二人で飲んだ初めてのお酒<br>20岁 第一次喝酒是两人一起<br>酔っぱらっている君もやっぱり良くて…<br>微醺的你果然也很不错…<br>あぁ(フリだったのは実はくっつきたくて)<br>啊（其实只是想黏着你才装醉）<br>そんな君が愛おしかった<br>那样的你惹人疼爱<br>きっと会えないからこそ膨らんでいく<br>正因无法相见思念才越发汹涌<br>想いがあればまた重なって<br>或许我们又怀着同样的心情吧<br>好きをやめたら<br>如果放弃喜欢你<br>楽にもなれる<br>或许能变得轻松<br>それでも出会えた僕たちは<br>却依然邂逅的我们<br>baby girl your eyes and nose and lips</p>
+<p>ne- furete itaiyo<br>呐 好想触碰你<br>baby boy your hands and habit and love and love</p>
+<p>ne- aitaiyo<br>呐 好想见到你<br>揺れて揺れて気づいて<br>心旌荡漾察觉到<br>見つめ合えた頃<br>四目相对的时刻<br>初めて触れた瞬間<br>初次触碰的瞬间<br>また恋に落ちよう<br>又再次坠入爱河<br>あの頃のままの僕らと<br>与那时的我们一样<br>変わらない<br>从未改变<br>“好き”<br>“喜欢”<br>baby girl your eyes and nose and lips</p>
+<p>ne- furete itaiyo<br>呐 好想触碰你<br>baby boy your hands and habit and love and love</p>
+<p>ne- aishiteru<br>呐 好爱你<br>baby girl your eyes and nose and lips</p>
+<p>ne- furete itaiyo<br>呐 好想触碰你<br>baby boy your hands and habit and love and love</p>
+<p>ne- aishiteru<br>呐 好爱你<br>もう一度恋させて<br>让彼此再次相恋<br>あの頃の“好き”を<br>怀着那时的“喜欢”</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E8%BF%B7%E5%AE%AB%E5%A4%A7%E5%9B%B3%E9%91%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E8%BF%B7%E5%AE%AB%E5%A4%A7%E5%9B%B3%E9%91%91/" class="post-title-link" itemprop="url">迷宫大図鑑</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-31 10:08:47" itemprop="dateCreated datePublished" datetime="2020-05-31T10:08:47+08:00">2020-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-14 22:39:19" itemprop="dateModified" datetime="2020-11-14T22:39:19+08:00">2020-11-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E6%AD%8C%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语歌词</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+
+<p>その大図鑑を開いた時から<br>从翻阅那份图鉴开始<br>貴方はこの迷宮の探索者<br>你就是这个迷宫的探索者<br>眠れる野薔薇を揺り起こすべく<br>将沉睡的野玫瑰摇醒<br>乾く靴音が向かうベージは<br>单调的脚步声 打开了这一页<br>色とりどり文字化けの<br>各类文字妖魔<br>虫の羽音が響く太古の森林<br>回响着昆虫翅膀声响的太古森林<br>少女が一人歌を紡いで座っている<br>少女 独坐着 唱着歌<br>蒼い蒼い甘い甘い<br>悠远而甜美<br>その歌声がら逃げることができない<br>谁也无法从她的歌声中逃离<br>その大図鑑を開いた時から<br>从翻阅那份图鉴开始<br>貴方はこの謎かけの回答者<br>你就是这个谜题的解答者<br>蕾の姫百合綻ばすべく<br>隐匿在百合绽放处 花蕾里的公主<br>掠る指先の捲るベージは<br>匆匆掠过指尖 翻过这一页<br>深く深くもっと深く<br>更遥远更深处的<br>欠落を照らす深海よ魚の群その中<br>照耀着深海鱼群中所缺失的那一页<br>少女が一人歌を紡いで浮かんでいる<br>少女 漂浮着 唱着歌<br>蒼い蒼い甘い甘い<br>悠远而甜美<br>その歌声から逃げることはできない<br>谁也无法从她的歌声中逃离<br>その抱擁から逃げることができない<br>谁也无法从这个怀抱中逃离<br>その迷宮からまだ出られはしない<br>谁也走不出这个迷宫的</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
