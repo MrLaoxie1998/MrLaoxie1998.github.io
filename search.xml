@@ -1296,14 +1296,14 @@
       </tags>
   </entry>
   <entry>
-    <title>日语第十三课单词</title>
+    <title>综合日语第13课单词</title>
     <url>/2020/07/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC13%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第13课日语单词笔记"><a href="#第13课日语单词笔记" class="headerlink" title="第13课日语单词笔记"></a>第13课日语单词笔记</h3><p>这里是《综合日语》的第十三课的所有单词记录。</p>
-<div id="echarts7880" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts9852" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts7880'));
+        var myChart = echarts.init(document.getElementById('echarts9852'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -2285,14 +2285,14 @@
       </tags>
   </entry>
   <entry>
-    <title>日语第十四课单词</title>
+    <title>综合日语第14课单词</title>
     <url>/2020/08/01/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC14%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第14课日语单词笔记"><a href="#第14课日语单词笔记" class="headerlink" title="第14课日语单词笔记"></a>第14课日语单词笔记</h3><p>这里是《综合日语》的第十四课的所有单词记录。</p>
-<div id="echarts3844" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts1029" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts3844'));
+        var myChart = echarts.init(document.getElementById('echarts1029'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -3040,14 +3040,14 @@
       </tags>
   </entry>
   <entry>
-    <title>日语第十五课单词</title>
+    <title>综合日语第15课单词</title>
     <url>/2020/08/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC15%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第15课日语单词笔记"><a href="#第15课日语单词笔记" class="headerlink" title="第15课日语单词笔记"></a>第15课日语单词笔记</h3><p>这里是《综合日语》的第十五课的所有单词记录。</p>
-<div id="echarts930" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts7827" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts930'));
+        var myChart = echarts.init(document.getElementById('echarts7827'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -3719,689 +3719,6 @@
       </tags>
   </entry>
   <entry>
-    <title>综合日语第17课单词</title>
-    <url>/2020/12/20/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC17%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
-    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第16课日语单词笔记"><a href="#第16课日语单词笔记" class="headerlink" title="第16课日语单词笔记"></a>第16课日语单词笔记</h3><p>这里是《综合日语》的第十六课的所有单词记录。</p>
-<div id="echarts8528" style="width: 100%;height: 400px;margin: 0 auto"></div>
-<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
-<script type="text/javascript">
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts8528'));
-        // 指定图表的配置项和数据
-        var option = option = {
-    title: {
-        text: '第16课单词',
-        subtext: '各词性统计-共计150个单词。统计了高频词汇和低频词汇,人工统计，不一定是150个',
-        left: 'center'
-    },
-    tooltip: {
-        trigger: 'item',
-        formatter: '{a} <br/>{b} : {c} ({d}%)'
-    },
-    legend: {
-        orient: 'vertical',
-        left: 'left',
-        data: ['名词', '固有名词', '解释性词性', '副词', '他动词1类', '他动词2类', '他动词3类', '自动词1类', '自动词2类', '自动词3类', '形容词1类', '形容词2类', '取立て助', '擬音词', '接续词']
-    },
-    series: [
-        {
-            name: '此词性数量',
-            type: 'pie',
-            radius: '55%',
-            center: ['50%', '60%'],
-            data: [
-                {value: 93, name: '名词'},
-                {value: 1, name: '固有名词'},
-                {value: 10, name: '解释性词性'},
-                {value: 3, name: '副词'},
-                {value: 4, name: '他动词1类'},
-                {value: 8, name: '他动词2类'},
-                {value: 2, name: '他动词3类'},
-                {value: 7, name: '自动词1类'},
-                {value: 3, name: '自动词2类'},
-                {value: 8, name: '自动词3类'},
-                {value: 3, name: '形容词1类'},
-                {value: 5, name: '形容词2类'},
-                {value: 1, name: '取立て助'},
-                {value: 1, name: '擬音词'},
-                {value: 1, name: '接续词'}
-            ],
-            emphasis: {
-                itemStyle: {
-                    shadowBlur: 10,
-                    shadowOffsetX: 0,
-                    shadowColor: 'rgba(0, 0, 0, 0.5)'
-                }
-            }
-        }
-    ]
-};
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
-</script>
-<a id="more"></a>
-
-<table>
-<thead>
-<tr>
-<th>单词</th>
-<th>词性</th>
-<th>翻译</th>
-<th>声调</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ポップアーティスト(和製pop artist)</td>
-<td>名词</td>
-<td>当代艺术家/流行歌手</td>
-<td>4</td>
-</tr>
-<tr>
-<td>ポップ(pop)</td>
-<td>名词</td>
-<td>流行/现代</td>
-<td>1</td>
-</tr>
-<tr>
-<td>アーティスト(artist)</td>
-<td>名词</td>
-<td>艺术家/歌手</td>
-<td>1</td>
-</tr>
-<tr>
-<td>首都体育館(しゅとたいいくかん)</td>
-<td>固有名词</td>
-<td>首都体育馆/首体</td>
-<td>6</td>
-</tr>
-<tr>
-<td>首都(しゅと)</td>
-<td>名词</td>
-<td>首都</td>
-<td>1</td>
-</tr>
-<tr>
-<td>入り口(いりぐち)</td>
-<td>名词</td>
-<td>入口</td>
-<td>0</td>
-</tr>
-<tr>
-<td>待ち合わせる(まちあわせる)</td>
-<td>他动词2类</td>
-<td>碰头/见面</td>
-<td>5/0</td>
-</tr>
-<tr>
-<td>国家図書館(こっかとしょかん)</td>
-<td>名词</td>
-<td>国家图书馆</td>
-<td>5</td>
-</tr>
-<tr>
-<td>国家(こっか)</td>
-<td>名词</td>
-<td>国家</td>
-<td>1</td>
-</tr>
-<tr>
-<td>過ぎる(すぎる)</td>
-<td>自动词2类</td>
-<td>过/经过</td>
-<td>2</td>
-</tr>
-<tr>
-<td>と</td>
-<td>接助词</td>
-<td>表示前提条件/一<del>就</del>/如果<del>就</del></td>
-<td>/</td>
-</tr>
-<tr>
-<td>～て行く</td>
-<td>/</td>
-<td>表示离开该处由近及远的移动/~(着)去</td>
-<td>/</td>
-</tr>
-<tr>
-<td>~ほうがいい</td>
-<td>/</td>
-<td>还是<del>/</del>为好</td>
-<td>/</td>
-</tr>
-<tr>
-<td>ので</td>
-<td>接助词</td>
-<td>表示原因/理由/因为</td>
-<td>/</td>
-</tr>
-<tr>
-<td>コート(coat)</td>
-<td>名词</td>
-<td>外套/外衣/风衣</td>
-<td>1</td>
-</tr>
-<tr>
-<td>着る(きる)</td>
-<td>他动词2类</td>
-<td>穿</td>
-<td>0</td>
-</tr>
-<tr>
-<td>なあ</td>
-<td>终助词</td>
-<td>语气助词[な]的强调用法/表示说话人的感叹等语气</td>
-<td>/</td>
-</tr>
-<tr>
-<td>救急車(きゅうきゅうしゃ)</td>
-<td>名词</td>
-<td>救护车</td>
-<td>3</td>
-</tr>
-<tr>
-<td>救急(きゅうきゅう)</td>
-<td>名词</td>
-<td>救护</td>
-<td>0</td>
-</tr>
-<tr>
-<td>車(しゃ)</td>
-<td>/</td>
-<td>~车</td>
-<td>/</td>
-</tr>
-<tr>
-<td>呼ぶ(よぶ)</td>
-<td>他动词1类</td>
-<td>叫(来)/呼喊/叫做</td>
-<td>0</td>
-</tr>
-<tr>
-<td>いやあ</td>
-<td>感叹词</td>
-<td>[いや]的强调用法。表示吃惊、感叹等</td>
-<td>/</td>
-</tr>
-<tr>
-<td>～て来る</td>
-<td>/</td>
-<td>表示向该处由远及近的移动/~(了)来</td>
-<td>/</td>
-</tr>
-<tr>
-<td>急(きゅう)</td>
-<td>名词/形容词2类</td>
-<td>突然/急</td>
-<td>0</td>
-</tr>
-<tr>
-<td>飛び出す(とびだす)</td>
-<td>自动词1类</td>
-<td>跑出/跳出/突然出现</td>
-<td>3</td>
-</tr>
-<tr>
-<td>公衆電話(こうしゅうでんわ)</td>
-<td>名词</td>
-<td>公用电话</td>
-<td>5</td>
-</tr>
-<tr>
-<td>公衆(こうしゅう)</td>
-<td>名词</td>
-<td>公用</td>
-<td>0</td>
-</tr>
-<tr>
-<td>自信(じしん)</td>
-<td>名词</td>
-<td>自信/信心</td>
-<td>0</td>
-</tr>
-<tr>
-<td>まで</td>
-<td>格助词</td>
-<td>到<del>/</del>之前一直<del>/一直到</del></td>
-<td>/</td>
-</tr>
-<tr>
-<td>急ぐ(いそぐ)</td>
-<td>自动词1类</td>
-<td>赶快/赶紧/着急</td>
-<td>2</td>
-</tr>
-<tr>
-<td>間に合う(まにあう)</td>
-<td>自动词1类</td>
-<td>来得及/赶得上</td>
-<td>3</td>
-</tr>
-<tr>
-<td>申し訳ありません(もうしわけありません)</td>
-<td>/</td>
-<td>对不起/非常抱歉</td>
-<td>9</td>
-</tr>
-<tr>
-<td>半分(はんぶん)</td>
-<td>副词</td>
-<td>一般</td>
-<td>3/0</td>
-</tr>
-<tr>
-<td>料金(りょうきん)</td>
-<td>名词</td>
-<td>费用</td>
-<td>1</td>
-</tr>
-<tr>
-<td>信号(しんごう)</td>
-<td>名词</td>
-<td>红绿灯</td>
-<td>0</td>
-</tr>
-<tr>
-<td>まつすぐ</td>
-<td>副词</td>
-<td>直/笔直/一直</td>
-<td>3</td>
-</tr>
-<tr>
-<td>出る(でる)</td>
-<td>自动词2类</td>
-<td>出来/出/到/来到</td>
-<td>1</td>
-</tr>
-<tr>
-<td>トピック</td>
-<td>名词</td>
-<td>话题/论题</td>
-<td>1/2</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>日语</category>
-        <category>日语单词</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>综合日语第18课单词</title>
-    <url>/2020/12/20/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC18%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>日语</category>
-        <category>日语单词</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-      </tags>
-  </entry>
-  <entry>
     <title></title>
     <url>/2020/12/15/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC31%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<table>
@@ -5005,14 +4322,14 @@
 ]]></content>
   </entry>
   <entry>
-    <title>日语第七课单词</title>
+    <title>综合日语第7课单词</title>
     <url>/2020/06/07/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC7%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
-    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第7课日语单词笔记"><a href="#第7课日语单词笔记" class="headerlink" title="第7课日语单词笔记"></a>第7课日语单词笔记</h3><p>这里是《综合日语》的第7课的所有单词记录。</p>
-<div id="echarts5897" style="width: 100%;height: 400px;margin: 0 auto"></div>
+    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第7课日语单词笔记"><a href="#第7课日语单词笔记" class="headerlink" title="第7课日语单词笔记"></a>第7课日语单词笔记</h3><p>这里是《综合日语》的第七课的所有单词记录。</p>
+<div id="echarts3677" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts5897'));
+        var myChart = echarts.init(document.getElementById('echarts3677'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -5996,14 +5313,14 @@
       </tags>
   </entry>
   <entry>
-    <title>日语第八课单词</title>
+    <title>综合日语第8课单词</title>
     <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC8%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
-    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第8课日语单词笔记"><a href="#第8课日语单词笔记" class="headerlink" title="第8课日语单词笔记"></a>第8课日语单词笔记</h3><p>这里是《综合日语》的第8课的所有单词记录。</p>
-<div id="echarts7664" style="width: 100%;height: 400px;margin: 0 auto"></div>
+    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第8课日语单词笔记"><a href="#第8课日语单词笔记" class="headerlink" title="第8课日语单词笔记"></a>第8课日语单词笔记</h3><p>这里是《综合日语》的第八课的所有单词记录。</p>
+<div id="echarts2251" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts7664'));
+        var myChart = echarts.init(document.getElementById('echarts2251'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -8006,7 +7323,7 @@
 <p>​    </p>
 <h2 id="6-动词条件形"><a href="#6-动词条件形" class="headerlink" title="6.动词条件形"></a>6.动词条件形</h2><p>1类动词:把词尾[う]段假名变同行[え]段假名，后接[ば]<br>書くー書けば(かけば)<br>飲む(のむ)ー飲めば(のめば)<br>送る(おくる)ー送れば(おくれば)</p>
 <p>2类动词:把词尾[る]去掉，加れば<br>見る(みる)ー見れば(みれば)<br>食べる(たべる)ー食べれば(たべれば)</p>
-<p>3类动词:<br>カ变动词:来る(くる)ー来れば(くれば)<br>サ变动词:するーすれば<br>                勉強する(べんきょうする)ー勉強すれば(べんきょうすれば)</p>
+<p>3类动词:<br>カ变动词:来る(くる)ー来れば(くれば)<br>サ变动词:するーすれば<br>勉強する(べんきょうする)ー勉強すれば(べんきょうすれば)</p>
 <p>​        那么我们也要列举出否定形式的样子</p>
 <p>否定形式:<br>[Vない]变[Vなければ]</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">飲まないー飲まなければ</span><br><span class="line">雨が降れば出かけません。(降る)</span><br><span class="line">(如果下雨，就不出去)</span><br><span class="line">ロリちゃんが行けば、私も行く。(行く)</span><br><span class="line">(如果萝莉去，我也去。)</span><br><span class="line">毎日よく練習すれば、きっと上手になる。(練習する)</span><br><span class="line">(如果每天好好练习的话，一定会变厉害的。)</span><br><span class="line">薬を飲まなければ、病気に治らない。</span><br><span class="line">(飲むー飲まないーば)</span><br></pre></td></tr></table></figure>
@@ -8017,7 +7334,7 @@
 
 
 
-<h2 id="7-仮定形"><a href="#7-仮定形" class="headerlink" title="7.(仮定形)"></a>7.(仮定形)</h2><p>[仮定形]条件形<br>        1.表示如果该条件(动作、变化、状态、性质等)成立，就会出现后面的情况。<br>        2.汉语:如果<del>就</del>/假如<del>/要是</del></p>
+<h2 id="7-仮定形"><a href="#7-仮定形" class="headerlink" title="7.(仮定形)"></a>7.(仮定形)</h2><p>[仮定形]条件形<br>        1.表示如果该条件(动作、变化、状态、性质等)成立，就会出现后面的情况。<br>        2.汉语:如果<del>就</del>/假如<del>/要是</del> </p>
 <h2 id="8-Vばいい・よい-lt-建议-gt"><a href="#8-Vばいい・よい-lt-建议-gt" class="headerlink" title="8.Vばいい・よい&lt;建议&gt;"></a>8.Vばいい・よい&lt;建议&gt;</h2><p>&ensp;&ensp;1.常用在表示提议、建议时用。向对方说明是可以采取的方法和手段。<br>&ensp;&ensp;2.汉语:只要<del>就可/</del>就好<br>&ensp;&ensp;3.接续:动词条件形+いい</p>
 <h4 id="練習（练习）-1"><a href="#練習（练习）-1" class="headerlink" title="練習（练习）:"></a>練習（练习）:</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">A:どうすればいいですか。(怎么办才好呢？)</span><br><span class="line">B:ちゃんと謝ればいいですよ。(好好道歉就好啦。)</span><br><span class="line">疲れた時はお茶を飲めばいいです。(累的时候，喝点茶就好。)</span><br><span class="line">苺が嫌いなら、食べなければいい。(讨厌草莓的话，不吃就好。)</span><br><span class="line">好きなら、告白(こくはく)すればいい。(喜欢的话，告白就好了。)</span><br><span class="line">何時ごろそちらに行けばいいでしょうか。(大概几点去那边比较好呢？)</span><br><span class="line">彼女の電話番号が知りたければ、私に聞けばいい。(如果想要知道她的电话号码，问我就好。)</span><br></pre></td></tr></table></figure>
 
@@ -8157,14 +7474,14 @@
       </tags>
   </entry>
   <entry>
-    <title>日语第十课单词</title>
+    <title>综合日语第10课单词</title>
     <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC10%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
-    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第10课日语单词笔记"><a href="#第10课日语单词笔记" class="headerlink" title="第10课日语单词笔记"></a>第10课日语单词笔记</h3><p>这里是《综合日语》的第10课的所有单词记录。</p>
-<div id="echarts8824" style="width: 100%;height: 400px;margin: 0 auto"></div>
+    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第10课日语单词笔记"><a href="#第10课日语单词笔记" class="headerlink" title="第10课日语单词笔记"></a>第10课日语单词笔记</h3><p>这里是《综合日语》的第十课的所有单词记录。</p>
+<div id="echarts5574" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts8824'));
+        var myChart = echarts.init(document.getElementById('echarts5574'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -9346,14 +8663,14 @@
       </tags>
   </entry>
   <entry>
-    <title>日语第十一课单词</title>
+    <title>综合日语第11课单词</title>
     <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC11%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第11课日语单词笔记"><a href="#第11课日语单词笔记" class="headerlink" title="第11课日语单词笔记"></a>第11课日语单词笔记</h3><p>这里是《综合日语》的第十一课的所有单词记录。</p>
-<div id="echarts3622" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts1396" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts3622'));
+        var myChart = echarts.init(document.getElementById('echarts1396'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -10262,14 +9579,14 @@
       </tags>
   </entry>
   <entry>
-    <title>日语单词记录12课</title>
+    <title>综合日语第12课单词</title>
     <url>/2020/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC12%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第12课日语单词笔记"><a href="#第12课日语单词笔记" class="headerlink" title="第12课日语单词笔记"></a>第12课日语单词笔记</h3><p>这里是《综合日语》的第十二课的所有单词记录。</p>
-<div id="echarts4993" style="width: 100%;height: 100px;margin: 0 auto"></div>
+<div id="echarts3222" style="width: 100%;height: 100px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts4993'));
+        var myChart = echarts.init(document.getElementById('echarts3222'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -11190,11 +10507,11 @@
     <title>综合日语第16课单词</title>
     <url>/2020/12/19/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC16%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第16课日语单词笔记"><a href="#第16课日语单词笔记" class="headerlink" title="第16课日语单词笔记"></a>第16课日语单词笔记</h3><p>这里是《综合日语》的第十六课的所有单词记录。</p>
-<div id="echarts264" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts4696" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts264'));
+        var myChart = echarts.init(document.getElementById('echarts4696'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -12092,14 +11409,2127 @@
       </tags>
   </entry>
   <entry>
-    <title>综合日语第19课单词</title>
-    <url>/2020/12/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC19%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
-    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第19课日语单词笔记"><a href="#第19课日语单词笔记" class="headerlink" title="第19课日语单词笔记"></a>第19课日语单词笔记</h3><p>这里是关于我所学习的第19课单词记录</p>
-<div id="echarts3830" style="width: 100%;height: 400px;margin: 0 auto"></div>
+    <title>综合日语第17课单词</title>
+    <url>/2020/12/20/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC17%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第17课日语单词笔记"><a href="#第17课日语单词笔记" class="headerlink" title="第17课日语单词笔记"></a>第17课日语单词笔记</h3><p>这里是《综合日语》的第十七课的所有单词记录。</p>
+<div id="echarts4352" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts3830'));
+        var myChart = echarts.init(document.getElementById('echarts4352'));
+        // 指定图表的配置项和数据
+        var option = option = {
+    title: {
+        text: '第17课单词',
+        subtext: '各词性统计-共计162个单词。统计了高频词汇和低频词汇,人工统计，不一定是162个',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['名词', '固有名词', '解释性词性', '副词', '他动词1类', '他动词2类', '他动词3类', '自动词1类', '自动词2类', '自动词3类', '形容词2类', '取立て助', '接助词', '格助词', '感叹词', '接续词']
+    },
+    series: [
+        {
+            name: '此词性数量',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: [
+                {value: 80, name: '名词'},
+                {value: 5, name: '固有名词'},
+                {value: 9, name: '解释性词性'},
+                {value: 12, name: '副词'},
+                {value: 2, name: '他动词1类'},
+                {value: 7, name: '他动词2类'},
+                {value: 11, name: '他动词3类'},
+                {value: 12, name: '自动词1类'},
+                {value: 8, name: '自动词2类'},
+                {value: 4, name: '自动词3类'},
+                {value: 5, name: '形容词2类'},
+                {value: 1, name: '取立て助'},
+                {value: 2, name: '接助词'},
+                {value: 1, name: '格助词'},
+                {value: 2, name: '感叹词'},
+                {value: 1, name: '接续词'}
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+<a id="more"></a>
+
+<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>词性</th>
+<th>翻译</th>
+<th>声调</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ポップアーティスト(和製pop artist)</td>
+<td>名词</td>
+<td>当代艺术家/流行歌手</td>
+<td>4</td>
+</tr>
+<tr>
+<td>ポップ(pop)</td>
+<td>名词</td>
+<td>流行/现代</td>
+<td>1</td>
+</tr>
+<tr>
+<td>アーティスト(artist)</td>
+<td>名词</td>
+<td>艺术家/歌手</td>
+<td>1</td>
+</tr>
+<tr>
+<td>首都体育館(しゅとたいいくかん)</td>
+<td>固有名词</td>
+<td>首都体育馆/首体</td>
+<td>6</td>
+</tr>
+<tr>
+<td>首都(しゅと)</td>
+<td>名词</td>
+<td>首都</td>
+<td>1</td>
+</tr>
+<tr>
+<td>入り口(いりぐち)</td>
+<td>名词</td>
+<td>入口</td>
+<td>0</td>
+</tr>
+<tr>
+<td>待ち合わせる(まちあわせる)</td>
+<td>他动词2类</td>
+<td>碰头/见面</td>
+<td>5/0</td>
+</tr>
+<tr>
+<td>国家図書館(こっかとしょかん)</td>
+<td>名词</td>
+<td>国家图书馆</td>
+<td>5</td>
+</tr>
+<tr>
+<td>国家(こっか)</td>
+<td>名词</td>
+<td>国家</td>
+<td>1</td>
+</tr>
+<tr>
+<td>過ぎる(すぎる)</td>
+<td>自动词2类</td>
+<td>过/经过</td>
+<td>2</td>
+</tr>
+<tr>
+<td>と</td>
+<td>接助词</td>
+<td>表示前提条件/一<del>就</del>/如果<del>就</del></td>
+<td>/</td>
+</tr>
+<tr>
+<td>～て行く</td>
+<td>/</td>
+<td>表示离开该处由近及远的移动/~(着)去</td>
+<td>/</td>
+</tr>
+<tr>
+<td>~ほうがいい</td>
+<td>/</td>
+<td>还是<del>/</del>为好</td>
+<td>/</td>
+</tr>
+<tr>
+<td>ので</td>
+<td>接助词</td>
+<td>表示原因/理由/因为</td>
+<td>/</td>
+</tr>
+<tr>
+<td>コート(coat)</td>
+<td>名词</td>
+<td>外套/外衣/风衣</td>
+<td>1</td>
+</tr>
+<tr>
+<td>着る(きる)</td>
+<td>他动词2类</td>
+<td>穿</td>
+<td>0</td>
+</tr>
+<tr>
+<td>なあ</td>
+<td>终助词</td>
+<td>语气助词[な]的强调用法/表示说话人的感叹等语气</td>
+<td>/</td>
+</tr>
+<tr>
+<td>救急車(きゅうきゅうしゃ)</td>
+<td>名词</td>
+<td>救护车</td>
+<td>3</td>
+</tr>
+<tr>
+<td>救急(きゅうきゅう)</td>
+<td>名词</td>
+<td>救护</td>
+<td>0</td>
+</tr>
+<tr>
+<td>車(しゃ)</td>
+<td>/</td>
+<td>~车</td>
+<td>/</td>
+</tr>
+<tr>
+<td>呼ぶ(よぶ)</td>
+<td>他动词1类</td>
+<td>叫(来)/呼喊/叫做</td>
+<td>0</td>
+</tr>
+<tr>
+<td>いやあ</td>
+<td>感叹词</td>
+<td>[いや]的强调用法。表示吃惊、感叹等</td>
+<td>/</td>
+</tr>
+<tr>
+<td>～て来る</td>
+<td>/</td>
+<td>表示向该处由远及近的移动/~(了)来</td>
+<td>/</td>
+</tr>
+<tr>
+<td>急(きゅう)</td>
+<td>名词/形容词2类</td>
+<td>突然/急</td>
+<td>0</td>
+</tr>
+<tr>
+<td>飛び出す(とびだす)</td>
+<td>自动词1类</td>
+<td>跑出/跳出/突然出现</td>
+<td>3</td>
+</tr>
+<tr>
+<td>公衆電話(こうしゅうでんわ)</td>
+<td>名词</td>
+<td>公用电话</td>
+<td>5</td>
+</tr>
+<tr>
+<td>公衆(こうしゅう)</td>
+<td>名词</td>
+<td>公用</td>
+<td>0</td>
+</tr>
+<tr>
+<td>自信(じしん)</td>
+<td>名词</td>
+<td>自信/信心</td>
+<td>0</td>
+</tr>
+<tr>
+<td>まで</td>
+<td>格助词</td>
+<td>到<del>/</del>之前一直<del>/一直到</del></td>
+<td>/</td>
+</tr>
+<tr>
+<td>急ぐ(いそぐ)</td>
+<td>自动词1类</td>
+<td>赶快/赶紧/着急</td>
+<td>2</td>
+</tr>
+<tr>
+<td>間に合う(まにあう)</td>
+<td>自动词1类</td>
+<td>来得及/赶得上</td>
+<td>3</td>
+</tr>
+<tr>
+<td>申し訳ありません(もうしわけありません)</td>
+<td>/</td>
+<td>对不起/非常抱歉</td>
+<td>9</td>
+</tr>
+<tr>
+<td>半分(はんぶん)</td>
+<td>副词</td>
+<td>一般</td>
+<td>3/0</td>
+</tr>
+<tr>
+<td>料金(りょうきん)</td>
+<td>名词</td>
+<td>费用</td>
+<td>1</td>
+</tr>
+<tr>
+<td>信号(しんごう)</td>
+<td>名词</td>
+<td>红绿灯</td>
+<td>0</td>
+</tr>
+<tr>
+<td>まつすぐ</td>
+<td>副词</td>
+<td>直/笔直/一直</td>
+<td>3</td>
+</tr>
+<tr>
+<td>出る(でる)</td>
+<td>自动词2类</td>
+<td>出来/出/到/来到</td>
+<td>1</td>
+</tr>
+<tr>
+<td>トピック</td>
+<td>名词</td>
+<td>话题/论题</td>
+<td>1/2</td>
+</tr>
+<tr>
+<td>オートバイ</td>
+<td>名词</td>
+<td>摩托车(auto bicycle的简称)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>鳥(とり)</td>
+<td>名词</td>
+<td>鸟/鸡</td>
+<td>0</td>
+</tr>
+<tr>
+<td>飛ぶ(とぶ)</td>
+<td>自动词1类</td>
+<td>飞翔/飞行</td>
+<td>0</td>
+</tr>
+<tr>
+<td>もう</td>
+<td>副词</td>
+<td>再/又</td>
+<td>0</td>
+</tr>
+<tr>
+<td>専攻(せんこう)</td>
+<td>名词/他动词3类</td>
+<td>专攻/专业</td>
+<td>0</td>
+</tr>
+<tr>
+<td>眠る(ねむる)</td>
+<td>自动词1类</td>
+<td>睡觉/睡</td>
+<td>0</td>
+</tr>
+<tr>
+<td>体重(たいじゅう)</td>
+<td>名词</td>
+<td>体重</td>
+<td>0</td>
+</tr>
+<tr>
+<td>増える(ふえる)</td>
+<td>自动词2类</td>
+<td>增加</td>
+<td>2</td>
+</tr>
+<tr>
+<td>ロールカード(role card)</td>
+<td>名词</td>
+<td>(会话扮演的)角色卡片</td>
+<td>4</td>
+</tr>
+<tr>
+<td>カード(card)</td>
+<td>名词</td>
+<td>卡/卡片</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ロールプレイ(roleplay)</td>
+<td>名词</td>
+<td>(扮演角色的)会话练习</td>
+<td>5</td>
+</tr>
+<tr>
+<td>プレイ(play)</td>
+<td>名词</td>
+<td>练习</td>
+<td>2</td>
+</tr>
+<tr>
+<td>イメージ(image)</td>
+<td>名词/他动词3类</td>
+<td>印象/形象</td>
+<td>2</td>
+</tr>
+<tr>
+<td>方法(ほうほう)</td>
+<td>名词</td>
+<td>方法</td>
+<td>0</td>
+</tr>
+<tr>
+<td>遅刻(ちこく)</td>
+<td>名词/自动词3类</td>
+<td>迟到</td>
+<td>0</td>
+</tr>
+<tr>
+<td>もう</td>
+<td>副词</td>
+<td>快要/再</td>
+<td>0</td>
+</tr>
+<tr>
+<td>すぐ(に)</td>
+<td>副词</td>
+<td>马上/即将</td>
+<td>1</td>
+</tr>
+<tr>
+<td>はず</td>
+<td>名词</td>
+<td>应该/会</td>
+<td>0</td>
+</tr>
+<tr>
+<td>席(せき)</td>
+<td>名词</td>
+<td>座位/席</td>
+<td>1</td>
+</tr>
+<tr>
+<td>事故(じこ)</td>
+<td>名词</td>
+<td>事故</td>
+<td>1</td>
+</tr>
+<tr>
+<td>～かもしれない</td>
+<td>/</td>
+<td>或许/可能/也许</td>
+<td>/</td>
+</tr>
+<tr>
+<td>一体(いったい)</td>
+<td>副词</td>
+<td>究竟/到底</td>
+<td>0</td>
+</tr>
+<tr>
+<td>途中(とちゅう)</td>
+<td>名词</td>
+<td>途中/半路上</td>
+<td>0</td>
+</tr>
+<tr>
+<td>黙る(だまる)</td>
+<td>自动词1类</td>
+<td>沉默</td>
+<td>2</td>
+</tr>
+<tr>
+<td>え</td>
+<td>感叹词</td>
+<td>表示不解或疑问</td>
+<td>/</td>
+</tr>
+<tr>
+<td>先に(さきに)</td>
+<td>副词</td>
+<td>先/前面</td>
+<td>0</td>
+</tr>
+<tr>
+<td>帰国(きこく)</td>
+<td>名词/自动词3类</td>
+<td>回国</td>
+<td>0</td>
+</tr>
+<tr>
+<td>雪(ゆき)</td>
+<td>名词</td>
+<td>学</td>
+<td>2</td>
+</tr>
+<tr>
+<td>降る(ふる)</td>
+<td>自动词1类</td>
+<td>下(雨、雪等)/降(雨、雪等)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>周(しゅう)</td>
+<td>固有名词</td>
+<td>(姓)周</td>
+<td>1</td>
+</tr>
+<tr>
+<td>財布(さいふ)</td>
+<td>名词</td>
+<td>钱包</td>
+<td>0</td>
+</tr>
+<tr>
+<td>花見(はなみ)</td>
+<td>名词</td>
+<td>赏樱花</td>
+<td>0</td>
+</tr>
+<tr>
+<td>雨(あめ)</td>
+<td>名词</td>
+<td>雨</td>
+<td>1</td>
+</tr>
+<tr>
+<td>思い出す(おもいだす)</td>
+<td>他动词1类</td>
+<td>想起/回忆</td>
+<td>4</td>
+</tr>
+<tr>
+<td>迷う(まよう)</td>
+<td>自动词1类</td>
+<td>迷(路)/迷惘</td>
+<td>2</td>
+</tr>
+<tr>
+<td>忘れ物(わすれもの)</td>
+<td>名词</td>
+<td>忘却的物品/忘记带走的东西</td>
+<td>0</td>
+</tr>
+<tr>
+<td>気づく(きづく)</td>
+<td>自动词1类</td>
+<td>注意/发觉/意识到</td>
+<td>2</td>
+</tr>
+<tr>
+<td>壊れる(こわれる)</td>
+<td>自动词2类</td>
+<td>坏/出故障</td>
+<td>3</td>
+</tr>
+<tr>
+<td>すく</td>
+<td>自动词1类</td>
+<td>饿</td>
+<td>0</td>
+</tr>
+<tr>
+<td>彼(かれ)</td>
+<td>名词</td>
+<td>他/特指男友</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ブログ(blog)</td>
+<td>名词</td>
+<td>博客/个人网页</td>
+<td>0</td>
+</tr>
+<tr>
+<td>やめる</td>
+<td>他动词2类</td>
+<td>放弃/停止/不做</td>
+<td>0</td>
+</tr>
+<tr>
+<td>用事(ようじ)</td>
+<td>名词</td>
+<td>事/必须要做的事情</td>
+<td>0</td>
+</tr>
+<tr>
+<td>笑う(わらう)</td>
+<td>自动词2类</td>
+<td>笑/嘲笑</td>
+<td>0</td>
+</tr>
+<tr>
+<td>泣く(なく)</td>
+<td>自动词2类</td>
+<td>哭/哭泣</td>
+<td>0</td>
+</tr>
+<tr>
+<td>組(くみ)</td>
+<td>名词</td>
+<td>组</td>
+<td>2</td>
+</tr>
+<tr>
+<td>カップル(couple)</td>
+<td>名词</td>
+<td>一对(恋人)/一对(夫妇)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>話し合う(はなしあう)</td>
+<td>自动词1类</td>
+<td>一起说/商量</td>
+<td>4</td>
+</tr>
+<tr>
+<td>マス</td>
+<td>名词</td>
+<td>(一)字格</td>
+<td>2</td>
+</tr>
+<tr>
+<td>ヒント(hint)</td>
+<td>名词</td>
+<td>启示/线索</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ハワイ(Hawaii)</td>
+<td>固有名词</td>
+<td>夏威夷</td>
+<td>1</td>
+</tr>
+<tr>
+<td>カナダ(Canada)</td>
+<td>固有名词</td>
+<td>加拿大</td>
+<td>1</td>
+</tr>
+<tr>
+<td>香港(ほんこん)</td>
+<td>固有名词</td>
+<td>香港</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ポップカルチャー(pop culture)</td>
+<td>名词</td>
+<td>大众文化</td>
+<td>4</td>
+</tr>
+<tr>
+<td>カルチャー(culture)</td>
+<td>名词</td>
+<td>文化</td>
+<td>1</td>
+</tr>
+<tr>
+<td>大衆(たいしゅう)</td>
+<td>名词</td>
+<td>大众</td>
+<td>0</td>
+</tr>
+<tr>
+<td>エンターテインメント(entertainment)</td>
+<td>名词</td>
+<td>娱乐</td>
+<td>5</td>
+</tr>
+<tr>
+<td>受け入れる(うけいれる)</td>
+<td>他动词2类</td>
+<td>接受</td>
+<td>0/4</td>
+</tr>
+<tr>
+<td>広がる(ひろがる)</td>
+<td>自动词1类</td>
+<td>扩大/扩展/流行</td>
+<td>0</td>
+</tr>
+<tr>
+<td>秋(あき)</td>
+<td>名词</td>
+<td>秋/秋天</td>
+<td>1</td>
+</tr>
+<tr>
+<td>観光(かんこう)</td>
+<td>名词/他动词3类</td>
+<td>观光</td>
+<td>0</td>
+</tr>
+<tr>
+<td>彼ら(かれら)</td>
+<td>名词</td>
+<td>他们</td>
+<td>1</td>
+</tr>
+<tr>
+<td>直接(ちょくせつ)</td>
+<td>名词/副词</td>
+<td>直接</td>
+<td>0</td>
+</tr>
+<tr>
+<td>接する(せっする)</td>
+<td>自动词3类</td>
+<td>接待/接/接触</td>
+<td>0/3</td>
+</tr>
+<tr>
+<td>中日国交回復(ちゅうにち-こっこうかいふく)</td>
+<td>名词</td>
+<td>恢复中日邦交</td>
+<td>1-0</td>
+</tr>
+<tr>
+<td>国交(こっこう)</td>
+<td>名词</td>
+<td>邦交</td>
+<td>0</td>
+</tr>
+<tr>
+<td>回復(かいふく)</td>
+<td>名词/他动词3类</td>
+<td>恢复</td>
+<td>0</td>
+</tr>
+<tr>
+<td>周年(しゅうねん)</td>
+<td>/</td>
+<td>周年</td>
+<td>/</td>
+</tr>
+<tr>
+<td>記念日(きねんび)</td>
+<td>名词</td>
+<td>纪念日</td>
+<td>2</td>
+</tr>
+<tr>
+<td>記念(きねん)</td>
+<td>名词/他动词3类</td>
+<td>纪念</td>
+<td>0</td>
+</tr>
+<tr>
+<td>バンド(band)</td>
+<td>名词</td>
+<td>乐队/乐团</td>
+<td>0</td>
+</tr>
+<tr>
+<td>歌手(かしゅ)</td>
+<td>名词</td>
+<td>歌手/歌星</td>
+<td>1</td>
+</tr>
+<tr>
+<td>生(なま)</td>
+<td>名词/形容词2类</td>
+<td>现场的/实况的/生的/真实的</td>
+<td>1</td>
+</tr>
+<tr>
+<td>演奏(えんそう)</td>
+<td>名词/他动词3类</td>
+<td>演奏</td>
+<td>0</td>
+</tr>
+<tr>
+<td>更に(さらに)</td>
+<td>副词</td>
+<td>而且/更加</td>
+<td>1</td>
+</tr>
+<tr>
+<td>普及(ふきゅう)</td>
+<td>名词/自动词3类/他动词3类</td>
+<td>普及</td>
+<td>0</td>
+</tr>
+<tr>
+<td>でも</td>
+<td>取立て助</td>
+<td>接疑问词后，表示全称肯定</td>
+<td>/</td>
+</tr>
+<tr>
+<td>最新(さいしん)</td>
+<td>名词</td>
+<td>最新</td>
+<td>0</td>
+</tr>
+<tr>
+<td>触れる(ふれる)</td>
+<td>自动词2类</td>
+<td>触碰/碰/接触</td>
+<td>0</td>
+</tr>
+<tr>
+<td>このよう</td>
+<td>形容词2类</td>
+<td>这样/如此的</td>
+<td>3</td>
+</tr>
+<tr>
+<td>現状(げんじょう)</td>
+<td>名词</td>
+<td>现状</td>
+<td>0</td>
+</tr>
+<tr>
+<td>肯定(こうてい)</td>
+<td>名词/他动词3类</td>
+<td>肯定</td>
+<td>0</td>
+</tr>
+<tr>
+<td>意見(いけん)</td>
+<td>名词/他动词3类</td>
+<td>意见/劝告/提意见</td>
+<td>1</td>
+</tr>
+<tr>
+<td>否定(ひてい)</td>
+<td>名词/他动词3类</td>
+<td>否定</td>
+<td>0</td>
+</tr>
+<tr>
+<td>伝統(でんとう)</td>
+<td>名词</td>
+<td>传统</td>
+<td>0</td>
+</tr>
+<tr>
+<td>消える(きえる)</td>
+<td>自动词2类</td>
+<td>消失</td>
+<td>0</td>
+</tr>
+<tr>
+<td>互い(たがい)</td>
+<td>名词</td>
+<td>相互</td>
+<td>0</td>
+</tr>
+<tr>
+<td>親しみ(したしみ)</td>
+<td>名词</td>
+<td>亲切/亲近感/亲密感</td>
+<td>0</td>
+</tr>
+<tr>
+<td>感じる(かんじる)</td>
+<td>他动词2类</td>
+<td>感觉/感知/感到</td>
+<td>0</td>
+</tr>
+<tr>
+<td>つまり</td>
+<td>接续词</td>
+<td>即/换言之/就是说</td>
+<td>1</td>
+</tr>
+<tr>
+<td>役立てる(やくだてる)</td>
+<td>他动词2类</td>
+<td>有用/起作用</td>
+<td>4</td>
+</tr>
+<tr>
+<td>～といる</td>
+<td>/</td>
+<td>所谓~</td>
+<td>/</td>
+</tr>
+<tr>
+<td>排除(はいじょ)</td>
+<td>名词/他动词3类</td>
+<td>排除/驱逐</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ますます</td>
+<td>副词</td>
+<td>愈发/越来越~</td>
+<td>2</td>
+</tr>
+<tr>
+<td>活発(かっぱつ)</td>
+<td>形容词2类</td>
+<td>活泼/频繁</td>
+<td>0</td>
+</tr>
+<tr>
+<td>どのよう</td>
+<td>形容词2类</td>
+<td>怎样的/什么样的</td>
+<td>1</td>
+</tr>
+<tr>
+<td>与える(あたえる)</td>
+<td>他动词2类</td>
+<td>给予/给</td>
+<td>0</td>
+</tr>
+<tr>
+<td>国境(こっきょう)</td>
+<td>名词</td>
+<td>国境/国界</td>
+<td>0</td>
+</tr>
+<tr>
+<td>疑問詞(ぎもんし)</td>
+<td>名词</td>
+<td>疑问词</td>
+<td>2</td>
+</tr>
+<tr>
+<td>疑問(ぎもん)</td>
+<td>名词</td>
+<td>疑问词</td>
+<td>0</td>
+</tr>
+<tr>
+<td>詞(し)</td>
+<td>/</td>
+<td>~词</td>
+<td>/</td>
+</tr>
+<tr>
+<td>ところ</td>
+<td>名词</td>
+<td>地方/位置/地点</td>
+<td>0</td>
+</tr>
+<tr>
+<td>全く(まったく)</td>
+<td>副词</td>
+<td>完全</td>
+<td>0</td>
+</tr>
+<tr>
+<td>法(ほう)</td>
+<td>名词</td>
+<td>~法/方法/手段</td>
+<td>0</td>
+</tr>
+<tr>
+<td>基礎(きそ)</td>
+<td>名词</td>
+<td>基础</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ゆっくり</td>
+<td>副词</td>
+<td>充分/好好地</td>
+<td>3</td>
+</tr>
+<tr>
+<td>洋服(ようふく)</td>
+<td>名词</td>
+<td>衣服/西服</td>
+<td>0</td>
+</tr>
+<tr>
+<td>世代(せだい)</td>
+<td>名词</td>
+<td>同一时代的人们/同辈/世代</td>
+<td>1/0</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语单词</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>综合日语第18课单词</title>
+    <url>/2020/12/20/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC18%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第18课日语单词笔记"><a href="#第18课日语单词笔记" class="headerlink" title="第18课日语单词笔记"></a>第18课日语单词笔记</h3><p>这里是《综合日语》的第十八课的所有单词记录。</p>
+<p>注意:此页面还再编辑中</p>
+<div id="echarts6888" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts6888'));
+        // 指定图表的配置项和数据
+        var option = option = {
+    title: {
+        text: '第18课单词',
+        subtext: '各词性统计-共计???个单词。统计了高频词汇和低频词汇,人工统计，不一定是???个',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['名词', '固有名词', '解释性词性', '副词', '他动词1类', '他动词2类', '他动词3类', '自动词1类', '自动词2类', '自动词3类', '形容词2类', '取立て助', '接助词', '格助词', '感叹词', '接续词']
+    },
+    series: [
+        {
+            name: '此词性数量',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: [
+                {value: 80, name: '名词'},
+                {value: 5, name: '固有名词'},
+                {value: 9, name: '解释性词性'},
+                {value: 12, name: '副词'},
+                {value: 2, name: '他动词1类'},
+                {value: 7, name: '他动词2类'},
+                {value: 11, name: '他动词3类'},
+                {value: 12, name: '自动词1类'},
+                {value: 8, name: '自动词2类'},
+                {value: 4, name: '自动词3类'},
+                {value: 5, name: '形容词2类'},
+                {value: 1, name: '取立て助'},
+                {value: 2, name: '接助词'},
+                {value: 1, name: '格助词'},
+                {value: 2, name: '感叹词'},
+                {value: 1, name: '接续词'}
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+<a id="more"></a>
+
+<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>词性</th>
+<th>翻译</th>
+<th>声调</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>診察(しんさつ)</td>
+<td>名词/他动词3类</td>
+<td>诊断/看病</td>
+<td>0</td>
+</tr>
+<tr>
+<td>体(からだ)</td>
+<td>名词</td>
+<td>身体</td>
+<td>0</td>
+</tr>
+<tr>
+<td>調子(ちょうし)</td>
+<td>名词</td>
+<td>(身体)状况/状态</td>
+<td>0</td>
+</tr>
+<tr>
+<td>熱(ねつ)</td>
+<td>名词</td>
+<td>热/发烧</td>
+<td>2</td>
+</tr>
+<tr>
+<td>下がる(さがる)</td>
+<td>自动词1类</td>
+<td>下/降/垂</td>
+<td>2</td>
+</tr>
+<tr>
+<td>それに</td>
+<td>接续词</td>
+<td>而且</td>
+<td>0</td>
+</tr>
+<tr>
+<td>咽喉(のど)</td>
+<td>名词</td>
+<td>喉咙/嗓子</td>
+<td>1</td>
+</tr>
+<tr>
+<td>計る(はがる)</td>
+<td>他动词1类</td>
+<td>量/测</td>
+<td>2</td>
+</tr>
+<tr>
+<td>はい</td>
+<td>感叹词</td>
+<td>表示引起对方的注意</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ずいぶん</td>
+<td>副词</td>
+<td>很/非常/相当</td>
+<td>1</td>
+</tr>
+<tr>
+<td>腫れる(はれる)</td>
+<td>自动词2类</td>
+<td>肿</td>
+<td>0</td>
+</tr>
+<tr>
+<td>はい</td>
+<td>感叹词</td>
+<td>好啦/表示允许对方结束其动作</td>
+<td>1</td>
+</tr>
+<tr>
+<td>食欲(しょくよく)</td>
+<td>名词</td>
+<td>食欲</td>
+<td>2/0</td>
+</tr>
+<tr>
+<td>ストレス(stress)</td>
+<td>名词</td>
+<td>压力/紧张</td>
+<td>2</td>
+</tr>
+<tr>
+<td>溜まる(たまる)</td>
+<td>自动词1类</td>
+<td>堆/积/集中</td>
+<td>0</td>
+</tr>
+<tr>
+<td>息抜き(いきぬき)</td>
+<td>名词/自动词3类</td>
+<td>放松/休息</td>
+<td>0/3/4</td>
+</tr>
+<tr>
+<td>体温計(たいおんけい)</td>
+<td>名词</td>
+<td>体温计/体温表</td>
+<td>0/3</td>
+</tr>
+<tr>
+<td>体温(たいおん)</td>
+<td>名词</td>
+<td>提问</td>
+<td>1</td>
+</tr>
+<tr>
+<td>計(けい)</td>
+<td>/</td>
+<td><del>计/</del>表</td>
+<td>/</td>
+</tr>
+<tr>
+<td>度(ど)</td>
+<td>/</td>
+<td>度数/度</td>
+<td>/</td>
+</tr>
+<tr>
+<td>分(ぶん)</td>
+<td>/</td>
+<td>分/厘</td>
+<td>/</td>
+</tr>
+<tr>
+<td>かなり</td>
+<td>副词</td>
+<td>相当/很</td>
+<td>1</td>
+</tr>
+<tr>
+<td>つらい</td>
+<td>形容词1类</td>
+<td>难受/不舒服/痛苦</td>
+<td>2/0</td>
+</tr>
+<tr>
+<td>分(ぶん)</td>
+<td>/</td>
+<td>量/分量</td>
+<td>/</td>
+</tr>
+<tr>
+<td>朝晩(あさばん)</td>
+<td>名词</td>
+<td>早晚/早上和晚上</td>
+<td>1</td>
+</tr>
+<tr>
+<td>錠(じょう)</td>
+<td>/</td>
+<td>粒/片</td>
+<td>/</td>
+</tr>
+<tr>
+<td>食前(しょくぜん)</td>
+<td>名词</td>
+<td>饭前</td>
+<td>0</td>
+</tr>
+<tr>
+<td>前(ぜん)</td>
+<td>/</td>
+<td>~之前</td>
+<td>/</td>
+</tr>
+<tr>
+<td>それとも</td>
+<td>接续词</td>
+<td>或者/还是</td>
+<td>3</td>
+</tr>
+<tr>
+<td>食後(しょくご)</td>
+<td>名词</td>
+<td>饭后</td>
+<td>0</td>
+</tr>
+<tr>
+<td>後(ご)</td>
+<td>/</td>
+<td>~之后</td>
+<td>/</td>
+</tr>
+<tr>
+<td>うがい薬(うがいぐすり)</td>
+<td>名词</td>
+<td>漱口药水</td>
+<td>4</td>
+</tr>
+<tr>
+<td>できるだけ</td>
+<td>副词</td>
+<td>尽可能/尽量</td>
+<td>0</td>
+</tr>
+<tr>
+<td>うがい</td>
+<td>名词</td>
+<td>漱口</td>
+<td>0</td>
+</tr>
+<tr>
+<td>～ようにする</td>
+<td>/</td>
+<td>表示实施意志性的动作/行为/要/决定</td>
+<td>/</td>
+</tr>
+<tr>
+<td>2、3日(に、さんにち)</td>
+<td>名词</td>
+<td>两、三天</td>
+<td>2</td>
+</tr>
+<tr>
+<td>日(にち)</td>
+<td>/</td>
+<td>日/天</td>
+<td>/</td>
+</tr>
+<tr>
+<td>～通り(とおり)</td>
+<td>/</td>
+<td>正如/就像</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ちゃんと</td>
+<td>副词</td>
+<td>确实/一定</td>
+<td>0</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语单词</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>综合日语第19课单词</title>
+    <url>/2020/12/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC19%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第19课日语单词笔记"><a href="#第19课日语单词笔记" class="headerlink" title="第19课日语单词笔记"></a>第19课日语单词笔记</h3><p>这里是关于我所学习的第19课单词记录</p>
+<div id="echarts2376" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts2376'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -12978,11 +14408,11 @@
     <title>综合日语第20课单词</title>
     <url>/2020/12/27/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC20%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第20课日语单词笔记"><a href="#第20课日语单词笔记" class="headerlink" title="第20课日语单词笔记"></a>第20课日语单词笔记</h3><p>这里是关于我所学习的第20课单词记录</p>
-<div id="echarts8573" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts6681" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts8573'));
+        var myChart = echarts.init(document.getElementById('echarts6681'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -13656,12 +15086,12 @@
   <entry>
     <title>综合日语第5课单词</title>
     <url>/2020/12/20/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC5%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
-    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第5课日语单词笔记"><a href="#第5课日语单词笔记" class="headerlink" title="第5课日语单词笔记"></a>第5课日语单词笔记</h3><p>这里是《综合日语》的第5课的所有单词记录。</p>
-<div id="echarts5864" style="width: 100%;height: 400px;margin: 0 auto"></div>
+    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第5课日语单词笔记"><a href="#第5课日语单词笔记" class="headerlink" title="第5课日语单词笔记"></a>第5课日语单词笔记</h3><p>这里是《综合日语》的第五课的所有单词记录。</p>
+<div id="echarts354" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts5864'));
+        var myChart = echarts.init(document.getElementById('echarts354'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -14696,12 +16126,12 @@
   <entry>
     <title>综合日语第6课单词</title>
     <url>/2020/12/20/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC6%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
-    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第6课日语单词笔记"><a href="#第6课日语单词笔记" class="headerlink" title="第6课日语单词笔记"></a>第6课日语单词笔记</h3><p>这里是《综合日语》的第6课的所有单词记录。</p>
-<div id="echarts4375" style="width: 100%;height: 400px;margin: 0 auto"></div>
+    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第6课日语单词笔记"><a href="#第6课日语单词笔记" class="headerlink" title="第6课日语单词笔记"></a>第6课日语单词笔记</h3><p>这里是《综合日语》的第六课的所有单词记录。</p>
+<div id="echarts9682" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts4375'));
+        var myChart = echarts.init(document.getElementById('echarts9682'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -15928,14 +17358,14 @@
       </tags>
   </entry>
   <entry>
-    <title>日语第九课单词</title>
+    <title>综合日语第9课单词</title>
     <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC9%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
-    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第9课日语单词笔记"><a href="#第9课日语单词笔记" class="headerlink" title="第9课日语单词笔记"></a>第9课日语单词笔记</h3><p>这里是《综合日语》的第9课的所有单词记录。</p>
-<div id="echarts4830" style="width: 100%;height: 400px;margin: 0 auto"></div>
+    <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第9课日语单词笔记"><a href="#第9课日语单词笔记" class="headerlink" title="第9课日语单词笔记"></a>第9课日语单词笔记</h3><p>这里是《综合日语》的第九课的所有单词记录。</p>
+<div id="echarts1498" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts4830'));
+        var myChart = echarts.init(document.getElementById('echarts1498'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
