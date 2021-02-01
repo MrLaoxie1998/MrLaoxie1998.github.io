@@ -192,6 +192,296 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2021/01/31/C%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0/C%E8%AF%AD%E8%A8%80%E9%9A%8F%E7%AC%94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/01/31/C%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0/C%E8%AF%AD%E8%A8%80%E9%9A%8F%E7%AC%94/" class="post-title-link" itemprop="url">C语言随笔</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-01-31 22:52:04" itemprop="dateCreated datePublished" datetime="2021-01-31T22:52:04+08:00">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-01 18:25:36" itemprop="dateModified" datetime="2021-02-01T18:25:36+08:00">2021-02-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="C语言随笔"><a href="#C语言随笔" class="headerlink" title="C语言随笔"></a>C语言随笔</h1><style>
+table {
+margin: auto;
+}
+</style>
+
+<h3 id="显示输出-system-“printf”"><a href="#显示输出-system-“printf”" class="headerlink" title="显示输出:system(“printf”);"></a>显示输出:system(“printf”);</h3><p>printf就是告诉计算机他需要打印出什么语言,然后使用括号进行包含，最后;号代表这句话的结束。</p>
+<h3 id="设置背景色和文字颜色的方法"><a href="#设置背景色和文字颜色的方法" class="headerlink" title="设置背景色和文字颜色的方法"></a>设置背景色和文字颜色的方法</h3><p>system(“color f5”);</p>
+<p>这个意思就是color为颜色，而第一位f表示背景色，第二位数字5表示的是文字颜色,如果color后面只加了一个一位数字，则表示只设置文字颜色，背景颜色仍然使用默认的颜色。</p>
+<p>注意:这里的一位数字其实就是16进制的数，他只能是0、1、2、3、4、5、6、7、8、9、a、b、c、d、e、f中某一个数。 </p>
+<h3 id="计算机如何计数-加减乘除"><a href="#计算机如何计数-加减乘除" class="headerlink" title="计算机如何计数(加减乘除)"></a>计算机如何计数(加减乘除)</h3><p>//定义、申请小房子<br>int a,b,c</p>
+<p>//把数字放到小房子去<br>如:a=1;<br>     b=2;</p>
+<p>注意:”=”号等于赋值符号，赋值符号的作用就是相当于一只手，把数字放到小盒子中。<br>让计算机进行计算(求和)</p>
+<p>首先例子如下:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义、申请小房子</span></span><br><span class="line"><span class="keyword">int</span> a,b,c;</span><br><span class="line"><span class="comment">//把数字放到小房子去</span></span><br><span class="line">a=<span class="number">1</span>;</span><br><span class="line">b=<span class="number">2</span>;</span><br><span class="line"><span class="comment">//求和后再放入小房子c</span></span><br><span class="line">c=a+b;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>注意:a) =等号不是数学上的相等,<br>         b) 在这里是赋值符号，是把右边的值赋予左边的意思</p>
+<p> 计算机如何说出结果(求和)<br>如:如何把小房子c里面的存储的数进行输出？</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义、申请小房子</span></span><br><span class="line"><span class="keyword">int</span> a,b,c;</span><br><span class="line"><span class="comment">//把数字放到小房子去</span></span><br><span class="line">a=<span class="number">1</span>;</span><br><span class="line">b=<span class="number">2</span>;</span><br><span class="line"><span class="comment">//求和后再放入小房子c</span></span><br><span class="line">c=a+b;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,c);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="C语言的数字变量"><a href="#C语言的数字变量" class="headerlink" title="C语言的数字变量"></a>C语言的数字变量</h3><p>样例:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">    a=<span class="number">1.5</span>;</span><br><span class="line">    b=a*<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,a);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,b);</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行结果后，答案则是1和2</p>
+<p>整数:int 小数:float </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    a=<span class="number">1</span>;</span><br><span class="line">    a=<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>答案为2(字符赋值顺序问题):因为a里面存储的是1，然后2过来了，2把1挤跑了，就存放2，这是因为这个单元格内仅仅能够存放一个值，如果多次给小房子A赋值，小房子A只能存放最后一次给他赋值的那个数字。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a;</span><br><span class="line">    a=<span class="number">7</span>;</span><br><span class="line">    a=a+<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>答案为8(符号优先级问题):这句话中有两个操作符，第一个是+号，另外一个是=号(也就是赋值号)，因为+号的优先级要比=号要高。</p>
+<p>关于整数int与浮点数float的区别:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;										</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    a=<span class="number">1</span>;</span><br><span class="line">    a=<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">float</span> a,b,c;</span><br><span class="line">    a=<span class="number">5.2</span>;</span><br><span class="line">    b=<span class="number">3.1</span>;</span><br><span class="line">    c=a+b;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%f&quot;</span>,c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里的第一个区别就是，两者的输出使用的百分号后面跟的字母不一样，整数int使用的是%d，而浮点数float使用的是%f来定义。 </p>
+<h3 id="关于C语言的数据输入"><a href="#关于C语言的数据输入" class="headerlink" title="关于C语言的数据输入"></a>关于C语言的数据输入</h3><p>–我说算什么它就算什么</p>
+<p>让计算机学会听则使用scanf ,这个单词有两个意思组成:一个是scan(扫描),还有一个是format(格式化)。意思就是这个系统函数会把计算机听到的内容告诉给你的程序。<br>–计算机”说话”的过程，我们称为”输出”<br>–计算机”听”的过程，我们则称为”输入/读入”。</p>
+<p>如何让计算机进行读入。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br></pre></td></tr></table></figure>
+
+<p>注意:&amp;符号称之为”取地址符”，简称”取址符”。这个的作用就是得到”小房子”a的地址。</p>
+<p>使用键盘读入两个数,并将这两个数输出。</p>
+<p>方法1:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;b);</span><br></pre></td></tr></table></figure>
+
+<p>方法2:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>,&amp;a,&amp;b);     <span class="comment">//注意，这两个%d之间必须要用空格进行隔开</span></span><br></pre></td></tr></table></figure>
+
+<p>所以完整程序如下:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,a);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>制作一个2位数加法计算器</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b,c;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;b);</span><br><span class="line">    </span><br><span class="line">	c = a + b;	</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,c);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>数据类型(关于C语言有多少种不同的小房子)</p>
+<p>再计算机中，不同的类型数据需要相应类型的小格子来存储</p>
+<ol>
+<li>整数则是使用int 如int a,b,c; (1,2,3,4,5…)</li>
+<li>浮点数则是使用float 如float a,b,c; (3.1415927…)</li>
+<li>双精度浮点小数位则是使用double 如double a,b,c; (3.14159265358979…)</li>
+<li> 字符类型则是使用char来进行存放 (‘+’ ‘0’ ‘@’ ‘a’)</li>
+</ol>
+<p>C语言中常用的数据类型有以下四种</p>
+<table>
+<thead>
+<tr>
+<th align="center">数据类型名称</th>
+<th align="center">用来存放哪种数据</th>
+<th align="center">数据范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">int</td>
+<td align="center">用来存放整数</td>
+<td align="center">-2147483648 ~ 2147483648</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">用来存放浮点数</td>
+<td align="center">3.4X10⁻³⁸ ~  3.4X10³⁸</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">用来存放极大和极小的浮点数</td>
+<td align="center">1.7X10⁻³⁰⁸ ~ 1.7X10³⁰⁸</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">用来存放字符</td>
+<td align="center">256种字符</td>
+</tr>
+</tbody></table>
+<p>数据范围是什么意思?如何用程序来说明?</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    a = <span class="number">2147483648</span>;       <span class="comment">//此时如果你尝试去运行，他会输出一个负数的-2147483648</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    a = <span class="number">2147483647</span>;       <span class="comment">//讲数值调小1位则正常输出</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>数据范围的上限，他就会溢出则变为负数。</p>
+<h3 id="关于float和double的区别"><a href="#关于float和double的区别" class="headerlink" title="关于float和double的区别"></a>关于float和double的区别</h3><p>举个例子</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">float</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">float</span> a;</span><br><span class="line">    a=<span class="number">3.1415926535897932</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.15f&quot;</span>,a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a;</span><br><span class="line">    a=<span class="number">3.1415926535897932</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.15lf&quot;</span>,a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意:.15是数字lf是字母Lf</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a;</span><br><span class="line">    a = <span class="number">3.1415926535897932</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.15lf&quot;</span>,a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="char字符类型"><a href="#char字符类型" class="headerlink" title="char字符类型"></a>char字符类型</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%c&quot;</span>,&amp;a);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;你刚才输入的字符是 %c&quot;</span>,a);</span><br></pre></td></tr></table></figure>
+<p>验证一下:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> a;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%C&quot;</span>,&amp;a);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;you input a char is : %c&quot;</span>,a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果，输入了多个字母，那么字母是什么呢？<br>答:输出的字符如果是多个那么会按照第一个字符来显示<br>总结一下:</p>
+<center>四种常见的数据类型及其占位符</center>
+
+<table>
+<thead>
+<tr>
+<th align="center">数据类型名称</th>
+<th align="center">占位符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">int</td>
+<td align="center">%d</td>
+</tr>
+<tr>
+<td align="center">float</td>
+<td align="center">%f</td>
+</tr>
+<tr>
+<td align="center">double</td>
+<td align="center">%lf 注意这里是字母l不是i</td>
+</tr>
+<tr>
+<td align="center">char</td>
+<td align="center">%c</td>
+</tr>
+<tr>
+<td align="center">以及保留小数位的方法</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>计算机如何判断大小关系?</p>
+<center>在计算机里面有6种常见的符号类型</center>
+
+<table>
+<thead>
+<tr>
+<th align="center">符号类型</th>
+<th align="center">意思</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">==</td>
+<td align="center">等于</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td align="center">大于</td>
+</tr>
+<tr>
+<td align="center">&lt;</td>
+<td align="center">小于</td>
+</tr>
+<tr>
+<td align="center">&gt;=</td>
+<td align="center">大于等于</td>
+</tr>
+<tr>
+<td align="center">&lt;=</td>
+<td align="center">小于等于</td>
+</tr>
+<tr>
+<td align="center">!=</td>
+<td align="center">不等于</td>
+</tr>
+</tbody></table>
+<p>表达式的正确写法及错误写法<br>1.正确:<br>    - 5&gt;=4<br>    - 7!=8<br>    - a&lt;b<br>    - c==d<br>2.错误:<br>    - 4=&lt;7<br>    - 8=&gt;3</p>
+<p>如何判断一个整数是否大于0?如果大于零显示yes如果不是则什么都不显示。<br>1.输入一个整数<br>scanf(“%d”,&amp;a);<br>2.判断是否是正数，输出判断结果。<br>if (a&gt;0) printf(“yes”);</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br><span class="line">    <span class="keyword">if</span>(a&gt;<span class="number">0</span>)<span class="built_in">printf</span>(<span class="string">&quot;yes&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span>(a&lt;<span class="number">0</span>)<span class="built_in">printf</span>(<span class="string">&quot;no&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>判断一个整数的正零负情况?其中正数输出2,0输出0,负数输出-1</p>
+<ul>
+<li><h4 id="1-输入一个整数"><a href="#1-输入一个整数" class="headerlink" title="1 输入一个整数"></a>1 输入一个整数</h4><blockquote>
+<p>scanf(“%d”,&amp;a);</p>
+</blockquote>
+</li>
+<li><h4 id="2-判断并输出结果"><a href="#2-判断并输出结果" class="headerlink" title="2 判断并输出结果"></a>2 判断并输出结果</h4><blockquote>
+<p>if (a&gt;0) printf(“1”);<br>if (a==0) printf(“0”);<br>if (a&lt;0) printf(“-1”);</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br><span class="line">    <span class="keyword">if</span> (a&gt;<span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (a==<span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (a&lt;<span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">&quot;-1&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+进阶处理</li>
+<li><h4 id="1-输入一个整数-1"><a href="#1-输入一个整数-1" class="headerlink" title="1 输入一个整数"></a>1 输入一个整数</h4><blockquote>
+<p>scanf(“%d”,&amp;a);</p>
+</blockquote>
+</li>
+<li><h4 id="2-判断并输出结果-1"><a href="#2-判断并输出结果-1" class="headerlink" title="2 判断并输出结果"></a>2 判断并输出结果</h4><blockquote>
+<p>if (a&gt;0) k=1;<br>if (a==0) k=0;<br>if (a&lt;0) k=-1;</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br><span class="line">    <span class="keyword">if</span> (a&gt;<span class="number">0</span>) k=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (a==<span class="number">0</span>) k=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (a&lt;<span class="number">0</span>) k=<span class="number">-1</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,k);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如何判断两个数是否相等，比如说输入两个整数，如果相等则输出1，如果大于则输出0，如果小于则输出0。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b,k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>,&amp;a,&amp;b);</span><br><span class="line">    <span class="keyword">if</span> (a&gt;b) k=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (a&lt;=b) k=<span class="number">0</span>;</span><br><span class="line">    <span class="comment">//if (a&lt;b) k=0;</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,k);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>整除、取余运算<br>下面是整出运算的例子:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">K = <span class="number">10</span>/<span class="number">3</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,k);</span><br></pre></td></tr></table></figure>
+<p>取余运算(取一个运算的余数，又称为模运算)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k = <span class="number">10</span>%<span class="number">2</span> = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<center>那么如何判断一个偶数？</center>
+假设输入一个整数，如果是偶数输出1,如果是奇数则输出0。
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b,k;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br><span class="line">    <span class="keyword">if</span>(a%<span class="number">2</span>==<span class="number">0</span>) k=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(a%<span class="number">2</span>!=<span class="number">0</span>) k=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,k);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>else学习</p>
+<p>如果(a除以2的余数和0相等)输出yes否则输出no，所以使用C语言的描述就是这样的。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(a%<span class="number">2</span>==<span class="number">0</span>)<span class="built_in">printf</span>(<span class="string">&quot;yes&quot;</span>);</span><br><span class="line"><span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;no&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>if-else语句的语法格式</p>
+<ul>
+<li><h4 id="写法1"><a href="#写法1" class="headerlink" title="写法1:"></a>写法1:</h4><blockquote>
+<p><font style="color:black">if(条件)语句;<br>else语句;</font></p>
+</blockquote>
+</li>
+<li><h4 id="写法2-美化"><a href="#写法2-美化" class="headerlink" title="写法2:(美化)"></a>写法2:(美化)</h4><blockquote>
+<p><font style="color:black">if(条件)<br>  语句;<br>else<br>  语句;</font></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line">&gt;<span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line">&gt;<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">&gt;<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">&gt;</span>&#123;</span><br><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);</span><br><span class="line"><span class="keyword">if</span>(a%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;yes&quot;</span>);</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;no&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
+<p><font style="color:red">注意，这个else一定要求有前面的if</font></p>
+</blockquote>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/12/27/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC20%E8%AF%BE%E5%8D%95%E8%AF%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -251,11 +541,11 @@
 
       
           <h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第20课日语单词笔记"><a href="#第20课日语单词笔记" class="headerlink" title="第20课日语单词笔记"></a>第20课日语单词笔记</h3><p>这里是关于我所学习的第20课单词记录</p>
-<div id="echarts6113" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts7755" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts6113'));
+        var myChart = echarts.init(document.getElementById('echarts7755'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -397,11 +687,11 @@
       
           <h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第18课日语单词笔记"><a href="#第18课日语单词笔记" class="headerlink" title="第18课日语单词笔记"></a>第18课日语单词笔记</h3><p>这里是《综合日语》的第十八课的所有单词记录。</p>
 <p>注意:此页面还再编辑中</p>
-<div id="echarts292" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts1790" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts292'));
+        var myChart = echarts.init(document.getElementById('echarts1790'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -541,11 +831,11 @@
 
       
           <h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第17课日语单词笔记"><a href="#第17课日语单词笔记" class="headerlink" title="第17课日语单词笔记"></a>第17课日语单词笔记</h3><p>这里是《综合日语》的第十七课的所有单词记录。</p>
-<div id="echarts9963" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts5055" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts9963'));
+        var myChart = echarts.init(document.getElementById('echarts5055'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -685,11 +975,11 @@
 
       
           <h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第5课日语单词笔记"><a href="#第5课日语单词笔记" class="headerlink" title="第5课日语单词笔记"></a>第5课日语单词笔记</h3><p>这里是《综合日语》的第五课的所有单词记录。</p>
-<div id="echarts2003" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts3554" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts2003'));
+        var myChart = echarts.init(document.getElementById('echarts3554'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -825,11 +1115,11 @@
 
       
           <h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第6课日语单词笔记"><a href="#第6课日语单词笔记" class="headerlink" title="第6课日语单词笔记"></a>第6课日语单词笔记</h3><p>这里是《综合日语》的第六课的所有单词记录。</p>
-<div id="echarts67" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts6766" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts67'));
+        var myChart = echarts.init(document.getElementById('echarts6766'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -1055,11 +1345,11 @@
 
       
           <h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第16课日语单词笔记"><a href="#第16课日语单词笔记" class="headerlink" title="第16课日语单词笔记"></a>第16课日语单词笔记</h3><p>这里是《综合日语》的第十六课的所有单词记录。</p>
-<div id="echarts9041" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts4424" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts9041'));
+        var myChart = echarts.init(document.getElementById('echarts4424'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -1192,11 +1482,11 @@
 
       
           <h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第19课日语单词笔记"><a href="#第19课日语单词笔记" class="headerlink" title="第19课日语单词笔记"></a>第19课日语单词笔记</h3><p>这里是关于我所学习的第19课单词记录</p>
-<div id="echarts6648" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts6758" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts6648'));
+        var myChart = echarts.init(document.getElementById('echarts6758'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -1930,70 +2220,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/12/13/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E5%A4%8D%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="MrLaoxie1998">
-      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="9之数据库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/12/13/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E5%A4%8D%E4%B9%A0/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-12-13 22:44:38" itemprop="dateCreated datePublished" datetime="2020-12-13T22:44:38+08:00">2020-12-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-21 20:05:58" itemprop="dateModified" datetime="2020-11-21T20:05:58+08:00">2020-11-21</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2065,7 +2291,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
