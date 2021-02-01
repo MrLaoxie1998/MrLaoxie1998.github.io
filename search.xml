@@ -60,6 +60,8 @@ margin: auto;
 </style>
 
 <h3 id="显示输出-system-“printf”"><a href="#显示输出-system-“printf”" class="headerlink" title="显示输出:system(“printf”);"></a>显示输出:system(“printf”);</h3><p>printf就是告诉计算机他需要打印出什么语言,然后使用括号进行包含，最后;号代表这句话的结束。</p>
+<a id="more"></a>
+
 <h3 id="设置背景色和文字颜色的方法"><a href="#设置背景色和文字颜色的方法" class="headerlink" title="设置背景色和文字颜色的方法"></a>设置背景色和文字颜色的方法</h3><p>system(“color f5”);</p>
 <p>这个意思就是color为颜色，而第一位f表示背景色，第二位数字5表示的是文字颜色,如果color后面只加了一个一位数字，则表示只设置文字颜色，背景颜色仍然使用默认的颜色。</p>
 <p>注意:这里的一位数字其实就是16进制的数，他只能是0、1、2、3、4、5、6、7、8、9、a、b、c、d、e、f中某一个数。 </p>
@@ -1530,11 +1532,11 @@ margin: auto;
     <title>综合日语第13课单词</title>
     <url>/2020/07/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC13%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第13课日语单词笔记"><a href="#第13课日语单词笔记" class="headerlink" title="第13课日语单词笔记"></a>第13课日语单词笔记</h3><p>这里是《综合日语》的第十三课的所有单词记录。</p>
-<div id="echarts7054" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts1832" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts7054'));
+        var myChart = echarts.init(document.getElementById('echarts1832'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -2519,11 +2521,11 @@ margin: auto;
     <title>综合日语第14课单词</title>
     <url>/2020/08/01/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC14%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第14课日语单词笔记"><a href="#第14课日语单词笔记" class="headerlink" title="第14课日语单词笔记"></a>第14课日语单词笔记</h3><p>这里是《综合日语》的第十四课的所有单词记录。</p>
-<div id="echarts6028" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts4930" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts6028'));
+        var myChart = echarts.init(document.getElementById('echarts4930'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -3274,11 +3276,11 @@ margin: auto;
     <title>综合日语第15课单词</title>
     <url>/2020/08/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC15%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第15课日语单词笔记"><a href="#第15课日语单词笔记" class="headerlink" title="第15课日语单词笔记"></a>第15课日语单词笔记</h3><p>这里是《综合日语》的第十五课的所有单词记录。</p>
-<div id="echarts5999" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts7119" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts5999'));
+        var myChart = echarts.init(document.getElementById('echarts7119'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -4556,11 +4558,11 @@ margin: auto;
     <title>综合日语第7课单词</title>
     <url>/2020/06/07/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC7%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第7课日语单词笔记"><a href="#第7课日语单词笔记" class="headerlink" title="第7课日语单词笔记"></a>第7课日语单词笔记</h3><p>这里是《综合日语》的第七课的所有单词记录。</p>
-<div id="echarts4363" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts8830" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts4363'));
+        var myChart = echarts.init(document.getElementById('echarts8830'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -5547,11 +5549,11 @@ margin: auto;
     <title>综合日语第8课单词</title>
     <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC8%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第8课日语单词笔记"><a href="#第8课日语单词笔记" class="headerlink" title="第8课日语单词笔记"></a>第8课日语单词笔记</h3><p>这里是《综合日语》的第八课的所有单词记录。</p>
-<div id="echarts1547" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts4869" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts1547'));
+        var myChart = echarts.init(document.getElementById('echarts4869'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -7708,11 +7710,11 @@ margin: auto;
     <title>综合日语第10课单词</title>
     <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC10%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第10课日语单词笔记"><a href="#第10课日语单词笔记" class="headerlink" title="第10课日语单词笔记"></a>第10课日语单词笔记</h3><p>这里是《综合日语》的第十课的所有单词记录。</p>
-<div id="echarts8744" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts5173" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts8744'));
+        var myChart = echarts.init(document.getElementById('echarts5173'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -8897,11 +8899,11 @@ margin: auto;
     <title>综合日语第11课单词</title>
     <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC11%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第11课日语单词笔记"><a href="#第11课日语单词笔记" class="headerlink" title="第11课日语单词笔记"></a>第11课日语单词笔记</h3><p>这里是《综合日语》的第十一课的所有单词记录。</p>
-<div id="echarts7276" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts7708" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts7276'));
+        var myChart = echarts.init(document.getElementById('echarts7708'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -9813,11 +9815,11 @@ margin: auto;
     <title>综合日语第12课单词</title>
     <url>/2020/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC12%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第12课日语单词笔记"><a href="#第12课日语单词笔记" class="headerlink" title="第12课日语单词笔记"></a>第12课日语单词笔记</h3><p>这里是《综合日语》的第十二课的所有单词记录。</p>
-<div id="echarts9753" style="width: 100%;height: 100px;margin: 0 auto"></div>
+<div id="echarts3390" style="width: 100%;height: 100px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts9753'));
+        var myChart = echarts.init(document.getElementById('echarts3390'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -10738,11 +10740,11 @@ margin: auto;
     <title>综合日语第16课单词</title>
     <url>/2020/12/19/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC16%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第16课日语单词笔记"><a href="#第16课日语单词笔记" class="headerlink" title="第16课日语单词笔记"></a>第16课日语单词笔记</h3><p>这里是《综合日语》的第十六课的所有单词记录。</p>
-<div id="echarts4424" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts9194" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts4424'));
+        var myChart = echarts.init(document.getElementById('echarts9194'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -11643,11 +11645,11 @@ margin: auto;
     <title>综合日语第17课单词</title>
     <url>/2020/12/20/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC17%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第17课日语单词笔记"><a href="#第17课日语单词笔记" class="headerlink" title="第17课日语单词笔记"></a>第17课日语单词笔记</h3><p>这里是《综合日语》的第十七课的所有单词记录。</p>
-<div id="echarts5055" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts5657" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts5055'));
+        var myChart = echarts.init(document.getElementById('echarts5657'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -12604,11 +12606,11 @@ margin: auto;
     <url>/2020/12/20/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC18%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第18课日语单词笔记"><a href="#第18课日语单词笔记" class="headerlink" title="第18课日语单词笔记"></a>第18课日语单词笔记</h3><p>这里是《综合日语》的第十八课的所有单词记录。</p>
 <p>注意:此页面还再编辑中</p>
-<div id="echarts1790" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts2662" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts1790'));
+        var myChart = echarts.init(document.getElementById('echarts2662'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -13756,11 +13758,11 @@ margin: auto;
     <title>综合日语第19课单词</title>
     <url>/2020/12/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC19%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第19课日语单词笔记"><a href="#第19课日语单词笔记" class="headerlink" title="第19课日语单词笔记"></a>第19课日语单词笔记</h3><p>这里是关于我所学习的第19课单词记录</p>
-<div id="echarts6758" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts8571" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts6758'));
+        var myChart = echarts.init(document.getElementById('echarts8571'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -14639,11 +14641,11 @@ margin: auto;
     <title>综合日语第20课单词</title>
     <url>/2020/12/27/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC20%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第20课日语单词笔记"><a href="#第20课日语单词笔记" class="headerlink" title="第20课日语单词笔记"></a>第20课日语单词笔记</h3><p>这里是关于我所学习的第20课单词记录</p>
-<div id="echarts7755" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts3903" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts7755'));
+        var myChart = echarts.init(document.getElementById('echarts3903'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -15318,11 +15320,11 @@ margin: auto;
     <title>综合日语第5课单词</title>
     <url>/2020/12/20/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC5%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第5课日语单词笔记"><a href="#第5课日语单词笔记" class="headerlink" title="第5课日语单词笔记"></a>第5课日语单词笔记</h3><p>这里是《综合日语》的第五课的所有单词记录。</p>
-<div id="echarts3554" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts1853" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts3554'));
+        var myChart = echarts.init(document.getElementById('echarts1853'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -16358,11 +16360,11 @@ margin: auto;
     <title>综合日语第6课单词</title>
     <url>/2020/12/20/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC6%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第6课日语单词笔记"><a href="#第6课日语单词笔记" class="headerlink" title="第6课日语单词笔记"></a>第6课日语单词笔记</h3><p>这里是《综合日语》的第六课的所有单词记录。</p>
-<div id="echarts6766" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts8747" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts6766'));
+        var myChart = echarts.init(document.getElementById('echarts8747'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -17592,11 +17594,11 @@ margin: auto;
     <title>综合日语第9课单词</title>
     <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC9%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第9课日语单词笔记"><a href="#第9课日语单词笔记" class="headerlink" title="第9课日语单词笔记"></a>第9课日语单词笔记</h3><p>这里是《综合日语》的第九课的所有单词记录。</p>
-<div id="echarts8902" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts3446" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts8902'));
+        var myChart = echarts.init(document.getElementById('echarts3446'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
