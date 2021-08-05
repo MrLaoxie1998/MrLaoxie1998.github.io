@@ -1,0 +1,1423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mrlaoxie1998.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+<meta property="og:type" content="website">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="http://mrlaoxie1998.github.io/page/9/index.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://mrlaoxie1998.github.io/page/9/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>9之数据库</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-我的旧站">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-tasks"></i>我的旧站</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/06/04/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/04/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-2/" class="post-title-link" itemprop="url">今日日记0w0~</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-04 22:42:37" itemprop="dateCreated datePublished" datetime="2020-06-04T22:42:37+08:00">2020-06-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-07 13:36:50" itemprop="dateModified" datetime="2020-06-07T13:36:50+08:00">2020-06-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>###今日份笔记 2020年6月4号</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/04/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/06/03/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/03/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-1/" class="post-title-link" itemprop="url">今日日记0w0~</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-03 23:30:58" itemprop="dateCreated datePublished" datetime="2020-06-03T23:30:58+08:00">2020-06-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-07 13:36:53" itemprop="dateModified" datetime="2020-06-07T13:36:53+08:00">2020-06-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>###今日份笔记 2020年6月3号</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/03/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC11%E8%AF%BE%E5%8D%95%E8%AF%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC11%E8%AF%BE%E5%8D%95%E8%AF%8D/" class="post-title-link" itemprop="url">综合日语第11课单词</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-31 10:10:39" itemprop="dateCreated datePublished" datetime="2020-05-31T10:10:39+08:00">2020-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-30 22:34:12" itemprop="dateModified" datetime="2020-12-30T22:34:12+08:00">2020-12-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语单词</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第11课日语单词笔记"><a href="#第11课日语单词笔记" class="headerlink" title="第11课日语单词笔记"></a>第11课日语单词笔记</h3><p>这里是《综合日语》的第十一课的所有单词记录。</p>
+<div id="echarts1676" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts1676'));
+        // 指定图表的配置项和数据
+        var option = option = {
+    title: {
+        text: '第11课单词',
+        subtext: '各词性统计-共计144个单词。统计了高频词汇和低频词汇,人工统计，不一定是144个',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['名词', '固有名词', '解释性词性', '副词', '感叹词', '他动词1类', '他动词2类', '他动词3类', '自动词1类', '自动词2类', '自动词3类', '引助',  '形容词2类', '取立て助']
+    },
+    series: [
+        {
+            name: '此词性数量',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: [
+                {value: 77, name: '名词'},
+                {value: 1, name: '解释性词性'},
+                {value: 1, name: '固有名词'},
+                {value: 7, name: '副词'},
+                {value: 2, name: '感叹词'},
+                {value: 13, name: '他动词1类'},
+                {value: 8, name: '他动词2类'},
+                {value: 12, name: '他动词3类'},
+                {value: 11, name: '自动词1类'},
+                {value: 7, name: '自动词2类'},
+                {value: 5, name: '自动词3类'},
+                {value: 1, name: '引助'},
+                {value: 1, name: '形容词2类'},
+                {value: 1, name: '取立て助'}
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC11%E8%AF%BE%E5%8D%95%E8%AF%8D/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC10%E8%AF%BE%E5%8D%95%E8%AF%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC10%E8%AF%BE%E5%8D%95%E8%AF%8D/" class="post-title-link" itemprop="url">综合日语第10课单词</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-31 10:10:33" itemprop="dateCreated datePublished" datetime="2020-05-31T10:10:33+08:00">2020-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-30 22:46:00" itemprop="dateModified" datetime="2020-12-30T22:46:00+08:00">2020-12-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语单词</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第10课日语单词笔记"><a href="#第10课日语单词笔记" class="headerlink" title="第10课日语单词笔记"></a>第10课日语单词笔记</h3><p>这里是《综合日语》的第十课的所有单词记录。</p>
+<div id="echarts4316" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts4316'));
+        // 指定图表的配置项和数据
+        var option = option = {
+    title: {
+        text: '第10课单词',
+        subtext: '各词性统计-共计195个单词。统计了高频词汇和低频词汇,人工统计，不一定是195个',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['名词', '固有名词', '解释性词性', '副词', '接续词', '格助词', '感叹词', '判断词', '他动词1类', '他动词2类', '他动词3类', '自动词1类', '自动词2类', '自动词3类', '取立て助', '形容词1类', '形容词2类']
+    },
+    series: [
+        {
+            name: '此词性数量',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: [
+                {value: 111, name: '名词'},
+                {value: 23, name: '固有名词'},
+                {value: 11, name: '解释性词性'},
+                {value: 7, name: '副词'},
+                {value: 1, name: '接续词'},
+                {value: 5, name: '格助词'},
+                {value: 4, name: '感叹词'},
+                {value: 3, name: '判断词'},
+                {value: 3, name: '他动词1类'},
+                {value: 2, name: '他动词2类'},
+                {value: 7, name: '他动词3类'},
+                {value: 5, name: '自动词1类'},
+                {value: 2, name: '自动词2类'},
+                {value: 1, name: '自动词3类'},
+                {value: 1, name: '取立て助'},
+                {value: 3, name: '形容词1类'},
+                {value: 6, name: '形容词2类'}
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC10%E8%AF%BE%E5%8D%95%E8%AF%8D/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC9%E8%AF%BE%E5%8D%95%E8%AF%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC9%E8%AF%BE%E5%8D%95%E8%AF%8D/" class="post-title-link" itemprop="url">综合日语第9课单词</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-31 10:10:28" itemprop="dateCreated datePublished" datetime="2020-05-31T10:10:28+08:00">2020-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-30 22:46:06" itemprop="dateModified" datetime="2020-12-30T22:46:06+08:00">2020-12-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语单词</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第9课日语单词笔记"><a href="#第9课日语单词笔记" class="headerlink" title="第9课日语单词笔记"></a>第9课日语单词笔记</h3><p>这里是《综合日语》的第九课的所有单词记录。</p>
+<div id="echarts4373" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts4373'));
+        // 指定图表的配置项和数据
+        var option = option = {
+    title: {
+        text: '第9课单词',
+        subtext: '各词性统计-共计181个单词。统计了高频词汇和低频词汇,人工统计，不一定是181个',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['名词', '固有名词', '解释性词性', '副词', '格助词', '感叹词', '判断词', '他动词1类', '他动词3类', '自动词1类', '自动词2类', '自动词3类', '取立て助', '并列助词', '形容词1类', '形容词2类']
+    },
+    series: [
+        {
+            name: '此词性数量',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: [
+                {value: 97, name: '名词'},
+                {value: 13, name: '固有名词'},
+                {value: 11, name: '解释性词性'},
+                {value: 6, name: '副词'},
+                {value: 4, name: '格助词'},
+                {value: 1, name: '感叹词'},
+                {value: 1, name: '判断词'},
+                {value: 6, name: '他动词1类'},
+                {value: 7, name: '他动词3类'},
+                {value: 12, name: '自动词1类'},
+                {value: 3, name: '自动词2类'},
+                {value: 8, name: '自动词3类'},
+                {value: 2, name: '取立て助'},
+                {value: 1, name: '并列助词'},
+                {value: 4, name: '形容词1类'},
+                {value: 5, name: '形容词2类'}
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC9%E8%AF%BE%E5%8D%95%E8%AF%8D/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC8%E8%AF%BE%E5%8D%95%E8%AF%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC8%E8%AF%BE%E5%8D%95%E8%AF%8D/" class="post-title-link" itemprop="url">综合日语第8课单词</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-31 10:08:47" itemprop="dateCreated datePublished" datetime="2020-05-31T10:08:47+08:00">2020-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-30 22:46:13" itemprop="dateModified" datetime="2020-12-30T22:46:13+08:00">2020-12-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语单词</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第8课日语单词笔记"><a href="#第8课日语单词笔记" class="headerlink" title="第8课日语单词笔记"></a>第8课日语单词笔记</h3><p>这里是《综合日语》的第八课的所有单词记录。</p>
+<div id="echarts918" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts918'));
+        // 指定图表的配置项和数据
+        var option = option = {
+    title: {
+        text: '第8课单词',
+        subtext: '各词性统计-共计154个单词。统计了高频词汇和低频词汇,人工统计，不一定是154个',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['名词', '固有名词', '解释性词性', '副词', '格助词', '他动词1类', '他动词2类', '他动词3类', '自动词1类', '自动词2类', '自动词3类', '取立て助', '并列助词', '形容词1类']
+    },
+    series: [
+        {
+            name: '此词性数量',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: [
+                {value: 82, name: '名词'},
+                {value: 3, name: '固有名词'},
+                {value: 7, name: '解释性词性'},
+                {value: 7, name: '副词'},
+                {value: 7, name: '格助词'},
+                {value: 10, name: '他动词1类'},
+                {value: 5, name: '他动词2类'},
+                {value: 12, name: '他动词3类'},
+                {value: 6, name: '自动词1类'},
+                {value: 3, name: '自动词2类'},
+                {value: 8, name: '自动词3类'},
+                {value: 2, name: '取立て助'},
+                {value: 1, name: '并列助词'},
+                {value: 1, name: '形容词1类'}
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC8%E8%AF%BE%E5%8D%95%E8%AF%8D/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/Magnet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/Magnet/" class="post-title-link" itemprop="url">Magnet</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-31 10:08:47" itemprop="dateCreated datePublished" datetime="2020-05-31T10:08:47+08:00">2020-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-14 22:39:33" itemprop="dateModified" datetime="2020-11-14T22:39:33+08:00">2020-11-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E6%AD%8C%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语歌词</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+
+<p>か细い火が<br>纤细的火焰<br>心の端に灯る<br>在心的边缘点燃<br>いつの间にか<br>不知何时燃烧<br>燃え広がる热情<br>蔓延开来的热情<br>私の蝶<br>我的蝴蝶<br>不规则に<br>不规则地<br>飞び回り<br>来回飞舞<br>あなたの手に<br>将鳞粉洒于<br>鳞粉を付けた<br>你的手上<br>(ルカ)络み合う指ほどいて<br>松开相互交缠的手指<br>唇から舌へと<br>从嘴唇来到舌尖<br>许されない事ならば<br>若是不被允许的事<br>尚更燃え<br>反而会燃烧得<br>上がるの<br>更加猛烈<br>抱き寄せて欲しい<br>想要被拥入怀中<br>确かめて欲しい<br>想要确认心意<br>间违いなど无いんだと<br>让我知道<br>思わせて<br>没有误会了什么<br>キスをして<br>亲吻你<br>涂り替<br>想将我的颜色<br>えて欲しい<br>覆盖上你的唇<br>魅惑の时に酔<br>想要沉醉在<br>いしれ溺れていたいの<br>魅惑的时刻中</p>
+<p>束缚して<br>束缚你<br>もっと<br>让我对你而言<br>必要として<br>更加必要<br>爱しいなら<br>若是爱就<br>执着を见せつけて<br>让你看到我的执着<br>「おかしい」のが<br>变得“好奇怪”<br>たまらなく<br>是因为无法克制地<br>好きになる<br>喜欢上你<br>行けるトコまで行けばいいよ<br>能到哪里就一起去吧<br>迷い込んだ心なら<br>若是迷惑的心能够<br>简単に融けてゆく<br>简单地消融<br>优しさなんて<br>甚至连感受到<br>感じる暇など 无い位に<br>温柔之类的余裕都没有<br>缲り返したのは<br>反复不断的<br>あの梦じゃなくて<br>并非那个梦<br>纷れも无<br>毫无疑问的<br>い现実の私达<br>是真实的我们<br>触れてから<br>从触碰开始<br>戻れないと知る<br>就知道回不去了<br>それでいいの<br>那样就好<br>谁よりも<br>比任何人<br>大切なあなた<br>都还要重要的你</p>
+<p>夜明けが来ると不安で<br>对于即将天亮感到不安<br>泣いてしまう私に<br>而哭泣的我<br>「大丈夫」と嗫いたあなたも<br>轻声说着“没关系”的你<br>泣いていたの？<br>也哭泣了吗<br>抱き寄せて欲しい<br>想要被拥入怀中<br>确かめて欲しい<br>想要确认心意<br>间违いなど无いんだと<br>让我知道<br>思わせて<br>没有误会了什么<br>キスをして<br>亲吻你<br>涂り替<br>想将我的颜色<br>えて欲しい<br>覆盖上你的唇<br>魅惑の时に<br>想要沉醉在<br>酔いしれ溺れたい<br>魅惑的时刻中<br>引き寄せて<br>相互吸引靠近<br>マグネットのように<br>宛如磁石一般<br>例えいつか离れて<br>即使有朝一日分离了<br>も巡り会う<br>也会再度相会<br>触れていて<br>相互碰触<br>戻れなくていい<br>回不去了也无妨<br>それでいいの<br>那样就好<br>谁よりも<br>比任何人<br>大切なあなた<br>都还要重要的你</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/Riness%20-Ghosts%20of%20Memories-%20(Covered%20by%20Miwele)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/Riness%20-Ghosts%20of%20Memories-%20(Covered%20by%20Miwele)/" class="post-title-link" itemprop="url">Riness -Ghosts of Memories- (Covered by Miwele)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-31 10:08:47" itemprop="dateCreated datePublished" datetime="2020-05-31T10:08:47+08:00">2020-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-14 22:39:36" itemprop="dateModified" datetime="2020-11-14T22:39:36+08:00">2020-11-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E6%AD%8C%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语歌词</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+
+<p>闇に閉ざされていた　黒き翼の天使<br>在黑暗中封闭着 黑色翅膀的天使<br>失われた時の回廊　彷徨う星の旅人<br>失去时间的回廊 徘徊星空的旅者<br>闇に包みこまれた　哀しい記憶の欠片<br>包裹在黑暗中 哀伤记忆的碎片<br>失われた心の器　探し求め続けている<br>失去了心的容器 仍在继续寻求着<br>赤き瞳に映る　儚い思い出の空<br>赤红眼瞳中映出 虚幻回忆中的天空<br>今はもう見えてこない　あの子の優しい笑顔<br>现在已经看不到了 那孩子温柔的笑颜<br>時を超え彷徨う　記憶の亡霊達<br>在时间之外徘徊的 记忆的亡灵们<br>耳元で囁いて　闇へと誘う<br>耳边的轻语 邀请至黑暗<br>黒き影に染められた　翼を羽ばたかせて<br>染上漆黑的暗影 张开翅膀<br>飛び立つの　虚空の遥か彼方<br>振翅飞翔 飞越遥远虚空的彼方<br>あの子の元へと<br>到那孩子的身旁<br>あれは私の記憶　寂しい心の欠片<br>那是我的记忆 孤独的心的碎片<br>ねえ返して　あの子の記憶　あの優しき詩を<br>请那孩子的回忆 那温柔的诗歌 回到这里来<br>あれは私の翼　黒き悲しみの羽根<br>那是我的翅膀 漆黑悲伤的羽毛<br>刻み込まれた罪を背負い　運命に身を委ねる<br>背负着铭刻下的罪行 屈服于命运之中<br>暗い夜空の向こう　響く優雅な音色<br>黑暗夜空的那边 回响着优雅的音色<br>今はもう聞こえてこない　あの子の優しい歌が<br>现在已经听不到了 那孩子温柔的歌声<br>時を超え彷徨う　記憶の亡霊達<br>在时间之外徘徊的 记忆的亡灵们<br>耳元で囁いて　闇へと誘う<br>耳边的轻语 邀请至黑暗<br>黒き影に染められた　翼を羽ばたかせて<br>染上漆黑的暗影 展开翅膀<br>飛び立つの　虚空の遥か彼方<br>振翅飞翔 飞越遥远虚空的彼方<br>あの子の元へと<br>到那孩子的身旁<br>時を超え彷徨う　記憶の亡霊達<br>在时间之外徘徊的 记忆的亡灵们<br>傍に寄って手を伸ばして　囁きかける<br>向一旁伸出手 轻声细语<br>黒き影に染められた　翼を羽ばたかせて<br>染上漆黑的暗影 张开翅膀<br>飛び立つの　虚空の遥か彼方<br>振翅飞翔 飞越遥远虚空的彼方<br>あの子の元へと<br>到那孩子的身旁</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/Rinn%20Ding%20Dong/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/Rinn%20Ding%20Dong/" class="post-title-link" itemprop="url">Rinn Ding Dong</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-31 10:08:47" itemprop="dateCreated datePublished" datetime="2020-05-31T10:08:47+08:00">2020-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-14 22:39:38" itemprop="dateModified" datetime="2020-11-14T22:39:38+08:00">2020-11-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E6%AD%8C%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语歌词</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+
+<p>あの星空の彼方<br>在那星空远方<br>輝く流星　黄昏に落ちていく<br>耀眼流星 坠落于黄昏中消逝<br>地上の太陽　明日の記憶を刻み込む<br>远边夕阳 刻画着明日的记忆<br>風が囁き掛ける<br>微风吹拂双耳<br>星の旅路へと　誘うあの鐘を鳴らし<br>星之旅途 钟声响起指明道路<br>虚空の向こうで<br>在那虚空的前方<br>あの子が私を誘い　呼んでる<br>那孩子向我发出呼唤<br>さあ Rinn Ding Dong　夜空へと<br>Rinn Ding Dong 向着夜空传递<br>心の在りかを探し求めて　届け<br>寻求着内心的渴望<br>Rinn Ding Dong 彼方へと<br>Rinn Ding Dong 向着遥远彼方<br>願いを乗せて響け　Rinn Ding Dong<br>载着祈愿回响 Rinn Ding Dong<br>あの記憶の彼方で<br>在那记忆的远方<br>片羽の天使　夕闇の空を見上げ<br>单翼天使 遥望着暮色黄昏<br>失くした記憶の　翼を探して彷徨う<br>踟躇于寻求记忆的羽翼<br>風に想いを乗せて<br>思念乘风远行<br>時の旅路より　唄いあの鐘を鳴らし<br>时之旅途 钟声响起吟唱歌曲<br>悠久の狭間で<br>在那悠久的间隙<br>私はあの子を誘い　呼びかける<br>我向那孩子发出呼唤<br>さあ Rinn Ding Dong　夜空へと<br>Rinn Ding Dong 向着夜空传递<br>心の在りかを探し求めて　届け<br>寻求着内心的渴望<br>Rinn Ding Dong 彼方へと<br>Rinn Ding Dong 向着遥远彼方<br>願いを乗せて響け　Rinn Ding Dong<br>载着祈愿回响 Rinn Ding Dong<br>さあ Rinn Ding Dong　時を超え<br>Rinn Ding Dong 超越时间歌唱<br>星の旅人の想いを繋いで　唄え<br>链接星之旅者的思念<br>Rinn Ding Dong 空の向こう<br>Rinn Ding Dong 迎向广袤苍穹<br>願いを乗せて響け　Rinn Ding Dong<br>载着祈愿回响 Rinn Ding Dong<br>さあ Rinn Ding Dong　夜空へと<br>Rinn Ding Dong 向着夜空传递<br>永久の記憶の翼羽ばたかせ　届け<br>张开永恒记忆的羽翼<br>Rinn Ding Dong あの星に<br>Rinn Ding Dong 在那璀璨星河<br>願いを乗せて歌え　Rinn Ding Dong<br>载着祈愿歌唱 Rinn Ding Dong<br>Rinn Ding Dong…</p>
+<p>Rinn Ding Dong…</p>
+<p>響け星空に<br>响彻星空<br>Rinn Ding Dong…</p>
+<p>願いを乗せて歌え<br>载着祈愿歌唱<br>Rinn Ding Dong</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E3%81%84%E3%81%A4%E3%82%82%E4%BD%95%E5%BA%A6%E3%81%A7%E3%82%82/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/05/31/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E3%81%84%E3%81%A4%E3%82%82%E4%BD%95%E5%BA%A6%E3%81%A7%E3%82%82/" class="post-title-link" itemprop="url">いつも何度でも</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-31 10:08:47" itemprop="dateCreated datePublished" datetime="2020-05-31T10:08:47+08:00">2020-05-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-14 22:39:41" itemprop="dateModified" datetime="2020-11-14T22:39:41+08:00">2020-11-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E6%AD%8C%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语歌词</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+
+<p>呼んでいる胸のどこか奥で<br>呼唤着的心灵的某个深处<br>いつも心踊（おど）る 夢を見たい<br>总是想做个激动人心的梦<br>かなしみは 数え（おしえ）きれないけれど<br>纵有数不尽的悲伤<br>その向こうできっと あなたに会える<br>去往之处一定与你相会<br>繰り返すあやまちの そのたび<br>那些反复出现过错的旅客<br>ひとはただ青い空の 青さを知る<br>最少也知道青空的蔚蓝<br>果（は）てしなく 道は続いて見えるけれど<br>即使前路茫茫无尽<br>この両手は 光を抱ける（いだける）<br>这双手一定可以拥抱光明<br>さよならのときの 静かな胸<br>告别时平静的胸怀<br>ゼロになるからだが 耳をすませる<br>归于无有的身体叫耳朵细听<br>生きている不思議 死んでいく不思議<br>生存以及死亡的不可思议<br>花も風も街も みんなおなじ<br>花与风与城市全都是一样<br>ラ ラ ラン ラン ラ ラン<br>啦啦啦♪(^∇^*)<br>ラン ラン ラ ラン<br>啦啦啦♪(^∇^*)<br>ラン ラン ラ ラ ラン<br>啦啦啦♪(^∇^*)<br>ホ ホ ホ<br>啊啊啊♪(^∇^*)<br>ル ル ル<br>噜噜噜♪(^∇^*)<br>ル ル ル ル<br>噜噜噜♪(^∇^*)<br>呼んでいる 胸のどこか奥で<br>呼唤着的心灵的某个深处<br>いつも何度でも 夢を描（えが）こう<br>时常不断在绘画梦想<br>かなしみの数を 言い尽（つ）くすより<br>与其将悲伤种种倾诉而尽<br>同じくちびるで そっとうたおう<br>不如用相同的双唇轻轻歌唱<br>閉じていく思い出の そのなかに<br>常常在渐渐封闭的回忆中<br>いつも忘れたくない ささやきを聞く<br>听到不能忘怀的微声细语<br>こなごなに砕（くだ）かれた 鏡（かがみ）の上にも<br>即使在支离破碎的镜子上<br>新しい景色が 映される<br>也会映出崭新的美景<br>はじまりのあさの 静かな窓<br>像初始的清晨下宁静的窗<br>ゼロになるからだ 充た（みた）されてゆけ<br>因为将从零开始 渐渐被充实<br>海の彼方（かなた）には もう探さない<br>不再追寻 大海的彼端<br>輝くものは いつもここに<br>因为光辉之物一直在这里<br>わたしのなかに 見つけられたから<br>在我的内心中已然被发现<br>ラ ラ ラン ラン ラ ラン<br>啦啦啦♪(^∇^*)<br>ラン ラン ラ ラン<br>啦啦啦♪(^∇^*)<br>ラン ラン ラ ラ ラン<br>啦啦啦♪(^∇^*)<br>ホ ホ ホ<br>啊啊啊♪(^∇^*)<br>ル ル ル<br>噜噜噜♪(^∇^*)<br>ル ル ル ル<br>噜噜噜♪(^∇^*)</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005055629971077/home?from=page_100505&mod=TAB&is_all=1#place" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005055629971077&#x2F;home?from&#x3D;page_100505&amp;mod&#x3D;TAB&amp;is_all&#x3D;1#place" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/15833385" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;15833385" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

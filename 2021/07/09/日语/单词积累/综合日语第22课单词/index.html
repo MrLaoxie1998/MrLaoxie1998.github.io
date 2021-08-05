@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mrlaoxie1998.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="单词 词性 声调 翻译    宝くじ(たからくじ) 名词 彩票&#x2F;奖券 3   当たる(あたる) 自动词1类 中奖&#x2F;打中&#x2F;猜中 0   このごろ 名词 最近&#x2F;这些日子 0   あんまり 副词 (不)大~(没)怎么([あまり]的强调用法) 0   ~って &#x2F; 表示引用的[と]的口语表达形式 &#x2F;   金持ち(かねもち) 名词 有钱人&#x2F;富人 3   ～てみる &#x2F; 尝试&#x2F;试着&#x2F;看 &#x2F;   一等(いっと">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="http://mrlaoxie1998.github.io/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC22%E8%AF%BE%E5%8D%95%E8%AF%8D/index.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="单词 词性 声调 翻译    宝くじ(たからくじ) 名词 彩票&#x2F;奖券 3   当たる(あたる) 自动词1类 中奖&#x2F;打中&#x2F;猜中 0   このごろ 名词 最近&#x2F;这些日子 0   あんまり 副词 (不)大~(没)怎么([あまり]的强调用法) 0   ~って &#x2F; 表示引用的[と]的口语表达形式 &#x2F;   金持ち(かねもち) 名词 有钱人&#x2F;富人 3   ～てみる &#x2F; 尝试&#x2F;试着&#x2F;看 &#x2F;   一等(いっと">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-09T00:18:33.355Z">
+<meta property="article:modified_time" content="2021-03-28T09:32:51.387Z">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://mrlaoxie1998.github.io/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC22%E8%AF%BE%E5%8D%95%E8%AF%8D/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 9之数据库</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-我的旧站">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-tasks"></i>我的旧站</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC22%E8%AF%BE%E5%8D%95%E8%AF%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-07-09 08:18:33" itemprop="dateCreated datePublished" datetime="2021-07-09T08:18:33+08:00">2021-07-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-28 17:32:51" itemprop="dateModified" datetime="2021-03-28T17:32:51+08:00">2021-03-28</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <table>
+<thead>
+<tr>
+<th align="center">单词</th>
+<th align="center">词性</th>
+<th align="center">声调</th>
+<th align="center">翻译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">宝くじ(たからくじ)</td>
+<td align="center">名词</td>
+<td align="center">彩票/奖券</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">当たる(あたる)</td>
+<td align="center">自动词1类</td>
+<td align="center">中奖/打中/猜中</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">このごろ</td>
+<td align="center">名词</td>
+<td align="center">最近/这些日子</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">あんまり</td>
+<td align="center">副词</td>
+<td align="center">(不)大~(没)怎么([あまり]的强调用法)</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">~って</td>
+<td align="center">/</td>
+<td align="center">表示引用的[と]的口语表达形式</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">金持ち(かねもち)</td>
+<td align="center">名词</td>
+<td align="center">有钱人/富人</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">～てみる</td>
+<td align="center">/</td>
+<td align="center">尝试<del>/试着</del>/看</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">一等(いっとう)</td>
+<td align="center">名词</td>
+<td align="center">一等奖</td>
+<td align="center">0/3</td>
+</tr>
+<tr>
+<td align="center">~そうだ</td>
+<td align="center">／</td>
+<td align="center">表示传闻/听说~</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">運(うん)</td>
+<td align="center">名词</td>
+<td align="center">运气</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">なんて</td>
+<td align="center">取立て助</td>
+<td align="center">表示例示、强调[など]的口语表达式</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">ところで</td>
+<td align="center">接续词</td>
+<td align="center">那么</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">大金(たいきん)</td>
+<td align="center">名词</td>
+<td align="center">巨款/一大笔钱</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">に</td>
+<td align="center">格助词</td>
+<td align="center">表示用途/目的/何に使う</td>
+<td align="center">／</td>
+</tr>
+<tr>
+<td align="center">さあ</td>
+<td align="center">感叹词</td>
+<td align="center">用于不知如何作答或踌躇/犹豫之时</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">な</td>
+<td align="center">终助词</td>
+<td align="center">表示感叹</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">もし</td>
+<td align="center">副词</td>
+<td align="center">如果</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">期末テスト(きまつtest)</td>
+<td align="center">名词</td>
+<td align="center">期末考试</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">期末(きまつ)</td>
+<td align="center">名词</td>
+<td align="center">期末/学期末</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">によると</td>
+<td align="center">/</td>
+<td align="center">根据~</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">DJ(Disk jockey ディジェー)</td>
+<td align="center">名词</td>
+<td align="center">音乐节目主持人</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">お年玉(おとしだま)</td>
+<td align="center">名词</td>
+<td align="center">压岁钱</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">一度も(いちども)</td>
+<td align="center">/</td>
+<td align="center">一次也(没有)~ 常用搭配为[一度も~ない]</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">グームソフト(game soft)</td>
+<td align="center">名词</td>
+<td align="center">游戏软件</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">学割(がくわり)</td>
+<td align="center">名词</td>
+<td align="center">学生优惠/学生打折[学生割引]的缩略语</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">航空券(こうくうけん)</td>
+<td align="center">名词</td>
+<td align="center">机票</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">本末転倒(ほんまつーてんとう)</td>
+<td align="center">名词</td>
+<td align="center">本末倒置</td>
+<td align="center">1-0</td>
+</tr>
+<tr>
+<td align="center">ため</td>
+<td align="center">名词</td>
+<td align="center">为了</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">一式(いっしき)</td>
+<td align="center">名词</td>
+<td align="center">一套</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">どんなに</td>
+<td align="center">副词</td>
+<td align="center">无论~</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">資金(しきん)</td>
+<td align="center">名词</td>
+<td align="center">资金</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">どんなに~でしょう</td>
+<td align="center">/</td>
+<td align="center">多(么)~啊！</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">か</td>
+<td align="center">／</td>
+<td align="center">表示感慨。</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">確率(かくりつ)</td>
+<td align="center">名词</td>
+<td align="center">概率/几率</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">低い(ひくい)</td>
+<td align="center">形容词1类</td>
+<td align="center">低</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">～ように</td>
+<td align="center">/</td>
+<td align="center">为了<del>(而</del>)</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">ため</td>
+<td align="center">名词</td>
+<td align="center">因为</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">進級(しんきゅう)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">升级/升班</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">第一(だいいち)</td>
+<td align="center">名词</td>
+<td align="center">~第一/最重要/勉强第一</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">確か(たしか)</td>
+<td align="center">形容词2类</td>
+<td align="center">确实/的确</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">生きる(いきる)</td>
+<td align="center">自动词2类</td>
+<td align="center">活/生存</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">故障(こしょう)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">故障/出故障</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">国慶節(こっけいせつ)</td>
+<td align="center">名词</td>
+<td align="center">国庆节</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">冷たい(つめたい)</td>
+<td align="center">形容词1类</td>
+<td align="center">凉的/冰的/冷漠</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">字(じ)</td>
+<td align="center">名词</td>
+<td align="center">字</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">かける</td>
+<td align="center">他动词2类</td>
+<td align="center">戴。めがねをかける</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">自由(じゆう)</td>
+<td align="center">名词/形容词2类</td>
+<td align="center">自由</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">ジーンズ(jeans)</td>
+<td align="center">名词</td>
+<td align="center">牛仔裤(服)</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">ゆとり</td>
+<td align="center">名词</td>
+<td align="center">富裕/余裕</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">作り(づくり)</td>
+<td align="center">名词</td>
+<td align="center">制作~/结实/友達作り</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">対象(たいしょう)</td>
+<td align="center">名词</td>
+<td align="center">对象</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">実施(じっし)</td>
+<td align="center">名词/他动词3类</td>
+<td align="center">实施/实行</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">有効(ゆうこう)</td>
+<td align="center">名词/形容词2类</td>
+<td align="center">有效</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">回答(かいとう)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">回答/答复</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">詳細(しょうさい)</td>
+<td align="center">名词/形容词2类</td>
+<td align="center">详细/具体内容</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">掲載(けいさい)</td>
+<td align="center">名词/他动词3类</td>
+<td align="center">刊载/登载</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">状態(じょうたい)</td>
+<td align="center">名词</td>
+<td align="center">状况/状态</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">有無(うむ)</td>
+<td align="center">名词</td>
+<td align="center">有无</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">日常(にちじょう)</td>
+<td align="center">名词</td>
+<td align="center">日常/平常</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">複数(ふくすう)</td>
+<td align="center">名词</td>
+<td align="center">多项/多个</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">~と考えられる</td>
+<td align="center">／</td>
+<td align="center">可以认为</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">バッグ(bag)</td>
+<td align="center">名词</td>
+<td align="center">包/手提包</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">遊び(あそび)</td>
+<td align="center">名词</td>
+<td align="center">玩/娱乐</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">維持(いじ)</td>
+<td align="center">名词/他动词3类</td>
+<td align="center">维持</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">こと</td>
+<td align="center">/</td>
+<td align="center">形式名词的用法(详见语法说明)</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">グラフ(graph)</td>
+<td align="center">名词</td>
+<td align="center">图表</td>
+<td align="center">1/0</td>
+</tr>
+<tr>
+<td align="center">目的(もくてき)</td>
+<td align="center">名词</td>
+<td align="center">目的</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">ただし</td>
+<td align="center">接续词</td>
+<td align="center">不过/只是/但</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">生かす(いかす)</td>
+<td align="center">他动词1类</td>
+<td align="center">有效利用/运用</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">次に(つぎに)</td>
+<td align="center">接续词</td>
+<td align="center">然后/接着</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">次いで(ついで)</td>
+<td align="center">接续词</td>
+<td align="center">紧接着/然后</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">ほどほど</td>
+<td align="center">名词/形容词2类</td>
+<td align="center">适度/适量/适可而止</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">大学生(だいがくせい)</td>
+<td align="center">名词</td>
+<td align="center">大学生</td>
+<td align="center">3/4</td>
+</tr>
+<tr>
+<td align="center">友人(ゆうじん)</td>
+<td align="center">名词</td>
+<td align="center">友人/朋友</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">関わる(かかわる)</td>
+<td align="center">自动词1类</td>
+<td align="center">相关/有关/牵涉</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">関心(かんしん)</td>
+<td align="center">名词</td>
+<td align="center">兴趣/关注/关心</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">浅い(あさい)</td>
+<td align="center">形容词1类</td>
+<td align="center">浅/不深/不足/(颜色)淡</td>
+<td align="center">2/0</td>
+</tr>
+<tr>
+<td align="center">記述(きじゅつ)</td>
+<td align="center">名词/他动词3类</td>
+<td align="center">记述/记录/描写</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">欄(らん)</td>
+<td align="center">名词</td>
+<td align="center">栏目/栏</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">社会人(しゃかいじん)</td>
+<td align="center">名词</td>
+<td align="center">已经工作的人/走上社会者</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">挑戦(ちょうせん)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">挑战</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">精神(せいしん)</td>
+<td align="center">名词</td>
+<td align="center">精神</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">優先(ゆうせん)</td>
+<td align="center">名词/自动词3类/他动词3类</td>
+<td align="center">优先</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">案外(あんがい)</td>
+<td align="center">副词/形容词2类</td>
+<td align="center">竟然/出乎意料</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">読み取る(よみとる)</td>
+<td align="center">他动词1类</td>
+<td align="center">了解到/读出</td>
+<td align="center">3/0</td>
+</tr>
+<tr>
+<td align="center">中学生(ちゅうがくせい)</td>
+<td align="center">名词</td>
+<td align="center">中学生</td>
+<td align="center">3/4</td>
+</tr>
+<tr>
+<td align="center">アニメ</td>
+<td align="center">名词</td>
+<td align="center">动画(アニメーションanimation的简称</td>
+<td align="center">1/0</td>
+</tr>
+<tr>
+<td align="center">一人暮らし(ひとりぐらし)</td>
+<td align="center">名词</td>
+<td align="center">独自生活/一个人生活</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">暮らし(ぐらし)</td>
+<td align="center">/</td>
+<td align="center">~生活</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">お年寄り(おとしより)</td>
+<td align="center">名词</td>
+<td align="center">上岁数的人/老年人</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">年寄り(としより)</td>
+<td align="center">名词</td>
+<td align="center">上岁数的人/老年人</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">主婦(しゅふ)</td>
+<td align="center">名词</td>
+<td align="center">家庭主妇</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">就職(しゅうしょく)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">就业/参加工作</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">非常(ひじょう)</td>
+<td align="center">名词/形容词2类</td>
+<td align="center">非常</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">反対(はんたい)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">反对/相反</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">余暇(よか)</td>
+<td align="center">名词</td>
+<td align="center">余暇/闲暇</td>
+<td align="center">1</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC23%E8%AF%BE%E5%8D%95%E8%AF%8D/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC21%E8%AF%BE%E5%8D%95%E8%AF%8D/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005055629971077/home?from=page_100505&mod=TAB&is_all=1#place" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005055629971077&#x2F;home?from&#x3D;page_100505&amp;mod&#x3D;TAB&amp;is_all&#x3D;1#place" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/15833385" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;15833385" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

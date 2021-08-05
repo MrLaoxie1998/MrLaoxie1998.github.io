@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mrlaoxie1998.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="单词 词性 翻译 声调    うん 感叹词 表示肯定&#x2F;答应等 1   ～て来る 名词&#x2F;自动词3类 ~来&#x2F;来了 &#x2F;   バイト 感叹词 打工&#x2F;勤工俭学的简称 0   あのね 感叹词 那个&#x2F;我说呀 0   同窓会(どうそうかい) 名词 同窗会 3&#x2F;0   同窓(どうそう) 名词 同窗&#x2F;同学 0   八日(ようか) 名词 8号 0   直前(ちょくぜん) 名词 (就在)之前&#x2F;快要的时候 0   欠">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="http://mrlaoxie1998.github.io/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC27%E8%AF%BE%E5%8D%95%E8%AF%8D/index.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="单词 词性 翻译 声调    うん 感叹词 表示肯定&#x2F;答应等 1   ～て来る 名词&#x2F;自动词3类 ~来&#x2F;来了 &#x2F;   バイト 感叹词 打工&#x2F;勤工俭学的简称 0   あのね 感叹词 那个&#x2F;我说呀 0   同窓会(どうそうかい) 名词 同窗会 3&#x2F;0   同窓(どうそう) 名词 同窗&#x2F;同学 0   八日(ようか) 名词 8号 0   直前(ちょくぜん) 名词 (就在)之前&#x2F;快要的时候 0   欠">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-09T00:18:33.386Z">
+<meta property="article:modified_time" content="2021-05-05T13:26:00.295Z">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://mrlaoxie1998.github.io/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC27%E8%AF%BE%E5%8D%95%E8%AF%8D/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 9之数据库</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-我的旧站">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-tasks"></i>我的旧站</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC27%E8%AF%BE%E5%8D%95%E8%AF%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-07-09 08:18:33" itemprop="dateCreated datePublished" datetime="2021-07-09T08:18:33+08:00">2021-07-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-05 21:26:00" itemprop="dateModified" datetime="2021-05-05T21:26:00+08:00">2021-05-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <table>
+<thead>
+<tr>
+<th>单词</th>
+<th>词性</th>
+<th>翻译</th>
+<th>声调</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>うん</td>
+<td>感叹词</td>
+<td>表示肯定/答应等</td>
+<td>1</td>
+</tr>
+<tr>
+<td>～て来る</td>
+<td>名词/自动词3类</td>
+<td>~来/来了</td>
+<td>/</td>
+</tr>
+<tr>
+<td>バイト</td>
+<td>感叹词</td>
+<td>打工/勤工俭学的简称</td>
+<td>0</td>
+</tr>
+<tr>
+<td>あのね</td>
+<td>感叹词</td>
+<td>那个/我说呀</td>
+<td>0</td>
+</tr>
+<tr>
+<td>同窓会(どうそうかい)</td>
+<td>名词</td>
+<td>同窗会</td>
+<td>3/0</td>
+</tr>
+<tr>
+<td>同窓(どうそう)</td>
+<td>名词</td>
+<td>同窗/同学</td>
+<td>0</td>
+</tr>
+<tr>
+<td>八日(ようか)</td>
+<td>名词</td>
+<td>8号</td>
+<td>0</td>
+</tr>
+<tr>
+<td>直前(ちょくぜん)</td>
+<td>名词</td>
+<td>(就在)<del>之前/快要</del>的时候</td>
+<td>0</td>
+</tr>
+<tr>
+<td>欠席(けっせき)</td>
+<td>名词</td>
+<td>缺席/不参加</td>
+<td>0</td>
+</tr>
+<tr>
+<td>～とく</td>
+<td>/</td>
+<td>[-ておく]的缩略语形式</td>
+<td>/</td>
+</tr>
+<tr>
+<td>お願い(おねがい)</td>
+<td>名词/他动词3类</td>
+<td>拜托/请求(礼貌说法)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>進む(すすむ)</td>
+<td>自动词1类</td>
+<td>进行/进展</td>
+<td>0</td>
+</tr>
+<tr>
+<td>スランプ(slump)</td>
+<td>名词</td>
+<td>消沉/萎靡</td>
+<td>2</td>
+</tr>
+<tr>
+<td>～ちゃった</td>
+<td>/</td>
+<td>[~てしまった]的缩略语形式</td>
+<td>/</td>
+</tr>
+<tr>
+<td>弱気(よわき)</td>
+<td>名词/形容词2类</td>
+<td>胆怯/气馁</td>
+<td>0</td>
+</tr>
+<tr>
+<td>しっかり</td>
+<td>副词/自动词3类</td>
+<td>坚强/结实/牢固</td>
+<td>3</td>
+</tr>
+<tr>
+<td>~なさい</td>
+<td>/</td>
+<td>表示要求和语气比较柔和的命令。请~</td>
+<td>/</td>
+</tr>
+<tr>
+<td>しろ・せよ</td>
+<td>/</td>
+<td>表示禁止</td>
+<td>/</td>
+</tr>
+<tr>
+<td>わよ</td>
+<td>终助词</td>
+<td><del>啊/</del>呀</td>
+<td>/</td>
+</tr>
+<tr>
+<td>知らせる(しらせる)</td>
+<td>他动词2类</td>
+<td>通知/告诉</td>
+<td>0</td>
+</tr>
+<tr>
+<td>危ない(あぶない)</td>
+<td>形容词1类</td>
+<td>危险</td>
+<td>3/0</td>
+</tr>
+<tr>
+<td>命令形(めいれいけい)</td>
+<td>名词</td>
+<td>命令形/命令的形式</td>
+<td>0</td>
+</tr>
+<tr>
+<td>命令(めいれい)</td>
+<td>名词/他动词3类</td>
+<td>命令</td>
+<td>0</td>
+</tr>
+<tr>
+<td>形(けい)</td>
+<td>/</td>
+<td><del>形</del>形式</td>
+<td>/</td>
+</tr>
+<tr>
+<td>長所(ちょうしょ)</td>
+<td>名词</td>
+<td>长处/优点</td>
+<td>1</td>
+</tr>
+<tr>
+<td>センス(sense)</td>
+<td>名词</td>
+<td>感觉/判断力</td>
+<td>1</td>
+</tr>
+<tr>
+<td>最も(もっとも)</td>
+<td>副词</td>
+<td>最</td>
+<td>3</td>
+</tr>
+<tr>
+<td>記入(きにゅう)</td>
+<td>名词/他动词3类</td>
+<td>写入/填写/填上</td>
+<td>0</td>
+</tr>
+<tr>
+<td>自身(じしん)</td>
+<td>名词</td>
+<td>自身/本身</td>
+<td>1</td>
+</tr>
+<tr>
+<td>性格(せいかく)</td>
+<td>名词</td>
+<td>性格</td>
+<td>0</td>
+</tr>
+<tr>
+<td>正義感(せいぎかん)</td>
+<td>名词</td>
+<td>正义感</td>
+<td>3</td>
+</tr>
+<tr>
+<td>正義(せいぎ)</td>
+<td>名词</td>
+<td>正义</td>
+<td>1</td>
+</tr>
+<tr>
+<td>感(かん)</td>
+<td>/</td>
+<td><del>感/</del>的感觉</td>
+<td>/</td>
+</tr>
+<tr>
+<td>プラス(plus)</td>
+<td>名词</td>
+<td>正面/好/正/加(+)</td>
+<td>1/0</td>
+</tr>
+<tr>
+<td>思考(しこう)</td>
+<td>名词/自动词3类/他动词3类</td>
+<td>思考/考虑</td>
+<td>0</td>
+</tr>
+<tr>
+<td>真剣(しんけん)</td>
+<td>形容词2类</td>
+<td>认真</td>
+<td>0</td>
+</tr>
+<tr>
+<td>責任(せきにん)</td>
+<td>名词</td>
+<td>责任</td>
+<td>0</td>
+</tr>
+<tr>
+<td>愛想(あいそ)</td>
+<td>名词</td>
+<td>态度/好心/善意</td>
+<td>3</td>
+</tr>
+<tr>
+<td>楽観(らっかん)</td>
+<td>名词/他动词3类</td>
+<td>乐观</td>
+<td>0</td>
+</tr>
+<tr>
+<td>包容力(ほうようりょく)</td>
+<td>名词</td>
+<td>包容力/包容的能力</td>
+<td>3</td>
+</tr>
+<tr>
+<td>包容(ほうよう)</td>
+<td>名词/他动词3类</td>
+<td>包容</td>
+<td>0</td>
+</tr>
+<tr>
+<td>力(りょく)</td>
+<td>/</td>
+<td>~力</td>
+<td>/</td>
+</tr>
+<tr>
+<td>信用(しんよう)</td>
+<td>名词/他动词3类</td>
+<td>信用/相信/信任</td>
+<td>0</td>
+</tr>
+<tr>
+<td>社交(しゃこう)</td>
+<td>名词</td>
+<td>社交</td>
+<td>0</td>
+</tr>
+<tr>
+<td>爽やか(さわやか)</td>
+<td>形容词2类</td>
+<td>爽快</td>
+<td>2</td>
+</tr>
+<tr>
+<td>感受性(かんじゅせい)</td>
+<td>名词</td>
+<td>感知能力</td>
+<td>0</td>
+</tr>
+<tr>
+<td>感受(かんじゅ)</td>
+<td>名词/他动词3类</td>
+<td>感知/感受</td>
+<td>1/0</td>
+</tr>
+<tr>
+<td>性(せい)</td>
+<td>/</td>
+<td>~性</td>
+<td>/</td>
+</tr>
+<tr>
+<td>豊か(ゆたか)</td>
+<td>形容词2类</td>
+<td>丰富</td>
+<td>1</td>
+</tr>
+<tr>
+<td>独創(どくそう)</td>
+<td>名词</td>
+<td>独创</td>
+<td>0</td>
+</tr>
+<tr>
+<td>富む(とむ)</td>
+<td>自动词1类</td>
+<td>富有/富于</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ユーモラス(humorous)</td>
+<td>形容词2类</td>
+<td>幽默</td>
+<td>1</td>
+</tr>
+<tr>
+<td>知的(ちてき)</td>
+<td>形容词2类</td>
+<td>知识丰富/理性</td>
+<td>0</td>
+</tr>
+<tr>
+<td>理論(りろん)</td>
+<td>名词</td>
+<td>理论</td>
+<td>1</td>
+</tr>
+<tr>
+<td>正直(しょうじき)</td>
+<td>名词/形容词2类</td>
+<td>正直/诚实</td>
+<td>3/4</td>
+</tr>
+<tr>
+<td>礼儀正しい(れいぎただしい)</td>
+<td>形容词1类</td>
+<td>有礼貌/懂礼貌</td>
+<td>6</td>
+</tr>
+<tr>
+<td>礼儀(れいぎ)</td>
+<td>名词</td>
+<td>礼仪/礼貌</td>
+<td>3</td>
+</tr>
+<tr>
+<td>遠慮深い(えんりょぶかい)</td>
+<td>形容词1类</td>
+<td>非常客气/拘礼/拘谨</td>
+<td>5</td>
+</tr>
+<tr>
+<td>遠慮(えんりょ)</td>
+<td>名词/他动词3类</td>
+<td>客气</td>
+<td>0</td>
+</tr>
+<tr>
+<td>几帳面(きちょうめん)</td>
+<td>形容词2类</td>
+<td>一丝不苟/认真/规规矩矩</td>
+<td>4</td>
+</tr>
+<tr>
+<td>リーダーシップ(leadership)</td>
+<td>名词</td>
+<td>领导能力/领导权</td>
+<td>5</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC28%E8%AF%BE%E5%8D%95%E8%AF%8D/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC26%E8%AF%BE%E5%8D%95%E8%AF%8D/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005055629971077/home?from=page_100505&mod=TAB&is_all=1#place" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005055629971077&#x2F;home?from&#x3D;page_100505&amp;mod&#x3D;TAB&amp;is_all&#x3D;1#place" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/15833385" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;15833385" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

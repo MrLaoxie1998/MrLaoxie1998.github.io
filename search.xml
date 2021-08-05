@@ -21,7 +21,7 @@
   <entry>
     <title>打印机链接问题</title>
     <url>/2020/11/18/Computer/%E7%94%B5%E8%84%91%E8%A7%A3%E5%86%B3,%E6%89%93%E5%8D%B0%E6%9C%BA%E9%93%BE%E6%8E%A5/</url>
-    <content><![CDATA[<p>计算机与打印机连接之后，会提供下载的驱动文档。但是有些连接打印机后，比如不同系统链接不同母机</p>
+    <content><![CDATA[<p>计算机与打印机连接之后，会提供下载的驱动文档。但是有些连接打印机后，比如不同系统链接不同母机，打个比方win7连接win10的打印机后会出现连接失败的情况。像这种一般是需要win10开启家庭组，然后win7在通过家庭组进行连接。</p>
 ]]></content>
       <categories>
         <category>Computer</category>
@@ -289,10 +289,23 @@ margin: auto;
 <p>C语言:在三个数中，找出哪个是最大的？例如任意给出三个数，如何得知哪个数为最大的？</p>
 <ul>
 <li><h4 id="第一步"><a href="#第一步" class="headerlink" title="第一步:"></a>第一步:</h4><blockquote>
-<p>首先，用三个变量<font style="color:#00ccff">a,b,c</font>分别用来存放键盘读进来的三个数。</p>
+<p>首先，用三个变量<font style="color:#00ccff">a,b,c</font>分别用来存放键盘读进来的三个数。<br>然后，先比较变量a的值和变量b的值，将较大的赋给变量d。<br>在比较变量的值和变量c的值，如果变量c的值大于变量d的值，则把变量c中的值赋予给变量d。<br>最后输出变量d的值。<br>这种方法也称之为打擂台法，通过比大小。</p>
 </blockquote>
 </li>
 </ul>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">int</span> a,b,c,d;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d&quot;</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line"><span class="keyword">if</span>(a&gt;b)</span><br><span class="line">    d=a;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    d=b;</span><br><span class="line"><span class="keyword">if</span> (d&gt;c)</span><br><span class="line">    d=d;</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">    d=c;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,d);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>正常人类的模拟:3个数找最大的过程<br>先假设任意一个数可能是最大值，再去检验<br>如果a&gt;=b 并且(同时) a&gt;=c 输出a<br>如果b&gt;=a 并且(同时) b&gt;=c 输出b<br>如果c&gt;=a 并且(同时) c&gt;=b 输出c</p>
+<p>注意&amp;&amp;表示逻辑”并且” ||表示逻辑”或”</p>
+<p>那么用计算机语言表示如下<br>1.if(a&gt;=b&amp;&amp;a&gt;=c) printf(“%d”,a);<br>2.if(b&gt;=a&amp;&amp;b&gt;=c) printf(“%d”,b);<br>3.if(c&gt;=a&amp;&amp;c&gt;=b) printf(“%d”,c);</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b,c,d;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d&quot;</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">    <span class="keyword">if</span> (a&gt;=b &amp;&amp; a&gt;=c) d=a;</span><br><span class="line">    <span class="keyword">if</span> (b&gt;=a &amp;&amp; b&gt;=c) d=b;</span><br><span class="line">    <span class="keyword">if</span> (c&gt;=a &amp;&amp; c&gt;=b) d=c;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,d);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>那么如何在4个数中找最大呢?</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b,c,d,e;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d&quot;</span>,&amp;a,&amp;b,&amp;c,&amp;d);</span><br><span class="line">    <span class="keyword">if</span>(a&gt;=b &amp;&amp; a&gt;=c &amp;&amp; a&gt;=d) e=a; </span><br><span class="line">    <span class="keyword">if</span>(b&gt;=a &amp;&amp; b&gt;=c &amp;&amp; b&gt;=d) e=b;</span><br><span class="line">    <span class="keyword">if</span>(c&gt;=a &amp;&amp; c&gt;=b &amp;&amp; c&gt;=d) e=c;</span><br><span class="line">    <span class="keyword">if</span>(d&gt;=a &amp;&amp; d&gt;=b &amp;&amp; d&gt;=c) e=d;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,e);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>还有一种方法就是擂台法，通过对比</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> stdl;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b,c,d,e;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d %d&quot;</span>,&amp;a,&amp;b,&amp;c,&amp;d);</span><br><span class="line">    <span class="keyword">if</span> (a&gt;b)</span><br><span class="line">        e=a;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        e=b;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (e&gt;c)</span><br><span class="line">        e=e;</span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">        e=c;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (e&gt;d)</span><br><span class="line">        e=e;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        e=d;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d,e&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>P13逻辑挑战:排序问题</p>
 ]]></content>
   </entry>
   <entry>
@@ -1476,7 +1489,8 @@ margin: auto;
   <entry>
     <title>ARP</title>
     <url>/2020/08/26/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/ARP/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>ARP(Address Resolution Protocol,地址解析协议)</p>
+]]></content>
       <tags>
         <tag>数据通信</tag>
       </tags>
@@ -1487,9 +1501,7 @@ margin: auto;
     <content><![CDATA[<p>早期的局域网技术是基于总线型结构的。总线型拓扑结构是有一根单电缆连接着所有主机。这种局域网技术存在着冲突域问题。也就是所有用户都在一个冲突域中，那么同一时间内只有一台主机能发送消息，从任意设备发出的消息都会被其他所有主机接收到，用户可能受到大量不需要的报文；而且所有主机共享一条传输通道，任意主机之间都可以直接互相访问，无法控制信息的安全。</p>
 <p>为了避免冲突域，同时扩展传统局域网已接入更多计算机，可以在局域网中使用二层交换机，交换机能有效隔离冲突域，但是由于所有计算机仍处于同一个广播域，任意设备都能接收到所有报文，不但降低了网络的效率，而且降低了安全性，人们使用虚拟局域网即VLAN技术</p>
 <p>关于数据通信的Vlan划分内容<br>华为的VLAN划分，有很多种，项目内应用较多的方法有给予端口划分vlan、基于mac地址划分vlan、基于ip地址划分vlan。<br>用一个例子展示基于端口来划分vlan，某企业的交换机连接有很多用户，且相同业务用户通过不同的设备接入企业网络。为了通信的安全性，同时为了避免广播报文泛滥，企业需要将业务相同的用户之间可以互相访问，业务不同的用户则不能直接访问。</p>
-<img src="/MyWeb/public/images/vlan%E5%88%92%E5%88%86.png" class="[vlan划分]" title="[300] [400] " alt="这是一个样例">
-
-]]></content>
+<img class="[vlan] E:&#x2F;MyWeb&#x2F;source&#x2F;_posts&#x2F;pic&#x2F;vlan.png [300] [400]">]]></content>
       <tags>
         <tag>数据通信</tag>
       </tags>
@@ -1547,11 +1559,11 @@ margin: auto;
     <title>综合日语第13课单词</title>
     <url>/2020/07/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC13%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第13课日语单词笔记"><a href="#第13课日语单词笔记" class="headerlink" title="第13课日语单词笔记"></a>第13课日语单词笔记</h3><p>这里是《综合日语》的第十三课的所有单词记录。</p>
-<div id="echarts5047" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts2888" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts5047'));
+        var myChart = echarts.init(document.getElementById('echarts2888'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -2536,11 +2548,11 @@ margin: auto;
     <title>综合日语第14课单词</title>
     <url>/2020/08/01/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC14%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第14课日语单词笔记"><a href="#第14课日语单词笔记" class="headerlink" title="第14课日语单词笔记"></a>第14课日语单词笔记</h3><p>这里是《综合日语》的第十四课的所有单词记录。</p>
-<div id="echarts2659" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts6175" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts2659'));
+        var myChart = echarts.init(document.getElementById('echarts6175'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -3291,11 +3303,11 @@ margin: auto;
     <title>综合日语第15课单词</title>
     <url>/2020/08/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC15%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第15课日语单词笔记"><a href="#第15课日语单词笔记" class="headerlink" title="第15课日语单词笔记"></a>第15课日语单词笔记</h3><p>这里是《综合日语》的第十五课的所有单词记录。</p>
-<div id="echarts9319" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts5737" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts9319'));
+        var myChart = echarts.init(document.getElementById('echarts5737'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -4573,11 +4585,11 @@ margin: auto;
     <title>综合日语第7课单词</title>
     <url>/2020/06/07/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC7%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第7课日语单词笔记"><a href="#第7课日语单词笔记" class="headerlink" title="第7课日语单词笔记"></a>第7课日语单词笔记</h3><p>这里是《综合日语》的第七课的所有单词记录。</p>
-<div id="echarts7389" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts756" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts7389'));
+        var myChart = echarts.init(document.getElementById('echarts756'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -5564,11 +5576,11 @@ margin: auto;
     <title>综合日语第8课单词</title>
     <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC8%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第8课日语单词笔记"><a href="#第8课日语单词笔记" class="headerlink" title="第8课日语单词笔记"></a>第8课日语单词笔记</h3><p>这里是《综合日语》的第八课的所有单词记录。</p>
-<div id="echarts5496" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts918" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts5496'));
+        var myChart = echarts.init(document.getElementById('echarts918'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -7725,11 +7737,11 @@ margin: auto;
     <title>综合日语第10课单词</title>
     <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC10%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第10课日语单词笔记"><a href="#第10课日语单词笔记" class="headerlink" title="第10课日语单词笔记"></a>第10课日语单词笔记</h3><p>这里是《综合日语》的第十课的所有单词记录。</p>
-<div id="echarts3037" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts4316" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts3037'));
+        var myChart = echarts.init(document.getElementById('echarts4316'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -8914,11 +8926,11 @@ margin: auto;
     <title>综合日语第11课单词</title>
     <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC11%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第11课日语单词笔记"><a href="#第11课日语单词笔记" class="headerlink" title="第11课日语单词笔记"></a>第11课日语单词笔记</h3><p>这里是《综合日语》的第十一课的所有单词记录。</p>
-<div id="echarts3311" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts1676" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts3311'));
+        var myChart = echarts.init(document.getElementById('echarts1676'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -9830,11 +9842,11 @@ margin: auto;
     <title>综合日语第12课单词</title>
     <url>/2020/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC12%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第12课日语单词笔记"><a href="#第12课日语单词笔记" class="headerlink" title="第12课日语单词笔记"></a>第12课日语单词笔记</h3><p>这里是《综合日语》的第十二课的所有单词记录。</p>
-<div id="echarts2406" style="width: 100%;height: 100px;margin: 0 auto"></div>
+<div id="echarts6225" style="width: 100%;height: 100px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts2406'));
+        var myChart = echarts.init(document.getElementById('echarts6225'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -10755,11 +10767,11 @@ margin: auto;
     <title>综合日语第16课单词</title>
     <url>/2020/12/19/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC16%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第16课日语单词笔记"><a href="#第16课日语单词笔记" class="headerlink" title="第16课日语单词笔记"></a>第16课日语单词笔记</h3><p>这里是《综合日语》的第十六课的所有单词记录。</p>
-<div id="echarts1160" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts1757" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts1160'));
+        var myChart = echarts.init(document.getElementById('echarts1757'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -11660,11 +11672,11 @@ margin: auto;
     <title>综合日语第17课单词</title>
     <url>/2020/12/20/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC17%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第17课日语单词笔记"><a href="#第17课日语单词笔记" class="headerlink" title="第17课日语单词笔记"></a>第17课日语单词笔记</h3><p>这里是《综合日语》的第十七课的所有单词记录。</p>
-<div id="echarts3106" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts6114" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts3106'));
+        var myChart = echarts.init(document.getElementById('echarts6114'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -12621,11 +12633,11 @@ margin: auto;
     <url>/2020/12/20/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC18%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第18课日语单词笔记"><a href="#第18课日语单词笔记" class="headerlink" title="第18课日语单词笔记"></a>第18课日语单词笔记</h3><p>这里是《综合日语》的第十八课的所有单词记录。</p>
 <p>注意:此页面还再编辑中</p>
-<div id="echarts8458" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts8008" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts8458'));
+        var myChart = echarts.init(document.getElementById('echarts8008'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -13773,11 +13785,11 @@ margin: auto;
     <title>综合日语第19课单词</title>
     <url>/2020/12/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC19%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第19课日语单词笔记"><a href="#第19课日语单词笔记" class="headerlink" title="第19课日语单词笔记"></a>第19课日语单词笔记</h3><p>这里是关于我所学习的第19课单词记录</p>
-<div id="echarts4377" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts1294" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts4377'));
+        var myChart = echarts.init(document.getElementById('echarts1294'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -14656,11 +14668,11 @@ margin: auto;
     <title>综合日语第20课单词</title>
     <url>/2020/12/27/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC20%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第20课日语单词笔记"><a href="#第20课日语单词笔记" class="headerlink" title="第20课日语单词笔记"></a>第20课日语单词笔记</h3><p>这里是关于我所学习的第20课单词记录</p>
-<div id="echarts3005" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts4225" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts3005'));
+        var myChart = echarts.init(document.getElementById('echarts4225'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -15335,11 +15347,11 @@ margin: auto;
     <title>综合日语第5课单词</title>
     <url>/2020/12/20/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC5%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第5课日语单词笔记"><a href="#第5课日语单词笔记" class="headerlink" title="第5课日语单词笔记"></a>第5课日语单词笔记</h3><p>这里是《综合日语》的第五课的所有单词记录。</p>
-<div id="echarts6927" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts6779" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts6927'));
+        var myChart = echarts.init(document.getElementById('echarts6779'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -16375,11 +16387,11 @@ margin: auto;
     <title>综合日语第6课单词</title>
     <url>/2020/12/20/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC6%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第6课日语单词笔记"><a href="#第6课日语单词笔记" class="headerlink" title="第6课日语单词笔记"></a>第6课日语单词笔记</h3><p>这里是《综合日语》的第六课的所有单词记录。</p>
-<div id="echarts7666" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts608" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts7666'));
+        var myChart = echarts.init(document.getElementById('echarts608'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -17609,11 +17621,11 @@ margin: auto;
     <title>综合日语第9课单词</title>
     <url>/2020/05/31/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC9%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
     <content><![CDATA[<h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第9课日语单词笔记"><a href="#第9课日语单词笔记" class="headerlink" title="第9课日语单词笔记"></a>第9课日语单词笔记</h3><p>这里是《综合日语》的第九课的所有单词记录。</p>
-<div id="echarts2995" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<div id="echarts4373" style="width: 100%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts2995'));
+        var myChart = echarts.init(document.getElementById('echarts4373'));
         // 指定图表的配置项和数据
         var option = option = {
     title: {
@@ -18648,5 +18660,4283 @@ margin: auto;
       <tags>
         <tag>日语</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/02/19/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/02/19/Computer/%E7%94%B5%E8%84%91%E8%A7%A3%E5%86%B3,%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5/</url>
+    <content><![CDATA[<p>关于电脑的网络连接方法。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/02/18/%E7%A4%BE%E4%BC%9A%E5%BF%83%E7%90%86%E5%AD%A6/%E5%BF%83%E7%90%86%E5%AD%A6-%E7%84%A6%E7%82%B9%E5%92%8C%E9%94%99%E8%A7%89/</url>
+    <content><![CDATA[<h2 id="心里学-焦点和错觉-对了解我们自己的启示"><a href="#心里学-焦点和错觉-对了解我们自己的启示" class="headerlink" title="心里学-焦点和错觉:对了解我们自己的启示"></a>心里学-焦点和错觉:对了解我们自己的启示</h2><a id="more"></a>
+<p>&ensp;&ensp;—-社会心理学对我而言要我去介绍这本书还是真的蛮复杂的，说实在话我只能通过摘录某些我觉得很有意义的内容去记录着本书的知识。</p>
+<p>&ensp;&ensp;现在记录的是关于关于我们自己的启示这一块的内容。</p>
+<p>&ensp;&ensp;</p>
+<h2 id="焦点和错觉-藐视焦点效应及其与透明度错觉的关系。"><a href="#焦点和错觉-藐视焦点效应及其与透明度错觉的关系。" class="headerlink" title="焦点和错觉:藐视焦点效应及其与透明度错觉的关系。"></a>焦点和错觉:藐视焦点效应及其与透明度错觉的关系。</h2><p>&ensp;&ensp;<br>为什么我们常常会高估别人对我们的关注程度？焦点效应(spotlight effect)意味着，人类往往会把自己看做一切的中心，并且只觉得高估别人对我们的关注程度。</p>
+<p>&ensp;&ensp;<br>劳森(Lawson,2010)对焦点效应进行了研究。以大学生为被试，让他们穿上前面印有“美国之鹰”的运动衫去见同学。约40%的被试确信同学会记住自己衣服上的字，但事实上仅10%的人会记住。大部分观察者甚至没有发现对方中途出去几分钟再回来时换了衣服。在另一项实验中，即使被试的衣着令人尴尬，例如胸前印有歌星巴瑞.曼尼洛的T恤，也只有23%的观察者会注意到，此数值远低于在胸前炫耀过气软摇滚歌手的学生所猜测的、班上大约一班的同学会注意到他的比例(Gilovich &amp; others,2000)。</p>
+<p>&ensp;&ensp;<br>在我们另类的服装和糟糕的发型上出现的现象，同样也会发生在我们的情绪上:焦虑、愤怒、厌恶、谎言和吸引力(Gilovitch &amp; others,1998)。实际注意到我们的人比我们认为的要少。我们总能敏锐地察觉到自己的情绪，于是就常常出现透明度错觉(illusion of transparency)。如果我们意识到自己很快乐，我们的脸上就会清楚地表现出这种快乐，别人会注意到。事实上，我们的表现可能比自己意识到的还要模糊不清。</p>
+<p>&ensp;&ensp;<br>同样，我们也会高估自己的社交失误和公众心里疏忽，(public mental slips)的显著性。如果我们不小心按到了图书馆的警铃，或者无意冒犯了别人，我们可能非常懊恼(“大家都以为我是一个怪人”)。但是研究结果表明，我们所遭受到的这些烦恼，别人经常注意不到，即使注意到也可能很快就会忘记(Savitsky &amp; others,2001)。</p>
+<p>&ensp;&ensp;<br>这种焦虑效应和与之相关的透明度错觉，只是我们的自我感觉和我们的社会之间相互影响的两个例子。启示还有其他例子可以讲解。<br>社会环境对自我觉知的影响。作为不同文化、种族、性别群体中的个体，我们可能会注意到自己和其他人的不同，以及他人对这些差异的反应。</p>
+<p>&ensp;&ensp;<br>当你靠近一个你感到特别有魅力的人的时候，你是不是会感觉到不自在，或者担心你的紧张太过明显？当你在观众面前讲话时，你是不是会感觉到自己在微微颤抖，并且认为每个人都会注意到？</p>
+<p>&ensp;&ensp;<br>许多人在做课堂或公开地陈述报告时，会认为自己看起来不仅紧张而且焦虑。如果他们感觉过程中膝盖和手都在颤抖，他们就会认为其他人页注意到了这些，发现他们现在都很焦虑。这就像对失眠的烦恼会进一步妨碍睡眠，对口吃的焦虑会使口吃更严重。</p>
+<p>这些就是我所记录的:焦点效应及其与透明度错觉的关系。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>今日笔记0w0~</title>
+    <url>/2020/06/10/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-9/</url>
+    <content><![CDATA[<p>###今日份笔记 2020年6月10号</p>
+<a id="more"></a>
+<p>&ensp;&ensp;我想解释一下，今天不写笔记存粹是时间不够，我还要学习云计算、社会心理学这些玩意哈哈哈哈。</p>
+]]></content>
+      <tags>
+        <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>今日笔记0w0~</title>
+    <url>/2020/06/09/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-8/</url>
+    <content><![CDATA[<p>###今日份笔记 2020年6月9号</p>
+<a id="more"></a>
+<p>&ensp;&ensp;我想解释一下，今天不写笔记存粹是时间不够，我还要学习云计算、社会心理学这些玩意哈哈哈哈。</p>
+]]></content>
+      <tags>
+        <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/02/19/%E7%A4%BE%E4%BC%9A%E5%BF%83%E7%90%86%E5%AD%A6/%E5%BF%83%E7%90%86%E5%AD%A6-%E8%87%AA%E6%88%91%E6%A6%82%E5%BF%B5/</url>
+    <content><![CDATA[<h2 id="心里学-自我概念-我是谁"><a href="#心里学-自我概念-我是谁" class="headerlink" title="心里学-自我概念:我是谁"></a>心里学-自我概念:我是谁</h2><a id="more"></a>
+<p>&ensp;&ensp;—-社会心理学对我而言要我去介绍这本书还是真的蛮复杂的，说实在话我只能通过摘录某些我觉得很有意义的内容去记录着本书的知识。</p>
+<p>&ensp;&ensp;现在记录的是关于”我们如何认识自己?”这一块的内容。</p>
+<p>&ensp;&ensp;</p>
+<h2 id="自我概念-我是谁"><a href="#自我概念-我是谁" class="headerlink" title="自我概念:我是谁"></a>自我概念:我是谁</h2><p>&ensp;&ensp;我们如何认识自己？我们对自己的认识有多精确？是什么决定了我们的自我概念？</p>
+<p>&ensp;&ensp;我们世界的核心：我们的自我感觉</p>
+<p>&ensp;&ensp;一个人最重要的部分就是自我。你知道自己是谁，自己的性别，了解自己的感受和记忆。</p>
+<p>&ensp;&ensp;为了研究自我感源于何处，神经科学家正在探究自我感觉的生理基础–脑部活动。有些研究表明大脑右半球有重要作用。把你的大脑右半球置于睡眠状态(往左颈动脉中注入麻醉剂)，你很可能会无法识别自己的脸。一位大脑右半球损伤的病人便无法意识到自己左手的存在并控制它(Decety &amp; Sommerville,2003)。”内侧前额叶皮层”是位于中央沟的一条神经通路，恰好在眼睛后面，他似乎能够帮助你把对自我的感觉整合起来。当你思考自我的时候，它会变得很活跃(Farb &amp; others,2007:Zimmer,2005)。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>综合日语第22次课笔记</title>
+    <url>/2021/02/04/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC22%E6%AC%A1%E8%AF%BE%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="第二十二课音声及语法解析"><a href="#第二十二课音声及语法解析" class="headerlink" title="第二十二课音声及语法解析"></a>第二十二课音声及语法解析</h1><p>Vてみる&lt;尝试性动作&gt;<br>动词て形，后接补助动词「みる」，按二类动词进行活用。表示尝试着进行某动作或做某事。<br>相当于汉语的:<del>一下，试着</del><br>例如:</p>
+<ul>
+<li>1<blockquote>
+<p>飛んでみる。(试着飞一下)<br>像这种就是动词的て形加みる就变成了で。</p>
+</blockquote>
+</li>
+<li>2<blockquote>
+<p>川柳を書いてみましょう。(尝试着写一下川柳)</p>
+</blockquote>
+</li>
+<li>3<blockquote>
+<p>どうしてもやってみようと思います。(无论如何也要尝试做一下)</p>
+</blockquote>
+</li>
+<li>4 <blockquote>
+<p>试着跟她告白吧(彼女に告白してみましょう)</p>
+</blockquote>
+</li>
+</ul>
+<p>と<br>1.必然结果、自然现象<br>2.习惯反复(特定的人或物)</p>
+<p>たら<br>1以假设的形式提出话题。 假定条件<br>2.就对方提出的话题或问题做出回答或是提出自己的意见和建议<br>ば<br>假定条件(假定条件意义强于确定条件)<br>契机、发现<br>雨が降れば、出</p>
+<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>词性</th>
+<th>翻译</th>
+<th>声调</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>よじじゅくご</td>
+<td>名词</td>
+<td>四字熟语</td>
+<td></td>
+</tr>
+<tr>
+<td>威風堂々(いふうどうどう)</td>
+<td>名词</td>
+<td>威风堂堂</td>
+<td></td>
+</tr>
+<tr>
+<td>四月馬鹿(しがつばか)</td>
+<td>名词</td>
+<td>四月笨蛋</td>
+<td></td>
+</tr>
+<tr>
+<td>虎視眈々(こしたんたん)</td>
+<td>名词</td>
+<td>虎视眈眈</td>
+<td></td>
+</tr>
+<tr>
+<td>自業自得(じごうじとく)</td>
+<td>名词</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>一期一会(いちごいちえ)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>本末転倒(ほんまつてんとう)</td>
+<td>名词</td>
+<td>本末倒置</td>
+<td>1-0</td>
+</tr>
+<tr>
+<td>ため</td>
+<td>名词</td>
+<td>为了</td>
+<td>2</td>
+</tr>
+<tr>
+<td>一式(いっしき)</td>
+<td>/</td>
+<td>一套</td>
+<td>4</td>
+</tr>
+<tr>
+<td>どんなに</td>
+<td>副词</td>
+<td>无论</td>
+<td>1</td>
+</tr>
+<tr>
+<td>資金(しきん)</td>
+<td>名词</td>
+<td>资金</td>
+<td>1</td>
+</tr>
+<tr>
+<td>どんなに～でしょう</td>
+<td>/</td>
+<td>多(么)~啊!</td>
+<td>/</td>
+</tr>
+<tr>
+<td>か</td>
+<td>语气助词</td>
+<td>表示感慨[学生社长]か疑问语气助词[か]接在对方谈话中出现的某个词语的后面,表示确认的语气，同时，以该词语所指称的事物为话题，并对此加以评价。</td>
+<td>/</td>
+</tr>
+<tr>
+<td>確率(かくりつ)</td>
+<td>名词</td>
+<td>概率/几率</td>
+<td>0</td>
+</tr>
+<tr>
+<td>成功の確率(せいこうのかくりつ)</td>
+<td>名词</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>低い(ひくい)</td>
+<td>形容词1类</td>
+<td>低</td>
+<td>2</td>
+</tr>
+<tr>
+<td>～ように</td>
+<td>/</td>
+<td>为了<del>(而</del>)</td>
+<td>/</td>
+</tr>
+<tr>
+<td>ため</td>
+<td>名词</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>進級試験(しんきゅうしけん)</td>
+<td>名词</td>
+<td>升班考试</td>
+<td>/</td>
+</tr>
+<tr>
+<td>第一(だいいち)</td>
+<td>名词</td>
+<td><del>第一，</del>最重要</td>
+<td></td>
+</tr>
+<tr>
+<td>勉強第一(べんきょうだいいち)</td>
+<td>名词</td>
+<td>学习第一</td>
+<td></td>
+</tr>
+<tr>
+<td>友達第一(ともだちだいいち)</td>
+<td>名词</td>
+<td>友谊第一</td>
+<td>/</td>
+</tr>
+<tr>
+<td>安全第一(あんぜんだいいち)</td>
+<td>名词</td>
+<td>安全第一</td>
+<td>/</td>
+</tr>
+<tr>
+<td>確かに(たしかに)</td>
+<td>名词</td>
+<td>确实</td>
+<td>/</td>
+</tr>
+<tr>
+<td>生きる(いきる)</td>
+<td>自动词2类</td>
+<td>活，生存</td>
+<td>2</td>
+</tr>
+<tr>
+<td>故障(こしょう)</td>
+<td>名词/自动词3类</td>
+<td>鼓掌</td>
+<td>0</td>
+</tr>
+<tr>
+<td>国慶節(こっけいせつ)</td>
+<td>名词</td>
+<td>国庆节</td>
+<td>3</td>
+</tr>
+<tr>
+<td>建国記念日(けんこくきねんび)</td>
+<td>名词</td>
+<td>日本的建国纪念日</td>
+<td></td>
+</tr>
+<tr>
+<td>冷たい(つめたい)</td>
+<td>形容词1类</td>
+<td>凉的/冰的/冷漠</td>
+<td>0</td>
+</tr>
+<tr>
+<td>字(じ)</td>
+<td>名词</td>
+<td>字</td>
+<td>1</td>
+</tr>
+<tr>
+<td>かける</td>
+<td>他动词2类</td>
+<td>戴</td>
+<td>2</td>
+</tr>
+<tr>
+<td>自由(じゆう)</td>
+<td>名词/形容词2类</td>
+<td>自由</td>
+<td>/</td>
+</tr>
+<tr>
+<td>不自由(ふじゆう)</td>
+<td>名词</td>
+<td>(日本称呼行动不便人士)残疾</td>
+<td>/</td>
+</tr>
+<tr>
+<td>ジーンズ(jeans)</td>
+<td>名词</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ゆとり</td>
+<td>名词</td>
+<td>富裕/余裕</td>
+<td>0</td>
+</tr>
+<tr>
+<td>ー作り(－づくり)</td>
+<td>/</td>
+<td>制作/结交/</td>
+<td>1</td>
+</tr>
+<tr>
+<td>手作り(てづくり)</td>
+<td>名词</td>
+<td>结交</td>
+<td>/</td>
+</tr>
+</tbody></table>
+<p>1．～ために/～ための(N)&lt;目的&gt;<br>表示目的。前后两个句子的主语必须要一致，相当于汉语的:为了~<br>接续:Vる+～(名词+の+ために)<br>N＋の+~（动词+の+ための）</p>
+<ol>
+<li>君のためなら、僕は何でもできた。(为了你，我无所不能。)</li>
+<li>大切なものを守るために、現実という名の怪物と戦い(たたかい)ましょう。(为了守护重要的东西，跟叫做现实的怪物战斗)</li>
+<li>これは水着(みずぎ)を買うためのお金です。(这是为了买泳衣而准备的钱。)</li>
+<li>为自己而活吧!(自分のために生きましょう。)</li>
+<li>英二为了学习川柳，加入了文艺部。(英二さんは川柳を勉強するために、文艺部)</li>
+</ol>
+<p>るように&lt;目的&gt;<br>用于表达要达到得目标或者目的<br>主句一般为达到该目标或目的所采取的手段，相当于汉语得:为了(避免<del>)<br>接续:<br>Vる・Vない+</del><br>忘れないように、ノートにメモをしていました。(为了避免忘记，再笔记本上做了笔记。)<br>日本語が上手になるように、毎日一生懸命勉強している。(为了尽快学号日语，每天拼命学习。)<br>アップルパイがたくさん買えるように、お金を貯めています。(为了能够买很多的苹果派，正在存钱。)<br>明日、海へ遊びに行けるように、今日(为了明天能够去海边玩，今天买了泳衣。)<br>風邪を引かないように、コートを着ました。(为了避免感冒，穿了外套。)</p>
+<p>表示目的:ために、ように的区别<br>[ために]前后从句为同一主语;<br>[ように]前后主语可以不一样。<br>[ために]前面动词一般为意志性动词。<br>[ように]前面则多为非意志性动词(如:なる、分かる、見える、聞こえる、能动态)<br>[ために]侧重人的主观目的，一般指为实现该目的采取的某方法<br>[ように]表示目标一般为说话人的愿望，期望或行为目标，动作者的意志有时是难以控制或实现的。</p>
+<p>練習:<br>日本語を勉強する<font style="color:green">ために</font>、辞書を買った。<br>息子が日本を勉強する<font style="color:red">ように</font>、私は辞書を買った。<br>日本語が話せる<font style="color:red">ように</font>、毎日テープで練習している。<br>分かる<font style="color:red">ように</font>ゆっくり話してください。<br>家を建てる<font style="color:green">ために</font>、借金している。<br>これから自分のカで生きられる<font style="color:red">ように</font>頑張ります。</p>
+]]></content>
+      <categories>
+        <category>日语</category>
+        <category>日语语法</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC25%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC28%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC26%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC29%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC30%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/07/09/Web%E9%A1%B5%E9%9D%A2%E8%AE%BE%E8%AE%A1%E7%9F%A5%E8%AF%86/%E5%AD%A6%E4%B9%A0CodingStartup%E6%95%99%E7%A8%8B-%E9%AA%A8%E6%9E%B6%E5%B1%8F%E6%95%88%E6%9E%9C/</url>
+    <content><![CDATA[<p>实现一个骨架屏，这里写上HTML、CSS、JS的代码<br>HTML</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;image&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://assets.codepen.io/2002878/wake-up-and-code.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>CodingStartup<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;description&quot;</span>&gt;</span></span><br><span class="line">    Lorem ipsum dolor.~</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>:<span class="number">#f6f6f6</span>;</span><br><span class="line">    <span class="attribute">font-family</span>: Helvetica;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">display</span>:flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.card</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">320px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">6px</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">box-shadow</span>:<span class="number">0px</span> <span class="number">4px</span> <span class="number">6px</span> <span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,.<span class="number">12</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.image</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.image</span> <span class="selector-tag">img</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: inherit;</span><br><span class="line">    <span class="attribute">object-fit</span>:cover;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>:<span class="number">2rem</span> <span class="number">1.8rem</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h4</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1rem</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">1.5rem</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1.5rem</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.description</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">1rem</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1.4rem</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个是加载效果</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card loading&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;image&quot;</span>&gt;</span></span><br><span class="line">       </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>CodingStartup<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;description&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span>&#123;</span><br><span class="line">    <span class="attribute">--loading-gray</span>: <span class="number">#ededed</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>:<span class="number">#f6f6f6</span>;</span><br><span class="line">    <span class="attribute">font-family</span>: Helvetica;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">display</span>:flex;</span><br><span class="line">    <span class="attribute">justify-content</span>: space-evenly;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">100vh</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.card</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">320px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">6px</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">box-shadow</span>:<span class="number">0px</span> <span class="number">4px</span> <span class="number">6px</span> <span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,.<span class="number">12</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.image</span>&#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.image</span> <span class="selector-tag">img</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: inherit;</span><br><span class="line">    <span class="attribute">object-fit</span>:cover;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>:<span class="number">2rem</span> <span class="number">1.8rem</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h4</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">1rem</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">1.5rem</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1.5rem</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.description</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">1rem</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1.4rem</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-class">.image</span>,</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">h4</span>,</span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-class">.description</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>:<span class="built_in">var</span>(--loading-grey);</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(<span class="number">100deg</span>,</span><br><span class="line">    rgba(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>, <span class="number">0</span>)<span class="built_in">40</span>%,</span><br><span class="line">    <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>, .<span class="number">5</span>)<span class="built_in">50</span>%,</span><br><span class="line">    <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>, <span class="number">0</span>)<span class="built_in">60</span>%)<span class="built_in">var</span>(--loading-grey);</span><br><span class="line">    <span class="attribute">background-size</span>: <span class="number">200%</span> <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">background-position-x</span>: <span class="number">180%</span>;</span><br><span class="line">    <span class="attribute">animation</span>: <span class="number">1s</span> loading ease-in-out infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> loading &#123;</span><br><span class="line">    <span class="selector-tag">to</span> &#123;</span><br><span class="line">        <span class="attribute">background-position-x</span>: -<span class="number">20%</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-tag">h4</span>&#123;</span><br><span class="line">    <span class="attribute">min-height</span>:<span class="number">1.6rem</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span>;</span><br><span class="line">    <span class="attribute">animation-delay</span>: .<span class="number">05s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loading</span> <span class="selector-class">.description</span>&#123;</span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">4rem</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">4px</span>;</span><br><span class="line">    <span class="attribute">animation-delay</span>: .<span class="number">06s</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/07/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AF%E8%80%83/%E6%95%B0%E5%88%B6%E5%8F%8A%E5%85%B6%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<p>数制及其转换<br>各种数制<br>R进制，通常说法就是逢R进1。可以用的数为R个，分别是0，1，2…R1。例如十进制的基数为10，既可以用到的数码个数为10，他们是0，1，2，3，4，5，6，7，8，9。二进制数的基数为2，可用的数码个数为2，他们是0和1。</p>
+<p>二进制:逢二进一，通常在二进制后面加字母B或下标2表示二进制。如(101011)，或者101011B。B就是二进制的英文binary system的首字母。</p>
+<p>八进制:逢八进一，有八个字符0~7，通常在八进制后面加字母O（或小写的o）或下标8表示八进制。（如734）或者734O。O就是八进制的英文(octal system)的首字母。</p>
+<p>十六进制：逢十六进一，有十六个字符0<del>9，A</del>F，通常在十六进制后面加字母H或下标16表示二进制。如（7EA）或者7EAH.H就是十六进制的英文Hex的首字母。</p>
+<p>数值计算<br>对于任意一个R进制数，他的每一位数值等于该位的数码乘以该位的全数。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC23%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>词性</th>
+<th>声调</th>
+<th>翻译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>弁論大会(べんろんたいかい)</td>
+<td>名词</td>
+<td>演讲大赛</td>
+<td>5</td>
+</tr>
+<tr>
+<td>弁論(べんろん)</td>
+<td>名词</td>
+<td>辩论</td>
+<td>0</td>
+</tr>
+<tr>
+<td>大会(たいかい)</td>
+<td>名词</td>
+<td>大会</td>
+<td>0</td>
+</tr>
+<tr>
+<td>教養(きょうよう)</td>
+<td>名词</td>
+<td>教养/修养/文化</td>
+<td>0</td>
+</tr>
+<tr>
+<td>きちんと</td>
+<td>副词/自动词3类</td>
+<td>有条理/准确</td>
+<td>2</td>
+</tr>
+<tr>
+<td>全然(ぜんぜん)</td>
+<td>副词</td>
+<td>完全(不~)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>~ておく</td>
+<td>/</td>
+<td>预先做~</td>
+<td>／</td>
+</tr>
+<tr>
+<td>～ぼよかった</td>
+<td>/</td>
+<td>如果<del>就好了，要是</del>多好</td>
+<td>/</td>
+</tr>
+<tr>
+<td>振り返る(ふりかえる)</td>
+<td>他动词1类</td>
+<td>回头看</td>
+<td>3</td>
+</tr>
+<tr>
+<td>ドア(door)</td>
+<td>名词</td>
+<td>门</td>
+<td>1</td>
+</tr>
+<tr>
+<td>掲示板(けいじばん)</td>
+<td>名词</td>
+<td>公告栏/告示牌</td>
+<td>0</td>
+</tr>
+<tr>
+<td>掲示(けいじ)</td>
+<td>名词/他动词3类</td>
+<td>公告/告示</td>
+<td>0</td>
+</tr>
+<tr>
+<td>板(ばん)</td>
+<td>名词</td>
+<td>~板</td>
+<td>/</td>
+</tr>
+<tr>
+<td>通りかかる(とおりかかる)</td>
+<td>自动词1类</td>
+<td>经过/通过</td>
+<td>5/0</td>
+</tr>
+<tr>
+<td>～てある</td>
+<td>/</td>
+<td>~着。表示动作结果的存续</td>
+<td>/</td>
+</tr>
+<tr>
+<td>学ぶ(まなぶ)</td>
+<td>他动词1类</td>
+<td>学习</td>
+<td>0</td>
+</tr>
+<tr>
+<td>優勝者(ゆうしょうしゃ)</td>
+<td>名词</td>
+<td>优胜者/获胜者/夺冠者</td>
+<td>3</td>
+</tr>
+<tr>
+<td>だって</td>
+<td>／</td>
+<td>听说/据说（表示传闻的口语表达形式）</td>
+<td>/</td>
+</tr>
+<tr>
+<td>成果(せいか)</td>
+<td>名词</td>
+<td>成果</td>
+<td>1</td>
+</tr>
+<tr>
+<td>試す(ためす)</td>
+<td>他动词1类</td>
+<td>试/测试</td>
+<td>2</td>
+</tr>
+<tr>
+<td>位(い)</td>
+<td>/</td>
+<td>第(几)名/第(几)</td>
+<td>/</td>
+</tr>
+<tr>
+<td>どっち</td>
+<td>名词</td>
+<td>哪个。[どちら]的口语形式</td>
+<td>1</td>
+</tr>
+<tr>
+<td>発想(はっそう)</td>
+<td>名词</td>
+<td>想法/构思/思维方式</td>
+<td>0</td>
+</tr>
+<tr>
+<td>諦める(あきらめる)</td>
+<td>他动词2类</td>
+<td>断念/死心</td>
+<td>4</td>
+</tr>
+<tr>
+<td>申し込む(もうしこむ)</td>
+<td>他动词1类</td>
+<td>申请/请求</td>
+<td>4</td>
+</tr>
+<tr>
+<td>材料(ざいりょう)</td>
+<td>名词</td>
+<td>材料</td>
+<td>3</td>
+</tr>
+<tr>
+<td>注文(ちゅうもん)</td>
+<td>名词/他动词3类</td>
+<td>预定/订购</td>
+<td>0</td>
+</tr>
+<tr>
+<td>できる</td>
+<td>自动词2类</td>
+<td>做好。完毕/準備ができる</td>
+<td>2</td>
+</tr>
+<tr>
+<td>案内状(あんないじょう)</td>
+<td>名词</td>
+<td>邀请函</td>
+<td>0</td>
+</tr>
+<tr>
+<td>マイク(mike)</td>
+<td>名词</td>
+<td>麦克风/话筒</td>
+<td>1</td>
+</tr>
+<tr>
+<td>プログラム(program)</td>
+<td>名词</td>
+<td>程序/节目单</td>
+<td>3</td>
+</tr>
+<tr>
+<td>クラスメート(classmate)</td>
+<td>名词</td>
+<td>同班同学</td>
+<td>4</td>
+</tr>
+<tr>
+<td>海淀区(かいでんく)</td>
+<td>固有名词</td>
+<td>（地名）海淀区（北京市的一个区）</td>
+<td>3</td>
+</tr>
+<tr>
+<td>児童(じどう)</td>
+<td>名词</td>
+<td>儿童</td>
+<td>1</td>
+</tr>
+<tr>
+<td>おやつ</td>
+<td>名词</td>
+<td>（午后三点吃的）零食/小点心</td>
+<td>2</td>
+</tr>
+<tr>
+<td>李霊真(りーれいしん)</td>
+<td>固有名词</td>
+<td>李灵真</td>
+<td>1-1</td>
+</tr>
+<tr>
+<td>気軽(きがる)</td>
+<td>形容词2类</td>
+<td>轻松/随意</td>
+<td>0</td>
+</tr>
+<tr>
+<td>出場(しゅつじょう)</td>
+<td>名词/自动词3类</td>
+<td>参加/出席/出场</td>
+<td>0</td>
+</tr>
+<tr>
+<td>決意(けつい)</td>
+<td>名词/他动词3类</td>
+<td>决定/决意/下决心</td>
+<td>1/2</td>
+</tr>
+<tr>
+<td>ことになる</td>
+<td>/</td>
+<td>表示结果</td>
+<td>/</td>
+</tr>
+<tr>
+<td>ことにする</td>
+<td>/</td>
+<td>表示意志性的行为</td>
+<td>/</td>
+</tr>
+<tr>
+<td>新製品(しんせいひん)</td>
+<td>名词</td>
+<td>新产品</td>
+<td>3</td>
+</tr>
+<tr>
+<td>開発(かいはつ)</td>
+<td>名词/他动词3类</td>
+<td>开发/研发/研究</td>
+<td>0</td>
+</tr>
+<tr>
+<td>かも</td>
+<td>终助词</td>
+<td>表示可能性的推测疑问。或许/可能</td>
+<td>／</td>
+</tr>
+<tr>
+<td>をもとに</td>
+<td>/</td>
+<td>以<del>为基础/以</del>为根据</td>
+<td>/</td>
+</tr>
+<tr>
+<td>切り口(きりくち)</td>
+<td>名词</td>
+<td>断面/视角/方式</td>
+<td>2</td>
+</tr>
+<tr>
+<td>アイデア(idea)</td>
+<td>名词</td>
+<td>想法/主意</td>
+<td>1/3</td>
+</tr>
+<tr>
+<td>スピーチ(speech)</td>
+<td>名词</td>
+<td>演讲</td>
+<td>2</td>
+</tr>
+<tr>
+<td>コンテスト(contest)</td>
+<td>名词</td>
+<td>比赛</td>
+<td>1</td>
+</tr>
+<tr>
+<td>立てる(たてる)</td>
+<td>他动词2类</td>
+<td>指定/計画を立てる</td>
+<td>2</td>
+</tr>
+<tr>
+<td>期日(きじつ)</td>
+<td>名词</td>
+<td>日期</td>
+<td>1</td>
+</tr>
+<tr>
+<td>予算(よさん)</td>
+<td>名词</td>
+<td>预算</td>
+<td>1</td>
+</tr>
+<tr>
+<td>行先(いきさき)</td>
+<td>名词</td>
+<td>目的地/前往的地点/也称作[ゆきさき]</td>
+<td>0</td>
+</tr>
+<tr>
+<td>月日(つきひ)</td>
+<td>名词</td>
+<td>某月某日。也称作[がっぴ]</td>
+<td>2</td>
+</tr>
+<tr>
+<td>提出(ていしゅつ)</td>
+<td>名词/他动词3类</td>
+<td>提交</td>
+<td>0</td>
+</tr>
+<tr>
+<td>地震(じしん)</td>
+<td>名词</td>
+<td>地震</td>
+<td>0</td>
+</tr>
+<tr>
+<td>参考(さんこう)</td>
+<td>名词</td>
+<td>参考</td>
+<td>0</td>
+</tr>
+<tr>
+<td>新疆(しんきょう)</td>
+<td>固有名词</td>
+<td>新疆(地名)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>震源地(しんげんち)</td>
+<td>名词</td>
+<td>震源地</td>
+<td>3</td>
+</tr>
+<tr>
+<td>震源(しんげん)</td>
+<td>名词</td>
+<td>震源</td>
+<td>0</td>
+</tr>
+<tr>
+<td>マグニチュード(magnitude)</td>
+<td>名词</td>
+<td>震级</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Ｍ(マグニチュード magnitude)</td>
+<td>名词</td>
+<td>(震)级,大小/量</td>
+<td>1</td>
+</tr>
+<tr>
+<td>死者(ししゃ)</td>
+<td>名词</td>
+<td>死者</td>
+<td>1</td>
+</tr>
+<tr>
+<td>重傷(じゅうしょう)</td>
+<td>名词</td>
+<td>重伤</td>
+<td>0</td>
+</tr>
+<tr>
+<td>全半壊(ぜんはんかい)</td>
+<td>名词</td>
+<td>全部与部分损坏/倒塌</td>
+<td>3</td>
+</tr>
+<tr>
+<td>戸(こ)</td>
+<td>/</td>
+<td>户</td>
+<td>/</td>
+</tr>
+<tr>
+<td>現地(げんち)</td>
+<td>名词</td>
+<td>当地</td>
+<td>1</td>
+</tr>
+<tr>
+<td>新中国(しんちゅうごく)</td>
+<td>名词</td>
+<td>新中国</td>
+<td>3</td>
+</tr>
+<tr>
+<td>建国(けんこく)</td>
+<td>名词/自动词3类</td>
+<td>建国</td>
+<td>0</td>
+</tr>
+<tr>
+<td>以来(いらい)</td>
+<td>名词</td>
+<td>以来，之后</td>
+<td>1</td>
+</tr>
+<tr>
+<td>唐山(とうざん)</td>
+<td>固有名词</td>
+<td>唐山(地名)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>次ぐ(つぐ)</td>
+<td>自动词1类</td>
+<td>仅次于/紧接着</td>
+<td>1</td>
+</tr>
+<tr>
+<td>倒壊(とうかい)</td>
+<td>名词/自动词3类</td>
+<td>倒塌</td>
+<td>0</td>
+</tr>
+<tr>
+<td>安全(あんぜん)</td>
+<td>名词/形容词2类</td>
+<td>安全</td>
+<td>0</td>
+</tr>
+<tr>
+<td>被災地(ひさいち)</td>
+<td>名词</td>
+<td>受灾地区</td>
+<td>2</td>
+</tr>
+<tr>
+<td>被災(ひさい)</td>
+<td>自动词3类</td>
+<td>受灾</td>
+<td>0</td>
+</tr>
+<tr>
+<td>方々(かたがた)</td>
+<td>名词</td>
+<td>人们</td>
+<td>2</td>
+</tr>
+<tr>
+<td>防寒具(ぼうかんぐ)</td>
+<td>名词</td>
+<td>御寒用品</td>
+<td>3</td>
+</tr>
+<tr>
+<td>防寒(ぼうかん)</td>
+<td>名词</td>
+<td>御寒</td>
+<td>0</td>
+</tr>
+<tr>
+<td>具(ぐ)</td>
+<td>/</td>
+<td><del>用品/</del>器具</td>
+<td>/</td>
+</tr>
+<tr>
+<td>提供(ていきょう)</td>
+<td>名词/他动词3类</td>
+<td>提供</td>
+<td>0</td>
+</tr>
+<tr>
+<td>貯水(ちょすい)</td>
+<td>名词/自动词3类</td>
+<td>蓄水/储水</td>
+<td>0</td>
+</tr>
+<tr>
+<td>施設(しせつ)</td>
+<td>名词</td>
+<td>设施</td>
+<td>1/2</td>
+</tr>
+<tr>
+<td>飲料水(いんりょうすい)</td>
+<td>名词</td>
+<td>饮用水</td>
+<td>3</td>
+</tr>
+<tr>
+<td>飲料(いんりょう)</td>
+<td>名词</td>
+<td>饮料/饮用~</td>
+<td>3</td>
+</tr>
+<tr>
+<td>水(すい)</td>
+<td>/</td>
+<td>~水</td>
+<td>/</td>
+</tr>
+<tr>
+<td>確保(かくほ)</td>
+<td>名词/他动词3类</td>
+<td>确保</td>
+<td>1</td>
+</tr>
+<tr>
+<td>阪神(はんしん)</td>
+<td>固有名词</td>
+<td>(大阪与神户的简称)阪神(地名)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>淡路(あわじ)</td>
+<td>固有名词</td>
+<td>淡路(地名)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>震災(しんさい)</td>
+<td>名词</td>
+<td>严重的地震灾害</td>
+<td>0</td>
+</tr>
+<tr>
+<td>淡路島(あわじしま)</td>
+<td>固有名词</td>
+<td>淡路岛</td>
+<td>3</td>
+</tr>
+<tr>
+<td>島(しま)</td>
+<td>名词</td>
+<td>岛屿/岛</td>
+<td>2</td>
+</tr>
+<tr>
+<td>起きる(おきる)</td>
+<td>自动词2类</td>
+<td>发生/出现</td>
+<td>2</td>
+</tr>
+<tr>
+<td>高齢(こうれい)</td>
+<td>名词</td>
+<td>高龄/老龄</td>
+<td>0</td>
+</tr>
+<tr>
+<td>犠牲者(ぎせいしゃ)</td>
+<td>名词</td>
+<td>牺牲者/死者</td>
+<td>2</td>
+</tr>
+<tr>
+<td>高齢者(こうれいしゃ)</td>
+<td>名词</td>
+<td>老年人/老龄人</td>
+<td>3</td>
+</tr>
+<tr>
+<td>犠牲(ぎせい)</td>
+<td>名词</td>
+<td>牺牲</td>
+<td>0</td>
+</tr>
+<tr>
+<td>過半数(かはんすう)</td>
+<td>名词</td>
+<td>过半数/一半以上</td>
+<td>2</td>
+</tr>
+<tr>
+<td>消す(けす)</td>
+<td>他动词1类</td>
+<td>关/灭/切断</td>
+<td>0</td>
+</tr>
+<tr>
+<td>隠れる(かくれる)</td>
+<td>自动词2类</td>
+<td>隐藏/藏</td>
+<td>3</td>
+</tr>
+<tr>
+<td>指導(しどう)</td>
+<td>名词/他动词3类</td>
+<td>指导/教导/领导</td>
+<td>0</td>
+</tr>
+<tr>
+<td>意識(いし)</td>
+<td>名词</td>
+<td>意志</td>
+<td>1</td>
+</tr>
+<tr>
+<td>揺れ(ゆれ)</td>
+<td>名词</td>
+<td>摇晃/晃动/摇摆</td>
+<td>0</td>
+</tr>
+<tr>
+<td>をはじめ</td>
+<td>/</td>
+<td>以<del>为首</del>:以<del>为代表</del></td>
+<td>/</td>
+</tr>
+<tr>
+<td>避難(ひなん)</td>
+<td>名词/自动词3类</td>
+<td>避难</td>
+<td>1</td>
+</tr>
+<tr>
+<td>家具(かぐ)</td>
+<td>名词</td>
+<td>家具</td>
+<td>1</td>
+</tr>
+<tr>
+<td>転倒(てんとう)</td>
+<td>名词/自动词3类/他动词3类</td>
+<td>倒/(使)倒下</td>
+<td>0</td>
+</tr>
+<tr>
+<td>落下物(らっかぶつ)</td>
+<td>名词</td>
+<td>掉落的东西</td>
+<td>3</td>
+</tr>
+<tr>
+<td>落下(らっか)</td>
+<td>名词/自动词3类</td>
+<td>落下/掉落</td>
+<td>0</td>
+</tr>
+<tr>
+<td>身(み)</td>
+<td>名词</td>
+<td>身子/身体</td>
+<td>0</td>
+</tr>
+<tr>
+<td>固定(こてい)</td>
+<td>名词/自动词3类/他动词3类</td>
+<td>固定</td>
+<td>0</td>
+</tr>
+<tr>
+<td>市町村(しちょうそん)</td>
+<td>名词</td>
+<td>市/镇/村</td>
+<td>2</td>
+</tr>
+<tr>
+<td>避難所(ひちょうそん)</td>
+<td>名词</td>
+<td>避难场所</td>
+<td>0</td>
+</tr>
+<tr>
+<td>指定(してい)</td>
+<td>名词/他动词3类</td>
+<td>指定</td>
+<td>0</td>
+</tr>
+<tr>
+<td>応急(おうきゅう)</td>
+<td>名词</td>
+<td>应急</td>
+<td>0</td>
+</tr>
+<tr>
+<td>今回(こんかい)</td>
+<td>名词</td>
+<td>此次/本次/这一次</td>
+<td>1</td>
+</tr>
+<tr>
+<td>教訓(きょうくん)</td>
+<td>名词</td>
+<td>教训</td>
+<td>/</td>
+</tr>
+<tr>
+<td>備える(そなえる)</td>
+<td>他动词2类</td>
+<td>防备/预防</td>
+<td>3</td>
+</tr>
+<tr>
+<td>食料(しょくりょう)</td>
+<td>名词</td>
+<td>食品/食物</td>
+<td>2</td>
+</tr>
+<tr>
+<td>注(ちゅう)</td>
+<td>名词</td>
+<td>注释/注</td>
+<td>0</td>
+</tr>
+<tr>
+<td>不十分(ぶじゅうぶん)</td>
+<td>名词/形容词2类</td>
+<td>不充分/不够</td>
+<td>2</td>
+</tr>
+<tr>
+<td>広まる(ひろまる)</td>
+<td>自动词1类</td>
+<td>扩大/扩展/普及</td>
+<td>3/0</td>
+</tr>
+<tr>
+<td>感動(かんどう)</td>
+<td>名词/自动词3类</td>
+<td>感动</td>
+<td>0</td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC22%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th align="center">单词</th>
+<th align="center">词性</th>
+<th align="center">声调</th>
+<th align="center">翻译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">宝くじ(たからくじ)</td>
+<td align="center">名词</td>
+<td align="center">彩票/奖券</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">当たる(あたる)</td>
+<td align="center">自动词1类</td>
+<td align="center">中奖/打中/猜中</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">このごろ</td>
+<td align="center">名词</td>
+<td align="center">最近/这些日子</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">あんまり</td>
+<td align="center">副词</td>
+<td align="center">(不)大~(没)怎么([あまり]的强调用法)</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">~って</td>
+<td align="center">/</td>
+<td align="center">表示引用的[と]的口语表达形式</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">金持ち(かねもち)</td>
+<td align="center">名词</td>
+<td align="center">有钱人/富人</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">～てみる</td>
+<td align="center">/</td>
+<td align="center">尝试<del>/试着</del>/看</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">一等(いっとう)</td>
+<td align="center">名词</td>
+<td align="center">一等奖</td>
+<td align="center">0/3</td>
+</tr>
+<tr>
+<td align="center">~そうだ</td>
+<td align="center">／</td>
+<td align="center">表示传闻/听说~</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">運(うん)</td>
+<td align="center">名词</td>
+<td align="center">运气</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">なんて</td>
+<td align="center">取立て助</td>
+<td align="center">表示例示、强调[など]的口语表达式</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">ところで</td>
+<td align="center">接续词</td>
+<td align="center">那么</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">大金(たいきん)</td>
+<td align="center">名词</td>
+<td align="center">巨款/一大笔钱</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">に</td>
+<td align="center">格助词</td>
+<td align="center">表示用途/目的/何に使う</td>
+<td align="center">／</td>
+</tr>
+<tr>
+<td align="center">さあ</td>
+<td align="center">感叹词</td>
+<td align="center">用于不知如何作答或踌躇/犹豫之时</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">な</td>
+<td align="center">终助词</td>
+<td align="center">表示感叹</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">もし</td>
+<td align="center">副词</td>
+<td align="center">如果</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">期末テスト(きまつtest)</td>
+<td align="center">名词</td>
+<td align="center">期末考试</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">期末(きまつ)</td>
+<td align="center">名词</td>
+<td align="center">期末/学期末</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">によると</td>
+<td align="center">/</td>
+<td align="center">根据~</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">DJ(Disk jockey ディジェー)</td>
+<td align="center">名词</td>
+<td align="center">音乐节目主持人</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">お年玉(おとしだま)</td>
+<td align="center">名词</td>
+<td align="center">压岁钱</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">一度も(いちども)</td>
+<td align="center">/</td>
+<td align="center">一次也(没有)~ 常用搭配为[一度も~ない]</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">グームソフト(game soft)</td>
+<td align="center">名词</td>
+<td align="center">游戏软件</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">学割(がくわり)</td>
+<td align="center">名词</td>
+<td align="center">学生优惠/学生打折[学生割引]的缩略语</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">航空券(こうくうけん)</td>
+<td align="center">名词</td>
+<td align="center">机票</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">本末転倒(ほんまつーてんとう)</td>
+<td align="center">名词</td>
+<td align="center">本末倒置</td>
+<td align="center">1-0</td>
+</tr>
+<tr>
+<td align="center">ため</td>
+<td align="center">名词</td>
+<td align="center">为了</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">一式(いっしき)</td>
+<td align="center">名词</td>
+<td align="center">一套</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">どんなに</td>
+<td align="center">副词</td>
+<td align="center">无论~</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">資金(しきん)</td>
+<td align="center">名词</td>
+<td align="center">资金</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">どんなに~でしょう</td>
+<td align="center">/</td>
+<td align="center">多(么)~啊！</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">か</td>
+<td align="center">／</td>
+<td align="center">表示感慨。</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">確率(かくりつ)</td>
+<td align="center">名词</td>
+<td align="center">概率/几率</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">低い(ひくい)</td>
+<td align="center">形容词1类</td>
+<td align="center">低</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">～ように</td>
+<td align="center">/</td>
+<td align="center">为了<del>(而</del>)</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">ため</td>
+<td align="center">名词</td>
+<td align="center">因为</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">進級(しんきゅう)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">升级/升班</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">第一(だいいち)</td>
+<td align="center">名词</td>
+<td align="center">~第一/最重要/勉强第一</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">確か(たしか)</td>
+<td align="center">形容词2类</td>
+<td align="center">确实/的确</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">生きる(いきる)</td>
+<td align="center">自动词2类</td>
+<td align="center">活/生存</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">故障(こしょう)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">故障/出故障</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">国慶節(こっけいせつ)</td>
+<td align="center">名词</td>
+<td align="center">国庆节</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">冷たい(つめたい)</td>
+<td align="center">形容词1类</td>
+<td align="center">凉的/冰的/冷漠</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">字(じ)</td>
+<td align="center">名词</td>
+<td align="center">字</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">かける</td>
+<td align="center">他动词2类</td>
+<td align="center">戴。めがねをかける</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">自由(じゆう)</td>
+<td align="center">名词/形容词2类</td>
+<td align="center">自由</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">ジーンズ(jeans)</td>
+<td align="center">名词</td>
+<td align="center">牛仔裤(服)</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">ゆとり</td>
+<td align="center">名词</td>
+<td align="center">富裕/余裕</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">作り(づくり)</td>
+<td align="center">名词</td>
+<td align="center">制作~/结实/友達作り</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">対象(たいしょう)</td>
+<td align="center">名词</td>
+<td align="center">对象</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">実施(じっし)</td>
+<td align="center">名词/他动词3类</td>
+<td align="center">实施/实行</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">有効(ゆうこう)</td>
+<td align="center">名词/形容词2类</td>
+<td align="center">有效</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">回答(かいとう)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">回答/答复</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">詳細(しょうさい)</td>
+<td align="center">名词/形容词2类</td>
+<td align="center">详细/具体内容</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">掲載(けいさい)</td>
+<td align="center">名词/他动词3类</td>
+<td align="center">刊载/登载</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">状態(じょうたい)</td>
+<td align="center">名词</td>
+<td align="center">状况/状态</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">有無(うむ)</td>
+<td align="center">名词</td>
+<td align="center">有无</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">日常(にちじょう)</td>
+<td align="center">名词</td>
+<td align="center">日常/平常</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">複数(ふくすう)</td>
+<td align="center">名词</td>
+<td align="center">多项/多个</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">~と考えられる</td>
+<td align="center">／</td>
+<td align="center">可以认为</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">バッグ(bag)</td>
+<td align="center">名词</td>
+<td align="center">包/手提包</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">遊び(あそび)</td>
+<td align="center">名词</td>
+<td align="center">玩/娱乐</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">維持(いじ)</td>
+<td align="center">名词/他动词3类</td>
+<td align="center">维持</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">こと</td>
+<td align="center">/</td>
+<td align="center">形式名词的用法(详见语法说明)</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">グラフ(graph)</td>
+<td align="center">名词</td>
+<td align="center">图表</td>
+<td align="center">1/0</td>
+</tr>
+<tr>
+<td align="center">目的(もくてき)</td>
+<td align="center">名词</td>
+<td align="center">目的</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">ただし</td>
+<td align="center">接续词</td>
+<td align="center">不过/只是/但</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">生かす(いかす)</td>
+<td align="center">他动词1类</td>
+<td align="center">有效利用/运用</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">次に(つぎに)</td>
+<td align="center">接续词</td>
+<td align="center">然后/接着</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">次いで(ついで)</td>
+<td align="center">接续词</td>
+<td align="center">紧接着/然后</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">ほどほど</td>
+<td align="center">名词/形容词2类</td>
+<td align="center">适度/适量/适可而止</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">大学生(だいがくせい)</td>
+<td align="center">名词</td>
+<td align="center">大学生</td>
+<td align="center">3/4</td>
+</tr>
+<tr>
+<td align="center">友人(ゆうじん)</td>
+<td align="center">名词</td>
+<td align="center">友人/朋友</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">関わる(かかわる)</td>
+<td align="center">自动词1类</td>
+<td align="center">相关/有关/牵涉</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">関心(かんしん)</td>
+<td align="center">名词</td>
+<td align="center">兴趣/关注/关心</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">浅い(あさい)</td>
+<td align="center">形容词1类</td>
+<td align="center">浅/不深/不足/(颜色)淡</td>
+<td align="center">2/0</td>
+</tr>
+<tr>
+<td align="center">記述(きじゅつ)</td>
+<td align="center">名词/他动词3类</td>
+<td align="center">记述/记录/描写</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">欄(らん)</td>
+<td align="center">名词</td>
+<td align="center">栏目/栏</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">社会人(しゃかいじん)</td>
+<td align="center">名词</td>
+<td align="center">已经工作的人/走上社会者</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">挑戦(ちょうせん)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">挑战</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">精神(せいしん)</td>
+<td align="center">名词</td>
+<td align="center">精神</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">優先(ゆうせん)</td>
+<td align="center">名词/自动词3类/他动词3类</td>
+<td align="center">优先</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">案外(あんがい)</td>
+<td align="center">副词/形容词2类</td>
+<td align="center">竟然/出乎意料</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">読み取る(よみとる)</td>
+<td align="center">他动词1类</td>
+<td align="center">了解到/读出</td>
+<td align="center">3/0</td>
+</tr>
+<tr>
+<td align="center">中学生(ちゅうがくせい)</td>
+<td align="center">名词</td>
+<td align="center">中学生</td>
+<td align="center">3/4</td>
+</tr>
+<tr>
+<td align="center">アニメ</td>
+<td align="center">名词</td>
+<td align="center">动画(アニメーションanimation的简称</td>
+<td align="center">1/0</td>
+</tr>
+<tr>
+<td align="center">一人暮らし(ひとりぐらし)</td>
+<td align="center">名词</td>
+<td align="center">独自生活/一个人生活</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">暮らし(ぐらし)</td>
+<td align="center">/</td>
+<td align="center">~生活</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">お年寄り(おとしより)</td>
+<td align="center">名词</td>
+<td align="center">上岁数的人/老年人</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">年寄り(としより)</td>
+<td align="center">名词</td>
+<td align="center">上岁数的人/老年人</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">主婦(しゅふ)</td>
+<td align="center">名词</td>
+<td align="center">家庭主妇</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">就職(しゅうしょく)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">就业/参加工作</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">非常(ひじょう)</td>
+<td align="center">名词/形容词2类</td>
+<td align="center">非常</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">反対(はんたい)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">反对/相反</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">余暇(よか)</td>
+<td align="center">名词</td>
+<td align="center">余暇/闲暇</td>
+<td align="center">1</td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC21%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th align="center">单词</th>
+<th align="center">词性</th>
+<th align="center">声调</th>
+<th align="center">翻译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">今にも(いまにも)</td>
+<td align="center">副词</td>
+<td align="center">马上/眼看</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">～そうだ</td>
+<td align="center">/</td>
+<td align="center">好像/看上去</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">どんより(と)</td>
+<td align="center">副词/自动词3类</td>
+<td align="center">阴沉沉</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">日ごろ(ひごろ)</td>
+<td align="center">名词</td>
+<td align="center">平常</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">行い(おこない)</td>
+<td align="center">名词</td>
+<td align="center">行为/举止/生活态度</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">自分で(じぶんで)</td>
+<td align="center">/</td>
+<td align="center">自己亲手~/亲自</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">うっかり(と)</td>
+<td align="center">副词/自动词3类</td>
+<td align="center">粗心/大意</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">分ける(わける)</td>
+<td align="center">他动词2类</td>
+<td align="center">分开/分/分给</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">くださる</td>
+<td align="center">他动词1类</td>
+<td align="center">给[くれる]的尊他形式</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">～てくださる</td>
+<td align="center">/</td>
+<td align="center">给/</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">のり巻き[海苔まき]</td>
+<td align="center">名词</td>
+<td align="center">紫菜卷寿司</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">のり[海苔]</td>
+<td align="center">名词</td>
+<td align="center">紫菜/海苔</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">～ていただく</td>
+<td align="center">／</td>
+<td align="center">请~(礼貌的说法)</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">ちょっとした</td>
+<td align="center">连体</td>
+<td align="center">一点</td>
+<td align="center">0/1</td>
+</tr>
+<tr>
+<td align="center">お礼(おれい)</td>
+<td align="center">名词</td>
+<td align="center">感谢/酬谢/谢辞(礼貌的说法)</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">礼(れい)</td>
+<td align="center">名词</td>
+<td align="center">感谢/酬谢/谢辞</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">さしあげる</td>
+<td align="center">他动词2类</td>
+<td align="center">给([あげる]的自谦形式)</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">いただく</td>
+<td align="center">他动词1类</td>
+<td align="center">要/得到(もらう)的自谦语</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">アルバム(album)</td>
+<td align="center">名词</td>
+<td align="center">相册/音乐专辑</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">テーブル(table)</td>
+<td align="center">名词</td>
+<td align="center">桌子/餐桌</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">倒れる(たおれる)</td>
+<td align="center">自动词2类</td>
+<td align="center">倒/倒下</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">もうすぐ</td>
+<td align="center">副词</td>
+<td align="center">马上/即将/快要</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">台風(たいふう)</td>
+<td align="center">名词</td>
+<td align="center">台风</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">原稿(げんこう)</td>
+<td align="center">名词</td>
+<td align="center">稿子/稿件/原稿</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">推薦状(すいせんじょう)</td>
+<td align="center">名词</td>
+<td align="center">推荐信</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">推薦(すいせん)</td>
+<td align="center">名词/他动词3类</td>
+<td align="center">推荐</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">状(じょう)</td>
+<td align="center">／</td>
+<td align="center">～信/~状</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">直す(なおす)</td>
+<td align="center">他动词1类</td>
+<td align="center">修改/修理</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">～てさしあげる</td>
+<td align="center">/</td>
+<td align="center">给<del>[</del>てあげる]的自谦语</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">入れる(いれる)</td>
+<td align="center">他动词2类</td>
+<td align="center">倒/沏。[コーヒー／お茶を入れる]</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">手作り(てづくり)</td>
+<td align="center">名词</td>
+<td align="center">亲手制作/手工制作</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">写真集(しゃしんしゅう)</td>
+<td align="center">名词</td>
+<td align="center">写真集/相册</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">集(しゅう)</td>
+<td align="center">／</td>
+<td align="center">～集</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">褒める(ほめる)</td>
+<td align="center">他动词2类</td>
+<td align="center">表扬/赞赏</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">お祝い(おいわい)</td>
+<td align="center">名词</td>
+<td align="center">祝贺[祝い]的郑重语说法</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">祝い(いわい)</td>
+<td align="center">名词</td>
+<td align="center">祝贺</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">幸せ(しあわせ)</td>
+<td align="center">形容词</td>
+<td align="center">幸福</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">リスト(list)</td>
+<td align="center">名词</td>
+<td align="center">一览表/目录</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">小さな(ちいさな)</td>
+<td align="center">连体词</td>
+<td align="center">小/小的</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">気づく(きづく)</td>
+<td align="center">自动词1类</td>
+<td align="center">发觉/注意到</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">感謝(かんしゃ)</td>
+<td align="center">名词/自动词3类/他动词3类</td>
+<td align="center">感谢</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">イメージチェンジ(image change)</td>
+<td align="center">名词/自动词3类</td>
+<td align="center">改变形象/换样</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">チェンジ(change)</td>
+<td align="center">名词/自动词3类/他动词3类</td>
+<td align="center">改变/换</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">頭(あたま)</td>
+<td align="center">名词</td>
+<td align="center">头/发型/头脑</td>
+<td align="center">3/2</td>
+</tr>
+<tr>
+<td align="center">ほんと</td>
+<td align="center">名词/形容词2类</td>
+<td align="center">真的[本当中的(う)]</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">髪型(かみがた)</td>
+<td align="center">名词</td>
+<td align="center">发型/发式</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">変える(かえる)</td>
+<td align="center">他动词2类</td>
+<td align="center">改变/变换</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">似合う(にあう)</td>
+<td align="center">自动词1类</td>
+<td align="center">适合/相称</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">まるで</td>
+<td align="center">副词</td>
+<td align="center">几乎/简直</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">主人公(しゅじんこう)</td>
+<td align="center">名词</td>
+<td align="center">主人公</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">～みたいだ</td>
+<td align="center">/</td>
+<td align="center">好像/宛如</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">アンダーソン(Anderson)</td>
+<td align="center">固有名词</td>
+<td align="center">安德森</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">~ようだ</td>
+<td align="center">/</td>
+<td align="center">好像</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">美容室(びようしつ)</td>
+<td align="center">名词</td>
+<td align="center">美容院/美容室</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">どう～たらいいか</td>
+<td align="center">／</td>
+<td align="center">怎么~才好呢？</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">ワイルド(wild)</td>
+<td align="center">形容词2类</td>
+<td align="center">野味十足/粗犷/强悍</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">感じ(かんじ)</td>
+<td align="center">名词</td>
+<td align="center">感觉</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">染める(そめる)</td>
+<td align="center">他动词2类</td>
+<td align="center">染</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">パーマ</td>
+<td align="center">名词</td>
+<td align="center">烫发(源自”permanent wave”)</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">かける</td>
+<td align="center">他动词2类</td>
+<td align="center">使产生/使出现</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">ーすぎる</td>
+<td align="center">／</td>
+<td align="center">过于<del>/过度</del>/太</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">ライオン(lion)</td>
+<td align="center">名词</td>
+<td align="center">狮子</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">ヘア(hair)</td>
+<td align="center">名词</td>
+<td align="center">头发</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">なかなか</td>
+<td align="center">副词</td>
+<td align="center">相当/比较/挺</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">かなあ</td>
+<td align="center">终助词</td>
+<td align="center">表示怀疑的语气</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">仲(なか)</td>
+<td align="center">名词</td>
+<td align="center">关系</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">老人(ろうじん)</td>
+<td align="center">名词</td>
+<td align="center">老人</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">冬(ふゆ)</td>
+<td align="center">名词</td>
+<td align="center">冬天/冬季</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">人形(にんぎょう)</td>
+<td align="center">名词</td>
+<td align="center">偶人/玩具娃娃</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">匂い(におい)</td>
+<td align="center">名词</td>
+<td align="center">气味</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">お城(おしろ)</td>
+<td align="center">名词</td>
+<td align="center">城堡/城</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">城(しろ)</td>
+<td align="center">名词</td>
+<td align="center">城/城堡</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">曇(くも)</td>
+<td align="center">名词</td>
+<td align="center">云/云彩</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">月末(げつまつ)</td>
+<td align="center">名词</td>
+<td align="center">月底</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">しばらく</td>
+<td align="center">副词</td>
+<td align="center">一阵子/一段时间/一会儿</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">先日(せんじつ)</td>
+<td align="center">名词</td>
+<td align="center">最近/前几天</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">一時(ひととき)</td>
+<td align="center">名词</td>
+<td align="center">一段时间/短暂时光</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">頂上(ちょうじょう)</td>
+<td align="center">名词</td>
+<td align="center">山顶</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">住む(すむ)</td>
+<td align="center">自动词1类</td>
+<td align="center">清澈/明净</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">青空(あおぞら)</td>
+<td align="center">名词</td>
+<td align="center">蓝天</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">美しい(うつくしい)</td>
+<td align="center">形容词1类</td>
+<td align="center">美丽/漂亮</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">眺める(ながめる)</td>
+<td align="center">他动词2类</td>
+<td align="center">眺望</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">機会(きかい)</td>
+<td align="center">名词</td>
+<td align="center">机会</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">世話(せわ)</td>
+<td align="center">名词/他动词3类</td>
+<td align="center">麻烦/照顾</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">~ております</td>
+<td align="center">/</td>
+<td align="center">现在进行时[~ています]的自谦表达方式</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">課題(かだい)</td>
+<td align="center">名词</td>
+<td align="center">课题/作业</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">順(じゅん)</td>
+<td align="center">名词</td>
+<td align="center">顺序</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC24%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>词性</th>
+<th>声调</th>
+<th>翻译</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>面接(めんせつ)</td>
+<td>名词/自动词3类</td>
+<td>面试</td>
+<td>0</td>
+</tr>
+<tr>
+<td>制度(せいど)</td>
+<td>名词</td>
+<td>制度</td>
+<td>1</td>
+</tr>
+<tr>
+<td>面接官(めんせつかん)</td>
+<td>名词</td>
+<td>面试的考官</td>
+<td>4</td>
+</tr>
+<tr>
+<td>官(かん)</td>
+<td>/</td>
+<td><del>官/</del>者</td>
+<td>/</td>
+</tr>
+<tr>
+<td>田島(たじま)</td>
+<td>固有名词</td>
+<td>(姓)田岛</td>
+<td>0</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC27%E8%AF%BE%E5%8D%95%E8%AF%8D/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>词性</th>
+<th>翻译</th>
+<th>声调</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>うん</td>
+<td>感叹词</td>
+<td>表示肯定/答应等</td>
+<td>1</td>
+</tr>
+<tr>
+<td>～て来る</td>
+<td>名词/自动词3类</td>
+<td>~来/来了</td>
+<td>/</td>
+</tr>
+<tr>
+<td>バイト</td>
+<td>感叹词</td>
+<td>打工/勤工俭学的简称</td>
+<td>0</td>
+</tr>
+<tr>
+<td>あのね</td>
+<td>感叹词</td>
+<td>那个/我说呀</td>
+<td>0</td>
+</tr>
+<tr>
+<td>同窓会(どうそうかい)</td>
+<td>名词</td>
+<td>同窗会</td>
+<td>3/0</td>
+</tr>
+<tr>
+<td>同窓(どうそう)</td>
+<td>名词</td>
+<td>同窗/同学</td>
+<td>0</td>
+</tr>
+<tr>
+<td>八日(ようか)</td>
+<td>名词</td>
+<td>8号</td>
+<td>0</td>
+</tr>
+<tr>
+<td>直前(ちょくぜん)</td>
+<td>名词</td>
+<td>(就在)<del>之前/快要</del>的时候</td>
+<td>0</td>
+</tr>
+<tr>
+<td>欠席(けっせき)</td>
+<td>名词</td>
+<td>缺席/不参加</td>
+<td>0</td>
+</tr>
+<tr>
+<td>～とく</td>
+<td>/</td>
+<td>[-ておく]的缩略语形式</td>
+<td>/</td>
+</tr>
+<tr>
+<td>お願い(おねがい)</td>
+<td>名词/他动词3类</td>
+<td>拜托/请求(礼貌说法)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>進む(すすむ)</td>
+<td>自动词1类</td>
+<td>进行/进展</td>
+<td>0</td>
+</tr>
+<tr>
+<td>スランプ(slump)</td>
+<td>名词</td>
+<td>消沉/萎靡</td>
+<td>2</td>
+</tr>
+<tr>
+<td>～ちゃった</td>
+<td>/</td>
+<td>[~てしまった]的缩略语形式</td>
+<td>/</td>
+</tr>
+<tr>
+<td>弱気(よわき)</td>
+<td>名词/形容词2类</td>
+<td>胆怯/气馁</td>
+<td>0</td>
+</tr>
+<tr>
+<td>しっかり</td>
+<td>副词/自动词3类</td>
+<td>坚强/结实/牢固</td>
+<td>3</td>
+</tr>
+<tr>
+<td>~なさい</td>
+<td>/</td>
+<td>表示要求和语气比较柔和的命令。请~</td>
+<td>/</td>
+</tr>
+<tr>
+<td>しろ・せよ</td>
+<td>/</td>
+<td>表示禁止</td>
+<td>/</td>
+</tr>
+<tr>
+<td>わよ</td>
+<td>终助词</td>
+<td><del>啊/</del>呀</td>
+<td>/</td>
+</tr>
+<tr>
+<td>知らせる(しらせる)</td>
+<td>他动词2类</td>
+<td>通知/告诉</td>
+<td>0</td>
+</tr>
+<tr>
+<td>危ない(あぶない)</td>
+<td>形容词1类</td>
+<td>危险</td>
+<td>3/0</td>
+</tr>
+<tr>
+<td>命令形(めいれいけい)</td>
+<td>名词</td>
+<td>命令形/命令的形式</td>
+<td>0</td>
+</tr>
+<tr>
+<td>命令(めいれい)</td>
+<td>名词/他动词3类</td>
+<td>命令</td>
+<td>0</td>
+</tr>
+<tr>
+<td>形(けい)</td>
+<td>/</td>
+<td><del>形</del>形式</td>
+<td>/</td>
+</tr>
+<tr>
+<td>長所(ちょうしょ)</td>
+<td>名词</td>
+<td>长处/优点</td>
+<td>1</td>
+</tr>
+<tr>
+<td>センス(sense)</td>
+<td>名词</td>
+<td>感觉/判断力</td>
+<td>1</td>
+</tr>
+<tr>
+<td>最も(もっとも)</td>
+<td>副词</td>
+<td>最</td>
+<td>3</td>
+</tr>
+<tr>
+<td>記入(きにゅう)</td>
+<td>名词/他动词3类</td>
+<td>写入/填写/填上</td>
+<td>0</td>
+</tr>
+<tr>
+<td>自身(じしん)</td>
+<td>名词</td>
+<td>自身/本身</td>
+<td>1</td>
+</tr>
+<tr>
+<td>性格(せいかく)</td>
+<td>名词</td>
+<td>性格</td>
+<td>0</td>
+</tr>
+<tr>
+<td>正義感(せいぎかん)</td>
+<td>名词</td>
+<td>正义感</td>
+<td>3</td>
+</tr>
+<tr>
+<td>正義(せいぎ)</td>
+<td>名词</td>
+<td>正义</td>
+<td>1</td>
+</tr>
+<tr>
+<td>感(かん)</td>
+<td>/</td>
+<td><del>感/</del>的感觉</td>
+<td>/</td>
+</tr>
+<tr>
+<td>プラス(plus)</td>
+<td>名词</td>
+<td>正面/好/正/加(+)</td>
+<td>1/0</td>
+</tr>
+<tr>
+<td>思考(しこう)</td>
+<td>名词/自动词3类/他动词3类</td>
+<td>思考/考虑</td>
+<td>0</td>
+</tr>
+<tr>
+<td>真剣(しんけん)</td>
+<td>形容词2类</td>
+<td>认真</td>
+<td>0</td>
+</tr>
+<tr>
+<td>責任(せきにん)</td>
+<td>名词</td>
+<td>责任</td>
+<td>0</td>
+</tr>
+<tr>
+<td>愛想(あいそ)</td>
+<td>名词</td>
+<td>态度/好心/善意</td>
+<td>3</td>
+</tr>
+<tr>
+<td>楽観(らっかん)</td>
+<td>名词/他动词3类</td>
+<td>乐观</td>
+<td>0</td>
+</tr>
+<tr>
+<td>包容力(ほうようりょく)</td>
+<td>名词</td>
+<td>包容力/包容的能力</td>
+<td>3</td>
+</tr>
+<tr>
+<td>包容(ほうよう)</td>
+<td>名词/他动词3类</td>
+<td>包容</td>
+<td>0</td>
+</tr>
+<tr>
+<td>力(りょく)</td>
+<td>/</td>
+<td>~力</td>
+<td>/</td>
+</tr>
+<tr>
+<td>信用(しんよう)</td>
+<td>名词/他动词3类</td>
+<td>信用/相信/信任</td>
+<td>0</td>
+</tr>
+<tr>
+<td>社交(しゃこう)</td>
+<td>名词</td>
+<td>社交</td>
+<td>0</td>
+</tr>
+<tr>
+<td>爽やか(さわやか)</td>
+<td>形容词2类</td>
+<td>爽快</td>
+<td>2</td>
+</tr>
+<tr>
+<td>感受性(かんじゅせい)</td>
+<td>名词</td>
+<td>感知能力</td>
+<td>0</td>
+</tr>
+<tr>
+<td>感受(かんじゅ)</td>
+<td>名词/他动词3类</td>
+<td>感知/感受</td>
+<td>1/0</td>
+</tr>
+<tr>
+<td>性(せい)</td>
+<td>/</td>
+<td>~性</td>
+<td>/</td>
+</tr>
+<tr>
+<td>豊か(ゆたか)</td>
+<td>形容词2类</td>
+<td>丰富</td>
+<td>1</td>
+</tr>
+<tr>
+<td>独創(どくそう)</td>
+<td>名词</td>
+<td>独创</td>
+<td>0</td>
+</tr>
+<tr>
+<td>富む(とむ)</td>
+<td>自动词1类</td>
+<td>富有/富于</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ユーモラス(humorous)</td>
+<td>形容词2类</td>
+<td>幽默</td>
+<td>1</td>
+</tr>
+<tr>
+<td>知的(ちてき)</td>
+<td>形容词2类</td>
+<td>知识丰富/理性</td>
+<td>0</td>
+</tr>
+<tr>
+<td>理論(りろん)</td>
+<td>名词</td>
+<td>理论</td>
+<td>1</td>
+</tr>
+<tr>
+<td>正直(しょうじき)</td>
+<td>名词/形容词2类</td>
+<td>正直/诚实</td>
+<td>3/4</td>
+</tr>
+<tr>
+<td>礼儀正しい(れいぎただしい)</td>
+<td>形容词1类</td>
+<td>有礼貌/懂礼貌</td>
+<td>6</td>
+</tr>
+<tr>
+<td>礼儀(れいぎ)</td>
+<td>名词</td>
+<td>礼仪/礼貌</td>
+<td>3</td>
+</tr>
+<tr>
+<td>遠慮深い(えんりょぶかい)</td>
+<td>形容词1类</td>
+<td>非常客气/拘礼/拘谨</td>
+<td>5</td>
+</tr>
+<tr>
+<td>遠慮(えんりょ)</td>
+<td>名词/他动词3类</td>
+<td>客气</td>
+<td>0</td>
+</tr>
+<tr>
+<td>几帳面(きちょうめん)</td>
+<td>形容词2类</td>
+<td>一丝不苟/认真/规规矩矩</td>
+<td>4</td>
+</tr>
+<tr>
+<td>リーダーシップ(leadership)</td>
+<td>名词</td>
+<td>领导能力/领导权</td>
+<td>5</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/07/11/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E4%B8%AD%E4%B8%8B%E8%AF%BE%E7%A8%8B%E7%AC%AC1%E8%AF%BE1%E5%8D%95%E5%85%83/</url>
+    <content><![CDATA[<p>N₁をN₂とする<br>N₁　をN₂　とする<br>把N1作为N2 把N1当作N2 把N1作看作N2</p>
+<p>例句:<br>年少者を対象とした日本語教育に関心があります。</p>
+<p>VたN<br>表示恒久不变的状态<br>像[似る]　[優れる]　[そびえる]等动词一般只用于[ている]的形式。<br>只是在修饰名词时，与[]</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/08/03/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC%E4%B8%89%E5%86%8C%E7%AC%AC%E5%9B%9B%E8%8A%82%E8%AF%BE/</url>
+    <content><![CDATA[<p>第四节课第二单元</p>
+<h2 id="～もかまわず"><a href="#～もかまわず" class="headerlink" title="～もかまわず"></a>～もかまわず</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">構う[かまう](管、顾及、在意)</span><br></pre></td></tr></table></figure>
+<p>这里的ず代表的是否定<br>所以这就代表着上面的意思就是，不管、不顾及、不在意<br>接续意味:前接名词或名词化的动词(词组)<br>表示动作主题对该事务或现象的存在熟视无睹或毫不介意，多为贬义。“不管<del>，不顾</del>”<br>例句:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="よく～"><a href="#よく～" class="headerlink" title="よく～"></a>よく～</h2><p>表示被评价者的所作所为超出一般的程度或评价者的想象力，既可以用于褒义，也可以用于贬义、“竟然<del>、居然</del>”<br>用于贬义时，也可使用</p>
+<h2 id="～わけじゃない-ではない"><a href="#～わけじゃない-ではない" class="headerlink" title="～わけじゃない/ではない"></a>～わけじゃない/ではない</h2><p>作用:接续:<br>接前V、A连体形<br>根据当前的情况或前文本应可以推理出来的内容进行否定，强调事实并非如此。“并不是<del>，并非</del>”<br>多与[だからといって・別に・]</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/08/05/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E8%87%AA%E5%AD%A6%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF(%E8%AF%8D%E5%BA%93)/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>词性</th>
+<th>翻译</th>
+<th>声调</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>食(しょく)</td>
+<td>名词</td>
+<td>饮食</td>
+<td>0</td>
+</tr>
+<tr>
+<td>日々の食はあなたの健康に強い影響を与えています。</td>
+<td>日常的饮食严重影响着你的健康。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>食卓(しょくたく)</td>
+<td>名词</td>
+<td>餐桌</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
+  <entry>
+    <title>综合日语第三册第一课</title>
+    <url>/2021/08/02/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC%E4%B8%89%E5%86%8C%E7%AC%AC%E4%B8%80%E8%AF%BE/</url>
+    <content><![CDATA[<h2 id="综合日语第三册第一课语法"><a href="#综合日语第三册第一课语法" class="headerlink" title="综合日语第三册第一课语法"></a>综合日语第三册第一课语法</h2><h3 id="1-だった-っけ"><a href="#1-だった-っけ" class="headerlink" title="1.(だった)っけ"></a>1.(だった)っけ</h3><p>接续:た型<br>N、Na だ(った)っけ<br>A - かったっけ<br>V - たっけ<br>～んだ(った)っけ<br>注意!!!</p>
+<h4 id="1用于自己记不清而向对方确认时"><a href="#1用于自己记不清而向对方确认时" class="headerlink" title="1用于自己记不清而向对方确认时"></a>1用于自己记不清而向对方确认时</h4><h4 id="2自言自语地确认时（比较随和的口语形式）"><a href="#2自言自语地确认时（比较随和的口语形式）" class="headerlink" title="2自言自语地确认时（比较随和的口语形式）"></a>2自言自语地确认时（比较随和的口语形式）</h4><p>例句：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">今日は何曜日だっけ。</span><br><span class="line">これ、すきだったっけ。</span><br><span class="line">あの人、林さんと言ったっけ。</span><br><span class="line">これは私が友達から聞いた話です。</span><br><span class="line">这个，老师教过吧？</span><br><span class="line">これ、先生が教えたっけ。</span><br></pre></td></tr></table></figure>
+
+<p>###　二、Nのことだから（正因为是这样）</p>
+<p>其语句的组合方式如下:</p>
+<p>の(接续名词)+こと(事情)+だ+から(因为)<br>原因是主要接在表示人物的名词后，用于对说话人、听话人都熟知的人物的性格、行为习惯等做出某种判断。<br>例句:</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">まじめな山田さんのことだから、必ず約束した資料を持ってきます。</span><br><span class="line">朝寝坊(睡懒觉)のあの人のことだから。きっと遅刻だろう。</span><br></pre></td></tr></table></figure>
+<p>第二课</p>
+]]></content>
   </entry>
 </search>

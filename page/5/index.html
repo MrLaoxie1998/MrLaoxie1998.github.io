@@ -192,7 +192,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/06/25/%E6%97%A5%E8%AF%AD/%E8%AF%BE%E6%96%87/%E6%89%8B%E7%B4%99-%E5%85%88%E8%BC%A9%E3%81%B8/">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/08/26/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/VLAN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -206,7 +206,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/06/25/%E6%97%A5%E8%AF%AD/%E8%AF%BE%E6%96%87/%E6%89%8B%E7%B4%99-%E5%85%88%E8%BC%A9%E3%81%B8/" class="post-title-link" itemprop="url">手紙(先輩へ)</a>
+            <a href="/2020/08/26/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/VLAN/" class="post-title-link" itemprop="url">数据通信:VLAN</a>
         </h2>
 
         <div class="post-meta">
@@ -216,14 +216,146 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-06-25 23:45:59" itemprop="dateCreated datePublished" datetime="2020-06-25T23:45:59+08:00">2020-06-25</time>
+              <time title="创建时间：2020-08-26 22:25:34" itemprop="dateCreated datePublished" datetime="2020-08-26T22:25:34+08:00">2020-08-26</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-14 22:41:45" itemprop="dateModified" datetime="2020-11-14T22:41:45+08:00">2020-11-14</time>
+                <time title="修改时间：2021-02-02 17:53:49" itemprop="dateModified" datetime="2021-02-02T17:53:49+08:00">2021-02-02</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>早期的局域网技术是基于总线型结构的。总线型拓扑结构是有一根单电缆连接着所有主机。这种局域网技术存在着冲突域问题。也就是所有用户都在一个冲突域中，那么同一时间内只有一台主机能发送消息，从任意设备发出的消息都会被其他所有主机接收到，用户可能受到大量不需要的报文；而且所有主机共享一条传输通道，任意主机之间都可以直接互相访问，无法控制信息的安全。</p>
+<p>为了避免冲突域，同时扩展传统局域网已接入更多计算机，可以在局域网中使用二层交换机，交换机能有效隔离冲突域，但是由于所有计算机仍处于同一个广播域，任意设备都能接收到所有报文，不但降低了网络的效率，而且降低了安全性，人们使用虚拟局域网即VLAN技术</p>
+<p>关于数据通信的Vlan划分内容<br>华为的VLAN划分，有很多种，项目内应用较多的方法有给予端口划分vlan、基于mac地址划分vlan、基于ip地址划分vlan。<br>用一个例子展示基于端口来划分vlan，某企业的交换机连接有很多用户，且相同业务用户通过不同的设备接入企业网络。为了通信的安全性，同时为了避免广播报文泛滥，企业需要将业务相同的用户之间可以互相访问，业务不同的用户则不能直接访问。</p>
+<img class="[vlan] E:&#x2F;MyWeb&#x2F;source&#x2F;_posts&#x2F;pic&#x2F;vlan.png [300] [400]">
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/08/26/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/ARP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/26/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/ARP/" class="post-title-link" itemprop="url">ARP</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-26 22:25:02" itemprop="dateCreated datePublished" datetime="2020-08-26T22:25:02+08:00">2020-08-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-19 23:43:56" itemprop="dateModified" datetime="2021-02-19T23:43:56+08:00">2021-02-19</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>ARP(Address Resolution Protocol,地址解析协议)</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/08/17/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC15%E8%AF%BE%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/17/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC15%E8%AF%BE%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">综合日语第15课笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-17 21:03:11" itemprop="dateCreated datePublished" datetime="2020-08-17T21:03:11+08:00">2020-08-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-21 19:35:54" itemprop="dateModified" datetime="2020-11-21T19:35:54+08:00">2020-11-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -235,7 +367,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E8%AF%BE%E6%96%87/" itemprop="url" rel="index"><span itemprop="name">日语课文</span></a>
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">日语语法</span></a>
                 </span>
             </span>
 
@@ -250,10 +382,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>手紙(先輩へ)</p>
+          <h1 id="第十五课音声及语法解析"><a href="#第十五课音声及语法解析" class="headerlink" title="第十五课音声及语法解析"></a>第十五课音声及语法解析</h1>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/06/25/%E6%97%A5%E8%AF%AD/%E8%AF%BE%E6%96%87/%E6%89%8B%E7%B4%99-%E5%85%88%E8%BC%A9%E3%81%B8/#more" rel="contents">
+              <a class="btn" href="/2020/08/17/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC15%E8%AF%BE%E7%AC%94%E8%AE%B0/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -277,7 +409,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/06/25/%E6%97%A5%E8%AF%AD/%E8%AF%BE%E6%96%87/%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3/">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/08/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC15%E8%AF%BE%E5%8D%95%E8%AF%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -291,7 +423,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/06/25/%E6%97%A5%E8%AF%AD/%E8%AF%BE%E6%96%87/%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3/" class="post-title-link" itemprop="url">パソコン</a>
+            <a href="/2020/08/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC15%E8%AF%BE%E5%8D%95%E8%AF%8D/" class="post-title-link" itemprop="url">综合日语第15课单词</a>
         </h2>
 
         <div class="post-meta">
@@ -301,14 +433,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-06-25 00:38:25" itemprop="dateCreated datePublished" datetime="2020-06-25T00:38:25+08:00">2020-06-25</time>
+              <time title="创建时间：2020-08-17 20:50:22" itemprop="dateCreated datePublished" datetime="2020-08-17T20:50:22+08:00">2020-08-17</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-14 22:41:49" itemprop="dateModified" datetime="2020-11-14T22:41:49+08:00">2020-11-14</time>
+                <time title="修改时间：2020-12-30 22:34:27" itemprop="dateModified" datetime="2020-12-30T22:34:27+08:00">2020-12-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -320,7 +452,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E8%AF%BE%E6%96%87/" itemprop="url" rel="index"><span itemprop="name">日语课文</span></a>
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语单词</span></a>
                 </span>
             </span>
 
@@ -335,10 +467,70 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>パソコン</p>
+          <h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第15课日语单词笔记"><a href="#第15课日语单词笔记" class="headerlink" title="第15课日语单词笔记"></a>第15课日语单词笔记</h3><p>这里是《综合日语》的第十五课的所有单词记录。</p>
+<div id="echarts5737" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts5737'));
+        // 指定图表的配置项和数据
+        var option = option = {
+    title: {
+        text: '第15课单词',
+        subtext: '各词性统计-共计138个单词。统计了高频词汇和低频词汇,人工统计，不一定是138个',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['名词', '固有名词', '解释性词性', '副词', '感叹词', '他动词1类', '他动词2类', '他动词3类', '自动词1类', '自动词2类', '自动词3类', '形容词1类', '形容词2类',  '格助词', '凖助词', '终助词', '取立て助']
+    },
+    series: [
+        {
+            name: '此词性数量',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: [
+                {value: 77, name: '名词'},
+                {value: 13, name: '固有名词'},
+                {value: 11, name: '解释性词性'},
+                {value: 4, name: '副词'},
+                {value: 1, name: '感叹词'},
+                {value: 4, name: '他动词1类'},
+                {value: 2, name: '他动词2类'},
+                {value: 7, name: '他动词3类'},
+                {value: 1, name: '自动词1类'},
+                {value: 1, name: '自动词2类'},
+                {value: 3, name: '自动词3类'},
+                {value: 3, name: '形容词1类'},
+                {value: 5, name: '形容词2类'},
+                {value: 5, name: '格助词'},
+                {value: 1, name: '凖助词'},
+                {value: 1, name: '终助词'},
+                {value: 3, name: '取立て助'}
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/06/25/%E6%97%A5%E8%AF%AD/%E8%AF%BE%E6%96%87/%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3/#more" rel="contents">
+              <a class="btn" href="/2020/08/17/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC15%E8%AF%BE%E5%8D%95%E8%AF%8D/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -362,7 +554,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/06/25/%E6%97%A5%E8%AF%AD/%E8%AF%BE%E6%96%87/%E5%AE%BF%E9%A1%8C/">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/08/12/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E6%97%A5%E8%AF%AD%E5%8F%A5%E5%AD%90%E7%A7%AF%E7%B4%AF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -376,7 +568,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/06/25/%E6%97%A5%E8%AF%AD/%E8%AF%BE%E6%96%87/%E5%AE%BF%E9%A1%8C/" class="post-title-link" itemprop="url">宿題</a>
+            <a href="/2020/08/12/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E6%97%A5%E8%AF%AD%E5%8F%A5%E5%AD%90%E7%A7%AF%E7%B4%AF/" class="post-title-link" itemprop="url">日语句子积累</a>
         </h2>
 
         <div class="post-meta">
@@ -386,14 +578,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-06-25 00:38:10" itemprop="dateCreated datePublished" datetime="2020-06-25T00:38:10+08:00">2020-06-25</time>
+              <time title="创建时间：2020-08-12 22:40:29" itemprop="dateCreated datePublished" datetime="2020-08-12T22:40:29+08:00">2020-08-12</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-14 22:41:47" itemprop="dateModified" datetime="2020-11-14T22:41:47+08:00">2020-11-14</time>
+                <time title="修改时间：2020-11-15 14:13:53" itemprop="dateModified" datetime="2020-11-15T14:13:53+08:00">2020-11-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -405,7 +597,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E8%AF%BE%E6%96%87/" itemprop="url" rel="index"><span itemprop="name">日语课文</span></a>
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">日语语法</span></a>
                 </span>
             </span>
 
@@ -420,10 +612,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>宿題</p>
+          <p>日语鸡汤(雾)</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/06/25/%E6%97%A5%E8%AF%AD/%E8%AF%BE%E6%96%87/%E5%AE%BF%E9%A1%8C/#more" rel="contents">
+              <a class="btn" href="/2020/08/12/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E6%97%A5%E8%AF%AD%E5%8F%A5%E5%AD%90%E7%A7%AF%E7%B4%AF/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -447,7 +639,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/06/21/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E3%81%93%E3%83%BC%E3%83%A1%E3%81%B8/">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/08/04/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC14%E8%AF%BE%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -461,7 +653,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/06/21/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E3%81%93%E3%83%BC%E3%83%A1%E3%81%B8/" class="post-title-link" itemprop="url">こーメへ</a>
+            <a href="/2020/08/04/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC14%E8%AF%BE%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">综合日语第14课笔记</a>
         </h2>
 
         <div class="post-meta">
@@ -471,14 +663,399 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-06-21 13:30:04" itemprop="dateCreated datePublished" datetime="2020-06-21T13:30:04+08:00">2020-06-21</time>
+              <time title="创建时间：2020-08-04 00:13:12" itemprop="dateCreated datePublished" datetime="2020-08-04T00:13:12+08:00">2020-08-04</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-14 22:39:48" itemprop="dateModified" datetime="2020-11-14T22:39:48+08:00">2020-11-14</time>
+                <time title="修改时间：2020-11-14 22:42:25" itemprop="dateModified" datetime="2020-11-14T22:42:25+08:00">2020-11-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">日语语法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+
+<h1 id="综合日语第14课笔记"><a href="#综合日语第14课笔记" class="headerlink" title="综合日语第14课笔记"></a>综合日语第14课笔记</h1><h2 id="第十三课音声及语法解析"><a href="#第十三课音声及语法解析" class="headerlink" title="第十三课音声及语法解析"></a>第十三课音声及语法解析</h2><h3 id="N₁はN₂とともに-lt-相同-gt"><a href="#N₁はN₂とともに-lt-相同-gt" class="headerlink" title="Ｎ₁はＮ₂とともに&lt;相同&gt;"></a>Ｎ₁はＮ₂とともに&lt;相同&gt;</h3><p>[とともに]皆在名词后面的时候，表示该事物与主语性质相同。相当于汉语的”与<del>相同,与</del>一样(都)”之意。例如:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">我想要和你一起生活到白头。</span><br><span class="line">1.白髪になるまで、私は君と公に暮らしたい。</span><br><span class="line">2.私は君と共に白髪になるまで暮らしたいです。</span><br><span class="line">3.あなたと一緒に白髪まで暮らしたいです。</span><br><span class="line"></span><br><span class="line">在这次的演讲中，和高桥一起并列第二名。</span><br><span class="line">1.今回の講演では、高橋さんと共にで第二位になりました。</span><br><span class="line">2.この講演で、私は高橋さんと共に第二位です。</span><br><span class="line">3.この講演で、高橋さんと共に第二位でした。</span><br><span class="line">4.今回の講演では、高橋さんと共に第二位だった。</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="形容词的第一、第二联用形用于句子中顿"><a href="#形容词的第一、第二联用形用于句子中顿" class="headerlink" title="形容词的第一、第二联用形用于句子中顿"></a>形容词的第一、第二联用形用于句子中顿</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">あの人は嫌いです。あの人は日本語が上手です。</span><br><span class="line">现在把两个形容词谓语句合并成一句。</span><br><span class="line">所以漂亮是二类形容词，所以在并列的时候直接在后面加一个で</span><br><span class="line">あの人はきれいで、日本語が上手です。</span><br><span class="line">この本は安くて、面白いです。</span><br><span class="line"></span><br><span class="line">那个女孩的腿很长，头发也黑长直。</span><br><span class="line">1.あの女の子は脚が長くて、髪も黒くて、まっすぐで長いです。</span><br><span class="line"></span><br><span class="line">妆容呢，学生可以画的素一些，不要画的太花哨。</span><br><span class="line">1.化粧するのは、学生たちはちょっと地味にしてもいいよ、派手にしないでください。</span><br><span class="line">2.化粧は、学生にとって、地味にして、派手にしないでください。</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="lt-名词化-gt-Vこと-もの］"><a href="#lt-名词化-gt-Vこと-もの］" class="headerlink" title="&lt;名词化&gt;[Ｖこと] [もの］"></a>&lt;名词化&gt;[Ｖこと] [もの］</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">昨天学的已经不记得了。</span><br><span class="line">昨日習ったのはもう覚えていません。</span><br><span class="line">昨日習ったのはもう覚えていない。</span><br><span class="line">昨日勉強したのはもう覚えていない。</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>我的兴趣是听音乐。</p>
+<p>私の趣味は音楽を聞くことです。</p>
+<p>昨日の夜、誰か泣いているのが聞こえました。</p>
+<p>それで&lt;因果关系&gt;</p>
+<p>连词(接续词)，用于连接两个句子，表示两者存在因果关系。就是迁居表示原因，后句表示结果。后句的结果一般为自然发生，所以与说话人意志无关。相当于汉语中的”<del>,所以</del>“ “<del>,因此</del>“等。例如:</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">昨天我暗恋的女生跟我说喜欢我。所以呢？</span><br><span class="line">昨日私が片思いしていた女性が私に好きだと言いました。だから？</span><br><span class="line">高桥又擅长唱歌跳舞又好，人也温柔漂亮，因此在学校不仅很受男孩子欢迎，在女生中也有很高的人气。</span><br><span class="line">高橋さんは歌も上手ですし、ダンスも上手です。人も優しくて綺麗です。だから学校では男の子だけでなく、女の子にも人気があります。</span><br><span class="line">高橋さんは歌もダンスも上手で、綺麗で優しいです。それで、学校では男性だけでなく女性にも人気があります。</span><br></pre></td></tr></table></figure>
+
+<h3 id="N₁はN₂より～-lt-比较-gt"><a href="#N₁はN₂より～-lt-比较-gt" class="headerlink" title="Ｎ₁はＮ₂より～&lt;比较&gt;"></a>Ｎ₁はＮ₂より～&lt;比较&gt;</h3><p>[]</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/08/01/%E7%A4%BE%E4%BC%9A%E5%BF%83%E7%90%86%E5%AD%A6/%E5%BF%83%E7%90%86%E5%AD%A6-%E7%8B%AC%E7%AB%8B%E6%80%A7%E4%B8%8E%E8%81%94%E7%B3%BB%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/01/%E7%A4%BE%E4%BC%9A%E5%BF%83%E7%90%86%E5%AD%A6/%E5%BF%83%E7%90%86%E5%AD%A6-%E7%8B%AC%E7%AB%8B%E6%80%A7%E4%B8%8E%E8%81%94%E7%B3%BB%E6%80%A7/" class="post-title-link" itemprop="url">心理学-独立性与联系性</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-01 22:52:31" itemprop="dateCreated datePublished" datetime="2020-08-01T22:52:31+08:00">2020-08-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-02 17:30:39" itemprop="dateModified" datetime="2020-08-02T17:30:39+08:00">2020-08-02</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="独立性与联系性"><a href="#独立性与联系性" class="headerlink" title="独立性与联系性"></a>独立性与联系性</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/01/%E7%A4%BE%E4%BC%9A%E5%BF%83%E7%90%86%E5%AD%A6/%E5%BF%83%E7%90%86%E5%AD%A6-%E7%8B%AC%E7%AB%8B%E6%80%A7%E4%B8%8E%E8%81%94%E7%B3%BB%E6%80%A7/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/08/01/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC14%E8%AF%BE%E5%8D%95%E8%AF%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/01/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC14%E8%AF%BE%E5%8D%95%E8%AF%8D/" class="post-title-link" itemprop="url">综合日语第14课单词</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-01 22:26:58" itemprop="dateCreated datePublished" datetime="2020-08-01T22:26:58+08:00">2020-08-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-30 22:34:21" itemprop="dateModified" datetime="2020-12-30T22:34:21+08:00">2020-12-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/" itemprop="url" rel="index"><span itemprop="name">日语</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%8D%95%E8%AF%8D/" itemprop="url" rel="index"><span itemprop="name">日语单词</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="单词表"><a href="#单词表" class="headerlink" title="单词表"></a>单词表</h3><h3 id="第14课日语单词笔记"><a href="#第14课日语单词笔记" class="headerlink" title="第14课日语单词笔记"></a>第14课日语单词笔记</h3><p>这里是《综合日语》的第十四课的所有单词记录。</p>
+<div id="echarts6175" style="width: 100%;height: 400px;margin: 0 auto"></div>
+<script src="https://cdn.bootcss.com/echarts/3.8.0/echarts.common.min.js"></script>
+<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('echarts6175'));
+        // 指定图表的配置项和数据
+        var option = option = {
+    title: {
+        text: '第13课单词',
+        subtext: '各词性统计-共计172个单词。统计了高频词汇和低频词汇,人工统计，不一定是172个',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['名词', '固有名词', '解释性词性', '副词', '感叹词', '接助词', '他动词1类', '他动词2类', '他动词3类', '自动词1类', '自动词2类', '自动词3类', '形容词1类', '格助词', '接续词', '取立て助']
+    },
+    series: [
+        {
+            name: '此词性数量',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: [
+                {value: 85, name: '名词'},
+                {value: 3, name: '固有名词'},
+                {value: 21, name: '解释性词性'},
+                {value: 4, name: '副词'},
+                {value: 1, name: '感叹词'},
+                {value: 1, name: '接助词'},
+                {value: 12, name: '他动词1类'},
+                {value: 8, name: '他动词2类'},
+                {value: 8, name: '他动词3类'},
+                {value: 10, name: '自动词1类'},
+                {value: 3, name: '自动词2类'},
+                {value: 9, name: '自动词3类'},
+                {value: 3, name: '形容词1类'},
+                {value: 1, name: '格助词'},
+                {value: 1, name: '接续词'},
+                {value: 1, name: '取立て助'}
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/01/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC14%E8%AF%BE%E5%8D%95%E8%AF%8D/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/07/27/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/5G-5G%E4%B8%9A%E5%8A%A1%E8%A7%A3%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/27/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/5G-5G%E4%B8%9A%E5%8A%A1%E8%A7%A3%E6%9E%90/" class="post-title-link" itemprop="url">5G-5G业务解析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-27 12:30:06" itemprop="dateCreated datePublished" datetime="2020-07-27T12:30:06+08:00">2020-07-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-01 22:44:54" itemprop="dateModified" datetime="2020-08-01T22:44:54+08:00">2020-08-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="5G业务解析"><a href="#5G业务解析" class="headerlink" title="5G业务解析"></a>5G业务解析</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/27/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/5G-5G%E4%B8%9A%E5%8A%A1%E8%A7%A3%E6%9E%90/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/07/26/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E5%90%9B%E3%81%AF%E5%83%95%E3%81%AB%E4%BC%BC%E3%81%A6%E3%81%84%E3%82%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/26/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/%E5%90%9B%E3%81%AF%E5%83%95%E3%81%AB%E4%BC%BC%E3%81%A6%E3%81%84%E3%82%8B/" class="post-title-link" itemprop="url">君は僕に似ている</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-26 02:03:46" itemprop="dateCreated datePublished" datetime="2020-07-26T02:03:46+08:00">2020-07-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-14 22:39:14" itemprop="dateModified" datetime="2020-11-14T22:39:14+08:00">2020-11-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -507,471 +1084,53 @@
       
           <a id="more"></a>
 
-<p>わたしが泣いてたら なぐさめてくれた<br>在我哭泣之时，是你安慰了我<br>顔をなめるのは くすぐったいけれど<br>轻轻舔我的脸，有痒痒的感觉<br>こんどはわたしが 守ってあげるから<br>这次该我来了，一定会守护你<br>行き先は知ってる ひとりにしないわ<br>我知道目的地，别留下我一人</p>
-<p>あなたの好きだった カエルのボールも<br>小小的青蛙球，你最爱的东西<br>おやつを分けあった 銀のえさ皿も<br>将分享的点心，放在小银盘里<br>はぐれないように つないだリードも<br>不要与我走散，永远要在一起<br>全部持っていくわ いい子で待ってて<br>全部都带过去，请再等我一会</p>
-<p>ニーナへ</p>
-<p>Vocal.ななひら Composer.かぼちゃ</p>
-<p>Album.Confetto - ＜Confetti-Box＞</p>
-<p>ほけんの先生に ないしょにしたことも<br>对保健课老师，隐瞒着的事情<br>そばで聞いてくれた 首をかしげるけど<br>你在旁边倾听，但是懵懂不明<br>おしりにたくさんの たばこのやけどあと<br>我臀上有许多，香烟烫的痕迹<br>ころんだことにした おなかの青いあざ<br>摔倒后露出了，腹部伤痕淤青</p>
-<p>昨日と同じ服 だれかが笑うのも<br>穿着昨日的衣，暗地有人发笑<br>給食エプロンが トイレにあった日も<br>我的餐用围裙，被扔在厕所里<br>うまくしゃべれなくて 長引く帰りの会も<br>因我说得不好，课后讨论延续<br>席がえのたびに となりの子がいやがるのも<br>每次邻座同学，皆是鄙夷嫌弃</p>
-<p>今のパパはきらい なぐるし どなるし<br>我讨厌新的爸爸，只会殴打和教训<br>やさしかったママも 変わってしまったわ<br>曾经温柔的妈妈，也不像从前一样<br>あなただけだった わたしを守ろうと<br>唯有你在我身边，依然还守护着我<br>パパにかみついて おふろ場につれてかれて<br>咬伤爸爸的手指，被带到了浴室里</p>
-<p>助けをよぶ声 パパの「しつけ」の音<br>听到你的求救声，和他“教训”的声音<br>何もできなかった こわくてふるえてた<br>我什么都做不到，只是恐惧与战栗<br>朝 目が覚めたら ゴミぶくろの中の<br>早晨醒来的时候，看到了垃圾桶中<br>動かないあなたに ごめんねも言えなくて<br>已一动不动的你，竟说不出对不起</p>
-<p>あなたの好きだった カエルのボールも<br>小小的青蛙球，你最爱的东西<br>おやつを分けあった 銀のえさ皿も<br>将分享的点心，放在小银盘里<br>はぐれないように つないだリードも<br>不要与我走散，永远要在一起<br>全部持っていくわ いい子で待ってて<br>全部都带过去，请再等我一会</p>
+<p>君の姿は僕に似ている</p>
+<p>你的身影与我如此相似</p>
+<p>静かに泣いてるように胸に響く</p>
+<p>仿佛无声哭泣回荡心胸</p>
+<p>何も知らない方が幸せというけど</p>
+<p>纵然一无所知更为幸福</p>
+<p>僕はきっと満足しないはずだから</p>
+<p>我却一定无法为之满足</p>
+<p>うつろに横たわる夜でも</p>
+<p>即使眼前唯有漫寞长夜</p>
+<p>僕が選んだ今を生きたい それだけ</p>
+<p>也只愿坚持自己的抉择</p>
+<p>君の速さは僕に似ている</p>
+<p>你的步伐与我如此相似</p>
+<p>歯止めのきかなくなる空が怖くなって</p>
+<p>令我畏惧这片欲罢不能的天空</p>
+<p>僕はいつまで頑張ればいいの?</p>
+<p>我究竟应该奋战到何时</p>
+<p>二人なら終わらせることができる</p>
+<p>若与你携手 定能将纷争终结</p>
+<p>どうしても楽じゃない道を選んでる</p>
+<p>我不曾选择平坦的道路</p>
+<p>砂にまみれた靴を払うこともなく</p>
+<p>也不曾拂去脚上的尘土</p>
+<p>こんな風にしか生きれない</p>
+<p>唯有如此也能得以生存</p>
+<p>笑って頷いてくれるだろう 君なら</p>
+<p>想必你一定会微笑赞同</p>
+<p>君に僕から約束しよう</p>
+<p>对你许下郑重承诺</p>
+<p>いつか僕に向かって走ってくる時は</p>
+<p>若你某日向我飞奔而来</p>
+<p>君の視線を外さずにいよう</p>
+<p>绝不会有丝毫回避</p>
+<p>きっと誰より上手に受け止めるよ</p>
+<p>我将坦诚迎接你的目光</p>
+<p>君の姿は僕に似ている</p>
+<p>你的身影与我如此相似</p>
+<p>同じ世界を見てる君がいることで</p>
+<p>不禁庆幸与你身处同一世界</p>
+<p>最後に心なくすこともなく</p>
+<p>令我最终不再迷失自我</p>
+<p>僕を好きでいられる</p>
+<p>让我能够接受我自己</p>
+<p>僕は君に生かされてる</p>
+<p>让我因你而得到新生</p>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/06/20/c4d/%E7%88%B6%E5%AD%90%E7%BA%A7%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="MrLaoxie1998">
-      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="9之数据库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/20/c4d/%E7%88%B6%E5%AD%90%E7%BA%A7%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">C4D建模</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-20 16:51:51" itemprop="dateCreated datePublished" datetime="2020-06-20T16:51:51+08:00">2020-06-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-18 00:17:31" itemprop="dateModified" datetime="2020-11-18T00:17:31+08:00">2020-11-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C4D/" itemprop="url" rel="index"><span itemprop="name">C4D</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C4D/%E5%BB%BA%E6%A8%A1/" itemprop="url" rel="index"><span itemprop="name">建模</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <pre><code>    对象面板中有一个非常重要的概念，就是父子级，搞清两个之间的关系才可以更好的施展。</code></pre>
-<p>​
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/20/c4d/%E7%88%B6%E5%AD%90%E7%BA%A7%E7%9A%84%E6%A6%82%E5%BF%B5%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/06/09/python/python%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="MrLaoxie1998">
-      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="9之数据库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/09/python/python%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/" class="post-title-link" itemprop="url">python基本介绍</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-09 23:30:28" itemprop="dateCreated datePublished" datetime="2020-06-09T23:30:28+08:00">2020-06-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-14 22:36:10" itemprop="dateModified" datetime="2020-11-14T22:36:10+08:00">2020-11-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="什么是python"><a href="#什么是python" class="headerlink" title="什么是python"></a>什么是python</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/09/python/python%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/06/09/Linux/openLDAP+openLDAPadmin%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="MrLaoxie1998">
-      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="9之数据库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/09/Linux/openLDAP+openLDAPadmin%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">openLDAP+openLDAPadmin基本配置</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-09 23:22:06" itemprop="dateCreated datePublished" datetime="2020-06-09T23:22:06+08:00">2020-06-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-14 22:35:51" itemprop="dateModified" datetime="2020-11-14T22:35:51+08:00">2020-11-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/06/09/Linux/CentOS7--%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="MrLaoxie1998">
-      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="9之数据库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/09/Linux/CentOS7--%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/" class="post-title-link" itemprop="url">CentOS7实现自动化部署</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-09 23:21:20" itemprop="dateCreated datePublished" datetime="2020-06-09T23:21:20+08:00">2020-06-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-14 22:35:49" itemprop="dateModified" datetime="2020-11-14T22:35:49+08:00">2020-11-14</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <a id="more"></a>
-
-<p>1.1 Kickstart 概述<br>通过传统的方式安装和部署计算机时，都需要通过人工干预的方<br>式完成安装。如果需要部署大量的类似功能的工作站或服务器，则需<br>要耗费大量的时间。同时传统的安装方式，每台计算机都需要光驱设<br>备及安装光盘等介质，会额外增加部署成本。因此，许多系统管理员<br>都希望能够通过一种网络化的无人值守的自动安装方式将操作系统<br>部署到目标计算机中。<br>（1）PXE<br>PXE(Pre-boot Execution Environment)是由 Intel 设计的协议，<br>计算机可以通过 PXE 协议从网络引导启动。PXE 协议在启动过程分为<br>client 和 server 两端，PXE 协议在运行过程中主要解决两个问题：<br>首先解决 IP 地址的问题，然后解决如何传输操作系统启动文件和安<br>装文件的问题。对于第一个问题，可以通过配置 DHCP Server 解决，<br>通常情况下 DHCP 服务器主要用于分配 IP 地址给客户端。但是在 PXE<br>环境下，DHCP 服务器需要额外加载 PXE 的相关配置。针对第二个问<br>题，在启动初期因为 PXE client 中有相应的 TFTP 客户端，可以通过<br>TFTP 协议到 TFTP 服务器中下载相关文件启动计算机。后期在安装过<br>程中，则通过 FTP 或 NFS 协议提供大量的操作系统安装文件的下载。<br>图 1 是基于 PXE 与 Kickstart 安装 Linux 操作系统的流程图，可以清<br>楚的了解 PXE 协议的工作过程。<br>（2）kickstart<br>通过传统的方式安装和部署计算机时，都会要求通过交互的方式，<br>回答各类问题，以完成安装和部署任务，过程繁琐，且无法实现自动<br>化。于是，很多系统管理员都希望通过自动化的安装方法将操作系统<br>安装到自己的个人的或者企业的计算机中。针对这些安装过程中需要<br>进行交互式回答的问题，Red Hat 公司创造了 Kickstart 的安装方法。<br>通过这种方法，系统管理员可以创建一个文件。通过这个文件，可以<br>解决所有在普通安装方式中，需要回答的问题。<br>Kickstart 的配置文件可以保存在网络中的文件服务器系统中，<br>也可以存放在个人计算机中，只要在安装过程中，安装程序能够读取<br>该文件，都可以顺利将操作系统安装。这种安装方法可以支持使用同<br>一个 kickstart 配置文件，在多台计算机中安装或部署 Fedora 与红<br>帽企业版 Linux。基于 Red Hat 的 CentOS 同样具备这种能力。所以<br>Kickstart 安装方式（无人值守）成为许多网络和系统管理员的理想<br>选择。<br>在 CentOS 中，通过安装相应的 Kickstart 配置工具，可以生成定<br>制的 ks 文件，熟悉相关语法的管理员也可以通过手工编写安装脚本<br>的方式生成 ks 文件，用于部署相应的计算机。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/06/09/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="MrLaoxie1998">
-      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="9之数据库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/09/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-7/" class="post-title-link" itemprop="url">今日笔记0w0~</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-09 23:09:06 / 修改时间：23:12:07" itemprop="dateCreated datePublished" datetime="2020-06-09T23:09:06+08:00">2020-06-09</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>###今日份笔记 2020年6月9号</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/09/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-7/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/06/08/%E7%A4%BE%E4%BC%9A%E5%BF%83%E7%90%86%E5%AD%A6/%E5%BF%83%E7%90%86%E5%AD%A6-%E6%8E%A7%E5%88%B6%E7%82%B9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="MrLaoxie1998">
-      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="9之数据库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/08/%E7%A4%BE%E4%BC%9A%E5%BF%83%E7%90%86%E5%AD%A6/%E5%BF%83%E7%90%86%E5%AD%A6-%E6%8E%A7%E5%88%B6%E7%82%B9/" class="post-title-link" itemprop="url">心理学-控制点</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-08 23:51:36" itemprop="dateCreated datePublished" datetime="2020-06-08T23:51:36+08:00">2020-06-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-15 17:35:46" itemprop="dateModified" datetime="2020-11-15T17:35:46+08:00">2020-11-15</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="心里学-控制点"><a href="#心里学-控制点" class="headerlink" title="心里学-控制点"></a>心里学-控制点</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/08/%E7%A4%BE%E4%BC%9A%E5%BF%83%E7%90%86%E5%AD%A6/%E5%BF%83%E7%90%86%E5%AD%A6-%E6%8E%A7%E5%88%B6%E7%82%B9/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 
@@ -989,7 +1148,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1057,7 +1216,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">76</span>
+          <span class="site-state-item-count">99</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
