@@ -12,34 +12,4 @@ var h = date.getHours();  //时
 var minute = date.getMinutes()  //分
 var s = date.getSeconds(); //秒
 var sss = date.getMilliseconds() ; //毫秒
-if(m<10){
-m = "0"+m;
-}
-if(d<10){
-d = "0"+d;
-}
-if(h<10){
-h = "0"+h;
-}
- 
- 
-if(minute<10){
-minute = "0"+minute;
-}
- 
- 
-if(s<10){
-s = "0"+s;
-}
- 
- 
-if(sss<10){
-sss = "00"+sss;
-}else if(sss<100){
-sss = "0"+sss;
-}
- 
- 
-document.getElementById(timeID.id).innerHTML =  y+"-"+m+"-"+d+"   "+h+":"+minute+":"+s+"."+sss+"  "+ww;
-//document.write(y+"-"+m+"-"+d+"   "+h+":"+minute+":"+s); 
-}
+if(m

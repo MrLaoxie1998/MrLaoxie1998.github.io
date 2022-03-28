@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mrlaoxie1998.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="&#x3D;[[数据通信]] 计算机网络概论   需要记得有 1234567考点1: 计算机网络是通过通信线路和通信设备连接的许多的分散独立工作的计算机系统，遵从一定的协议用软件实现资源共享的系统。考点2：组成分为硬件、软件、协议三部分。考点3：协议分为国际标准OSI&#x2F;RM和公认标准TCP&#x2F;IP考点4：(1)按分布范围：分为局域网、城域网、广域网。(2)按拓扑结构：分为星型、环型、树型、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="http://mrlaoxie1998.github.io/2021/07/09/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="&#x3D;[[数据通信]] 计算机网络概论   需要记得有 1234567考点1: 计算机网络是通过通信线路和通信设备连接的许多的分散独立工作的计算机系统，遵从一定的协议用软件实现资源共享的系统。考点2：组成分为硬件、软件、协议三部分。考点3：协议分为国际标准OSI&#x2F;RM和公认标准TCP&#x2F;IP考点4：(1)按分布范围：分为局域网、城域网、广域网。(2)按拓扑结构：分为星型、环型、树型、">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-09T00:18:33.225Z">
+<meta property="article:modified_time" content="2022-01-09T05:07:20.775Z">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://mrlaoxie1998.github.io/2021/07/09/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E5%9F%BA%E7%A1%80/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 9之数据库</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-我的旧站">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-tasks"></i>我的旧站</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2021/07/09/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-07-09 08:18:33" itemprop="dateCreated datePublished" datetime="2021-07-09T08:18:33+08:00">2021-07-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-09 13:07:20" itemprop="dateModified" datetime="2022-01-09T13:07:20+08:00">2022-01-09</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>=[[数据通信]]</p>
+<h2 id="计算机网络概论"><a href="#计算机网络概论" class="headerlink" title="计算机网络概论"></a>计算机网络概论</h2> <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<p>需要记得有</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">考点1: 计算机网络是通过通信线路和通信设备连接的许多的分散独立工作的计算机系统，遵从一定的协议用软件实现资源共享的系统。</span><br><span class="line">考点2：组成分为硬件、软件、协议三部分。</span><br><span class="line">考点3：协议分为国际标准OSI&#x2F;RM和公认标准TCP&#x2F;IP</span><br><span class="line">考点4：(1)按分布范围：分为局域网、城域网、广域网。(2)按拓扑结构：分为星型、环型、树型、总线型、不规则型等。(3)其他分类：公用网与专用网；通信网ISP与信息网ICP；校园网与企业网；骨干网与接入网；有线网与无线网等。</span><br><span class="line">考点5：OSI&#x2F;RM（开放系统互联参考模型）七层是应用层、表示层、会话层、传输层、网络层、数据链路层、物理层。</span><br><span class="line">考点6：TPC&#x2F;IP(因特网传输协议)四层是应用层、传输层、互联网层、网络接口层。</span><br><span class="line">考点7：七层OSI和四层TCP&#x2F;IP协议对比</span><br></pre></td></tr></table></figure>
+<h3 id="考点7：七层OSI和四层TCP-IP协议对比"><a href="#考点7：七层OSI和四层TCP-IP协议对比" class="headerlink" title="考点7：七层OSI和四层TCP/IP协议对比"></a>考点7：七层OSI和四层TCP/IP协议对比</h3><table>
+<thead>
+<tr>
+<th>OSI模型</th>
+<th>TCP/IP模型</th>
+<th>主要协议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>应用层</td>
+<td>应用层</td>
+<td>HTTP、FTP、DNS、SNMP、TELNET、SMTP、POP3</td>
+</tr>
+<tr>
+<td>表示层</td>
+<td>应用层</td>
+<td>HTTP、FTP、DNS、SNMP、TELNET、SMTP、POP3</td>
+</tr>
+<tr>
+<td>会话层</td>
+<td>应用层</td>
+<td>HTTP、FTP、DNS、SNMP、TELNET、SMTP、POP3</td>
+</tr>
+<tr>
+<td>传输层</td>
+<td>传输层</td>
+<td>TCP、UDP</td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>互联网层</td>
+<td>IP、ICMP</td>
+</tr>
+<tr>
+<td>数据链路层</td>
+<td>网络接口层</td>
+<td>IEEE802系列、HDLC、PPP</td>
+</tr>
+<tr>
+<td>物理层</td>
+<td>网络接口层</td>
+<td>IEEE802系列、HDLC、PPP</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>OSI模型与TCP/IP模型对比</p>
+</blockquote>
+<h3 id="考点8：-七层协议各层实现功能如下表"><a href="#考点8：-七层协议各层实现功能如下表" class="headerlink" title="考点8： 七层协议各层实现功能如下表"></a>考点8： 七层协议各层实现功能如下表</h3><table>
+<thead>
+<tr>
+<th>OSI层次</th>
+<th>封装单位</th>
+<th>地址标识</th>
+<th>主要功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>低层1物理层</td>
+<td>比特流</td>
+<td>bit流</td>
+<td>提供物理通路、二进制数据比特流传输、定义机械/电气特性和接口</td>
+</tr>
+<tr>
+<td>低层2数据链路层</td>
+<td>数据帧</td>
+<td>MAC地址</td>
+<td>把不可靠信道变为可靠信道。将比特组织成帧，在链路上提供点到点的帧传输、差错控制、流量控制等</td>
+</tr>
+<tr>
+<td>低层3网络层</td>
+<td>数据包或数据分组</td>
+<td>IP地址</td>
+<td>路径的选择、网络连接的多路复用、差错的检测与恢复、</td>
+</tr>
+<tr>
+<td>低层4传输层</td>
+<td>数据报文或数据段</td>
+<td>端口号</td>
+<td>提供端到端之间可靠透明的数据传输。分段与重组、差错控制及流量控制，保证数据传输的正确完整性。</td>
+</tr>
+<tr>
+<td>高层5会话层</td>
+<td>应用进程</td>
+<td>进程号</td>
+<td>会话连接的恢复与释放、对会话进行分段、同步等。</td>
+</tr>
+<tr>
+<td>高层6表示层</td>
+<td>应用进程</td>
+<td>进程号</td>
+<td>数据加密与数据压缩、语法表示与连接管理</td>
+</tr>
+<tr>
+<td>高层7应用层</td>
+<td>应用进程</td>
+<td>进程号</td>
+<td>应用层包含用户应用程序和协议</td>
+</tr>
+</tbody></table>
+<p>考点9：网络数据传输整个过程–数据传输</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">电信号(或光信号)在屋里媒体中传播从发送端物理层传送到接收端物理层</span><br></pre></td></tr></table></figure>
+<p>第二课:数据通信基础<br>考点1:基本概念:信源、信道、信宿；数字信号、模拟信号；模拟通信、数字通信（信道中传送）。<br>考点2:模拟信道带宽计算:W=f2-f1,其中f1是低频，f2是高频。<br>考点3:数字信道带宽计算:奈奎斯特定理(无噪声)<br>奈奎斯特定理:B=2W(B码元速率、波特率)<br>信息量n（位）与码元种类$N: n=log_2N$<br>数据速率$R=Blog_2N=2Wlog_2N$<br>对数计算，</p>
+<blockquote>
+<p>N=4,$log_24=log_2(2^2)=2$</p>
+</blockquote>
+<blockquote>
+<p>N=8,$log_28=log_2(2^3)=3$</p>
+</blockquote>
+<blockquote>
+<p>$log_{10}N=IgN$ N=100, lg100=l$g(10^2)=2$</p>
+</blockquote>
+<blockquote>
+<p>N=1000, $lg1000=lg(10^3)=3$</p>
+</blockquote>
+<p>局域网<br>考点07以太网:<br>早期的802.3局域网，10Mbps。来源于光在空气中传播的介质”以太网(ether)”，由此得名“以太网(ethernet),寓意无处不在的网络。”<br>交换式以太网核心部件是交换机，有一个高速底板，插上一些插槽，插槽上有一些连接器，用于连接10M网卡的主机。如:E0/0,F0/1,(插槽/接口);G0/0/0(插槽/模块/接口)<br>E:以太网（10M），F快速以太网（100M），G吉比特以太网（1000M）</p>
+<p>高速以太网</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/09/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC21%E8%AF%BE%E5%8D%95%E8%AF%8D/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/07/09/Web%E9%A1%B5%E9%9D%A2%E8%AE%BE%E8%AE%A1%E7%9F%A5%E8%AF%86/%E5%AD%A6%E4%B9%A0CodingStartup%E7%AC%94%E8%AE%B0-%E9%AA%A8%E6%9E%B6%E5%B1%8F%E6%95%88%E6%9E%9C/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%AE%BA"><span class="nav-number">1.</span> <span class="nav-text">计算机网络概论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%80%83%E7%82%B97%EF%BC%9A%E4%B8%83%E5%B1%82OSI%E5%92%8C%E5%9B%9B%E5%B1%82TCP-IP%E5%8D%8F%E8%AE%AE%E5%AF%B9%E6%AF%94"><span class="nav-number">1.1.</span> <span class="nav-text">考点7：七层OSI和四层TCP&#x2F;IP协议对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%80%83%E7%82%B98%EF%BC%9A-%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE%E5%90%84%E5%B1%82%E5%AE%9E%E7%8E%B0%E5%8A%9F%E8%83%BD%E5%A6%82%E4%B8%8B%E8%A1%A8"><span class="nav-number">1.2.</span> <span class="nav-text">考点8： 七层协议各层实现功能如下表</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">166</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005055629971077/home?from=page_100505&mod=TAB&is_all=1#place" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005055629971077&#x2F;home?from&#x3D;page_100505&amp;mod&#x3D;TAB&amp;is_all&#x3D;1#place" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/15833385" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;15833385" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

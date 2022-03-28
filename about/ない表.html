@@ -2,12 +2,13 @@
 <html>
 <html lang="zh-cn">
 <head>
-	<meta charset="utf-8" />
+	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>我的日语笔记(ない形)</title>
    <link rel="stylesheet" href="https://cdn.staticfile.org/foundation/5.5.3/css/foundation.min.css">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdn.staticfile.org/foundation/5.5.3/js/foundation.min.js"></script>
+  <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
   <script src="https://cdn.staticfile.org/foundation/5.5.3/js/vendor/modernizr.js"></script>
 </head>
 <!-- 最外层div：页面布局 -->
@@ -30,7 +31,7 @@
     <aside class="left-off-canvas-menu">
       <!-- Add links or other stuff here -->
       <ul class="off-canvas-list test">
-      <li><label><object data="image/baka9.svg" type="image/svg+xml" ></object>
+      <li><label><object data="image/baka9.svg" type="image/svg+xml"></object>
 </label></li>
         <li><label><a href="index.html">欢迎~♪(^∇^*)</a></label></li>
         <li><label>日语功能性词汇变形笔记</label></li>
@@ -93,11 +94,36 @@
   三类动词:把“来（き）ます”变成“来（こ）ない”，把“します”变成“しない”。 <br>
   动词简体过去时由た形构成。具体变化规则如下:<br>
   本页主要针对过去时1、2、3类动词的肯定和否定形式进行变形。
-
+  <div id="main" style="width: 600px;height:400px;"></div>
+     <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+ 
+        myChart.setOption({
+                tooltip: {},
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['1类动词:个', '2类动词:个', '3类动词:个']
+    },
+            series : [
+                {
+                    name: '日语动词词汇记录',
+                    type: 'pie',    
+                    radius: '50%',
+                    data:[
+                        {value:230, name:'1类动词'},
+                        {value:128, name:'2类动词'},
+                        {value:119, name:'3类动词'}
+                        
+                    ]
+                }
+            ]
+        })
+    </script>
   </div>
 </div>
-  <p><h4>このページ表示動詞の敬体過去形と過去形のバリエーション(語の意味、語形など他の項目もあります。)
-      </p></h4>
+  <p></p><h4>このページ表示動詞の敬体過去形と過去形のバリエーション(語の意味、語形など他の項目もあります。)
+      <p></p></h4>
       <div style="overflow-x:hidden">
       <center>
       <table>
@@ -394,14 +420,14 @@
       <td></td>
       <td></td>
     </tr><tr>
-      <td落とす（おとす）></td>
+      <td落とす（おとす）>
       <td>掉/使落下</td>
       <td></td>
       <td></td>
       <td></td>
       <td></td>
       <td></td>
-    </tr><tr>
+    </td落とす（おとす）></tr><tr>
       <td>踊る（おどる）</td>
       <td>跳舞</td>
       <td></td>
@@ -842,7 +868,7 @@
 </table>
 </center>
 </div>
-</section>
+</body></section>
     <!-- 关闭菜单 -->
     <a class="exit-off-canvas"></a>
   </div> 
@@ -854,5 +880,5 @@ $(document).ready(function() {
 </script>
 
 <script src="css/Foundation-6.6.1/assets/js/app.js"></script>
-</body>
-</html>
+
+</html></html>

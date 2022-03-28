@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>我的日语笔记(ぶんぽう)</title>
+	<link rel="stylesheet" href="css/Foundation-6.6.1/assets/css/app.css">
+   <link rel="stylesheet" href="https://cdn.staticfile.org/foundation/5.5.3/css/foundation.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/foundation/5.5.3/js/foundation.min.js"></script>
+  <script src="https://cdn.staticfile.org/foundation/5.5.3/js/vendor/modernizr.js"></script>
+  <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+  <script> 
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#xiala").slideToggle("slow");
+  });
+});
+</script>
+<style type="text/css"> 
+#xiala,#flip
+{
+  padding:30px;
+  text-align:center;
+  border:solid 0px;
+}
+#xiala
+{
+  padding:50px;
+  display:none;
+}
+</style>
+</head>
+<body>
+<!-- 最外层div：页面布局 -->
+
+<div class="off-canvas-wrap" data-offcanvas>
+  <!-- 内部元素: "工具栏" 内容 (图标, 链接, 描述内容等)-->
+
+  <div class="inner-wrap">
+    <nav class="tab-bar">
+      <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+      </section>
+
+      <section class="middle tab-bar-section">
+        <h1 class="title">僕の日本語の筆記です</h1>
+      </section>
+    </nav>
+
+    <!-- 滑动菜单 -->
+    <aside class="left-off-canvas-menu">
+      <!-- Add links or other stuff here -->
+      <ul class="off-canvas-list test">
+      <li><label><object data="image/baka9.svg" type="image/svg+xml"></object>
+</label></li>
+        <li><label><a href="index.html">欢迎~♪(^∇^*)</a></label></li>
+        <li><label>日语功能性词汇变形笔记</label></li>
+        <li><a href="Verb distortion.html">日语-动词变换汇总</a></li>
+        <li><a href="ます表.html">日语-动词ます形变换表</a></li>
+        <li><a href="ない表.html">日语-动词ない形变换表</a></li>
+        <li><a href="ぶんぽう.html">日语-文法变形汇总</a></li>
+        <li><a href="#">日语-形容词变换汇总</a></li>
+        <li><a href="#">日语-形容词い类变换表</a></li>
+        <li><a href="#">日语-形容词な类变换表</a></li>
+        <li><a href="#">日语-情感类形容词列表</a></li>
+        <li><a href="123类动词积累表.html">日语-123类动词积累表</a></li>
+        ...
+      </ul>
+       <ul class="off-canvas-list test">
+        <li><label>《综合日语》第一册笔记</label></li>
+        <li><a href="5ko.html">日语-第五课笔记汇总</a></li>
+        <li><a href="6ko.html">日语-第六课笔记汇总</a></li>
+        <li><a href="7ko.html">日语-第七课笔记汇总</a></li>
+        <li><a href="8ko.html">日语-第八课笔记汇总</a></li>
+        <li><a href="9ko.html">日语-第九课笔记汇总</a></li>
+        <li><a href="10ko.html">日语-第十课笔记汇总</a></li>
+        <li><a href="11ko.html">日语-第十一课笔记汇总</a></li>
+        <li><a href="12ko.html">日语-第十二课笔记汇总</a></li>
+        <li><a href="13ko.html">日语-第十三课笔记汇总</a></li>
+        <li><a href="14ko.html">日语-第十四课笔记汇总</a></li>
+        <li><a href="15ko.html">日语-第十四课笔记汇总</a></li>
+        ...
+      </ul>
+      <ul class="off-canvas-list test">
+        <li><label>《综合日语》第二册笔记</label></li>
+        <li><a href="2-1ko.html">日语-第五课笔记汇总</a></li>
+        <li><a href="2-2ko.html">日语-第六课笔记汇总</a></li>
+        <li><a href="2-3ko.html">日语-第七课笔记汇总</a></li>
+        <li><a href="2-4ko.html">日语-第八课笔记汇总</a></li>
+        <li><a href="2-5ko.html">日语-第九课笔记汇总</a></li>
+        <li><a href="2-6ko.html">日语-第十课笔记汇总</a></li>
+        <li><a href="2-7ko.html">日语-第十一课笔记汇总</a></li>
+        <li><a href="2-8ko.html">日语-第十二课笔记汇总</a></li>
+        <li><a href="2-9ko.html">日语-第十三课笔记汇总</a></li>
+        <li><a href="2-10ko.html">日语-第十四课笔记汇总</a></li>
+        <li><a href="2-11ko.html">日语-第十四课笔记汇总</a></li>
+        ...
+      </ul>
+      <ul class="off-canvas-list test">
+        <li><label>日语文章记录</label></li>
+        <li><a href="zhry.html">《综合日语》文章汇总</a></li>
+        <li><a href="xbry.html">《新版标准日本语》文章汇总</a></li>
+        <li><a href="djxry.html">《大家学》文章汇总</a></li>
+        ...
+      </ul>
+      <ul class="off-canvas-list test">
+        <li><label>其他</label></li>
+        <li><a href="日本語の歌曲集.html">我学唱的日语歌</a></li>
+        <li><a href="哥哥生日快乐.html">お兄さん</a></li>
+      </ul>
+    </aside>
+
+    <!-- 主要内容 -->
+    <section class="main-section">
+    <body>
+ 
+     <div style="text-indent:40%;">
+ <h1>文形语法汇总</h1>
+ </div>
+<div style="padding:40px;">
+<div class="panel radius">
+<div class="row example"><div class="small-5 columns"><br><br><br><br><br><div style="text-indent:10%;"><h3>
+  这是我学习综合日语到现在整理的1、2、3类动词单词，开始整理到现在共计477个单词</h3></div>
+  <div style="text-indent:8%;"><h3>目前能发现最多的是1类动词，二类次之，三类动词最少</h3>
+  <div style="text-indent:8%;"><h3>这一个站点专门记录所有动词单词使用。</h3></div>
+  </div></div><br><div class="small-6 columns">
+ <center><div id="main" style="width: 600px;height:400px;"></div>
+     <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('main'));
+        myChart.setOption({
+                tooltip: {},
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['1类动词:个', '2类动词:个', '3类动词:个']
+    },
+            series : [
+                {
+                    name: '日语动词词汇记录',
+                    type: 'pie',    
+                    radius: '70%',
+                    data:[
+                        {value:230, name:'1类动词'},
+                        {value:128, name:'2类动词'},
+                        {value:119, name:'3类动词'}
+                        
+                    ]
+                }
+            ]
+        })
+    </script></center></div></div>
+        <div style="overflow-x:hidden">
+        <center>
+        <table>
+    <thead>
+      <tr>
+        <th>1类动词</th><th>平假名</th><th>翻译</th><th>造句</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ある</td><td>ある</td><td>有/在(非意志者)</td><td></td></tr>
+      <tr><td>空く</td><td>あく</td><td>空/有空</td><td></td></tr>
+      <tr><td>言う</td><td>いう</td><td>说/讲</td><td></td></tr>
+      <tr><td>行く</td><td>いく</td><td>去</td><td></td></tr>
+      <tr><td>急ぐ</td><td>いそぐ</td><td>急/急忙/急急忙忙地</td><td></td></tr>
+      <tr><td>会う</td><td>あう</td><td>会见/会面</td><td></td></tr>
+      <tr><td>合う</td><td>あう</td><td>合适/适合</td><td></td></tr>
+      <tr><td>遊ぶ</td><td>あそぶ</td><td>玩/玩耍</td><td></td></tr>
+      <tr><td>洗う</td><td>あらう</td><td>洗/洗涤</td><td></td></tr>
+      <tr><td>謝る</td><td>あやまる</td><td>道歉</td><td></td></tr>
+      <tr><td>歩く</td><td>あるく</td><td>中(彩)/抽中</td><td></td></tr>
+      <tr><td>上がる</td><td>あがる</td><td>提高/上涨</td><td></td></tr>
+      <tr><td>預かる</td><td>あずかる</td><td>保管/收存</td><td></td></tr>
+      <tr><td>いたす</td><td>いたす</td><td>(自谦)做/干</td><td></td></tr>
+      <tr><td>いただく</td><td>いただく</td><td>吃/喝/得到</td><td></td></tr>
+      <tr><td>至る</td><td>いたる</td><td>到达/达到</td><td></td></tr>
+      <tr><td>いらっしゃる</td><td>いらっしゃる</td><td>(尊他)去/来/在</td><td></td></tr>
+      <tr><td>入り組む</td><td>いりくむ</td><td>错综复杂</td><td></td></tr>
+      <tr><td>要る</td><td>いる</td><td>要</td><td></td></tr>
+      <tr><td>祝う</td><td>いわう</td><td>祝贺</td><td></td></tr>
+      <tr><td>伺う</td><td>うかがう</td><td>(自谦)去/来/问/拜访/请教</td><td></td></tr>
+      <tr><td>浮かぶ</td><td>うかぶ</td><td>想起/浮现/浮</td><td></td></tr>
+      <tr><td>動かす</td><td>うごかす</td><td>开动/移动/摇动</td><td></td></tr>
+      <tr><td>動く</td><td>うごく</td><td>运转/转动</td><td></td></tr>
+      <tr><td>歌う</td><td>うたう</td><td>唱/歌唱</td><td></td></tr>
+      <tr><td>売る</td><td>うる</td><td>卖/销售</td><td></td></tr>
+      <tr><td>おいでになる</td><td>おいでになる</td><td>(尊他)去/来/在</td><td></td></tr>
+      <tr><td>おく</td><td>おく</td><td>放置</td><td></td></tr>
+      <tr><td>送る</td><td>おくる</td><td>寄/送</td><td></td></tr>
+      <tr><td>起こす</td><td>おこす</td><td>叫醒/唤醒</td><td></td></tr>
+      <tr><td>行う</td><td>おこなう</td><td>开/举行</td><td></td></tr>
+      <tr><td>怒る</td><td>おす</td><td>按/推/挤</td><td></td></tr>
+      <tr><td>おっしゃる</td><td>おっしゃる</td><td>(尊他)说/讲</td><td></td></tr>
+      <tr><td>落とす</td><td>おとす</td><td>掉/使落下</td><td></td></tr>
+      <tr><td>踊る</td><td>おどる</td><td>跳舞</td><td></td></tr>
+      <tr><td>驚く</td><td>おどろく</td><td>惊讶/吃惊</td><td></td></tr>
+      <tr><td>思い出す</td><td>おもいだす</td><td>想起/想出</td><td></td></tr>
+      <tr><td>泳ぐ</td><td>およぐ</td><td>游泳</td><td></td></tr>
+      <tr><td>終わる</td><td>おわる</td><td>结束</td><td></td></tr>
+      <tr><td>買う</td><td>かう</td><td>买</td><td></td></tr>
+      <tr><td>飼う</td><td>かう</td><td>饲养</td><td></td></tr>
+      <tr><td>返す</td><td>かえす</td><td>归还</td><td></td></tr>
+      <tr><td>帰る</td><td>かえる</td><td>回来/回去</td><td></td></tr>
+      <tr><td>掛かる</td><td>かかる</td><td>挂/悬挂</td><td></td></tr>
+      <tr><td>かかる</td><td>かかる</td><td>1覆盖/2上(锁)/3花费(时间/金钱)</td><td></td></tr>
+      <tr><td>書く</td><td>かく</td><td>写</td><td></td></tr>
+      <tr><td>飾る</td><td>かざる</td><td>装饰</td><td></td></tr>
+      <tr><td>貨す</td><td>かす</td><td>借出/借给</td><td></td></tr>
+      <tr><td>稼ぐ</td><td>かせぐ</td><td>挣钱/赚钱</td><td></td></tr>
+      <tr><td>勝つ</td><td>かつ</td><td>取胜/获胜</td><td></td></tr>
+      <tr><td>被る</td><td>かぶる</td><td>戴/盖/浇/冲/蒙受/承担</td><td></td></tr>
+      <tr><td>かむ</td><td>かむ</td><td>咬/嚼</td><td></td></tr>
+      <tr><td>通う</td><td>かよう</td><td>上学/来往</td><td></td></tr>
+      <tr><td>渇く</td><td>かわく</td><td>渴</td><td></td></tr>
+      <tr><td>乾く</td><td>かわく</td><td>干/干燥</td><td></td></tr>
+      <tr><td>変わる</td><td>かわる</td><td>变/转变/怪</td><td></td></tr>
+      <tr><td>頑張る</td><td>がんばる</td><td>拼命努力</td><td></td></tr>
+      <tr><td>聞く</td><td>きく</td><td>听</td><td></td></tr>
+      <tr><td>効く</td><td>きく</td><td>有效/起作用</td><td></td></tr>
+      <tr><td>気づく</td><td>きづく</td><td>发觉/发现</td><td></td></tr>
+      <tr><td>決まる</td><td>きまる</td><td>定/决定</td><td></td></tr>
+      <tr><td>切る</td><td>きる</td><td>1剪/切/割2关上/中断</td><td></td></tr>
+      <tr><td>腐る</td><td>くさる</td><td>腐烂/腐败</td><td></td></tr>
+      <tr><td>くださる</td><td>くださる</td><td>(尊他)给</td><td></td></tr>
+      <tr><td>曇る</td><td>くもる</td><td>天阴</td><td></td></tr>
+      <tr><td>暮らす</td><td>くらす</td><td>生活</td><td></td></tr>
+      <tr><td>繰り返す</td><td>くりかえす</td><td>反复</td><td></td></tr>
+      <tr><td>消す</td><td>けす</td><td>关(灯)/消除/去除</td><td></td></tr>
+      <tr><td>ござる</td><td>ござる</td><td>为难/难</td><td></td></tr>
+      <tr><td>込む</td><td>こむ</td><td>拥挤/混杂</td><td></td></tr>
+      <tr><td>ご覧になる</td><td>ごらんになる</td><td>(尊他)看/读</td><td></td></tr>
+      <tr><td>壊す</td><td>こわす</td><td>弄坏</td><td></td></tr>
+      <tr><td>探す</td><td>さがす</td><td>找/寻找/寻求</td><td></td></tr>
+      <tr><td>下がる</td><td>さがる</td><td>下降/降低</td><td></td></tr>
+      <tr><td>咲く</td><td>さく</td><td>花开</td><td></td></tr>
+      <tr><td>触る</td><td>さわる</td><td>碰/触</td><td></td></tr>
+      <tr><td>騒ぐ</td><td>さわぐ</td><td>吵嚷/吵闹</td><td></td></tr>
+      <tr><td>死ぬ</td><td>しぬ</td><td>死/死亡</td><td></td></tr>
+      <tr><td>しまう</td><td>しまう</td><td>收拾起来/放到~里边</td><td></td></tr>
+      <tr><td>誇る</td><td>ほこる</td><td>夸耀</td><td>わが社は世界お菓子(がし)コンテストで連続(れんぞく)3年優勝(ゆうしょう)の実際(じっさい)を誇っております。</td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+</center>
+</div></div></div></body></section>
+    <!-- 关闭菜单 -->
+    <a class="exit-off-canvas"></a>
+  </div> 
+</div> 
+<script>
+$(document).ready(function() {
+    $(document).foundation();
+})
+</script>
+</body>
+</html>

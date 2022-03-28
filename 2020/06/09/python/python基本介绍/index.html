@@ -28,7 +28,7 @@
 <meta property="og:description" content="什么是python">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-09T15:30:28.000Z">
-<meta property="article:modified_time" content="2020-11-14T14:36:10.836Z">
+<meta property="article:modified_time" content="2021-09-21T08:31:11.259Z">
 <meta property="article:author" content="MrLaoxie1998">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -225,7 +225,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-11-14 22:36:10" itemprop="dateModified" datetime="2020-11-14T22:36:10+08:00">2020-11-14</time>
+                <time title="修改时间：2021-09-21 16:31:11" itemprop="dateModified" datetime="2021-09-21T16:31:11+08:00">2021-09-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -297,6 +297,12 @@
 <li>中文资料匮乏（好的 Python 中文资料屈指可数，现在应该变多了）。托社区的福，有几本优秀的教材已经被翻译了，但入门级教材多，高级内容还是只能看英语版。</li>
 <li>构架选择太多（没有像 C# 这样的官方 .net 构架，也没有像 ruby 由于历史较短，构架开发的相对集中。Ruby on Rails 构架开发中小型web程序天下无敌）。不过这也从另一个侧面说明，python比较优秀，吸引的人才多，项目也多。</li>
 </ul>
+<p>列表是可变的。<br>Step one: 将赋值号(=)左边指定的内容删除。<br>Step two: 将包含在赋值号(=)右边的可迭代对象中的片段插入左边被删除的位置。<br>注意:其实它是分上面两个步骤来实现的。<br>样例如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">heros &#x3D; [&quot;蜘蛛侠&quot;,&quot;绿巨人&quot;,&quot;黑寡妇&quot;,&quot;鹰眼&quot;,&quot;雷神&quot;]</span><br><span class="line">heros[4] &#x3D; &quot;钢铁侠&quot;</span><br><span class="line">heros[&#39;蜘蛛侠&#39;,&#39;绿巨人&#39;,&#39;黑寡妇&#39;,&#39;鹰眼&#39;,&#39;雷神&#39;]</span><br><span class="line">heros[3:] &#x3D; [&quot;武松&quot;,&quot;林冲&quot;,&quot;李逵&quot;]</span><br><span class="line">heros [&#39;&#39;蜘蛛侠&#39;,&#39;绿巨人&#39;,&#39;黑寡妇&#39;,&#39;武松&#39;,&#39;林冲&#39;,&#39;李逵&#39;]</span><br></pre></td></tr></table></figure>
+<p>如果现在我们有一个列表它里面包含了都是数字,如nums = [3, 1, 9, 6, 8, 3, 5, 3]<br>现在有一个要求:将列表里面的元素从小到大进行排序,可以使用调用列表的sort()方法。用法如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nums.sort()</span><br><span class="line">nums[1,3,3,5,6,8,9]</span><br></pre></td></tr></table></figure>
+<p>如果是进行从大到小的排序话，就需要调用到reverse()方法。用法如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nums.reverse()</span><br><span class="line">nums[9,8,6,5,3,3,3,1]</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -396,7 +402,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-count">166</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -407,7 +413,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -448,7 +454,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
