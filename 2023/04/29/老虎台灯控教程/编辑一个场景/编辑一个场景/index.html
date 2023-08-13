@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="当存储好一个场景之后，某些场景做的不够满意，那么可以编辑一个场景。比如该场景内显示的是青色。如果不需要青色改成黄色。只需要选中场景使用的这些设备。![[Pasted image 20230427085444.png]]选中之后，直接在右侧选中CMY RGB选项，然后找到CMY相关选项， 比如现在看到的青色的数值是100%，那就将它调成0，比如需要黄色，那就将黄色改成100%，改成之后。![[Pas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2023/04/29/%E8%80%81%E8%99%8E%E5%8F%B0%E7%81%AF%E6%8E%A7%E6%95%99%E7%A8%8B/%E7%BC%96%E8%BE%91%E4%B8%80%E4%B8%AA%E5%9C%BA%E6%99%AF/%E7%BC%96%E8%BE%91%E4%B8%80%E4%B8%AA%E5%9C%BA%E6%99%AF/index.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="当存储好一个场景之后，某些场景做的不够满意，那么可以编辑一个场景。比如该场景内显示的是青色。如果不需要青色改成黄色。只需要选中场景使用的这些设备。![[Pasted image 20230427085444.png]]选中之后，直接在右侧选中CMY RGB选项，然后找到CMY相关选项， 比如现在看到的青色的数值是100%，那就将它调成0，比如需要黄色，那就将黄色改成100%，改成之后。![[Pas">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-29T07:01:02.232Z">
+<meta property="article:modified_time" content="2023-05-09T03:02:21.321Z">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2023/04/29/%E8%80%81%E8%99%8E%E5%8F%B0%E7%81%AF%E6%8E%A7%E6%95%99%E7%A8%8B/%E7%BC%96%E8%BE%91%E4%B8%80%E4%B8%AA%E5%9C%BA%E6%99%AF/%E7%BC%96%E8%BE%91%E4%B8%80%E4%B8%AA%E5%9C%BA%E6%99%AF/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 9之数据库</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-我的旧站">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-tasks"></i>我的旧站</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2023/04/29/%E8%80%81%E8%99%8E%E5%8F%B0%E7%81%AF%E6%8E%A7%E6%95%99%E7%A8%8B/%E7%BC%96%E8%BE%91%E4%B8%80%E4%B8%AA%E5%9C%BA%E6%99%AF/%E7%BC%96%E8%BE%91%E4%B8%80%E4%B8%AA%E5%9C%BA%E6%99%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-04-29 15:01:02" itemprop="dateCreated datePublished" datetime="2023-04-29T15:01:02+08:00">2023-04-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-05-09 11:02:21" itemprop="dateModified" datetime="2023-05-09T11:02:21+08:00">2023-05-09</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>当存储好一个场景之后，某些场景做的不够满意，那么可以编辑一个场景。<br>比如该场景内显示的是青色。如果不需要青色改成黄色。只需要选中场景使用的这些设备。<br>![[Pasted image 20230427085444.png]]<br>选中之后，直接在右侧选中CMY RGB选项，然后找到CMY相关选项， 比如现在看到的青色的数值是100%，那就将它调成0，比如需要黄色，那就将黄色改成100%，改成之后。![[Pasted image 20230427085737.png]]<br>再去点击Functions下面的记录场景按钮(Record Cue)，点击之后，再去选择正在使用场景的按钮，当按下按钮之后，显示器右侧旁边会有三个选项以供选择，分别是取消、代替(替换、颜色的数值会代替里面所有的内容，只留下颜色的信息在内)、并入(把新的数值信息合并到已有的程序数值内去)。选择合并之后，黄色的信息就会储存到该使用的推杆内<br>![[Pasted image 20230427085914.png]]<br>假如位置不满意，那么就修改场景内的灯位置，那么就选择该场景下的灯具，然后去选择Pan Tilt按钮![[Pasted image 20230427090342.png]]<br>接着去调整你要修改的位置，调整完毕之后，下一步选择Record Cue,按完之后，选择所使用的推杆，按一下蓝色按钮(上面修改颜色的操作也是按一下蓝色按钮),修改完毕之后，如果需要快速进行合并，那么就快速按两下蓝色按钮，如果需要其他功能性操作，那么就要选择屏幕右侧的三个选项去做选择。<br>![[Pasted image 20230427090909.png]]<br>如果需要把颜色去掉，那么就选择推杆内的一批灯具，然后去选择Attribute Banks内的CMY RGB按钮，接着将所有颜色打成0，然后修改完毕之后，按一下记录场景按钮，然后快速按两下推杆内的蓝色按钮进行合并。 </p>
+<p> 在编辑一个场景中，如果每次都需要合并的功能，而不需要替换功能，如果不想看到屏幕右侧几个按钮，可以通过设置去取消。<br> 1.首先按住SHIFT键，接着按B键打开用户设置，接着按一下NEXT键去选择，那么B按钮有一个选项就是提示选择-并入或替换。可以切换成总并入。在按一下会切换成素材总并入。<br> ![[Pasted image 20230427092802.png]]![[Pasted image 20230427092651.png]]</p>
+<center>如何去更新一个场景和一个素材的内容。</center>
+
+<p>比如现在有一个程序或者是素材运行在舞台上，当忘记了或者不知道运行的是哪些设备，或者是不知道舞台上这些设备在素材窗口里面是哪些设备，可以通过选择如果来选择。<br>1.先按一下Fixture键，然后选择select if选项(按B键)，选择了之后，然后再按程序(推杆)上面的选择按钮(蓝色按钮),按了以后，当前设备所使用的灯具都会在设备窗口屏幕上显示出来。<br>![[Pasted image 20230427093747.png]]</p>
+<p>当选择了程序里面正在运行的设备之后，这个时候可以通过属性选择按钮选择相关的功能。比如改颜色，将黄色改成粉红色，选择CMY RGB，然后将黄色Yellow变成0，然后调整Magenta，调整到100%,变成粉红色，这个时候选择记录场景按钮(Record Cue)之后，在屏幕右侧的B键上，有一个更新选项，按了之后，屏幕上所有的设备包括素材都变成了灰色，只有使用中推杆上的素材和程序是高亮显示的。这个时候需要确定更新哪个内容：<br>1.如果是更新正在使用中的推杆的话，那么只需要按一下ENTER确定键，这个所更改的(粉红色)，会马上更新到所使用的推杆内。<br>2.如果是更新素材，可以只选中素材，然后取消场景，然后再按确定，那么这个粉红色会马上更新到素材内。<br>3.所有操作完成后要记得清空编辑器(按CLEAR)<br>![[Pasted image 20230427094138.png]]<br>![[Pasted image 20230427094637.png]]</p>
+<p>如果保存好一个程序之后，想查看这个程序都保存了什么内容</p>
+<p>运行一个程序(推杆)，如果控制台没有连接到舞台，想看程序保存了什么数值。 这个时候，需要按程序的VIEW（查看）键，按下之后选择这个程序(推杆)的选择按钮，选择了之后，在外接显示器这里，会弹出一个（回放程序查看）这样一个窗口。 里面有如下信息：<br>1.Delay In(渐入)<br>2.Fade In(淡入)<br>3.Fade Out(淡出)<br>4.Fixture Overlap(设备交叠)<br>5.Curve(曲线)<br>6.View Cue(查看提示)<br>![[Pasted image 20230427110135.png]]</p>
+<p>然后点击View Cue下的View按钮，就可以弹出Cue查看窗口。可以通过右侧的菜单去查看想要看的内容，可以点击数值显示灯具的所有数值信息。<br>第一个Number是灯具的序列显示，Order是其他选项，Dimmer，<br>![[Pasted image 20230427110604.png]]<br>![[Pasted image 20230429150725.png]]<br>如果说需要查看这些数值应用到哪个素材上，那么可以选择按素材按钮。![[Pasted image 20230429150955.png]]<br>![[Pasted image 20230429151003.png]]<br>点了按钮之后就可以看到这些数值被哪些素材采用了。<br>如果要查看这些数值的时间，那么就可以选择时间按钮来查看。<br>如果是看程序里面使用了什么效果，使用了什么图形，那么可以选择内置效果选项，就可以看到场景里面保存了什么内容。</p>
+<p>对于场景编辑十分有效的几种功能。<br>第一个是，调入功能，加入程序内有亮度、位置、选中灯组之后，加一个图案、颜色进去，然后记录信息：【按一下Record Cue，然后按推杆上蓝色按钮，按C记录信息，记录完一定要按CLEAR键】<br>如果要修改该场景内的颜色，使用include功能进行更改。在使用include功能，可以不用推推杆。按了include功能之后，屏幕右侧会显示两个按钮，一个是高级调入，一个是快速调入。 选择了快速调入之后，当前面板上所有推杆都会变成红色。假如需要调入第十推杆，那么只需要在第十推杆顶上的蓝色按钮按一下即可调入。所有功能、所有通道都会出现在舞台上。无论属性功能键放在什么位置。</p>
+<p>除了调入功能可以这样修改外，假如推起来了一个带内置图形的程序。比如当前内带了一个垂直摆动的效果，如果需要修改场景里面的运行效果速度，或者多个内容的时候，这个时候选择include功能，然后选择调用该场景，这个时候可以把该场景拉下来了。这个时候所有灯具都会被选中，而且场景已经进入了编程器。这个时候可以打开编程器进行查看。<br>![[Pasted image 20230430180543.png]]<br>可以看到里面所有的编程信息都是运行在这个程序内。这个时候进入图形库，选择内置图形，更改图形运行速度，假如将图形运行速度改慢下来，加入改成5.5秒，这个时候图形运行的速度就会慢下来，完成之后按Record Cue，然后选择推杆上蓝色按钮进行保存。</p>
+<p>除了这个之外，当按了include之后，当前画面可以指定需要选择哪个通道。<br>如果想调用程序里面的某个属性，比如调用位置功能，首先把灯具都选中定位一下，定位之后回到默认值，这个时候使用高级调用功能，首先按include按钮，然后选择高级调度，选择需要调度的程序 ，选择之后会看到属性选项按钮都会亮起来，然后屏幕右侧会显示如下按钮：<br>调入<br>设置Mark<br>设置Mark不包括全部设备<br>设置Mark包括全部设备</p>
+<p>比如选择设置Mark不包括全部设备。那么所有属性选项都会被关闭，那么选择设置Mark包括全部设备，那么所有属性都会被打开。那么按物理按钮Attribute Options按钮可以进行选择间的切换。</p>
+<p>假如现在需要调用位置，那么只需要先将全部属性关闭，然后再单选按一下位置Pin按钮进行选中。点亮之后，按屏幕旁边的A键，之后程序内所有设备都会被选中，而且位置也会被调入出来，这个时候打开亮度就可以看到除了亮度以外，还有位置、图案、颜色，那么现在除了位置被调用出来，其他的选项都没有被调用出来。</p>
+<p>除了调动功能之外，还有一个Off&amp;Release功能，除了Release释放功能之外，还有一个Off功能，可以关闭相关的属性，还可以关闭其他的选项。</p>
+<p>比如在一排灯具期间，中间有几盏灯还具备其他用途，那么这个时候需要选择不需要的灯具，然后选择Off键，按一下之后屏幕右侧会弹出几个选项按钮，前面两个是释放功能，<br>![[Pasted image 20230509110220.png]]</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/07/02/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E6%97%A5%E8%AF%AD%E8%AF%AD%E6%B3%95/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/03/30/%E8%80%81%E8%99%8E%E5%8F%B0%E7%81%AF%E6%8E%A7%E6%95%99%E7%A8%8B/Cue%20list%E5%9C%BA%E6%99%AF%E5%88%97%E8%A1%A8%E8%AE%B0%E5%BD%95/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">215</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005055629971077/home?from=page_100505&mod=TAB&is_all=1#place" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005055629971077&#x2F;home?from&#x3D;page_100505&amp;mod&#x3D;TAB&amp;is_all&#x3D;1#place" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/15833385" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;15833385" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

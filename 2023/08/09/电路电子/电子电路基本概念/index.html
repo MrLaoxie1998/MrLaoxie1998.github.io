@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="电子电路基本概念 电压是什么？ 电压：是指电路中某一点相对于接地点的电压值。（压差无法通过万用表测，只能通过两端之间的电压去计算） 电压差：指线路中两点之间的电位差。 注意：有电压不一定有电流，但是有电流就一定会有电压 理解：电压相当于地势差，有地势的地方不一定有水流，有水流的地方就一定有地势差。这个道理可以理解到电压差内。 电压的单位： 电压一般用英文字母“U”表示。 基本单位：伏特(V)简称伏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2023/08/09/%E7%94%B5%E8%B7%AF%E7%94%B5%E5%AD%90/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/index.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="电子电路基本概念 电压是什么？ 电压：是指电路中某一点相对于接地点的电压值。（压差无法通过万用表测，只能通过两端之间的电压去计算） 电压差：指线路中两点之间的电位差。 注意：有电压不一定有电流，但是有电流就一定会有电压 理解：电压相当于地势差，有地势的地方不一定有水流，有水流的地方就一定有地势差。这个道理可以理解到电压差内。 电压的单位： 电压一般用英文字母“U”表示。 基本单位：伏特(V)简称伏">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/2023/08/09/%E7%94%B5%E8%B7%AF%E7%94%B5%E5%AD%90/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/MyWeb/source/_posts/电路电子/img/直流电与交流电图解.png">
+<meta property="og:image" content="https://github.com/2023/08/09/%E7%94%B5%E8%B7%AF%E7%94%B5%E5%AD%90/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/MyWeb/source/_posts/电路电子/img/直流电与交流电图解2.png">
+<meta property="article:published_time" content="2023-08-09T08:55:48.785Z">
+<meta property="article:modified_time" content="2023-08-11T15:28:35.831Z">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/2023/08/09/%E7%94%B5%E8%B7%AF%E7%94%B5%E5%AD%90/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/MyWeb/source/_posts/电路电子/img/直流电与交流电图解.png">
+
+<link rel="canonical" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2023/08/09/%E7%94%B5%E8%B7%AF%E7%94%B5%E5%AD%90/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 9之数据库</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-我的旧站">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-tasks"></i>我的旧站</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2023/08/09/%E7%94%B5%E8%B7%AF%E7%94%B5%E5%AD%90/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-08-09 16:55:48" itemprop="dateCreated datePublished" datetime="2023-08-09T16:55:48+08:00">2023-08-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-11 23:28:35" itemprop="dateModified" datetime="2023-08-11T23:28:35+08:00">2023-08-11</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>电子电路基本概念</p>
+<p>电压是什么？</p>
+<p>电压：是指电路中某一点相对于接地点的电压值。（压差无法通过万用表测，只能通过两端之间的电压去计算）</p>
+<p>电压差：指线路中两点之间的电位差。</p>
+<p>注意：有电压不一定有电流，但是有电流就一定会有电压</p>
+<p>理解：电压相当于地势差，有地势的地方不一定有水流，有水流的地方就一定有地势差。这个道理可以理解到电压差内。</p>
+<p>电压的单位：</p>
+<p>电压一般用英文字母“U”表示。</p>
+<p>基本单位：伏特(V)简称伏</p>
+<blockquote>
+<p>$$<br>1V=10^{6} uV<br>$$<br>$$<br>1V=10^{3} uV<br>$$<br>$$<br>1V=10^{3} mV<br>$$</p>
+</blockquote>
+<p>什么是电流？</p>
+<p>电荷的定向移动形成电流【带电的粒子称为电荷】，从电压高的地方流向低的地方。</p>
+<p>电流用英文字母I表示，直流是大写的I，交流是小写的i</p>
+<p>单位：安培(A),毫安(mA)微安(uA)<br>图表示：1安等于10的3次方毫安，1毫安等于10的3次方微安，1安等于10的6次方微安</p>
+<blockquote>
+<p>$$<br>1A=10^{3} mA<br>$$<br>$$<br>1mA=10^{3} uA<br>$$<br>$$<br>1A=10^{6} uA<br>$$</p>
+</blockquote>
+<p>直流电与交流电</p>
+<p>交流电：大小和方向随着时间作周期性变化的电流。</p>
+<p>符号：~</p>
+<p>交流电的频率是50Hz~60Hz</p>
+<p>直流电：在导体中，电流的方向和大小都不随时间变化二改变的电流叫直流。</p>
+<p>注意：只有直流电分正负极，交流电不分正负极且交流电不存在负电压</p>
+<p>直流电与交流电图解。</p>
+<img src="/2023/08/09/%E7%94%B5%E8%B7%AF%E7%94%B5%E5%AD%90/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/MyWeb\source\_posts\电路电子\img\直流电与交流电图解.png" style="zoom:40%;" align="left">
+
+<p><img src="/2023/08/09/%E7%94%B5%E8%B7%AF%E7%94%B5%E5%AD%90/%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/MyWeb\source\_posts\电路电子\img\直流电与交流电图解2.png" alt="上下为一个周期" style="zoom:33%;" align="right">周期：一个上半周加上一个下半周视为完整的一个周期,如图内所示，改图内有2个周期，2个周期即为2Hz，1秒钟变化2周期就是2Hz,1秒钟变化10次就是10Hz。1秒钟变换50次就是50Hz。这就是交流电</p>
+
+<ul>
+<li><p>在交流电正半周期时，电压为上正下负，电流从正极流向负极。(从上往下流)正半周时是上正下负。</p>
+</li>
+<li><p>在交流电负半周期时，电压为上负下正，电流从正极流向负极。(从下往上流)</p>
+</li>
+</ul>
+<h2 id="直流电"><a href="#直流电" class="headerlink" title="直流电"></a>直流电</h2><p>直流电是只朝一个方向，电流的方向和电压的大小都不会随着时间改变。</p>
+<ul>
+<li>直流电由于电压没有上下波动，所以直流的电压大小不变，且电压始终是在0以上的电压，所以电流的流向始终是朝着一个方向流动，因此，它的大小和方向都不变化。</li>
+</ul>
+<h2 id="电阻概念"><a href="#电阻概念" class="headerlink" title="电阻概念"></a>电阻概念</h2><ul>
+<li>电路中对电阻有阻碍作用并且造成能量消耗的部分叫做电阻。</li>
+<li>电阻用英文字母“R”表示</li>
+<li>单位：欧(Ω)千欧(kΩ)兆欧(MΩ)</li>
+<li>图下表示1千欧等于10的3次方欧姆，1兆欧等于10的6次方欧姆，1欧姆等于1千毫欧</li>
+</ul>
+<blockquote>
+<p>$$<br>1kΩ=10^{3} Ω / 1MΩ=10^{6}Ω / 1Ω=1000mΩ<br>$$</p>
+</blockquote>
+<h2 id="欧姆定律"><a href="#欧姆定律" class="headerlink" title="欧姆定律"></a>欧姆定律</h2><p>导体中的电流I和电阻两端的电压U成正比，和导体的R成反比。</p>
+<p>I=U/R</p>
+<p>$$<br>I ={12V\over 100Ω}=0.12A<br>$$<br>例如：某灯泡两端的电压是12V，阻值为100欧，流过它的电流是多少？</p>
+<p>I=12V÷100Ω，算出来的结果是0.12A,等于120毫安。</p>
+<p>在电压不变的情况下，阻值越大，电流越小。阻值越大，阻碍越大，流过的电流就越小，如果此时加到200Ω，在原有的电压不变的情况下，电流就会变小。<br>如果再去计算一次，那么就是I=12V÷200Ω=0.06A<br>$$<br>I ={12V\over 200Ω}=0.06A<br>$$</p>
+<h2 id="功率"><a href="#功率" class="headerlink" title="功率"></a>功率</h2><p>功率计算公式：P=U×I （P表示功率，U表示电压，I表示电流，电压乘以电流就是功率）<br>其中电压的单位是V(伏)，电流的单位是A(安),功率的单位是W(瓦特)。</p>
+<p>例如：我自己的笔记本适配器上标有19V、3.42A，那么你的适配器是多少W(瓦)的？答案是:90W</p>
+<p>P=U×I=19V×3.42A=64.98W~65W</p>
+<h2 id="周期"><a href="#周期" class="headerlink" title="周期:"></a>周期:</h2><p>交流点完成一次完整的变化所需要的时间叫做周期。</p>
+<p>符号:T</p>
+<p>单位：秒(S)、毫秒(ms)、微秒(us)</p>
+<p>1秒等于1千毫秒，1毫秒等于1千微妙，1微秒等于1千纳秒<br>$$<br>1s =10^{3}ms、1ms=10^{3}us、1us=1000ns<br>$$</p>
+<h2 id="频率："><a href="#频率：" class="headerlink" title="频率："></a>频率：</h2><p>1秒钟内完成周期性变化的次数叫做频率</p>
+<p>符号：f</p>
+<p>单位：赫兹(Hz)千赫兹(kHz)兆赫兹(MHz)</p>
+<h2 id="供电："><a href="#供电：" class="headerlink" title="供电："></a>供电：</h2><ul>
+<li><p>供电(POWER,简写PWR)是一个可以输出电流的电压，电流较大，毫安级以上的一般称作为供电</p>
+</li>
+<li><p>供电是给设备提供电力的，常见的有VCC、VDD、VCC3、VTT、VREF、+5VALW、+3VO、VIN、VOUT等</p>
+</li>
+</ul>
+<p>注意：供电不能直接拉低(拉低就是短路，短路就会造成大电流，供电也不能直接接地，接地直接造成5A大电流)</p>
+<h2 id="接地："><a href="#接地：" class="headerlink" title="接地："></a>接地：</h2><p>接地(GROUND,简写VSS，GND，PGND)地的电位为零，它是给供电构成回路的，没有接地，就不会有电流流过设备。</p>
+<h2 id="信号："><a href="#信号：" class="headerlink" title="信号："></a>信号：</h2><p>信号在理论上说，电压信号只考虑电压的变化，电流很小。在主板的工作过程中，要根据需要，随时拉低或者置高。电路图中信号的箭头，因画图人员的随意性，并不完全代表信号的流向</p>
+<p>信号前面或后面都带“#”、“*”、“-L”、“-”，以及信号上面带横线的，都表示该信号低电平有效。</p>
+<p>SHDN#、*SHDN、SHDN_L、-SHDN、</p>
+<h2 id="高电平与低电平："><a href="#高电平与低电平：" class="headerlink" title="高电平与低电平："></a>高电平与低电平：</h2><p>在数字电路中，高电平用1(High)表示，低电平用0(Low)表示</p>
+<p>高低电平没有明确规定；需要根据电路来判断，不能限定在某个值，在电脑主板上面一般高于1V可认为高电平，低于0.7V以下的可以认为低电平，各个元件的高低电平也有差别，只要当成一个标志。</p>
+<h2 id="上升沿和下降沿："><a href="#上升沿和下降沿：" class="headerlink" title="上升沿和下降沿："></a>上升沿和下降沿：</h2><p>上升沿：由低电平跳变为高电平；</p>
+<p>下降沿：由高电平跳变为低电平；</p>
+<p>脉冲：由高跳变为低在跳为高；</p>
+<h2 id="脉冲信号："><a href="#脉冲信号：" class="headerlink" title="脉冲信号："></a>脉冲信号：</h2><p>脉冲信号也就是脉搏跳动这样的信号，相对于直流，断续的信号。</p>
+<p>例如：把手电打开灯亮，这属于直流，不停的开关灯亮、熄灭，就形成了脉冲，开关速度的快慢就是脉冲频率的高低。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/08/10/%E6%97%A5%E8%AF%AD/%E6%97%A5%E8%AF%AD%E5%88%9D%E7%BA%A7N4%E6%A0%B8%E5%BF%83%E8%AF%AD%E6%B3%9570%E6%9D%A1/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/07/20/Adobe/Adobe%20Au/EQ%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E7%AC%94%E8%AE%B0/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B4%E6%B5%81%E7%94%B5"><span class="nav-number">1.</span> <span class="nav-text">直流电</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E9%98%BB%E6%A6%82%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">电阻概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AC%A7%E5%A7%86%E5%AE%9A%E5%BE%8B"><span class="nav-number">3.</span> <span class="nav-text">欧姆定律</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%9F%E7%8E%87"><span class="nav-number">4.</span> <span class="nav-text">功率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%A8%E6%9C%9F"><span class="nav-number">5.</span> <span class="nav-text">周期:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%91%E7%8E%87%EF%BC%9A"><span class="nav-number">6.</span> <span class="nav-text">频率：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9B%E7%94%B5%EF%BC%9A"><span class="nav-number">7.</span> <span class="nav-text">供电：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A5%E5%9C%B0%EF%BC%9A"><span class="nav-number">8.</span> <span class="nav-text">接地：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%EF%BC%9A"><span class="nav-number">9.</span> <span class="nav-text">信号：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E7%94%B5%E5%B9%B3%E4%B8%8E%E4%BD%8E%E7%94%B5%E5%B9%B3%EF%BC%9A"><span class="nav-number">10.</span> <span class="nav-text">高电平与低电平：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E5%8D%87%E6%B2%BF%E5%92%8C%E4%B8%8B%E9%99%8D%E6%B2%BF%EF%BC%9A"><span class="nav-number">11.</span> <span class="nav-text">上升沿和下降沿：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%84%89%E5%86%B2%E4%BF%A1%E5%8F%B7%EF%BC%9A"><span class="nav-number">12.</span> <span class="nav-text">脉冲信号：</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">215</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005055629971077/home?from=page_100505&mod=TAB&is_all=1#place" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005055629971077&#x2F;home?from&#x3D;page_100505&amp;mod&#x3D;TAB&amp;is_all&#x3D;1#place" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/15833385" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;15833385" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

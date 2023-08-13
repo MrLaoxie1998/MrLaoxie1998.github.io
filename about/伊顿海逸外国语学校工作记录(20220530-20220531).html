@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>伊顿海逸外国语学校工作记录(20220530-20220531)</title>
+  <link rel="stylesheet" href="css/Foundation-6.6.1/assets/css/app.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/foundation/5.5.3/css/foundation.min.css">
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/foundation/5.5.3/js/foundation.min.js"></script>
+  <script src="https://cdn.staticfile.org/foundation/5.5.3/js/vendor/modernizr.js"></script>
+  <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+  <style>
+  .example {
+    max-width: 100%;
+  }
+  </style>
+</head>
+<!-- 最外层div：页面布局 -->
+
+<div class="off-canvas-wrap" data-offcanvas>
+  <!-- 内部元素: "工具栏" 内容 (图标, 链接, 描述内容等)-->
+
+  <div class="inner-wrap">
+    <nav class="tab-bar">
+      <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+      </section>
+
+      <section class="middle tab-bar-section">
+        <h2 class="title">伊顿海逸外国语学校工作记录(20220530-20220531)</h2>
+      </section>
+    </nav>
+
+    <!-- 滑动菜单 -->
+    <aside class="left-off-canvas-menu">
+      <!-- Add links or other stuff here -->
+      <ul class="off-canvas-list test">
+      <li><label><object data="image/baka9.svg" type="image/svg+xml"></object>
+</label></li>
+        <li><label><a href="index.html">欢迎~♪(^∇^*)</a></label></li>
+        <li><label>我的伊顿海逸外国语学校工作记录</label></li>
+        <li><a href="伊顿海逸外国语学校工作记录(20220410-20220417).html">伊顿海逸外国语学校工作记录(20220410-20220417)</a></li>
+        <li><a href="伊顿海逸外国语学校工作记录(20220418-20220424).html">伊顿海逸外国语学校工作记录(20220418-20220424)</a></li>
+        <li><a href="伊顿海逸外国语学校工作记录(20220425-20220430).html">伊顿海逸外国语学校工作记录(20220425-20220430)</a></li>
+        <li><a href="伊顿海逸外国语学校工作记录(20220506-20220513).html">伊顿海逸外国语学校工作记录(20220506-20220513)</a></li>
+        <li><a href="伊顿海逸外国语学校工作记录(20220506-20220513).html">伊顿海逸外国语学校工作记录(20220516-20220522)</a></li>
+        <li><a href="伊顿海逸外国语学校工作记录(20220523-20220529).html">伊顿海逸外国语学校工作记录(20220523-20220529)</a></li>
+        <li><a href="伊顿海逸外国语学校工作记录(20220530-20220531).html">伊顿海逸外国语学校工作记录(20220530-20220531)</a></li>
+        ...
+      </ul>
+    </aside>
+
+    <!-- 主要内容 -->
+    <section class="main-section">
+    <body style="padding:0px;">
+    <div style="text-indent:20%;"><h1>伊顿海逸外国语学校工作记录(20220530-20220531)</h1>
+ </div><div style="padding:40px;"><center>
+  <div id="container" style="height:600px;"></div>
+     <script type="text/javascript">
+        var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+
+var option;
+
+
+
+setTimeout(function () {
+  option = {
+    legend: {},
+    tooltip: {
+      trigger: 'axis',
+      showContent: false
+    },
+    dataset: {
+      source: [
+        ['product', '5月30日', '5月31日'],
+        ['微信', ],
+        ['钉钉', ],
+        ['现场对接', ],
+        ['现场调查', ],
+        ['电话', ]
+      ]
+    },
+    xAxis: { type: 'category' },
+    yAxis: { gridIndex: 1 },
+    grid: { top: '55%' },
+    series: [
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+       {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'pie',
+        id: 'pie',
+        radius: '30%',
+        center: ['50%', '25%'],
+        emphasis: {
+          focus: 'self'
+        },
+        label: {
+          formatter: '{b}: {@2022} ({d}%)'
+        },
+        encode: {
+          itemName: 'product',
+          value: '2022',
+          tooltip: '2022'
+        }
+      }
+    ]
+  };
+  myChart.on('updateAxisPointer', function (event) {
+    const xAxisInfo = event.axesInfo[0];
+    if (xAxisInfo) {
+      const dimension = xAxisInfo.value + 1;
+      myChart.setOption({
+        series: {
+          id: 'pie',
+          label: {
+            formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+          },
+          encode: {
+            value: dimension,
+            tooltip: dimension
+          }
+        }
+      });
+    }
+  });
+  myChart.setOption(option);
+});
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}</script></center>
+  <div class="panel">
+
+<h3><center>2022年5月30号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td>1</td>
+    <td>微信</td>
+    <td>早上7:51分收到黎巧玲老师微信消息，关于wifi密码忘记的问题</td>
+    <td>已解决，告知黎老师wifi密码及黎老师认证密码</td>
+   </tr>
+   <tr>
+    <td>2</td>
+    <td>微信</td>
+    <td>早上8:35分收到朱名璇老师微信消息，需要将她的电脑硬盘进行修复</td>
+    <td>未完成，硬盘已经存在损耗，需要进行数据迁移并尝试申请售后跟换</td>
+   </tr>
+   <tr>
+    <td>3</td>
+    <td>微信</td>
+    <td>早上8:43分收到小学部201班老师李光玮老师报障，小学部201班电脑很多文件及应用程序无法使用</td>
+    <td>已完成，原因是在某次的开机途中进行更新，但是中途关机再次启动造成dll文件缺失</td>
+   </tr>
+   <tr>
+    <td>4</td>
+    <td>微信</td>
+    <td>上午10:50收到初中部语文老师刘敏提醒记得今天上午的初中公开课录制</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>5</td>
+    <td>微信</td>
+    <td>上午10:46分收到初中部教务处郭慧青老师的信息，数学选择题参考答案，将参考答案放在需要判分的答题卡上</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>6</td>
+    <td>微信</td>
+    <td>上午10:40分收到小学部陈嘉嘉老师的报障，自己的办公键盘无法敲击使用。需要更换</td>
+    <td>已完成，带领陈嘉嘉老师前往信息中心更换新键盘，并签字确认</td>
+   </tr>
+   <tr>
+    <td>7</td>
+    <td>微信</td>
+    <td>上午10:02收到初中部罗婉琪老师的需求，将智慧教室打开设备。</td>
+    <td>已完成，但是刘亮主管接手，过去时刘亮主管已经开好设备</td>
+   </tr>
+   <tr>
+    <td>8</td>
+    <td>现场对接</td>
+    <td>早上7:24分开启体育馆设备以及空调,并在7:40分正式开始小学部少先队员授旗排练</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>9</td>
+    <td>现场调查/钉钉</td>
+    <td>早上再次前往小学部302班查看情况，发现触屏情况出现，不存在无法触屏的情况了</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    </tr><tr>
+    <td>10</td>
+    <td>钉钉</td>
+    <td>收到小学部宾春凤老师的报障，想查询自己的小学部电脑教室是否有初中生进教室玩电脑</td>
+    <td>未完成，于次日5月31日挑时间去查监控</td>
+   </tr>
+   <tr>
+    </tr><tr>
+    <td>11</td>
+    <td>钉钉</td>
+    <td>收到小学部黄韵老师的报障，自己的办公电脑前面音频接口没声音</td>
+    <td>未完成，于次日5月31日挑时间去解决</td>
+   </tr>
+   <tr>
+    </tr><tr>
+    <td>12</td>
+    <td>钉钉</td>
+    <td>于晚上6:55分收到小学老师胡丽芳老师的电教报修，自己的班级503班无法识别到系统</td>
+    <td>未完成，于次日5月31日挑时间去解决</td>
+   </tr>
+   <tr>
+    </tr><tr>
+    <td>13</td>
+    <td>微信</td>
+    <td>下午3:44收到小学部4年级老师朱惠艳求助，需要下载一个TechSmith Camtasia进行视频剪辑</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    </tr><tr>
+    <td>14</td>
+    <td>微信</td>
+    <td>于下午4:23分电话联系宾春凤老师，询问电脑教室网络是否可用</td>
+    <td>已完成，已解决</td>
+   </tr>
+   <tr>
+    </tr><tr>
+    <td>15</td>
+    <td>微信</td>
+    <td>早上8:15分收到初中部邓韵臻老师的消息,需要协助邓老师扫描初中九年级数学试卷。</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    </tr><tr>
+    <td>16</td>
+    <td>微信</td>
+    <td>上午11:51分收到初中部邓韵臻老师的消息，需要协助查看初中九年级历史无法录入考号信息问题</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>17</td>
+    <td>微信</td>
+    <td>收到小学部史维老师的报障消息，需要协助老师们去进行晚上小学部1年级活动表演后台支持</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>18</td>
+    <td>微信</td>
+    <td>提醒初中部余嘉敏需要进行360杀毒</td>
+    <td>已完成，需要等到5月31号查看是否还会报毒</td>
+   </tr>
+   <tr>
+    <td>19</td>
+    <td>微信</td>
+    <td>收到人资室张赛飞报障，需要将行政楼一楼打卡机调小声</td>
+    <td>未完成，选择在5月31挑时间解决</td>
+   </tr>
+   <tr>
+    <td>21</td>
+    <td>现场对接</td>
+    <td>收到自己的老大肖铁均主任的需求，将自己的笔记本进行维修</td>
+    <td>已完成，并且跟主任反馈需要购买的设备</td>
+   </tr>
+   <tr>
+    <td>22</td>
+    <td>现场对接</td>
+    <td>处理了新来的一个生活老师王美容的上网认证创建，并且将创建的账户信息及上网密码告知刘亮主管</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+ </tr></tbody>
+</table></center>
+<h3><center>2022年5月31号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td>1</td>
+    <td>微信</td>
+    <td>早上8:09分收到易卫国老师的信息，说操场上的广播声音太小声</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>2</td>
+    <td>微信</td>
+    <td>早上8:19分收到小学部六年级胡老师消息，小学部503班需要解决开机问题</td>
+    <td>已解决，错误原因是引导有问题导致</td>
+   </tr>
+   <tr>
+    <td>3</td>
+    <td>微信</td>
+    <td>早上收到初中部邓韵臻老师消息，需要协助邓老师扫描试卷</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>4</td>
+    <td>现场调查</td>
+    <td>上午和下午在校园寻找出现问题的监控线路</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>5</td>
+    <td>微信</td>
+    <td>收到老师消息，晚上于6:10-7:30进行小学5、6年级的表演活动后台支持</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>6</td>
+    <td>微信</td>
+    <td>收到行政楼郭慧青老师的需求，将文件转成word格式</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>7</td>
+    <td>微信/钉钉</td>
+    <td>收到消息，小学部205班电脑无法启动</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>8</td>
+    <td>微信</td>
+    <td>收到小学部教务处王主任消息，需要将班级的铃声调整正常</td>
+    <td>已解决</td>
+   </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年5月23号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年5月23号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年5月23号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年5月23号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年5月23号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年5月23号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+</div>
+</div>
+</body></section>
+    <!-- 关闭菜单 -->
+    <a class="exit-off-canvas"></a>
+  </div> 
+</div> 
+<script>
+$(document).ready(function() {
+    $(document).foundation();
+})
+</script>
+
+</html>
+</html>

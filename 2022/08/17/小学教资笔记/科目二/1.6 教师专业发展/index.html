@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="教师专业发展 教师概述 教师是履行教育教学职责的专业人员，承担教书育人，培养社会主义事业建设者和接班人、提高民族素质的使命。   教师劳动的特点 复杂性和创造性 复杂性 教育目的的全面性 教育任务的多样性 劳动对象的差异性   创造性 因材施教 教学方法上不断更新 教师需要教育机智     长期性和间接性 长期性 人才培养的周期比较长   间接性 教师的劳动不直接创造物质财富，而是以学生为中介实">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/08/17/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%BA%8C/1.6%20%E6%95%99%E5%B8%88%E4%B8%93%E4%B8%9A%E5%8F%91%E5%B1%95/index.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="教师专业发展 教师概述 教师是履行教育教学职责的专业人员，承担教书育人，培养社会主义事业建设者和接班人、提高民族素质的使命。   教师劳动的特点 复杂性和创造性 复杂性 教育目的的全面性 教育任务的多样性 劳动对象的差异性   创造性 因材施教 教学方法上不断更新 教师需要教育机智     长期性和间接性 长期性 人才培养的周期比较长   间接性 教师的劳动不直接创造物质财富，而是以学生为中介实">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-17T08:37:28.117Z">
+<meta property="article:modified_time" content="2022-08-18T03:29:32.056Z">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/08/17/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%BA%8C/1.6%20%E6%95%99%E5%B8%88%E4%B8%93%E4%B8%9A%E5%8F%91%E5%B1%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 9之数据库</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-我的旧站">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-tasks"></i>我的旧站</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/08/17/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%BA%8C/1.6%20%E6%95%99%E5%B8%88%E4%B8%93%E4%B8%9A%E5%8F%91%E5%B1%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-17 16:37:28" itemprop="dateCreated datePublished" datetime="2022-08-17T16:37:28+08:00">2022-08-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-18 11:29:32" itemprop="dateModified" datetime="2022-08-18T11:29:32+08:00">2022-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <ul>
+<li>教师专业发展<ul>
+<li>教师概述<ul>
+<li>教师是履行教育教学职责的<font color="orange">专业人员</font>，承担<font color="orange">教书育人</font>，培养社会主义事业建设者和接班人、提高民族素质的使命。</li>
+</ul>
+</li>
+<li>教师劳动的特点<ul>
+<li>复杂性和创造性<ul>
+<li>复杂性<ul>
+<li>教育目的的<font color="orange">全面性</font></li>
+<li>教育任务的<font color="orange">多样性</font></li>
+<li>劳动对象的<font color="orange">差异性</font></li>
+</ul>
+</li>
+<li>创造性<ul>
+<li><font color="orange">因材施教</font></li>
+<li>教学<font color="orange">方法</font>上不断<font color="orange">更新</font></li>
+<li>教师需要<font color="orange">教育机智</font></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>长期性和间接性<ul>
+<li>长期性<ul>
+<li>人才培养的<font color="orange">周期比较长</font></li>
+</ul>
+</li>
+<li>间接性<ul>
+<li>教师的劳动<font color="orange">不直接创造物质财富，</font>而是以学生为中介实现教师劳动的价值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>主体性和示范性<ul>
+<li>主体性<ul>
+<li>教学过程就是教师直接用自身的知识、智慧、品德<font color="orange">影响</font>学生的过程</li>
+</ul>
+</li>
+<li>示范性<ul>
+<li>教师的言行举止，包括人品、才能、治学态度等都会成为<font color="orange">学生学习的对象</font></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>连续性和广延性<ul>
+<li>连续性<ul>
+<li>没有固定的工作时间长度</li>
+</ul>
+</li>
+<li>广延性<ul>
+<li>没有严格界定的劳动场所</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>劳动方式的个体性和劳动成果的群体性<ul>
+<li>个体性<ul>
+<li>教育教学活动由每个<font color="orange">个体老师</font>完成</li>
+</ul>
+</li>
+<li>群体性<ul>
+<li>教育工作需要教师的<font color="orange">群体劳动</font>（劳动成果上看）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>教师的职业角色<ul>
+<li>1传道者</li>
+<li>2授业解惑者</li>
+<li>3示范者（榜样）</li>
+<li>4教学活动的设计者、组织者和管理者</li>
+<li>5朋友</li>
+<li>6研究者</li>
+<li>7领导者</li>
+<li>8心理辅导者</li>
+</ul>
+</li>
+<li>教师专业发展的阶段(福勒和布朗提出)<ul>
+<li>关注<font color="orange">生存</font>阶段<ul>
+<li>大量时间花在与学生搞好<font color="orange">人际关系</font>上</li>
+</ul>
+</li>
+<li>关注<font color="orange">情境</font>阶段<ul>
+<li>关注学生<font color="orange">成绩</font>，备课，上课等</li>
+</ul>
+</li>
+<li>关注<font color="orange">学生</font>阶段<ul>
+<li>关注到学生的<font color="orange">个别差异</font>，人是某些教学材料不一定适合所有学生（衡量一个教师是否成熟的重要标志）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>教师专业发展的内容<ul>
+<li><font color="orange">道</font>德素养<ul>
+<li>忠于人民教育事业，热爱学生，<font color="orange">以身作则，为人师表</font></li>
+</ul>
+</li>
+<li>专业<font color="orange">知</font>识素养<ul>
+<li>通识性知识（广博的科学文化知识）</li>
+<li>本体性知识（任教的学科知识）</li>
+<li>条件性知识（教育科学知识）</li>
+<li>实践性知识（教学法）</li>
+</ul>
+</li>
+<li><font color="orange">能</font>力素养<ul>
+<li><font color="00ccff">设计教学</font>的能力</li>
+<li><font color="00ccff">教育教学</font>组织管理能力</li>
+<li><font color="00ccff">教育教学</font>交往能力</li>
+<li><font color="00ccff">教育教学</font>研究能力</li>
+<li><font color="orange">语言</font>表达能力</li>
+<li><font color="orange">创新</font>能力</li>
+<li>自我<font color="orange">反思</font>的能力</li>
+</ul>
+</li>
+<li><font color="orange">心理</font>素养<ul>
+<li>健康的心理、完善的人格以及良好的抗压能力</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>教师成长的途径和方法<ul>
+<li><font color="orange">观摩</font>和分析优秀教师的教学活动<ul>
+<li>去他人之长，补己之短</li>
+</ul>
+</li>
+<li>开展<font color="orange">微格</font>教学 <ul>
+<li>5-20分钟小型课堂教学</li>
+</ul>
+</li>
+<li>进行专门<font color="orange">训练</font><ul>
+<li>在职培训主要以校本研修为主要形式</li>
+</ul>
+</li>
+<li><font color="orange">反思教学经验</font><ul>
+<li>教师成长公式<ul>
+<li>经验+反思=成长</li>
+</ul>
+</li>
+<li>反思内容<ul>
+<li>教育教学观念</li>
+<li>课程内容</li>
+<li>具体教学内容的选择</li>
+<li>教学工程和教学方法</li>
+</ul>
+</li>
+<li>常用的反思工具<ul>
+<li>教学后记</li>
+<li>教学日志</li>
+<li>教学案例等</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><font color="orange">终身学习意识</font><ul>
+<li>法国的保罗朗格朗1965年正式提出</li>
+<li>终身教育的4个支柱基础<ul>
+<li>学会认知</li>
+<li>学会做事</li>
+<li>学会共同生活</li>
+<li>学会生存</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>《小学教师专业标准（试行）》<ul>
+<li>基本理念（口诀：学生终身能德）<ul>
+<li>师德为先（口诀：两爱两人）<ul>
+<li>热爱事业</li>
+<li>关爱学生</li>
+<li>为人师表</li>
+<li>教书育人</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>能力为重（研究理论反思）<ul>
+<li>理论实践的能力</li>
+<li>研究创新能力</li>
+<li>自我反思能力</li>
+</ul>
+</li>
+<li>学生为本<ul>
+<li>发挥学生的主动性</li>
+<li>遵循学生身心发展的特点和教育教学规律</li>
+</ul>
+</li>
+<li>终身学习<ul>
+<li>学习先进的教育理论</li>
+<li>优化知识结构</li>
+<li>提高文化素养</li>
+<li>具有持续学习，终身学习的意识</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>师生关系<ul>
+<li>师生关系的模式<ul>
+<li>强硬专断型<ul>
+<li><font color="orange">严厉</font>的纪律，很少表扬</li>
+</ul>
+</li>
+<li>仁慈专断型<ul>
+<li><font color="orange">关爱</font>表扬学生，但以<font color="orange">“我”</font>为班级一切工作的<font color="orange">标准</font></li>
+</ul>
+</li>
+<li>民主平等型<ul>
+<li>和<font color="orange">集体共同制定</font>计划、作出决定，愿意给予个别学生帮助，鼓励集体活动，给予客观的表扬与批评</li>
+</ul>
+</li>
+<li>放任型<ul>
+<li>最糟糕的，学生不仅<font color="orange">道德差，学习也差</font></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>良好师生关系建立的途径和方法<ul>
+<li>教师方面<ul>
+<li>了解和研究学生</li>
+<li>树立正确的学生观</li>
+<li>提高自身素质</li>
+<li>发扬教育民主</li>
+<li>热爱、尊重学生，公平对待学生</li>
+<li>主动与学生沟通，善于与学生交往</li>
+<li>正确处理师生矛盾</li>
+<li>提高法制意识</li>
+</ul>
+</li>
+<li>学生方面<ul>
+<li>正确认识自己</li>
+<li>正确认识老师</li>
+</ul>
+</li>
+<li>环境方面<ul>
+<li>加强校园文化建设</li>
+<li>加强学风教育</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>补充拓展<ul>
+<li><font color="orange">四有</font>好老师<ul>
+<li><font color="orange">有</font>理念信念</li>
+<li><font color="orange">有</font>道德情操</li>
+<li><font color="orange">有</font>扎实学识</li>
+<li><font color="orange">有</font>仁爱之心</li>
+</ul>
+</li>
+<li>教师的<font color="orange">行为</font>特征<ul>
+<li><font color="orange">罗森塔尔效应/皮格马利翁效应</font></li>
+<li>教师的期望存在<font color="orange">“自我实现的预言”</font>效应</li>
+</ul>
+</li>
+<li>教师的<font color="orange">教学效能感</font><ul>
+<li>对自己影响学生行为和学习结果的能力的一种<font color="orange">主观判断</font></li>
+<li><font color="orange">个人</font>教学效能感，相信<font color="orange">自己</font>的能力</li>
+<li><font color="orange">一般</font>教学效能感，相信<font color="orange">教育</font>的作用</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/18/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%BA%8C/2.1%20%E8%AF%BE%E7%A8%8B%E6%A6%82%E8%BF%B0/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/17/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%BA%8C/1.5%20%E6%95%99%E8%82%B2%E5%88%B6%E5%BA%A6/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">215</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005055629971077/home?from=page_100505&mod=TAB&is_all=1#place" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005055629971077&#x2F;home?from&#x3D;page_100505&amp;mod&#x3D;TAB&amp;is_all&#x3D;1#place" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/15833385" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;15833385" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

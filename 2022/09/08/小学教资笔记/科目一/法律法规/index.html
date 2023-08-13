@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="法律法规    教育法        总则            地位：教育的根本大法，教育法律体系中的母法            教育内容：爱国主义、集体主义、社会主义            教育的地位：教育是社会主义现代化建设的基础，国家保障教育事业优先发展。            符合国家利益：与宗教相分离            公民的教育权利与义务：                中华人民">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/09/08/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%B8%80/%E6%B3%95%E5%BE%8B%E6%B3%95%E8%A7%84/index.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="法律法规    教育法        总则            地位：教育的根本大法，教育法律体系中的母法            教育内容：爱国主义、集体主义、社会主义            教育的地位：教育是社会主义现代化建设的基础，国家保障教育事业优先发展。            符合国家利益：与宗教相分离            公民的教育权利与义务：                中华人民">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-08T02:10:56.141Z">
+<meta property="article:modified_time" content="2022-09-18T06:33:40.533Z">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/09/08/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%B8%80/%E6%B3%95%E5%BE%8B%E6%B3%95%E8%A7%84/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 9之数据库</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-我的旧站">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-tasks"></i>我的旧站</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/09/08/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%B8%80/%E6%B3%95%E5%BE%8B%E6%B3%95%E8%A7%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-09-08 10:10:56" itemprop="dateCreated datePublished" datetime="2022-09-08T10:10:56+08:00">2022-09-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-18 14:33:40" itemprop="dateModified" datetime="2022-09-18T14:33:40+08:00">2022-09-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>法律法规<br>    教育法<br>        总则<br>            地位：教育的根本大法，教育法律体系中的母法<br>            教育内容：爱国主义、集体主义、社会主义<br>            教育的地位：教育是社会主义现代化建设的基础，国家保障教育事业优先发展。<br>            符合国家利益：与宗教相分离<br>            公民的教育权利与义务：<br>                中华人民共和国公民有受教育的权利和义务<br>                依法享有平等的受教育机会<br>            教育的改革与发展：国家采取措施促进教育公平，推动教育的均衡发展<br>            语言文字：国家通用语言文字–普通话/汉字(注意：少数民族地区可使用通用文字和本民族语言进行双语教学)<br>            管理体制：分级管理、分工负责<br>                中小学<br>                    地方人民政府管理<br>                大学<br>                    国务院和省、自治区、直辖市人民政府管理<br>            教育行政部门：<br>                国务院教育行政部门（教育部）主管全国教育工作，统筹规划、协调管理全工的教育事业<br>                县级以上（含县）地方各级人民政府教育行政部门主管本行政区域内的教育工作<br>        教育基本制度<br>            学制-学前、初等、中等、高等（各级制度）<br>            义务教育-九年（各类制度）<br>                小学+初中<br>                各级人民政府采取各种措施保障适龄儿童、少年入学<br>            职业教育制度、继续教育制度（各类制度）<br>            教育考试制度（管理制度）<br>            学业证书制度（管理制度）<br>            学位制度（管理制度）<br>            督导制度、教育评估制度<br>        学校及其他教育机构<br>            国家鼓励企事业组织、社会团体、其他社会组织及公民个人依法举办学校及其他教育机构<br>            财政拨款、捐资举办学校不得盈利<br>            办学条件：人、钱、地、制<br>                有组织机构和章程<br>                有合格的教师<br>                有符合规定标准的教学所及设施、设备等<br>                有必备的办学资金和稳定的经费来源<br>            校长任职条件：中国国籍、国内居住、具备国家规定和任职条件<br>            法人资格：批准或登记之日起<br>                公办学校-批准之日起具有法人资格<br>                民办或教育机构-自登记之日起具有法人资格<br>            校办产业：独立承担民事责任、自负盈亏<br>        教师与其他教育工作者<br>            教师队伍建设：实行教师资格、职务、聘任制度<br>            管理人员：教育职员制度<br>            教辅人员和其他专业技术人员：专业技术职务聘任制度<br>        受教育者<br>        教育与社会<br>            家长配合学校<br>            学校老师提供家庭教育指导<br>            文化机构教育应当对教师、学生优待<br>        教育投入和条件报障<br>            财政拨款为主，其他多种去到筹措教育经费为辅<br>            教育专项资金–扶持边远贫困地区、少数民族地区实施义务教育<br>            校办产业<br>                国家鼓励<br>                前提不影响正常的教育教学<br>                独立承担民事责任、自负盈亏<br>        法律责任<br>            行政责任（公民与官之间，行政部门实施的权力）<br>                行政处分：体制内<br>                    如失职或降职或越职<br>                行政处罚：体制外<br>                    如破坏正常行政秩序<br>                比如：不按预算核拨经费，违反规定搬学校，违反规定收取学生费用<br>            民事责任（公民与公民之间）<br>                侵犯财产权、人身权<br>                侵占学校场地、校舍、其他财产<br>            刑事责任<br>                重大财产损失、人员伤亡、构成犯罪<br>                管制、拘役、有期徒刑、无期徒刑、死刑<br>            法律责任技巧<br>                行政处分<br>                    内部人员：记过、警告、降职、开除<br>                    外部人员：警告、拘留、罚款、没收、责令停业、暂扣或吊销执照<br>                民事责任<br>                    侵犯人身权、财产权等<br>                    赔礼道歉（名誉）；赔偿损失（钱）<br>                刑事责任<br>                    犯罪<br>                        人员伤亡或重大财产损失<br>                        重伤、致残<br>                    治安管理处罚<br>                        治安问题、行为轻微、公安机关<br>        教育法修订补丁<br>            坚持以马克思列宁主义、毛泽东思想、邓小平理论、“三个代表”重要思想、科学发展观、习近平新时代中国特色社会主义思想为指导，遵循宪法确定的基本原则，发展社会主义的教育事业（中国特色社会主义理论）<br>            教育是社会主义现代化建设的基础，对提高人民综合素质、促进人的全面发展、增强中华民族创新创造活力、实现中华民族伟大复兴具有确定性意义<br>            培养德智体美劳全面发展的社会主义建设者和接班人<br>            教育应当继承和弘扬中华优秀传统文化、革命文化、社会主义先进文化<br>            在招收学生工作中滥用职权、玩忽职守、徇私舞弊的<br>                由教育行政部门或者其他有关行政部门责令退回招收的不符合入学条件的人员<br>                对直接负责的主管人员和其他直接责任人员，依法给予处分；构成犯罪的，依法追究刑事责任<br>            冒名顶替入学<br>                由教育行政部门或者其他有关行政部门责令撤销入学资格，并责令禁止参加相关国家教育考试二年以上五年以下<br>                已取得学位证书、学历证书或者其他学业证书的，由颁发机构撤销相关证书<br>                已经成为公职人员的，依法给予开除处分<br>                构成违反治安管理行为的，由公安机关依法给予治安管理处罚<br>                构成犯罪的，依法追究刑事责任<br>            与他人串通、允许他人冒用本人姓名和入学资格顶替入学行为的<br>                由教育行政部门或者其他有关行政部门责令停止参加相关国家教育考试一年以上三年以下<br>                有违法所得的，没收违法所得<br>                已经成为公职人员的，依法给予处分<br>    义务教育法<br>        总则<br>            首次颁布：1986年4月12日；施行时间：2006年9月1日；立法依据：宪法和教育法<br>            九年义务教育制度<br>            不收学费、杂费<br>            义务教育实行国务院领导，县级以上人民政府教育行政部门具体负责实施<br>        学生<br>            6周岁入学，不具备条件的地区可以推迟7周岁入学<br>            适龄儿童应身体状况要延缓入学的，监护人申请由当地乡镇政府或县级人民政府教育行政部门批准<br>            免试入学、就近入学；非户籍所在地工作，当地人民政府提供平等义务教育条件<br>            军人子女—县级教育局<br>            督促入学–县级教育局+乡镇人民政府组织和督促+居民委员/村民委员<br>            文艺、体育等专业训练的适龄儿童、少年，自行实施义务教育的，应当向县级教育局批准<br>        学校<br>            寄宿制学校：报障居住分散的适龄儿童、少年入学接受义务教育<br>            特殊教育<br>                县级以上地方人民政府根据需要设置相应的实施特殊教育的学校（班），对视力、听力、语言和智力残疾的适龄儿童、少年实施义务教育<br>                普通学校应当接收具有接收普通教育能力的残疾适龄儿童、少年随班就读<br>            未成年犯的义务教育<br>                严重不良行为的适龄少年—专门学校（工读学校）<br>                未完成义务教育的未成年犯和被采取强制性教育措施的未成年人应当进行义务教育，经费有人民政府予以报障<br>            均衡发展<br>                学校自己办学条件差距<br>                    不得分重点学校非重点学校；不设重点班非重点班<br>                县级以上人民政府及其教育行政部门不得以任何名义改变或变相改变公办学校的性质<br>            违法获利<br>                不得违反国家规定收取费用<br>                不得向学生推销或变相推销产品、服务等谋利<br>            校长负责<br>                学校实行校长负责制<br>            批评教育<br>                义务教育不得开除学生<br>         教师<br>             教师行为<br>                 不得歧视学生<br>                 不得实施体罚、变相体罚或其他侮辱人格尊严的行为<br>            教师资格及职称<br>                初级职务<br>                中级职务<br>                高级职务<br>            教师待遇<br>                教师的平均工资水平应当不低于当地公务员的平均工资水平<br>                特殊教育教师享有特殊岗位补助津贴<br>                民族地区、贫困地区享有艰苦贫困地区补助津贴<br>            支教工作<br>                国家鼓励<br>                支教时间计算工龄<br>        教育教学<br>            教育目标<br>                全面发展、德智体美劳<br>            素质教育<br>                独立思考能力<br>                创新能力<br>                实践能力<br>            启发式教育<br>            德育为先<br>            教材编写<br>                国家机关工作人员和教科书审查人员，不得参与或变相参与教科书的编写工作<br>            教科书审定<br>                教科书审定制度，部审定不得出版，选用<br>            鼓励教科书循环使用<br>        经费保障<br>            国家将义务教育全面纳入财政报障范围，义务教育经费由国务院和地方各级人民政府依照本法规定予以保障<br>            财政拨款增长比例应当高于财政经常性收入的增长比例<br>            经费的使用<br>                任何人或组织不得侵占、挪用义务教育经费，不得向学校非法收取或摊派费用<br>                各级人民政府对家庭经济困难的适龄儿童、少年免费提供教科书并补助寄宿生生活费<br>                县级人民政府编制预算，除向农村地区学校和薄弱学校倾斜外，应当均衡安排义务教育经费<br>        法律责任<br>            行政处分<br>                将学校分为重点和非重点学校<br>                改变或变相改变公办学校的性质的<br>            非法获利<br>                退还所有费用，依法给予处分<br>                学校向学生分销、摊销商品、服务等<br>                国家机关工作人员和教科书审查人员参与或变相参与教科书编写的<br>            监护人责任<br>                未按规定送未成年人接受义务教育的由当地乡镇人民政府或县教育局给予批评教育，责令限期改正<br>    教师法<br>        总则<br>            实施时间：1994年1月1日；地位：第一步关于教师的单行法律；第一个教师节1985年9月10日<br>            适用于各级各类学校和其他教育机构中专门从事教育教学工作的教师<br>            教师是履行教育教学职责的专业人员<br>            教育部主管全国教师工作（主管教育工作和教师工作的都是教育部；领导义务教育的是国务院）<br>        权利和义务的保障机制<br>            符合国家安全标准的教育教学设施和设备<br>            提供必需的图书、资料及其他教育教学用品<br>            对教师在教育教学、科学研究中的创造性工作给予鼓励和帮助<br>            支持教师制止有害于学生的行为或其他侵犯学生合法权益的行为<br>        资格和任用<br>            教师资格制度<br>                国家实行教师资格制度<br>            学历要求<br>                幼儿园—幼儿师范学校毕业，中专-幼儿<br>                小学–中等师范学校–中专<br>                初中–大专<br>                高中–本科<br>            资格认定<br>                县级以上教育局认定<br>                首次任教时，应当有试用期<br>            资格限制<br>                剥夺政治权利<br>                故意犯罪收到有期徒刑以上刑事处罚的<br>                已取得教师资格的，丧失<br>            鼓励非师范生到中小学或职业学校任教<br>        考核<br>            考核内容<br>                政治思想、业务水平、工作态度和工作成绩<br>            考核效用<br>                受聘任教、晋升工资、实施奖惩的依据<br>        待遇<br>            教师工资<br>                不低于或高于国家公务员的平均工资水平<br>                    义务教育—不低于当地公务员<br>                    教师法—<br>        法律责任<br>    未成年人保护法<br>        总则<br>        家庭保护<br>            父母或其他监护人应当学习家庭教育知识、接受家庭教育指导，创造良好、和睦的家庭环境，依法履行对未成年人的监护职责和抚养义务<br>            共同生活的其他成年家庭成员应当协助未成年人的父母或其他监护人抚养、教育和保护未成年人<br>            应当履行的职责<br>                为未成年人提供生活、健康、安全等方面的保障<br>                关注未成年人的生理、心理状况和情感需求<br>                教育和引导未成年人遵纪守法、勤俭节约，养成良好的思想品德和行为习惯<br>                对未成人进行安全教育、提高未成年人的自我保护意识和能力<br>                保障未成年人休息、娱乐和体育锻炼的时间，引导未成年人进行有益身心健康的活动<br>                妥善管理和保护未成年人的财产<br>                预防和资质未成年人的不良行为和违法犯罪行为，并进行合理管教<br>            不得实施的行为<br>                禁止虐待、遗弃、非法送养未成年人或对未成年人实施家庭暴力<br>                不得放任或教唆<br>                    未成年人实施违法犯罪行为<br>                    参与邪教、迷信活动或接受恐怖主义、分裂主义、极端主义等侵害<br>                    吸烟（含电子烟、下同）、饮酒、赌博、流浪乞讨或欺凌他人<br>                不得放任沉迷网络或进入营业性娱乐场所、酒吧等不适宜场所<br>                不得违法处分或侵吞未成年人的财产或利用未成年人谋取不正当利益<br>                不得使未满16周岁的未成年人脱离监护单独生活<br>                不得辍学<br>                不得订立婚约<br>        学校保护<br>            不得歧视或开除未成年学生<br>            不体罚、不变相体罚、不侮辱人格尊严<br>            不得在危及未成年人人身安全、健康的校舍和其他设施、场所中进行教育教学活动<br>            严重不良行为，无力管教的，送专门学校接受教育<br>            学校不得占用法定节假日、休息日及寒暑假，组织集体补课<br>            幼儿园、校外培训机构不得对学龄前未成年人进行小学课程教育<br>            学校、幼儿园应当建立安全管理制度，对未成年人进行安全教育、完善安保设施、配备安保人员<br>            幼儿园不得与校外培训机构合作为未成年人提供有偿课程辅导<br>            建立欺凌防控工作制度，对教职员工、学生等开展防治学生欺凌的教育和培训<br>            对严重的欺凌行为，学校不得隐瞒，应当及时向公安机关、教育行政部门报告，并配合相关部门依法处理<br>            学校、幼儿园应当建立预防性侵害、性骚扰未成年人工作制度<br>        社会保护<br>            社会教育场所<br>                未成年人免费开放：爱国主义教育基地、图书馆、青少年宫、儿童活动中心<br>                未成年人免费或优惠开放：博物馆、纪念馆、科技馆、展览馆、美术馆、文化馆及影剧院、体育场馆、动物园、公园等场所<br>            交通优惠<br>                公共交通及公路、铁路、水路、航空客运等应按相关规定对未成年人实施免费或优惠票价<br>            活动场所<br>                中小学周边（200米）不得设置营业性歌舞厅、网吧等不适宜未成年人活动的场所<br>                以上场所不得允许未成年人进入，应设置显著标志；难以判别年龄的出示身份证<br>            禁止烟酒<br>                禁止向未成年人出售烟酒<br>                任何人不得在中小学校、幼儿园、托儿所的教室、寝室、活动室和其他未成年人集中活动的场所吸烟、喝酒<br>            用工要求<br>                不得招用未满十六周岁的未成年人<br>            隐私保护<br>                任何组织或个人不得披露未成年人的个人隐私，比如信件、日记、电子邮件<br>                因追查犯罪的需要，由公安机关或人民检察院依法进行检查，或对无行为能力的未成年人的信件、日记、电子邮件由其父母或监护人代为开拆、查阅外<br>            对未成年人的救助<br>                学校、幼儿园、托儿所和公共场所发生突发事件时，应优先救护未成年人<br>            密切接触未成年人行业从业人员的准入资格制度<br>                招招聘工作人员时，应向公安机关、检察院查询是否具有性侵害、虐待、拐卖、暴力伤害等违法犯罪记录；发现其具有前述行为记录的，不得录用。<br>        网络保护<br>            方向原则<br>                国家、社会、学校和家庭应当加强未成年人网络素养宣传教育，增强未成年人科学、文明、安全、合理使用网络的意识和能力，保障网络空间的合法权益<br>                鼓励和支持适合未成年人身心健康特点的网络技术、产品、服务的研发、生产和使用<br>                网信部门及其他有关部门加强对未成年人网络保护工作的监督检查<br>                确定可能影响未成年人身心健康网路信息的种类、范围和判断标准<br>                新闻出版、教育、卫生健康文化和旅游、网信等部门应定期开展预防未成年人沉迷网络的宣传教育，监督网络产品和服务提供者履行的义务<br>                任何组织或个人不得以侵害未成年人身心健康的方式对未成年人沉迷网络进行干预<br>            社会公共服务场所义务<br>                学校、社区、图书馆、文化馆青少年宫等为未成年人提供的互联网上网服务设施，应当安装未成年人网络保护软件或采取其他安全保护技术措施<br>                未经学校允许，未成年学生不得将手机等智能终端产品带入课堂，带入学校的应当统一管理<br>                发现未成年学生沉迷网络的，应当及时告知其父母或其他监护人，共同教育与引导<br>            网络服务提供者<br>                处理不满14周岁未成年个人信息的，应当征得未成年人父母或其他监护人同意，但法律、行政法另有规定的除外<br>                未成年人、父母或其他监护人要求信息处理者更正、删除未成年人个人信息的，信息处理者应当及时采取措施予以更正、删除、但法律、行政法另有规定的除外<br>                网络服务提供者发现未成年人通过网络发布私密信息的，应当及时提示，并采取必要的保护措施<br>                不得向未成年人提供诱导沉迷的产品和服务<br>                网络游戏、直播、音视频、社交等网络服务提供者应当针对未成年人使用其服务设置相应的时间管理、权限管理、消费管理等功能<br>                网络游戏经依法审批后方可运营<br>                对游戏产品分类，利用技术手段不得让未成年人接触不良不适宜的游戏或游戏功能<br>                不得在每日22:00-次日8:00向未成年人提供网络游戏服务<br>                网络直播不得为未满16周岁的未成年人提供账号注册服务；年满16周岁的，应当对其身份进行认证，并征得其父母或其他监护人同意<br>                应当建立便捷、合理、有效的投诉或举报渠道，公开投诉、举报方式等信息，及时受理并处理设计未成年人的投诉、举报<br>                发现用户利用网络服务对未成年人实施犯罪行为的，应当立即停止向该用户提供网络服务，保存有关记录，并向公安机关报告<br>            在线教育<br>                以未成年人为服务对象的在线教育产品和服务，不得插入网络游戏链接，不得推送广告等于教学无关的信息<br>            电子身份认证系统<br>                国家建立统一的未成年人网络游戏电子身份认证系统，应当要求未成年人以真实身份信息注册并登录网络游戏<br>            网络欺凌<br>                    任何组织或个人不得通过网络以文字、图片、音视频等形式，对未成年人实施侮辱、诽谤、威胁或恶意损害形象等网络欺凌行为。<br>        政府保护<br>            未成年人专门保护<br>                <font color="00ccff">县级以上人民政府</font>应当明确相关内设机构或<font color="00ccff">专门人员</font>，负责承担未成年人保护工作<br>                <font color="00ccff">乡镇人民政府或街道办</font>设立<font color="orange">未成年人保护工作站或指定专门人员</font>，及时办理未成年人相关事务；支持、指导居民委员会设立<font color="orange">专人专岗</font>，做好未成年人保护工作。<br>                <font color="red">新增加：</font>各级政府应当将<font color="orange">家庭教育指导服务</font>纳入城乡公共服务体系<br>            未成年人受教育的权利<br>                各级人民政府应当<font color="orange">保障未成年人受教育的权利</font>，并采取措施保障留守未成年人、困境未成年人或残疾未成年人接受义务教育<br>                对未完成义务教育的<font color="orange">辍学未成年学生</font>，教育行政部门应当<font color="orange">责令父母或其他监护人将其送入学校接受义务教育</font><br>            残疾未成年人受教育的权利<br>                保障<font color="00ccff">具有接受普通教育能力、能适应校园生活的残疾未成年人</font><font color="orange">就近在普通学校、幼儿园接受教育</font><br>                保障<font color="00ccff">不具有</font>接受普通教育能力的残疾未成年人在<font color="orange">特殊教育</font>学校、幼儿园接受学前教育、义务教育和职业教育<br>                鼓励和支持社会力量举办特殊教育学校、幼儿园<br>            托育、学前教育<br>                支持社会力量依法兴办母婴室、婴幼儿照护服务机构、幼儿园<br>                县级以上地方人民政府及有关部门应当培养和培训婴幼儿照护服务机构、幼儿园的保教人员，提高其职业道德素质和业务能力<br>            职业教育<br>                <font color="00ccff">保障未成年人接受职业教育或职业技能培训</font>，<font color="orange">鼓励和支持人民团体、企事业单位、社会组织为未成年人提供职业技能培训服务</font><br>            校园安全监督<br>                当地政府及有关部门<font color="orange">监督指导学校、幼儿园等单位落实校园安全责任，建立突发事件的报告、处置和协调机制</font><br>                <font color="orange">公安机关和其他有关部门</font>依法维护校园周边的治安和交通秩序，设置监控设备和交通安全设施，<font color="orange">预防和制止</font>侵害未成年人的违法犯罪行为<br>            校舍活动场所保护<br>                防止任何组织或个人侵占、破坏学校、幼儿园、婴幼儿照护服务机构等未成年人活动场所的场地、房屋和设施<br>            卫生保健和营养指导<br>                提供卫生保健服务<br>                    疫苗预防接种规范，防治未成年人常见病、多发病等<br>                    教育行政部门加强未成年人心理健康教育，建立未成年人心理问题的早期发现和及时干预机制<br>                    卫生保监部门应做好未成年人心理资料、心理危机干预及精神障碍早期识别和诊断治疗等工作<br>            民政部门的临时监护<br>                    <font color="orange">未成年人流浪乞讨或身份不明，</font>暂时找不到父母或其他监护人<br>                <font color="orange">监护人下落不明</font>且无其他人可以担任监护人<br>                    <font color="orange">突发事件导致未成年人监护缺失</font><br>            监护人因自身客观原因<br>            自然灾害<br>            事故灾难<br>            公共卫生事件<br>        <font color="orange">监护人拒绝或怠于履行监护职责</font>,导致未成年人处于无人照料的状态<br>        监护人教唆、利用未成年人实施违法犯罪行为，未成年人需要被带离安置<br>        未成年人遭受监护人严重伤害或面临人身安全威胁，需要被紧急安置<br>        民政部门可采取委托亲属抚养、家庭寄养等安置，也可交由未成年人救助保护机构或儿童福利院进行收留、抚养<br>        经民政部门评估，监护人重新具备履行监护职责条件的，可送回监护人抚养<br>    民政部门的长期监护<br>        查找不到未成年人父母或其他监护人<br>        监护人死亡或被宣告死亡且无其他人可以担任监护人<br>        监护人丧失监护能力且无其他人可以担任监护人<br>        法院判决撤销监护人资格并制定由民政部门担任监护人<br>        可以依法将其长期监护的未成年人交由符合条件的申请人收养；收养关系成立后，民政部门与未成年人的监护关系终止<br>    救助保护<br>        县级以上政府及民政部门应当根据需要设立未成年人救助保护机构、儿童福利机构，负责收留、抚养由民政部门监护的未成年人<br>        县级以上政府应开通全国统一的未成年人保护热线<br>        当地政府应引导社会工作者参与未成年人保护工作，开展家庭教育指导服务，提供未成年人的心理辅导、康复救助、监护、收养评估等专业服务。<br>    国家<br>        建立性侵害、虐待、拐卖、暴力伤害等违法犯罪人员信息查询系统，向密切接触未成年人的单位提供免费查询服务<br>司法保护<br>    父母或监护人不履行保护职责，可以撤销监护人，另行指定监护人，仍要继续负担抚养费用<br>    教惩结合的原则：教育为主，惩罚为辅；对违法犯罪的未成年人，应当依法从轻、减轻或免除处罚<br>    拓展知识点（刑法）<br>        1、已满16周岁：完全责任年龄–未成年人犯罪，负<font color="orange">刑事责任</font><br>        2、已满14周岁不满16周岁：相对责任年龄—只对<font color="orange">八大行为</font>负责 负刑事责任<font color="red">（烧杀淫掠，伤投爆毒）</font><br>            犯故意杀人<br>            故意伤害致人重伤或死亡<br>            强奸<br>            抢劫<br>            贩卖毒品<br>            防火<br>            爆炸<br>            投放危险物质罪的<br>        3、已满12周岁不满14周岁：相对责任年龄—对<font color="orange">两大行为</font>负责 负刑事责任<font color="red">（杀人伤害残忍）</font><br>            犯故意杀人<br>            故意伤害致人死亡或以特别残忍手段致人重伤造成严重残疾(情节恶劣，经最高检察院核准追诉的)<br>        4、从轻或减轻原则<br>            对依照前三款规定追究刑事责任的不满十八周岁的人，应当从轻或者减轻处罚<br>            因不满十六周岁不予刑事处罚的，责令其父母或者其他监护人加以管教；在必要的时候，依法进行专门矫治教育。<br>    对羁押、服刑的未成年人，应当与成年人分别关押；服刑的未成年人没有完成义务教育的，应当对其进行义务教育；解除羁押、服刑期满<br>    对涉案未成年人的保护<br>        对未成年犯罪案件，个人信息不得被披露<br>        未成年犯罪案件，不公开审理<br>    法律责任<br>        国家机关、居民委员会、村民委员会、密切接触未成年人的单位及其工作人员，未履行报告义务造成严重后果的，由上级主管部门或所在单位对直接负责的主管人员和其他直接责任人员依法给予处分<br>        监护人不履行职责，由其所在单位或居民委员会，村委会予以劝解、制止；违反治安管理行为的，由公安机关依法给予行政处罚<br>        未给予未成年人免费或优惠待遇的，由市场监督管理、文化和旅游、交通运输等部门按职责分工责令限期改正，给予警告；拒不改正的，处1万元以上至10万元以下罚款<br>        密切接触未成年人的单位招工时，未履行查询义务，或招用、继续聘用具有相关违法犯罪记录人员的，由教育、人力资源和社会保障、市场监督管理等部门按照职责分工责令限期改正，给予警告，并处五万元以下罚款；拒不改正或造成严重后果的，责令停业整顿或吊销营业执照，并处五万元以上五十万元以下罚款，对直接负责的主管人员和其他直接责任人员依法给予处分<br>        国家机关工作人员玩忽职守、滥用职权、徇私舞弊，损害未成年人合法权益的，依法给予处分<br>        违反本法规定，侵犯未成年人合法权益，造成人身、财产或其他损害的，依法承担民事责任<br>        违反本法规定，构成违反治安管理行为的，依法给予治安管理处罚；构成犯罪的，依法追究刑事责任。</p>
+<p>预防未成年人犯罪法<br>    总则<br>        2020年12月26日修订，2021年6月1日起施行<br>        立足教育和保护，坚持预防为主、提前干预<br>        开展预防犯罪工作，应当尊重未成年人人格尊严，保护未成年人的名誉权、隐私权和个人信息等合法权益<br>        专门学校<br>            国家<font color="orange">加强专门学校建设</font>，对有<font color="orange">严重不良行为</font>的未成年人进行专门教育<br>            省级政府应将专门教育发展和专门学校建设<font color="orange">纳入经济社会发展规则</font><br>            <font color="orange">县级</font>以上地方政府根据需要<font color="orange">合理设置专门学校</font><br>            专门学校建设和转么教育具体办法，由<font color="orange">国务院规定</font><br>    预防未成年人犯罪的教育<br>        监护人责任：负有直接责任<br>        学校<br>            1、学校聘请从事法制教育的专职或兼职教师，并可以从司法和执法机关法学教育和法律服务机构等单位聘请法制副校长、法外法制辅导员<br>            2、学校应配备专职或兼职的心理健康教育教师，开展心理健康教育<br>            3、教育部应会同有关部门建立学生欺凌防控制度，学校加强日常安全管理<br>        用人单位：对于已满16周岁未满18周岁就业的未成年人，将法律知识和预防犯罪教育纳入职业培训的内容<br>    不良行为预防<br>        不良行为<br>            1、吸烟、饮酒<br>            2、多次旷课、逃学<br>            3、无故夜不归宿、离家出走<br>            4、沉迷网络<br>            5、与社会不良习性的人交往，组织或参加实施不良行为的团伙<br>            6、进入法律法规规定未成年人不适宜进入的营业性质歌舞厅等场所<br>            7、参与赌博或变现赌博；或者参加封建迷信、邪教等活动<br>            8、观看、收听色情、淫秽的音像制品、读物等<br>            9、其他严重违背社会功德的不良行为<br>        管教措施<br>            1、训导<br>            2、要求遵守特定的行为规范<br>            3、要求参加特定的专题教育<br>            4、要求参加校内服务活动<br>            5、要求接受社会工作者或其他专业人员的心理辅导和行为干预<br>            6、其他适当的管理教育措施<br>        旷课及夜不归宿<br>            <font color="orange">旷课</font>的学校<font color="orange">及时联系监护人</font><br>            夜不归宿的、离家出走的、应及时查找，必要时向公安机关报告；<font color="orange">收留的，应及时联系其父母或其他监护人、所在学校，无法取得联系的，报告公安机关</font><br>            公安机关、公共场所管理机构等发现夜不归宿、离家出走或流落街头的，应当及时采取有效的保护措施<br>    对严重不良行为的矫正<br>        严重不良行为<br>            1、<font color="orange">结伙</font>斗殴，追逐、拦截他人，<font color="orange">强拿硬要或任意损毁、占用</font>公私财务等寻衅滋事行为<br>            2、<font color="orange">非法携带枪支、弹药或匕首等国家规定的管制器具</font><br>            3、<font color="orange">殴打、辱骂、恐吓或故意伤害</font>他人身体<br>            4、<font color="orange">盗窃</font>、哄抢、<font color="orange">抢夺或故意</font>损毁公私财物<br>            5、<font color="orange">传播</font>淫秽的读物、音像制品或信息等<br>            6、<font color="orange">卖淫、嫖娼或进行淫秽表演</font><br>            7、<font color="orange">吸食、注射毒品或向他人提供毒品</font><br>            8、参与赌博<font color="orange">赌资较大</font><br>            9、其他严重危害社会的行为<br>        矫治教育措施<br>            1、<font color="00ccff">训诫</font><br>            2、<font color="00ccff">责令赔礼道歉、赔偿损失</font><br>            3、责令<font color="00ccff">具结悔过</font><br>            4、责令<font color="00ccff">定期报告活动</font>情况<br>            5、责令遵守特定性为规范，不得实施特定性为、接触特定人员或进入特定场所<br>            6、责令接受<font color="00ccff">心理辅导、行为矫治</font><br>            7、责令参加<font color="00ccff">社会服务</font>活动<br>            8、责令<font color="00ccff">接受社会观护，</font>由社会组织、有关机构在适当场所对未成年人进行教育、监督和管束<br>            9、其他适当的矫治教育措施<br>        专门学校<br>            父母或其他监护人、学校无力管教或管教无效的，向教育行政部门提出申请<br>            经专门教育指导委员会评估同意后<br>            由教育行政部门决定送入专门学校接受专门教育<br>            省级政府至少确定一所专门学校按分校区、分班级等方式设置专门场所<br>            专门场所实行闭环管理，公安机关、司法行政部门负责未成年人的矫治工作，教育行政部门承担教育工作<br>            每学期提请专门教育指导委员会对接受专门教育的未成年学生情况进行评估，合格的转回普通学校就读<br>            转回普通学校的，其原所在学校不得拒绝接收；特殊情况，不适宜转回的，由教育行政部门安排转学<br>            应分级分类进行教育和矫治，有针对性开展道德教育、法制教育、心理健康教育，并根据实际情况进行职业教育；没完成义务的教育的未成年人，应当保证继续接受义务教育<br>            专门学校的未成年人学籍保留在原学校，符合毕业条件的，原学校应当颁发毕业证书<br>        未成年人父母或其他监护人对本章规定的行政决定不服的，可以依然提起行政复议或行政诉讼<br>    法律责任<br>        训诫<br>            父母或其他监护人不履行监护职责，公安机关、人民检察院、人民法院进行训诫，并可以责令其接受家庭教育指导<br>            学校及教职工不履行本法工作职责或虐待、歧视相关未成年人的，由教育行政部门责令改正，通报批评；情节严重的，对直接负责的主管人员和其他直接责任人员依法给予处分。构成违反治安管理行为的，由公安机关予以治安管理处罚。<br>            对于教唆、斜坡、引诱未成年人实施本法规定的不良行为、严重不良行为，或为未成年人实施不良行为、严重不良行为提供条件，构成违反治安管理行为的，由公安机关依法给予治安处罚；<br>            在复学、升学、就业等方面歧视有关未成年人的，由所在单位或教育、人力资源社会报障等部门责令改正；拒不改正的，对直接负责的主管人员或其他直接责任人员依法给予处分<br>            有关社会组织、机构及工作人员虐待、其实接受社会观护的未成年人，或出具虚假社会调查、心理测评报告的，由民政、司法行政部门对直接负责的主管人员或其他直接责任人员依法给予处分，构成违反治安管理行为的，由公安机关予以治安管理处罚。<br>            国家机关及其工作人员在预防未成年人犯罪中滥用职权、玩忽职守、徇私舞弊的，对直接负责的主管人员和其他直接责任人员，依法给予处分</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/25/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/DEATHANDREBIRTH/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/09/06/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%B8%80/%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">215</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005055629971077/home?from=page_100505&mod=TAB&is_all=1#place" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005055629971077&#x2F;home?from&#x3D;page_100505&amp;mod&#x3D;TAB&amp;is_all&#x3D;1#place" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/15833385" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;15833385" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="season 季节；时节；（瓜果、蔬菜等的）旺季；（热带地区的）旱&#x2F;雨季；（某种活动或事件发生的）时期；体育赛季character （人的）品质，性格；（地方等的）特色，特性；（书籍等的）人物，角色；符号，字母bloom 开花；繁荣，兴盛exposure 暴露；接触；曝光；日晒雨淋；经历stranger 陌生人；外地人，新来者door 门; 门口, 出入口; 门边, 门旁; 门面; 通道; 途径,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/08/25/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/%E5%8D%95%E8%AF%8D/index.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="season 季节；时节；（瓜果、蔬菜等的）旺季；（热带地区的）旱&#x2F;雨季；（某种活动或事件发生的）时期；体育赛季character （人的）品质，性格；（地方等的）特色，特性；（书籍等的）人物，角色；符号，字母bloom 开花；繁荣，兴盛exposure 暴露；接触；曝光；日晒雨淋；经历stranger 陌生人；外地人，新来者door 门; 门口, 出入口; 门边, 门旁; 门面; 通道; 途径,">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-25T14:26:02.338Z">
+<meta property="article:modified_time" content="2022-09-12T05:44:46.081Z">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/08/25/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/%E5%8D%95%E8%AF%8D/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 9之数据库</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-我的旧站">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-tasks"></i>我的旧站</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/08/25/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/%E5%8D%95%E8%AF%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-25 22:26:02" itemprop="dateCreated datePublished" datetime="2022-08-25T22:26:02+08:00">2022-08-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-12 13:44:46" itemprop="dateModified" datetime="2022-09-12T13:44:46+08:00">2022-09-12</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>season 季节；时节；（瓜果、蔬菜等的）旺季；（热带地区的）旱/雨季；（某种活动或事件发生的）时期；体育赛季<br>character （人的）品质，性格；（地方等的）特色，特性；（书籍等的）人物，角色；符号，字母<br>bloom 开花；繁荣，兴盛<br>exposure 暴露；接触；曝光；日晒雨淋；经历<br>stranger 陌生人；外地人，新来者<br>door 门; 门口, 出入口; 门边, 门旁; 门面; 通道; 途径, 门路<br>therefore 因此<br>legend传说,传奇人物,铭文<br>dying临终的, 临死的, 垂死的,垂死者, 临终者<br>other其他, 另一个, 另外, 对面,另外一个, 别的东西, 其他的东西, 其余的一个<br>therapeutical治疗(学)的<br>discuss讨论，谈论，商量；详述<br>necessity必要；必然；必需品<br>in在……里面，参与；穿着；进入<br>food 食物；养料<br>survival 生存；继续存活，（尤指在困境中的）幸存；幸存事物<br>user 用户，使用者<br>fetch 活人的灵魂；风浪区；航行距离<br>saint （基督教正式追封的）圣徒；圣人，道德高尚的人<br>recommend 推荐，举荐；劝告，建议（某人）做某事<br>snack（两餐之间的）点心，小吃,吃零食；吃快餐<br>climate 气候；（某气候占主导的）地区，地带；风气，气氛<br>behavior （动物或人对环境或刺激的）反应行为，习惯；行为，举止，待人接物的方式<br>on prep.对；根据；使用；在…上；一…就；关于,adv.值班；表示持续性；向前（移动）；穿在身上,adj. 开着的；正在进行的；正在播出的<br>stressful 压力重的, 紧张的<br>stroke 中风；（疾病）突然发作；轻抚；敲，响；（事件的）一次，一回；笔划；扑打；冲程；闪击；划桨；尾桨手，领桨；击（球）<br>frontier 边境，边界；边疆；边缘；知识前沿；新领域<br>blossom （尤指果树或灌木的）花朵<br>fortune 命运, 运气, 大笔的钱, 巨款,〈古,诗〉偶然发生, 碰巧<br>temple 庙宇, 太阳穴, 犹太教堂, 圣殿<br>van 厢式货车<br>originate 发源；来自；发端于；创立；发明<br>emperor 皇帝, 帝王<br>and 附加条件, 附加细节<br>beautiful 美丽的, 风和日丽的, 出色的<br>given 规定的；指明的,考虑到；由于<br>its 它的<br>evening 晚上, 傍晚, 晚会, 晚间活动,“even”的现在分词<br>audio 听觉的，声音的,声音；音频<br>countdown 倒计时；大事临近的时期<br>dry 干的，干燥的；干旱的，少雨的；口渴的；枯燥的，干巴巴的<br>soon 很快, 不久, 马上, 早<br>because 因为<br>graceful 优美的，优雅的；得体的<br>violate 违反，违背；侵犯；使人不得安宁；亵渎，污损；强奸<br>deep 深的；厚的；极度的，严重的；（声音）深沉的,深深地；在深处；至深处<br>accord 正式协议；条约,（与…）一致，相符，配合<br>explanation  解释，说明<br>hurry 匆忙，急忙,赶快；（朝某方向）迅速移动；催促（某人）；迅速处理；仓促（做某事）<br>skill 技能，技术；技巧，技艺<br>particular专指的，特定的；独特的，特别的；讲究的，挑剔的,详细资料；细节，详情<br>eat 吃，吃饭<br>matter 问题, 事情, 材料, 事态,要紧, 事关紧要, 有重大影响<br>sleepiness 困意<br>give赠予，给予；交给；提供；支付；举办；使…产生某种感觉<br>loss 损失, 丢失, 亏损, 丧失<br>nobody 小人物，无足轻重的人<br>beauty 美, 美丽, 美人, 优点<br>save拯救；节省（钱、时间或其他资源）；积攒；存留；避免；储存（数据）<br>I 我,英语字母表的第9个字母, （罗马数字）1<br>joy 快乐, 乐事, 〈口〉成功, 【女名】乔伊,〔因某事而〕感到高兴，感到欣喜<br>setting 环境, 背景, （戏剧、小说等的）情节背景；〔机器、仪器等调控装置的〕设定位置，调节点“set”的现在分词<br>story (虚构的)故事, 小说; (对真实情况的)叙述, 描述; 新闻报道; (=storey) [美]楼层; 谎言, 假话,把…作为故事讲述; 用故事画装饰; 说假话; &lt;古&gt;讲…的故事[历史]<br>folk 人们，大众；亲属；民间音乐,民间的，民俗的<br>desert 遗弃，背弃（人，事业，组织）；擅离（部队），逃走,沙漠，荒地<br>quality 优质的, 高质量的, 盖帽儿了, 棒极了,质量, 品质, 上乘, 优质<br>bush 灌木, 灌木状的东西（尤指浓密的毛发或皮毛）,加(金属)衬套[轴衬]于, (毛发等)丛生, 形成灌木林, 用灌木围住<br>finding 判决, 裁决, (调查)发现, (调研)结果<br>insight 洞察力，洞悉；领悟；深刻见解<br>eternity 永恒, 永生, 不朽, （似乎）无穷无尽的一段时间<br>nowadays 现在, 现今, 目前,现在<br>disease 病, 疾病, 恶疾, 痼疾<br>come 来, 来到, 发生, 成为,得啦,（提及的时间）到来<br>energy 能源, 能量, 精力, 活力<br>ideal 理想的，完美的；想象的；不切实际的,理想；理想典范<br>reduce 减少, （使）蒸发, 减轻体重, 节食<br>organization 组织, 机构, 团体, 安排<br>indeed 的确，确实（强调肯定的陈述或答复）；真正的；其实，实际上<br>heaven 天堂, 天国, 天空, 极乐之地<br>likely 可能的, 预料的, 有希望的, 似乎合适的,有可能<br>fall 落下, 跌落, 脱落, 降落; 跌倒; 下降, 下跌, 减少, 减弱; 降临, 到来,落下, 跌落; 秋天; 下降, 减少, 减弱; 降临, 来临; 垮台, 衰落,秋天的, 秋季的<br>spouse 配偶,娶<br>literally 按字面，字面上；真正地，确实地；简直<br>reduce 减少, （使）蒸发, 减轻体重, 节食<br>likely 可能的；似乎合适的<br>infect 传染；使携带病菌；使感染（计算机病毒）；使感染（某种感情），影响<br>alcoholic 酒精的, 含酒精的, 饮酒引起的, 酒鬼, 酒精中毒者, 嗜酒如命者<br>bone 骨, 骨头, 骨质, 有…样的骨头的,挑鱼刺, 剔骨头<br>shift 转移；更替；转嫁；换挡，变速,交换，变化；轮班，当班时间<br>mark 污点; 痕迹; 记号, 符号; 标签; 标记; 分数,做记号; 评分; 标示; 标志; 表明; 具有; 记下, 记录<br>trend 趋势, 动向, 趋向, 动态；风尚, 潮流<br>inviting 诱人的, 吸引人的,invite”的现在分词<br>senior 高级的，资深的；年长的,年长者；上司；毕业班学生<br>municipal 市政的；地方政府的<br>bureau局, 处, 科; 办事处, 办公室, 机构; 五斗橱, 衣柜; (附抽屉及活动写字台的)书桌<br>media 大众传播媒介<br>retain保留；保持；保存<br>topic 话题, 题目, 标题,【医】局部的<br>province 省份; 外省; 职权; 范围, 领域<br>opportunity 机会, 时机<br>elsewhere 在（或去、到）别处<br>dine 进餐, 用饭<br>investigation 调查；科学研究，学术研究<br>currently 当前, 目前, 现时, 时下<br>moisture 潮湿，湿气<br>metal 金属<br>tourism 旅游业, 观光业<br>view 看, 视野, 观看, 风景,观点,看, 视野, 观看, 风景,观点<br>rib 排骨；肋条；（船或屋顶等的）肋拱；（织物的）凸条花纹<br>found 建立，创建，铸造，把…基于；找到，发现（find的过去分词）,文艺作品等)找到的, 已包括在价款[租金等]之内的,不另外收费的供应品[服务等]<br>resident 居民, 定居者; 住客, 寄宿者; 寄宿生;（美国）高级专科住院医师; 无迁徙习性的动物,在某地居住的, 常驻的; 住校的; 住院的; 固有的; 无迁徙习性的<br>variety 品种, 变化, 多样化, 变体<br>fry 用油炸烤炒, 〔美俚〕(使)被处电刑, 瓦解,鱼苗, 弗赖伊〔姓氏〕, 油炸物, 〔英国〕油炸杂碎<br>unique 唯一的，独一无二的；罕见的；独具的，特有的<br>launch 开始从事，发起，发动（尤指有组织的活动）；（首次）上市，发行；使（船，尤指新船）下水；发射；把（航天器、武器等）发射上天；水中发射,（航天器的）发射；（船的）下水；（产品的）上市；（事件的）发起；大型汽艇；机动大舢板；交通艇<br>brand 丑化，败坏（名声）；给（牲畜）打烙印,品牌；类型；烙印<br>outbreak （暴力、疾病等坏事的）爆发，突然发生<br>medium 适中的，中等的,方法，媒介<br>northeast 在东北, 从东北,东北, 〈诗〉东北风, 东北地方,在东北的, 自东北的<br>campaign 战役, 运动（为社会、商业或政治目的而进行的一系列有计划的活动）,领导运动（如为实现政治变革或赢得竞选）<br>rarity罕见, 稀有, 珍品, 稀有物<br>relate 联系, 讲述, 叙述, 使有联系<br>once 一次；曾经；仅一次；根本,一旦，一…就，当…时候<br>belong应在（某处），适应，合得来，属于<br>tell 告诉，说，讲述；知道；辨别；区分，区别；告诫<br>origin来源，起因；出身，血统<br>academic 学术的；教学的；学习良好的；纯理论的，空谈的,大学教师；学者<br>psychology 心理学；心理，心理特征<br>platform 平台；月台；讲台；舞台；政纲，宣言<br>resist 抵抗，抵御；抵御…诱惑，忍住；阻止，抵制<br>chemical 与化学有关的, 化学的, 用化学方法制造的, 化学作用的<br>average 平均的；普通的；通常的，典型的,平均，平均数，平均值；一般水平，正常水平,平均达到<br>complex 难以分析的；费解的；错综复杂的, 建筑群；服务设施集中区；复合体<br>engine 发动机，引擎；机车，火车头；工具，手段,给…安装发动机<br>onto （与动词连用，表示朝某处或某位置运动）向, 朝向<br>living 活着的, 活的, 在使用的, 在实施的,生活方式, 生计, 谋生, 收入“live”的现在分词<br>consume 吃；喝；摄取（食物，饮料）；购买，消费（商品，服务）；用完，耗尽；消耗（资源）<br>cue 提示；暗示；【心理】线索,提示，暗示<br>immediate 立即的，立刻的；目前的，当前的；接近的，紧接的；直接的；直系的<br>system 系统, 体系, 制度, 体制<br>site网站，站点，现场，位置；场地 v.使坐落在, 为…选址<br>telling 强有力的, 有明显效果的, 显著的, 生动的,“tell”的现在分词<br>stimulate激发兴趣；激励；刺激；促使，促进；使（身体，生物系统）兴奋<br>usage 使用，利用；利用率；惯用法<br>reward 奖励；回报；报酬；赏金,奖励, 奖赏, 给以报酬<br>due 预计的，预期的；欠债的，应支付的，应给的,正向, 正对着,应有的权利, 应得到的东西, 应缴款（如俱乐部会费）<br>download下载, 【计】下载的文件<br>web网络, 蹼, 网状物, 错综复杂的事物,在…上织网, 丝网般密布在…上, 用丝网网住, 使入圈套<br>notification通知, 通告, 告示<br>annoyance烦恼, 恼怒, 生气, 使人烦恼的事<br>monitor监控, 监视, 监听, 检查,班长, 监测仪, 屏幕, 显示屏<br>release释放；发泄；发布，公布；出院,释放；出院；发行，发行物<br>concept 概念, 观念, 设想, 观点<br>feedback反馈, 反馈意见, 回授, 【电子】反馈<br>limit极限, 限制, 限度, 界限,限制, 限量, 限定, 减量<br>response 反应，响应； 回答<br>browser浏览器, 浏览程序, 浏览图书报刊者, 逛商店的人<br>app【自】应用程序<br>overseas外国的；海外的,在国外；在海外<br>feature 特征, 特点, 特色, 故事片, 专栏, 特写,以…为特色, 是…的特征, 起重要作用, 占重要地位；主演，担任主角<br>log原木，木材；（旅程、某段时间或事件的）日记，日志,正式记录，记载；伐（木），砍（树）<br>peace 和平；平静，宁静；和睦<br>case n.事例, 情况, 盒子, 箱子, 案件, 病例,v.包, 观察, 把…装入箱内[袋内], 把…插入鞘内,abbr.(=computer-aided software engineering)【计】计算机辅助软件工程<br>tourism 旅游业, 观光业<br>limited adj[有限的, 受（…的）限制], n.高级快车, v.“limit”的过去分词和过去式<br>expression n. 表达；陈述；表现, 表露；表情；词语；措辞<br>designer 设计者, 构思者,由著名设计师设计的, 标有设计师姓名的, 名牌的<br>recent近来的, 新近的<br>networking 人际关系网,“network”的现在分词<br>vitality活力, 生命力, 热情<br>attractive迷人的, 楚楚动人的, 吸引人的, 引起兴趣的<br>lunar月球的；月亮的<br>series 串联, 一系列, 连续, 接连<br>emergence出现, 【虫】羽化, 【植】突出体, (柑果的)瓤胞<br>tedious冗长的, 啰嗦的, 单调乏味的, 令人厌烦的<br>income收入, 收益, 所得<br>consumer 消费者；顾客；用户<br>image图像, 形象, 影像, 意象,反映, 想象, 象征, 使…成像<br>net纯利, 净值, 实价, 纯量；网；网络；陷阱,无虚价的, 基本的, 最后的, 最后的(定论),编网, 编结网状物, 〔诗〕成网状, 撒(网)<br>drawing图画, 素描画, 绘画（艺术）, 制图（技巧）,“draw”的现在分词<br>bound 必定的, 注定的; 受约束的; 有义务的; 装订的; 准备前往…的，跳跃; 弹回; 向上弹跳; 形成界线; 限制; 接壤，跳跃; 弹回; 边界; 界线, 界限<br>peer 同龄人；同辈；身份地位相同的人；（英国）贵族，仔细看，端详，凝视<br>greet迎接, 欢迎, 和（某人）打招呼（或问好）, （以某种方式）对…作出反应<br>package 包裹；（必须整体接收的）一套东西，一套建议；一揽子交易,把……打包；包装<br>misunderstanding误解, 误会, 争执, 意见不一,“misunderstand”的现在分词<br>collection收藏品，收集物；收集，采集；一群, 一批<br>immense 巨大的，广大的<br>golden 金色的；金制的，含金的；（一段时期）幸福繁荣的；珍贵的; 美好的,戈尔登, 【女名】女子名<br>embarrassment窘迫, 难堪, 困境, 害羞<br>regular adj.规则的，有规律的，间隙均匀的，定时的；普通的；定期的,n.常客, 老主顾, 主力（或正式）队员, （电视节目的）老主持人,adv.经常地, 完全<br>creation创作, 创造, 创建, 作品<br>network 网络；系统,建立关系网<br>decent得体的; 适当的; 体面的; 正派的; 过得去的, 尚可的, 还好的; 合乎地位的, 像样的<br>mug (圆筒形有柄)大杯, &lt;非正式&gt;傻瓜, &lt;非正式&gt;脸,v.抢劫, 做鬼脸<br>billion〈美、法〉十亿的, 〈英、德〉万亿的, 无数的,〈美、法〉十亿, 〈英、德〉万亿, 无数<br>emerge 出现；浮现，显露；(从某种状态)摆脱出来；(事实)显现出来；兴起<br>inspiration灵感；启发灵感；鼓舞人心（的人或物）；妙计，好主意<br>pressure压力；压强；心理压力；紧迫，催促；大气压,对…施压<br>creative创造性的; 与想象力有关的; 想象力丰富的; 有独到见解的,&lt;非正式&gt;有创造力的人<br>account账户, 说明, 账号, 叙述, 描写, 报道，v.认为是, 视为<br>design设计, 设计方案, 构思, 安排,设计, 计划, 构思, 筹划<br>means 方法, 手段; 工具; 财富, 财产,(“mean”的第三人称单数)意思是, 打算, 意欲, 意味着<br>including包括<br>orientation方向，目标；个人基本信仰，态度；入职培训<br>vulnerable易受攻击的；易受伤害的；（身体上或感情上）脆弱的<br>authority当局; 当权者(或机构); 专家; (学术)权威; 行政管理机构, 管辖权; (授予的)权, 权力; 威信, 影响力; 说服力<br>reflect反射; 反映; 表明, 显示; 反省, 反思<br>protection保护, 保险, 防卫, 贸易保护<br>photographer摄影家, 【摄】摄影师, 照相师<br>species[生物]物种，种类<br>restoration修复, 复原, 复位, 回归<br>rare(事情、境况等)稀有的, 罕见的; (东西)珍贵的, 珍奇的; (肉)煎得嫩的; (蛋)半熟的, 溏心的<br>endanger使遭受危险；危及，危害<br>systematically有系统地, 有组织地<br>department部门, 系, 处, 司<br>status地位，身份，情形，状况<br>deer【动】鹿<br>press按; 印刷; 出版社; 新闻界; 报刊; 压平; 熨平; 推动；橱柜,按, 压; 挤压; 榨取; 压平; 熨平; 压制; 紧抱, 紧握; 竭力要求; 敦促; 逼迫<br>spot斑点; 污渍; 粉刺; 丘疹; 污点; 地点; 场所; 少量; 职位,v.用斑点装饰; 使有污渍; 沾上污渍; 发现, 认出; 玷污,adj.当场作出的; 现付的; 当即支付的; 抽样的; 从现场报道的; 插播的<br>ecological生态的, 生态学的, 关注生态环境的, 主张生态保护的<br>march行进, 齐步走, （坚定地向某地）前进, 游行示威,n.进行曲, 行军, 行进, 示威游行<br>ecology生态；生态学<br>bay n.（海或湖的）湾,v.（尤指捕猎时）发出长嗥, 厉声强要,adj.深棕色的, 栗色的<br>department部门, 系, 处, 司<br>northwest adv.向西北,n.西北, 西北部, 美国西北部, 西北地方,adj.西北的, 向西北的, 自西北的<br>precious珍稀的；宝贵的；珍贵的；受珍爱的<br>conference会议<br>wildlife野生动物, 野生生物,野生动物的<br>publish发布, 出版, 公布, 发行<br>establish建立，创立；使立足，使稳固；得到认可；查实，证实<br>whale n.鲸<br>attract吸引, 招引, 使喜爱, 引起…的好感（或爱慕）<br>habitat生长环境, 栖息地; 人类居住地; 海底实验室人员居住的加压舱<br>apart adv.分开, 分离, 相距, 不在一起,adj.(与众)不同的<br>ministry（政府的）部, （尤指基督教新教的）全体牧师, 神职, 牧师职位<br>mysterious神秘的，不可思议的<br>coverage新闻报道; 保险范围; (书、节目、课程等的)内容范围; 信息范围; 覆盖; 覆盖范围(或方式)<br>extent程度；范围<br>announcement通告, 宣告<br>giant巨大的, 特大的, 伟大的,巨兽;（残酷而愚蠢的）巨人；大公司；强大的组织；伟人；卓越人物<br>flaw n.错误，缺点；裂痕，瑕疵，v.使有缺陷<br>shoot开（枪或其他武器）, 射击, 发射, 射杀<br>aim n.目标，对准，v.瞄准，旨在<br>amount n.数量, 金额, 数额，v.等于, 总计, 成为<br>lid n.盖子；眼睑；限制，v.给装盖子<br>precious adj.珍稀的；宝贵的；珍贵的；受珍爱的<br>ingredient 成分，（烹饪的）原料；因素，要素<br>maintain 维持; 维修, 保养; 赡养, 负担, 支持; 主张, 断言; 保卫, 守住<br>ensure保证，确保；担保<br>slice薄的切片；部分；锅铲，切成薄片；大幅降低；砍，削<br>struggle努力，奋斗；挣扎；搏斗；争夺，斗争；奋斗；努力<br>simply adv.只是, 简单地, 简直, 不过<br>mushroom n.蘑菇, 蕈, 伞菌， v.快速生长, 迅速增长, 采蘑菇， adj.蘑菇形的, 雨后蘑菇似的, 蘑菇一般短命的<br>breast  n.（女子的）乳房, （男子的）退化乳房, 胸部, 胸脯，v.登上…的顶部, 挺胸从…中挤过<br>recording  n.录音, 录制, 录像, 记载 adj. (从事)记录的, 自记的, v.“record”的现在分词<br>compose v.组成；写作；作曲；使镇静<br>singer 歌手, 歌唱家, 辛格, 演唱者<br>dad  n.爸爸, 爹爹<br>staple adj.主要的，最重要的, v.装订, n.基本食物，主食；订书钉；主要产品<br>approach  v.（在距离或时间上）靠近，接近；接洽；建议；要求；（在数额、水平或质量上）接近；着手处理；对付, n.（待人接物或思考问题的）方式，方法，态度；（距离和时间上的）靠近，接近；接洽；建议；通路；路径；道路<br>supervise v.监督；管理；指导；主管<br>alternative 可供选择的; 可替代的; 两者(或两者以上)择一的;非主流的; 非传统的<br>significant 重要的, 意义重大的; 意味深长的; 相当数量的; 显著的; 表示…<br>plus 加, 和, 外加, 也 ,加号, 好处, 优势, 长处,零上, 余, 零度以上, 优点的,此外, 而且, 况且<br>shrimp 虾；小虾<br>protein 蛋白质<br>diet 日常饮食，规定饮食，节食 v.节食<br>dozen 很多, （一）打, 十二个, 十来个<br>process  n.进程, 流程, 工序, 工艺流程, v.处理, 加工, 审核, 数据处理, adj.经过特殊加工的, (用化学方法等)处理过的, 照相制版的, 三色版的<br>effective 有效的；生效的<br>root 根, 根茎, 起源, 鲁特, 【圣】子孙,支持, 使根深蒂固, 搜寻<br>pan 平锅, 平底锅, 一锅的量, 烤模,严厉批评, （移动摄像机）追拍, （用淘选盘）淘洗, 淘（金）<br>bite 咬；叮；蜇；咬饵,咬；（咬下的）一口；少量食物；简单的一餐<br>extra 额外的, 分外的, 外加的, 附加的.,额外, 特别, 另外, 格外,额外的事物, 另外收费的事物, 群众演员<br>select 选择，挑选，选拔,精选的，优等的<br>powder 粉末, 细面, 扑面粉, 美容粉,搽粉, 抹粉<br>toss 掷，扔，抛；摇晃，摇匀；甩头；掷硬币决定,掷硬币决定；投掷<br>remove 去除, 去掉; 移开; 搬移; 搬家; 脱下; 摘下; 消除, 取消; 开除,免职,移动; 迁移, 迁居; 间距, 相隔的距离<br>secure安心的；安全的；牢固的；有把握的；稳定的,使安全；担保，保护；（使）获得<br>elevate提高，使升高；举起，抬起；提拔，晋升；使精神振奋<br>additional 附加的，另外的<br>decoration 装潢, 装饰品, 勋章, 奖章<br>soak 浸泡, 浸湿, 浸透, 湿透,浸泡, 浸渍, 湿透, 洗澡<br>belt 皮带, 腰带, 传动带, 传送带,猛击, 狠打, 飞奔, 飞驰<br>version 版本；改写本；变体，变种；说法，描述<br>pork 猪肉<br>resemble 与……相似，类似<br>type类型, 种类, 字体, 典型,定型, （用计算机或打字机）打字, 测定…的类型, 分型<br>sticky黏（性）的, 一面带黏胶的, 闷热的, 感到热得难受的<br>stuff v.填满，塞满，吃撑,<br>soar 翱翔, 高飞, 猛增, 高耸，翱翔, 上升高度, 高飞范围<br>suitable 合适的；适宜的；适当的<br>segment 段；部分；片；弓形<br>distinguish 区分，辨别，分清；使出众，使著名；使有别于<br>classic 经典的；优秀的；一流的；有代表性的，典型的,名著；经典作品；杰作；优秀的典范; 古典文化（指古罗马和古希腊的语言、文学及历史）<br>muddy 泥多的, 尽是泥的, 脏的, 泥色的,v.弄浊, 使头脑混乱[糊涂], 使混乱<br>bind 绑；使结合；约束；装订，捆绑(物)；窘境，困境<br>diversity 多样性, 多样化, 差异（性）, 不同（点）<br>reveal 显示；表明；透露；揭露；展示；使显露<br>vinegar 加醋于,醋<br>poetic 诗歌的, 诗的, 像诗一般的, 富有诗意的<br>sticky 黏（性）的, 一面带黏胶的, 闷热的, 感到热得难受的<br>boil 烧开, 煮沸, 怒火中烧, （使）沸腾<br>pot 锅, （盛食品的）罐, （某种用途的）容器, 一瓶,把…栽入盆中, 种盆栽, 击（球）入袋, 射杀<br>nut 螺母, 坚果, 螺帽, 疯子, 着迷的人,专注于某事的人,…迷, 头, 脑袋,故意）以头撞击<br>generally 一般地, 通常地; 普遍地, 广泛地；总体上地<br>preserve 保护；保持，保存；保养；保鲜；腌制,果酱；腌菜；专门领域，专有活动<br>minimal极小的, 极少的, 最小的,最简单派艺术作品<br>pond 池塘, 水池（尤指人工的）,把…挖成池塘, 堵(溪流)水成池 (back, up)<br>slight 少量的; 轻微的; 极不重要的, 不足道的; 纤细的; 瘦小的; 不结实的; 不牢靠的<br>dessert 甜食, 甜品, 餐后甜点<br>overnight 在夜间, 在晚上, 突然, 一夜之间,夜间的, 晚上的, 只供一夜的, 突然的<br>tender adj.嫩的, 柔软的；纤弱的, 易碎的；和善的, 温柔的, 慈爱的；温和的；年轻的；多愁善感的；棘手的, 微妙的, 投标；提供；提出；交付<br>pea 豌豆, 豌豆粒<br>executive 〔公司或机构〕行政的，管理的；供主管人员使用的；高档的；豪华的n.主管，经理；〔政府的〕行政部门；〔机构的〕领导层，执行委员会</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/03/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%B8%80/%E8%81%8C%E4%B8%9A%E7%90%86%E5%BF%B5%E4%B9%8B%E6%95%99%E8%82%B2%E8%A7%82/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/19/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%BA%8C/2.2%20%E8%AF%BE%E7%A8%8B%E7%BB%84%E7%BB%87/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">215</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005055629971077/home?from=page_100505&mod=TAB&is_all=1#place" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005055629971077&#x2F;home?from&#x3D;page_100505&amp;mod&#x3D;TAB&amp;is_all&#x3D;1#place" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/15833385" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;15833385" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>伊顿海逸外国语学校工作记录(20220506-20220513)</title>
+  <link rel="stylesheet" href="css/Foundation-6.6.1/assets/css/app.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/foundation/5.5.3/css/foundation.min.css">
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/foundation/5.5.3/js/foundation.min.js"></script>
+  <script src="https://cdn.staticfile.org/foundation/5.5.3/js/vendor/modernizr.js"></script>
+  <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+  <style>
+  .example {
+    max-width: 100%;
+  }
+  </style>
+</head>
+<!-- 最外层div：页面布局 -->
+
+<div class="off-canvas-wrap" data-offcanvas>
+  <!-- 内部元素: "工具栏" 内容 (图标, 链接, 描述内容等)-->
+
+  <div class="inner-wrap">
+    <nav class="tab-bar">
+      <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+      </section>
+
+      <section class="middle tab-bar-section">
+        <h2 class="title">伊顿海逸外国语学校工作记录(20220506-20220513)</h2>
+      </section>
+    </nav>
+
+    <!-- 滑动菜单 -->
+    <aside class="left-off-canvas-menu">
+      <!-- Add links or other stuff here -->
+      <ul class="off-canvas-list test">
+      <li><label><object data="image/baka9.svg" type="image/svg+xml"></object>
+</label></li>
+        <li><label><a href="index.html">欢迎~♪(^∇^*)</a></label></li>
+        <li><label>我的伊顿海逸外国语学校工作记录</label></li>
+        <li><a href="伊顿海逸外国语学校工作记录(20220410-20220417).html">伊顿海逸外国语学校工作记录(20220410-20220417)</a></li>
+        <li><a href="伊顿海逸外国语学校工作记录(20220418-20220424).html">伊顿海逸外国语学校工作记录(20220418-20220424)</a></li>
+        <li><a href="伊顿海逸外国语学校工作记录(20220425-20220430).html">伊顿海逸外国语学校工作记录(20220425-20220430)</a></li>
+        <li><a href="伊顿海逸外国语学校工作记录(20220506-20220513).html">伊顿海逸外国语学校工作记录(20220506-20220513)</a></li>
+        ...
+      </ul>
+    </aside>
+
+    <!-- 主要内容 -->
+    <section class="main-section">
+    <body style="padding:0px;">
+    <div style="text-indent:20%;"><h1>伊顿海逸外国语学校工作记录(20220506-20220513)</h1>
+ </div><div style="padding:40px;"><center>
+  <div id="container" style="height:600px;"></div>
+     <script type="text/javascript">
+        var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+
+var option;
+
+
+
+setTimeout(function () {
+  option = {
+    legend: {},
+    tooltip: {
+      trigger: 'axis',
+      showContent: false
+    },
+    dataset: {
+      source: [
+        ['product', '5月06日', '5月07日', '5月08日', '5月09日', '5月10日', '5月11日', '5月12日', '5月13日'],
+        ['微信', ],
+        ['钉钉', ],
+        ['现场对接', ],
+        ['现场调查', ],
+        ['电话', ]
+      ]
+    },
+    xAxis: { type: 'category' },
+    yAxis: { gridIndex: 0 },
+    grid: { top: '55%' },
+    series: [
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+       {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'pie',
+        id: 'pie',
+        radius: '30%',
+        center: ['50%', '25%'],
+        emphasis: {
+          focus: 'self'
+        },
+        label: {
+          formatter: '{b}: {@2022} ({d}%)'
+        },
+        encode: {
+          itemName: 'product',
+          value: '2022',
+          tooltip: '2022'
+        }
+      }
+    ]
+  };
+  myChart.on('updateAxisPointer', function (event) {
+    const xAxisInfo = event.axesInfo[0];
+    if (xAxisInfo) {
+      const dimension = xAxisInfo.value + 1;
+      myChart.setOption({
+        series: {
+          id: 'pie',
+          label: {
+            formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+          },
+          encode: {
+            value: dimension,
+            tooltip: dimension
+          }
+        }
+      });
+    }
+  });
+  myChart.setOption(option);
+});
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}</script></center>
+  <div class="panel">
+<h3><center>2022年5月06号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td>1</td>
+    <td>现场对接</td>
+    <td>收到肖主任消息，需要在校门口迎接学生进校园</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>2</td>
+    <td>微信</td>
+    <td>应昨日易卫国老师提醒，需要将早操入场音乐换成5分钟的。</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>3</td>
+    <td>现场对接</td>
+    <td>应刘亮主管需求，将校内目前所有内网路由器全部拆除，换成校园路由器或者交换机连接网络</td>
+    <td>已完成拆除工作，小学部3、4年级办公室、小学教务处、总务处、初中教务处、7年级办公室、桑祖俊办公室、宿舍楼803、宿舍楼701</td>
+   </tr>
+   <tr>
+    <td>4</td>
+    <td>现场调查</td>
+    <td>和刘亮主管沟通，需要对7年级办公室拉无线网络，使用方案将线穿墙到办公室内然后放置AP</td>
+    <td>已解决，上午及下午花了时间进行冲击钻钻墙，然后布线及放置AP</td>
+   </tr>
+   <tr>
+    <td>5</td>
+    <td>现场调查</td>
+    <td>下午去到游泳馆一层，取走吊顶3010DN-V2的AP一个，将AP布置在三年级办公室</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>6</td>
+    <td>微信</td>
+    <td>前往外教办公室解决reyz老师的电脑问题</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>7</td>
+    <td>现场对接</td>
+    <td>早上应肖主管要求，需要将7:55的广播体操关闭</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>8</td>
+    <td>现场调查</td>
+    <td>早上在初中教务处，将剩余的电脑进行网线布线及连接，顺便布置好打印机共享</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>9</td>
+    <td>现场调查</td>
+    <td>下午在小学教务处布置给国主任修好的打印机，将打印机放置在桌上连接国主任的电脑后，将其他的电脑与国主任的打印机相接</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>10</td>
+    <td>现场调查/微信</td>
+    <td>应小学三年级办公室张秋云老师的保障，三年级办公室的网络还是有问题，需要前往处理</td>
+    <td>已完成，将游泳馆的AP移植一个到三年级办公室顶部放置，并且重新配置AP信息进行连接。将状态从fault转变为normal。</td>
+   </tr>
+   <tr>
+    <td>11</td>
+    <td>现场对接</td>
+    <td>小学部三年级老师陈兴荣求助需要将PDF文件转化为PPT文件</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>12</td>
+    <td>微信</td>
+    <td>上午宾春凤老师需要录课，在第四节</td>
+    <td>已解决，但不是我，是我托刘亮主管协助我解决录课之事</td>
+   </tr>
+   <tr>
+    <td>13</td>
+    <td>微信/钉钉</td>
+    <td>上午收到陈运红老师报障，302班一体机希沃助手无法打开</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年5月07号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td>1</td>
+    <td>微信</td>
+    <td>早上收到冯兴婵老师的报障，301班一体机出现花屏现象，需要解决</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>2</td>
+    <td>微信</td>
+    <td>收到小学教务处吴志强老师的报障，需要对国亚萍主任的打印机卡纸进行取出</td>
+    <td>已解决</td>
+   </tr>
+     <tr>
+    <td>3</td>
+    <td>现场对接</td>
+    <td>协助全工帮忙把水牌和桌椅摆到一楼的一边</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>4</td>
+    <td>现场对接</td>
+    <td>协助陈静老师将6个盒饭、1桶汤及6个碗拿到陶艺室给医务人员吃午饭</td>
+    <td>已解决</td>
+   </tr>
+     <tr>
+    <td>5</td>
+    <td>微信</td>
+    <td>按照李主任的要求，下载纪录片《像乌鸦一样思考》</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>6</td>
+    <td>微信</td>
+    <td>根据小学老师刘涛良要求，需要给刘老师录课</td>
+    <td>已完成</td>
+   </tr>
+     <tr>
+    <td>7</td>
+    <td>微信</td>
+    <td>远程协助美术老师陈丽创建共享文件夹快捷方式</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>8</td>
+    <td>微信</td>
+    <td>处理初中部电脑教室B06电脑无法登录提示密码错误问题</td>
+    <td>已完成，在VDC内解决</td>
+   </tr>
+   <tr>
+    <td>9</td>
+    <td>微信</td>
+    <td>视频指导李家栋老师开启体育馆灯光</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>10</td>
+    <td>现场对接</td>
+    <td>协助全科和熊辉帮忙把雨伞和遮雨棚架设完成</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>11</td>
+    <td>微信</td>
+    <td>指导小学部徐文静老师加入360团队版PIN码</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>12</td>
+    <td>微信</td>
+    <td>指导陈丽冰老师连接wifi密码</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>13</td>
+    <td>微信</td>
+    <td>指导高学文老师连接校园wifi</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>14</td>
+    <td>微信/现场对接</td>
+    <td>按李娄静老师报障，前往501班检查音频是否正常</td>
+    <td>已完成，正常</td>
+   </tr>
+   <tr>
+    <td>15</td>
+    <td>微信/现场对接/现场调查</td>
+    <td>收到微信陈静的请求，晚上加班到8点。协助陈静老师统计校服</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年5月08号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td>1</td>
+    <td>微信</td>
+    <td>早上处理初中部教务处打印机故障，报修人郭慧青表示自己无法打印</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>2</td>
+    <td>微信</td>
+    <td>早上参与录制吴申萍老师的公开课</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>3</td>
+    <td>微信</td>
+    <td>早上在体育馆参与刘晓锋老师的公开课</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>4</td>
+    <td>微信</td>
+    <td>前往智慧教室跟老师们培训如何设置腾讯会议直播，以及如何开通腾讯会议</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>5</td>
+    <td>微信</td>
+    <td>将昨日刘涛良老师的视频进行剪辑，并且上传回共享文档</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>6</td>
+    <td>现场对接</td>
+    <td>上午第二节课，希沃售后过来学校前往110班维修一体机误触跳点问题，希沃售后使用刷固件的方法进行维护</td>
+    <td>完成中，后续需要进一步跟进，确保所有问题不存在的时候在与希沃售后确认。</td>
+   </tr>
+   <tr>
+    <td>7</td>
+    <td>现场对接</td>
+    <td>处理初中教务处李远龙主任的笔记本C盘占用高问题</td>
+    <td>未完成，被其他主要事项顶替掉</td>
+   </tr>
+   <tr>
+    <td>8</td>
+    <td>微信</td>
+    <td>小学部英语赵晓腾老师需要使用校园wifi，需要了解wifi上网密码及用户名</td>
+    <td>已完成，已告知赵晓腾老师账户名及密码</td>
+   </tr>
+   <tr>
+    <td>9</td>
+    <td>微信</td>
+    <td>按照三年级陈级长陈永利老师要求，需要从306班钉群删除四位学生</td>
+    <td>已完成，删除的四位学生分别是:陈厚宇、王钧航、彭俊科、刘仁维</td>
+   </tr>
+   <tr>
+    <td>10</td>
+    <td>现场调查</td>
+    <td>处理三年级办公室老师的苹果手机连接wifi会无法上网问题</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>11</td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年5月09号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td>1</td>
+    <td>微信</td>
+    <td>处理初中部汪蓉蓉老师的iPhone手机连接wifi熄屏断wifi问题</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>2</td>
+    <td>现场对接</td>
+    <td>按照全科的要求，将本人的照片进行处理并发回给全工。</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>3</td>
+    <td>现场对接</td>
+    <td>为小学部倪善宝老师录制视导课</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>4</td>
+    <td>微信/现场调查</td>
+    <td>按照初中教务处郭慧青老师需求，将初中部考试铃声进行更改及调整，于晚上10:00处理完</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>5</td>
+    <td>微信</td>
+    <td>远程指导小学部电脑老师宾春凤老师手机iPhone开启wifi自动连接选项</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>6</td>
+    <td>微信</td>
+    <td>外教reyz的报障，表示自己的电脑无法连接网络</td>
+    <td>已完成，将360进行退出刷新网页即可。</td>
+   </tr>
+   <tr>
+    <td>7</td>
+    <td>微信</td>
+    <td>告诉美术老师陈老师去艺术楼美术教室使用网络</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>8</td>
+    <td>微信/钉钉</td>
+    <td>收到小学部毛晓敏老师的请求，需要查询办公室的监控，原因是充电头与数据线丢失</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>9</td>
+    <td>微信/现场对接</td>
+    <td>帮助全工制作一个符合要求的白底照片</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年5月10号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td>1</td>
+    <td>现场对接/微信</td>
+    <td>于晚上协助全科及刘亮主管，排查大门口闸机断电问题</td>
+    <td>未完成</td>
+   </tr>
+   <tr>
+    <td>2</td>
+    <td>微信/现场对接</td>
+    <td>早上第一节课小学部徐宇欣老师录制视导课视频</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>3</td>
+    <td>微信/现场对接</td>
+    <td>早上第二节课小学部万静悦老师录制公开课视频</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>4</td>
+    <td>微信/现场对接</td>
+    <td>早上第三节课小学部黄丽珍老师录制视导课视频</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>5</td>
+    <td>微信/现场对接</td>
+    <td>下午第五节课小学部刘涛良老师录制视导课视频</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>6</td>
+    <td>微信/现场对接</td>
+    <td>下午第六节课小学部刘晓峰老师录制视导课视频</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>7</td>
+    <td>微信/钉钉</td>
+    <td>给小学部1年级办公室明文娟老师对电脑进行杀毒及广告优化</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年5月11号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td>1</td>
+    <td>微信</td>
+    <td>求助光大莞阅卷售后，解决划块后老师看到的与划块内容不符的问题</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>2</td>
+    <td>微信</td>
+    <td>协助小学部吴申萍老师在下午录制视导课</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>3</td>
+    <td>微信</td>
+    <td>修复初中教务处的打印机无法打印问题</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>4</td>
+    <td>微信</td>
+    <td>帮忙寻找刘晓晓的U盘</td>
+    <td>未完成</td>
+   </tr>
+   <tr>
+    <td>5</td>
+    <td>微信/钉钉</td>
+    <td>给小学三年级办公室陈丽冰老师安装打印机</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>6</td>
+    <td>微信/钉钉</td>
+    <td>给小学五年级办公室李丽芳老师开启班级电脑</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>7</td>
+    <td>微信/钉钉</td>
+    <td>解决201班无网络的问题</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>8</td>
+    <td>微信</td>
+    <td>上午收到王淑敏需求，需要查询图书馆刘建英电脑上的文件</td>
+    <td>未完成</td>
+   </tr>
+   <tr>
+    <td>9</td>
+    <td>微信/现场调查</td>
+    <td>解决小学部党会娟老师在校史室使用网络问题</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年5月12号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td>1</td>
+    <td>微信</td>
+    <td>前往美术室解决陈丽老师和徐宇欣老师上网问题</td>
+    <td>已解决(安装了一个小米路由器，届时活动结束后需要收回)</td>
+   </tr>
+   <tr>
+    <td>2</td>
+    <td>微信</td>
+    <td>前往小学部二号楼三楼教室为史维老师连接网络使用</td>
+    <td>已解决(使用一根10米长网线连接，届时活动结束后需要收回)</td>
+   </tr>
+    <tr>
+    <td>3</td>
+    <td>微信</td>
+    <td>前往小学部二号楼四楼401班后备用教室解决易世刚老师上网问题</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>4</td>
+    <td>微信</td>
+    <td>前往小学部二号楼二楼党员室解决张艳玲老师联网开启腾讯会议摄像头问题</td>
+    <td>已解决</td>
+   </tr>
+    <tr>
+    <td>5</td>
+    <td>微信</td>
+    <td>收到小学部教务处王淑君请求，需要前往广播室解决2411及2301教室将音乐铃声取消及整体小学部铃声调小</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>6</td>
+    <td>微信/钉钉</td>
+    <td>收到初中部向文倩老师请求，需要在智慧教室录制一节课程</td>
+    <td>正在解决中</td>
+   </tr>
+   <tr>
+    <td>7</td>
+    <td>微信</td>
+    <td>收到小学部熊青老师的请求，解决中学部教务处打印机无法使用问题</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>8</td>
+    <td>微信</td>
+    <td>设置中学部桑祖俊校长办公室将考试铃声取消需求。</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>9</td>
+    <td>微信</td>
+    <td>收到小学部教务处郭左香老师需求，需要给新来的实习老师发放一个上网用账户</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>10</td>
+    <td>微信</td>
+    <td>收到初中部邓韵臻老师的请求，在光大莞阅卷内将七名学生设置为不缺考</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>11</td>
+    <td>现场调查</td>
+    <td>给生活老师放置工卡的时候发现门禁密码不对，于是将密码改成了426580#</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年5月13号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td>1</td>
+    <td>微信/钉钉</td>
+    <td>早上收到小学部王老师消息，小学107班无法开启一体机</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>2</td>
+    <td>微信</td>
+    <td>按照李主任的需求，需要查监控，查询某个学生丢掉的大冰墩墩</td>
+    <td>未完成，无法找寻，且将事由转交给刘亮主管，刘亮主管繁忙于是让陈桂梅主管在监控平台自行查找</td>
+   </tr>
+   <tr>
+    <td>3</td>
+    <td>微信</td>
+    <td>按照刘亮主管的需求，需要搜集到几份与《广东省教育系统负面舆情与合理应对》文档</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>4</td>
+    <td>微信</td>
+    <td>初中体育钟德诚老师询问我电影路径存放位置</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>5</td>
+    <td>现场调查</td>
+    <td>下午协助总务处陈静老师，在校服处对接4名学生更换校服与购买校服，票据已放置在小学校服处台面上</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>6</td>
+    <td>现场调查</td>
+    <td>下午接近放学时间，在校门口协助指挥交通。顺便将闸道关闭，让家长进入保安室内避雨</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>7</td>
+    <td>现场调查</td>
+    <td>下午与熊辉和刘主管一块将损坏的帐篷挪至大门口处，避免妨碍到家长接送学生放学</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>8</td>
+    <td>现场对接</td>
+    <td>收到消息，原定下午4:30分级会议取消，4:30正常下班</td>
+    <td>已完成，将所有报告厅设备关闭即可</td>
+   </tr>
+   <tr>
+    <td>9</td>
+    <td>微信</td>
+    <td>指导刘敏老师将上网用户更换另一个密码</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+</div>
+</div>
+</body></section>
+    <!-- 关闭菜单 -->
+    <a class="exit-off-canvas"></a>
+  </div> 
+</div> 
+<script>
+$(document).ready(function() {
+    $(document).foundation();
+})
+</script>
+
+</html>
+</html>

@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="伊顿海逸外国语学校工作记录(20220410-20220417)                           .example {     max-width: 100%;   }                                                           伊顿海逸外国语学校工作记录(20220410-20220417)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/about/%E4%BC%8A%E9%A1%BF%E6%B5%B7%E9%80%B8%E5%A4%96%E5%9B%BD%E8%AF%AD%E5%AD%A6%E6%A0%A1%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95(20220410-20220417).html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="伊顿海逸外国语学校工作记录(20220410-20220417)                           .example {     max-width: 100%;   }                                                           伊顿海逸外国语学校工作记录(20220410-20220417)">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-01T16:03:09.727Z">
+<meta property="article:modified_time" content="2022-06-01T16:03:09.727Z">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/about/%E4%BC%8A%E9%A1%BF%E6%B5%B7%E9%80%B8%E5%A4%96%E5%9B%BD%E8%AF%AD%E5%AD%A6%E6%A0%A1%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95(20220410-20220417)">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 9之数据库
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-我的旧站">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-tasks"></i>我的旧站</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta">
+  
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <!DOCTYPE html>
+<html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>伊顿海逸外国语学校工作记录(20220410-20220417)</title>
+  <link rel="stylesheet" href="css/Foundation-6.6.1/assets/css/app.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/foundation/5.5.3/css/foundation.min.css">
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/foundation/5.5.3/js/foundation.min.js"></script>
+  <script src="https://cdn.staticfile.org/foundation/5.5.3/js/vendor/modernizr.js"></script>
+  <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+  <style>
+  .example {
+    max-width: 100%;
+  }
+  </style>
+</head>
+<!-- 最外层div：页面布局 -->
+
+<div class="off-canvas-wrap" data-offcanvas>
+  <!-- 内部元素: "工具栏" 内容 (图标, 链接, 描述内容等)-->
+
+  <div class="inner-wrap">
+    <nav class="tab-bar">
+      <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+      </section>
+
+      <section class="middle tab-bar-section">
+        <h2 class="title">伊顿海逸外国语学校工作记录(20220410-20220417)</h2>
+      </section>
+    </nav>
+
+    <!-- 滑动菜单 -->
+    <aside class="left-off-canvas-menu">
+      <!-- Add links or other stuff here -->
+      <ul class="off-canvas-list test">
+      <li><label><object data="image/baka9.svg" type="image/svg+xml"></object>
+</label></li>
+        <li><label><a href="index.html">欢迎~♪(^∇^*)</a></label></li>
+        <li><label>我的伊顿海逸外国语学校工作记录</label></li>
+        <li><a href="伊顿海逸外国语学校工作记录(20220410-20220417).html">伊顿海逸外国语学校工作记录(20220410-20220417)</a></li>
+        <li><a href="伊顿海逸外国语学校工作记录(20220418-20220424).html">伊顿海逸外国语学校工作记录(20220418-20220424)</a></li>
+        <li><a href="伊顿海逸外国语学校工作记录(20220425-20220430).html">伊顿海逸外国语学校工作记录(20220425-20220430)</a></li>
+        ...
+      </ul>
+    </aside>
+
+    <!-- 主要内容 -->
+    <section class="main-section">
+    <body style="padding:0px;">
+    <div style="text-indent:20%;"><h1>伊顿海逸外国语学校工作记录(20220410-20220417)</h1>
+ </div><div style="padding:40px;"><center>
+  <div id="container" style="height:600px;"></div>
+     <script type="text/javascript">
+        var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+
+var option;
+
+
+
+setTimeout(function () {
+  option = {
+    legend: {},
+    tooltip: {
+      trigger: 'axis',
+      showContent: false
+    },
+    dataset: {
+      source: [
+        ['product', '4月10日', '4月11日', '4月12日', '4月13日', '4月14日', '4月15日', '4月16日', '4月17日'],
+        ['微信', 1, 5, 2, 1, 5, 1, 2, 3],
+        ['钉钉', 0, 2, 1, 0, 0, 0, 0, 0],
+        ['现场对接', 1, 2, 2, 0, 3, 1, 3, 1],
+        ['现场调查', 1, 0, 0, 0, 0, 0, 0, 0],
+        ['电话', 0, 0, 0, 0, 1, 0, 0, 0]
+      ]
+    },
+    xAxis: { type: 'category' },
+    yAxis: { gridIndex: 0 },
+    grid: { top: '55%' },
+    series: [
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'pie',
+        id: 'pie',
+        radius: '30%',
+        center: ['50%', '25%'],
+        emphasis: {
+          focus: 'self'
+        },
+        label: {
+          formatter: '{b}: {@4月10日} ({d}%)'
+        },
+        encode: {
+          itemName: 'product',
+          value: '4月10日',
+          tooltip: '4月10日'
+        }
+      }
+    ]
+  };
+  myChart.on('updateAxisPointer', function (event) {
+    const xAxisInfo = event.axesInfo[0];
+    if (xAxisInfo) {
+      const dimension = xAxisInfo.value + 1;
+      myChart.setOption({
+        series: {
+          id: 'pie',
+          label: {
+            formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+          },
+          encode: {
+            value: dimension,
+            tooltip: dimension
+          }
+        }
+      });
+    }
+  });
+  myChart.setOption(option);
+});
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}</script></center>
+
+  <div class="panel">
+<h3><center>2022年4月10号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+    <tr>
+      <td>1</td>
+      <td>微信</td>
+      <td>根据肖铁均主任要求,需要将所有的图表进行打印建档，于中午打印完成</td>
+      <td>完成，拍照发回给肖铁均主任</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>现场对接</td>
+      <td>根据肖铁均主任的要求，需要将初中6号楼5、6<br>9号楼1、2、3楼的电子版疏散图进行改进，需要添加每个房间号、房间班级及人员数量标注上去</td>
+      <td>加班加点完成</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>现场调查</td>
+      <td>于晚上巡视一遍初中宿舍现居住情况，同时联系陈桂梅主管索要一份初中及小学部住宿信息台账。</td>
+      <td>完成</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年4月11号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+    <tr>
+      <td>1</td>
+      <td>微信\钉钉</td>
+      <td>上午接到初中部程武装老师消息，704班电脑报故障</td>
+      <td>完成，原因是内存条故障。将内存条拔出在从第一根到第二根的顺序插回即可点亮。</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>微信\钉钉</td>
+      <td>欧锦华老师反馈803班无网络</td>
+      <td>已解决，线没有接好导致</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>微信</td>
+      <td>将我和全工的个人照片转发给凤联姐</td>
+      <td>完成</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>微信</td>
+      <td>将Summer Yeung杨校医的照片进行缩放，在转发回给她</td>
+      <td>完成</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>现场对接</td>
+      <td>帮辉叔拍照并制作一个蓝底小于60kb的个人头照，制作完成转发给凤联</td>
+      <td>完成</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>微信</td>
+      <td>依照刘晓晓主任要求，需要帮她打印文件，然后跑去初中教务处扫描成电子版PDF在合并后发给她</td>
+      <td>完成</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>现场对接</td>
+      <td>与初中电脑老师邓韵臻一起部署初中小学两间电脑教室麦克风耳机环境，晚上来考英语听说考试做准备。并负责在现场监考</td>
+      <td>完成</td>
+    </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年4月12号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>1</td>
+    <td>钉钉</td>
+    <td>采购20个考试用耳机申请单已递交</td>
+    <td>完成</td>
+    </tr>
+  <tr>
+    <td>2</td>
+    <td>现场对接</td>
+    <td>按照邓韵臻老师要求需要部署一台win7 64位虚拟机，他来负责安装软件。</td>
+    <td>已解决</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>微信</td>
+    <td>学校办公室曾实老师需要我前往办公室更换打印机硒鼓，并且让打印机继续打印。</td>
+    <td>完成，但是需要走采购申请流程。</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>微信</td>
+    <td>按照刘晓晓主任要求需要继续改进要打印的内容，然后扫描发原件给刘主任。</td>
+    <td>完成</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>现场对接</td>
+    <td>与初中电脑老师邓韵臻一起部署初中小学两间电脑教室麦克风耳机环境，晚上来考英语听说考试做准备。并负责在现场监考</td>
+    <td>完成</td>
+  </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年4月13号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th>1</th>
+    <th>微信</th>
+    <th>呼叫夏普售后维修人员过来维修复印机</th>
+    <th>已完成</th>
+  </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年4月14号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>1</td>
+    <td>现场对接</td>
+    <td>早上协助全工安装更换教学楼2号楼的灯管及风扇设备</td>
+    <td>未完成</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>现场对接</td>
+    <td>去打印室打印杨细老师交代的试卷，一份170张，一共要打两份出来。</td>
+    <td>完成</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>现场对接</td>
+    <td>下午与初中部李远龙主任，将自己的笔记本交给李主任使用。</td>
+    <td>完成</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>微信/电话</td>
+    <td>下午处理初中部903班的电脑，电脑引导丢失导致无法启动</td>
+    <td>已解决</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>微信</td>
+    <td>按照肖铁均主任要求，需要将学校大门口的LED字体进行更换，于早上更换LED字幕</td>
+    <td>已解决</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>现场对接</td>
+    <td>接到一个学生需要还书的操作，于是将书拿去文印室进行还书操作</td>
+    <td>已完成</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>微信</td>
+    <td>接到胡媛老师通知，晚上7点开始要初三英语听力考试练习，于是提前打开电脑室的所有设备。</td>
+    <td>已完成</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>微信</td>
+    <td>接到财务部刘丽老师的需求，帮忙在网页上提交文档，进行数据上报。</td>
+    <td>已完成</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>微信</td>
+    <td>接到郭慧青的需求，需要将初中部打印机进行修复，才能重新打印。</td>
+    <td>已完成</td>
+  </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年4月15号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+  </thead>
+ <tbody>
+   <tr>
+    <td>1</td>
+    <td>现场对接</td>
+    <td>帮忙进行防疫物资贴标签操作</td>
+    <td>已完成</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>微信</td>
+    <td>按照李主任要求，需要下载几部电影然后进行上传到共享内给学生观看</td>
+    <td>已完成</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>现场对接</td>
+    <td>下午开车载同事一起去购买16号活动需要的物品</td>
+    <td>已完成</td>
+  </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年4月16号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td>1</td>
+    <td>现场对接</td>
+    <td>协助全工在学校大门口完成logo墙面回贴上墙操作</td>
+    <td>已完成</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>现场对接</td>
+    <td>再次前往外面采购学校要求的气球</td>
+    <td>已完成</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>现场对接</td>
+    <td>下午在体育馆后场给学生播放音乐及视频，为学生开展活动使用。</td>
+    <td>已完成</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>微信</td>
+    <td>初中部刘敏老师需要我前往陶艺室维护网络</td>
+    <td>已完成</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>微信</td>
+    <td>前往行政楼三楼修改电视机IP地址</td>
+    <td>已完成</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年4月17号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td>1</td>
+    <td>微信</td>
+    <td>上午收到生活部主管陈桂梅要求，需要在下午2点前往报告厅支持生活部老师开会</td>
+    <td>已完成</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>微信</td>
+    <td>收到学校办公室刘晓晓主任要求，需要打印一份文件。另外10份文件需要留存在学校笔记本，两者都放在学校校史室开会用</td>
+    <td>已完成</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>微信</td>
+    <td>根据上级领导要求，需要在下午3点开启学校三号楼智慧教室电脑。给回到学校的小学老师进行防疫开会使用</td>
+    <td>已完成</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>现场对接</td>
+    <td>按照肖铁均主管要求，需要将4月4日校园消杀、4月5日防疫演练、4月7日防疫培训、4月10日校园消杀、4月15日防疫培训进行打印。</td>
+    <td>已完成</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+ </tbody>
+</table></center>
+</div>
+</div>
+</body></section>
+    <!-- 关闭菜单 -->
+    <a class="exit-off-canvas"></a>
+  </div> 
+</div> 
+<script>
+$(document).ready(function() {
+    $(document).foundation();
+})
+</script>
+
+</html>
+</html>
+      </div>
+      
+      
+      
+    </div>
+    
+
+    
+    
+    
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">伊顿海逸外国语学校工作记录(20220410-20220417)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number"></span> <span class="nav-text">伊顿海逸外国语学校工作记录(20220410-20220417)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">0.1.</span> <span class="nav-text">2022年4月10号工作记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">0.2.</span> <span class="nav-text">2022年4月11号工作记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">0.3.</span> <span class="nav-text">2022年4月12号工作记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">0.4.</span> <span class="nav-text">2022年4月13号工作记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">0.5.</span> <span class="nav-text">2022年4月14号工作记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">0.6.</span> <span class="nav-text">2022年4月15号工作记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">0.7.</span> <span class="nav-text">2022年4月16号工作记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">0.8.</span> <span class="nav-text">2022年4月17号工作记录</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">215</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005055629971077/home?from=page_100505&mod=TAB&is_all=1#place" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005055629971077&#x2F;home?from&#x3D;page_100505&amp;mod&#x3D;TAB&amp;is_all&#x3D;1#place" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/15833385" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;15833385" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="桌面云产品简介桌面云产品涵盖有桌面云一体机VDS及瘦终端aDesk VDS一体机   一款专为云桌面设计的软硬件一体化服务器，集成了计算虚拟化、存储虚拟化、虚拟桌面控制器等软件平台。 用户无需复杂的安装调试过程， 将VDS开机之后，只需要按照向导式配置界面执行简单操作步骤，即可完成云桌面快速部署上线，非常方便快速。 瘦客户机aDesk  云桌面的接入终端，采用低功耗、高效率、无噪音、高度集成的设计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深信服桌面云运维笔记">
+<meta property="og:url" content="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/04/13/%E4%BA%91%E8%AE%A1%E7%AE%97/%E6%B7%B1%E4%BF%A1%E6%9C%8D%E6%A1%8C%E9%9D%A2%E4%BA%91%E8%BF%90%E7%BB%B4%E7%AC%94%E8%AE%B0/%E6%B7%B1%E4%BF%A1%E6%9C%8D%E6%A1%8C%E9%9D%A2%E4%BA%91%E8%BF%90%E7%BB%B4%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="桌面云产品简介桌面云产品涵盖有桌面云一体机VDS及瘦终端aDesk VDS一体机   一款专为云桌面设计的软硬件一体化服务器，集成了计算虚拟化、存储虚拟化、虚拟桌面控制器等软件平台。 用户无需复杂的安装调试过程， 将VDS开机之后，只需要按照向导式配置界面执行简单操作步骤，即可完成云桌面快速部署上线，非常方便快速。 瘦客户机aDesk  云桌面的接入终端，采用低功耗、高效率、无噪音、高度集成的设计">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-13T08:35:02.000Z">
+<meta property="article:modified_time" content="2022-04-14T16:04:47.710Z">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/04/13/%E4%BA%91%E8%AE%A1%E7%AE%97/%E6%B7%B1%E4%BF%A1%E6%9C%8D%E6%A1%8C%E9%9D%A2%E4%BA%91%E8%BF%90%E7%BB%B4%E7%AC%94%E8%AE%B0/%E6%B7%B1%E4%BF%A1%E6%9C%8D%E6%A1%8C%E9%9D%A2%E4%BA%91%E8%BF%90%E7%BB%B4%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>深信服桌面云运维笔记 | 9之数据库</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-我的旧站">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-tasks"></i>我的旧站</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/04/13/%E4%BA%91%E8%AE%A1%E7%AE%97/%E6%B7%B1%E4%BF%A1%E6%9C%8D%E6%A1%8C%E9%9D%A2%E4%BA%91%E8%BF%90%E7%BB%B4%E7%AC%94%E8%AE%B0/%E6%B7%B1%E4%BF%A1%E6%9C%8D%E6%A1%8C%E9%9D%A2%E4%BA%91%E8%BF%90%E7%BB%B4%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          深信服桌面云运维笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-04-13 16:35:02" itemprop="dateCreated datePublished" datetime="2022-04-13T16:35:02+08:00">2022-04-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-04-15 00:04:47" itemprop="dateModified" datetime="2022-04-15T00:04:47+08:00">2022-04-15</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="桌面云产品简介"><a href="#桌面云产品简介" class="headerlink" title="桌面云产品简介"></a>桌面云产品简介</h1><h2 id="桌面云产品"><a href="#桌面云产品" class="headerlink" title="桌面云产品"></a>桌面云产品</h2><p>涵盖有桌面云一体机VDS及瘦终端aDesk</p>
+<center>VDS一体机</center>
+
+<p> 一款专为云桌面设计的软硬件一体化服务器，集成了计算虚拟化、存储虚拟化、虚拟桌面控制器等软件平台。<br><br> 用户无需复杂的安装调试过程， 将VDS开机之后，只需要按照向导式配置界面执行简单操作步骤，即可完成云桌面快速部署上线，非常方便快速。</p>
+<center>瘦客户机aDesk</center>
+
+<p>云桌面的接入终端，采用低功耗、高效率、无噪音、高度集成的设计，能够长期稳定运行，适于部署在桌面终端，用于接入访问云桌面。<br>深信服桌面云同时提供了运行效率更高的ARM架构的终端，以及系统兼容性更良好的X86架构的终端。</p>
+<center>三大核心系统</center>
+
+<p>【VMP平台（虚拟化管理平台）】<br>  为云桌面提供了可靠的运行平台和完善的管理功能，拥有虚拟机快速部署、资源管理及监控、集群高可用、动态迁移、数<br>  据备份及恢复等功能。</p>
+<p>【VDC平台（虚拟桌面接入管理系统）】<br>  提供用户认证管理、细粒度的策略控制、桌面/云终端统一监控及管理等功能，实现更安全、更可靠地交付云桌面。</p>
+<p>【VDI客户端】<br>  用户可以通过VDI客户端接入登录VDC，并访问VMP上的虚拟机桌面。<br>面云平台登录方式<br>VMP控制台<br><a target="_blank" rel="noopener" href="https://vmp管理口ip/">https://VMP管理口IP</a><br>推荐浏览器：chrome<br>VDC控制台<br>https://“VDC管理口IP”:4430<br>推荐浏览器：IE<br>虚拟机控制台<br>推荐浏览器：chrome</p>
+<h1 id="桌面云业务部署规范"><a href="#桌面云业务部署规范" class="headerlink" title="桌面云业务部署规范"></a>桌面云业务部署规范</h1><blockquote>
+<p>业务下发流程规范如下</p>
+<ol>
+<li>新建虚拟机</li>
+<li>部署模板虚拟机</li>
+<li>虚拟机派生</li>
+<li>关联用户与虚拟机</li>
+<li>业务回收流程规范</li>
+</ol>
+</blockquote>
+<h2 id="新建虚拟机"><a href="#新建虚拟机" class="headerlink" title="新建虚拟机"></a>新建虚拟机</h2><ul>
+<li>导入虚拟机<br>VMP控制台—虚拟机界面—点击“新建”—点击“导入虚拟机”<br>目前仅支持vma格式文件<br>可对分组，是否HA，存储位置，运行位置，连接到的虚拟交换机进行选择<br>请使用chrome浏览器进行虚拟机导入操作（IE浏览器对于大于4G的文件会上传失败）<h2 id="创建全新虚拟机"><a href="#创建全新虚拟机" class="headerlink" title="创建全新虚拟机"></a>创建全新虚拟机</h2>上传完毕后，开始创建全新虚拟机<br>VMP控制台—虚拟机界面—点击新增—“点击创建全新虚拟机”</li>
+</ul>
+<ol>
+<li>编辑虚拟机信息与硬件信息</li>
+<li>加载光驱镜像</li>
+<li>镜像上传</li>
+<li>安装虚拟机操作系统</li>
+</ol>
+<h1 id="部署模板虚拟机"><a href="#部署模板虚拟机" class="headerlink" title="部署模板虚拟机"></a>部署模板虚拟机</h1><h2 id="安装常用软件"><a href="#安装常用软件" class="headerlink" title="安装常用软件"></a>安装常用软件</h2><p>在VMP控制台—找到实体机—选择存储—在本地存储下选择存储位置点击存储名称—点击管理存储空间—勾选左侧“开启共享目录管理服务”</p>
+<h2 id="agent程序安装"><a href="#agent程序安装" class="headerlink" title="agent程序安装"></a>agent程序安装</h2><p>打开VDC控制台—找到VDI设置—选择“虚拟机管理”—选择“下载虚拟机Agent程序”，这些操作要在需要转为模板机的虚拟机内进行，即在虚拟机内打开浏览器。—安装完成后双击运行，注意这个时候，win7是显示正常，但是win1o则是画面有偏移。所以win10需要在显示画面选项内设置为“仅在画面1上显示”。</p>
+<h2 id="将虚拟机转化为模板"><a href="#将虚拟机转化为模板" class="headerlink" title="将虚拟机转化为模板"></a>将虚拟机转化为模板</h2><p>在虚拟机安装完对应软件驱动后，将虚拟机转化为模板。<br>VMP控制台—找到虚拟机—右击—找到其他—选择“将虚拟机转换为模板”。</p>
+<h1 id="虚拟机派生"><a href="#虚拟机派生" class="headerlink" title="虚拟机派生"></a>虚拟机派生</h1><h2 id="新建资源派生（专有模式与还原模式）"><a href="#新建资源派生（专有模式与还原模式）" class="headerlink" title="新建资源派生（专有模式与还原模式）"></a>新建资源派生（专有模式与还原模式）</h2><h2 id="已有资源派生"><a href="#已有资源派生" class="headerlink" title="已有资源派生"></a>已有资源派生</h2><p>在VDI设置—资源管理—新建“独享角色”—编辑独享桌面资源—模式可以有两个选择，分专业和还原两个模式。专业模式即瘦客户机关机，在下次打开的时候还能保持该用户的所有数据。第二个是还原模式，还原模式即该虚拟机关机，但是在下次打开的时候会恢复成第一次关机后的界面，不会添加新的内容进去。</p>
+<h2 id="已有资源派生2"><a href="#已有资源派生2" class="headerlink" title="已有资源派生2"></a>已有资源派生2</h2><p>找到虚拟机配置—虚拟机位置与数据—编辑—虚拟机数量设置一个48，然后点击确定即可。</p>
+<p>关联用户与虚拟机<br>创建用户<br>打开VDI界面—VDI设置—用户管理—点击想要的组—点击“新建”—点击“用户”—设置其“名称”，密码及确认密码<br>关联角色<br>打开VDI界面—VDI设置—角色授权—新建角色—设置“角色名称”—角色描述—关联用户—选择授权用户—选择角色准入策略—点击保存<br>编辑策略组<br>创建策略组<br>打开深信服VDI界面—找到左侧第三个“VDI设置”—找到第8个选项“策略组管理”—新建“默认策略组”<br>登陆访问独享桌面<br>打开深信服VDI界面—打开独享桌面—找到PC设备访问控制—右侧勾选上PC剪切板—勾选为“双向拷贝”—串口重定向勾选—接着在USB设备访问控制—选择为USB存储器—设置为读写模式—然后勾选USB打印机、USB智能卡、USB音频设备、USB视频设备、其他USB设备。</p>
+<p>业务回收流程规范</p>
+<ol>
+<li>【VDI设置】——【用户管理】，勾选该用户，并点击“删除”，如下图所示：</li>
+<li>之后会弹出提示框，如下图所示，勾选“删除与其关联的虚拟机，删除的虚拟机镜像将放到VMP回收站”，并点击删除。</li>
+</ol>
+<h2 id="桌面云业务运维指导"><a href="#桌面云业务运维指导" class="headerlink" title="桌面云业务运维指导"></a>桌面云业务运维指导</h2><p>桌面云终端用户使用规范<br>云桌面管理建议<br>日常检查操作建议<br>重要配置项及高危操作说明</p>
+<h2 id="桌面云终端用户使用规范"><a href="#桌面云终端用户使用规范" class="headerlink" title="桌面云终端用户使用规范"></a>桌面云终端用户使用规范</h2><p>使用瘦客户机访问桌面<br>使用物理PC访问云桌面<br>使用智能终端访问云桌面<br>云桌面使用建议<br>云桌面禁止操作说明</p>
+<h1 id="使用瘦客户机访问云桌面"><a href="#使用瘦客户机访问云桌面" class="headerlink" title="使用瘦客户机访问云桌面"></a>使用瘦客户机访问云桌面</h1><p>首先按开机按键、然后设置屏幕分辨率，接着就是网络配置<br>第四步输入用户名/密码，第五步选择对应的虚拟机资源，虚拟机界面与正常PC相同，按照操作windows的习惯操作即可。</p>
+<h2 id="使用物理PC访问云桌面"><a href="#使用物理PC访问云桌面" class="headerlink" title="使用物理PC访问云桌面"></a>使用物理PC访问云桌面</h2><p>首次使用物理PC访问云桌面<br>使用浏览器访问桌面云中心管理器地址<br>     打开浏览器，输入桌面云中心管理器地址<a target="_blank" rel="noopener" href="https://xx.xx.xx.xx,弹出证书问题时点击继续浏览此网站,/">https://XX.XX.XX.XX，弹出证书问题时点击继续浏览此网站，</a><br>     请使用分配的账号登录<br>     点击登录，再点击下面的运行，浏览器会自动安装控件。<br>      说明：<br>安装过程大概2-3分钟；<br>第一次安装完成会提示重启，如不重启，会影响USB设备使用。<br>安装成功后，会自动登录至虚拟机资源，同时在桌面生成客户端，后续可以直接使用客户端登陆。<br>1.双击桌面客户端图标<br>2.点击连接<br>3.输入用户名/密码登录</p>
+<h4 id="使用PC一体化控件访问云桌面"><a href="#使用PC一体化控件访问云桌面" class="headerlink" title="使用PC一体化控件访问云桌面"></a>使用PC一体化控件访问云桌面</h4><p>在物理PC上安装PC一体化控件vDeskClient<br>安装完成后，物理PC开机时自动运行VDI客户端</p>
+<p>使用智能终端访问云桌面<br>下载安装EasyConnect程序。苹果在AppStore中搜索easyconnect下载，安卓系统在安卓市场、小米应用商店等应用市场中搜索easyconnect下载。</p>
+<h2 id="云桌面使用建议"><a href="#云桌面使用建议" class="headerlink" title="云桌面使用建议"></a>云桌面使用建议</h2><p>为保障云桌面使用体验，请遵循以下建议：</p>
+<p>每日下班后关闭瘦客户机、定期重启虚拟机（因Windows系统长期不重启会导致系统运行缓慢或异常）；<br>禁止在云桌面中安装多于一种的杀毒软件，以免造成系统冲突；<br>如需使用杀毒软件进行全盘扫描杀毒或清理系统垃圾，请务必在下班时间进行，以免影响其他云桌面及本机使用体验；<br>建议关闭Windows错误恢复，优化windows开机速度；<br>本地视频建议使用暴风影音/Windows MediaPlayer进行播放，以获得优质的视频播放体验；<br>建议使用windows经典主题，避免使用复杂主题或屏保软件，以免占用过多虚拟机系统资源，造成虚拟机卡慢；<br>软件安装建议以官网或正规途径下载为主，第三方网站下载的软件包可能附带其他垃圾软件，甚至是病毒；<br>禁止安装具有DHCP功能的软件，例如VirtualBox，Internet共享等软件包，以免影响云桌面接入，甚至对贵公司网络造成影响。<br>关闭Windows错误恢复<br>使用Windows经典主题<br>windows定时更新会导致操作系统后台运行较多进程，不建议开启windows定时更新功能，如需进行windows补丁更新，建议定期开启更新，更新完成后及时关闭定时更新功能，同时补丁更新时间建议在下班空闲时段；</p>
+<h2 id="云桌面禁止操作说明"><a href="#云桌面禁止操作说明" class="headerlink" title="云桌面禁止操作说明"></a>云桌面禁止操作说明</h2><ol>
+<li>禁止禁用标有Sangfor、agent以及VDI标识的文件、默认进程或设备等，以免造成云桌面使用异常，例如：<br>禁止删除Sangfor安装组件<br>禁止禁用或删除FastIO网卡，Usbhub等设备<br>禁止更改Msconfig中默认的服务            </li>
+<li>禁止在任务管理器中禁用带有“Sangfor、VDI、agent”字样的进程与服务;</li>
+<li>禁止在Windows防火墙例外选项中删除8866端，会造成虚拟机与桌面云平台连接异常；</li>
+<li>禁止安装具有DHCP功能的软件，例如VirtualBox，Internet共享等软件包；</li>
+<li>禁止打开IPsec等具有禁用网络流量功能的软件或工具；</li>
+<li>禁止使用系统清理软件（例如魔法兔子或Windows优化大师等）对注册表进行清理和优化，以免误杀云桌面配置项，造成使用异常；</li>
+</ol>
+<h2 id="云桌面管理建议"><a href="#云桌面管理建议" class="headerlink" title="云桌面管理建议"></a>云桌面管理建议</h2><p>云桌面模板维护<br>【重要提示】更新模板，以此模板部署的所有派生虚拟机的系统盘，将同步到模板最近一次更新时的状态，但是会导致派生虚拟机系统盘的数据（包括用户自行安装的软件、用户设置和系统磁盘的全部数据）丢失。<br>VDC控制台配置优化<br>    找到VDC，左侧控制台内—设置系统设置—设置接入选项—找到VDI Client—勾选“启用HTTP端口”:端口设置为80，网络名称自定义，勾选“断线自动重试连接”、勾选“允许用户选择自动登录”、勾选“允许用户保存密码”、勾选“自定义登录客户端的快捷方式图标”。<br>自动打开独享桌面资源<br>    找到VDC，左侧找到VDI设置—找到策略组管理—找到<br>开机自动运行VDI客户端，找到VDC，左侧控制台内—找到系统设置—找到接入选项—找到客户机—找到个性化设置–勾选“自动下载安装系统更新”—开机自动运行客户端(无显示桌面权限的客户机会强制运行)<br>云桌面配置调整<br>    允许自动登录VDI<br>云桌面数据管理</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/16/%E6%97%A5%E8%AF%AD/%E8%AF%AD%E5%8F%A5/%E9%AB%98%E7%BA%A7%E7%8F%AD%E5%A4%8D%E4%B9%A0%E8%AF%BE/" rel="prev" title="高级班复习">
+      <i class="fa fa-chevron-left"></i> 高级班复习
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/04/13/%E6%88%91%E7%9A%84%E6%97%A5%E8%AE%B0/%E4%BB%8A%E6%97%A5%E7%AC%94%E8%AE%B00w0-10/" rel="next" title="今日笔记0w0-10">
+      今日笔记0w0-10 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A1%8C%E9%9D%A2%E4%BA%91%E4%BA%A7%E5%93%81%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">桌面云产品简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A1%8C%E9%9D%A2%E4%BA%91%E4%BA%A7%E5%93%81"><span class="nav-number">1.1.</span> <span class="nav-text">桌面云产品</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A1%8C%E9%9D%A2%E4%BA%91%E4%B8%9A%E5%8A%A1%E9%83%A8%E7%BD%B2%E8%A7%84%E8%8C%83"><span class="nav-number">2.</span> <span class="nav-text">桌面云业务部署规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="nav-number">2.1.</span> <span class="nav-text">新建虚拟机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%85%A8%E6%96%B0%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="nav-number">2.2.</span> <span class="nav-text">创建全新虚拟机</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E6%A8%A1%E6%9D%BF%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="nav-number">3.</span> <span class="nav-text">部署模板虚拟机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">安装常用软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#agent%E7%A8%8B%E5%BA%8F%E5%AE%89%E8%A3%85"><span class="nav-number">3.2.</span> <span class="nav-text">agent程序安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%BD%AC%E5%8C%96%E4%B8%BA%E6%A8%A1%E6%9D%BF"><span class="nav-number">3.3.</span> <span class="nav-text">将虚拟机转化为模板</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%B4%BE%E7%94%9F"><span class="nav-number">4.</span> <span class="nav-text">虚拟机派生</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E8%B5%84%E6%BA%90%E6%B4%BE%E7%94%9F%EF%BC%88%E4%B8%93%E6%9C%89%E6%A8%A1%E5%BC%8F%E4%B8%8E%E8%BF%98%E5%8E%9F%E6%A8%A1%E5%BC%8F%EF%BC%89"><span class="nav-number">4.1.</span> <span class="nav-text">新建资源派生（专有模式与还原模式）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%B2%E6%9C%89%E8%B5%84%E6%BA%90%E6%B4%BE%E7%94%9F"><span class="nav-number">4.2.</span> <span class="nav-text">已有资源派生</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%B2%E6%9C%89%E8%B5%84%E6%BA%90%E6%B4%BE%E7%94%9F2"><span class="nav-number">4.3.</span> <span class="nav-text">已有资源派生2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A1%8C%E9%9D%A2%E4%BA%91%E4%B8%9A%E5%8A%A1%E8%BF%90%E7%BB%B4%E6%8C%87%E5%AF%BC"><span class="nav-number">4.4.</span> <span class="nav-text">桌面云业务运维指导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A1%8C%E9%9D%A2%E4%BA%91%E7%BB%88%E7%AB%AF%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83"><span class="nav-number">4.5.</span> <span class="nav-text">桌面云终端用户使用规范</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%98%A6%E5%AE%A2%E6%88%B7%E6%9C%BA%E8%AE%BF%E9%97%AE%E4%BA%91%E6%A1%8C%E9%9D%A2"><span class="nav-number">5.</span> <span class="nav-text">使用瘦客户机访问云桌面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%89%A9%E7%90%86PC%E8%AE%BF%E9%97%AE%E4%BA%91%E6%A1%8C%E9%9D%A2"><span class="nav-number">5.1.</span> <span class="nav-text">使用物理PC访问云桌面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8PC%E4%B8%80%E4%BD%93%E5%8C%96%E6%8E%A7%E4%BB%B6%E8%AE%BF%E9%97%AE%E4%BA%91%E6%A1%8C%E9%9D%A2"><span class="nav-number">5.1.0.1.</span> <span class="nav-text">使用PC一体化控件访问云桌面</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%91%E6%A1%8C%E9%9D%A2%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE"><span class="nav-number">5.2.</span> <span class="nav-text">云桌面使用建议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%91%E6%A1%8C%E9%9D%A2%E7%A6%81%E6%AD%A2%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E"><span class="nav-number">5.3.</span> <span class="nav-text">云桌面禁止操作说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%91%E6%A1%8C%E9%9D%A2%E7%AE%A1%E7%90%86%E5%BB%BA%E8%AE%AE"><span class="nav-number">5.4.</span> <span class="nav-text">云桌面管理建议</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">215</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005055629971077/home?from=page_100505&mod=TAB&is_all=1#place" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005055629971077&#x2F;home?from&#x3D;page_100505&amp;mod&#x3D;TAB&amp;is_all&#x3D;1#place" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/15833385" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;15833385" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

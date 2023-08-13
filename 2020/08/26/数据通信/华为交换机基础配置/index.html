@@ -17,13 +17,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"mrlaoxie1998.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="交换机基础配置 原理描述: 交换机之间通过以太网电接口对接对时需要协商一些接口参数，比如速率、双工模式等。交换机端口的全双工是指端口在发送数据的同时也能接收数据，两者同时进行。就如平时打电话一样，说话的同时也能够听到对方的声音。但是半双工模式下，指在同一时刻只能发送或接收数据。就像一条较窄的路，只能先通过一边的车。然后再通过另一边的车，若两边一起通过的话就会装撞车。如果交换机两端接口协商模式不一致">
 <meta property="og:type" content="article">
 <meta property="og:title" content="华为交换机基础配置">
-<meta property="og:url" content="http://mrlaoxie1998.github.io/2020/08/26/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:url" content="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2020/08/26/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="9之数据库">
 <meta property="og:description" content="交换机基础配置 原理描述: 交换机之间通过以太网电接口对接对时需要协商一些接口参数，比如速率、双工模式等。交换机端口的全双工是指端口在发送数据的同时也能接收数据，两者同时进行。就如平时打电话一样，说话的同时也能够听到对方的声音。但是半双工模式下，指在同一时刻只能发送或接收数据。就像一条较窄的路，只能先通过一边的车。然后再通过另一边的车，若两边一起通过的话就会装撞车。如果交换机两端接口协商模式不一致">
 <meta property="og:locale" content="zh_CN">
@@ -33,7 +33,7 @@
 <meta property="article:tag" content="数据通信">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://mrlaoxie1998.github.io/2020/08/26/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/">
+<link rel="canonical" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2020/08/26/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/">
 
 
 <script id="page-configurations">
@@ -195,7 +195,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mrlaoxie1998.github.io/2020/08/26/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/">
+    <link itemprop="mainEntityOfPage" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2020/08/26/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -341,7 +341,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">166</span>
+          <span class="site-state-item-count">215</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -393,7 +393,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="学习目标：    1.掌握并识记素质教育的基本内涵  职业理念 教育观 素质教育的基本内涵(提素个性创两全) 素质教育是以提高国民素质为根本宗旨的教育 素质教育是面向全体学生的教育(平等对待每个学生，不能区别以待) 素质教育是促进学生全面发展的教育(德智体美劳，五育并举) 素质教育是促进学生个性发展的教育(特长) 素质教育是以培养学生的创新精神和实践能力为重点的教育(新想法、独特性)   新课改下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/09/03/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%B8%80/%E8%81%8C%E4%B8%9A%E7%90%86%E5%BF%B5%E4%B9%8B%E6%95%99%E8%82%B2%E8%A7%82/index.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="学习目标：    1.掌握并识记素质教育的基本内涵  职业理念 教育观 素质教育的基本内涵(提素个性创两全) 素质教育是以提高国民素质为根本宗旨的教育 素质教育是面向全体学生的教育(平等对待每个学生，不能区别以待) 素质教育是促进学生全面发展的教育(德智体美劳，五育并举) 素质教育是促进学生个性发展的教育(特长) 素质教育是以培养学生的创新精神和实践能力为重点的教育(新想法、独特性)   新课改下">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-03T03:32:12.241Z">
+<meta property="article:modified_time" content="2022-09-03T12:16:42.688Z">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/09/03/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%B8%80/%E8%81%8C%E4%B8%9A%E7%90%86%E5%BF%B5%E4%B9%8B%E6%95%99%E8%82%B2%E8%A7%82/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 9之数据库</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-我的旧站">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-tasks"></i>我的旧站</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/09/03/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%B8%80/%E8%81%8C%E4%B8%9A%E7%90%86%E5%BF%B5%E4%B9%8B%E6%95%99%E8%82%B2%E8%A7%82/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-09-03 11:32:12 / 修改时间：20:16:42" itemprop="dateCreated datePublished" datetime="2022-09-03T11:32:12+08:00">2022-09-03</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>学习目标：<br>    1.掌握并识记素质教育的基本内涵</p>
+<ul>
+<li>职业理念<ul>
+<li>教育观<ul>
+<li>素质教育的基本内涵<font color="red">(提素个性创两全)</font><ul>
+<li>素质教育是以<font color="orange">提</font>高国民<font color="orange">素</font>质为根本宗旨的教育</li>
+<li>素质教育是面向<font color="orange">全体</font>学生的教育(平等对待每个学生，不能区别以待)</li>
+<li>素质教育是促进学生<font color="orange">全面</font>发展的教育(德智体美劳，五育并举)</li>
+<li>素质教育是促进学生<font color="orange">个性</font>发展的教育(特长)</li>
+<li>素质教育是以培养学生的<font color="orange">创</font>新精神和实践能力为重点的教育(新想法、独特性)</li>
+</ul>
+</li>
+<li>新课改下的教学观<font color="red">(学习过人/四个转变)</font><ul>
+<li>教学从“以教育者为中心”向“<font color="orange">学</font>习者为中心”<font color="00ccff">转变</font>(学生参与)</li>
+<li>教学从“教会学生知识”向“教会学生学<font color="orange">习</font>”<font color="00ccff">转变</font>(方法)</li>
+<li>教学从”重结论轻过程“向”重结论更重<font color="orange">过</font>程“<font color="00ccff">转变</font>(方法)</li>
+<li>教学从“关注学科”向“关注<font color="orange">人</font>”<font color="00ccff">转变</font>(关注学生的情绪和情感)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>学生观<ul>
+<li>学生是独立意义的人<ul>
+<li>学生具有个体独立性，不以教师意志为转移</li>
+<li>学生是具有独立意义的主体，不以教师的意志为转移</li>
+<li>学生是责权的主体</li>
+</ul>
+</li>
+<li>学生是独特的人<ul>
+<li>学生是完整的人</li>
+<li>每个学生都具有自身的独特性</li>
+<li>学生与成人之间存在着巨大的差异</li>
+</ul>
+</li>
+<li>学生是发展的人<ul>
+<li>学生的身心发展是有规律的</li>
+<li>学生具有巨大的发展潜能</li>
+<li>学生是处于发展过程中的人</li>
+</ul>
+</li>
+<li>全面发展<ul>
+<li>德智体美劳全面发展</li>
+</ul>
+</li>
+<li>面向全体学生<ul>
+<li>公平公正对待每个学生，不能偏爱某个学生</li>
+</ul>
+</li>
+<li>学生的身心发展是有规律的<ul>
+<li>顺序性<ul>
+<li>由浅入深，由简到繁，由易到难，由少到多，由具体到抽象，<font color="orange">循序渐进</font>(揠苗助长、陵节而施都是违背身心发展顺序性的)</li>
+</ul>
+</li>
+<li>阶段性<ul>
+<li>童年期学生的思维特点<ul>
+<li>较强的具体性和形象性</li>
+<li>抽象思维能力较弱</li>
+</ul>
+</li>
+<li>少年期学生的思维特点<ul>
+<li>抽象思维有很大的发展</li>
+<li>但仍需要具体 的感性经验作为支持</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>不平衡性<ul>
+<li>个体身心发展不是一个匀速前进的过程</li>
+</ul>
+</li>
+<li>互补性<ul>
+<li>身体某一方面技能受损甚至缺失后，可通过其他方面的超常发挥得到补偿</li>
+<li>心理机能中也存在互补性</li>
+</ul>
+</li>
+<li>个别差异性<ul>
+<li>有的人聪明早慧，有的人大器晚成(因材施教)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>教师观<ul>
+<li>教师角色的转变<ul>
+<li>教师是学生的引导者和发展的促进者(发现、探索、动手、做人)</li>
+<li>教师是课程的建设者和开发者(校本课程、开发课程)</li>
+<li>教师是教育教学的研究者(研究问题、论文、课题)</li>
+<li>教师是社区型的开放教师(从学校到社区)</li>
+</ul>
+</li>
+<li>教师行为的转变<ul>
+<li>在对待师生关系上，新课程强调尊重、赞赏</li>
+<li>在对待教学上，新课程强调帮助、引导(学习方法、价值观)</li>
+<li>在对待自我上，新课程强调反思(教学前、中、后都要反思)</li>
+<li>在对待与其他教育者关系上，新课程强调合作<br>![[材料分析题.png]]<br>例如这个需要如何评析<br>教育的公正与学生的共同发展<br>教育公正<br>教育机会对所有学生都说都是均等的<br>入学机会均等<br>教育过程中的机会均等<br>取得学业成功的机会均等<br>共同发展<br>有差异的学生共同发展<br>学生性别差异与共同发展<br>学生的民族差异与共同发展<br>学生的地域差异与共同发展<br>学生家庭背景的差异与发展<br>学生身心发展水平的差异与共同发展</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/03/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%B8%80/%E6%95%99%E8%82%B2%E7%90%86%E5%BF%B5%E4%B9%8B%E6%95%99%E5%B8%88%E8%A7%82/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/25/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/%E5%8D%95%E8%AF%8D/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">215</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005055629971077/home?from=page_100505&mod=TAB&is_all=1#place" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005055629971077&#x2F;home?from&#x3D;page_100505&amp;mod&#x3D;TAB&amp;is_all&#x3D;1#place" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/15833385" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;15833385" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

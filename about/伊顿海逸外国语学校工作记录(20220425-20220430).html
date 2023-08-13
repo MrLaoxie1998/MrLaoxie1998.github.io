@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>伊顿海逸外国语学校工作记录(20220418-20220424)</title>
+  <link rel="stylesheet" href="css/Foundation-6.6.1/assets/css/app.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/foundation/5.5.3/css/foundation.min.css">
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/foundation/5.5.3/js/foundation.min.js"></script>
+  <script src="https://cdn.staticfile.org/foundation/5.5.3/js/vendor/modernizr.js"></script>
+  <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+  <style>
+  .example {
+    max-width: 100%;
+  }
+  </style>
+</head>
+<!-- 最外层div：页面布局 -->
+
+<div class="off-canvas-wrap" data-offcanvas>
+  <!-- 内部元素: "工具栏" 内容 (图标, 链接, 描述内容等)-->
+
+  <div class="inner-wrap">
+    <nav class="tab-bar">
+      <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+      </section>
+
+      <section class="middle tab-bar-section">
+        <h2 class="title">伊顿海逸外国语学校工作记录(20220418-20220424)</h2>
+      </section>
+    </nav>
+
+    <!-- 滑动菜单 -->
+    <aside class="left-off-canvas-menu">
+      <!-- Add links or other stuff here -->
+      <ul class="off-canvas-list test">
+      <li><label><object data="image/baka9.svg" type="image/svg+xml"></object>
+</label></li>
+        <li><label><a href="index.html">欢迎~♪(^∇^*)</a></label></li>
+        <li><label>我的伊顿海逸外国语学校工作记录</label></li>
+        <li><a href="伊顿海逸外国语学校工作记录(20220410-20220417).html">伊顿海逸外国语学校工作记录(20220410-20220417)</a></li>
+        <li><a href="伊顿海逸外国语学校工作记录(20220418-20220424).html">伊顿海逸外国语学校工作记录(20220418-20220424)</a></li>
+        <li><a href="伊顿海逸外国语学校工作记录(20220425-20220430).html">伊顿海逸外国语学校工作记录(20220425-20220430)</a></li>
+        ...
+      </ul>
+    </aside>
+
+    <!-- 主要内容 -->
+    <section class="main-section">
+    <body style="padding:0px;">
+    <div style="text-indent:20%;"><h1>伊顿海逸外国语学校工作记录(20220418-20220424)</h1>
+ </div><div style="padding:40px;"><center>
+  <div id="container" style="height:600px;"></div>
+     <script type="text/javascript">
+        var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+
+var option;
+
+
+
+setTimeout(function () {
+  option = {
+    legend: {},
+    tooltip: {
+      trigger: 'axis',
+      showContent: false
+    },
+    dataset: {
+      source: [
+        ['product', '4月25日', '4月26日', '4月27日', '4月28日', '4月29日', '4月30日'],
+        ['微信', ],
+        ['钉钉', ],
+        ['现场对接', ],
+        ['现场调查', ],
+        ['电话', ]
+      ]
+    },
+    xAxis: { type: 'category' },
+    yAxis: { gridIndex: 0 },
+    grid: { top: '55%' },
+    series: [
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+       {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'line',
+        smooth: true,
+        seriesLayoutBy: 'row',
+        emphasis: { focus: 'series' }
+      },
+      {
+        type: 'pie',
+        id: 'pie',
+        radius: '30%',
+        center: ['50%', '25%'],
+        emphasis: {
+          focus: 'self'
+        },
+        label: {
+          formatter: '{b}: {@2012} ({d}%)'
+        },
+        encode: {
+          itemName: 'product',
+          value: '2012',
+          tooltip: '2012'
+        }
+      }
+    ]
+  };
+  myChart.on('updateAxisPointer', function (event) {
+    const xAxisInfo = event.axesInfo[0];
+    if (xAxisInfo) {
+      const dimension = xAxisInfo.value + 1;
+      myChart.setOption({
+        series: {
+          id: 'pie',
+          label: {
+            formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+          },
+          encode: {
+            value: dimension,
+            tooltip: dimension
+          }
+        }
+      });
+    }
+  });
+  myChart.setOption(option);
+});
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}</script></center>
+  <div class="panel">
+<h3><center>2022年4月25号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td>1</td>
+    <td>微信/钉钉</td>
+    <td>早上收到冯意朋和刘玉芳老师报障，207班电脑无法启动。需要进行维修</td>
+    <td>已解决，内存条问题</td>
+   </tr>
+   <tr>
+    <td>2</td>
+    <td>微信</td>
+    <td>早上收到易世刚老师报障，说复制压缩包到另一个文件时提示“请插入多卷集的最后一张磁盘，然后单击“确定”继续。</td>
+    <td>暂未解决，前往办公室时无法复现该问题，日后继续跟进</td>
+   </tr>
+   <tr>
+    <td>3</td>
+    <td>微信</td>
+    <td>24号上午收到来自倪善宝老师消息，25号8点早晨需要进行室内升旗仪式，需要前往广播室播放音乐</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>4</td>
+    <td>微信</td>
+    <td>小学部三年级张秋云老师报障，需要解决电脑无法上网问题(更换了办公位置)</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>5</td>
+    <td>现场调查</td>
+    <td>发现小学部三年级办公室还有几条网线给剪断，需要找时间接回去</td>
+    <td>未完成</td>
+   </tr>
+   <tr>
+    <td>6</td>
+    <td>微信</td>
+    <td>收到初中部邓韵臻老师请求，需要协助邓老师完成上午试卷扫描任务</td>
+    <td>已完成，解决了八年级上午地理和生物试卷扫描</td>
+   </tr>
+   <tr>
+    <td>7</td>
+    <td>现场对接</td>
+    <td>收到初中部三年级老师王长英请求，需要学习如何在线更改试卷版面</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>8</td>
+    <td>现场对接</td>
+    <td>在初中部教务处向教辅孙晋老师索要初中八年级地理及生物参考答案，用来录入选择题答案模板使用</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>9</td>
+    <td>微信</td>
+    <td>在初中部九年级办公室解决王畅老师的电脑无法启动问题。</td>
+    <td>已完成，但具体原因还有待继续查看，暂时无法判断是因为电源接到主板位置没法时刻通电还是因为按钮焊锡脱落导致，需要拆一台样机进行了解。</td>
+   </tr>
+   <tr>
+    <td>10</td>
+    <td>微信</td>
+    <td>早上收到小学教务处王淑君主任发来的文件，“小学部青年教师教学比武课第11周数学组”.pdf文件</td>
+    <td>已完成</td>
+   </tr>
+    <tr>
+    <td>11</td>
+    <td>微信</td>
+    <td>主动寻找光大莞阅卷售后运维进行询问，如何画框选择单选题及考号问题。</td>
+    <td>已解决</td>
+   </tr>
+    <tr>
+    <td>12</td>
+    <td>现场对接</td>
+    <td>寻找刘亮主管，于2022年4月25号上午将电梯卡交由他保管。</td>
+    <td>已完成，将权限激活卡放置中央机房一个盒子内</td>
+   </tr>
+    <tr>
+    <td>13</td>
+    <td>现场对接</td>
+    <td>指导三年级办公室赵晓腾老师安装电脑思维导图软件X-mind2021</td>
+    <td>已完成</td>
+   </tr>
+    <tr>
+    <td>14</td>
+    <td>微信</td>
+    <td>收到小学部史维老师消息，需要给她的笔记本电脑进行修复，从下午开始笔记本就黑屏没法启动</td>
+    <td>已解决</td>
+   </tr>
+    <tr>
+    <td>15</td>
+    <td>现场调查</td>
+    <td>询问了初中部两位老师之后，开始对八年级的地理和生物试卷进行划分滑块给老师批改试卷</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>16</td>
+    <td>微信</td>
+    <td>收到小学部老师求助，需要解决208班电脑一体机黑屏无法启动的情况</td>
+    <td>已解决，底下的开关按钮没开</td>
+   </tr>
+   <tr>
+    <td>17</td>
+    <td>微信</td>
+    <td>接到初中部邓韵臻老师需求，将win10上传到虚拟机模板内。</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>18</td>
+    <td>微信/钉钉</td>
+    <td>收到小学部邓连梅老师消息，需要查询监控</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>19</td>
+    <td>现场调查</td>
+    <td>下午解决了3年级wifi网络的问题，顺便解决几个老师无法使用有线网络问题</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>20</td>
+    <td>现场调查/钉钉</td>
+    <td>处理张秋云老师手机连接wifi问题</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>21</td>
+    <td>微信</td>
+    <td>收到小学部206班导老师的求助，自己的办公室台式主机开机卡死。</td>
+    <td>已解决，使用win10的恢复功能进行系统重新安装即可，只需要重新安装软件就行。</td>
+   </tr>
+   <tr>
+    <td>22</td>
+    <td>微信</td>
+    <td>收到小学部305班老师请求，305班无法开启电脑。</td>
+    <td>已解决</td>
+   </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年4月26号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td>1</td>
+    <td>微信</td>
+    <td>早上收到初中部王畅老师保障，需要解决她的电脑无法正常按开机键位启动问题，需要解决</td>
+    <td>已解决，问题出在了开机焊点脱焊，已经拿焊机进行重新焊接。</td>
+   </tr>
+   <tr>
+    <td>2</td>
+    <td>微信</td>
+    <td>收到来自小学部范佳燕老师的需求，需要在晚上6:20开始开启舞台设备、灯光、麦克风及场地来训练演练27号的表演。</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>3</td>
+    <td>微信</td>
+    <td>收到来自小学部110班王海苑老师的报障，表示110班的电脑会无缘无故自己动来动去，疑似被黑入主机。</td>
+    <td>已完成，大部分成分是一体机过渡敏感导致问题</td>
+   </tr>
+   <tr>
+    <td>4</td>
+    <td>微信</td>
+    <td>微信指导小学部2年级老师向东红重新安装系统，及重新安装软件。</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>5</td>
+    <td>微信</td>
+    <td>对接初中部姚瑞萍老师的改卷问题</td>
+    <td>未解决</td>
+   </tr>
+   <tr>
+    <td>6</td>
+    <td>微信</td>
+    <td>下午两点的时候开启智慧教室设备。提供给小学部刘玉芳老师上公开课</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>7</td>
+    <td>微信</td>
+    <td>前往3年级办公室处理陈兴荣老师电脑没声音的问题</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>8</td>
+    <td>微信</td>
+    <td>晚上收到生活老师张婷报障，表示在环岗宿舍506无法充值电费，需要解决</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年4月27号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td>1</td>
+    <td>微信</td>
+    <td>早上接到消息，需要前往201班后备教室去开启电脑进入会议</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>2</td>
+    <td>微信</td>
+    <td>早上接到邓韵臻老师信息，需要扫描初中英语试卷</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>3</td>
+    <td>微信</td>
+    <td>早上收到微信消息，来自学校的食堂经理谢庆民报障，需要开启学校饭堂一楼和二楼的电视机监控画面</td>
+    <td>已解决</td>
+   </tr>
+   <tr>
+    <td>4</td>
+    <td>微信</td>
+    <td>收到微信消息，来自学校厨房进库出库管理人肖健报障，需要解决打印机故障问题</td>
+    <td>未解决，需要联系学校总部人员过来拿出去到外面维修</td>
+   </tr>
+   <tr>
+    <td>5</td>
+    <td>微信</td>
+    <td>下午收到消息，小学部范佳燕老师需要在今晚给学生录制视频</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>6</td>
+    <td>微信</td>
+    <td>下午收到欧阳校长消息，需要给吕校长准备笔记本电脑播放上午录制的视频。</td>
+    <td>未确定，但从吕校没有发给我任何消息来看，应该是没什么问题</td>
+   </tr>
+   <tr>
+    <td>7</td>
+    <td>微信</td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年4月28号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td>1</td>
+    <td>微信</td>
+    <td>收到小学教务处林小明老师需求，将小学部老师陈晓芳老师的钉钉职务进行一个更改</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>2</td>
+    <td>微信</td>
+    <td>初中部刘敏老师需要将已封禁的网络进行解锁</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>3</td>
+    <td>微信</td>
+    <td>小学部毛晓敏老师需要给林静涵办理校卡</td>
+    <td>未完成，校卡工作已经转交给招生办的甘玉怡老师</td>
+   </tr>
+   <tr>
+    <td>4</td>
+    <td>微信</td>
+    <td>收到行政楼心理咨询室杨佩珊老师帮忙，处理连接共享存储账号密码问题。</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td>5</td>
+    <td>现场调查</td>
+    <td>晚上6:30-8:40，小学部六年级小升初仪式</td>
+    <td>已完成</td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年4月29号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+<h3><center>2022年4月30号工作记录</center></h3>
+    <center><table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>问题报告来源</th>
+      <th>做了什么</th>
+      <th>处理结果</th>
+    </tr>
+ </thead>
+ <tbody>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+   <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+   </tr>
+ </tbody>
+</table></center>
+</div>
+</div>
+</body></section>
+    <!-- 关闭菜单 -->
+    <a class="exit-off-canvas"></a>
+  </div> 
+</div> 
+<script>
+$(document).ready(function() {
+    $(document).foundation();
+})
+</script>
+
+</html>
+</html>

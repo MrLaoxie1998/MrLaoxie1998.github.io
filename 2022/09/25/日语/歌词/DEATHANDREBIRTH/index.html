@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="きっと夢で忘れたように 夢も忘れた心に触れた ki tto yu me de wa su re ta yo u ni yu me mo wa su re ta ko ko ro ni fu re ta 言葉の意味 はき違えては また忘れたは どこ行こうか ko to ba no i mi ha ki chi ga e te wa ma ta wa su re ta wa do ko i ko u">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/09/25/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/DEATHANDREBIRTH/index.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="きっと夢で忘れたように 夢も忘れた心に触れた ki tto yu me de wa su re ta yo u ni yu me mo wa su re ta ko ko ro ni fu re ta 言葉の意味 はき違えては また忘れたは どこ行こうか ko to ba no i mi ha ki chi ga e te wa ma ta wa su re ta wa do ko i ko u">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-25T05:35:58.978Z">
+<meta property="article:modified_time" content="2022-09-25T06:41:31.560Z">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/09/25/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/DEATHANDREBIRTH/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 9之数据库</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-我的旧站">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-tasks"></i>我的旧站</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/09/25/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/DEATHANDREBIRTH/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-09-25 13:35:58 / 修改时间：14:41:31" itemprop="dateCreated datePublished" datetime="2022-09-25T13:35:58+08:00">2022-09-25</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>きっと夢で忘れたように 夢も忘れた心に触れた</p>
+<p>ki tto yu me de wa su re ta yo u ni yu me mo wa su re ta ko <br>ko ro ni fu re ta</p>
+<p>言葉の意味 はき違えては また忘れたは どこ行こうか</p>
+<p>ko to ba no i mi ha ki chi ga e te wa ma ta wa su re ta wa do ko i ko u ka</p>
+<p>きっと影がそうしたように 夢もそうして心壊れた</p>
+<p>ki tto ka ge ga so u shi ta yo u ni yu me mo so u shi te ko ko ro ko wa re ta</p>
+<p>こだわる意味 行き違う日々 また忘れてた これでさようなら</p>
+<p>ko da wa ru i mi i ki chi ga u hi bi ma ta wa su re te ta ko re de sa yo u na ra</p>
+<p>でも まだ そばにいる 気がしては 枯れていく</p>
+<p>de mo ma da so ba ni i ru ki ga shi te wa ka re te i ku</p>
+<p>この想いは勘違い？</p>
+<p>ko no o mo i wa ka n chi ga i?</p>
+<p>閉じる世界 望んでたのは 罪の色 終わる命</p>
+<p>to ji ru se ka i no zo n de ta no wa tsu mi no i ro o wa ru i no chi</p>
+<p>I’m here for you 誰かのためだけに</p>
+<p>I’m here for you da re ka no ta me da ke ni</p>
+<p>I’m still waiting for you 生きたかったのに</p>
+<p>I’m still waiting for you i ki ta ka tta no ni</p>
+<p>どうして どうして 涙が 止まらなかったの</p>
+<p>do u shi te do u shi te na mi da ga to ma ra na ka tta no</p>
+<p>I’m here for you 生きていたのかさえ</p>
+<p>I’m here for you i ki te i ta no ka sa e</p>
+<p>I’m still waiting for you 忘れて願う</p>
+<p>I’m still waiting for you wa su re te ne ga u</p>
+<p>DEATHANDREBIRTHDEATHANDREBIRTH</p>
+<p>DEATHANDREBIRTH</p>
+<p>もっと愛を と求めすぎて また傷つけて途方にくれた</p>
+<p>mo tto a i wo to mo to me su gi te ma  ta ki zu tsu ke te to ho u ni ku re ta</p>
+<p>笑顔の嘘 はき違えても 信じたふりを続けようか</p>
+<p>e ga o no u so ha ki chi ga e te mo shi n ji ta fu ri wo tsu zu ke yo u ka</p>
+<p>ぎゅっと握ったナイフの色を 瞳に焼き付けて どこに行くの</p>
+<p>gyu tto ni gi tta na i fu no i ro wo  me ni ya ki tsu ke te do ko ni i ku no</p>
+<p>ころがる嘘 物言わぬ花 また会いましょう これでさようなら</p>
+<p>ko ro ga ru u so mo no i wa nu ha na ma ta a i ma sho u ko re de sa yo u na ra</p>
+<p>でも まだ 生きている 気がしては 死んでいく</p>
+<p>de mo ma da i ki te i ru ki ga shi te wa shi n de i ku</p>
+<p>この想いは勘違い？</p>
+<p>ko no o mo i wa ka n chi ga i?</p>
+<p>堕ちる世界 望んでたのは 嘘の色 終わる命</p>
+<p>o chi ru se ka i no zo n de ta no wa u so no i ro o wa ru i no chi</p>
+<p>I’m here for you あなたのためだけに</p>
+<p>I’m here for you a na ta no ta me da ke ni</p>
+<p>I’m still waiting for you 死にたかったのに</p>
+<p>I’m still waiting for you shi ni ta ka tta no ni</p>
+<p>どうして どうして 心が 壊れなかったの</p>
+<p>do u shi te do u shi te ko ko ro ga ko wa re na ka tta no</p>
+<p>I’m here for you 正しさの意味さえ</p>
+<p>I’m here for you ta da shi sa no i mi sa e</p>
+<p>I’m still waiting for you 忘れて笑う</p>
+<p>I’m still waiting for you wa su re te wa ra u</p>
+<p>DEATHANDREBIRTHDEATHANDREBIRTH</p>
+<p>DEATHANDREBIRTH</p>
+<p>でも まだ そばにいる 気がしては 枯れていく</p>
+<p>de mo ma da so ba ni i ru ki ga shi te wa ka re te i ku</p>
+<p>この想いは勘違い</p>
+<p>ko no o mo i wa ka n chi ga i</p>
+<p>閉じる世界 望んでたのは 罪の色 終わる命</p>
+<p>to ji ru se ka i no zo n de ta no wa tsu mi no i ro o wa ru i no chi</p>
+<p>I’m here for you あなたのためだけに</p>
+<p>I’m here for you a na ta no ta me da ke ni</p>
+<p>I’m still waiting for you 生きたかったのに</p>
+<p>I’m still waiting for you i ki ta ka tta no ni</p>
+<p>どうして どうして どうしても 救えなかったの</p>
+<p>do u shi te do u shi te do u shi te mo su ku e na ka tta no</p>
+<p>I’m here for you 生きていながらもう</p>
+<p>I’m here for you i ki te i na ga ra mo u</p>
+<p>I’m still waiting for you 生きてはいない</p>
+<p>I’m still waiting for you i ki te wa i na i</p>
+<p>DEATHANDREBIRTHDEATHANDREBIRTH</p>
+<p>DEATHANDREBIRTH</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/10/30/%E6%97%A5%E8%AF%AD/%E6%AD%8C%E8%AF%8D/3%E5%B9%B4%E7%9B%AE%E3%81%AE%E6%B5%AE%E6%B0%97%EF%BC%88%E7%AC%AC%E4%B8%89%E5%B9%B4%E7%9A%84%E8%A7%81%E5%BC%82%E6%80%9D%E8%BF%81%EF%BC%89/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/09/08/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%B8%80/%E6%B3%95%E5%BE%8B%E6%B3%95%E8%A7%84/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">215</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005055629971077/home?from=page_100505&mod=TAB&is_all=1#place" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005055629971077&#x2F;home?from&#x3D;page_100505&amp;mod&#x3D;TAB&amp;is_all&#x3D;1#place" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/15833385" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;15833385" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="教育的起源 1神话起源论 最古老的，中国代表人物朱熹 -此观点错误，非科学的 教育的目的是体现神或天的意志 -此观点错误，非科学的   2生物起源论 注：提出教育起源的第一个正式学说 人类教育起源于动物界中的各类动物的生存本能活动 认为动物界存在教育活动 代表人物 法国的利托尔诺 英国的沛西能 美国的桑代克       3心理起源论 教育起源于儿童对成人的无意识的模仿 代表人物：美国教育学家孟禄">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/08/14/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E5%9B%9B%E3%80%81%E6%95%99%E8%82%B2%E7%9A%84%E8%B5%B7%E6%BA%90/index.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="教育的起源 1神话起源论 最古老的，中国代表人物朱熹 -此观点错误，非科学的 教育的目的是体现神或天的意志 -此观点错误，非科学的   2生物起源论 注：提出教育起源的第一个正式学说 人类教育起源于动物界中的各类动物的生存本能活动 认为动物界存在教育活动 代表人物 法国的利托尔诺 英国的沛西能 美国的桑代克       3心理起源论 教育起源于儿童对成人的无意识的模仿 代表人物：美国教育学家孟禄">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-14T01:52:28.176Z">
+<meta property="article:modified_time" content="2022-08-14T02:49:03.032Z">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/08/14/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E5%9B%9B%E3%80%81%E6%95%99%E8%82%B2%E7%9A%84%E8%B5%B7%E6%BA%90/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 9之数据库</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-我的旧站">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-tasks"></i>我的旧站</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/08/14/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E5%9B%9B%E3%80%81%E6%95%99%E8%82%B2%E7%9A%84%E8%B5%B7%E6%BA%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-08-14 09:52:28 / 修改时间：10:49:03" itemprop="dateCreated datePublished" datetime="2022-08-14T09:52:28+08:00">2022-08-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="教育的起源"><a href="#教育的起源" class="headerlink" title="教育的起源"></a>教育的起源</h2><ul>
+<li>1神话起源论<ul>
+<li>最古老的，中国代表人物<font color="blue">朱熹</font> -此观点错误，非科学的</li>
+<li>教育的目的是体现神或天的意志 -此观点错误，非科学的</li>
+</ul>
+</li>
+<li>2<font color="orange">生</font>物起源论 注：提出教育起源的第一个正式学说<ul>
+<li>人类教育起源于动物界中的各类动物的生存<font color="orange">本能</font>活动</li>
+<li>认为动物界存在教育活动<ul>
+<li>代表人物<ul>
+<li>法国的利托尔诺</li>
+<li>英国的沛西能</li>
+<li>美国的桑代克</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>3<font color="orange">心理</font>起源论<ul>
+<li>教育起源于儿童对成人的<font color="yellow">无意识的模仿</font></li>
+<li>代表人物：美国教育学家<font color="blue">孟禄</font></li>
+</ul>
+</li>
+<li>4<font color="orange">劳动</font>起源论<ul>
+<li>教育起源于<font color="orange">劳动</font>，起源于劳动过程中<font color="blue">社会生产需要</font>和<font color="blue">人的发展需要</font>的<font color="orange">辩证统一</font></li>
+<li>代表人物：米丁斯基、凯洛夫</li>
+</ul>
+</li>
+<li>5<font color="orange">交往</font>起源论<ul>
+<li>教育起源于人类的交往活动</li>
+<li>代表人物：中国<font color="blue">叶澜</font><font color="orange">《教育原理》</font></li>
+</ul>
+</li>
+</ul>
+<center>教育的发展</center>
+
+<h2 id="教育的发展"><a href="#教育的发展" class="headerlink" title="教育的发展"></a>教育的发展</h2><ul>
+<li>原始社会<ul>
+<li>教育产生的根本原因<ul>
+<li>人类对自身生存和发展的需要</li>
+</ul>
+</li>
+<li>教育产生的条件<ul>
+<li><font color="orange">劳动</font></li>
+<li><font color="orange">语言</font>的形成是另一个必要条件</li>
+</ul>
+</li>
+<li>教育的特征<ul>
+<li>教育是在<font color="orange">生产劳动</font>中进行的</li>
+<li>教育<font color="orange">没有阶级性</font></li>
+<li>教育水平低下，教育<font color="orange">内容简单</font>，教育方法单一</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>古代社会<ul>
+<li>一般认为学校产生于奴隶社会时期（一般会做事为选择题）</li>
+<li>奴隶社会（中国）<ul>
+<li>夏<ul>
+<li>我国最早的学校教育形态出现在夏朝</li>
+<li>痒、序、校 我国最早的学校教育机构是痒</li>
+</ul>
+</li>
+<li>商<ul>
+<li>有文字记载同时又有考古出土的实物证实的学校出现在商代</li>
+</ul>
+</li>
+<li>西周<ul>
+<li>国学、乡学</li>
+<li>形成了<font color="orange">“学在官府” “政教一体” “官师合一” </font>的官学体系</li>
+<li>形成了以<font color="orange">“礼乐”为中心</font>的文武兼备的<font color="orange">六艺教育（礼、乐、射、御、书、数）</font></li>
+</ul>
+</li>
+<li>春秋战国<ul>
+<li><font color="orange">稷下学宫（战国）</font></li>
+<li>官学衰微、<font color="orange">私学</font>兴起（春秋）、私学繁荣（战国）</li>
+<li><font color="orange">私学</font>的发展是我国教育史、文化史上的一个重要的里程碑，直接促成了百家争鸣的社会盛况</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>奴隶社会（国外）<ul>
+<li>古埃及<ul>
+<li>宫廷学校：教育皇子皇孙和贵族子弟的场所</li>
+<li>职官学校（书吏学校）：<font color="orange">以吏为师，以法为教</font> 招收贵族和官员子弟</li>
+<li>文士学校：培养熟练运用文字从事书写及计算工作的人</li>
+</ul>
+  –  (由法老或僧侣大祭司教学)</li>
+<li>古希腊<ul>
+<li><font color="orange">雅典</font>教育<ul>
+<li>培养有<font color="orange">文化修养和多种才能的政治家和商人</font></li>
+<li>在西方最早形成教育、德育、智育和美育和谐发展的教育，教育内容丰富，教育方法灵活</li>
+</ul>
+</li>
+</ul>
+   – 崇文、强调理性 联想记忆：雅典娜-知性、智慧<ul>
+<li><font color="orange">斯巴达</font>教育<ul>
+<li>培养<font color="orange">军人和武士</font></li>
+<li>强调<font color="orange">军事体育</font>训练和政治道德灌输，教育内容单一，教育方法严厉</li>
+</ul>
+</li>
+</ul>
+   – 尚武、军事主义教育 联想记忆：斯巴达–撕吧斯巴打起来</li>
+</ul>
+</li>
+<li>封建社会（中国）<ul>
+<li>两汉<ul>
+<li>太学、郡国学<ul>
+<li>太学是当时最高教育机构</li>
+<li>地方官学的发展始于“文翁兴学” Ps：文翁石室，成都</li>
+</ul>
+</li>
+<li><font color="blue">董仲舒“罢黜百家，独尊儒术” </font></li>
+<li>选仕制度 察举制、征辟制 </li>
+</ul>
+</li>
+<li>魏晋南北朝<ul>
+<li>国子学和太学并列</li>
+<li>选仕制度 九品中正制</li>
+<li><font color="blue">“上品无寒门，下品无士族”</font></li>
+</ul>
+</li>
+<li>隋唐<ul>
+<li>国子监、六学二馆</li>
+<li><font color="blue">隋朝</font>建立了<font color="orange">科举制度(隋文帝)</font></li>
+</ul>
+</li>
+<li>宋<ul>
+<li>教育内容<ul>
+<li><font color="orange">“四书”“五经”</font><ul>
+<li>四书：《<font color="orange">大</font>学》《<font color="orange">中</font>庸》《<font color="orange">论</font>语》《<font color="orange">孟</font>子》</li>
+<li>五经：《诗》《书》《礼》《易》《春秋》</li>
+</ul>
+</li>
+<li>国学是<font color="orange">程朱理学</font>：程颢，程颐，朱熹</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>清 <ul>
+<li> <font color="orange">废除科举制（1905年）</font></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>封建社会（国外）<ul>
+<li>中世纪的欧洲（14-17C）<ul>
+<li><font color="orange">教会</font>教育<ul>
+<li>培养<font color="orange">教士和僧侣</font></li>
+<li>教育内容:<font color="orange">七艺</font><ul>
+<li>三科：文法、修辞、辩证法也被称为三艺</li>
+<li>四学：算数、几何、天文、音乐</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><font color="orange">骑士</font>教育<ul>
+<li>培养<font color="orange">封建骑士</font></li>
+<li>教育内容：<font color="orange">骑士七技</font></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>近现代社会<ul>
+<li>近代<ul>
+<li>国家加强了对教育的重视和干预，<font color="orange">公立教育的崛起</font></li>
+<li>初等义务教育的普遍实施 <font color="orange">最早实施义务教育的国家是德国</font></li>
+<li>教育的世俗化（摆脱宗教）</li>
+<li>重视立法，依法治教</li>
+</ul>
+</li>
+<li>现代(20世纪以后的教育新特点)<ul>
+<li>教育的终<font color="orange">身</font>化<ul>
+<li>法国的<font color="blue">保罗.朗格朗</font>最早系统论述了终身教育</li>
+</ul>
+</li>
+<li>教育的<font color="orange">全</font>民化</li>
+<li>教育的<font color="orange">民</font>主化<ul>
+<li>教育起点的机会均等</li>
+<li>教育过程中享受教育资源的机会均等</li>
+<li>教育结果的均等</li>
+</ul>
+</li>
+<li>教育的<font color="orange">多</font>元化<ul>
+<li>培养目标、办学形式、管理模式、教学内容、评价标准</li>
+</ul>
+</li>
+<li>教育技术的<font color="orange">现</font>代化<ul>
+<li>科学技术（如网络教学技术等）</li>
+<li>教育思想、观念的现代化</li>
+<li>教师队伍的现代化</li>
+</ul>
+  – 口诀：全民多现身</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>总结：古代学校教育的特征<ul>
+<li>学校产生</li>
+<li>古代<font color="orange">教育与生产劳动相脱离</font>，具有非生产性</li>
+<li><font color="orange">阶级性和等级性</font></li>
+<li>道统性、专制性、刻板性和象征性</li>
+<li><font color="blue">Ps.”君子忧道不忧贫”反应了古代学校教育与生产劳动相脱离的特点</font></li>
+<li>补充：学校产生的条件</li>
+<li>1社会生产水平的提高为学校的产生提供了必要的物质基础</li>
+<li>2脑力劳动和体力劳动的分离为学校的产生提供了专门从事教育活动的知识分子。</li>
+<li>3文字的创造和社会生产生活知识的大量积累为学校的产生提供了进行教育的工作和内容，以及进行文字教学和传授知识的社会需要</li>
+<li>4国家的产生需要专门的教育机构培养和维护统治阶级利益的官吏和知识分子。</li>
+</ul>
+</li>
+</ul>
+<p>特点口诀：简单劳动无阶级</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/14/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%BA%8C/1.2%20%E6%95%99%E8%82%B2%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/07/26/%E6%97%A5%E8%AF%AD/%E5%8D%95%E8%AF%8D%E7%A7%AF%E7%B4%AF/%E7%BB%BC%E5%90%88%E6%97%A5%E8%AF%AD%E7%AC%AC4%E5%8D%95%E5%85%8312%E8%AF%BE%E5%8D%95%E8%AF%8D/" rel="next" title="综合日语第4单元16课单词">
+      综合日语第4单元16课单词 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%99%E8%82%B2%E7%9A%84%E8%B5%B7%E6%BA%90"><span class="nav-number">1.</span> <span class="nav-text">教育的起源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%99%E8%82%B2%E7%9A%84%E5%8F%91%E5%B1%95"><span class="nav-number">2.</span> <span class="nav-text">教育的发展</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">215</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005055629971077/home?from=page_100505&mod=TAB&is_all=1#place" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005055629971077&#x2F;home?from&#x3D;page_100505&amp;mod&#x3D;TAB&amp;is_all&#x3D;1#place" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/15833385" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;15833385" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

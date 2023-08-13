@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="第二节 教育学基础知识 教育学的概念 对象 教育现象、教育问题   任务 揭示规律     教育学的发展阶段 萌芽时期 独立及多样化阶段 深化发展阶段 中国近代教育思想一、教育学的概念教育学是以1教育现象、2教育问题为研究对象，不断探索并揭示3教育规律的一门社会科学。教育问题是推送教育学发展的内在动力。      二、萌芽时期之中国  萌芽时期 中国 一个人：孔子 论语的教育思想 有教无类 学而">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/08/14/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%BA%8C/1.2%20%E6%95%99%E8%82%B2%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="第二节 教育学基础知识 教育学的概念 对象 教育现象、教育问题   任务 揭示规律     教育学的发展阶段 萌芽时期 独立及多样化阶段 深化发展阶段 中国近代教育思想一、教育学的概念教育学是以1教育现象、2教育问题为研究对象，不断探索并揭示3教育规律的一门社会科学。教育问题是推送教育学发展的内在动力。      二、萌芽时期之中国  萌芽时期 中国 一个人：孔子 论语的教育思想 有教无类 学而">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-14T02:50:53.943Z">
+<meta property="article:modified_time" content="2022-08-14T08:51:14.359Z">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/08/14/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%BA%8C/1.2%20%E6%95%99%E8%82%B2%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 9之数据库</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-我的旧站">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-tasks"></i>我的旧站</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/08/14/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%BA%8C/1.2%20%E6%95%99%E8%82%B2%E5%AD%A6%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-08-14 10:50:53 / 修改时间：16:51:14" itemprop="dateCreated datePublished" datetime="2022-08-14T10:50:53+08:00">2022-08-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <ul>
+<li>第二节 教育学基础知识<ul>
+<li>教育学的概念<ul>
+<li>对象<ul>
+<li>教育现象、教育问题</li>
+</ul>
+</li>
+<li>任务<ul>
+<li>揭示规律</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>教育学的发展阶段<ul>
+<li>萌芽时期</li>
+<li>独立及多样化阶段</li>
+<li>深化发展阶段</li>
+<li>中国近代教育思想<br>一、教育学的概念<br>教育学是以<font color="red">1教育现象、2教育问题</font>为研究对象，不断探索并揭示<font color="red">3教育规律</font>的一门社会科学。<font color="red">教育问题</font>是推送教育学发展的内在动力。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>二、萌芽时期之中国</p>
+<ul>
+<li>萌芽时期<ul>
+<li>中国<ul>
+<li>一个人：<font color="blue">孔子</font><ul>
+<li>论语的教育思想<ul>
+<li><font color="orange">有教无类</font></li>
+<li><font color="orange">学而优则仕</font></li>
+<li><font color="orange">“仁”</font>品德</li>
+<li><font color="orange">学、思、行并重</font>（教学方法）<ul>
+<li><font color="blue">“学而不思则罔，思而不学则殆”</font></li>
+</ul>
+</li>
+<li><font color="orange">启发诱导</font>（教学方法）<ul>
+<li><font color="blue">不愤不启，不悱不发</font> （孔子是世界上第一个提出启发式教学的人）</li>
+</ul>
+</li>
+<li><font color="orange">因材施教</font>（教学方法）<ul>
+<li>“求也退，故进之；由也兼人，故退之。”</li>
+</ul>
+</li>
+<li>教育内容<ul>
+<li>《诗》《书》《礼》《易》《乐》《春秋》</li>
+</ul>
+</li>
+<li>教育的功能<ul>
+<li>庶、富、教 （教育的社会功能）</li>
+<li>性相近、习相远 （教育的个体功能）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>一本书：《学记》<ul>
+<li>中国古代及世界最早论述教育、教学问题的专门论著，成文于战国末期，孟子弟子乐正克整理所著</li>
+<li>教育思想<ul>
+<li>教育的功能<ul>
+<li>君子<font color="orange">如欲化民成俗，其必由学乎</font>；建国君民，<font color="orange">教学为先</font>(教育与政治的关系)</li>
+<li><font color="orange">豫时孙摩</font><ul>
+<li>禁于未发之谓豫；<font color="orange">当其可之谓时</font>；(表明了教育的关键期)</li>
+<li><font color="orange">不陵节而施</font>之谓孙；相观而善之谓摩(表明了教育要<font color="orange">符合人身心发展的规律</font>,遵循<font color="orange">循序渐进</font>的教学原则)</li>
+</ul>
+</li>
+<li><font color="orange">启发式教学</font><ul>
+<li>君子之教，喻也；<font color="orange">道而弗牵，强而弗抑，开而弗达。</font></li>
+</ul>
+</li>
+<li>长善救失<ul>
+<li>救也者，长善而救其失者也。(与长善救失的德育原则一致)</li>
+</ul>
+</li>
+<li><font color="orange">学不躐(lie)等 </font><ul>
+<li>幼者听而弗问，学不躐等也。(与循序渐进的教学原则一致)</li>
+</ul>
+</li>
+<li><font color="orange">教学相长</font><ul>
+<li>学然后知不足，教然后知困…故曰：教学相长也  </li>
+</ul>
+</li>
+<li>尊师重道<ul>
+<li>师严然后道尊，道尊然后民知敬学</li>
+<li>当其为师，则弗臣也</li>
+</ul>
+</li>
+<li>可接受性原则<ul>
+<li>语之而不知，虽舍之可也</li>
+</ul>
+</li>
+<li><font color="orange">藏息相辅</font><ul>
+<li>时教必有正业，退息必有居学；故君子之于学也，藏焉修焉，息焉游焉。</li>
+</ul>
+</li>
+<li>讨论法<ul>
+<li>独学而无友，则孤陋而寡闻</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>中国古代其他教育家的思想<ul>
+<li>孟子<ul>
+<li>性善论</li>
+<li>教育的目的是培养君子，<font color="orange">明人伦</font></li>
+</ul>
+</li>
+<li>荀子<ul>
+<li>性恶论</li>
+<li>人之性恶，其善者伪也，强调尊师</li>
+</ul>
+</li>
+<li>墨子<ul>
+<li>“兼爱” “非攻”</li>
+<li><font color="orange">同时注重文史知识的掌握和逻辑思维能力的培养</font></li>
+<li>亲知、闻知、说知（教学方法）</li>
+</ul>
+</li>
+<li>朱熹<ul>
+<li>“朱子读书法”</li>
+<li>循序渐进</li>
+</ul>
+</li>
+<li>韩愈<ul>
+<li>《师说》（论述了教师的职责、师生关系和从师学习的必要性）</li>
+<li>古之学者必有师；师者，所以传道受业解惑也。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>西方<ul>
+<li>古希腊<ul>
+<li>师徒三人把思想散<ul>
+<li>苏格拉底<ul>
+<li>问答法（找茬式）<ul>
+<li>又称为<font color="orange">产婆术</font>(西方最早实施启发式教学的人，苏格拉底)</li>
+</ul>
+</li>
+<li>三步走<ul>
+<li>1.苏格拉底讽刺</li>
+<li>2.定义</li>
+<li>3.助产术</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>柏拉图<ul>
+<li>代表作<font color="orange">《理想国》</font></li>
+<li>重视早期教育，<font color="orange">“寓学习于游戏”</font>最早的提倡者</li>
+</ul>
+</li>
+<li>亚里士多德<ul>
+<li>被称为古希腊百科全书式的哲学家</li>
+<li>代表作<font color="orange">《政治学》</font></li>
+<li>代表作<font color="orange">《论灵魂》</font><ul>
+<li>将教育划分为：体育、德育和智育</li>
+<li>体育是基础，智育是最终目的</li>
+</ul>
+</li>
+<li>首次提出<font color="orange">“教育遵循自然”</font>的原则</li>
+<li>最早提出了自由教育（文雅教育）<ul>
+<li>闲暇时间</li>
+<li>自由学科</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>古罗马<ul>
+<li><font color="orange">一本书</font> :<font color="blue">昆体良</font><ul>
+<li><font color="orange">西方第一部教育专著</font>，世界上<font color="orange">第一部研究教学法</font>的著作</li>
+<li><font color="orange">《论演说家的教育培养》/《雄辩术原理》</font></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/14/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%9B%AE%E4%BA%8C/1.2%20%E6%95%99%E8%82%B2%E5%AD%A6%E5%8F%91%E5%B1%95%E9%98%B6%E6%AE%B5%E4%B9%8B%E7%8B%AC%E7%AB%8B%E5%8F%8A%E5%A4%9A%E6%A0%B7%E5%8C%96%E5%8F%91%E5%B1%95%E9%98%B6%E6%AE%B5/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/14/%E5%B0%8F%E5%AD%A6%E6%95%99%E8%B5%84%E7%AC%94%E8%AE%B0/%E5%9B%9B%E3%80%81%E6%95%99%E8%82%B2%E7%9A%84%E8%B5%B7%E6%BA%90/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">215</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005055629971077/home?from=page_100505&mod=TAB&is_all=1#place" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005055629971077&#x2F;home?from&#x3D;page_100505&amp;mod&#x3D;TAB&amp;is_all&#x3D;1#place" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/15833385" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;15833385" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

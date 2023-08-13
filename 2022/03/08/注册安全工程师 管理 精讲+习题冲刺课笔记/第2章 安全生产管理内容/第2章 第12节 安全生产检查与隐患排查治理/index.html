@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="第十二节 安全生产检查与隐患排查治理一、安全生产检查（一）安全生产检查的类型1.定期安全生产检查 2.经常性安全生产检查 3.季节性及节假日前后安全生产检查 4.专业（项）安全生产检查 5.综合性安全生产检查 6.职工代表不定期对安全生产的巡查 口诀：定常综合假值专 1.定期安全生产检查​    一般由生产经营单位统一组织实施，如月度检查、季度检查、年度检查等。 2.经常性安全生产检查​    由">
+<meta property="og:type" content="article">
+<meta property="og:title" content="9之数据库">
+<meta property="og:url" content="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/03/08/%E6%B3%A8%E5%86%8C%E5%AE%89%E5%85%A8%E5%B7%A5%E7%A8%8B%E5%B8%88%20%E7%AE%A1%E7%90%86%20%E7%B2%BE%E8%AE%B2+%E4%B9%A0%E9%A2%98%E5%86%B2%E5%88%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/%E7%AC%AC2%E7%AB%A0%20%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E7%AE%A1%E7%90%86%E5%86%85%E5%AE%B9/%E7%AC%AC2%E7%AB%A0%20%E7%AC%AC12%E8%8A%82%20%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E6%A3%80%E6%9F%A5%E4%B8%8E%E9%9A%90%E6%82%A3%E6%8E%92%E6%9F%A5%E6%B2%BB%E7%90%86/index.html">
+<meta property="og:site_name" content="9之数据库">
+<meta property="og:description" content="第十二节 安全生产检查与隐患排查治理一、安全生产检查（一）安全生产检查的类型1.定期安全生产检查 2.经常性安全生产检查 3.季节性及节假日前后安全生产检查 4.专业（项）安全生产检查 5.综合性安全生产检查 6.职工代表不定期对安全生产的巡查 口诀：定常综合假值专 1.定期安全生产检查​    一般由生产经营单位统一组织实施，如月度检查、季度检查、年度检查等。 2.经常性安全生产检查​    由">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-08T01:58:54.225Z">
+<meta property="article:modified_time" content="2022-07-22T13:41:24.342Z">
+<meta property="article:author" content="MrLaoxie1998">
+<meta property="article:tag" content="智慧 9baka">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/03/08/%E6%B3%A8%E5%86%8C%E5%AE%89%E5%85%A8%E5%B7%A5%E7%A8%8B%E5%B8%88%20%E7%AE%A1%E7%90%86%20%E7%B2%BE%E8%AE%B2+%E4%B9%A0%E9%A2%98%E5%86%B2%E5%88%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/%E7%AC%AC2%E7%AB%A0%20%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E7%AE%A1%E7%90%86%E5%86%85%E5%AE%B9/%E7%AC%AC2%E7%AB%A0%20%E7%AC%AC12%E8%8A%82%20%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E6%A3%80%E6%9F%A5%E4%B8%8E%E9%9A%90%E6%82%A3%E6%8E%92%E6%9F%A5%E6%B2%BB%E7%90%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title> | 9之数据库</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">9之数据库</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">9の智慧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-我的旧站">
+
+    <a href="/old/" rel="section"><i class="fa fa-fw fa-tasks"></i>我的旧站</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/MrLaoxie1998/MrLaoxie1998.github.io.git/2022/03/08/%E6%B3%A8%E5%86%8C%E5%AE%89%E5%85%A8%E5%B7%A5%E7%A8%8B%E5%B8%88%20%E7%AE%A1%E7%90%86%20%E7%B2%BE%E8%AE%B2+%E4%B9%A0%E9%A2%98%E5%86%B2%E5%88%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/%E7%AC%AC2%E7%AB%A0%20%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E7%AE%A1%E7%90%86%E5%86%85%E5%AE%B9/%E7%AC%AC2%E7%AB%A0%20%E7%AC%AC12%E8%8A%82%20%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E6%A3%80%E6%9F%A5%E4%B8%8E%E9%9A%90%E6%82%A3%E6%8E%92%E6%9F%A5%E6%B2%BB%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="MrLaoxie1998">
+      <meta itemprop="description" content="22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="9之数据库">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-03-08 09:58:54" itemprop="dateCreated datePublished" datetime="2022-03-08T09:58:54+08:00">2022-03-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-22 21:41:24" itemprop="dateModified" datetime="2022-07-22T21:41:24+08:00">2022-07-22</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="第十二节-安全生产检查与隐患排查治理"><a href="#第十二节-安全生产检查与隐患排查治理" class="headerlink" title="第十二节 安全生产检查与隐患排查治理"></a>第十二节 安全生产检查与隐患排查治理</h1><h2 id="一、安全生产检查"><a href="#一、安全生产检查" class="headerlink" title="一、安全生产检查"></a>一、安全生产检查</h2><h3 id="（一）安全生产检查的类型"><a href="#（一）安全生产检查的类型" class="headerlink" title="（一）安全生产检查的类型"></a>（一）安全生产检查的类型</h3><p>1.定期安全生产检查</p>
+<p>2.经常性安全生产检查</p>
+<p>3.季节性及节假日前后安全生产检查</p>
+<p>4.专业（项）安全生产检查</p>
+<p>5.综合性安全生产检查</p>
+<p>6.职工代表不定期对安全生产的巡查</p>
+<p>口诀：定常综合假值专</p>
+<h4 id="1-定期安全生产检查"><a href="#1-定期安全生产检查" class="headerlink" title="1.定期安全生产检查"></a>1.定期安全生产检查</h4><p>​    一般由<font color="yellow">生产经营单位统一组织实施，</font>如<font color="yellow">月度检查、季度检查、年度检查</font>等。</p>
+<h4 id="2-经常性安全生产检查"><a href="#2-经常性安全生产检查" class="headerlink" title="2.经常性安全生产检查"></a>2.经常性安全生产检查</h4><p>​    由生产经营单位的<font color="yellow">安全生产管理部门、车间、班组或岗位</font>组织进行的日常检查。一般来讲，包括<font color="yellow">交接班检查、班中检查、特殊检查</font>。</p>
+<h4 id="3-季节性及节假日前后安全生产检查"><a href="#3-季节性及节假日前后安全生产检查" class="headerlink" title="3.季节性及节假日前后安全生产检查"></a>3.季节性及节假日前后安全生产检查</h4><p>​    <font color="yellow">冬季防冻保温、防火、防煤气中毒，夏季防暑降温、防汛、防雷电</font>等检查。由于<font color="yellow">节假日</font>（特别是重大节日，如元旦、春节、劳动节、国庆节）前后容易发生事故，因而在节假日前后进行有针对性的安全检查。</p>
+<h4 id="4-专业-项-安全生产检查"><a href="#4-专业-项-安全生产检查" class="headerlink" title="4.专业(项)安全生产检查"></a>4.专业(项)安全生产检查</h4><p>​    <font color="yellow">危险性较大的再用设备设施，作业场所环境条件</font>的管理性或监督性定量检测检验则属专业（项）安全生产检查。</p>
+<h4 id="5-综合性安全生产检查"><a href="#5-综合性安全生产检查" class="headerlink" title="5.综合性安全生产检查"></a>5.综合性安全生产检查</h4><p>​    一般是<font color="yellow">由上级主管部门</font>组织对生产单位进行的安全检查。</p>
+<h4 id="6-职工代表不定期对安全生产的巡查"><a href="#6-职工代表不定期对安全生产的巡查" class="headerlink" title="6.职工代表不定期对安全生产的巡查"></a>6.职工代表不定期对安全生产的巡查</h4><p>​    生产经营单位的工会应定期或不定期组织职工代表进行安全生产检查。</p>
+<h3 id="（二）安全生产检查的内容"><a href="#（二）安全生产检查的内容" class="headerlink" title="（二）安全生产检查的内容"></a>（二）安全生产检查的内容</h3><p>​    安全生产检查的内容包括软件系统和硬件系统</p>
+<p>​    软件系统主要是<font color="yellow">查思想、查意识、查制度、查管理、查事故处理、查隐患、查整改。</font></p>
+<p>​    硬件系统主要是查生产设备、查辅助设备、查安全设施、查作业环境。</p>
+<p>​    对非矿山企业，目前国家有关规定要求<font color="yellow">强制性检查的项目</font>有：锅炉、压力容器</p>
+<p>、压力管道、高压医用氧舱、起重机、电梯、自动扶梯、施工升降机、简易升降机、防爆电器、厂内机动车辆、客运索道、游艺机及游乐设施等，作业场所的粉尘、噪声、振动、辐射、温度和有毒物质的浓度等。</p>
+<p>​    <font color="yellow">总结：特种设备+防爆电器+有害因素</font></p>
+<h3 id="（三）安全生产检查方法"><a href="#（三）安全生产检查方法" class="headerlink" title="（三）安全生产检查方法"></a>（三）安全生产检查方法</h3><h4 id="1-常规检查"><a href="#1-常规检查" class="headerlink" title="1.常规检查"></a>1.常规检查</h4><p>​    通常是由<font color="yellow">安全管理人员</font>作为检查工作的主体，到作业场所现场进行的<font color="yellow">定性检查</font>。</p>
+<p>​    常规检查<font color="yellow">主要依靠安全检查人员的经验和能力</font>，检查的结果直接受到检察人员个人素质的影响。</p>
+<h4 id="2-安全检查表法"><a href="#2-安全检查表法" class="headerlink" title="2.安全检查表法"></a>2.安全检查表法</h4><p>​    将个人的行为对检查的影响减少到最小。</p>
+<h4 id="3-仪器检查及数据分析法"><a href="#3-仪器检查及数据分析法" class="headerlink" title="3.仪器检查及数据分析法"></a>3.仪器检查及数据分析法</h4><p>​    没有在线数据检测系统的机器、设备、系统，只能通过仪器检查法来进行<font color="yellow">定量化的检验与测量。</font></p>
+<h3 id="（四）安全生产检查的工作程序"><a href="#（四）安全生产检查的工作程序" class="headerlink" title="（四）安全生产检查的工作程序"></a>（四）安全生产检查的工作程序</h3><h4 id="1-安全检查准备"><a href="#1-安全检查准备" class="headerlink" title="1.安全检查准备"></a>1.安全检查准备</h4><p>（1）确定检查对象、目的、任务。</p>
+<p>（2）查阅、掌握有关法规、标准、规程的要求。</p>
+<p>（3）了解检查对象的工艺流程、生产情况、可能出现危险和危害的情况。</p>
+<p>（4）制定检查计划、安全检查内容、方法、步骤。</p>
+<p>（5）编写安全检查表或检查提纲。</p>
+<p>（6）准备必要的检测工具、仪器、书写表格或记录本。</p>
+<p>（7）挑选和训练检查人员并进行必要的分工等。</p>
+<p>2、实施安全检查</p>
+<p>（1）访谈。ton及广告与有关人员谈话来检查安全意识和规章制度执行情况等。</p>
+<p>（2）查阅文件和记录。记录。检查设计文件、作业规程、安全措施、责任制度、操作规程等是否齐全，是否有效；查阅相应记录，判断上述文件是否被执行。</p>
+<p>（3）现场观察。对作业现场的生产设备、安全防护设备、作业环境、人员操作等进行观察，寻找不安全因素、事故隐患、事故征兆等。</p>
+<p>（4）仪器测量。利用一定的检测检验仪器设备，对再用的设施、设备、器材状况及作业环境条件等进行测量、发现隐患。</p>
+<p>3、综合分析<br>    经现场检查和数据分析后，检查人员应对检查情况进行<font color="yellow">综合分析提出检查的结论和意见。</font></p>
+<p>4、结果反馈</p>
+<p>5、提出整改要求</p>
+<p>6、整改落实</p>
+<p>7、信息反馈及持续改进</p>
+<p>二、隐患排查治理</p>
+<p>（一）定义及分类</p>
+<p>​    可能导致事故发生的物的危险状态、人的不安全行为和管理上的缺陷。</p>
+<p>​    事故隐患分为<font color="yellow">一般事故隐患</font>和<font color="yellow">重大事故隐患</font>。</p>
+<p>​    <font color="yellow">一般事故隐患</font>是指<font color="yellow">危害和整改难度较小</font>，发现后能够立即整改排除的隐患。</p>
+<p>​    <font color="yellow">重大事故隐患</font>是指<font color="yellow">危害和整改难度较大,</font>应当<font color="yellow">全部或者局部停产停业</font>，并经过一定时间整改治理方能排除的隐患，或者因外部因素影响致使生产经营单位自身难以排除的隐患。</p>
+<p>（二）生产经营单位的主要职责</p>
+<p>（2）<font color="yellow">生产经营单位</font>是事故隐患排查、治理和防控的<font color="yellow">责任主体。</font></p>
+<p>（3）生产经营单位应当建立健全事故隐患排查治理和建档监控等<font color="yellow">制度</font>，逐级建立并落实从主要负责人到每个从业人员的隐患排查治理和监控<font color="yellow">责任制。</font></p>
+<p>（7）生产经营单位将生产经营项目、场所、设备发包、出租的应当与承包、承租单位签订<font color="yellow">安全生产管理协议,</font>并在协议中<font color="yellow">明确各方对事故隐患排查、治理和防控的管理职责。</font></p>
+<p>（9）生产经营单位应当<font color="yellow">每季、每年对本单位事故隐患排查治理情况进行统计分析，并分别于下一季度15日前和下一年1月31日前</font>向安全监管检查部门和有关部门<font color="yellow">报送</font>书面统计分析表。统计分析表应当由生产经营单位<font color="yellow">主要负责人签字。</font></p>
+<p>​    重大事故隐患报告内容：</p>
+<p><font color="yellow">1、隐患的现状及其产生原因；</font></p>
+<p><font color="yellow">2、隐患的危害程度和整改难易程度分析；</font></p>
+<p><font color="yellow">3、隐患的治理方案</font></p>
+<p>（10）对于<font color="yellow">一般事故隐患</font>，由生产经营单位（车间、分厂、区队等）负责人或者有关人员立即组织整改。</p>
+<p>​    对于<font color="yellow">重大事故隐患,</font>由生产经营单位<font color="yellow">主要负责人组织指定并实施</font>事故隐患治理<font color="yellow">方案</font>。</p>
+<p>​    重大事故隐患<font color="yellow">治理方案</font>包括内容:</p>
+<p>​    <font color="yellow">治理的目标和任务：采取的方法和措施；经费和物资的落实；负责治理的机构和人员；治理的时限和要求；安全措施和应急预案。</font></p>
+<p>（13）地方人民政府或者安全监管检查部门及有关部门<font color="yellow">挂牌督办</font>并责令全部或者局部停产停业治理的<font color="yellow">重大事故隐患,治理工作结束后</font>有条件的生产经营<font color="yellow">单位</font>应当<font color="yellow">组织本单位的技术人员和专家对重大事故隐患的治理情况进行评估</font>其他生产经营单位应当委托具备相应资质的安全评价机构对重大事故隐患的治理情况进行评估。</p>
+<p>​    经治理后符合安全生产条件的，<font color="yellow">生产经营单位应当向安全监管监察部门和有关部门提出恢复生产的书面申请，经安全监管监察部门和有关部门审查同意后，</font>方可恢复生产经营。申请报告应当包括治理方案的内容、项目和安全评价机构出具的评价报告等。</p>
+<p>（三）监督管理</p>
+<p>​    安全监管监察部门应当指导、监督生产经营单位按照有关法律法规、规章、标准和规程的要求，建立、健全事故隐患排查治理等各项制度，定期组织对生产经营单位事故隐患排查治理情况开展监督检查。对检查过程中发现的<font color="yellow">重大事故隐患，应当下达整改指令书，</font>并建立信息管理台账。<font color="yellow">必要时</font>，报告同级人民政府并对重大事故隐患实行<font color="yellow">挂牌督办。</font></p>
+<p>​    已经取得安全生产许可证的生产经营单位，在其被挂牌督办的重大事故隐患治理结束前，安全监管监察部门应当加强监督检查。<font color="yellow">必要时,</font>可以提请原许可证颁发机关依法<font color="yellow">暂扣其安全生产许可证。</font></p>
+<p>​    <font color="yellow">对挂牌督办并采取全部或者局部停产停业治理</font>的重大事故隐患，安全监管监察部门<font color="yellow">收到</font>生产及经营单位<font color="yellow">恢复生产的申请</font>报告后，应当<font color="yellow">10日内进行现场审查</font></p>
+<p>​    审查<font color="yellow">合格</font>的，对事故隐患并进行核销，同意恢复生产经营；审查<font color="yellow">不合格</font>的，依法责令改正或者下达停产整改指令。</p>
+<p>​    对<font color="yellow">整改无望</font>或者生产经营单位<font color="yellow">拒不执行整改指令</font>的，依法实施<font color="yellow">行政处罚;不具备安全生产条件的</font>，依法提请县级以上<font color="yellow">人民政府</font>按照国务院规定的权限予以<font color="yellow">关闭</font>。</p>
+<p>【例题】企业为了保证安全检查工作的落实，需要做好安全检查的准备工作。下列说法中，不属于企业安全检查准备工作的是（D）。</p>
+<p>A.某化工企业组织检查前准备了有毒气体检测仪等工具</p>
+<p>B.某施工企业组织检查前对相关检察人员进行培训</p>
+<p>C.某机械加工企业参加考同行业厂家编制的检查提纲</p>
+<p>D.某发电企业针对检查中可能出现的危害情况约谈了相关人员</p>
+<p>【例题】安全生产检查是企业安全生产工作的一项重点工作，主要依靠安全检查人员的经验和能力，检查结果直接受安全检查人员个人素质影响的安全检查方法是（A）。</p>
+<p>A.常规检查法    B.安全检查表法    C.仪器检查法    D.数据分析法    </p>
+<p>[[职业健康]]</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/03/08/%E6%B3%A8%E5%86%8C%E5%AE%89%E5%85%A8%E5%B7%A5%E7%A8%8B%E5%B8%88%20%E7%AE%A1%E7%90%86%20%E7%B2%BE%E8%AE%B2+%E4%B9%A0%E9%A2%98%E5%86%B2%E5%88%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/%E7%AC%AC2%E7%AB%A0%20%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E7%AE%A1%E7%90%86%E5%86%85%E5%AE%B9/%E7%AC%AC2%E7%AB%A0%20%E7%AC%AC13%E8%8A%82%20%E5%8A%B3%E5%8A%A8%E9%98%B2%E6%8A%A4%E7%94%A8%E5%93%81%E7%AE%A1%E7%90%86/" rel="prev" title="">
+      <i class="fa fa-chevron-left"></i> 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/03/08/%E6%B3%A8%E5%86%8C%E5%AE%89%E5%85%A8%E5%B7%A5%E7%A8%8B%E5%B8%88%20%E7%AE%A1%E7%90%86%20%E7%B2%BE%E8%AE%B2+%E4%B9%A0%E9%A2%98%E5%86%B2%E5%88%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/%E7%AC%AC2%E7%AB%A0%20%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E7%AE%A1%E7%90%86%E5%86%85%E5%AE%B9/%E7%AC%AC2%E7%AB%A0%20%E7%AC%AC11%E8%8A%82%20%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E6%8A%95%E5%85%A5%E4%B8%8E%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E8%B4%A3%E4%BB%BB%E4%BF%9D%E9%99%A9/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E8%8A%82-%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E6%A3%80%E6%9F%A5%E4%B8%8E%E9%9A%90%E6%82%A3%E6%8E%92%E6%9F%A5%E6%B2%BB%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">第十二节 安全生产检查与隐患排查治理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E6%A3%80%E6%9F%A5"><span class="nav-number">1.1.</span> <span class="nav-text">一、安全生产检查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E4%B8%80%EF%BC%89%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E6%A3%80%E6%9F%A5%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.1.</span> <span class="nav-text">（一）安全生产检查的类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%AE%9A%E6%9C%9F%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E6%A3%80%E6%9F%A5"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">1.定期安全生产检查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E7%BB%8F%E5%B8%B8%E6%80%A7%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E6%A3%80%E6%9F%A5"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">2.经常性安全生产检查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E5%AD%A3%E8%8A%82%E6%80%A7%E5%8F%8A%E8%8A%82%E5%81%87%E6%97%A5%E5%89%8D%E5%90%8E%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E6%A3%80%E6%9F%A5"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">3.季节性及节假日前后安全生产检查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E4%B8%93%E4%B8%9A-%E9%A1%B9-%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E6%A3%80%E6%9F%A5"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">4.专业(项)安全生产检查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E7%BB%BC%E5%90%88%E6%80%A7%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E6%A3%80%E6%9F%A5"><span class="nav-number">1.1.1.5.</span> <span class="nav-text">5.综合性安全生产检查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-%E8%81%8C%E5%B7%A5%E4%BB%A3%E8%A1%A8%E4%B8%8D%E5%AE%9A%E6%9C%9F%E5%AF%B9%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E7%9A%84%E5%B7%A1%E6%9F%A5"><span class="nav-number">1.1.1.6.</span> <span class="nav-text">6.职工代表不定期对安全生产的巡查</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E4%BA%8C%EF%BC%89%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E6%A3%80%E6%9F%A5%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-number">1.1.2.</span> <span class="nav-text">（二）安全生产检查的内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E4%B8%89%EF%BC%89%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E6%A3%80%E6%9F%A5%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.3.</span> <span class="nav-text">（三）安全生产检查方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%B8%B8%E8%A7%84%E6%A3%80%E6%9F%A5"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">1.常规检查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5%E8%A1%A8%E6%B3%95"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">2.安全检查表法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E4%BB%AA%E5%99%A8%E6%A3%80%E6%9F%A5%E5%8F%8A%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%B3%95"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">3.仪器检查及数据分析法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%88%E5%9B%9B%EF%BC%89%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E6%A3%80%E6%9F%A5%E7%9A%84%E5%B7%A5%E4%BD%9C%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.1.4.</span> <span class="nav-text">（四）安全生产检查的工作程序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5%E5%87%86%E5%A4%87"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">1.安全检查准备</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="MrLaoxie1998"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">MrLaoxie1998</p>
+  <div class="site-description" itemprop="description">22岁，由一个原挣扎在前端代码海洋中的上班社畜后来发现有便捷写文章这件事，从而开拓了一个新天地</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">215</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/p/1005055629971077/home?from=page_100505&mod=TAB&is_all=1#place" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;p&#x2F;1005055629971077&#x2F;home?from&#x3D;page_100505&amp;mod&#x3D;TAB&amp;is_all&#x3D;1#place" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/yourname" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/15833385" title="bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;15833385" rel="noopener" target="_blank"><i class="fa fa-fw fa-bilibili"></i>bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MrLaoxie1998</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
